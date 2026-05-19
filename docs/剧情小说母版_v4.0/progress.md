@@ -2110,3 +2110,20 @@
 - `RET-DEFAULT-07` 晨光体育馆短场新增偶遇回、受伤回、活动群拉回，处理乐跑 / 羽毛球 / 体育场活动造成的低温照面和时间债。
 - `RET-DEFAULT-08` 毕业照预览新增材料会拉回、许棠提醒回、无人回复回，处理同框、授权、共享盘缓存和默认同意风险。
 - 该细稿现已覆盖 `RET-DEFAULT-01` 至 `RET-DEFAULT-08`，可作为 DEFAULT-4XX 全量内回流剧情页样板。
+## 2026-05-19 IF R5-ZHOU 周屿线长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R5-ZHOU周屿线.md`。
+- 本轮目标来自用户确认：“那就周屿吧”。开发方向按“关键抉择导致命运外流，进入路线池后只在该池内做内部回流”的架构执行。
+- `R5-ZHOU` 已定位为第五幕站队组 A 级命运外流线，路线池为 `POOL-R5-ZHOU`，入口建议为 `P0D_STAND_WITH_ZHOU`。
+- 已完成 8 章开发结构：先别逗笑、B206 的空白文档、热闹的人情、请客不是道歉、被剪掉的停顿、难听的话、台上和台下、最后一张台卡。
+- 已配置 11 个局部变量：`zhou_trust`、`activity_link`、`public_smooth`、`face_debt`、`joke_defense`、`public_boundary`、`dorm_absence`、`tang_misread`、`luchen_distance`、`qinyue_pressure`、`graduation_temperature`。
+- 已配置 6 个内回流点：`RET-ZHOU-01` 至 `RET-ZHOU-06`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：按同一结构开发 `R5-TANG` 唐骁线，或先把 `R5-ZHOU` 的 6 个内回流点扩成剧情页级细稿。
+## 2026-05-19 IF R5-ZHOU 验证记录
+
+- 关键字段扫描完成：`R5-ZHOU`、`POOL-R5-ZHOU`、`P0D_STAND_WITH_ZHOU`、`RET-ZHOU-01`、`RET-ZHOU-06`、`zhou_trust`、`activity_link`、`tang_misread`、`luchen_distance` 等均已命中。
+- 环境模板扫描完成：`第二天早上`、`清晨`、`门缝`、`拖把水声`、`阿姨喊`、`睁眼`、`手机震`、`风声缓冲`、`静态桌面`、`让林亦舟意识到`、`这一步会被记进` 均无命中。
+- 风险表达扫描完成：`大团圆`、`奖励线` 仅出现在禁止项中，不构成路线漂移。
+- `git diff --check` 未发现空白错误；仅提示换行格式会按 Git 配置处理。
+- `count_v4.py` 已用工作区 Python 成功运行：`BODY_TOTAL 1113362`，`MD_TOTAL 1665495`，`CHAPTERS 238`。
