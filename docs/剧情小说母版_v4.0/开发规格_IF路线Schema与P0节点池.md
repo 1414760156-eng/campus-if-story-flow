@@ -13,6 +13,7 @@
 3. 被选择方向获得更多事件容量、互动频率和毕业结算文本；未被选择人物仍按母版世界线生活，只是和林亦舟的交集变少。
 4. 普通选项只改微变量，不应动辄锁大路线。大路线只从第三幕、第四幕、第五幕几个时期外流点进入。
 5. 5X 是唯一硬锁。进入后第六卷、第七卷只走 5X 单线，不再回原多线。
+6. 长线开发采用命运池结构。进入一条 IF 后，后续公共锁点按当前 `route_pool_id` 生成本线版本；其它命运线关闭完整主分支，只保留软照面和只读回声。
 
 ## 路线状态 Schema
 
@@ -20,8 +21,13 @@
 
 ```json
 {
+  "canon_line": "MOTHER-V4",
+  "route_pool_id": "POOL-DEFAULT-4XX",
   "route_focus": "default_4xx",
   "outflow_stage": "none",
+  "active_route_id": "DEFAULT-4XX",
+  "closed_route_ids": [],
+  "soft_echo_routes": [],
   "primary_bond": "none",
   "route_lock": false,
   "hard_outflow": false,
@@ -32,8 +38,13 @@
 
 | 字段 | 类型 | 可选值 | 用途 |
 |---|---|---|---|
+| `canon_line` | string | `MOTHER-V4` | 指向恒定小说母本线。 |
+| `route_pool_id` | string | `POOL-DEFAULT-4XX`、`POOL-R3-PERFECT`、`POOL-R4-WORK`、`POOL-R5-ROMANCE`、`POOL-R5-ZHOU`、`POOL-R5-TANG`、`POOL-R5-LUCHEN`、`POOL-R5-LIEFLAT`、`POOL-R5X-HARD` | 当前命运池。 |
 | `route_focus` | enum | `default_4xx`、`perfect`、`work`、`romance`、`zhou`、`tang`、`luchen`、`lieflat`、`5x` | 当前生活重心。 |
 | `outflow_stage` | enum | `none`、`act3_activity`、`act4_summer`、`act5_romance`、`act5_stand`、`act5x_hard` | 大路线从哪个时期偏离默认线。 |
+| `active_route_id` | string | 见各路线编号 | 当前允许完整展开的主路线。 |
+| `closed_route_ids` | array | 其它路线编号 | 进入当前命运池后关闭完整主分支的路线。 |
+| `soft_echo_routes` | array | 其它路线编号 | 仍可作为软照面、群消息、朋友圈、同场流程出现的路线。 |
 | `primary_bond` | enum | `none`、`zhou`、`tang`、`luchen`、`wanfeng`、`shen_jiahe`、`xia_zhiwei`、`xu_che` | 林亦舟当前最靠近的人。 |
 | `route_lock` | boolean/string | `false`、`5x` | 是否进入不可回退路线。现阶段只有 5X。 |
 | `hard_outflow` | boolean | `true`、`false` | 是否进入唯一硬外流。 |
