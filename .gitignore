@@ -1,0 +1,21 @@
+# Local dependency/cache folders
+node_modules/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+
+# Logs and local environment files
+*.log
+.env
+.env.*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary output
+tmp/
+temp/
+.tmp/

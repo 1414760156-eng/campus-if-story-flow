@@ -1,0 +1,161 @@
+第六幕 Codex 接入逻辑总表
+版本：第六幕准结局形成阶段初版｜生成用途：剧情校对、Codex 接入、资产制图规划
+【新增】时间 / 学期 / 季节状态层
+第六幕所有节点必须增加 time_phase、semester、season、season_bg_modifier 字段。剧情包决定“过程”，time_phase 决定“时间与背景”。Codex 不得把 01-20 当成同一时段连续触发。
+建议状态对象：
+act6_time_state = {
+ current_phase: "pre_winter_break | spring_return | late_spring_summer_gate | autumn_after_summer | winter_projected_ending",
+ semester: "act5_winter_break | junior_spring | summer_before_senior | senior_autumn | senior_winter_before_final",
+ season: "winter_break | spring | late_spring_early_summer | autumn | winter",
+ season_bg_modifier: "home_new_year | spring_campus | summer_gate | autumn_campus | winter_campus",
+ node_range: "PRE | 01-05 | 06-10 | 11-15 | 16-20"
+}
+time_phase | 适用节点 | 学期 / 季节 | 背景修饰 | 逻辑作用
+pre_winter_break | ACT6_PRE-00 至 ACT6_PRE-04 | 第五幕后寒假 / 春节 | 家中、新年饭桌、手机群聊、返校路 | 承接第五幕后寒假空白；不设复杂选项。
+spring_return | R1/R2/R3-01 至 05；K1-K2 | 大三下春季返校 | 春光、返校、宿舍重启、北园早饭、阳光书屋门口 | 问题、稳定或方向重新显形。
+late_spring_summer_gate | R1/R2/R3-06 至 10；K3-K4 | 大三下春末 / 暑期前 | 暑期安排、材料提醒、明德楼一楼、公告、食堂饭点 | 现实提醒和暑期窗口逼近。
+autumn_after_summer | R1/R2/R3-11 至 15；K5-K6 | 暑期后 / 大四上秋季 | 秋叶大道、宿舍夜晚、回看暑期结果、校园冷风初起 | 回看、整理、错过、取舍、修补进入现实。
+winter_projected_ending | R1/R2/R3-16 至 20；K7-K8 | 大四上冬季 / 寒假前 | 冬季校园、宿舍灯光、考试/材料/实习/家庭电话定型 | 形成预计结局 / 准结局；终章不能推翻。
+关键选择继承规则：K1-K8 不单独决定季节，必须继承所属阶段 time_phase。例如 K3 永远是 late_spring_summer_gate，K7/K8 永远是 winter_projected_ending。若剧情引用过去经历，只能作为 flashback，不改变当前背景季节。
+极端过场继承规则：6R-H / 6R-L 是 entrance_modifier。它们发生在 ACT6_PRE 与 spring_return 之间，用来改变主体包初始状态；进入 R1/R2/R3 后仍按 01-05、06-10、11-15、16-20 推进季节。
+一、总流程
+步骤 | 流程节点 | 说明
+1 | ACT6_PRE 寒假以后 | 纯剧情前置包，承接第五幕寒假空白，不设置复杂选择。
+2 | ACT6_COVER 最后一个长坡 | 第六幕章节图与开场。
+3 | 极端过场修饰 | 高完成进入 6R-H；低完成/摆烂风险进入 6R-L；普通状态可跳过。
+4 | 三大主体包判定 | 6R-1 去向推进；6R-2 普通稳定；6R-3 普通不稳修补。
+5 | 8 个关键选择累计维度 | 每包 8 个二选一，不枚举 2^8 结局，只累计维度。
+6 | A-J 准结局判定 | 第六幕输出 projected_ending，终章只做内部微调。
+二、核心状态变量
+变量 | 含义 | 用途
+destination_clarity | 毕业去向清晰度 | 高时导向 A/B/C/D/E/F/G 等去向型准结局。
+life_stability | 普通生活稳定度 | 影响 H 普通稳定、I 修补回升，以及低完成风险。
+repair_ability | 修补能力 | 关系/任务/家庭是否能在失误后重新接上。
+family_reality_handling | 家庭现实处理 | 家庭、城市、父母身体/工作、回家远近。
+relationship_anchor | 关系锚点 | 周屿、父母、晚风、沈嘉禾、唐骁、陆沉等是否仍能承载回响。
+low_completion_risk | 低完成风险 | 持续退场、错过、生活不稳、关系低温的综合风险。
+direction_fit | 方向适配度 | 选择是否适合自己，而非只为证明或羡慕。
+cost_awareness | 代价意识 | 是否能看见时间、钱、身体、家庭、关系和机会成本。
+resource_anxiety | 资源焦虑 | 因看见别人进度而盲目加码、追亮点。
+avoidance_count | 回避次数 | 消息不回、电话拖延、说明缺失等累计。
+regret_level | 遗憾程度 | 错过窗口、低温关系、补救残缺的风味变量。
+ordinary_life_awareness | 普通生活意识 | 普通日子是否被视为底盘而非失败。
+三、入口判定规则
+入口 | 触发倾向 | 后续进入
+6R-H 高完成过场 | 第五幕综合高完成；life_stability/repair_ability/relationship_anchor 均中高；low_completion_risk 低。 | 6R-1 或 6R-2。
+6R-L 低完成过场 | 第五幕低完成或摆烂风险；life_stability 低，avoidance_count 高，relationship_anchor 低温。 | 6R-3。
+6R-1 去向推进包 | 已有学业、实践、家庭、作品、城市或就业/升学方向材料；destination_clarity 或 direction_fit 有基础。 | A/B/C/D/E/F/G，也可能转 H/I。
+6R-2 普通稳定包 | 普通生活、宿舍关系、家庭沟通和小机会较稳，但没有强亮点。 | H/E/B/G/F/I。
+6R-3 不稳修补包 | 状态不稳但未完全退场；需要补救关系、机会、家里、普通生活。 | I/J/H低配/E补底盘/B补救。
+四、关键选择逻辑表
+6R-1 毕业去向推进包
+节点 | 选项A | A主要影响 | 选项B | B主要影响
+K1 | 先往前迈一步 | +destination_clarity +self_planning | 先稳住生活 | +life_stability +family_reality_handling
+K2 | 先问清楚 | +cost_awareness +direction_fit | 先答应下来 | +resource_anxiety +low_completion_risk
+K3 | 整理已有材料 | +direction_fit +life_stability | 追更亮机会 | +resource_anxiety -direction_fit
+K4 | 提前说明冲突 | +repair_ability +family_reality_handling | 拖着不说 | +avoidance_count +low_completion_risk
+K5 | 接受协作或求助 | +repair_ability +relationship_anchor | 独自硬撑 | +self_care_risk -relationship_anchor
+K6 | 调整节奏 | +life_stability +direction_fit | 强行推进 | +self_care_risk -life_stability
+K7 | 承担代价接住 | +destination_clarity +cost_awareness | 逃避或盲抓 | +low_completion_risk -repair_ability
+K8 | 方向带进最后 | +destination_clarity +direction_fit | 承认只是走过 | +self_awareness +life_stability
+6R-2 普通稳定成长包
+节点 | 选项A | A主要影响 | 选项B | B主要影响
+K1 | 守住普通节奏 | +life_stability -low_completion_risk | 焦虑打乱节奏 | +resource_anxiety -life_stability
+K2 | 承认普通底盘 | +life_stability +direction_fit | 证明自己不普通 | +resource_anxiety -direction_fit
+K3 | 认真试小机会 | +destination_clarity +repair_ability | 嫌它太普通 | +resource_anxiety -destination_clarity
+K4 | 互相说清状态 | +relationship_anchor +repair_ability | 用玩笑盖过去 | +ordinary_awareness -repair_ability
+K5 | 主动告别 | +relationship_anchor +ordinary_life_awareness | 假装以后还有机会 | +regret_level -relationship_anchor
+K6 | 小而稳推进 | +life_stability +direction_fit | 盲目加码 | +resource_anxiety -life_stability
+K7 | 选择适合自己的路 | +direction_fit +life_stability | 追不适合的证明 | +resource_anxiety -direction_fit
+K8 | 稳定带进终章 | +life_stability +repair_ability | 重新否定稳定 | +resource_anxiety +low_completion_risk
+6R-3 普通不稳修补包
+节点 | 选项A | A主要影响 | 选项B | B主要影响
+K1 | 主动补一件 | +repair_ability +relationship_anchor | 等它过去 | +avoidance_count +low_completion_risk
+K2 | 继续补下去 | +repair_ability +life_stability | 觉得没用退回去 | +low_completion_risk -relationship_anchor
+K3 | 问还能补什么 | +repair_ability +cost_awareness | 怪别人没提醒 | +avoidance_count +low_completion_risk
+K4 | 说自己想回来 | +relationship_anchor +repair_ability | 装作无所谓 | +avoidance_count -relationship_anchor
+K5 | 承认错过并最低补救 | +repair_ability +life_stability | 继续逃避整理 | +avoidance_count +low_completion_risk
+K6 | 接受带遗憾修复 | +repair_ability +relationship_anchor | 不能完美就放弃 | +low_completion_risk -repair_ability
+K7 | 承担代价补救 | +repair_ability +family_reality_handling | 彻底不回应 | +low_completion_risk -life_stability
+K8 | 修补带进终章 | +repair_ability +life_stability | 继续退出 | +low_completion_risk +avoidance_count
+五、准结局判定表
+准结局 | 触发倾向 | 终章微调范围
+A 清晰升学型 | destination_clarity 高；学业/资料来源中高；life_stability 不低；low_completion_risk 低。 | 终章可微调成绩等待、沈嘉禾/家里支持、毕业镜头。
+B 稳定就业型 | 实践/岗位来源中高；cost_awareness 和 boundary_awareness 中高。 | 终章微调实习、转正、唐骁/陆沉回响、城市落点。
+C 项目/创业尝试型 | club_arc_practice 高；relationship_anchor 中高；cost_awareness 高；resource_anxiety 不高。 | 终章微调项目是否继续、团队是否调整。
+D 考公/基层/稳定去向型 | family_reality_handling 中高；life_stability 中高；风险不高。 | 终章微调考试/报名结果、家里接受度。
+E 考证/专业补强型 | life_stability 中高；self_planning 中高；direction_fit 中高。 | 终章微调证书进度、专业底盘。
+F 作品型/自由尝试型 | portfolio 或表达来源中高；cost_awareness 中高；life_stability 不低。 | 终章微调作品是否继续、反馈与不稳定。
+G 回家/城市选择型 | family_depth 高；city_distance_issue 存在；cost_awareness 中高。 | 终章微调回家/留城、父母状态、短期落点。
+H 普通稳定毕业型 | life_stability 高；repair_ability 中高；low_completion_risk 低；去向不混乱。 | 终章微调普通毕业镜头、周屿/宿舍温度。
+I 修补回升型 | repair_ability 中高；low_completion_risk 中等以下；至少一个可修复关系。 | 终章保留遗憾，但不继续下滑。
+J 低完成退场型 | low_completion_risk 高；repair_ability 低；life_stability 低；relationship_anchor 弱。 | 终章低温收束，不能强行逆转。
+六、状态对象建议
+act6_state = {
+ entry_modifier: "none | high_completion | low_completion",
+ main_package: "R1_destination | R2_stable | R3_repair",
+ scores: {
+ destination_clarity, life_stability, repair_ability, family_reality_handling,
+ relationship_anchor, low_completion_risk, direction_fit, cost_awareness,
+ resource_anxiety, avoidance_count, regret_level, ordinary_life_awareness
+ },
+ flags: [],
+ club_arc: { main, secondary, trial, overcommitted, no_club_route },
+ projected_ending: {
+ ending_family, graduation_destination, completion_quality,
+ ordinary_life_state, family_state, relationship_focus,
+ regret_level, repair_state, final_chapter_allowed_adjustments
+ }
+}
+七、硬规则
+玩家可见文本不得出现系统化方向定义或策划说明，例如“考研不是……就业不是……”。
+不在玩家可见文本中暴露权重、flag、触发、主线、副线等词。
+club_arc 只占约 20% 修饰权重，改变地点、人物、实践材料，不主导大叙事包。
+终章不能推翻第六幕准结局，只能在准结局内部调整人物、关系、毕业镜头与短期落点。
+【本次回改】玩家可见时间流逝接入规则
+本次补充的不是 time_phase 字段本身，而是让 Codex 在渲染剧情页时强制插入“时间过场、季节化对话、选择后时间回响”。否则剧情逻辑跨越一年，但玩家读起来仍像几天内连续发生。
+一、节点渲染必须新增的文本字段
+字段 | 使用位置 | 作用
+phase_intro_text | 每个 5 节阶段开头使用 | 玩家可见季节 / 学期过场。必须自然写进剧情，不出现“第一阶段”这类策划词。
+elapsed_time_marker | 每个普通剧情节点可选；每个阶段至少 2 次 | 用于提示几周过去、暑期临近、暑假结束、冬天到了等。
+seasonal_dialogue_pool | 人物对话节点使用 | 让周屿、父母、沈嘉禾、唐骁等对话带出寒假、暑假、秋天、冬天等时间锚点。
+choice_time_echo_A/B | 每个关键选择反馈后必填 | 写出选择在几周后、暑期后或冬天前的回响，不只做即时反馈。
+season_bg_modifier | 每个图文页与资产页必填 | 控制画面季节、服装、光线、人流状态，与剧情文本保持一致。
+二、时间流逝渲染伪代码
+function renderAct6Node(node, act6_state) {
+ const phase = getTimePhase(node.id); // PRE, 01-05, 06-10, 11-15, 16-20
+ const timeText = getPhaseIntroText(phase, act6_state.main_package);
+ const dialogueAnchor = pickSeasonalDialogue(phase, act6_state.relationship_focus);
+ const nodeText = renderNodeBody(node, act6_state);
+ const choiceEcho = node.isChoice ? renderChoiceTimeEcho(node.choice, phase, act6_state) : "";
+
+ return {
+ time_phase: phase.key,
+ semester: phase.semester,
+ season: phase.season,
+ season_bg_modifier: phase.visual_modifier,
+ player_visible_text: [timeText, nodeText, dialogueAnchor, choiceEcho].filter(Boolean).join("
+
+")
+ };
+}
+三、主体包各阶段必须插入的时间变化
+包/节点段 | 时间 | 必须出现的玩家可见时间内容
+R1 01-05 | 春季返校 | 别人寒假已经开始，春季只是差距显形；出现“寒假那版”“刚返校”“春天不是起点”等表达。
+R1 06-10 | 春末 / 暑期前 | 暑期安排、材料、家里回家时间、机会询问开始密集；选择反馈写“几周后”。
+R1 11-15 | 暑期后 / 秋季 | 回看暑期留下什么；有人推进、有人没推进；窗口开始关上。
+R1 16-20 | 冬季 / 寒假前 | 考试、实习、项目、城市选择等不再是想法，而开始给结果；准结局定型。
+R2 01-05 | 春季返校 | 北园早饭、宿舍灯、普通日子接上。
+R2 06-10 | 春末 / 暑期前 | 小机会出现，能否认真试；暑期安排让普通稳定具备现实重量。
+R2 11-15 | 暑期后 / 秋季 | 整理普通生活证据；有人离开校园生活圈；普通告别出现。
+R2 16-20 | 冬季 / 寒假前 | 不闪光但适合的选择定型；普通稳定成为底气。
+R3 01-05 | 春季返校 | 问题没有清零；关系从默认等你变成你来了也可以。
+R3 06-10 | 春末 / 暑期前 | 机会不主动找你；拖延代价开始显形；家里电话再次被拖。
+R3 11-15 | 暑期后 / 秋季 | 盘点剩下什么；承认错过，区分已关和未关窗口。
+R3 16-20 | 冬季 / 寒假前 | 最后补救窗口出现；修补或退场形成准结局。
+四、硬规则更新
+不得只在 metadata 中标注季节，玩家可见正文也必须出现时间流逝。
+选择反馈必须有延迟后果，不允许只写当下情绪和数值变化。
+每个主体包 01、06、11、16 节点默认插入 phase_intro_text；K1-K8 默认插入 choice_time_echo。
+若玩家跳转/条件化进入某包，也必须保留当前阶段的时间背景，不可重置为春天。
+终章只读取 act6_projected_ending，不重新开启一年跨度的时间推进。

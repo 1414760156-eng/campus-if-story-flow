@@ -1,0 +1,139 @@
+# 武生院沉浸版 H5 第四幕 Codex 接入指引
+
+## 目标
+将《第四幕：暑假不是暂停键》接入为沉浸式剧情选择 H5。页面只展示玩家当前实际经历过的剧情，不暴露未进入的分支。
+
+## 核心显示规则
+1. 玩家可见文本禁止列举所有可能性，禁止使用“如果你……”式分支提示。
+2. 条件判断只在代码层完成。命中哪个状态，就显示对应剧情片段；未命中的人物、地点、事件不显示。
+3. 每个选项只要改变剧情、关系或后续状态，必须展示：反馈漫画、反馈小剧情、状态变化、后续提示。
+4. 玩家页面不要显示：main、secondary、trial、flag、weight、route 等字段。
+5. 文案页面显示生活化句子；状态字段只供逻辑判断。
+6. 大一暑假阶段禁止把主角或新生写成项目主导者、控场者、纠纷解决者。所有校园/城市任务都应表现为：跟着学长学姐或熟人做一小段、看见问题、完成边缘责任、提供一个线索，而不是独立解决复杂问题。
+
+## 第四幕入口状态
+第四幕从 4-03 选择暑假安排进入六类模式：
+
+```json
+{
+  "act4": {
+    "summer_mode": "family | campus_practice | guanggu_work | wanfeng | ordinary_rest | overload"
+  }
+}
+```
+
+## 第三幕社团继承字段
+留校实践段必须继承第三幕结果，不默认进入融媒体或学业。
+
+```json
+{
+  "club_arc": {
+    "viewed": [],
+    "trial": [],
+    "main": "media | performance | academic | activity | work_study | gaming | none",
+    "secondary": "media | performance | academic | activity | work_study | gaming | none",
+    "overcommitted": false,
+    "no_club_route": false
+  }
+}
+```
+
+## 4-03 选项到模式映射
+- A 先回家：summer_mode = family
+- B 晚点回，先把学校这边没收尾的事处理完：summer_mode = campus_practice
+- C 跟唐骁去光谷看一次活动执行：summer_mode = guanggu_work
+- D 把暑假主要留给晚风和线上生活：summer_mode = wanfeng
+- E 什么都不急，先休息一段时间：summer_mode = ordinary_rest
+- F 每个都答应一点，先看看能不能兼顾：summer_mode = overload
+
+## 4-B 留校实践动态显示
+进入 4-B 后，按 club_arc.main 显示 4-B2 对应条件片段，玩家只看到命中的一个版本：
+- media：明德楼三楼、夏知微/许知远、看一组空校园素材、给出一条直觉反馈；不能写成主角决定作品方向。
+- performance：晨光广场、九龙壁舞台、周屿试录一小段串词/短片；不能写成正式主持或控场。
+- academic：阳光书屋、沈嘉禾、补一部分资料；不能写成大一暑假直接推进竞赛/论文。
+- activity：明德楼一楼学工、秦越、核对几项物料；不能写成完整负责活动清单。
+- work_study：明德楼一楼学工、唐骁、勤工助学公告栏、陆沉提示；重点是看懂规则。
+- gaming：宿舍群、后街夜市、线上游戏、周屿、晚风；表现普通生活是否能被整理成经历。
+- none：晨光湖、中南公寓空宿舍、空白感；表现旁观和迟到的伸手。
+
+4-B3 按 club_arc.secondary 或 club_arc.trial 生成“这个晚上，你只能去一个地方”的冲突。没有 secondary 时，用家庭、晚风、休息或普通焦虑作为冲突对象。具体反馈文本要由状态填入具体人和地点，不要在玩家界面用“也许是……”列举全部。
+
+
+## 4-C 光谷线降级规则
+光谷线表现“第一次看见城市现实”，不能让主角一次性解决工资、设备或责任纠纷。
+- 设备问题：主角最多提供照片线索；唐骁协助核对；负责人暂时不继续压到陆沉身上；事情不完全解决。
+- 工资问题：主角可以在群里问明确时间；秦越认为有点硬；唐骁提醒留记录；工资仍可能拖着，只是问题不再糊里糊涂。
+- 陆沉暗线：只给出边缘信息和疲惫，不突然倾诉完整身世。
+
+## 条件文本显示方式
+错误示例：
+> 如果你去过光谷，工资结算还没有干净。
+
+正确示例：
+> 光谷那边的工资结算还没有完全说清，唐骁提醒你把聊天记录留好。
+
+代码层判断示例：
+```ts
+function getReturnWeekEcho(state) {
+  const echos = [];
+  if (state.summer_flags.guanggu_work_experience) {
+    echos.push("光谷那边的工资结算还没有完全说清，唐骁提醒你把聊天记录留好。");
+  }
+  if (state.summer_flags.wanfeng_meeting_window) {
+    echos.push("晚风那句‘别突然消失’，还停在你的聊天框里。");
+  }
+  if (state.summer_flags.mother_checkup_deeper) {
+    echos.push("家里的复查和饭桌上的沉默，让你比以前更难把家当成背景。");
+  }
+  return echos.slice(0, 3);
+}
+```
+
+## 每个 choice 的推荐结构
+```json
+{
+  "id": "4-03-B",
+  "text": "晚点回，先把学校这边没收尾的事处理完。",
+  "feedbackComic": "ACT4_03_B_选择留校收尾.png",
+  "feedbackStory": "你没有立刻买回家的票……那些你真正靠近过的人和事，会在暑假里换一种方式继续找你。",
+  "effects": {
+    "act4.summer_mode": "campus_practice",
+    "self_planning": 1
+  },
+  "setFlags": ["campus_practice_inherits_act3_choices"]
+}
+```
+
+## 推荐状态字段
+```json
+{
+  "summer_flags": {
+    "mother_checkup_deeper": false,
+    "father_job_pressure_deeper": false,
+    "campus_empty_summer_seen": false,
+    "campus_practice_inherits_act3_choices": false,
+    "guanggu_work_experience": false,
+    "payment_rights_awareness_seed": false,
+    "wanfeng_meeting_window": false,
+    "promised_to_meet_wanfeng": false,
+    "summer_resume_blank_anxiety": false,
+    "overload_breakdown": false,
+    "healthy_boundary_seed": false,
+    "transition_ready": false,
+    "unresolved_summer_threads_carried_back": false
+  }
+}
+```
+
+## 结算页规则
+结算页不能汇总未经历内容。通用总结保留，分支专属回响用状态命中后插入 1-3 条。未命中的内容不显示。
+
+## 资产命名建议
+- 主剧情图：ACT4_节点_MAIN_中文概括.png
+- 选项反馈图：ACT4_节点_选项_中文概括.png
+- 总结卡：ACT4_SUMMARY_中文概括.png
+
+示例：
+- ACT4_03_B_选择留校收尾.png
+- ACT4_C2_A_拿照片提供线索.png
+- ACT4_18_F_先和宿舍打扫.png

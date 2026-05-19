@@ -1,0 +1,103 @@
+# 武生院沉浸版大学成长 H5｜第二幕 Codex 接入指引（回改版）
+
+## 1. 第二幕定位
+
+第二幕为“军训期”。它承接第一幕入校与宿舍建立，输出第三幕所需的人物关系和生活基础。
+
+本幕不应写成热血爽点，也不应让大一新生主导任何大型事务。所有互动都以“边缘参与、完成小责任、看见规则”为核心。
+
+## 2. 场景地点约束
+
+- 军训服领取：图书馆仓库 / 图书馆仓库门口。
+- 宿舍试穿与整理：中南公寓或学子北 4XX 宿舍。
+- 日常军训训练：晨光体育场。
+- 军训汇演彩排与汇演：健源体育场。
+- 军训生活补给：北园食堂、晨光湖、宿舍夜晚。
+- 军训结束后转入第三幕：晨光大道社团招新海报开始出现。
+
+## 3. 节点结构
+
+| 节点 | 标题 | 核心功能 |
+|---|---|---|
+| 2-01 | 图书馆仓库，军训服发下来那天 | 尺码、清单、陆沉现实感、唐骁规则意识 |
+| 2-02 | 宿舍试穿，迷彩服让4XX第一次像一个班 | 宿舍关系、家庭消息、集体外观 |
+| 2-03 | 晨光体育场，第一天站到队伍里 | 身体进入秩序，人物差异出现 |
+| 2-04 | 手机袋和物资区，小事开始需要说清楚 | 手机袋、物资、小责任与记录意识 |
+| 2-05 | 最晒的上午，身体边界第一次变具体 | 身体边界、硬撑与求助 |
+| 2-06 | 北园食堂，军训把饭变得很重要 | 宿舍饭桌、普通关系 |
+| 2-07 | 熄灯前，消息把学校和外面连起来 | 家庭、晚风、手机夜聊 |
+| 2-08 | 中段磨合，队伍终于有一点形状 | 集体节奏、沈嘉禾稳定印象 |
+| 2-09 | 晨光湖边，疲惫开始说话 | 疲惫、晨光湖、晚风校园想象 |
+| 2-10 | 健源体育场彩排，汇演变得真实 | 场地迁移、汇演前准备 |
+| 2-11 | 汇演当天，在健源体育场把这一段站完 | 军训完成感，不写成功控场 |
+| 2-12 | 军训结束夜，校园开始露出下一层热闹 | 转入第三幕晨光大道招新 |
+
+## 4. 状态字段建议
+
+```json
+{
+  "act2_complete": true,
+  "training_state": {
+    "uniform_received_at_library_storage": true,
+    "daily_training_place": "chenguang_stadium",
+    "final_review_place": "jianyuan_stadium",
+    "body_boundary_awareness": 0,
+    "fatigue": 0,
+    "training_completion_feeling": 0
+  },
+  "relationship_seed": {
+    "zhou_yu_bond": 0,
+    "tang_xiao_trust": 0,
+    "lu_chen_trust": 0,
+    "family_warmth": 0,
+    "wanfeng_pull": 0,
+    "dorm_bond": 0
+  },
+  "act3_seed": {
+    "tangxiao_rule_awareness_seed": false,
+    "luchen_quiet_reliability_seed": false,
+    "qin_yue_activity_seed": false,
+    "shen_jiahe_stability_seen": false,
+    "wanfeng_sees_campus_life": false,
+    "ordinary_dorm_support_seed": false
+  }
+}
+```
+
+## 5. 选项效果方向
+
+- 帮周屿：增强 `zhou_yu_bond`、`dorm_bond`、`ordinary_dorm_support_seed`。
+- 跟唐骁核对：增强 `tang_xiao_trust`、`rule_awareness`、`self_planning`。
+- 注意陆沉：增强 `lu_chen_trust`、`luchen_quiet_reliability_seed`。
+- 回家里：增强 `family_warmth`。
+- 回晚风：增强 `wanfeng_pull`，并为第三幕夜聊铺垫。
+- 承认身体不适：增强 `body_boundary_awareness`，降低后续疲劳风险。
+- 硬撑：短期不掉队，但增加 `fatigue`。
+
+## 6. 玩家可见文本禁用规则
+
+玩家可见剧情中禁止出现：
+
+- 主线、副线、路线、权重、flag、触发、状态值；
+- “如果你选择了……”式分支暴露；
+- 新生主导活动、控场成功、解决复杂问题等表述。
+
+Codex 可在内部记录字段，但正文只显示玩家当前节点发生的生活内容。
+
+## 7. 接第三幕逻辑
+
+第二幕结尾只提示“晨光大道开始贴社团招新海报”，不提前暴露第三幕可选方向。
+
+第三幕可读取第二幕状态：
+
+```json
+{
+  "from_act2": {
+    "dorm_bond": "影响宿舍夜聊与周屿线",
+    "tang_xiao_trust": "影响第三幕规则和简历提醒",
+    "lu_chen_trust": "影响第三幕陆沉勤工与设备边缘事件",
+    "wanfeng_pull": "影响第三幕夜聊是否自然稳定",
+    "body_boundary_awareness": "影响第三幕期末/过载处理方式"
+  }
+}
+```

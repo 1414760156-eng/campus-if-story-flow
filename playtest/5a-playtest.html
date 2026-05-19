@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>第五幕 5A 宿舍修补线灰盒试玩</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="play-area" aria-labelledby="node-title">
+        <div class="node-meta">
+          <span id="node-act" class="tag"></span>
+          <span id="node-line" class="tag tag-muted"></span>
+          <span id="node-progress" class="progress-text"></span>
+        </div>
+        <h1 id="node-title"></h1>
+        <p id="node-scene" class="scene"></p>
+        <p id="node-summary" class="summary"></p>
+        <div id="ending-panel" class="ending-panel" hidden></div>
+        <div id="feedback-panel" class="feedback-panel" hidden>
+          <p id="feedback-text"></p>
+          <button id="continue-button" type="button" class="choice-button continue-button">继续推进</button>
+        </div>
+        <div id="choice-list" class="choice-list" aria-label="选项"></div>
+      </section>
+
+      <aside class="side-area">
+        <section class="status-panel" aria-labelledby="state-title">
+          <h2 id="state-title">状态</h2>
+          <dl id="state-list" class="state-list"></dl>
+        </section>
+
+        <section class="log-panel" aria-labelledby="log-title">
+          <div class="log-heading">
+            <h2 id="log-title">记录</h2>
+            <div class="tools">
+              <button id="restart-button" type="button" class="tool-button">重新开始</button>
+              <button id="export-button" type="button" class="tool-button">导出记录</button>
+            </div>
+          </div>
+          <ol id="log-list" class="log-list"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <script src="5a-data.js"></script>
+    <script src="engine.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

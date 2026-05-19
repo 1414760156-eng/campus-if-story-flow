@@ -1,0 +1,730 @@
+{
+  "meta": {
+    "project": "武生院沉浸版大学成长 H5",
+    "version": "interaction_system_v2",
+    "scope": "acts_1_to_6_with_finale_bridge",
+    "source_policy": "基于既有剧情与接入文件优化，不重写世界观，不改变主线关键事件。",
+    "naming_note": "源材料统一使用武生院；用户提到的五神院在本系统中按武生院沉浸版处理。"
+  },
+  "global_rules": {
+    "mainline_locked": true,
+    "forbidden_player_visible_terms": [
+      "主线",
+      "副线",
+      "权重",
+      "flag",
+      "触发",
+      "Codex",
+      "判定",
+      "route",
+      "系统变量"
+    ],
+    "side_hooks_do_not_override": [
+      "军训手机袋事件",
+      "军训汇演",
+      "班会",
+      "主持招新",
+      "毕业活动",
+      "第六幕准结局"
+    ],
+    "player_visible_style": [
+      "生活化",
+      "克制",
+      "事件驱动",
+      "心理暗线行为化",
+      "选项不做明显好坏"
+    ],
+    "scene_logic": "节点只允许在既有武生院沉浸版场景、家庭场景或终章允许的毕业/城市落点内发生。"
+  },
+  "locations": {
+    "campus_entry": [
+      "武生院站",
+      "学校主入口",
+      "图书馆西门"
+    ],
+    "dorm_life": [
+      "中南公寓",
+      "学子北4XX宿舍",
+      "宿舍阳台"
+    ],
+    "daily_campus": [
+      "北园食堂",
+      "晨光湖",
+      "晨光大道",
+      "教学楼",
+      "阳光书屋"
+    ],
+    "activity_spaces": [
+      "明德楼一楼",
+      "明德楼三楼",
+      "九龙壁舞台",
+      "晨光广场",
+      "健源体育场",
+      "晨光体育场"
+    ],
+    "reality_spaces": [
+      "家中饭桌",
+      "家中阳台",
+      "家中房间",
+      "光谷活动现场",
+      "武生院站离校口"
+    ],
+    "finale_spaces": [
+      "答辩教室",
+      "毕业照现场",
+      "北园最后一顿饭",
+      "中南公寓收拾宿舍",
+      "校门",
+      "武生院站"
+    ]
+  },
+  "characters": {
+    "lin_yizhou": {
+      "display_name": "林亦舟",
+      "role": "玩家视角主角",
+      "personality": [
+        "克制",
+        "观察型",
+        "容易把压力先压下"
+      ],
+      "arc": "从被流程推着走，到能说明、排序、承认有限并带着遗憾修补。",
+      "interaction_affordances": [
+        "选择回应谁",
+        "选择是否问清楚",
+        "选择是否承认疲惫",
+        "选择是否修补关系"
+      ]
+    },
+    "zhou_yu": {
+      "display_name": "周屿",
+      "role": "核心室友",
+      "personality": [
+        "嘴快",
+        "轻松",
+        "有表达欲",
+        "用玩笑盖住不安"
+      ],
+      "arc": "从宿舍气氛担当，慢慢长出展示、串场和主持招新的勇气。",
+      "interaction_affordances": [
+        "一起吃饭",
+        "帮他顺词",
+        "提醒他别迟到",
+        "在毕业前主动联系"
+      ]
+    },
+    "tang_xiao": {
+      "display_name": "唐骁",
+      "role": "核心室友",
+      "personality": [
+        "规则意识强",
+        "流程感强",
+        "嘴硬心细"
+      ],
+      "arc": "从看起来像管事的人，变成懂得用边界保护关系的人。",
+      "interaction_affordances": [
+        "核对清单",
+        "问清边界",
+        "记录责任",
+        "复盘光谷工资"
+      ]
+    },
+    "lu_chen": {
+      "display_name": "陆沉",
+      "role": "核心室友",
+      "personality": [
+        "沉默",
+        "现实压力重",
+        "可靠",
+        "不擅长求助"
+      ],
+      "arc": "从少说话和独自承担，到能在安全关系里说出一点真实疲惫。",
+      "interaction_affordances": [
+        "低声问一句",
+        "不当众追问",
+        "等他一起走",
+        "承认他的贡献"
+      ]
+    },
+    "shen_jiahe": {
+      "display_name": "沈嘉禾",
+      "role": "学业与资料支线",
+      "personality": [
+        "稳定",
+        "慢热",
+        "准备早",
+        "重视可信资料"
+      ],
+      "arc": "让玩家看见准备不是焦虑，而是一种方法。",
+      "interaction_affordances": [
+        "补资料",
+        "讨论框架",
+        "问学习方向",
+        "整理第六幕材料"
+      ]
+    },
+    "xia_zhiwei": {
+      "display_name": "夏知微",
+      "role": "影像与作品支线",
+      "personality": [
+        "敏锐",
+        "安静观察",
+        "会从空场景里看见时间"
+      ],
+      "arc": "从拍热闹到记录时间，让玩家学会把经历整理成作品。",
+      "interaction_affordances": [
+        "帮机位",
+        "看初剪",
+        "拍空校园",
+        "整理作品素材"
+      ]
+    },
+    "qin_yue": {
+      "display_name": "秦越",
+      "role": "活动资源与实践支线",
+      "personality": [
+        "外向",
+        "会接资源",
+        "擅长进入安排"
+      ],
+      "arc": "让玩家看见资源便利背后的责任和边界成本。",
+      "interaction_affordances": [
+        "搬物资",
+        "接活动",
+        "问证明",
+        "确认结算和责任"
+      ]
+    },
+    "wanfeng": {
+      "display_name": "晚风",
+      "role": "线上关系现实化支线",
+      "personality": [
+        "安静",
+        "具体",
+        "有自己的现实压力",
+        "不是情绪工具"
+      ],
+      "arc": "从夜里的陪伴者，变成需要被认真放进现实时间里的关系。",
+      "interaction_affordances": [
+        "夜聊",
+        "见面",
+        "说明边界",
+        "最后长聊"
+      ]
+    },
+    "family": {
+      "display_name": "父母与家庭",
+      "role": "家庭现实支线",
+      "personality": [
+        "关心具体",
+        "表达笨拙",
+        "也有自己的压力"
+      ],
+      "arc": "从背景式担心，到和主角共同面对现实重量。",
+      "interaction_affordances": [
+        "饭桌说明",
+        "问父亲工作",
+        "陪母亲复查",
+        "终章春节坦白"
+      ]
+    },
+    "teacher_chen": {
+      "display_name": "陈老师",
+      "role": "班会与现实提醒",
+      "personality": [
+        "清楚",
+        "克制",
+        "不替学生解决问题"
+      ],
+      "arc": "用导论课、班会和毕业提醒把现实问题摆到桌面上。",
+      "interaction_affordances": [
+        "导论课提问",
+        "班会记录",
+        "毕业前确认材料"
+      ]
+    }
+  },
+  "state_schema": {
+    "relationships": {
+      "dorm_bond": 0,
+      "zhou_yu_temperature": 0,
+      "tang_xiao_trust": 0,
+      "lu_chen_trust": 0,
+      "shen_jiahe_trust": 0,
+      "xia_zhiwei_trust": 0,
+      "qin_yue_resource_link": 0,
+      "wanfeng_depth": 0,
+      "family_understanding": 0
+    },
+    "psychology": {
+      "self_planning": 0,
+      "boundary_awareness": 0,
+      "avoidance_count": 0,
+      "fatigue": 0,
+      "sleep_risk": 0,
+      "repair_ability": 0,
+      "ordinary_life_awareness": 0,
+      "resource_anxiety": 0,
+      "direction_fit": 0,
+      "cost_awareness": 0,
+      "regret_level": 0
+    },
+    "resources": {
+      "academic_material": 0,
+      "portfolio_material": 0,
+      "practice_record": 0,
+      "resume_evidence": 0,
+      "family_reality_clue": 0,
+      "dorm_memory": 0
+    },
+    "memory_pool": {
+      "military_phone_bag": false,
+      "military_performance_completed": false,
+      "host_recruitment_seed": false,
+      "class_meeting_seen": false,
+      "wanfeng_reality_window": false,
+      "graduation_activity_ready": false
+    },
+    "act6_projected_ending": {
+      "ending_family": null,
+      "graduation_destination": null,
+      "completion_quality": null,
+      "relationship_focus": null,
+      "allowed_finale_adjustments": []
+    }
+  },
+  "mechanics": [
+    {
+      "id": "relationship_temperature",
+      "purpose": "决定人物后续是否自然出现、提醒、修补或低温回应。",
+      "player_visible": "通过对话温度、是否主动发消息、是否一起吃饭体现。",
+      "mainline_safety": "不改变主线事件，只改变人物参与方式。"
+    },
+    {
+      "id": "psychological_undercurrent",
+      "purpose": "记录回避、疲劳、边界、普通生活意识等心理暗线。",
+      "player_visible": "通过睡眠、未读消息、是否问清、是否说明冲突体现。",
+      "mainline_safety": "不显示数值，不直接改变章节结构。"
+    },
+    {
+      "id": "side_hook_eligibility",
+      "purpose": "只有玩家见过或接触过的人物才进入支线 hook。",
+      "player_visible": "玩家只看见自己经历过的人和事。",
+      "mainline_safety": "避免未触发人物在晚风长聊、第六幕、终章乱入。"
+    },
+    {
+      "id": "delayed_echo",
+      "purpose": "每个关键选择追加几周后、暑期后或冬天前的后果。",
+      "player_visible": "用短过场写选择如何慢慢显形。",
+      "mainline_safety": "回响只改变状态和文案温度，不改变锁定事件。"
+    },
+    {
+      "id": "resource_reward",
+      "purpose": "奖励以资料、素材、记录、联系人、简历证据呈现。",
+      "player_visible": "写成留下来的文件、照片、记录或一句可复用的话。",
+      "mainline_safety": "不提供爽文化跳跃成功。"
+    },
+    {
+      "id": "fatigue_boundary_pressure",
+      "purpose": "防止玩家所有支线全答应也总是最优。",
+      "player_visible": "表现为睡眠不足、消息回不完、错过饭局、任务挤压。",
+      "mainline_safety": "只影响关系、资源质量和低完成风险。"
+    },
+    {
+      "id": "scene_movement_lock",
+      "purpose": "确保事件发生在合理场景和动线里。",
+      "player_visible": "场景转场自然，不跳出武生院沉浸版空间。",
+      "mainline_safety": "所有 hook 必须绑定合法 location。"
+    }
+  ],
+  "acts": {
+    "act1": {
+      "title": "到校那一天",
+      "mainline_purpose": "让大学从抽象词变成入校、报到、宿舍、食堂和父母离开的具体动作。",
+      "locked_nodes": [
+        "ACT1_01 武生院站到主入口",
+        "ACT1_02 图书馆西门报到",
+        "ACT1_04 第一次走进宿舍",
+        "ACT1_07 父母离开校园",
+        "ACT1_08 第一晚宿舍灯光"
+      ],
+      "side_hooks": [
+        {
+          "id": "arrival_photo_hook",
+          "location": "武生院站 / 学校主入口",
+          "eligible_if": "玩家拍入口照片或给宿舍群发到校消息",
+          "interaction": "晚风或宿舍群在第一晚引用这张照片。",
+          "effects": {
+            "campus_identity_strength": 1,
+            "dorm_memory": 1
+          }
+        },
+        {
+          "id": "dorm_boundary_seed",
+          "location": "中南公寓",
+          "eligible_if": "玩家提议公共区域边界",
+          "interaction": "唐骁支持，周屿开玩笑，陆沉轻声同意。",
+          "effects": {
+            "boundary_awareness": 2,
+            "dorm_bond": 1
+          }
+        }
+      ],
+      "delayed_echo": "第二幕手机袋和第三幕小组分工中，玩家会更容易看见说清楚的价值。"
+    },
+    "act2": {
+      "title": "军训不是热血爽点",
+      "mainline_purpose": "在集体秩序、身体边界和小责任里校准宿舍关系。",
+      "locked_nodes": [
+        "2-01 图书馆仓库领取军训服",
+        "2-04 军训手机袋事件",
+        "2-10 健源体育场彩排",
+        "2-11 军训汇演",
+        "2-12 军训结束夜"
+      ],
+      "side_hooks": [
+        {
+          "id": "phone_bag_responsibility",
+          "location": "晨光体育场物资区",
+          "eligible_if": "到达 2-04",
+          "interaction": "玩家可核对手机袋、递胶带、搬水或恢复体力。",
+          "effects": {
+            "military_phone_bag": true,
+            "boundary_awareness": 1,
+            "practice_record": 1
+          },
+          "choices": [
+            {
+              "text": "帮忙按寝室核对手机袋",
+              "effects": {
+                "boundary_awareness": 2,
+                "tang_xiao_trust": 1,
+                "memory_pool.military_phone_bag": true
+              }
+            },
+            {
+              "text": "跟秦越去物资区搬水",
+              "effects": {
+                "qin_yue_resource_link": 1,
+                "fatigue": 1,
+                "practice_record": 1
+              }
+            },
+            {
+              "text": "给陆沉递胶带",
+              "effects": {
+                "lu_chen_trust": 2,
+                "dorm_bond": 1
+              }
+            },
+            {
+              "text": "先到树荫下恢复",
+              "effects": {
+                "fatigue": -1,
+                "ordinary_life_awareness": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "performance_completion",
+          "location": "健源体育场",
+          "eligible_if": "到达 2-11",
+          "interaction": "玩家选择关注队列、周屿、陆沉或家里消息。",
+          "effects": {
+            "memory_pool.military_performance_completed": true,
+            "dorm_memory": 1
+          }
+        }
+      ],
+      "delayed_echo": "第三幕招新时，玩家会把军训里的手机袋、物资、队列经验迁移到社团小责任里。"
+    },
+    "act3": {
+      "title": "热闹开始分流",
+      "mainline_purpose": "通过早八、导论课、小组作业、招新和迎新晚会，把支线人物推到可互动位置。",
+      "locked_nodes": [
+        "3-03 晨光大道开始热闹",
+        "3-06 晨光大道招新第一轮",
+        "3-08 先答应两个方向试试",
+        "3-16 迎新晚会前",
+        "3-17 九龙壁舞台后台这一晚",
+        "3-21 第一学年收尾"
+      ],
+      "side_hooks": [
+        {
+          "id": "host_recruitment_arc",
+          "location": "九龙壁舞台",
+          "eligible_if": "玩家陪周屿看舞台或帮他展示表达",
+          "interaction": "周屿从玩笑、展示、串场词，慢慢走向主持招新。",
+          "effects": {
+            "zhou_yu_temperature": 2,
+            "resume_evidence": 1,
+            "memory_pool.host_recruitment_seed": true
+          }
+        },
+        {
+          "id": "academic_material_arc",
+          "location": "阳光书屋",
+          "eligible_if": "玩家接触沈嘉禾或资料整理",
+          "interaction": "沈嘉禾提供资料框架，但不会替玩家完成。",
+          "effects": {
+            "shen_jiahe_trust": 2,
+            "academic_material": 2,
+            "direction_fit": 1
+          }
+        },
+        {
+          "id": "media_portfolio_arc",
+          "location": "明德楼三楼 / 晨光大道",
+          "eligible_if": "玩家接触夏知微或拍摄记录",
+          "interaction": "夏知微让玩家看见记录和作品的区别。",
+          "effects": {
+            "xia_zhiwei_trust": 2,
+            "portfolio_material": 2,
+            "ordinary_life_awareness": 1
+          }
+        },
+        {
+          "id": "resource_boundary_arc",
+          "location": "活动摊位 / 明德楼一楼",
+          "eligible_if": "玩家跟秦越接活动或看资源",
+          "interaction": "秦越带来机会，同时提醒资源会绑定责任。",
+          "effects": {
+            "qin_yue_resource_link": 2,
+            "resource_anxiety": 1,
+            "cost_awareness": 1
+          }
+        }
+      ],
+      "delayed_echo": "第四幕暑假安排会根据玩家留下的方向，显示资料、拍摄、光谷、晚风、家庭或普通休息的不同压力。"
+    },
+    "act4": {
+      "title": "暑假不是暂停键",
+      "mainline_purpose": "把第一学年留下的人和事换到暑假场景里继续推进，并在大二开学班会回收。",
+      "locked_nodes": [
+        "4-01 暑假前一天宿舍开始空",
+        "4-03 暑假安排同时砸来",
+        "4-A 家庭饭桌与父亲阳台电话",
+        "4-C 光谷活动执行",
+        "4-F 暑假过载",
+        "4-18 大二开学前夜",
+        "ACT4_19_CLASS_MEETING 班会"
+      ],
+      "side_hooks": [
+        {
+          "id": "class_meeting_reentry",
+          "location": "教学楼教室",
+          "eligible_if": "大二返校",
+          "interaction": "陈老师把暑期材料、招新二轮、课程方向和学业提醒摆到桌面上。",
+          "effects": {
+            "memory_pool.class_meeting_seen": true,
+            "self_planning": 1,
+            "resume_evidence": 1
+          },
+          "choices": [
+            {
+              "text": "认真记下暑期材料截止",
+              "effects": {
+                "self_planning": 2,
+                "avoidance_count": -1
+              }
+            },
+            {
+              "text": "问唐骁哪些记录能放进简历",
+              "effects": {
+                "tang_xiao_trust": 1,
+                "resume_evidence": 2
+              }
+            },
+            {
+              "text": "注意陆沉看勤工通知",
+              "effects": {
+                "lu_chen_trust": 1,
+                "family_reality_clue": 1
+              }
+            },
+            {
+              "text": "课后问沈嘉禾资料怎么整理",
+              "effects": {
+                "shen_jiahe_trust": 1,
+                "academic_material": 1
+              }
+            }
+          ]
+        },
+        {
+          "id": "summer_overload_sorting",
+          "location": "家中房间 / 中南公寓",
+          "eligible_if": "玩家暑假答应多个方向",
+          "interaction": "玩家必须排序，而不是所有事情都硬撑。",
+          "effects": {
+            "fatigue": -1,
+            "boundary_awareness": 2,
+            "cost_awareness": 1
+          }
+        }
+      ],
+      "delayed_echo": "第五幕晚风线和第六幕入口会读取暑假是否说清边界、是否整理材料、是否持续回避。"
+    },
+    "act5": {
+      "title": "晚风不只是夜里的出口",
+      "mainline_purpose": "让线上关系进入现实时间、作息、边界和关系定义。",
+      "locked_nodes": [
+        "5C06 要不要把见面提上日程",
+        "5C11 现实任务被错过",
+        "5C16 她需要你，但你也快被拖住",
+        "5C18 期末前最后一次长聊",
+        "5C19 结果回响",
+        "5C20 关系不是救赎，是要承担的现实"
+      ],
+      "side_hooks": [
+        {
+          "id": "wanfeng_reality_boundary",
+          "location": "晨光湖 / 中南公寓 / 武生院站",
+          "eligible_if": "进入 5C06",
+          "interaction": "玩家决定如何把见面、现实安排和边界说清。",
+          "effects": {
+            "memory_pool.wanfeng_reality_window": true,
+            "wanfeng_depth": 1
+          }
+        },
+        {
+          "id": "conditional_memory_pool_5c18",
+          "location": "晨光湖 / 校园夜路",
+          "eligible_if": "进入 5C18",
+          "interaction": "只调用玩家实际经历过的人物与事件。",
+          "memory_candidates": [
+            "military_phone_bag",
+            "host_recruitment_seed",
+            "class_meeting_seen",
+            "shen_jiahe_trust",
+            "xia_zhiwei_trust",
+            "lu_chen_trust",
+            "family_understanding"
+          ],
+          "effects": {
+            "repair_ability": 1,
+            "ordinary_life_awareness": 1
+          }
+        }
+      ],
+      "delayed_echo": "第六幕会根据边界和作息状态决定晚风是现实支持、压力牵扯还是低温遗憾。"
+    },
+    "act6": {
+      "title": "最后一个长坡",
+      "mainline_purpose": "在大三下春季到大四上冬季之间形成准结局，终章只做内部微调。",
+      "time_phases": [
+        "第五幕后寒假 / 春节",
+        "大三下春季返校",
+        "大三下春末 / 暑期前",
+        "暑期后 / 大四上秋季",
+        "大四上冬季 / 寒假前"
+      ],
+      "locked_nodes": [
+        "ACT6_PRE 寒假以后",
+        "6R-1 毕业去向推进包",
+        "6R-2 普通稳定成长包",
+        "6R-3 普通不稳修补包",
+        "A-J 准结局判定"
+      ],
+      "side_hooks": [
+        {
+          "id": "act6_relationship_anchor",
+          "location": "中南公寓 / 北园 / 阳光书屋 / 家中电话",
+          "eligible_if": "对应人物关系温度大于 0",
+          "interaction": "周屿、唐骁、陆沉、沈嘉禾、夏知微、晚风或父母作为关系锚点提醒玩家。",
+          "effects": {
+            "relationship_anchor": 1,
+            "repair_ability": 1
+          }
+        },
+        {
+          "id": "act6_delayed_echo_required",
+          "location": "所有 K 节点",
+          "eligible_if": "所有关键选择",
+          "interaction": "每个选择必须写出几周后、暑期后或冬季前的后果。",
+          "effects": {
+            "regret_level": "conditional",
+            "direction_fit": "conditional",
+            "low_completion_risk": "conditional"
+          }
+        }
+      ],
+      "delayed_echo": "终章只能读取 act6_projected_ending 和软变量，不能重开一年跨度的大分支。"
+    }
+  },
+  "finale_bridge": {
+    "principle": "第六幕决定主角走到哪里；终章决定主角以什么状态抵达那里。",
+    "soft_variables": [
+      "家庭理解",
+      "朋友关系温度",
+      "关键人物修复",
+      "遗憾表达",
+      "毕业仪式参与",
+      "现实面对程度",
+      "心态稳定"
+    ],
+    "graduation_activity_nodes": [
+      {
+        "id": "FIN_GRAD_01_DEFENSE_EVE",
+        "title": "答辩前一天",
+        "effect": "确认材料，也确认谁还愿意提醒你。"
+      },
+      {
+        "id": "FIN_GRAD_02_PHOTO",
+        "title": "毕业照当天",
+        "effect": "用人物站位、是否合照、是否低温回应呈现关系温度。"
+      },
+      {
+        "id": "FIN_GRAD_03_BEIYUAN_LAST_MEAL",
+        "title": "北园最后一顿饭",
+        "effect": "宿舍四人是否到齐取决于前置温度，不强行团圆。"
+      },
+      {
+        "id": "FIN_GRAD_04_DORM_PACKING",
+        "title": "中南公寓收拾宿舍",
+        "effect": "回收军训帽、节目单、资料文件夹、夜聊耳机等记忆物。"
+      },
+      {
+        "id": "FIN_GRAD_05_STATION_LEAVE",
+        "title": "武生院站离校",
+        "effect": "根据软变量改变离校镜头风味，不改变准结局大类。"
+      }
+    ],
+    "cannot_change": [
+      "projected_ending.ending_family",
+      "projected_ending.graduation_destination"
+    ]
+  },
+  "validation_targets": {
+    "required_locked_events": [
+      "军训手机袋事件",
+      "军训汇演",
+      "班会",
+      "主持招新",
+      "毕业活动"
+    ],
+    "required_core_characters": [
+      "周屿",
+      "林亦舟",
+      "唐骁",
+      "陆沉"
+    ],
+    "required_side_characters": [
+      "沈嘉禾",
+      "夏知微",
+      "秦越",
+      "晚风",
+      "父母",
+      "陈老师"
+    ],
+    "required_mechanics": [
+      "relationship_temperature",
+      "psychological_undercurrent",
+      "side_hook_eligibility",
+      "delayed_echo",
+      "resource_reward",
+      "fatigue_boundary_pressure",
+      "scene_movement_lock"
+    ]
+  }
+}

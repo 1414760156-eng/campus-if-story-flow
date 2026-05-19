@@ -1,0 +1,230 @@
+# 武生院沉浸版｜序幕与第一幕 Codex 接入指引（回改版）
+
+## 1. 接入目标
+
+序幕与第一幕负责完成三件事：
+
+1. 建立玩家从“收到录取通知书”到“真正住进武生院”的进入感。
+2. 提前埋下家庭、宿舍、室友、晚风、军训、社团招新的轻量入口。
+3. 为第二幕军训和第三幕社团分流提供稳定状态字段。
+
+玩家可见文本禁止出现“主线 / 副线 / 权重 / flag / 触发 / Codex / route”等开发层语言。
+
+---
+
+## 2. 开篇图片节点
+
+```js
+const openingAssets = [
+  {
+    id: "OPEN_00",
+    type: "opening_total_image",
+    asset: "OPEN_00_TOTAL_武生院四年入口总图.png",
+    display: "full_screen_image",
+    next: "PRO_00"
+  },
+  {
+    id: "PRO_00",
+    type: "chapter_image",
+    asset: "PRO_00_CHAPTER_序幕章节图.png",
+    display: "chapter_card",
+    next: "PRO_01"
+  },
+  {
+    id: "ACT1_00",
+    type: "chapter_image",
+    asset: "ACT1_00_CHAPTER_第一幕章节图.png",
+    display: "chapter_card",
+    next: "ACT1_01"
+  }
+]
+```
+
+建议流程：
+
+`OPEN_00 → PRO_00 → PRO_01 → PRO_02 → PRO_03 → PRO_04 → ACT1_00 → ACT1_01 ... ACT1_09 → ACT2`
+
+---
+
+## 3. 状态字段建议
+
+```js
+const initialState = {
+  act0_complete: false,
+  act1_complete: false,
+  family_awareness: 0,
+  family_warmth: 0,
+  self_planning: 0,
+  dorm_bond: 0,
+  zhou_yu_bond: 0,
+  tang_xiao_trust: 0,
+  lu_chen_trust: 0,
+  campus_identity_strength: 0,
+  wanfeng_line: 0,
+  night_dependency: 0,
+  act2_seed: {
+    knows_library_west_gate: false,
+    knows_military_uniform_at_library_warehouse: false,
+    dorm_boundary_seed: false,
+    first_night_wanfeng_contact: false,
+    family_departure_seen: false
+  }
+}
+```
+
+---
+
+## 4. 节点与选择效果
+
+### PRO_01 录取通知书到家的那天
+
+| 选择 | 效果 |
+|---|---|
+| A 拍照发给家里人和朋友 | family_warmth +1；campus_identity_strength +1 |
+| B 查学校位置和路线 | self_planning +2；knows_route_to_campus = true |
+| C 加入新生群 | dorm_bond +1；new_student_group_seen = true |
+| D 安静一会儿 | self_reflection +2；transition_anxiety_seen = true |
+
+### PRO_02 饭桌上的大学想象
+
+| 选择 | 效果 |
+|---|---|
+| A 认真听完 | family_warmth +2；self_planning +1 |
+| B 说自己能处理 | independence_claim +1；family_tension +1 |
+| C 问父亲工作 | family_awareness +2；father_job_pressure_seed = true |
+| D 岔开话题 | family_awareness +0；avoid_heavy_family_topic = true |
+
+### PRO_03 新生群和未来室友
+
+| 选择 | 效果 |
+|---|---|
+| A 自我介绍 | dorm_bond +1 |
+| B 先观察 | social_observation +1 |
+| C 约报到碰头 | dorm_bond +2 |
+| D 发地图确认流程 | self_planning +1；knows_library_west_gate = true |
+
+### PRO_04 出发前夜
+
+| 选择 | 效果 |
+|---|---|
+| A 按清单收拾 | self_planning +2 |
+| B 刷攻略到紧张 | transition_anxiety +2 |
+| C 宿舍群聊到很晚 | dorm_bond +1；night_dependency +1 |
+| D 坐在行李箱旁发呆 | self_reflection +2 |
+
+### ACT1_01 武生院站到主入口
+
+| 选择 | 效果 |
+|---|---|
+| A 拍入口照片 | campus_identity_strength +1；shared_arrival_photo = true |
+| B 看地图确认路线 | self_planning +1；knows_library_west_gate = true |
+| C 接过重包 | family_warmth +1；responsibility_seed = true |
+| D 跟人流往里走 | campus_overwhelm +1 |
+
+### ACT1_02 图书馆西门报到
+
+| 选择 | 效果 |
+|---|---|
+| A 核对材料 | self_planning +2 |
+| B 问宿舍和军训服 | knows_military_uniform_at_library_warehouse = true |
+| C 找室友 | dorm_bond +1 |
+| D 让父母等，自己排队 | independence_claim +1；family_warmth +1 |
+
+### ACT1_03 学院报到确认
+
+| 选择 | 效果 |
+|---|---|
+| A 听说明 | self_planning +1 |
+| B 问漏项 | self_planning +2 |
+| C 给家里发消息 | family_warmth +1 |
+| D 信息发宿舍群 | dorm_bond +1；tang_xiao_trust +1 |
+
+### ACT1_04 初进宿舍
+
+| 选择 | 效果 |
+|---|---|
+| A 正式打招呼 | dorm_bond +1 |
+| B 接周屿玩笑 | zhou_yu_bond +2 |
+| C 问唐骁整理建议 | tang_xiao_trust +2 |
+| D 注意陆沉东西少 | lu_chen_trust +1 |
+
+### ACT1_05 宿舍整理和边界
+
+| 选择 | 效果 |
+|---|---|
+| A 先整理自己 | self_planning +1 |
+| B 一起扫地倒垃圾 | dorm_bond +2 |
+| C 说公共区域规则 | boundary_awareness +2；dorm_boundary_seed = true |
+| D 先观察 | social_observation +1；boundary_delay_seed = true |
+
+### ACT1_06 第一顿食堂饭
+
+| 选择 | 效果 |
+|---|---|
+| A 和父母吃 | family_warmth +2 |
+| B 和室友吃 | dorm_bond +2 |
+| C 打包回宿舍 | self_planning +1 |
+| D 观察校园日常 | campus_identity_strength +1 |
+
+### ACT1_07 父母离校
+
+| 选择 | 效果 |
+|---|---|
+| A 送到校门 | family_warmth +2；family_departure_seen = true |
+| B 让他们放心 | independence_claim +1；family_departure_seen = true |
+| C 发校园照片 | family_warmth +1；campus_identity_strength +1 |
+| D 安静看他们离开 | self_reflection +2；family_departure_seen = true |
+
+### ACT1_08 第一晚宿舍灯光
+
+| 选择 | 效果 |
+|---|---|
+| A 和室友聊 | dorm_bond +2；zhou_yu_bond +1 |
+| B 整理明天事项 | self_planning +2；tang_xiao_trust +1 |
+| C 和晚风短聊 | wanfeng_line +2；first_night_wanfeng_contact = true |
+| D 早点睡 | self_recovery +1；transition_ready = true |
+
+---
+
+## 5. 进入第二幕条件
+
+第一幕结束后进入第二幕：军训服发放与军训开始。
+
+第二幕可读取：
+
+```js
+const act2Input = {
+  dorm_bond,
+  zhou_yu_bond,
+  tang_xiao_trust,
+  lu_chen_trust,
+  self_planning,
+  boundary_awareness,
+  family_departure_seen,
+  first_night_wanfeng_contact,
+  knows_military_uniform_at_library_warehouse
+}
+```
+
+重点承接：
+
+- 军训服统一到图书馆仓库领取。
+- 日常军训地点优先晨光体育场。
+- 军训汇演地点为健源体育场。
+- 宿舍关系不突然熟透，只从第一晚和宿舍整理自然推进。
+
+---
+
+## 6. 去剧透与过滤规则
+
+序幕与第一幕不显示后续人物命运，不提示后续分支。
+
+正确写法：
+
+> “这些名字正在从屏幕里走出来。”
+
+错误写法：
+
+> “如果你后面走陆沉线……”
+
+前端只展示当前节点文本。所有状态只在内部记录，不进入玩家文案。

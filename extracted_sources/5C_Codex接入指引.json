@@ -1,0 +1,587 @@
+{
+  "path": "C:\\Users\\qingguang\\Downloads\\新建文件夹 (3)\\5C_Codex接入指引.docx",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "5C_晚风现实化关系线｜Codex接入指引 v1"
+    },
+    {
+      "type": "paragraph",
+      "text": "第五幕分线开发文件 · 内部使用"
+    },
+    {
+      "type": "paragraph",
+      "text": "一、接入定位"
+    },
+    {
+      "type": "paragraph",
+      "text": "本文件用于 Codex 接入 5C 晚风现实化关系线。它包含节点 ID、状态字段、选项更新、条件化记忆池和跨线调用禁令。"
+    },
+    {
+      "type": "paragraph",
+      "text": "二、核心状态字段"
+    },
+    {
+      "type": "paragraph",
+      "text": "{"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"wanfeng\": {"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"active\": false,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"depth\": 0,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"key_person\": \"晚风\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"key_locations\": ["
+    },
+    {
+      "type": "paragraph",
+      "text": "\"晨光湖\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"武生院站\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"校园夜路\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"问天湖\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"中南公寓\""
+    },
+    {
+      "type": "paragraph",
+      "text": "],"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"key_flags\": {"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"wanfeng_line_started\": false,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"realistic_time_conflict_faced\": false,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"expectation_spoken_clearly\": false,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"missed_meeting_repaired\": false,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"relationship_not_used_as_backup\": false,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"wanfeng_long_talk_completed\": false,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"wanfeng_boundary_respected\": false,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"wanfeng_high_completion_seed\": false"
+    },
+    {
+      "type": "paragraph",
+      "text": "}"
+    },
+    {
+      "type": "paragraph",
+      "text": "}"
+    },
+    {
+      "type": "paragraph",
+      "text": "}"
+    },
+    {
+      "type": "paragraph",
+      "text": "三、节点接入表"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          "node_id",
+          "title",
+          "type",
+          "location",
+          "main_asset建议"
+        ],
+        [
+          "5C01",
+          "夜里那个还在线的人",
+          "auto",
+          "中南公寓 / 手机语音",
+          "ACT5_C01_MAIN_夜里还在线.png"
+        ],
+        [
+          "5C02",
+          "宿舍重新热闹，夜晚重新变长",
+          "auto",
+          "中南公寓",
+          "ACT5_C02_MAIN_宿舍重新热闹_夜晚重新变长.png"
+        ],
+        [
+          "5C03",
+          "晚风问你大二想怎么过",
+          "auto",
+          "晨光湖 / 手机语音",
+          "ACT5_C03_MAIN_大二想怎么过.png"
+        ],
+        [
+          "5C04",
+          "第一次现实任务被夜聊挤压",
+          "auto",
+          "中南公寓",
+          "ACT5_C04_MAIN_夜聊挤压任务.png"
+        ],
+        [
+          "5C05",
+          "白天也有人在等你",
+          "auto",
+          "教学楼 / 中南公寓",
+          "ACT5_C05_MAIN_白天有人等你.png"
+        ],
+        [
+          "5C06",
+          "要不要把见面提上日程",
+          "choice",
+          "晨光湖 / 手机消息",
+          "ACT5_C06_MAIN_见面提上日程.png"
+        ],
+        [
+          "5C07",
+          "见面前，现实先挤进时间表",
+          "auto",
+          "中南公寓 / 校园夜路",
+          "ACT5_C07_MAIN_见面前_现实先挤进时间表.png"
+        ],
+        [
+          "5C08",
+          "第一次见面或第一次错过",
+          "auto",
+          "武生院站 / 校园附近商业街",
+          "ACT5_C08_MAIN_第一次见面或错过.png"
+        ],
+        [
+          "5C09",
+          "关系从头像变成现实",
+          "auto",
+          "校园夜路 / 手机语音",
+          "ACT5_C09_MAIN_头像变成现实.png"
+        ],
+        [
+          "5C10",
+          "期末前，作息开始失控",
+          "auto",
+          "中南公寓",
+          "ACT5_C10_MAIN_期末前_作息开始失控.png"
+        ],
+        [
+          "5C11",
+          "现实任务被错过",
+          "choice",
+          "中南公寓 / 教学楼",
+          "ACT5_C11_MAIN_现实任务被错过.png"
+        ],
+        [
+          "5C12",
+          "寒假的深夜固定局",
+          "auto",
+          "家中房间 / 手机语音",
+          "ACT5_C12_MAIN_寒假深夜固定局.png"
+        ],
+        [
+          "5C13",
+          "家里发现你总在夜里说话",
+          "auto",
+          "家中 / 手机语音",
+          "ACT5_C13_MAIN_家里发现夜聊.png"
+        ],
+        [
+          "5C14",
+          "晚风成为默认出口",
+          "auto",
+          "中南公寓 / 校园夜路",
+          "ACT5_C14_MAIN_默认出口.png"
+        ],
+        [
+          "5C15",
+          "晚风自己的现实压力浮出水面",
+          "auto",
+          "手机语音 / 晨光湖",
+          "ACT5_C15_MAIN_晚风现实压力.png"
+        ],
+        [
+          "5C16",
+          "她需要你，但你也快被拖住",
+          "choice",
+          "中南公寓 / 手机语音",
+          "ACT5_C16_MAIN_她需要你_但你也快被拖住.png"
+        ],
+        [
+          "5C17",
+          "你们开始互相影响状态",
+          "auto",
+          "中南公寓 / 教学楼",
+          "ACT5_C17_MAIN_互相开始互相影响状态.png"
+        ],
+        [
+          "5C18",
+          "期末前最后一次长聊",
+          "choice",
+          "晨光湖 / 校园夜路 / 武生院站附近",
+          "ACT5_C18_MAIN_最后一次长聊.png"
+        ],
+        [
+          "5C19",
+          "结果回响：她是出口，还是现实",
+          "choice",
+          "晨光湖 / 手机语音",
+          "ACT5_C19_MAIN_结果回响_她是出口_还是现实.png"
+        ],
+        [
+          "5C20",
+          "线末结尾：关系不是救赎，是要承担的现实",
+          "auto",
+          "晨光湖 / 武生院站 / 校园夜路",
+          "ACT5_C20_MAIN_线末结尾_关系不是救赎_是要承担的现实.png"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "四、关键选择状态更新"
+    },
+    {
+      "type": "paragraph",
+      "text": "5C06 选项"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          "choice_id",
+          "choice_text",
+          "state_updates / flags"
+        ],
+        [
+          "A",
+          "答应和晚风见面",
+          "wanfeng_depth +2; online_affection +3; relationship_pressure +1; flag: meet_open"
+        ],
+        [
+          "B",
+          "说想见，但这次周末不合适",
+          "wanfeng_trust +3; boundary_awareness +3; flag: healthy_affection"
+        ],
+        [
+          "C",
+          "回避见面话题",
+          "relation_uncertain +3; truth_gap +1; flag: suspended"
+        ],
+        [
+          "D",
+          "明确说线上更舒服",
+          "wanfeng_dependence -2; wanfeng_trust -1; flag: cooldown"
+        ],
+        [
+          "E",
+          "答应见面但隐瞒现实安排",
+          "online_affection +4; school_responsibility -2; honesty_risk +2; flag: hidden_meeting"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "5C11 选项"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          "choice_id",
+          "choice_text",
+          "state_updates / flags"
+        ],
+        [
+          "A",
+          "立刻向现实中的人道歉并补救",
+          "repair_ability +3; boundary_awareness +2; school_responsibility +2; flag: repair_first"
+        ],
+        [
+          "B",
+          "先和晚风解释，现实消息晚点再回",
+          "wanfeng_dependence +3; school_responsibility -3; relationship_distance +1; flag: reality_delayed"
+        ],
+        [
+          "C",
+          "和晚风说清以后不能总聊太晚",
+          "wanfeng_trust +3; boundary_awareness +4; sleep_risk -2; flag: mature_boundary"
+        ],
+        [
+          "D",
+          "因压力太大，对晚风发脾气",
+          "wanfeng_trust -3; relationship_pressure +3; low_completion_points +1; flag: blamed_wanfeng"
+        ],
+        [
+          "E",
+          "关掉手机，逃避所有人",
+          "avoidance_count +3; low_completion_points +3; pure_slack_risk +1; flag: full_escape"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "5C16 选项"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          "choice_id",
+          "choice_text",
+          "state_updates / flags"
+        ],
+        [
+          "A",
+          "陪她聊，但提前约定时间",
+          "wanfeng_trust +4; boundary_awareness +4; self_care +1; flag: mature_mutual_support"
+        ],
+        [
+          "B",
+          "彻夜陪她",
+          "wanfeng_dependence +4; sleep_risk +5; school_responsibility -2; flag: emotional_drag"
+        ],
+        [
+          "C",
+          "劝她找现实中的朋友或老师",
+          "boundary_awareness +5; relationship_pressure +1; flag: support_network_suggestion"
+        ],
+        [
+          "D",
+          "因自己也累，敷衍她",
+          "wanfeng_trust -3; relationship_distance +2; flag: disappointed"
+        ],
+        [
+          "E",
+          "把自己的压力也倒给她",
+          "emotional_boundary -3; stress +3; flag: double_consumption"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "5C18 选项"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          "choice_id",
+          "choice_text",
+          "state_updates / flags"
+        ],
+        [
+          "A",
+          "真实讲述但不倾倒",
+          "wanfeng_depth +1; relationship_communication +4; emotional_boundary +3; flag: long_talk_completed"
+        ],
+        [
+          "B",
+          "问她这一年看见的你是什么样",
+          "wanfeng_depth +1; self_awareness +4; relationship_anchor_wanfeng +3; flag: seen_by_wanfeng"
+        ],
+        [
+          "C",
+          "只讲轻松的部分",
+          "truth_gap +1; emotional_avoidance +1; flag: light_talk_only"
+        ],
+        [
+          "D",
+          "把压力全倒给她",
+          "wanfeng_depth -1; relationship_pressure +3; emotional_boundary -2; low_completion_points +1; flag: overloaded_wanfeng"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "5C19 选项"
+    },
+    {
+      "type": "table",
+      "rows": [
+        [
+          "choice_id",
+          "choice_text",
+          "state_updates / flags"
+        ],
+        [
+          "A",
+          "承认她很重要，也说明现实边界",
+          "wanfeng_depth +2; boundary_awareness +3; flag: mature_relation_trial"
+        ],
+        [
+          "B",
+          "继续悬着，不给定义",
+          "relation_uncertain +4; wanfeng_trust -1; flag: relation_suspended"
+        ],
+        [
+          "C",
+          "退回朋友，但认真说清",
+          "wanfeng_dependence -4; repair_ability +2; sleep_risk -1; flag: friend_background"
+        ],
+        [
+          "D",
+          "逃避定义，让她继续等",
+          "wanfeng_trust -5; relationship_distance +4; low_completion_points +2; flag: break_or_repair"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "五、5C18 条件化记忆池"
+    },
+    {
+      "type": "paragraph",
+      "text": "显示规则：min_items = 1，max_items = 4；优先显示 depth 高、最近高影响、与晚风关系相关的事件；never_show_untriggered = true。"
+    },
+    {
+      "type": "paragraph",
+      "text": "{"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"ACT5_C18_memory_pool\": {"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"academic.depth >= 2\": \"你讲起阳光书屋那些反复核对的资料，讲起自己第一次发现，学习不是把答案背下来，而是知道该怎么判断一条信息能不能被相信。\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"media.depth >= 2\": \"你讲起明德楼里那些剪到很晚的素材，讲起镜头不是只负责好看，也会影响被拍到的人如何被别人看见。\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"tangxiao.depth >= 2\": \"你讲起唐骁那些看起来麻烦的记录，讲起有些边界如果一开始不说清楚，最后就会让人很难开口。\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"luchen.depth >= 2\": \"你讲起宿舍里有人总把很重的事说成算了，讲起你后来才知道，不追问和不关心不是一回事。\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"family.depth >= 2\": \"你讲起家里的电话，讲起父母说没事的时候，你终于开始听见那句话后面还有别的东西。\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"ordinary_zhouyu.depth >= 2\": \"你讲起周屿，讲起北园那顿饭、夜间球场和那些看起来很普通却把你从床上拉起来的日子。\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"fallback\": \"你讲起一些很普通的事：上课、吃饭、宿舍、小组作业，还有那些你差点躲过去、后来又慢慢捡回来的日子。\""
+    },
+    {
+      "type": "paragraph",
+      "text": "}"
+    },
+    {
+      "type": "paragraph",
+      "text": "}"
+    },
+    {
+      "type": "paragraph",
+      "text": "六、跨线调用禁令"
+    },
+    {
+      "type": "paragraph",
+      "text": "academic.depth < 2 时，不点名沈嘉禾，不出现阳光书屋资料核查作为玩家经历。"
+    },
+    {
+      "type": "paragraph",
+      "text": "media.depth < 2 时，不点名夏知微，不出现明德楼三楼素材复盘。"
+    },
+    {
+      "type": "paragraph",
+      "text": "tangxiao.depth < 2 时，不调用唐骁记录模板。"
+    },
+    {
+      "type": "paragraph",
+      "text": "luchen.depth < 2 时，不调用陆沉城市现实或结算。"
+    },
+    {
+      "type": "paragraph",
+      "text": "ordinary_zhouyu.depth < 2 时，不调用周屿深度拉回，但可作为普通室友轻量出现。"
+    },
+    {
+      "type": "paragraph",
+      "text": "家庭内容可出现，但成熟沟通需要 family.depth >= 3。"
+    },
+    {
+      "type": "paragraph",
+      "text": "七、结果输出建议"
+    },
+    {
+      "type": "paragraph",
+      "text": "{"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"act5_5c_result\": {"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"wanfeng_result_state\": \"mature_relation | suspended_relation | friend_background | emotional_drag | rift_or_repair\","
+    },
+    {
+      "type": "paragraph",
+      "text": "\"relationship_anchor_wanfeng\": 0,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"sleep_risk\": 0,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"emotional_boundary\": 0,"
+    },
+    {
+      "type": "paragraph",
+      "text": "\"act6_entry_hint\": \"根据状态进入第六幕关系回响或低温修复节点\""
+    },
+    {
+      "type": "paragraph",
+      "text": "}"
+    },
+    {
+      "type": "paragraph",
+      "text": "}"
+    }
+  ],
+  "text": "5C_晚风现实化关系线｜Codex接入指引 v1\n第五幕分线开发文件 · 内部使用\n一、接入定位\n本文件用于 Codex 接入 5C 晚风现实化关系线。它包含节点 ID、状态字段、选项更新、条件化记忆池和跨线调用禁令。\n二、核心状态字段\n{\n\"wanfeng\": {\n\"active\": false,\n\"depth\": 0,\n\"key_person\": \"晚风\",\n\"key_locations\": [\n\"晨光湖\",\n\"武生院站\",\n\"校园夜路\",\n\"问天湖\",\n\"中南公寓\"\n],\n\"key_flags\": {\n\"wanfeng_line_started\": false,\n\"realistic_time_conflict_faced\": false,\n\"expectation_spoken_clearly\": false,\n\"missed_meeting_repaired\": false,\n\"relationship_not_used_as_backup\": false,\n\"wanfeng_long_talk_completed\": false,\n\"wanfeng_boundary_respected\": false,\n\"wanfeng_high_completion_seed\": false\n}\n}\n}\n三、节点接入表\nnode_id | title | type | location | main_asset建议\n5C01 | 夜里那个还在线的人 | auto | 中南公寓 / 手机语音 | ACT5_C01_MAIN_夜里还在线.png\n5C02 | 宿舍重新热闹，夜晚重新变长 | auto | 中南公寓 | ACT5_C02_MAIN_宿舍重新热闹_夜晚重新变长.png\n5C03 | 晚风问你大二想怎么过 | auto | 晨光湖 / 手机语音 | ACT5_C03_MAIN_大二想怎么过.png\n5C04 | 第一次现实任务被夜聊挤压 | auto | 中南公寓 | ACT5_C04_MAIN_夜聊挤压任务.png\n5C05 | 白天也有人在等你 | auto | 教学楼 / 中南公寓 | ACT5_C05_MAIN_白天有人等你.png\n5C06 | 要不要把见面提上日程 | choice | 晨光湖 / 手机消息 | ACT5_C06_MAIN_见面提上日程.png\n5C07 | 见面前，现实先挤进时间表 | auto | 中南公寓 / 校园夜路 | ACT5_C07_MAIN_见面前_现实先挤进时间表.png\n5C08 | 第一次见面或第一次错过 | auto | 武生院站 / 校园附近商业街 | ACT5_C08_MAIN_第一次见面或错过.png\n5C09 | 关系从头像变成现实 | auto | 校园夜路 / 手机语音 | ACT5_C09_MAIN_头像变成现实.png\n5C10 | 期末前，作息开始失控 | auto | 中南公寓 | ACT5_C10_MAIN_期末前_作息开始失控.png\n5C11 | 现实任务被错过 | choice | 中南公寓 / 教学楼 | ACT5_C11_MAIN_现实任务被错过.png\n5C12 | 寒假的深夜固定局 | auto | 家中房间 / 手机语音 | ACT5_C12_MAIN_寒假深夜固定局.png\n5C13 | 家里发现你总在夜里说话 | auto | 家中 / 手机语音 | ACT5_C13_MAIN_家里发现夜聊.png\n5C14 | 晚风成为默认出口 | auto | 中南公寓 / 校园夜路 | ACT5_C14_MAIN_默认出口.png\n5C15 | 晚风自己的现实压力浮出水面 | auto | 手机语音 / 晨光湖 | ACT5_C15_MAIN_晚风现实压力.png\n5C16 | 她需要你，但你也快被拖住 | choice | 中南公寓 / 手机语音 | ACT5_C16_MAIN_她需要你_但你也快被拖住.png\n5C17 | 你们开始互相影响状态 | auto | 中南公寓 / 教学楼 | ACT5_C17_MAIN_互相开始互相影响状态.png\n5C18 | 期末前最后一次长聊 | choice | 晨光湖 / 校园夜路 / 武生院站附近 | ACT5_C18_MAIN_最后一次长聊.png\n5C19 | 结果回响：她是出口，还是现实 | choice | 晨光湖 / 手机语音 | ACT5_C19_MAIN_结果回响_她是出口_还是现实.png\n5C20 | 线末结尾：关系不是救赎，是要承担的现实 | auto | 晨光湖 / 武生院站 / 校园夜路 | ACT5_C20_MAIN_线末结尾_关系不是救赎_是要承担的现实.png\n四、关键选择状态更新\n5C06 选项\nchoice_id | choice_text | state_updates / flags\nA | 答应和晚风见面 | wanfeng_depth +2; online_affection +3; relationship_pressure +1; flag: meet_open\nB | 说想见，但这次周末不合适 | wanfeng_trust +3; boundary_awareness +3; flag: healthy_affection\nC | 回避见面话题 | relation_uncertain +3; truth_gap +1; flag: suspended\nD | 明确说线上更舒服 | wanfeng_dependence -2; wanfeng_trust -1; flag: cooldown\nE | 答应见面但隐瞒现实安排 | online_affection +4; school_responsibility -2; honesty_risk +2; flag: hidden_meeting\n5C11 选项\nchoice_id | choice_text | state_updates / flags\nA | 立刻向现实中的人道歉并补救 | repair_ability +3; boundary_awareness +2; school_responsibility +2; flag: repair_first\nB | 先和晚风解释，现实消息晚点再回 | wanfeng_dependence +3; school_responsibility -3; relationship_distance +1; flag: reality_delayed\nC | 和晚风说清以后不能总聊太晚 | wanfeng_trust +3; boundary_awareness +4; sleep_risk -2; flag: mature_boundary\nD | 因压力太大，对晚风发脾气 | wanfeng_trust -3; relationship_pressure +3; low_completion_points +1; flag: blamed_wanfeng\nE | 关掉手机，逃避所有人 | avoidance_count +3; low_completion_points +3; pure_slack_risk +1; flag: full_escape\n5C16 选项\nchoice_id | choice_text | state_updates / flags\nA | 陪她聊，但提前约定时间 | wanfeng_trust +4; boundary_awareness +4; self_care +1; flag: mature_mutual_support\nB | 彻夜陪她 | wanfeng_dependence +4; sleep_risk +5; school_responsibility -2; flag: emotional_drag\nC | 劝她找现实中的朋友或老师 | boundary_awareness +5; relationship_pressure +1; flag: support_network_suggestion\nD | 因自己也累，敷衍她 | wanfeng_trust -3; relationship_distance +2; flag: disappointed\nE | 把自己的压力也倒给她 | emotional_boundary -3; stress +3; flag: double_consumption\n5C18 选项\nchoice_id | choice_text | state_updates / flags\nA | 真实讲述但不倾倒 | wanfeng_depth +1; relationship_communication +4; emotional_boundary +3; flag: long_talk_completed\nB | 问她这一年看见的你是什么样 | wanfeng_depth +1; self_awareness +4; relationship_anchor_wanfeng +3; flag: seen_by_wanfeng\nC | 只讲轻松的部分 | truth_gap +1; emotional_avoidance +1; flag: light_talk_only\nD | 把压力全倒给她 | wanfeng_depth -1; relationship_pressure +3; emotional_boundary -2; low_completion_points +1; flag: overloaded_wanfeng\n5C19 选项\nchoice_id | choice_text | state_updates / flags\nA | 承认她很重要，也说明现实边界 | wanfeng_depth +2; boundary_awareness +3; flag: mature_relation_trial\nB | 继续悬着，不给定义 | relation_uncertain +4; wanfeng_trust -1; flag: relation_suspended\nC | 退回朋友，但认真说清 | wanfeng_dependence -4; repair_ability +2; sleep_risk -1; flag: friend_background\nD | 逃避定义，让她继续等 | wanfeng_trust -5; relationship_distance +4; low_completion_points +2; flag: break_or_repair\n五、5C18 条件化记忆池\n显示规则：min_items = 1，max_items = 4；优先显示 depth 高、最近高影响、与晚风关系相关的事件；never_show_untriggered = true。\n{\n\"ACT5_C18_memory_pool\": {\n\"academic.depth >= 2\": \"你讲起阳光书屋那些反复核对的资料，讲起自己第一次发现，学习不是把答案背下来，而是知道该怎么判断一条信息能不能被相信。\",\n\"media.depth >= 2\": \"你讲起明德楼里那些剪到很晚的素材，讲起镜头不是只负责好看，也会影响被拍到的人如何被别人看见。\",\n\"tangxiao.depth >= 2\": \"你讲起唐骁那些看起来麻烦的记录，讲起有些边界如果一开始不说清楚，最后就会让人很难开口。\",\n\"luchen.depth >= 2\": \"你讲起宿舍里有人总把很重的事说成算了，讲起你后来才知道，不追问和不关心不是一回事。\",\n\"family.depth >= 2\": \"你讲起家里的电话，讲起父母说没事的时候，你终于开始听见那句话后面还有别的东西。\",\n\"ordinary_zhouyu.depth >= 2\": \"你讲起周屿，讲起北园那顿饭、夜间球场和那些看起来很普通却把你从床上拉起来的日子。\",\n\"fallback\": \"你讲起一些很普通的事：上课、吃饭、宿舍、小组作业，还有那些你差点躲过去、后来又慢慢捡回来的日子。\"\n}\n}\n六、跨线调用禁令\nacademic.depth < 2 时，不点名沈嘉禾，不出现阳光书屋资料核查作为玩家经历。\nmedia.depth < 2 时，不点名夏知微，不出现明德楼三楼素材复盘。\ntangxiao.depth < 2 时，不调用唐骁记录模板。\nluchen.depth < 2 时，不调用陆沉城市现实或结算。\nordinary_zhouyu.depth < 2 时，不调用周屿深度拉回，但可作为普通室友轻量出现。\n家庭内容可出现，但成熟沟通需要 family.depth >= 3。\n七、结果输出建议\n{\n\"act5_5c_result\": {\n\"wanfeng_result_state\": \"mature_relation | suspended_relation | friend_background | emotional_drag | rift_or_repair\",\n\"relationship_anchor_wanfeng\": 0,\n\"sleep_risk\": 0,\n\"emotional_boundary\": 0,\n\"act6_entry_hint\": \"根据状态进入第六幕关系回响或低温修复节点\"\n}\n}"
+}
