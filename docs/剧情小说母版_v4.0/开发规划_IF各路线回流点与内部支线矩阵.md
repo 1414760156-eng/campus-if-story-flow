@@ -1,0 +1,259 @@
+# IF 各路线回流点与内部支线矩阵
+
+## 用途
+
+本文用于补齐 IF 命运分歧开发中的“内回流点”。它不是新增支线外传，也不是给每条路线重写一套平行世界，而是定义：玩家进入某条 IF 路线后，哪些短支路可以绕出去玩一段，再回到当前路线主事件，并只改变林亦舟的关系温度、心理状态、资源消耗和后续文本回声。
+
+核心原则：**内回流点优先由母版事件池开发**。无论玩家走哪条线，周屿、唐骁、陆沉、晚风、夏知微、沈嘉禾、秦越、许棠等人的人生主线都不因为林亦舟的选择而重写。他们仍按母版里的生活半径继续上课、活动、项目、兼职、亲密关系、毕业流程。玩家改变的是林亦舟有没有在场、从哪个角度进入、和谁多说两句、错过谁、被谁误读，以及毕业时他和这些人的关系温度。
+
+## 关键纠偏
+
+### 1. 回流点不是新宇宙
+
+回流点只允许改变：
+
+- 林亦舟当前路线中的变量：`dorm_trust`、`dorm_warmth`、`avoidance`、`time_debt`、`money_pressure`、`public_boundary`、`activity_link`、`project_stability`、`work_shift`、`romance_focus`、`old_debt`、`missed_chance`、`5x_regret` 等。
+- 林亦舟与某人的关系温度：更近、更尴尬、更误读、更沉默、更体面、更疏远。
+- 后续文本回声：下一次同桌、同群、同场景、同流程时，语气、称呼、等待时间、是否主动提醒发生变化。
+- 资源状态：时间迟到、钱花掉、精力下降、错过饭局、材料延期、公开边界变紧。
+
+回流点不能改变：
+
+- 主线锁点是否发生。
+- 其他角色的母版人生方向。
+- 当前 IF 路线锁定结果。
+- 5X 唯一硬外流规则。
+- 第六卷关系定形和第七卷毕业收束的基本存在。
+
+### 2. 其它人的剧情从母版走
+
+内部支路里可以出现其他路线的人，但他们不是“被玩家拉来改命”。例如：
+
+- 走 `R5-TANG` 时遇到周屿彩排，周屿仍是母版里的活动圈周屿；他只是在林亦舟视角里变成一次擦肩、一次玩笑、一次没说开的误读。
+- 走 `R4-WORK` 时遇到陆沉排班，陆沉仍按母版面对现实压力；林亦舟可以共鸣、借班、错过，不能把陆沉直接改成兼职线绑定对象。
+- 走 `R5-ROMANCE` 时晚风仍存在，她可以是朋友、网友、游戏搭子、低频回声或被错过的人；不能因为玩家选择沈嘉禾 / 夏知微就把晚风写成失败角色。
+- 走 `R5X-HARD` 时 4XX 仍会在学校流程里出现，但只能同场擦肩、短句回复、只读群消息，不能开放回原多线的关键选择。
+
+### 3. 一次回流必须有内容密度
+
+回流点不能是“出去一个选择就回来”。每个回流点至少包含：
+
+1. 一个现实触发：消息、排班、饭局、材料、照片、取件、迟到、签字、公开风险。
+2. 两到四个可玩拍点：玩家需要做出至少两次小选择，或经历选择后的即时反馈。
+3. 至少两种回流方式：主动回、被催回、迟到回、带着代价回、沉默回。
+4. 一个后续回声：在同一卷或下一卷再次出现。
+
+## 开发层级
+
+| 层级 | 名称 | 说明 | 产出 |
+|---|---|---|---|
+| L0 | 母版事件池 | 真实会发生的校园事件、生活碎片、人物半径 | `mother_event_id` |
+| L1 | 路线镜头 | 林亦舟在当前 IF 线里从哪个角度进入同一事件 | `route_lens` |
+| L2 | 内部回流点 | 临时绕出去玩的 2-4 拍支路 | `return_id` |
+| L3 | 微选择 | 只改变量、语气、关系温度，不改主线 | `choice_id` |
+| L4 | 回声 | 后续节点根据变量换文本或开启/关闭短选项 | `echo_hook` |
+
+## 回流类型
+
+| 类型 | 编码 | 用途 | 禁止事项 |
+|---|---|---|---|
+| 同质回流 | `same_route_return` | 围绕当前路线核心人物 / 场景加深关系或制造代价 | 不能跳到另一条 IF 线 |
+| 异质软照面 | `cross_echo_return` | 让其他路线人物按母版生活出现，提供视角差和误读 | 不能改写对方主线，不能变成新攻略入口 |
+| 生活碎片回流 | `life_texture_return` | 用食堂、商业街、快递站、宿管、校医院、体育馆、考试等补血肉 | 不能只写环境，必须带现实任务或关系后果 |
+| 消息回流 | `private_message_return` | 用微信、群聊、朋友圈、抖音、游戏语音制造公开 / 私密边界 | 不能只翻聊天记录，必须有回不回、删不删、发不发的后果 |
+| 5X 内循环 | `5x_isolated_return` | 5X 硬外流后只能在新圈内部回流，旧人只软擦肩 | 不能回原多线，不能开放旧线关键选择 |
+
+## 回流节点字段
+
+后续拆 JSON 或剧情页时，每个回流点建议包含：
+
+```json
+{
+  "return_id": "RET-R5-TANG-03",
+  "route_id": "R5-TANG",
+  "mother_event_id": "ME-C407-DEMO",
+  "anchor_event": "第五幕站队后项目演示压力",
+  "branch_type": "cross_echo_return",
+  "route_lens": "林亦舟站在唐骁的流程侧，看见周屿活动圈同场但不插手",
+  "entry_trigger": "唐骁发来 C407 演示清单，周屿同时在活动群@他借设备",
+  "location": "C407 / 明德楼融媒体门口 / 青枫居4XX",
+  "participants": ["林亦舟", "唐骁", "周屿", "沈嘉禾"],
+  "micro_conflict": "项目流程和活动人情同时挤压，林亦舟必须决定先回复哪边",
+  "play_beats": ["看到两条消息", "现场补一个材料", "被另一边误读", "回到当前路线主事件"],
+  "choices": ["先按流程补材料", "先回周屿一句", "让沈嘉禾转交", "全部静音到演示后"],
+  "variable_delta": ["project_stability +1", "zhou_trust -1 或 activity_link -1", "time_debt +1"],
+  "return_methods": ["演示开始被迫回 C407", "周屿只回一个表情后玩家主动回项目", "迟到回到4XX并触发短句群消息"],
+  "echo_hooks": ["第六卷最后一次演示", "第七卷毕业材料留存边界"],
+  "forbidden_effect": "不得让周屿线因此开启；周屿仍按母版活动圈推进"
+}
+```
+
+## 母版事件池
+
+| 母版事件 ID | 事件池 | 固定发生内容 | 可被路线改动的内容 |
+|---|---|---|---|
+| `ME-ACTIVITY-RECRUIT` | 主持招新 / 活动圈 | 周屿进入活动圈，秦越、许棠等活动人物出现 | 林亦舟帮不帮、公开不公开、是否被工具化 |
+| `ME-CLASS-MATERIAL` | 班会 / 材料 / 公开边界 | 班会和材料归档发生 | 林亦舟是否承担表格、是否授权照片、是否公开旧事 |
+| `ME-SUMMER-MONEY` | 暑假 / 生活费 / 家庭暗线 | 家庭生活费变化、留校压力出现 | 林亦舟是否打工、是否问家里、是否错过宿舍现场 |
+| `ME-EXPRESS-WORK` | 快递站 / 打印店 / 勤工 | 快递站、打印店、证明材料成为生活节点 | 林亦舟是否排班、换班、替人取件或错过饭局 |
+| `ME-4XX-GROUP` | 事项群变短 / 公共桌 | 4XX 从聊天群变成事项群，公共桌承担旧账 | 林亦舟站哪边、回不回、补不补、是否当面说 |
+| `ME-NOT-ENTER-DOOR` | 不进门 / 楼下 / 湖边 / 凌空栈道 | 第五幕冲突前后出现“不直接进门”的选择 | 林亦舟找谁说话、绕多远、带什么心态回来 |
+| `ME-STAND-BURST` | 第五幕站队爆发 | 宿舍关系进入强冲突 | 林亦舟站谁、怎么说、谁误读、谁退场 |
+| `ME-C407-DEMO` | C407 项目 / 演示 / 归档 | 项目演示、归档、分工必然推进 | 林亦舟更靠近流程、修补、亲密关系或打工哪边 |
+| `ME-WANFENG-CIRCLE` | 晚风生活圈 / 游戏 / 微信 / 朋友圈 | 晚风有程小满、闻峥、叶遥等生活圈 | 林亦舟靠近、停在朋友、错过或低频联系 |
+| `ME-SHEN-XIA` | 沈嘉禾 / 夏知微现实照面 | 沈嘉禾资料协作、夏知微影像视角存在 | 林亦舟选择协作、表达、授权、边界或错过 |
+| `ME-DAILY-CAMPUS` | 食堂 / 商业街 / 后街 / 体育 / 考试 | 食堂、东区商业街、后街、晨光体育馆、四六级、期末周等持续存在 | 林亦舟把时间花在哪、和谁吃饭、是否迟到 |
+| `ME-GRADUATION` | 毕业照 / 清寝 / 饭局 / 离校 | 毕业固定流程必然发生 | 林亦舟是否同框、是否到场、是否说开、是否淡化 |
+
+## 全局配额
+
+| 路线等级 | 适用路线 | 回流点下限 | 类型要求 |
+|---|---|---:|---|
+| S | `DEFAULT-4XX`、`R5X-HARD` | 8-10 个 | 至少 3 个同质回流、2 个异质软照面、2 个生活碎片、1 个消息回流 |
+| A | `R5-ROMANCE`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN` | 6-8 个 | 至少 2 个同质回流、2 个异质软照面、1 个生活碎片、1 个消息回流 |
+| B | `R3-PERFECT`、`R4-WORK`、`R5-LIEFLAT` | 4-6 个 | 至少 1 个同质回流、1 个异质软照面、1 个生活碎片、1 个消息回流 |
+
+每个回流点必须至少有两种回流方式。推荐组合：
+
+- 主动回：玩家主动回到当前路线主事件。
+- 被催回：群消息、排班、集合时间、材料截止把玩家拉回。
+- 迟到回：玩家带着时间 / 钱 / 关系代价回去。
+- 沉默回：玩家没有解决问题，只是回到主事件，后续误读增加。
+
+## 路线回流矩阵
+
+### DEFAULT-4XX：宿舍修补基准线
+
+定位：玩家仍把生活重心留在 4XX，内回流点主要让他在旧账之外短暂绕出去，看见别人的生活仍在继续，再带着新的心态回到公共桌。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-DEFAULT-01` 公共桌外卖 | `ME-4XX-GROUP`、`ME-DAILY-CAMPUS` | `same_route_return` | 4XX 群只剩“谁点饭”短句 | 选西区外卖 / 东区商业街 / 食堂二楼；决定要不要替缺席者点；有人回来发现口味被代替 | 主动回公共桌吃；外卖超时被迫下楼；缺一个人没点形成沉默回 | `dorm_warmth`、`old_debt`，下一次饭局是否主动问口味 |
+| `RET-DEFAULT-02` 楼下不进门 | `ME-NOT-ENTER-DOOR` | `same_route_return` | 林亦舟到青枫居门口但不想立刻进去 | 去楼下坐；碰到出来买夜宵的室友；只说生活小事或直接说刚才的冲突 | 和室友一起回；被宿管阿姨催夜归回；自己绕到湖边后迟到回 | `avoidance`、`dorm_trust`，同质回流不保证和解 |
+| `RET-DEFAULT-03` 凌空栈道软照面 | `ME-SHEN-XIA`、`ME-DAILY-CAMPUS` | `cross_echo_return` | 林亦舟不想回 4XX，沿凌空栈道走 | 遇夏知微拍夜景；聊近况 / 聊未来 / 不聊冲突；授权一张不露脸照片 | 被 4XX 群消息拉回；夏知微提醒他别把照片当证据；自己删草稿回 | `public_boundary`、`missed_chance`，夏知微仍按母版摄影线生活 |
+| `RET-DEFAULT-04` 快递站旧包裹 | `ME-EXPRESS-WORK` | `life_texture_return` | 宿舍公共物品缺一根数据线或旧包裹无人取 | 替谁取件；问不问本人；碰到陆沉排班或生活人物 | 拿回 4XX；取错件返工迟到；不取让包裹退回 | `proxy_risk`、`dorm_trust`，后续清寝旧物处理难度 |
+| `RET-DEFAULT-05` 事项群短句 | `ME-4XX-GROUP` | `private_message_return` | 群里出现“表格谁交”但无人闲聊 | 只回收到；多问一句；私聊某人；等别人先回 | 回公共桌核对；群里被唐骁贴截止时间拉回；周屿用表情结束话题 | `dorm_warmth`、`rule_pressure`，第六卷事项群语气变化 |
+| `RET-DEFAULT-06` 最后一顿饭预热 | `ME-GRADUATION`、`ME-DAILY-CAMPUS` | `life_texture_return` | 东北饺子馆 / 后街烧烤投票提前出现 | 选稳定正餐 / 热闹夜市 / 不替人填；问谁不能到场 | 投票截止回主线；有人迟到后临时改座；空位保留或取消 | `graduation_temperature`，第七卷饭局同桌温度 |
+| `RET-DEFAULT-07` 晨光体育馆短场 | `ME-DAILY-CAMPUS` | `life_texture_return` | 四人不再默认一起运动，但乐跑 / 羽毛球 / 健身房偶然撞见 | 约一局；只打招呼；借拍子；提不提旧事 | 场地到点回；有人受伤转校医院；活动群消息拉回 | `dorm_warmth`、`energy_low`，运动不再自动等于亲近 |
+| `RET-DEFAULT-08` 毕业照预览 | `ME-GRADUATION` | `private_message_return` | 预览缩略图里 4XX 同框但无人主动发 | 发群确认；只私存；问能不能公开；删掉预览 | 主题材料会拉回；许棠提醒授权；没人回复形成沉默回 | `public_boundary`、`graduation_temperature` |
+
+### R3-PERFECT：社团 / 完美线
+
+定位：玩家让林亦舟更早进入活动、材料和公开表达。回流点来自母版活动池，但只改变林亦舟被看见、被依赖、被工具化的程度。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-PERFECT-01` 招新借设备 | `ME-ACTIVITY-RECRUIT` | `same_route_return` | 秦越临时缺设备，周屿让林亦舟帮忙 | 去融媒体借；找许棠登记；回 4XX 拿转换头；不接这个锅 | 借到后回招新；登记手续超时；设备没借到但保住边界 | `activity_link`、`public_credit`、`time_debt` |
+| `RET-PERFECT-02` B204 材料空行 | `ME-CLASS-MATERIAL` | `same_route_return` | 班会材料缺一栏授权 | 填完整；留空；问本人；让老师决定 | 材料会开始被迫回；私聊确认后回；留空导致后续补交 | `public_boundary`、`self_control` |
+| `RET-PERFECT-03` 4XX 低温饭局 | `ME-4XX-GROUP` | `cross_echo_return` | 活动结束后 4XX 已吃过 | 去食堂二楼补饭；和唐骁短聊项目；给周屿带水但没坐下 | 第二场排练拉回；唐骁发项目表拉回；自己回寝发现灯已关 | `dorm_warmth -1`、`time_debt +1` |
+| `RET-PERFECT-04` 朋友圈公开边界 | `ME-WANFENG-CIRCLE`、`ME-ACTIVITY-RECRUIT` | `private_message_return` | 活动照要不要发朋友圈 | 发公开；仅分组；不发；先问被拍到的人 | 评论区拉回活动线；晚风只点一个赞；周屿玩笑被误读 | `public_boundary`、`activity_link` |
+| `RET-PERFECT-05` 商业街小舞台 | `ME-DAILY-CAMPUS` | `life_texture_return` | 东区商业街有学生表演，活动圈邀他控场 | 去控场；只围观；回 4XX；帮许棠拍一段素材 | 表演结束回主线；周屿被叫走后回；错过寝室消息迟到回 | 被工具化回声，`public_credit +1`、`dorm_visibility -1` |
+
+### R4-WORK：暑假 / 兼职线
+
+定位：玩家让林亦舟更早被钱、排班和家庭暗线切出宿舍现场。回流点来自同一批生活事件，区别是林亦舟带着工时和费用压力进入。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-WORK-01` 快递站换班 | `ME-EXPRESS-WORK` | `same_route_return` | 晚班和 4XX 饭局撞时间 | 换班；推掉饭局；让陆沉帮问；照常排班 | 下班后迟到回；饭局不留座；被站长临时加件 | `work_shift`、`dorm_absence` |
+| `RET-WORK-02` 打印店证明 | `ME-SUMMER-MONEY`、`ME-EXPRESS-WORK` | `same_route_return` | 勤工材料缺章 | 找打印店老板；回学院盖章；问母亲要不要补生活费 | 材料截止拉回；钱不够先欠；盖章失败转延迟 | `money_pressure`、`family_signal` |
+| `RET-WORK-03` 食堂省钱路线 | `ME-DAILY-CAMPUS` | `life_texture_return` | 饭卡余额低，室友约东区商业街 | 去食堂二楼；点西区外卖凑单；拒绝聚餐；AA 到最后一分 | 饭后回排班；聚餐取消座位；室友不再问第二次 | `money_pressure`、`dorm_warmth` |
+| `RET-WORK-04` 晚风语音错过 | `ME-WANFENG-CIRCLE` | `private_message_return` | 晚风游戏语音邀请和排班冲突 | 解释；不回；下班后补语音；只发一个表情 | 下班回主线；晚风说下次再说；消息变低频 | `missed_chance`、`time_debt`，晚风仍按母版生活圈推进 |
+| `RET-WORK-05` 校医院疲劳 | `ME-DAILY-CAMPUS` | `life_texture_return` | 排班后低烧或运动受伤 | 去校医院；硬撑上课；请人代签；给家里打电话 | 病历带回；迟到回 C407；宿管阿姨看夜归记录 | `energy_low`、`family_signal`、`work_shift` |
+
+### R5-ROMANCE：专注感情线
+
+定位：玩家不默认和晚风更进一步，而是把情绪和时间投向沈嘉禾或夏知微。回流点由母版亲密 / 影像 / 资料事件池提供，其他角色仍按原线生活。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-ROMANCE-01` 晚风停在门外 | `ME-WANFENG-CIRCLE` | `cross_echo_return` | 晚风发来游戏 / 语音 / 抖音状态 | 说清只做朋友；含糊拖延；不回；约改天 | 回沈嘉禾 / 夏知微主线；晚风低频；4XX 消息打断 | `romance_focus`、`missed_chance` |
+| `RET-ROMANCE-02` 沈嘉禾打印样张 | `ME-SHEN-XIA`、`ME-EXPRESS-WORK` | `same_route_return` | 沈嘉禾需要资料样张确认 | 一起去打印；只线上改；帮她排版；明确边界 | 打印店关门前回；项目消息催回；费用 AA 形成回声 | `public_boundary`、`money_pressure` |
+| `RET-ROMANCE-03` 夏知微照片授权 | `ME-SHEN-XIA` | `same_route_return` | 夏知微问能不能用一张背影 | 授权；只留私存；要求不露脸；拒绝 | 摄影社集合拉回；4XX 群消息拉回；照片没用但关系升温 | `public_boundary`、`romance_focus` |
+| `RET-ROMANCE-04` 礼物笨拙模仿 | `ME-DAILY-CAMPUS` | `life_texture_return` | 节日 / 生日 / 特殊日子临近 | 买实用礼物；买便宜但用心的；问朋友；放弃 | 钱不够回食堂；迟到回宿舍；礼物被误读成公开关系 | `gift_debt`、`money_pressure`、`dorm_absence` |
+| `RET-ROMANCE-05` 朋友圈发不发 | `ME-WANFENG-CIRCLE`、`ME-SHEN-XIA` | `private_message_return` | 合照 / 同行痕迹可被看见 | 发公开；只发不露脸；仅聊天置顶；删草稿 | 评论把玩家拉回现实；4XX 有人不问；候选对象提醒边界 | `public_boundary`、`dorm_visibility` |
+| `RET-ROMANCE-06` 凌空栈道散步 | `ME-NOT-ENTER-DOOR` | `same_route_return` | 宿舍冲突后选择不回 4XX | 聊刚发生的事；聊未来；只走一段；中途回寝 | 门禁时间拉回；候选对象先走；4XX 不再等 | `time_debt`、`old_debt`、`romance_focus` |
+
+### R5-ZHOU：周屿线
+
+定位：玩家靠近周屿，进入活动圈、面子、玩笑和公开热闹背后的不安。回流点让林亦舟既看见周屿，也付出站周屿的误读代价。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-ZHOU-01` 主持彩排缺人 | `ME-ACTIVITY-RECRUIT` | `same_route_return` | 周屿让林亦舟帮顶流程 | 上台串词；只做后台；找秦越；拒绝 | 彩排结束回 4XX；唐骁项目消息催回；周屿请夜宵拉回 | `zhou_trust`、`activity_link`、`time_debt` |
+| `RET-ZHOU-02` 玩笑过界 | `ME-STAND-BURST` | `same_route_return` | 周屿用玩笑压过尴尬 | 帮他圆；私下提醒；当场截住；沉默 | 玩笑冷场后回主线；周屿转移话题；唐骁误读玩家偏袒 | `public_smooth`、`tang_trust -1` |
+| `RET-ZHOU-03` 东区小舞台 | `ME-DAILY-CAMPUS` | `life_texture_return` | 东区商业街表演，周屿想去凑热闹 | 去看；帮拍；拉他回 4XX；让他自己去 | 表演结束回；饭点回；错过公共桌讨论 | `activity_link`、`dorm_absence` |
+| `RET-ZHOU-04` 秦越借人情 | `ME-ACTIVITY-RECRUIT` | `cross_echo_return` | 秦越找林亦舟补活动表 | 帮周屿还人情；只转给周屿；按流程拒绝 | 活动群拉回；周屿私聊感谢；唐骁觉得人情不清 | `money_boundary`、`rule_pressure` |
+| `RET-ZHOU-05` 请客式补偿 | `ME-DAILY-CAMPUS` | `life_texture_return` | 周屿想用一顿饭把尴尬盖过去 | 接受；AA；只喝饮料；把话说开一点 | 饭后回；有人迟到；旧账仍留到第六卷 | `zhou_trust`、`old_debt` |
+| `RET-ZHOU-06` 毕业活动留名 | `ME-GRADUATION`、`ME-ACTIVITY-RECRUIT` | `private_message_return` | 毕业活动志愿名单里周屿默认把林亦舟写进协助栏 | 默认接受；要求删名；改成临时协助；私下问周屿为什么 | 活动表截止回；许棠审核拉回；4XX 看到名单后低温回 | `zhou_trust`、`public_boundary`、`dorm_warmth` |
+
+### R5-TANG：唐骁线
+
+定位：玩家靠近唐骁，进入规则、项目、流程和公平压力。回流点必须让规则有保护力，也有伤人代价。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-TANG-01` C407 清单 | `ME-C407-DEMO` | `same_route_return` | 唐骁发演示前清单 | 按项核对；删定罪词；私下问授权；直接发群 | 演示开始回；被老师催回；周屿冷处理 | `project_stability`、`rule_pressure` |
+| `RET-TANG-02` 评分细则误读 | `ME-C407-DEMO` | `same_route_return` | 软件工程评分细则需要分工确认 | 按贡献列；按最低责任列；让每人自填；暂不发 | 表格截止回；陆沉沉默回；周屿玩笑回 | `tang_trust`、`dorm_warmth` |
+| `RET-TANG-03` 沈嘉禾边界协助 | `ME-SHEN-XIA` | `cross_echo_return` | 沈嘉禾愿意看格式但不背锅 | 让她只看格式；私聊资料；公开感谢；不找她 | C407 催回；沈嘉禾提醒边界；4XX 误读“外人介入” | `public_boundary`、`project_stability` |
+| `RET-TANG-04` 周屿活动设备撞期 | `ME-ACTIVITY-RECRUIT` | `cross_echo_return` | 周屿借设备和 C407 演示撞期 | 先项目；先借设备；让秦越找别人；沉默 | 演示拉回；活动拉回；迟到回寝后低温 | `activity_link -1/+1`、`time_debt` |
+| `RET-TANG-05` 打印店终版 | `ME-EXPRESS-WORK` | `life_texture_return` | 演示材料要纸质备份 | 去打印；省钱双面；找陆沉问便宜店；不打 | 打印排队回；钱压回；材料错页回 | `money_pressure`、`project_stability` |
+| `RET-TANG-06` 归档只读范围 | `ME-C407-DEMO`、`ME-GRADUATION` | `private_message_return` | 项目归档需要确定谁能看、谁能改、谁接收 | 按唐骁建议锁只读；给每人编辑权；先问老师；暂不提交 | 归档截止回；老师退回；4XX 只剩事项短句 | `project_stability`、`public_boundary`、`dorm_warmth` |
+
+### R5-LUCHEN：陆沉线
+
+定位：玩家靠近陆沉，但不能替他说话或替他被理解。回流点让玩家练习“给入口，不代言”。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-LUCHEN-01` 图书馆排班 | `ME-EXPRESS-WORK`、`ME-DAILY-CAMPUS` | `same_route_return` | 陆沉排班和宿舍讨论撞期 | 去等他下班；只发要点；替他说一句；不追问 | 闭馆回；4XX 催回；陆沉只回一个“嗯” | `quiet_bond`、`proxy_risk` |
+| `RET-LUCHEN-02` 快递站现实照面 | `ME-EXPRESS-WORK` | `same_route_return` | 林亦舟取件时看见陆沉帮忙 | 帮搬件；只点头；问排班；替他解释缺席 | 取件回；站长催；包裹错件返工 | `work_reality`、`luchen_trust` |
+| `RET-LUCHEN-03` 阳光书屋短谈 | `ME-DAILY-CAMPUS` | `life_texture_return` | 陆沉在阳光书屋复习或补材料 | 坐远一点；问一句；聊家里；只借笔 | 上课时间拉回；陆沉先走；消息短句回 | `family_pressure`、`quiet_bond` |
+| `RET-LUCHEN-04` 唐骁表格代言风险 | `ME-C407-DEMO` | `cross_echo_return` | 唐骁要求每人确认分工 | 让陆沉自己填；帮他列事实；替他提交；拖着不交 | 截止回；唐骁追问回；陆沉低温回 | `proxy_risk`、`tang_trust` |
+| `RET-LUCHEN-05` 便宜晚饭 | `ME-DAILY-CAMPUS` | `life_texture_return` | 陆沉选择食堂固定便宜窗口 | 陪他吃；换商业街；AA 清楚；不问钱 | 饭后回；陆沉转移话题；玩家意识到不能把理解写成施舍 | `money_pressure`、`luchen_trust` |
+| `RET-LUCHEN-06` 清寝旧书 | `ME-GRADUATION` | `same_route_return` | 清寝时陆沉留下几本旧书和一张未确认的补登记表 | 替他收好但不拆；拍照问；直接带去窗口；放回原处 | 宿管检查拉回；陆沉自己来取；补登记截止回 | `quiet_bond`、`proxy_risk`、`graduation_temperature` |
+
+### R5-LIEFLAT：摆烂 / 不站队线
+
+定位：玩家不站队、不处理、少回几条消息。回流点必须可玩，重点不是减少内容，而是把“如何回避”做成可操作选择，并让入口慢慢过期。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-LIEFLAT-01` 静音事项群 | `ME-4XX-GROUP` | `private_message_return` | 事项群连续弹消息 | 静音；只发表情；晚点回；私聊一个人 | 截止时间回；别人已处理回；没人再问回 | `avoidance`、`missed_chance` |
+| `RET-LIEFLAT-02` 游戏局短逃 | `ME-WANFENG-CIRCLE`、`ME-DAILY-CAMPUS` | `life_texture_return` | 冲突后想开一局游戏 | 打完一局；中途退；回晚风消息；继续装没看见 | 游戏结束回；门禁回；4XX 已散回 | `lieflat_score`、`time_debt` |
+| `RET-LIEFLAT-03` 后街夜市 | `ME-DAILY-CAMPUS` | `life_texture_return` | 不想回寝，去后街吃夜宵 | 买烧烤；台球厅坐一会；遇许澈但不硬外流；直接回 | 夜归回；钱花光回；许澈软擦肩但不锁线 | `money_pressure`、`5x_shadow` |
+| `RET-LIEFLAT-04` 过期表格 | `ME-CLASS-MATERIAL` | `same_route_return` | 表格还有一次补交机会 | 立刻补；继续拖；找人问；装不知道 | 系统关闭回；唐骁不再催；第七卷材料温度降低 | `missed_chance`、`dorm_trust -1` |
+| `RET-LIEFLAT-05` 湖边空转 | `ME-NOT-ENTER-DOOR` | `cross_echo_return` | 林亦舟绕湖边，不进门 | 遇夏知微 / 无名生活人物；聊别的；不聊冲突；直接刷手机 | 天冷回；消息过期回；没有人追出来回 | `avoidance`、`late_regret` |
+
+### R5X-HARD：唯一硬外流线
+
+定位：玩家已经进入 5X，新圈成为单线主叙事。所有回流只能在 5X 内部循环，旧线人物只能按母版同场擦肩。
+
+| 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
+|---|---|---|---|---|---|---|
+| `RET-5X-01` 新桌子饮料 | `ME-DAILY-CAMPUS` | `5x_isolated_return` | 许澈把林亦舟拉到新桌 | 接饮料；AA；沉默坐着；讲一个旧笑话但没人懂 | 新圈继续；钱压回；旧群只读回 | `new_circle_trust`、`thin_relation` |
+| `RET-5X-02` 后街台球 | `ME-DAILY-CAMPUS` | `5x_isolated_return` | 韩野约后街台球 | 去；拒绝；借钱；只旁观 | 散场回；欠款回；4XX 擦肩不对话 | `money_pressure`、`5x_regret` |
+| `RET-5X-03` 蒋沐实用帮忙 | `ME-EXPRESS-WORK` | `5x_isolated_return` | 蒋沐提醒他补一个材料 | 接受；自己办；推给许澈；忘记 | 材料截止回；蒋沐不再提醒；旧人同场短句 | `thin_relation`、`missed_chance` |
+| `RET-5X-04` 旧人同场擦肩 | `ME-GRADUATION` | `cross_echo_return` | 毕业流程里看见 4XX | 点头；避开；发旧消息；什么都不做 | 继续新线；手续窗口拉回；旧消息无人展开 | `old_dorm_distance`、`soft_passing` |
+| `RET-5X-05` 新圈散场 | `ME-GRADUATION` | `5x_isolated_return` | 许澈 / 韩野 / 蒋沐各有安排 | 约下一次；说清；删置顶；保持热闹口吻 | 各自离开回终章；无人深问；5X 结算 | `new_circle_trust`、`5x_regret` |
+| `RET-5X-06` 便利店旧消息 | `ME-NOT-ENTER-DOOR`、`ME-DAILY-CAMPUS` | `5x_isolated_return` | 许澈去便利店买水，林亦舟看见 4XX 旧群未读 | 点开只读；回一句；删除草稿；把手机扣下 | 许澈结账回；旧群无人展开；新圈继续走 | `old_dorm_distance`、`5x_regret` |
+| `RET-5X-07` 毕业照边缘 | `ME-GRADUATION` | `cross_echo_return` | 毕业照批次里看见旧人同框，自己不在那一组 | 远远看；转身走；给许澈拍一张；给旧人发祝顺利 | 摄影老师催下一组回；许澈喊他回；旧消息只停在表面 | `soft_passing`、`graduation_temperature` |
+| `RET-5X-08` 武生院站单程 | `ME-GRADUATION` | `5x_isolated_return` | 离校时新圈和旧线在武生院站 / 校门动线附近错开 | 跟新圈走；等一班车；回头看；发最后一条旧消息 | 车到回终章；许澈先走；旧人只回短句或不回 | `5x_regret`、`thin_relation`、`old_dorm_distance` |
+
+## 开发使用方式
+
+后续扩写具体路线时，不需要为每条线从零创造内部支线。推荐流程：
+
+1. 先从母版事件池选一个 `mother_event_id`。
+2. 判断它在当前路线里承担什么功能：加深、误读、迟到、公开边界、钱压、逃避、毕业回声。
+3. 写 `route_lens`：林亦舟在这条线里从哪个角度看见同一个事件。
+4. 写 2-4 个可玩拍点，保证不是单选即回。
+5. 设计至少两种回流方式。
+6. 明确 `forbidden_effect`，防止它误开新路线。
+7. 把变量回调写到后续主事件，而不是只写在结算页。
+
+## 结论
+
+内部回流点的剧情设置可以、也应该由母版开发。这样能保证：世界线稳定，人物不漂移，开发量可控，玩家又能在不同路线里获得足够多的操作、错过、误读、亲近和遗憾。
+
+真正的差异不是“其他人走了不同人生”，而是同一件事发生时，林亦舟站在不同地方，先回复不同的人，带着不同的代价回到同一个主线现场。
