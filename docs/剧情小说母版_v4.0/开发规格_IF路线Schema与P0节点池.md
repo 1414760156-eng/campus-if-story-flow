@@ -14,6 +14,7 @@
 4. 普通选项只改微变量，不应动辄锁大路线。大路线只从第三幕、第四幕、第五幕几个时期外流点进入。
 5. 5X 是唯一硬锁。进入后第六卷、第七卷只走 5X 单线，不再回原多线。
 6. 长线开发采用命运池结构。进入一条 IF 后，后续公共锁点按当前 `route_pool_id` 生成本线版本；其它命运线关闭完整主分支，只保留软照面和只读回声。
+7. 第一卷、第二卷共享；第三幕以后，所有长支线都按关键抉择外流线处理。进入外流线后，只保留当前池完整主线。
 
 ## 路线状态 Schema
 
@@ -22,9 +23,12 @@
 ```json
 {
   "canon_line": "MOTHER-V4",
+  "shared_until": "act2_end",
+  "branch_mode": "butterfly_outflow",
   "route_pool_id": "POOL-DEFAULT-4XX",
   "route_focus": "default_4xx",
   "outflow_stage": "none",
+  "pool_entry_choice": "none",
   "active_route_id": "DEFAULT-4XX",
   "closed_route_ids": [],
   "soft_echo_routes": [],
@@ -39,9 +43,12 @@
 | 字段 | 类型 | 可选值 | 用途 |
 |---|---|---|---|
 | `canon_line` | string | `MOTHER-V4` | 指向恒定小说母本线。 |
+| `shared_until` | enum | `act2_end` | 表示第一卷、第二卷为共享序章。 |
+| `branch_mode` | enum | `butterfly_outflow` | 表示第三幕以后按关键抉择蝴蝶效应外流，而不是全支线并行。 |
 | `route_pool_id` | string | `POOL-DEFAULT-4XX`、`POOL-R3-PERFECT`、`POOL-R4-WORK`、`POOL-R5-ROMANCE`、`POOL-R5-ZHOU`、`POOL-R5-TANG`、`POOL-R5-LUCHEN`、`POOL-R5-LIEFLAT`、`POOL-R5X-HARD` | 当前命运池。 |
 | `route_focus` | enum | `default_4xx`、`perfect`、`work`、`romance`、`zhou`、`tang`、`luchen`、`lieflat`、`5x` | 当前生活重心。 |
 | `outflow_stage` | enum | `none`、`act3_activity`、`act4_summer`、`act5_romance`、`act5_stand`、`act5x_hard` | 大路线从哪个时期偏离默认线。 |
+| `pool_entry_choice` | string | 节点或选项 ID | 导致进入当前命运池的关键抉择。 |
 | `active_route_id` | string | 见各路线编号 | 当前允许完整展开的主路线。 |
 | `closed_route_ids` | array | 其它路线编号 | 进入当前命运池后关闭完整主分支的路线。 |
 | `soft_echo_routes` | array | 其它路线编号 | 仍可作为软照面、群消息、朋友圈、同场流程出现的路线。 |
