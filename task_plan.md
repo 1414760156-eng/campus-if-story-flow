@@ -17,6 +17,7 @@
 - [x] 按硬规则回改 `DEFAULT-4XX` 宿舍修补线：章节内不再交付摘要式“回流方式”，统一转为调用说明，并新增 8 个 `RET-DEFAULT-*` 的方向 / 四拍 / 选择 / 结算详表。
 - [x] 新增 `开发细稿_IF可玩支线DEFAULT-4XX内回流剧情页.md`，先完成 `RET-DEFAULT-02` 楼下不进门与 `RET-DEFAULT-05` 事项群短句两个样板回流点。
 - [x] 继续扩写 `开发细稿_IF可玩支线DEFAULT-4XX内回流剧情页.md`，补齐早中段 `RET-DEFAULT-01` 公共桌外卖、`RET-DEFAULT-03` 凌空栈道软照面、`RET-DEFAULT-04` 快递站旧包裹三个回流点。
+- [x] 继续补齐毕业段 `RET-DEFAULT-06` 最后一顿饭预热、`RET-DEFAULT-07` 晨光体育馆短场、`RET-DEFAULT-08` 毕业照预览，完成 DEFAULT-4XX 全部 8 个内回流剧情页细稿。
 - [ ] 模板线稳定后，再批量扩展 `R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT`。
 - [ ] 宿舍分歧线稳定后，再写 `R5-ROMANCE`、`R4-WORK`、`R3-PERFECT`，最后处理 `R5X-HARD`。
 
