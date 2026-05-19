@@ -2861,3 +2861,13 @@
 - [x] 已把 P0-A 至 P0-E 汇总成第一版 Markdown 节点池：P0-A 5 节点、P0-B 5 节点、P0-C 5 节点、P0-D 16 节点、P0-E 5 节点。
 - [x] 已更新 `开发索引_IF分支P0文本总索引.md`，将该规格列为当前主开发规格。
 - [ ] 下一步建议：以该规格为依据生成第一版 JSON 节点草案，或先补每个节点的 2-4 个选项文本。
+## 2026-05-19：IF 可玩支线合理性审查
+
+- 本轮来自用户要求：“先用chinese novlelist 看看支线开发是否合理”。
+- 本轮使用 skills：`chinese-novelist`、`superpower-brainstorming`、`planning-with-files`、`superpower-writing-plans`。
+- 已复核 `开发索引_IF命运分歧开发矩阵.md`、`开发规格_IF路线Schema与P0节点池.md` 和 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 已新增 `docs/剧情小说母版_v4.0/开发审查_IF可玩支线合理性_chinese-novelist.md`。
+- 审查结论：当前“时期外流点 + IF 命运分歧”方向成立，可以继续开发；但不建议一次性把九条线全部写成长正文，应先做 `DEFAULT-4XX` 可玩长支线模板。
+- 已在 `开发规划_IF可玩支线长篇扩展总表.md` 追加 chinese-novelist 合理性审查补丁，要求每条长支线先回答生活方向、被挤掉入口、现实任务、关系压力、未选择者后果、毕业温度、防奖励化和主线锁点。
+- 注意风险：`DEFAULT-4XX` 不能成为真结局，`R5-ROMANCE` 需要先处理沈嘉禾 / 夏知微候选拆分，`R5-LIEFLAT` 必须可玩，`R5X-HARD` 只能埋伏笔不能提前开放入口。
+- 执行中发现：`planning-with-files` 的 session-catchup 因当前 PowerShell 未识别 `python` 命令失败，未影响文件审查；后续如需运行脚本应改用已加载的工作区 Python 或直接跳过该辅助脚本。
