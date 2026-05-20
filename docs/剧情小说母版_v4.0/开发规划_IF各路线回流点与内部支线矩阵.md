@@ -138,7 +138,7 @@
 |---|---|---:|---|
 | S | `DEFAULT-4XX`、`R5X-HARD` | 8-10 个 | 至少 3 个同质回流、2 个异质软照面、2 个生活碎片、1 个消息回流 |
 | A | `R5-ROMANCE`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN` | 6-8 个 | 至少 2 个同质回流、2 个异质软照面、1 个生活碎片、1 个消息回流 |
-| B | `R3-PERFECT`、`R4-WORK`、`R5-LIEFLAT` | 4-6 个 | 至少 1 个同质回流、1 个异质软照面、1 个生活碎片、1 个消息回流 |
+| B | `A3-ACTIVITY-PUBLIC` 父池下的 `R3-PERFECT`、`R4-WORK`、`R5-LIEFLAT` | 4-6 个 | 至少 1 个同质回流、1 个异质软照面、1 个生活碎片、1 个消息回流 |
 
 每个回流点必须至少有两种回流方向，每个方向都要拆成三到四个连续剧情拍点。推荐组合：
 
@@ -164,7 +164,20 @@
 | `RET-DEFAULT-07` 晨光体育馆短场 | `ME-DAILY-CAMPUS` | `life_texture_return` | 四人不再默认一起运动，但乐跑 / 羽毛球 / 健身房偶然撞见 | 约一局；只打招呼；借拍子；提不提旧事 | 场地到点回；有人受伤转校医院；活动群消息拉回 | `dorm_warmth`、`energy_low`，运动不再自动等于亲近 |
 | `RET-DEFAULT-08` 毕业照预览 | `ME-GRADUATION` | `private_message_return` | 预览缩略图里 4XX 同框但无人主动发 | 发群确认；只私存；问能不能公开；删掉预览 | 主题材料会拉回；许棠提醒授权；没人回复形成沉默回 | `public_boundary`、`graduation_temperature` |
 
-### R3-PERFECT：社团 / 完美线
+### A3-ACTIVITY-PUBLIC：第三幕社团活动父池
+
+定位：第三幕先按父池分发，不直接锁融媒体或完美线。主持队、新闻中心 / 融媒体、摄影社、幕后物资、志愿服务、回 4XX、回避公开都可以成为 focus；只有持续流程化、低风险、自我管理时，才进入 `R3-PERFECT`。
+
+| 父池 focus | 可复用母版事件 | 典型回流素材 | 只改变什么 |
+|---|---|---|---|
+| `focus_hosting` | `ME-ACTIVITY-RECRUIT` | 主持招新、秦越物资、周屿补场 | 活动债、周屿信任、公开场面压力 |
+| `focus_newsroom` | `ME-CLASS-MATERIAL` | 许棠、新闻中心 / 融媒体、授权表 | 公开边界、材料流向 |
+| `focus_photo` | `ME-SHEN-XIA`、`ME-GRADUATION` | 夏知微、摄影社、照片用途 | 镜头边界、被看见的代价 |
+| `focus_backstage` | `ME-ACTIVITY-RECRUIT`、`ME-CLASS-MATERIAL` | 签到表、物资、串场稿、归档 | 自控、流程信用、时间债 |
+| `focus_dorm_return` | `ME-4XX-GROUP` | 回 4XX 处理作业或公共桌 | 宿舍温度、是否保持 DEFAULT-4XX |
+| `focus_public_avoid` | `ME-NOT-ENTER-DOOR` | 不上台、不露脸、借热闹逃开 | 回避、错过、5X 前置 |
+
+### R3-PERFECT：A3 父池下的完美 / 自我管理子外流
 
 定位：玩家让林亦舟更早进入活动、材料和公开表达。回流点来自母版活动池，但只改变林亦舟被看见、被依赖、被工具化的程度。
 

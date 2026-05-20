@@ -25,8 +25,12 @@
   "canon_line": "MOTHER-V4",
   "shared_until": "act2_end",
   "branch_mode": "butterfly_outflow",
+  "route_parent_pool_id": "none",
   "route_pool_id": "POOL-DEFAULT-4XX",
   "route_focus": "default_4xx",
+  "route_focus_tag": "none",
+  "route_mode_tag": "none",
+  "child_outflow_id": "none",
   "outflow_stage": "none",
   "pool_entry_choice": "none",
   "active_route_id": "DEFAULT-4XX",
@@ -45,8 +49,12 @@
 | `canon_line` | string | `MOTHER-V4` | 指向恒定小说母本线。 |
 | `shared_until` | enum | `act2_end` | 表示第一卷、第二卷为共享序章。 |
 | `branch_mode` | enum | `butterfly_outflow` | 表示第三幕以后按关键抉择蝴蝶效应外流，而不是全支线并行。 |
-| `route_pool_id` | string | `POOL-DEFAULT-4XX`、`POOL-R3-PERFECT`、`POOL-R4-WORK`、`POOL-R5-ROMANCE`、`POOL-R5-ZHOU`、`POOL-R5-TANG`、`POOL-R5-LUCHEN`、`POOL-R5-LIEFLAT`、`POOL-R5X-HARD` | 当前命运池。 |
-| `route_focus` | enum | `default_4xx`、`perfect`、`work`、`romance`、`zhou`、`tang`、`luchen`、`lieflat`、`5x` | 当前生活重心。 |
+| `route_parent_pool_id` | string | `none`、`POOL-A3-ACTIVITY-PUBLIC`、`POOL-R5-STAND` 等 | 父池 ID。第三幕先进入 A3 父池，再按 focus / mode 分发子外流。 |
+| `route_pool_id` | string | `POOL-DEFAULT-4XX`、`POOL-A3-ACTIVITY-PUBLIC`、`POOL-R3-PERFECT`、`POOL-R4-WORK`、`POOL-R5-ROMANCE`、`POOL-R5-ZHOU`、`POOL-R5-TANG`、`POOL-R5-LUCHEN`、`POOL-R5-LIEFLAT`、`POOL-R5X-HARD` | 当前命运池。父池未确认子外流时可先使用父池 ID。 |
+| `route_focus` | enum | `default_4xx`、`activity_public`、`perfect`、`work`、`romance`、`zhou`、`tang`、`luchen`、`lieflat`、`5x` | 当前生活重心。 |
+| `route_focus_tag` | enum | `none`、`focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid` | 父池内部主通道。 |
+| `route_mode_tag` | enum | `none`、`mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm` | 父池内部行为模式。 |
+| `child_outflow_id` | string | `none`、`R3-PERFECT` 等 | 父池确认后的子外流路线。 |
 | `outflow_stage` | enum | `none`、`act3_activity`、`act4_summer`、`act5_romance`、`act5_stand`、`act5x_hard` | 大路线从哪个时期偏离默认线。 |
 | `pool_entry_choice` | string | 节点或选项 ID | 导致进入当前命运池的关键抉择。 |
 | `active_route_id` | string | 见各路线编号 | 当前允许完整展开的主路线。 |
@@ -147,7 +155,7 @@
 
 路线判定建议按时期顺序检查，但 5X 硬锁永远最后覆盖。
 
-1. 第三幕检查 `R3-PERFECT` 前置：`self_control`、`public_credit`、`emotional_delay`、`activity_link`。
+1. 第三幕先检查 `A3-ACTIVITY-PUBLIC` 父池：玩家是否持续把时间、责任和公开风险交给社团 / 活动 / 公开表达。再检查 focus 与 mode：`focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid`；以及 `mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm`。只有 `mode_perfect` 持续成立时，才进入 `R3-PERFECT`。
 2. 第四幕检查 `R4-WORK` 前置：`money_pressure`、`work_shift`、`family_signal`、`dorm_absence`。
 3. 第五幕前段检查 `R5-ROMANCE`：`romance_focus`、候选对象链接、晚风边界、宿舍缺席。
 4. 第五幕中后段检查 P0-D：`dorm_repair`、`zhou_alignment`、`tang_alignment`、`luchen_alignment`、`lieflat_score`。
@@ -155,7 +163,16 @@
 
 如果多个软路线同时达标，按“最近一次时期外流点 + route_confidence + route_focus 持续次数”判定，不要让早期一次选择永久锁死玩家。
 
-## P0-A 节点池：第三幕社团 / 完美线
+## P0-A 节点池：第三幕社团活动父池 / 完美子外流
+
+P0-A 不再代表“第三幕一定进入融媒体”或“第三幕一定进入完美线”。它的上层父池是 `A3-ACTIVITY-PUBLIC`，负责承接主持队、新闻中心 / 融媒体、摄影社、幕后物资、志愿服务、回 4XX 和回避公开等分发。`R3-PERFECT` 只是其中 `mode_perfect` 持续成立后的子外流。
+
+| 父池字段 | 可选值 | 用途 |
+|---|---|---|
+| `route_parent_pool_id` | `POOL-A3-ACTIVITY-PUBLIC` | 标记第三幕父池。 |
+| `route_focus_tag` | `focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid` | 判断主通道。 |
+| `route_mode_tag` | `mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm` | 判断行为模式。 |
+| `child_outflow_id` | `none`、`R3-PERFECT` | 只有子外流确认后才写入具体路线。 |
 
 | 节点 ID | 事件 | 玩家选择核心 | 主要变量 | 后续回响 |
 |---|---|---|---|---|
