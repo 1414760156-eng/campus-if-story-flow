@@ -101,6 +101,10 @@
 | `route_focus_tag` | 父池内部的主要通道，例如 `focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`。 |
 | `route_mode_tag` | 父池内部的命运模式，例如 `mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm`。 |
 | `child_outflow_id` | 父池确认后的子外流路线编号，例如 `R3-PERFECT`；未锁定时可为空。 |
+| `a3_activity_choice_count` | 第三幕社团活动父池已完成的选择次数，范围为 0-3。 |
+| `a3_focus_votes` | 第三幕三次选择里各 focus 的累计次数，用于判断最终靠近哪个社团 / 活动半径。 |
+| `a3_mode_votes` | 第三幕三次选择里各 mode 的累计次数，用于判断正常参与、完美自控、压力、回避或回寝。 |
+| `a3_join_result` | 第三次选择后锁定的社团归属或不进入结果，例如 `join_hosting`、`join_newsroom`、`join_photo`、`join_backstage`、`join_volunteer`、`join_none`。 |
 | `pool_entry_choice` | 导致进入该池的关键抉择。 |
 | `active_route_id` | 当前可写主线。 |
 | `closed_route_ids` | 进入当前池后关闭的其它命运线。 |
@@ -140,7 +144,26 @@ POOL-A3-ACTIVITY-PUBLIC
 | `mode_avoid` | 连续拒绝曝光、不上台、短句逃开 | 形成回避前置，后续更容易进入摆烂或 5X 候选。 |
 | `mode_dorm` | 连续回 4XX 当面处理关系 | 不锁第三幕外流，继续 DEFAULT-4XX。 |
 
-多选时不按“选了哪个社团”锁线，而按持续责任判定：某一 focus 连续出现，才成为本父池主通道；某一 mode 连续出现，才生成子外流。没有胜出的选择只保留为关系变量、台词回声或后续照面。
+### 三次社团活动机会
+
+第三幕父池不做无限摇摆，也不靠一次点击锁死。它采用“第一次全开放、第二次维持或试新、第三次结算”的结构，更接近真实大学生报名社团时的犹豫过程。
+
+| 次数 | 叙事功能 | 可选方向 | 判定作用 |
+|---|---|---|---|
+| 第一次 | 全开放试探 | 主持队、新闻中心 / 融媒体、摄影社、幕后物资、志愿服务、回 4XX、不参加公开活动都可选 | 记录 `a3_first_focus`，形成第一份兴趣或回避倾向，不锁线。 |
+| 第二次 | 维持或试新 | 维持第一次方向，或去另一个方向试试；也可以回 4XX / 不参加 | 记录 `a3_second_focus`。如果与第一次相同，方向稳定；如果不同，形成两个候选方向。 |
+| 第三次 | 结算 | 坚持第一个、坚持第二个、两个都要、两个都不要 | 结算 `a3_join_result` 与 `route_mode_tag`。 |
+
+第三次结算规则：
+
+- 坚持第一个：锁定 `a3_first_focus` 对应的加入方向。
+- 坚持第二个：锁定 `a3_second_focus` 对应的加入方向。
+- 两个都要：不开放双主线，自动归为 `mode_pressure`，形成活动压力子外流或后续压力前置；两个方向中只有一个作为主 focus，另一个进入软照面 / 人情债 / 任务冲突。
+- 两个都不要：结算为 `join_none`，进入 `DEFAULT-4XX` 宿舍主轴；社团只保留短回声、错过感或后续照面。
+- 如果第一次或第二次已经选择回 4XX / 不参加，第三次“坚持该选择”也视为 `join_none`。
+- `R3-PERFECT` 只能在“坚持第一个”或“坚持第二个”后成立，且该方向不是 `join_none`，并且前两次 / 第三次处理方式持续偏流程、低风险、按时、公开可控。选择“两个都要”不能进入完美线。
+
+多选时不按“选了哪个社团”锁线，而按三次选择后的责任承担判定。没有胜出的方向只保留为关系变量、台词回声、人情债或后续照面。
 
 ## 外流线不是外传
 

@@ -6,6 +6,7 @@
 - 父池下并列保留 `focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid`。
 - `R3-PERFECT` 现在只作为 `mode_perfect` 子外流；融媒体 / 新闻中心只是 `focus_newsroom`，不再代表第三幕根路线。
 - 已同步架构规则、时期外流点路线表、命运分歧矩阵、Schema、P0-A 文本、总索引、长篇扩展总表、内回流矩阵、文本写法规范和早期蓝图。
+- 已按最新规则补齐 A3 三次选择窗口：第一次全开放，第二次维持或试新，第三次坚持第一个 / 坚持第二个 / 两个都要 / 两个都不要；两个都要归为压力模式，两个都不要回宿舍主轴。
 
 ## 2026-05-19：IF 关键抉择外流架构细化
 

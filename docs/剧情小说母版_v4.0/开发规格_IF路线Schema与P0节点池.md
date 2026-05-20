@@ -31,6 +31,13 @@
   "route_focus_tag": "none",
   "route_mode_tag": "none",
   "child_outflow_id": "none",
+  "a3_activity_choice_count": 0,
+  "a3_first_focus": "none",
+  "a3_second_focus": "none",
+  "a3_final_choice": "none",
+  "a3_focus_votes": {},
+  "a3_mode_votes": {},
+  "a3_join_result": "none",
   "outflow_stage": "none",
   "pool_entry_choice": "none",
   "active_route_id": "DEFAULT-4XX",
@@ -55,6 +62,13 @@
 | `route_focus_tag` | enum | `none`、`focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid` | 父池内部主通道。 |
 | `route_mode_tag` | enum | `none`、`mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm` | 父池内部行为模式。 |
 | `child_outflow_id` | string | `none`、`R3-PERFECT` 等 | 父池确认后的子外流路线。 |
+| `a3_activity_choice_count` | number | `0`-`3` | 第三幕社团 / 活动父池已完成的选择次数。 |
+| `a3_first_focus` | enum | focus 枚举或 `none` | 第一次全开放试探时选择的方向。 |
+| `a3_second_focus` | enum | focus 枚举或 `none` | 第二次维持或试新后选择的方向。 |
+| `a3_final_choice` | enum | `none`、`keep_first`、`keep_second`、`take_both`、`take_neither` | 第三次结算选择。 |
+| `a3_focus_votes` | object | `{ "focus_hosting": 1 }` 等 | 三次选择里各 focus 的累计值。 |
+| `a3_mode_votes` | object | `{ "mode_perfect": 2 }` 等 | 三次选择里各 mode 的累计值。 |
+| `a3_join_result` | enum | `none`、`join_hosting`、`join_newsroom`、`join_photo`、`join_backstage`、`join_volunteer`、`join_none` | 第三次选择后锁定的社团归属或不进入结果。 |
 | `outflow_stage` | enum | `none`、`act3_activity`、`act4_summer`、`act5_romance`、`act5_stand`、`act5x_hard` | 大路线从哪个时期偏离默认线。 |
 | `pool_entry_choice` | string | 节点或选项 ID | 导致进入当前命运池的关键抉择。 |
 | `active_route_id` | string | 见各路线编号 | 当前允许完整展开的主路线。 |
@@ -155,7 +169,7 @@
 
 路线判定建议按时期顺序检查，但 5X 硬锁永远最后覆盖。
 
-1. 第三幕先检查 `A3-ACTIVITY-PUBLIC` 父池：玩家是否持续把时间、责任和公开风险交给社团 / 活动 / 公开表达。再检查 focus 与 mode：`focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid`；以及 `mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm`。只有 `mode_perfect` 持续成立时，才进入 `R3-PERFECT`。
+1. 第三幕先检查 `A3-ACTIVITY-PUBLIC` 父池：第一次所有方向都可选，记录 `a3_first_focus`；第二次可以维持第一次方向或去别的方向试试，记录 `a3_second_focus`；第三次只能选择 `keep_first`、`keep_second`、`take_both`、`take_neither`。`keep_first` / `keep_second` 锁定对应社团方向；`take_both` 自动进入 `mode_pressure`；`take_neither` 进入 `DEFAULT-4XX`。只有坚持单一方向且 `mode_perfect` 成立时，才进入 `R3-PERFECT`。
 2. 第四幕检查 `R4-WORK` 前置：`money_pressure`、`work_shift`、`family_signal`、`dorm_absence`。
 3. 第五幕前段检查 `R5-ROMANCE`：`romance_focus`、候选对象链接、晚风边界、宿舍缺席。
 4. 第五幕中后段检查 P0-D：`dorm_repair`、`zhou_alignment`、`tang_alignment`、`luchen_alignment`、`lieflat_score`。
@@ -172,6 +186,13 @@ P0-A 不再代表“第三幕一定进入融媒体”或“第三幕一定进入
 | `route_parent_pool_id` | `POOL-A3-ACTIVITY-PUBLIC` | 标记第三幕父池。 |
 | `route_focus_tag` | `focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid` | 判断主通道。 |
 | `route_mode_tag` | `mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm` | 判断行为模式。 |
+| `a3_activity_choice_count` | `0`-`3` | 三次机会计数；第三次后必须结算，不继续无限选择。 |
+| `a3_first_focus` | focus 枚举 | 第一次全开放试探时选择的方向。 |
+| `a3_second_focus` | focus 枚举 | 第二次维持或试新后选择的方向。 |
+| `a3_final_choice` | `keep_first`、`keep_second`、`take_both`、`take_neither` | 第三次最终选择。 |
+| `a3_focus_votes` | focus 计数对象 | 判断最终进入哪个社团 / 活动方向。 |
+| `a3_mode_votes` | mode 计数对象 | 判断普通参与、完美自控、压力、回避或回寝。 |
+| `a3_join_result` | `join_hosting`、`join_newsroom`、`join_photo`、`join_backstage`、`join_volunteer`、`join_none` | 第三次选择后的归属结果。 |
 | `child_outflow_id` | `none`、`R3-PERFECT` | 只有子外流确认后才写入具体路线。 |
 
 | 节点 ID | 事件 | 玩家选择核心 | 主要变量 | 后续回响 |
