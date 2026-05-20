@@ -2135,3 +2135,14 @@
 - 风险表达扫描完成：`大团圆`、`奖励线` 仅出现在禁止项中，不构成路线漂移。
 - `git diff --check` 未发现空白错误；仅提示换行格式会按 Git 配置处理。
 - `count_v4.py` 已用工作区 Python 成功运行：`BODY_TOTAL 1113362`，`MD_TOTAL 1665495`，`CHAPTERS 238`。
+
+## 2026-05-20 IF 主轴外流白名单纠偏记录
+
+- 已按用户最新规则统一：默认宿舍主轴完整外流只保留宿舍站队线与晚风线。
+- 沈嘉禾 / 夏知微等其它感情线不再从主轴“没选晚风”直接生成，必须由第三幕 A3 父池中有女生连续出现、承担事件压力、形成生活半径的社团 / 活动方向派生。
+- 已在开发架构、时期外流路线表、命运分歧矩阵、Schema、P0-C、P0-E、回流矩阵、可试玩节点蓝图、合理性审查和长线扩展总表中同步该规则。
+- 已补充外流权限字段：`outflow_permission_class`、`female_candidate_present`、`romance_outflow_allowed`、`romance_origin`、`allowed_next_routes`。
+- 一致性扫描完成：旧入口句无实质残留；剩余命中均为“主轴不能直跳其它感情线 / R5-ROMANCE 必须有 A3 女生来源”的防线文本。
+- `git diff --check` 完成：无空白错误，仅有 Git 换行提示。
+- `count_v4.py` 已运行：`BODY_TOTAL 1113362`，`MD_TOTAL 1688763`，`CHAPTERS 238`。
+- 待完成：Git 提交。

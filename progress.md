@@ -2918,6 +2918,17 @@
 - [x] 验证完成：关键节点 / 变量搜索命中，TODO 类占位无命中，`git diff --check` 无空白错误；`docs/superpowers/scripts/count_v4.py` 输出 BODY_TOTAL 1,113,362，MD_TOTAL 1,597,461，CHAPTERS 238。
 - [ ] 下一步：按同一结构扩展 `R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 四条第五幕站队组长线。
 
+## 2026-05-20 IF 主轴外流白名单纠偏记录
+
+- [x] 已按用户最新规则统一：默认宿舍主轴完整外流只保留宿舍站队线与晚风线。
+- [x] 已明确沈嘉禾 / 夏知微等其它感情线只能由第三幕 A3 父池中“有女生连续出现”的社团 / 活动方向派生。
+- [x] 已补充 `outflow_permission_class`、`female_candidate_present`、`romance_outflow_allowed`、`romance_origin`、`allowed_next_routes` 等权限字段。
+- [x] 已回改路线表、命运分歧矩阵、Schema、P0-C、P0-E、回流矩阵、可试玩节点蓝图、合理性审查和长线扩展总表中的旧口径。
+- [x] 一致性扫描完成：旧入口句无实质残留；剩余命中均为“主轴不能直跳其它感情线 / R5-ROMANCE 必须有 A3 女生来源”的防线文本。
+- [x] `git diff --check` 完成：无空白错误，仅有 Git 换行提示。
+- [x] `count_v4.py` 已运行：`BODY_TOTAL 1113362`，`MD_TOTAL 1688763`，`CHAPTERS 238`。
+- [ ] 下一步：提交 Git 快照。
+
 ## 2026-05-19 IF 内回流方向规则补强执行记录
 
 - [x] 用户纠偏：回流点不是单条支路，每个回流点至少需要两个回流方向；每个方向需要三到四个连续剧情拍点和选项对话。

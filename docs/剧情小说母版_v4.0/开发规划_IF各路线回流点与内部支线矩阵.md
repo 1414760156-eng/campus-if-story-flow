@@ -203,13 +203,13 @@
 | `RET-WORK-04` 晚风语音错过 | `ME-WANFENG-CIRCLE` | `private_message_return` | 晚风游戏语音邀请和排班冲突 | 解释；不回；下班后补语音；只发一个表情 | 下班回主线；晚风说下次再说；消息变低频 | `missed_chance`、`time_debt`，晚风仍按母版生活圈推进 |
 | `RET-WORK-05` 校医院疲劳 | `ME-DAILY-CAMPUS` | `life_texture_return` | 排班后低烧或运动受伤 | 去校医院；硬撑上课；请人代签；给家里打电话 | 病历带回；迟到回 C407；宿管阿姨看夜归记录 | `energy_low`、`family_signal`、`work_shift` |
 
-### R5-ROMANCE：专注感情线
+### R5-ROMANCE：社团女生派生专注感情线
 
-定位：玩家不默认和晚风更进一步，而是把情绪和时间投向沈嘉禾或夏知微。回流点由母版亲密 / 影像 / 资料事件池提供，其他角色仍按原线生活。
+定位：本线不是主轴“没选晚风后的自动替代”。只有当第三幕 A3 社团 / 活动父池里已经有女生角色连续出现、承担任务压力并形成生活半径时，才允许派生沈嘉禾或夏知微方向。回流点由该社团女生来源对应的亲密 / 影像 / 资料事件池提供，其他角色仍按原线生活。
 
 | 回流点 | 母版事件 | 类型 | 进入触发 | 可玩拍点 | 回流方式 | 变量 / 回声 |
 |---|---|---|---|---|---|---|
-| `RET-ROMANCE-01` 晚风停在门外 | `ME-WANFENG-CIRCLE` | `cross_echo_return` | 晚风发来游戏 / 语音 / 抖音状态 | 说清只做朋友；含糊拖延；不回；约改天 | 回沈嘉禾 / 夏知微主线；晚风低频；4XX 消息打断 | `romance_focus`、`missed_chance` |
+| `RET-ROMANCE-01` 晚风停在门外 | `ME-WANFENG-CIRCLE` | `cross_echo_return` | 已进入 A3 女生派生感情线后，晚风发来游戏 / 语音 / 抖音状态 | 说清只做朋友；含糊拖延；不回；约改天 | 回沈嘉禾 / 夏知微主线；晚风低频；4XX 消息打断 | `romance_focus`、`missed_chance` |
 | `RET-ROMANCE-02` 沈嘉禾打印样张 | `ME-SHEN-XIA`、`ME-EXPRESS-WORK` | `same_route_return` | 沈嘉禾需要资料样张确认 | 一起去打印；只线上改；帮她排版；明确边界 | 打印店关门前回；项目消息催回；费用 AA 形成回声 | `public_boundary`、`money_pressure` |
 | `RET-ROMANCE-03` 夏知微照片授权 | `ME-SHEN-XIA` | `same_route_return` | 夏知微问能不能用一张背影 | 授权；只留私存；要求不露脸；拒绝 | 摄影社集合拉回；4XX 群消息拉回；照片没用但关系升温 | `public_boundary`、`romance_focus` |
 | `RET-ROMANCE-04` 礼物笨拙模仿 | `ME-DAILY-CAMPUS` | `life_texture_return` | 节日 / 生日 / 特殊日子临近 | 买实用礼物；买便宜但用心的；问朋友；放弃 | 钱不够回食堂；迟到回宿舍；礼物被误读成公开关系 | `gift_debt`、`money_pressure`、`dorm_absence` |

@@ -38,6 +38,11 @@
   "a3_focus_votes": {},
   "a3_mode_votes": {},
   "a3_join_result": "none",
+  "outflow_permission_class": "main_axis",
+  "female_candidate_present": false,
+  "romance_outflow_allowed": false,
+  "romance_origin": "none",
+  "allowed_next_routes": ["R5-STAND", "R5-WANFENG"],
   "outflow_stage": "none",
   "pool_entry_choice": "none",
   "active_route_id": "DEFAULT-4XX",
@@ -57,8 +62,8 @@
 | `shared_until` | enum | `act2_end` | 表示第一卷、第二卷为共享序章。 |
 | `branch_mode` | enum | `butterfly_outflow` | 表示第三幕以后按关键抉择蝴蝶效应外流，而不是全支线并行。 |
 | `route_parent_pool_id` | string | `none`、`POOL-A3-ACTIVITY-PUBLIC`、`POOL-R5-STAND` 等 | 父池 ID。第三幕先进入 A3 父池，再按 focus / mode 分发子外流。 |
-| `route_pool_id` | string | `POOL-DEFAULT-4XX`、`POOL-A3-ACTIVITY-PUBLIC`、`POOL-R3-PERFECT`、`POOL-R4-WORK`、`POOL-R5-ROMANCE`、`POOL-R5-ZHOU`、`POOL-R5-TANG`、`POOL-R5-LUCHEN`、`POOL-R5-LIEFLAT`、`POOL-R5X-HARD` | 当前命运池。父池未确认子外流时可先使用父池 ID。 |
-| `route_focus` | enum | `default_4xx`、`activity_public`、`perfect`、`work`、`romance`、`zhou`、`tang`、`luchen`、`lieflat`、`5x` | 当前生活重心。 |
+| `route_pool_id` | string | `POOL-DEFAULT-4XX`、`POOL-A3-ACTIVITY-PUBLIC`、`POOL-R3-PERFECT`、`POOL-R4-WORK`、`POOL-R5-WANFENG`、`POOL-R5-ROMANCE`、`POOL-R5-ZHOU`、`POOL-R5-TANG`、`POOL-R5-LUCHEN`、`POOL-R5-LIEFLAT`、`POOL-R5X-HARD` | 当前命运池。父池未确认子外流时可先使用父池 ID。 |
+| `route_focus` | enum | `default_4xx`、`activity_public`、`perfect`、`work`、`wanfeng`、`romance`、`zhou`、`tang`、`luchen`、`lieflat`、`5x` | 当前生活重心。 |
 | `route_focus_tag` | enum | `none`、`focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid` | 父池内部主通道。 |
 | `route_mode_tag` | enum | `none`、`mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm` | 父池内部行为模式。 |
 | `child_outflow_id` | string | `none`、`R3-PERFECT` 等 | 父池确认后的子外流路线。 |
@@ -69,6 +74,11 @@
 | `a3_focus_votes` | object | `{ "focus_hosting": 1 }` 等 | 三次选择里各 focus 的累计值。 |
 | `a3_mode_votes` | object | `{ "mode_perfect": 2 }` 等 | 三次选择里各 mode 的累计值。 |
 | `a3_join_result` | enum | `none`、`join_hosting`、`join_newsroom`、`join_photo`、`join_backstage`、`join_volunteer`、`join_none` | 第三次选择后锁定的社团归属或不进入结果。 |
+| `outflow_permission_class` | enum | `main_axis`、`club_with_female_candidate`、`club_without_female_candidate`、`hard_5x` | 当前池的外流权限层。 |
+| `female_candidate_present` | boolean | `true`、`false` | 社团 / 活动半径中是否已经有女生角色连续出现并承担事件压力。 |
+| `romance_outflow_allowed` | boolean | `true`、`false` | 是否允许进入晚风之外的其它感情线。只有 `club_with_female_candidate` 可为 true。 |
+| `romance_origin` | enum | `none`、`main_axis_wanfeng`、`a3_photo`、`a3_newsroom`、`a3_backstage`、`a3_other_female_route` | 亲密线来源。 |
+| `allowed_next_routes` | array | 路线编号数组 | 当前池允许导向的下一组完整路线白名单。 |
 | `outflow_stage` | enum | `none`、`act3_activity`、`act4_summer`、`act5_romance`、`act5_stand`、`act5x_hard` | 大路线从哪个时期偏离默认线。 |
 | `pool_entry_choice` | string | 节点或选项 ID | 导致进入当前命运池的关键抉择。 |
 | `active_route_id` | string | 见各路线编号 | 当前允许完整展开的主路线。 |
@@ -171,15 +181,18 @@
 
 1. 第三幕先检查 `A3-ACTIVITY-PUBLIC` 父池：第一次所有方向都可选，记录 `a3_first_focus`；第二次可以维持第一次方向或去别的方向试试，记录 `a3_second_focus`；第三次只能选择 `keep_first`、`keep_second`、`take_both`、`take_neither`。`keep_first` / `keep_second` 锁定对应社团方向；`take_both` 自动进入 `mode_pressure`；`take_neither` 进入 `DEFAULT-4XX`。只有坚持单一方向且 `mode_perfect` 成立时，才进入 `R3-PERFECT`。
 2. 第四幕检查 `R4-WORK` 前置：`money_pressure`、`work_shift`、`family_signal`、`dorm_absence`。
-3. 第五幕前段检查 `R5-ROMANCE`：`romance_focus`、候选对象链接、晚风边界、宿舍缺席。
-4. 第五幕中后段检查 P0-D：`dorm_repair`、`zhou_alignment`、`tang_alignment`、`luchen_alignment`、`lieflat_score`。
-5. 第五幕唯一硬外流点检查 `R5X-HARD`：只有满足硬锁条件才覆盖所有普通路线。
+3. 第五幕前段检查主轴亲密外流：如果当前仍是 `main_axis` 或 `DEFAULT-4XX`，只能进入 `R5-WANFENG`，不能直接进入沈嘉禾 / 夏知微等其它感情线。
+4. 第五幕前段检查社团女生派生感情：只有 `female_candidate_present = true` 且 `romance_outflow_allowed = true` 的 A3 社团 / 活动池，才允许进入 `R5-ROMANCE`。
+5. 第五幕中后段检查 P0-D：`dorm_repair`、`zhou_alignment`、`tang_alignment`、`luchen_alignment`、`lieflat_score`。
+6. 第五幕唯一硬外流点检查 `R5X-HARD`：只有满足硬锁条件才覆盖所有普通路线。
 
-如果多个软路线同时达标，按“最近一次时期外流点 + route_confidence + route_focus 持续次数”判定，不要让早期一次选择永久锁死玩家。
+如果多个软路线同时达标，先检查 `allowed_next_routes` 白名单，再按“最近一次时期外流点 + route_confidence + route_focus 持续次数”判定，不要让早期一次选择永久锁死玩家。
 
 ## P0-A 节点池：第三幕社团活动父池 / 完美子外流
 
 P0-A 不再代表“第三幕一定进入融媒体”或“第三幕一定进入完美线”。它的上层父池是 `A3-ACTIVITY-PUBLIC`，负责承接主持队、新闻中心 / 融媒体、摄影社、幕后物资、志愿服务、回 4XX 和回避公开等分发。`R3-PERFECT` 只是其中 `mode_perfect` 持续成立后的子外流。
+
+P0-A 还承担外流权限判断：有女生连续出现并形成生活半径的社团线，才允许后续派生其它感情线；没有女生连续出现的社团线，只能流向 `R3-PERFECT`、回宿舍修补 / 站队、`R5-WANFENG` 或 `R5-LIEFLAT`。
 
 | 父池字段 | 可选值 | 用途 |
 |---|---|---|
@@ -194,6 +207,12 @@ P0-A 不再代表“第三幕一定进入融媒体”或“第三幕一定进入
 | `a3_mode_votes` | mode 计数对象 | 判断普通参与、完美自控、压力、回避或回寝。 |
 | `a3_join_result` | `join_hosting`、`join_newsroom`、`join_photo`、`join_backstage`、`join_volunteer`、`join_none` | 第三次选择后的归属结果。 |
 | `child_outflow_id` | `none`、`R3-PERFECT` | 只有子外流确认后才写入具体路线。 |
+
+| 权限字段 | 触发条件 | 允许后续 |
+|---|---|---|
+| `club_with_female_candidate` | 社团 / 活动线里有女生角色连续出现，且有现实任务、选择和后续回声 | `R5-ROMANCE`、`R3-PERFECT`、`R5-STAND`、`R5-WANFENG`、`R5-LIEFLAT` |
+| `club_without_female_candidate` | 社团 / 活动线没有女生候选，或女生只是一两次擦肩 | `R3-PERFECT`、`R5-STAND`、`R5-WANFENG`、`R5-LIEFLAT` |
+| `main_axis` | 未进入社团女生候选，仍在默认宿舍主轴 | `R5-STAND`、`R5-WANFENG` |
 
 | 节点 ID | 事件 | 玩家选择核心 | 主要变量 | 后续回响 |
 |---|---|---|---|---|
@@ -221,15 +240,15 @@ P0-A 不再代表“第三幕一定进入融媒体”或“第三幕一定进入
 
 兼职线不是苦情线，也不是励志线。它的核心是钱、排班和错过如何改变林亦舟的生活半径。
 
-## P0-C 节点池：第五幕亲密分歧 / 专注感情线
+## P0-C 节点池：第五幕亲密分歧 / 晚风线与社团女生派生感情线
 
 | 节点 ID | 事件 | 玩家选择核心 | 主要变量 | 后续回响 |
 |---|---|---|---|---|
-| `P0C_ACT5_WANFENG_BOUNDARY` | 晚风停在门外 | 说清不进一步、不解释按后、保持朋友 / 游戏搭子、回 4XX | `wanfeng_boundary`、`wanfeng_misread`、`romance_focus_open`、`dorm_warmth` | 晚风转生活回声或继续亲密方向。 |
-| `P0C_ACT5_CANDIDATE_CONFIRM` | 候选对象确认 | 进沈嘉禾方向、进夏知微方向、只短聊、不见任何人 | `romance_candidate`、`shen_jiahe_link`、`xia_zhiwei_link`、`avoidance` | 决定专注感情线对象。 |
+| `P0C_ACT5_WANFENG_BOUNDARY` | 晚风停在门外 | 继续靠近、说清不进一步、保持朋友 / 游戏搭子、回 4XX | `wanfeng_boundary`、`wanfeng_misread`、`wanfeng_link`、`dorm_warmth` | 主轴只能由这里进入 `R5-WANFENG`，或退回宿舍站队 / 摆烂倾向。 |
+| `P0C_ACT5_CANDIDATE_CONFIRM` | 社团女生候选来源确认 | 确认 A3 来源、进沈嘉禾方向、进夏知微方向、只短聊、不见任何人 | `romance_candidate`、`female_candidate_present`、`romance_origin`、`avoidance` | 只有 `club_with_female_candidate` 才能决定 `R5-ROMANCE` 对象。 |
 | `P0C_ACT5_COMPANION_FREQ` | 第一次现实陪伴增频 | 聊宿舍事、聊近况未来、帮对方任务、中途回 4XX | `relationship_truth`、`future_talk`、`time_debt`、`romance_focus` | 宿舍缺席和亲密信任同时增长。 |
 | `P0C_ACT5_GIFT_FESTIVAL` | 礼物、节日和笨拙模仿 | 送实用礼物、陪完成一件事、问室友建议、临时退缩 | `gift_debt`、`money_pressure`、`dorm_visibility`、`candidate_misread` | 甜和代价同场出现。 |
-| `P0C_ACT5_PUBLIC_BOUNDARY` | 公开边界和第一次明确靠近 | 明确靠近并说边界、不命名关系、回头处理宿舍、起哄后否认 | `public_boundary`、`romance_focus`、`ambiguity`、`candidate_hurt` | 锁定或退出 `R5-ROMANCE`。 |
+| `P0C_ACT5_PUBLIC_BOUNDARY` | 公开边界和第一次明确靠近 | 明确靠近并说边界、不命名关系、回头处理宿舍、起哄后否认 | `public_boundary`、`romance_focus`、`ambiguity`、`candidate_hurt` | 有 A3 女生来源时锁定或退出 `R5-ROMANCE`；无来源时不生成其它女主线。 |
 
 ### 候选对象字段
 
@@ -244,7 +263,7 @@ P0-A 不再代表“第三幕一定进入融媒体”或“第三幕一定进入
 - `shen_jiahe`：现实协作、资料、边界、未来选择。
 - `xia_zhiwei`：影像、观看角度、授权、表达和错过。
 
-晚风不能被写成失败选项。玩家没选晚风更进一步，只代表这条路线里晚风不承担核心亲密对象功能。
+晚风不能被写成失败选项。主轴玩家没选晚风更进一步时，只代表亲密外流没有成立；若没有 A3 女生候选来源，系统应回到宿舍站队、完美线、摆烂线或低频朋友回声，而不是自动生成沈嘉禾 / 夏知微线。
 
 ## P0-D 节点池：第五幕站队分歧
 
@@ -325,7 +344,7 @@ P0-A 不再代表“第三幕一定进入融媒体”或“第三幕一定进入
 1. 先按本文件生成 P0 节点 JSON 草案，但不要直接接入正式试玩器。
 2. 为每个节点补 2-4 个选项，先保证变量和路线逻辑正确，再追求文本丰满。
 3. 用 `开发文本_IF分支P0-A` 至 `P0-E` 作为事件和对话逻辑来源；旧 P0-D 只作为可入池片段库。
-4. 做一次路线判定测试：确保 5X 不被普通软外流触发，确保完美线 / 摆烂线是弱冲突但有后果，确保专注感情线不默认晚风失败。
+4. 做一次路线判定测试：确保 5X 不被普通软外流触发，确保完美线 / 摆烂线是弱冲突但有后果，确保主轴只能直连晚风线，确保 `R5-ROMANCE` 必须有 A3 女生候选来源且不把晚风写成失败。
 5. 用户确认节点池后，再决定是否生成正式 JSON 或接回试玩器。
 
 ## 当前 P0 完成度
