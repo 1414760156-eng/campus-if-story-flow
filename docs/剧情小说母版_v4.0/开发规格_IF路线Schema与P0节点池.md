@@ -15,6 +15,8 @@
 5. 5X 是唯一硬锁。进入后第六卷、第七卷只走 5X 单线，不再回原多线。
 6. 长线开发采用命运池结构。进入一条 IF 后，后续公共锁点按当前 `route_pool_id` 生成本线版本；其它命运线关闭完整主分支，只保留软照面和只读回声。
 7. 第一卷、第二卷共享；第三幕以后，所有长支线都按关键抉择外流线处理。进入外流线后，只保留当前池完整主线。
+8. 第五卷进入长线结算前必须满足最低主线选择要求：至少 5 个主线选择窗口，覆盖宿舍站队、亲密 / 晚风、项目 / 规则、活动 / 兴趣、回避 / 外流，并为第六卷留下可见回响。
+9. 第六卷按 20 个剧情段承接当前命运池：每 4 段落 1 个选择窗口，共 5 个选择窗口；每个窗口只能保留 2 个当前池内方向，不得重新开放其它完整路线。详见 `开发规则_IF第五第六卷玩法节奏硬约束.md`。
 
 ## 路线状态 Schema
 
@@ -52,6 +54,15 @@
   "route_lock": false,
   "hard_outflow": false,
   "route_confidence": 0,
+  "act5_mainline_choice_count": 0,
+  "act5_required_windows_seen": [],
+  "act5_choice_floor_met": false,
+  "act6_scene_count": 20,
+  "act6_block_count": 5,
+  "act6_scenes_per_block": 4,
+  "act6_choice_window_count": 5,
+  "act6_directions_per_window": 2,
+  "act6_route_pool_locked": true,
   "graduation_temperature": "unresolved_but_present"
 }
 ```
@@ -88,6 +99,15 @@
 | `route_lock` | boolean/string | `false`、`5x` | 是否进入不可回退路线。现阶段只有 5X。 |
 | `hard_outflow` | boolean | `true`、`false` | 是否进入唯一硬外流。 |
 | `route_confidence` | number | 0-5 | 路线稳定度，避免一次选择立刻锁线。 |
+| `act5_mainline_choice_count` | number | `0`-`5+` | 第五卷已完成的主线选择窗口数量。少于 5 时不得锁定普通完整长线。 |
+| `act5_required_windows_seen` | array | `dorm_stand`、`intimacy_or_wanfeng`、`project_or_rule`、`activity_or_interest`、`avoidance_or_outflow` | 第五卷五类必经选择窗口完成情况。 |
+| `act5_choice_floor_met` | boolean | `true`、`false` | 是否满足第五卷最低主线选择要求。 |
+| `act6_scene_count` | number | `20` | 第六卷当前命运池剧情段总数。 |
+| `act6_block_count` | number | `5` | 第六卷四段组数量。 |
+| `act6_scenes_per_block` | number | `4` | 每组选 4 个剧情段后落一次选择。 |
+| `act6_choice_window_count` | number | `5` | 第六卷选择窗口数量。 |
+| `act6_directions_per_window` | number | `2` | 第六卷每个选择窗口只能保留两个当前池内方向。 |
+| `act6_route_pool_locked` | boolean | `true` | 第六卷不再重新开放其它完整命运线。 |
 | `graduation_temperature` | enum | `say_clear`、`fade`、`polite_distance`、`not_reconciled`、`continue_contact`、`missed`、`5x_regret`、`unresolved_but_present` | 第七卷结算温度。 |
 
 ## 共用变量池
@@ -187,6 +207,22 @@
 6. 第五幕唯一硬外流点检查 `R5X-HARD`：只有满足硬锁条件才覆盖所有普通路线。
 
 如果多个软路线同时达标，先检查 `allowed_next_routes` 白名单，再按“最近一次时期外流点 + route_confidence + route_focus 持续次数”判定，不要让早期一次选择永久锁死玩家。
+
+第五卷普通长线锁定前，还必须检查 `act5_choice_floor_met = true`。除 `R5X-HARD` 外，任何普通软路线都不得在五类主线选择窗口完成前直接锁完整后续。第五卷五类窗口和第六卷 20 段规则以 `开发规则_IF第五第六卷玩法节奏硬约束.md` 为准。
+
+## 第六卷 20 段承接规则
+
+第六卷不是重新分流卷，而是当前命运池的承接卷。每条已进入的命运池在第六卷必须拆为 20 个剧情段，按 5 个四段组组织。
+
+| 组 | 剧情段 | 选择窗口 | 硬约束 |
+|---:|---|---|---|
+| 1 | `ACT6-S01` 至 `ACT6-S04` | `ACT6-CHOICE-01` | 只允许 2 个当前池内方向 |
+| 2 | `ACT6-S05` 至 `ACT6-S08` | `ACT6-CHOICE-02` | 只允许 2 个当前池内方向 |
+| 3 | `ACT6-S09` 至 `ACT6-S12` | `ACT6-CHOICE-03` | 只允许 2 个当前池内方向 |
+| 4 | `ACT6-S13` 至 `ACT6-S16` | `ACT6-CHOICE-04` | 只允许 2 个当前池内方向 |
+| 5 | `ACT6-S17` 至 `ACT6-S20` | `ACT6-CHOICE-05` | 只允许 2 个当前池内方向 |
+
+这两个方向只能改变当前池内的关系温度、误读、资源代价、公开边界和毕业结算倾向，不能写成“跳去另一条完整路线”。其它人物可作为软照面和文本回声出现，但不得重新打开完整主分支。
 
 ## P0-A 节点池：第三幕社团活动父池 / 完美子外流
 

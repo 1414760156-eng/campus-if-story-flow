@@ -2146,3 +2146,188 @@
 - `git diff --check` 完成：无空白错误，仅有 Git 换行提示。
 - `count_v4.py` 已运行：`BODY_TOTAL 1113362`，`MD_TOTAL 1688763`，`CHAPTERS 238`。
 - 待完成：Git 提交。
+
+## 2026-05-20 IF R5-TANG 唐骁线长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R5-TANG唐骁线.md`。
+- 本轮目标来自“自动接入剧情小说母版中的内容，接着开发支线”，按当前进度从已完成的 `R5-ZHOU` 顺延到 `R5-TANG`。
+- `R5-TANG` 已定位为第五幕站队组 A 级命运外流线，路线池为 `POOL-R5-TANG`，入口建议为 `P0D_STAND_WITH_TANG`。
+- 已完成 8 章开发结构：时间线不是判决书、C407 的版本号、公平的代价、打印店终版、被误读成审判、唐骁的裂口、只读权限、最后一张流程表。
+- 已配置 11 个局部变量：`tang_trust`、`project_stability`、`rule_pressure`、`responsibility_clarity`、`fairness_cost`、`emotion_delay`、`public_boundary`、`zhou_misread`、`luchen_proxy_risk`、`dorm_warmth`、`graduation_temperature`。
+- 已配置 6 个内回流点：`RET-TANG-01` 至 `RET-TANG-06`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：按同一结构开发 `R5-LUCHEN` 陆沉线，或先把 `R5-TANG` 的 6 个内回流点扩成剧情页级细稿。
+
+## 2026-05-20 IF 第五第六卷玩法节奏硬约束补强记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发规则_IF第五第六卷玩法节奏硬约束.md`。
+- 本轮来自用户追问：当前玩法是否保证第五卷最低主线选择要求，以及第六卷 20 个剧情、每四个一个选择、只选两个方向。
+- 已将第五卷最低主线选择写成硬规则：普通长线结算前至少 5 个主线选择窗口，覆盖宿舍站队、亲密 / 晚风、项目 / 规则、活动 / 兴趣、回避 / 外流。
+- 已明确第五卷每个选择窗口必须留下 `act6_echo_hook`，否则不计入最低主线选择。
+- 已将第六卷玩法写成硬规则：当前命运池内固定 20 个剧情段，5 个四段组，每 4 段落 1 个选择窗口，共 5 个选择窗口。
+- 已明确第六卷每个选择窗口只能保留两个当前池内方向，不能重新开放其它完整命运线，也不能给三到四个完整方向。
+- 已同步更新 `开发规格_IF路线Schema与P0节点池.md`、`开发规则_IF命运线池化架构.md` 和 `开发索引_IF分支P0文本总索引.md`。
+- 下一步建议：继续开发 `R5-LUCHEN` 前，先在其长线文件里预留第六卷 20 段 / 5 个二方向选择窗口映射，避免后续返工。
+
+## 2026-05-20 IF 玩法节奏硬约束总控补丁
+
+- 复查后发现：硬约束已接入 Schema、命运线池化架构和 P0 总索引，但长篇扩展总表、命运分歧矩阵、时期外流点路线表还缺显式引用。
+- 已补入 `开发规划_IF可玩支线长篇扩展总表.md`：总原则新增第五 / 第六卷玩法节奏约束，并把长线开发前置问题从 8 个扩为 9 个。
+- 已补入 `开发索引_IF命运分歧开发矩阵.md`：命运线池化架构下新增同级硬约束引用，并把 P0 开发优先级里的第六卷承接改为 20 段 / 5 个二方向选择窗口。
+- 已补入 `开发索引_时期外流点路线表.md`：开发原则新增第 8 条，要求所有外流线承接第五卷最低选择和第六卷 20/4/2 节奏。
+- 已补入三条既有长线文件的 `act6_20_scene_mapping` 占位：`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG` 均已明确第六卷 5 个四段组、5 个选择窗口、每窗两个当前池内方向。
+
+## 2026-05-20 IF R5-LUCHEN 陆沉线长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R5-LUCHEN陆沉线.md`。
+- 本轮目标来自用户确认“继续”，按当前进度从已完成的 `R5-ZHOU`、`R5-TANG` 顺延到 `R5-LUCHEN`。
+- `R5-LUCHEN` 已定位为第五幕站队组 A 级命运外流线，路线池为 `POOL-R5-LUCHEN`，入口建议为 `P0D_STAND_WITH_LUCHEN`。
+- 已完成 8 章开发结构：不替他说、排班撞上公共桌、阳光书屋的空位、快递站错件、被理解成偏袒、陆沉多说一句、只说可公开的部分、旧书和补登记。
+- 已配置 11 个局部变量：`luchen_trust`、`proxy_risk`、`work_reality`、`family_pressure`、`quiet_bond`、`repair_temperature`、`dorm_trust`、`money_pressure`、`tang_misread`、`zhou_distance`、`graduation_temperature`。
+- 已配置 6 个内回流点：`RET-LUCHEN-01` 至 `RET-LUCHEN-06`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已预留第六卷 `act6_20_scene_mapping`：20 个剧情段、5 个四段组、5 个二方向选择窗口，只在 `POOL-R5-LUCHEN` 池内承接。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：按同一结构开发 `R5-LIEFLAT` 摆烂 / 不站队线，补完第五幕站队组四条线。
+
+## 2026-05-20 IF R5-LIEFLAT 摆烂线长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R5-LIEFLAT摆烂线.md`。
+- 本轮目标来自用户继续推进，按当前进度从已完成的 `R5-ZHOU`、`R5-TANG`、`R5-LUCHEN` 顺延到 `R5-LIEFLAT`，补完第五幕站队组。
+- `R5-LIEFLAT` 已定位为第五幕站队组 B 级生活方式外流线，路线池为 `POOL-R5-LIEFLAT`，入口建议为 `P0D_STAND_NO_REPLY`。
+- 已完成 6 章开发结构：你们先说、一局就下、后街不算外流、过期表格、湖边没人追出来、最后一栏空着。
+- 已配置 12 个局部变量：`lieflat_score`、`avoidance`、`lost_chance`、`missed_chance`、`low_conflict`、`late_regret`、`dorm_trust`、`old_dorm_distance`、`time_debt`、`money_pressure`、`hard_outflow_shadow`、`graduation_temperature`。
+- 已配置 5 个内回流点：`RET-LIEFLAT-01` 至 `RET-LIEFLAT-05`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已预留第六卷 `act6_20_scene_mapping`：20 个剧情段、5 个四段组、5 个二方向选择窗口，只在 `POOL-R5-LIEFLAT` 池内承接。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 阶段结论：第五幕站队组四条命运外流线 `R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 已全部完成第一版长线开发稿。
+- 下一步建议：转入 `R5-WANFENG` 晚风线，或先把站队组四条线拆成剧情页级 JSON。
+
+## 2026-05-20 IF R5-WANFENG 晚风线长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R5-WANFENG晚风线.md`。
+- 本轮目标来自用户确认“可以继续补”，按当前进度从第五幕站队组转入主轴唯一直接亲密外流线。
+- `R5-WANFENG` 已定位为 A 级主轴亲密外流线，路线池为 `POOL-R5-WANFENG`，入口节点建议为 `P0C_ACT5_WANFENG_BOUNDARY`，入口选择建议为 `P0C_WANFENG_STEP_FORWARD`。
+- 已完成 8 章开发结构：今晚还排吗、地铁口没等到雨停、礼物不贵、朋友圈可见、她也有队伍、别拿我当挡箭牌、两边都要解释、最后一条语音。
+- 已配置 12 个局部变量：`wanfeng_link`、`wanfeng_boundary`、`romance_focus`、`dorm_absence`、`time_debt`、`money_pressure`、`public_boundary`、`wanfeng_misread`、`dorm_visibility`、`future_talk`、`intimacy_cost`、`graduation_temperature`。
+- 已配置 6 个内回流点：`RET-WANFENG-01` 至 `RET-WANFENG-06`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已预留第六卷 `act6_20_scene_mapping`：20 个剧情段、5 个四段组、5 个二方向选择窗口，只在 `POOL-R5-WANFENG` 池内承接。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 和 `R5-LIEFLAT` 尾部承接说明。
+- 阶段结论：主轴唯一直接亲密外流 `R5-WANFENG` 已完成第一版长线开发稿。
+- 下一步建议：转入 `R5-ROMANCE`，但先确认 A3 社团 / 活动父池中的女生候选来源；或先把已完成长线拆成剧情页级 JSON。
+
+## 2026-05-20 IF R5-ROMANCE 专注感情线长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R5-ROMANCE专注感情线.md`。
+- 本轮目标来自用户确认“继续”，按当前进度从 `R5-WANFENG` 转入 A3 女生候选派生专注感情线。
+- 已先核对 A3 候选来源：沈嘉禾来源为材料协作 / 共享文档 / 打印店 / 阳光书屋；夏知微来源为摄影社 / 照片授权 / 活动影像 / 凌空栈道。无 A3 女生连续生活半径时不得进入本线。
+- `R5-ROMANCE` 已定位为 A 级社团女生派生亲密外流线，路线池为 `POOL-R5-ROMANCE`，入口节点建议为 `P0C_ACT5_CANDIDATE_CONFIRM`，入口选择建议为 `P0C_ROMANCE_LOCK_CANDIDATE`。
+- 已完成 9 章开发结构：来源不是偶遇、先选一个人、第一次把话说具体、不是安慰对象、礼物和账单、要不要被看见、晚风停在门外、第六卷只走一条生活圈、留下或删掉。
+- 已配置 13 个局部变量：`romance_candidate`、`romance_focus`、`candidate_link`、`shen_jiahe_link`、`xia_zhiwei_link`、`public_boundary`、`relationship_truth`、`time_debt`、`money_pressure`、`dorm_absence`、`candidate_misread`、`future_talk`、`graduation_temperature`。
+- 已配置 7 个内回流点：`RET-ROMANCE-01` 至 `RET-ROMANCE-07`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已预留第六卷 `act6_20_scene_mapping`：20 个剧情段、5 个四段组、5 个二方向选择窗口，只在 `POOL-R5-ROMANCE` 池内承接，且围绕已锁定候选对象。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 和 `R5-WANFENG` 尾部承接说明。
+- 阶段结论：亲密方向闭环已完成；主轴只能直进 `R5-WANFENG`，A3 女生候选来源才可派生 `R5-ROMANCE`。
+- 下一步建议：转入 `R4-WORK` 暑假兼职 / 钱压线，或先把已完成长线拆成剧情页级 JSON。
+
+## 2026-05-20 IF 剧情页级 JSON 拆分样板记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发样板_IF剧情页级JSON拆分样板_v1.json`。
+- 已新增 `docs/剧情小说母版_v4.0/开发样板_IF剧情页级JSON拆分说明.md`。
+- 样板定位为可解析结构模板，不是全量剧情转换，也不是试玩器脚本。
+- `route_samples` 覆盖 `DEFAULT-4XX`、`R5-LUCHEN`、`R5-WANFENG`、`R5-ROMANCE` 的入口、路线池、权限和防漂移规则。
+- `page_nodes` 覆盖 P0-D 站队入口、P0-C 晚风入口、P0-C 社团女生候选确认、P0-E 规则项目窗口和普通长线门槛检查。
+- 已把第五卷最低主线选择写入样板：至少 5 个主线选择窗口，覆盖宿舍站队、亲密 / 晚风、项目 / 规则、活动 / 兴趣、回避 / 外流，并要求计入窗口具备 `act6_echo_hook`。
+- 已以 `POOL-R5-WANFENG` 为例写出第六卷完整 20/4/2 样板：5 个四段组、20 个剧情段、5 个选择窗口，每个窗口恰好 2 个当前池内方向。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：先把 `DEFAULT-4XX` 的入口、8 个内回流点和第六卷 20 段映射拆成正式 JSON，再批量拆站队组四线。
+
+## 2026-05-20 IF DEFAULT-4XX 正式 JSON 拆分记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json`。
+- 该文件是第一条正式路线 JSON 数据源，承接 `开发长线_IF可玩支线DEFAULT-4XX宿舍修补线.md` 和 `开发细稿_IF可玩支线DEFAULT-4XX内回流剧情页.md`。
+- 已写入入口节点 `D_00_SHORT_GROUP`，兼容 `P0D_ACT5_SHORT_GROUP` / `DEFAULT-ENTRY`，包含 `DEFAULT-ENTRY-01` 至 `DEFAULT-ENTRY-03` 三个入口选择。
+- 已写入第五卷门槛覆盖：宿舍站队、亲密 / 晚风、项目 / 规则、活动 / 兴趣、回避 / 外流五类窗口，未达标时不得锁完整普通长线。
+- 已写入 8 个内回流点：`RET-DEFAULT-01` 公共桌外卖、`RET-DEFAULT-02` 楼下不进门、`RET-DEFAULT-03` 凌空栈道软照面、`RET-DEFAULT-04` 快递站旧包裹、`RET-DEFAULT-05` 事项群短句、`RET-DEFAULT-06` 最后一顿饭预热、`RET-DEFAULT-07` 晨光体育馆短场、`RET-DEFAULT-08` 毕业照预览。
+- 每个回流点已保留至少 3 个方向；每个方向保留 4 个剧情页拍点 ID、四拍概要、变量标签和回声位置。
+- 已写入 `ACT6-DEFAULT-B01` 至 `ACT6-DEFAULT-B05`：固定 20 个剧情段、5 个选择窗口，每个窗口恰好 2 个 `POOL-DEFAULT-4XX` 池内方向。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：按同一 JSON 结构拆 `R5-ZHOU` 周屿线。
+
+## 2026-05-20 IF R4-WORK 暑假兼职线长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R4-WORK暑假兼职线.md`。
+- 本轮目标来自用户确认“可以按这个顺序来吧”，按调整后的顺序先补未写完的其它长线，再处理剧情页级细稿和 JSON。
+- `R4-WORK` 已定位为第四幕暑假 / 生活费 / 勤工兼职倾向扩展出的 B 级生活方式外流线，路线池为 `POOL-R4-WORK`，入口节点建议为 `P0B_SUMMER_WORK_SHIFT`，入口选择建议为 `P0B_WORK_TAKE_SHIFT`。
+- 已完成 8 章开发结构：这周晚点、去向登记那一栏、快递站半天班、打印店那枚章、食堂二楼省下的三块钱、那条语音没接到、不在现场的人、工时表和毕业表。
+- 已配置 11 个核心局部变量：`money_pressure`、`work_shift`、`family_signal`、`time_debt`、`dorm_absence`、`missed_chance`、`reality_bond`、`dorm_misread`、`energy_low`、`public_boundary`、`graduation_temperature`；另保留 `dorm_warmth`、`repair_depth`、`old_debt`、`proxy_risk`、`project_stability`、`dorm_trust` 作为共享回声变量。
+- 已配置 6 个内回流点：`RET-WORK-01` 至 `RET-WORK-06`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已预留第六卷 `act6_20_scene_mapping`：20 个剧情段、5 个四段组、5 个二方向选择窗口，只在 `POOL-R4-WORK` 池内承接。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：转入 `A3-ACTIVITY-PUBLIC` 父池，先补社团 / 活动方向和女生候选权限，再开发 `R3-PERFECT` 与 `R5X-HARD`。
+
+## 2026-05-20 IF A3-ACTIVITY-PUBLIC 社团活动父池长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线A3-ACTIVITY-PUBLIC社团活动父池.md`。
+- 本轮目标来自用户确认“继续”，按当前顺序从 `R4-WORK` 转入 `A3-ACTIVITY-PUBLIC` 父池，先补清社团 / 活动方向、女生候选权限和 `R3-PERFECT` 来源。
+- `A3-ACTIVITY-PUBLIC` 已定位为第三幕社团 / 活动方向的 B 级父池 / 分发池，路线池为 `POOL-A3-ACTIVITY-PUBLIC`，入口节点建议为 `P0A_ACT3_RECRUIT_FORM`。
+- 已完成 7 章开发结构：招新桌不是答案、第二张报名表、谁算候选、两个都要的代价、第三次只留一个、被默认可靠的人、第五幕前的白名单。
+- 已配置三次父池选择窗口：`A3-CHOICE-01`、`A3-CHOICE-02`、`A3-CHOICE-03`；第三次必须收束为 `keep_first`、`keep_second`、`take_both` 或 `take_neither`。
+- 已配置 7 个 focus：`focus_hosting`、`focus_newsroom`、`focus_photo`、`focus_backstage`、`focus_volunteer`、`focus_dorm_return`、`focus_public_avoid`。
+- 已配置 5 个 mode：`mode_normal`、`mode_perfect`、`mode_pressure`、`mode_avoid`、`mode_dorm`。
+- 已明确候选权限：沈嘉禾材料方向和夏知微摄影方向可在连续任务级接触后开放 `R5-ROMANCE` 来源；许棠当前只作为公开叙事软照面，不写入 `romance_candidate`。
+- 已配置 6 个内回流点：`RET-A3-01` 至 `RET-A3-06`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已预留第六卷 `act6_20_scene_mapping`：20 个剧情段、5 个四段组、5 个二方向选择窗口，只在 `POOL-A3-ACTIVITY-PUBLIC` 池内承接。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：开发 `R3-PERFECT` 完美 / 自我管理子外流，再开发 `R5X-HARD` 唯一硬外流线。
+
+## 2026-05-20 IF R3-PERFECT 完美子外流长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R3-PERFECT完美子外流.md`。
+- 本轮目标来自用户确认“可以”，按当前顺序从 `A3-ACTIVITY-PUBLIC` 父池转入 `R3-PERFECT` 完美 / 自我管理子外流。
+- `R3-PERFECT` 已定位为 A3 父池下 `mode_perfect` 派生的 B 级生活方式子外流线，路线池为 `POOL-R3-PERFECT`，父池为 `POOL-A3-ACTIVITY-PUBLIC`，入口节点建议为 `P0A_ACT3_ROUTE_CONFIRM`，入口选择建议为 `P0A_PERFECT_ACCEPT_SCOPE`。
+- 已明确入口互斥：`a3_final_choice` 必须为 `keep_first` 或 `keep_second`；`take_both` 进入压力模式，`take_neither` 回宿舍或回避倾向，不得锁本线。
+- 已完成 8 章开发结构：停止条件写在最后一行、被转发的签到表、今晚能交最好、不上台的人也被点名、可靠不是亲近、别把我也排进去、第五幕的损失控制、公开材料和私人空格。
+- 已配置 11 个核心局部变量：`self_control`、`public_credit`、`scope_clarity`、`tooling_risk`、`emotional_delay`、`private_delay`、`activity_link`、`public_boundary`、`dorm_warmth`、`public_misread`、`graduation_temperature`；另保留 `project_stability`、`shen_jiahe_link`、`xia_zhiwei_link`、`zhou_trust`、`old_debt` 作为共享回声变量。
+- 已配置 6 个内回流点：`RET-PERFECT-01` 至 `RET-PERFECT-06`；每个回流点至少两个方向，每个方向三到四个剧情拍点和可拆选择。
+- 已预留第六卷 `act6_20_scene_mapping`：20 个剧情段、5 个四段组、5 个二方向选择窗口，只在 `POOL-R3-PERFECT` 池内承接。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：开发 `R5X-HARD` 唯一硬外流线；长线补完后再回到剧情页级细稿和正式 JSON。
+
+## 2026-05-20 IF R5X-HARD 唯一硬外流长线开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发长线_IF可玩支线R5X-HARD唯一硬外流线.md`。
+- 本轮目标来自用户询问“继续补外流线”并确认该线是否难解锁；已按隐藏高难 / 唯一硬外流定位开发。
+- `R5X-HARD` 已定位为第五幕 P0-E 唯一硬外流 S 级命运池，路线池为 `POOL-R5X-HARD`，入口节点建议为 `P0E_5X_LAST_DOOR`，入口选择建议为 `P0E_5X_FOLLOW_XUCHE`，二次确认建议为 `P0E_5X_CONFIRM_NO_RETURN`。
+- 已明确特殊解锁：可覆盖普通长线第五卷最低 5 个主线窗口限制，但必须具备 `hard_outflow_candidate >= 3`、`old_dorm_distance >= 4`、`missed_chance >= 2`、`message_cut >= 2`、`hard_outflow_warning_seen = true` 和二次确认；普通厌烦、第三幕 / 第四幕软照面不得直接触发。
+- 已明确不可回退：锁定后设置 `route_lock = "5x"`、`hard_outflow = true`，旧线人物只能作为软照面、消息、同场流程或低温回声出现。
+- 已完成 10 章开发结构：最后一扇门、新桌子不用解释、第一笔没算清的钱、不用回群的人、旧人同场、许澈不是答案、第六卷只走这边、散局比吵架快、毕业照外侧、武生院站另一边。
+- 已配置 13 个核心局部变量：`hard_outflow_candidate`、`route_lock`、`hard_outflow`、`new_circle_trust`、`thin_relation`、`old_dorm_distance`、`message_cut`、`money_cost`、`soft_passing`、`new_circle_truth`、`identity_drift`、`5x_regret`、`graduation_temperature`；另保留 `dorm_trust`、`old_debt`、`wanfeng_link`、`project_stability`、`activity_link` 作为共享回声变量。
+- 已配置 9 个内回流点：`RET-R5X-01` 至 `RET-R5X-09`；每个回流点只在 `POOL-R5X-HARD` 内循环，不得回原多线。
+- 已预留第六卷 `act6_20_scene_mapping`：20 个剧情段、5 个四段组、5 个二方向选择窗口，只在 `POOL-R5X-HARD` 池内承接。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 阶段结论：长线开发层基本补齐；下一步应回到剧情页级细稿和正式 JSON，优先补 P0-E 硬锁双确认页与 5X 第六卷 20 段承接。
+
+## 2026-05-20 IF 第七卷毕业结算矩阵开发记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
+- 本轮来自用户提醒：第七卷虽然共用事件点，但各线结局和文本不同；还必须补入大学四年最后一个新年、开学处境对照、改论文 / 毕业设计和答辩。
+- 已将第七卷定位为毕业结算层：不重新选路线，只读取已锁定路线池、路线 ID、硬外流状态和毕业温度。
+- 已固定 12 个第七卷共用事件点：`ACT7-E01-PRE-REGISTER` 至 `ACT7-E12-STATION-AFTER`。
+- 已把 `ACT7-E03-LAST-NEW-YEAR` 设为硬事件，要求写出最后一个新年与第一卷 / 开学时的空白桌面、行李、手机、关系和新年处境对照。
+- 已把 `ACT7-E06-THESIS-REVISION` 与 `ACT7-E07-DEFENSE` 设为硬事件，要求写导师意见、论文 / 毕业设计版本、格式修改、答辩前等待、答辩后补交和消息回声。
+- 已配置 11 个第七卷路线变体 ID：`ACT7-DEFAULT`、`ACT7-ZHOU`、`ACT7-TANG`、`ACT7-LUCHEN`、`ACT7-LIEFLAT`、`ACT7-WANFENG`、`ACT7-ROMANCE`、`ACT7-WORK`、`ACT7-A3`、`ACT7-PERFECT`、`ACT7-R5X`。
+- 已明确第七卷 `route_switch_allowed = false`；`R5X-HARD` 不得在第七卷回原多线，旧线只保留擦肩、消息、同场流程或低温回声。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：优先拆 `ACT7-E03-LAST-NEW-YEAR`、`ACT7-E06-THESIS-REVISION`、`ACT7-E07-DEFENSE` 三个剧情页级细稿，再把 12 个毕业事件点写入正式 JSON。
+
+## 2026-05-20 IF ACT7-E03 最后一个新年剧情页级细稿记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第七卷ACT7-E03最后一个新年剧情页.md`。
+- 本轮目标来自用户继续推进，并补充“新年、大学四年最后一个新年和开学的不同处境”必须进入开发层。
+- 已把 `ACT7-E03-LAST-NEW-YEAR` 定位为第七卷毕业结算层第一个核心细稿：承接“不公开”，回到“开题”，不改变已锁路线。
+- 已保留母版第七卷第三章核心现场：B204 主题材料会、现场核验、不强制公开、空白目录、没编号的糖、公开素材为空确认表。
+- 已写入开学 / 最后一个新年五组对照：行李、手机 / 群、桌子、关系、新年，并绑定 `old_object_weight`、`message_cut`、`dorm_visibility`、`public_boundary`、`old_debt`、`missed_chance` 和 `graduation_temperature` 等变量。
+- 已覆盖 11 个路线变体：`ACT7-DEFAULT`、`ACT7-ZHOU`、`ACT7-TANG`、`ACT7-LUCHEN`、`ACT7-LIEFLAT`、`ACT7-WANFENG`、`ACT7-ROMANCE`、`ACT7-WORK`、`ACT7-A3`、`ACT7-PERFECT`、`ACT7-R5X`。
+- 已明确完成条件：必须记录 `opening_contrast_seen = true`，否则 `ACT7-E03` 不算完成。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
+- 下一步建议：拆 `ACT7-E06-THESIS-REVISION` 改论文 / 毕业设计剧情页级细稿，然后拆 `ACT7-E07-DEFENSE`。

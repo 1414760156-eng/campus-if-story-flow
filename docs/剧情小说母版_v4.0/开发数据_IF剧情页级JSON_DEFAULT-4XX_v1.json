@@ -1,0 +1,1459 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-20",
+  "route_id": "DEFAULT-4XX",
+  "route_name": "宿舍修补线",
+  "route_pool_id": "POOL-DEFAULT-4XX",
+  "route_level": "S",
+  "purpose": "把 DEFAULT-4XX 从长线开发稿推进为第一条正式剧情页级 JSON 数据源，覆盖入口、8 个内回流点和第六卷 20/4/2 承接。",
+  "source_docs": [
+    "开发长线_IF可玩支线DEFAULT-4XX宿舍修补线.md",
+    "开发细稿_IF可玩支线DEFAULT-4XX内回流剧情页.md",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_outflow",
+    "route_parent_pool_id": "none",
+    "route_pool_id": "POOL-DEFAULT-4XX",
+    "route_focus": "default_4xx",
+    "outflow_permission_class": "main_axis",
+    "female_candidate_present": false,
+    "romance_outflow_allowed": false,
+    "romance_origin": "none",
+    "allowed_next_routes": [
+      "R5-STAND",
+      "R5-WANFENG"
+    ],
+    "pool_entry_choice": "DEFAULT-ENTRY-01",
+    "active_route_id": "DEFAULT-4XX",
+    "closed_route_ids": [
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-WANFENG",
+      "R5-ROMANCE",
+      "R5X-HARD"
+    ],
+    "soft_echo_routes": [
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-WANFENG",
+      "R5-ROMANCE"
+    ],
+    "primary_bond": "none",
+    "route_lock": false,
+    "hard_outflow": false,
+    "route_confidence": 3,
+    "act5_mainline_choice_count": 5,
+    "act5_required_windows_seen": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_choice_floor_met": true,
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "graduation_temperature": "unresolved_but_present"
+  },
+  "local_variables": [
+    "dorm_trust",
+    "dorm_warmth",
+    "avoidance",
+    "old_debt",
+    "repair_depth",
+    "proxy_risk",
+    "public_boundary",
+    "project_stability",
+    "graduation_temperature"
+  ],
+  "entry_node": {
+    "id": "D_00_SHORT_GROUP",
+    "canonical_aliases": [
+      "P0D_ACT5_SHORT_GROUP",
+      "DEFAULT-ENTRY"
+    ],
+    "module": "P0-D",
+    "route_id": "DEFAULT-4XX",
+    "route_pool_id": "POOL-DEFAULT-4XX",
+    "act": "第五幕",
+    "scene": "事项群变短",
+    "location": "青枫居4XX / 事项群 / 公共桌",
+    "participants": [
+      "林亦舟",
+      "周屿",
+      "唐骁",
+      "陆沉"
+    ],
+    "trigger": "第五幕宿舍强冲突已经集中爆发，4XX 群里只剩表格、外卖、今晚回不回等短句。",
+    "player_question": "林亦舟是否继续把问题带回公共桌，而不是私聊某一个人、静音或外流？",
+    "act5_window_tag": "dorm_stand",
+    "mainline_anchor": [
+      "第五幕宿舍强冲突必然发生",
+      "周屿、唐骁、陆沉都不能被写成单纯过错方",
+      "进入本线只增加当面处理机会，不保证和解"
+    ],
+    "choices": [
+      {
+        "choice_id": "DEFAULT-ENTRY-01",
+        "label": "回群说“等我回去，当面说”",
+        "action_logic": "林亦舟把冲突从短句群聊带回公共桌，愿意承受第一句话的尴尬。",
+        "variable_delta": {
+          "dorm_repair": 1,
+          "dorm_trust": 1,
+          "avoidance": -1
+        },
+        "route_effect": {
+          "route_pool_id": "POOL-DEFAULT-4XX",
+          "route_focus": "default_4xx",
+          "pool_entry_choice": "DEFAULT-ENTRY-01",
+          "route_confidence": 1,
+          "act5_mainline_choice_count": 1,
+          "act5_required_windows_seen_add": "dorm_stand"
+        },
+        "relationship_effect": {
+          "dorm_group": 1
+        },
+        "act6_echo_hook": "ACT6-DEFAULT-B01-public-table-tone",
+        "next_hint": "进入第一章“事项群变短”，后续公共桌仍会反复回响。"
+      },
+      {
+        "choice_id": "DEFAULT-ENTRY-02",
+        "label": "不私聊任何一人，先回公共桌",
+        "action_logic": "林亦舟不把压力交给某一个室友，不让补话变成站队。",
+        "variable_delta": {
+          "public_boundary": 1,
+          "repair_depth": 1,
+          "selected_private": -1
+        },
+        "route_effect": {
+          "route_pool_id": "POOL-DEFAULT-4XX",
+          "route_focus": "default_4xx",
+          "pool_entry_choice": "DEFAULT-ENTRY-02",
+          "route_confidence": 1,
+          "act5_mainline_choice_count": 1,
+          "act5_required_windows_seen_add": "dorm_stand"
+        },
+        "relationship_effect": {
+          "dorm_group": 0.5
+        },
+        "act6_echo_hook": "ACT6-DEFAULT-B02-no-private-proxy",
+        "next_hint": "后续私下补话仍可发生，但不把任何室友变成默认主线。"
+      },
+      {
+        "choice_id": "DEFAULT-ENTRY-03",
+        "label": "承认自己也想逃，但仍回去",
+        "action_logic": "林亦舟不把回避伪装成冷静，先承认想逃，再选择推门。",
+        "variable_delta": {
+          "mind_clarity": 1,
+          "avoidance": -1,
+          "old_debt": 1
+        },
+        "route_effect": {
+          "route_pool_id": "POOL-DEFAULT-4XX",
+          "route_focus": "default_4xx",
+          "pool_entry_choice": "DEFAULT-ENTRY-03",
+          "route_confidence": 1,
+          "act5_mainline_choice_count": 1,
+          "act5_required_windows_seen_add": "dorm_stand"
+        },
+        "relationship_effect": {
+          "dorm_group": 0.5
+        },
+        "act6_echo_hook": "ACT6-DEFAULT-B01-avoidance-named",
+        "next_hint": "回避被看见后，后续低温照面和楼下不进门会更可玩。"
+      }
+    ],
+    "echo_hooks": [
+      "第六卷公共桌语气",
+      "第六卷 C407 协作温度",
+      "第七卷毕业照和饭局位置"
+    ],
+    "drift_guard": "DEFAULT-4XX 不是完美线，也不是真结局；修补只增加当面处理机会，不取消裂痕。"
+  },
+  "act5_floor_coverage": {
+    "required_count": 5,
+    "required_windows": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "representative_nodes": [
+      {
+        "window_tag": "dorm_stand",
+        "node_id": "D_00_SHORT_GROUP",
+        "act6_echo_hook_required": true
+      },
+      {
+        "window_tag": "intimacy_or_wanfeng",
+        "node_id": "P0C_ACT5_WANFENG_BOUNDARY",
+        "act6_echo_hook_required": true
+      },
+      {
+        "window_tag": "project_or_rule",
+        "node_id": "P0E_ACT5_RULE_AND_PROJECT",
+        "act6_echo_hook_required": true
+      },
+      {
+        "window_tag": "activity_or_interest",
+        "node_id": "P0A_ACT3_ACTIVITY_ECHO_OR_P0E_ACT5_ACTIVITY_CHECK",
+        "act6_echo_hook_required": true
+      },
+      {
+        "window_tag": "avoidance_or_outflow",
+        "node_id": "P0E_ACT5_FLOOR_GATE",
+        "act6_echo_hook_required": true
+      }
+    ],
+    "fail_behavior": "未完成五类窗口时，不得把 DEFAULT-4XX 直接锁成完整普通长线，只能回缺失窗口补足或变成低温软回声。"
+  },
+  "return_points": [
+    {
+      "return_id": "RET-DEFAULT-01",
+      "title": "公共桌外卖",
+      "mother_event_id": "ME-DAILY-CAMPUS",
+      "chapter_refs": [
+        "DEFAULT-CH04"
+      ],
+      "function": "处理饭桌温度、默认口味和是否替缺席者点饭。",
+      "locations": [
+        "青枫居4XX",
+        "西区外卖点",
+        "食堂二楼"
+      ],
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "return_to": [
+        "DEFAULT-CH04-N02",
+        "DEFAULT-CH04-N03"
+      ],
+      "affects": [
+        "饭桌温度",
+        "下一次群里问吃不吃的语气",
+        "替缺席者决定的风险"
+      ],
+      "forbidden_effect": "不让一顿饭直接和解，不开启美食支线。",
+      "directions": [
+        {
+          "direction_id": "RET-DEFAULT-01-A",
+          "label": "主动点饭回",
+          "function": "把公共桌重新变成饭桌，同时测试顺手照顾是否越界。",
+          "beat_page_ids": [
+            "RET-DEFAULT-01-A01",
+            "RET-DEFAULT-01-A02",
+            "RET-DEFAULT-01-A03",
+            "RET-DEFAULT-01-A04"
+          ],
+          "beat_outline": [
+            "群里只剩“谁点饭”，公共桌还有未收拾的外卖袋。",
+            "唐骁从 C407 回来先问确认，周屿用随便遮住真实偏好。",
+            "玩家决定只问在场的人、追问缺席者，或按惯常口味点。",
+            "外卖回到公共桌，温度上升但旧账不消失。"
+          ],
+          "variable_delta_tags": [
+            "dorm_warmth",
+            "proxy_risk",
+            "tang_trust",
+            "public_boundary"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH04-N02",
+            "ACT6-DEFAULT-S05"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-01-B",
+          "label": "超时取餐回",
+          "function": "让外卖从温情动作变成现实麻烦。",
+          "beat_page_ids": [
+            "RET-DEFAULT-01-B01",
+            "RET-DEFAULT-01-B02",
+            "RET-DEFAULT-01-B03",
+            "RET-DEFAULT-01-B04"
+          ],
+          "beat_outline": [
+            "骑手只等三分钟，群里没人抢着下楼。",
+            "下楼时碰见陆沉或唐骁，现实任务打断回避。",
+            "玩家决定自己取、叫人一起，或在群里确认谁方便。",
+            "饭凉一点回到 4XX，迟到和漏汤变成文本压力。"
+          ],
+          "variable_delta_tags": [
+            "time_debt",
+            "late_misread",
+            "luchen_trust",
+            "dorm_warmth"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH04-N03",
+            "ACT6-DEFAULT-S06"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-01-C",
+          "label": "沉默边界回",
+          "function": "测试玩家能否忍住不替沉默的人决定。",
+          "beat_page_ids": [
+            "RET-DEFAULT-01-C01",
+            "RET-DEFAULT-01-C02",
+            "RET-DEFAULT-01-C03",
+            "RET-DEFAULT-01-C04"
+          ],
+          "beat_outline": [
+            "某个人一直不回吃不吃，饭点越来越近。",
+            "周屿说别管他，唐骁提醒别替人做决定。",
+            "玩家决定不点、私聊问一句，或点一份可退的。",
+            "饭袋放不放到对方桌边，决定下一次群语气。"
+          ],
+          "variable_delta_tags": [
+            "public_boundary",
+            "dorm_warmth",
+            "misread",
+            "proxy_risk"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH04-N03",
+            "ACT6-DEFAULT-S07"
+          ]
+        }
+      ]
+    },
+    {
+      "return_id": "RET-DEFAULT-02",
+      "title": "楼下不进门",
+      "mother_event_id": "ME-NOT-ENTER-DOOR",
+      "chapter_refs": [
+        "DEFAULT-CH01",
+        "DEFAULT-CH03"
+      ],
+      "function": "处理回避现场、当面回去和被现实流程推回的分界。",
+      "locations": [
+        "青枫居楼下",
+        "小卖部",
+        "凌空栈道"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "夏知微",
+        "许棠",
+        "宿管阿姨"
+      ],
+      "return_to": [
+        "DEFAULT-CH01-N03",
+        "DEFAULT-CH01-N04",
+        "DEFAULT-CH02-N01"
+      ],
+      "affects": [
+        "第一章进门语气",
+        "第二章事实表起点",
+        "第三章补话对象温度"
+      ],
+      "forbidden_effect": "不改变第五幕宿舍强冲突必然发生，不锁唐骁 / 夏知微 / 许棠线。",
+      "directions": [
+        {
+          "direction_id": "RET-DEFAULT-02-A",
+          "label": "室友同回",
+          "function": "让唐骁以现实任务进入，给玩家一个不那么硬地回门的台阶。",
+          "beat_page_ids": [
+            "RET-DEFAULT-02-A01",
+            "RET-DEFAULT-02-A02",
+            "RET-DEFAULT-02-A03",
+            "RET-DEFAULT-02-A04"
+          ],
+          "beat_outline": [
+            "林亦舟坐在楼下不进门，4XX 群又弹出短句。",
+            "唐骁出来买夜宵，直接问他还回不回去。",
+            "玩家选择只聊夜宵、问表格是不是太硬，或沉默跟去小卖部。",
+            "两人一起上楼，唐骁不替他开门。"
+          ],
+          "variable_delta_tags": [
+            "tang_trust",
+            "dorm_warmth",
+            "avoidance"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH01-N03",
+            "ACT6-DEFAULT-S01"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-02-B",
+          "label": "宿管催回",
+          "function": "用门禁和登记把回不回变成现实流程。",
+          "beat_page_ids": [
+            "RET-DEFAULT-02-B01",
+            "RET-DEFAULT-02-B02",
+            "RET-DEFAULT-02-B03",
+            "RET-DEFAULT-02-B04"
+          ],
+          "beat_outline": [
+            "宿管阿姨问他哪个寝室，站这儿半天了。",
+            "4XX 群催最后一列谁确认。",
+            "玩家选择只登记自己、帮别人带话，或上楼让本人自己写。",
+            "推开 4XX 门时，登记本逻辑带回公共桌。"
+          ],
+          "variable_delta_tags": [
+            "avoidance",
+            "rule_pressure_echo",
+            "public_boundary",
+            "dorm_trust"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH01-N04",
+            "DEFAULT-CH02-N01"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-02-C",
+          "label": "绕远软照面",
+          "function": "允许玩家暂时不进去，但必须被群消息、门禁或时间拉回。",
+          "beat_page_ids": [
+            "RET-DEFAULT-02-C01",
+            "RET-DEFAULT-02-C02",
+            "RET-DEFAULT-02-C03",
+            "RET-DEFAULT-02-C04"
+          ],
+          "beat_outline": [
+            "林亦舟绕到凌空栈道或晨光湖边。",
+            "夏知微拍夜景，或许棠抱着材料袋经过。",
+            "外部人物只提醒边界，不替 4XX 判案。",
+            "4XX 群最后十分钟把他拉回门口。"
+          ],
+          "variable_delta_tags": [
+            "mind_clarity",
+            "public_boundary",
+            "avoidance",
+            "misread"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH03-N02",
+            "ACT6-DEFAULT-S03"
+          ]
+        }
+      ]
+    },
+    {
+      "return_id": "RET-DEFAULT-03",
+      "title": "凌空栈道软照面",
+      "mother_event_id": "ME-CAMPUS-EDGE",
+      "chapter_refs": [
+        "DEFAULT-CH03"
+      ],
+      "function": "处理外部照面、边界提醒和消息拉回。",
+      "locations": [
+        "凌空栈道",
+        "晨光湖边",
+        "融媒体中心门口"
+      ],
+      "participants": [
+        "林亦舟",
+        "夏知微",
+        "许棠"
+      ],
+      "return_to": [
+        "DEFAULT-CH03-N02",
+        "DEFAULT-CH03-N03",
+        "DEFAULT-CH05-N01"
+      ],
+      "affects": [
+        "外部照面温度",
+        "公开边界",
+        "材料确认语气",
+        "林亦舟回公共桌时是否更谨慎"
+      ],
+      "forbidden_effect": "不让夏知微 / 许棠 / 沈嘉禾替 4XX 判案，不开启新亲密线。",
+      "directions": [
+        {
+          "direction_id": "RET-DEFAULT-03-A",
+          "label": "不聊冲突回",
+          "function": "通过近况和未来感获得一点稳定，但不降低旧账。",
+          "beat_page_ids": [
+            "RET-DEFAULT-03-A01",
+            "RET-DEFAULT-03-A02",
+            "RET-DEFAULT-03-A03",
+            "RET-DEFAULT-03-A04"
+          ],
+          "beat_outline": [
+            "补话前，林亦舟去凌空栈道透气。",
+            "夏知微问他怎么一个人走这么远。",
+            "玩家选择聊近况、聊她忙什么，或只说想吹风。",
+            "回 4XX 后语气更稳，但主问题没有消失。"
+          ],
+          "variable_delta_tags": [
+            "mind_clarity",
+            "external_warmth",
+            "old_debt"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH03-N02",
+            "ACT6-DEFAULT-S09"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-03-B",
+          "label": "聊冲突回",
+          "function": "从外部视角获得边界提醒。",
+          "beat_page_ids": [
+            "RET-DEFAULT-03-B01",
+            "RET-DEFAULT-03-B02",
+            "RET-DEFAULT-03-B03",
+            "RET-DEFAULT-03-B04"
+          ],
+          "beat_outline": [
+            "林亦舟提到公共桌气氛不对，但不点名。",
+            "夏知微提醒照片、材料、话都要问本人愿不愿意。",
+            "玩家承认想替人说，或只问边界。",
+            "回主线时，他删掉默认同意字样。"
+          ],
+          "variable_delta_tags": [
+            "public_boundary",
+            "proxy_risk",
+            "repair_depth_echo"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH03-N03",
+            "ACT6-DEFAULT-S10"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-03-C",
+          "label": "消息拉回",
+          "function": "外部照面被 4XX 和材料消息同时打断。",
+          "beat_page_ids": [
+            "RET-DEFAULT-03-C01",
+            "RET-DEFAULT-03-C02",
+            "RET-DEFAULT-03-C03",
+            "RET-DEFAULT-03-C04"
+          ],
+          "beat_outline": [
+            "4XX 群和许棠消息几乎同时跳出来。",
+            "许棠提醒缓存不是授权，群里也不是本人确认。",
+            "玩家决定先回 4XX、先回许棠，或都不回。",
+            "两个窗口之间的犹豫带回公共桌。"
+          ],
+          "variable_delta_tags": [
+            "late_misread",
+            "public_boundary",
+            "dorm_trust",
+            "time_debt"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH05-N01",
+            "ACT6-DEFAULT-S11"
+          ]
+        }
+      ]
+    },
+    {
+      "return_id": "RET-DEFAULT-04",
+      "title": "快递站旧包裹",
+      "mother_event_id": "ME-EXPRESS-WORK",
+      "chapter_refs": [
+        "DEFAULT-CH05",
+        "DEFAULT-CH08"
+      ],
+      "function": "处理代取、退回、错件返工和物品边界。",
+      "locations": [
+        "快递站",
+        "C407",
+        "青枫居4XX"
+      ],
+      "participants": [
+        "林亦舟",
+        "陆沉",
+        "唐骁",
+        "沈嘉禾"
+      ],
+      "return_to": [
+        "DEFAULT-CH05-N02",
+        "DEFAULT-CH05-N03",
+        "DEFAULT-CH08-N03"
+      ],
+      "affects": [
+        "代取风险",
+        "本人确认",
+        "项目备份",
+        "清寝物品处理边界"
+      ],
+      "forbidden_effect": "不允许代拆包裹，不让物件自动变怀旧和解道具。",
+      "directions": [
+        {
+          "direction_id": "RET-DEFAULT-04-A",
+          "label": "拿回",
+          "function": "可以把物件拿回，但拿回不等于处理完。",
+          "beat_page_ids": [
+            "RET-DEFAULT-04-A01",
+            "RET-DEFAULT-04-A02",
+            "RET-DEFAULT-04-A03",
+            "RET-DEFAULT-04-A04"
+          ],
+          "beat_outline": [
+            "项目或清寝缺一根线、一本旧书或一个未取件。",
+            "快递站排队时遇到陆沉，或老板只认本人手机号。",
+            "玩家决定拍照问群、等本人来，或代取但不拆。",
+            "物件回到 4XX 或 C407，变成边界压力。"
+          ],
+          "variable_delta_tags": [
+            "luchen_trust",
+            "proxy_risk",
+            "dorm_warmth",
+            "public_boundary"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH05-N02",
+            "ACT6-DEFAULT-S13"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-04-B",
+          "label": "退回",
+          "function": "让玩家承认不能替别人保管所有东西。",
+          "beat_page_ids": [
+            "RET-DEFAULT-04-B01",
+            "RET-DEFAULT-04-B02",
+            "RET-DEFAULT-04-B03",
+            "RET-DEFAULT-04-B04"
+          ],
+          "beat_outline": [
+            "包裹放太久即将退回，名字像室友但不完全确认。",
+            "工作人员只认本人确认。",
+            "玩家选择退回、私聊确认，或拿回公共桌等本人。",
+            "回流到清单或公共桌，物品不自动变成温情。"
+          ],
+          "variable_delta_tags": [
+            "public_boundary",
+            "misread",
+            "old_debt",
+            "proxy_risk"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH08-N03",
+            "ACT6-DEFAULT-S14"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-04-C",
+          "label": "错件返工",
+          "function": "把物件边界接到项目返工和外部误读。",
+          "beat_page_ids": [
+            "RET-DEFAULT-04-C01",
+            "RET-DEFAULT-04-C02",
+            "RET-DEFAULT-04-C03",
+            "RET-DEFAULT-04-C04"
+          ],
+          "beat_outline": [
+            "打印页码、样张或旧包裹内容不对，必须返工。",
+            "唐骁先问责任，沈嘉禾只提醒格式问题。",
+            "玩家决定自己补救、当面叫唐骁确认，或请沈嘉禾看格式。",
+            "回 C407 或 4XX 时形成协作温度和外部误读。"
+          ],
+          "variable_delta_tags": [
+            "tang_trust",
+            "external_help_misread",
+            "public_boundary",
+            "project_stability"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH05-N03",
+            "ACT6-DEFAULT-S15"
+          ]
+        }
+      ]
+    },
+    {
+      "return_id": "RET-DEFAULT-05",
+      "title": "事项群短句",
+      "mother_event_id": "ME-4XX-GROUP",
+      "chapter_refs": [
+        "DEFAULT-CH02"
+      ],
+      "function": "处理群聊短句、私聊误读、撤回消息和授权边界。",
+      "locations": [
+        "4XX 事项群",
+        "青枫居4XX 公共桌"
+      ],
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "return_to": [
+        "DEFAULT-CH02-N03",
+        "DEFAULT-CH02-N04"
+      ],
+      "affects": [
+        "公共桌事实表格式",
+        "三室友信任差异",
+        "后续授权边界"
+      ],
+      "forbidden_effect": "不让表格解决全部矛盾，不让群聊替代当面处理。",
+      "directions": [
+        {
+          "direction_id": "RET-DEFAULT-05-A",
+          "label": "群截止拉回",
+          "function": "用截止时间暴露流程压力和关系温度。",
+          "beat_page_ids": [
+            "RET-DEFAULT-05-A01",
+            "RET-DEFAULT-05-A02",
+            "RET-DEFAULT-05-A03",
+            "RET-DEFAULT-05-A04"
+          ],
+          "beat_outline": [
+            "唐骁在群里只补一句 23:00 截止。",
+            "周屿已读不回，陆沉停在输入中。",
+            "玩家决定按截止推进、问谁没确认，或让每个人补一行。",
+            "回公共桌时唐骁信任或规则压力变化。"
+          ],
+          "variable_delta_tags": [
+            "tang_trust",
+            "dorm_trust",
+            "rule_pressure_echo",
+            "project_stability"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH02-N03",
+            "ACT6-DEFAULT-S05"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-05-B",
+          "label": "私聊拉回",
+          "function": "处理周屿用表情和玩笑遮住的不满。",
+          "beat_page_ids": [
+            "RET-DEFAULT-05-B01",
+            "RET-DEFAULT-05-B02",
+            "RET-DEFAULT-05-B03",
+            "RET-DEFAULT-05-B04"
+          ],
+          "beat_outline": [
+            "周屿只发一个表情，像玩笑也像不满。",
+            "私聊窗口里他先回你们开会吧。",
+            "玩家私聊问真实意思、拉回群里问，或不追。",
+            "回主线后周屿语气变软或更刺。"
+          ],
+          "variable_delta_tags": [
+            "zhou_trust",
+            "misread",
+            "late_regret",
+            "selected_private"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH02-N03",
+            "ACT6-DEFAULT-S06"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-05-C",
+          "label": "表情沉默回",
+          "function": "处理陆沉撤回、短句和不想被默认同意。",
+          "beat_page_ids": [
+            "RET-DEFAULT-05-C01",
+            "RET-DEFAULT-05-C02",
+            "RET-DEFAULT-05-C03",
+            "RET-DEFAULT-05-C04"
+          ],
+          "beat_outline": [
+            "陆沉发“我自己填”又撤回。",
+            "公共桌没人立刻提撤回提示。",
+            "玩家决定当面问、截图保存，或假装没看见。",
+            "事实表里删除默认同意，边界变清。"
+          ],
+          "variable_delta_tags": [
+            "luchen_trust",
+            "proxy_risk",
+            "public_boundary",
+            "time_debt"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH02-N04",
+            "ACT6-DEFAULT-S07"
+          ]
+        }
+      ]
+    },
+    {
+      "return_id": "RET-DEFAULT-06",
+      "title": "最后一顿饭预热",
+      "mother_event_id": "ME-GRADUATION-MEAL",
+      "chapter_refs": [
+        "DEFAULT-CH04",
+        "DEFAULT-CH09"
+      ],
+      "function": "处理投票、截止、迟到、打包和饭局不是和解证明。",
+      "locations": [
+        "东北饺子馆",
+        "后街烧烤",
+        "食堂二楼",
+        "4XX 群"
+      ],
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "return_to": [
+        "DEFAULT-CH09-N01",
+        "DEFAULT-CH09-N02",
+        "DEFAULT-CH09-N03",
+        "DEFAULT-CH09-N04"
+      ],
+      "affects": [
+        "饭局地点",
+        "人数确认",
+        "迟到",
+        "打包",
+        "空位温度"
+      ],
+      "forbidden_effect": "不让最后一顿饭直接团圆，不替缺席者占位或点菜无代价。",
+      "directions": [
+        {
+          "direction_id": "RET-DEFAULT-06-A",
+          "label": "投票回",
+          "function": "用地点选择暴露四人的偏好和现实分流。",
+          "beat_page_ids": [
+            "RET-DEFAULT-06-A01",
+            "RET-DEFAULT-06-A02",
+            "RET-DEFAULT-06-A03",
+            "RET-DEFAULT-06-A04"
+          ],
+          "beat_outline": [
+            "地点在东北饺子馆、后街烧烤、食堂二楼之间摇摆。",
+            "周屿想热闹，陆沉看价格，唐骁问能不能准点。",
+            "玩家投地点或提折中方案。",
+            "饭局确认页留下临时桌号。"
+          ],
+          "variable_delta_tags": [
+            "dorm_warmth",
+            "money_pressure_echo",
+            "zhou_warmth",
+            "public_boundary"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH09-N01",
+            "ACT6-DEFAULT-S17"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-06-B",
+          "label": "截止回",
+          "function": "让过时不补成为饭局边界。",
+          "beat_page_ids": [
+            "RET-DEFAULT-06-B01",
+            "RET-DEFAULT-06-B02",
+            "RET-DEFAULT-06-B03",
+            "RET-DEFAULT-06-B04"
+          ],
+          "beat_outline": [
+            "饭店老板催最终人数，班级群写过时不补。",
+            "4XX 仍有人没回，唐骁提醒不要替人填。",
+            "玩家决定不替填、留可取消位，或最后私聊一次。",
+            "订桌消息发出时，那一栏可能还是空的。"
+          ],
+          "variable_delta_tags": [
+            "public_boundary",
+            "proxy_risk",
+            "dorm_warmth",
+            "polite_distance"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH09-N02",
+            "ACT6-DEFAULT-S18"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-06-C",
+          "label": "迟到回",
+          "function": "让等不等成为可玩选择。",
+          "beat_page_ids": [
+            "RET-DEFAULT-06-C01",
+            "RET-DEFAULT-06-C02",
+            "RET-DEFAULT-06-C03",
+            "RET-DEFAULT-06-C04"
+          ],
+          "beat_outline": [
+            "周屿彩排拖住，或陆沉排班还差十分钟。",
+            "到场者先坐下，菜单已经递过来。",
+            "玩家选择等人、先点可补的菜，或按到场人数点。",
+            "人到不齐，菜却已经摆开。"
+          ],
+          "variable_delta_tags": [
+            "dorm_warmth",
+            "polite_distance",
+            "late_misread",
+            "time_debt"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH09-N03",
+            "ACT6-DEFAULT-S19"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-06-D",
+          "label": "打包回",
+          "function": "处理人没到，东西要不要留。",
+          "beat_page_ids": [
+            "RET-DEFAULT-06-D01",
+            "RET-DEFAULT-06-D02",
+            "RET-DEFAULT-06-D03",
+            "RET-DEFAULT-06-D04"
+          ],
+          "beat_outline": [
+            "唐骁线上复核延长，群里只发你们先吃。",
+            "饭店问要不要打包，其他人态度不一。",
+            "玩家打包、只发菜单让他选，或不替决定。",
+            "饭盒带回门口，唐骁只问多少钱。"
+          ],
+          "variable_delta_tags": [
+            "tang_trust",
+            "proxy_risk",
+            "graduation_temperature",
+            "money_pressure_echo"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH09-N04",
+            "ACT6-DEFAULT-S20"
+          ]
+        }
+      ]
+    },
+    {
+      "return_id": "RET-DEFAULT-07",
+      "title": "晨光体育馆短场",
+      "mother_event_id": "ME-SPORTS-ACTIVITY",
+      "chapter_refs": [
+        "DEFAULT-CH06"
+      ],
+      "function": "处理偶遇、受伤、活动群拉回和低温照面。",
+      "locations": [
+        "晨光体育馆",
+        "健源体育场",
+        "校医院"
+      ],
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "return_to": [
+        "DEFAULT-CH06-N02",
+        "DEFAULT-CH06-N03",
+        "DEFAULT-CH06-N04"
+      ],
+      "affects": [
+        "体育场低温照面",
+        "受伤陪同",
+        "活动群拉走",
+        "是否等人"
+      ],
+      "forbidden_effect": "不把运动场写成青春滤镜，不让受伤强制和解。",
+      "directions": [
+        {
+          "direction_id": "RET-DEFAULT-07-A",
+          "label": "偶遇回",
+          "function": "在非宿舍场景获得低压对话机会，但不直接重开旧账。",
+          "beat_page_ids": [
+            "RET-DEFAULT-07-A01",
+            "RET-DEFAULT-07-A02",
+            "RET-DEFAULT-07-A03",
+            "RET-DEFAULT-07-A04"
+          ],
+          "beat_outline": [
+            "乐跑打卡或羽毛球场空出半小时。",
+            "林亦舟碰到其中一个室友，对方只问你也来。",
+            "玩家只聊身体、问近况，或提一句旧事又停住。",
+            "回 4XX 后低温或缓和可见。"
+          ],
+          "variable_delta_tags": [
+            "dorm_warmth",
+            "mind_clarity",
+            "old_debt",
+            "polite_distance"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH06-N02",
+            "ACT6-DEFAULT-S09"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-07-B",
+          "label": "受伤回",
+          "function": "测试陪不陪、通知谁、是否替人安排。",
+          "beat_page_ids": [
+            "RET-DEFAULT-07-B01",
+            "RET-DEFAULT-07-B02",
+            "RET-DEFAULT-07-B03",
+            "RET-DEFAULT-07-B04"
+          ],
+          "beat_outline": [
+            "有人手腕或脚踝轻微扭到。",
+            "另一个室友不确定要不要陪，群里只问严重吗。",
+            "玩家陪去、只帮通知，或留在原任务现场。",
+            "回主线时形成等与不等的回声。"
+          ],
+          "variable_delta_tags": [
+            "selected_trust",
+            "dorm_warmth",
+            "late_misread",
+            "public_boundary"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH06-N03",
+            "ACT6-DEFAULT-S10"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-07-C",
+          "label": "活动群拉回",
+          "function": "让体育活动、彩排、乐跑或志愿群把人物从宿舍主事件中拉走。",
+          "beat_page_ids": [
+            "RET-DEFAULT-07-C01",
+            "RET-DEFAULT-07-C02",
+            "RET-DEFAULT-07-C03",
+            "RET-DEFAULT-07-C04"
+          ],
+          "beat_outline": [
+            "体育场活动群跳出通知，时间和补话冲突。",
+            "周屿被彩排拉走，唐骁看截止，陆沉问是否还需要他。",
+            "玩家先处理活动、先回公共桌，或让各自确认任务。",
+            "回到复发主线时站队感不同。"
+          ],
+          "variable_delta_tags": [
+            "activity_link",
+            "public_boundary",
+            "dorm_trust",
+            "polite_distance"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH06-N04",
+            "ACT6-DEFAULT-S11"
+          ]
+        }
+      ]
+    },
+    {
+      "return_id": "RET-DEFAULT-08",
+      "title": "毕业照预览",
+      "mother_event_id": "ME-GRADUATION-MATERIAL",
+      "chapter_refs": [
+        "DEFAULT-CH07",
+        "DEFAULT-CH10"
+      ],
+      "function": "处理同框、授权、缓存、无人回复和公开边界。",
+      "locations": [
+        "B204 主题材料会",
+        "共享盘",
+        "毕业照预览页"
+      ],
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉",
+        "许棠"
+      ],
+      "return_to": [
+        "DEFAULT-CH07-N02",
+        "DEFAULT-CH07-N03",
+        "DEFAULT-CH07-N04",
+        "DEFAULT-CH10-N02"
+      ],
+      "affects": [
+        "毕业照授权",
+        "缓存处理",
+        "只留存不公开",
+        "无人回复边界"
+      ],
+      "forbidden_effect": "不让合照自动和解，不把缓存当授权，不默认沉默同意。",
+      "directions": [
+        {
+          "direction_id": "RET-DEFAULT-08-A",
+          "label": "材料会拉回",
+          "function": "主题材料会需要照片，把 4XX 合照重新摆到公共视野。",
+          "beat_page_ids": [
+            "RET-DEFAULT-08-A01",
+            "RET-DEFAULT-08-A02",
+            "RET-DEFAULT-08-A03",
+            "RET-DEFAULT-08-A04"
+          ],
+          "beat_outline": [
+            "B204 要最后一个新年素材，4XX 合照进入候选。",
+            "周屿问会不会写得太漂亮，唐骁问有没有授权。",
+            "玩家只留存不公开、问能否使用，或暂缓提交。",
+            "合照不进第一批材料，或以待确认留在文件夹。"
+          ],
+          "variable_delta_tags": [
+            "public_boundary",
+            "graduation_temperature",
+            "dorm_trust",
+            "polite_distance"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH07-N02",
+            "ACT6-DEFAULT-S17"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-08-B",
+          "label": "许棠提醒回",
+          "function": "共享盘缓存制造公开风险，许棠只提供流程提醒。",
+          "beat_page_ids": [
+            "RET-DEFAULT-08-B01",
+            "RET-DEFAULT-08-B02",
+            "RET-DEFAULT-08-B03",
+            "RET-DEFAULT-08-B04"
+          ],
+          "beat_outline": [
+            "共享盘缓存出现 4XX 合照缩略图。",
+            "许棠提醒缓存不是授权。",
+            "玩家决定先删、先问，还是先留证据。",
+            "缩略图从共享盘消失，材料少了一张热闹照片。"
+          ],
+          "variable_delta_tags": [
+            "public_credit",
+            "misread",
+            "public_boundary",
+            "time_debt"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH07-N03",
+            "ACT6-DEFAULT-S18"
+          ]
+        },
+        {
+          "direction_id": "RET-DEFAULT-08-C",
+          "label": "无人回复回",
+          "function": "处理授权确认无人回复时的选择，不能把沉默当同意。",
+          "beat_page_ids": [
+            "RET-DEFAULT-08-C01",
+            "RET-DEFAULT-08-C02",
+            "RET-DEFAULT-08-C03",
+            "RET-DEFAULT-08-C04"
+          ],
+          "beat_outline": [
+            "林亦舟把是否同意用于主题材料发进 4XX 群。",
+            "十分钟没人回，窗口倒计时还剩半小时。",
+            "玩家继续等、不用这张，或逐个私聊。",
+            "窗口关闭后，有人才回别用。"
+          ],
+          "variable_delta_tags": [
+            "polite_distance",
+            "unresolved_echo",
+            "graduation_temperature",
+            "public_boundary"
+          ],
+          "echo_hooks": [
+            "DEFAULT-CH07-N04",
+            "DEFAULT-CH10-N02",
+            "ACT6-DEFAULT-S19"
+          ]
+        }
+      ]
+    }
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-DEFAULT-B01",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "block_order": 1,
+      "scene_ids": [
+        "ACT6-DEFAULT-S01",
+        "ACT6-DEFAULT-S02",
+        "ACT6-DEFAULT-S03",
+        "ACT6-DEFAULT-S04"
+      ],
+      "scene_summaries": [
+        "第六卷开始，4XX 不再默认天天同行，但公共桌仍然要处理最低事实。",
+        "事项群短句变成 C407 或课程材料的真实阻碍。",
+        "楼下不进门和群短句的回声决定第一轮当面处理语气。",
+        "公共桌能坐下，但每个人都保留没说完的部分。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-01",
+        "after_scene": "ACT6-DEFAULT-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C01-A",
+            "label": "当面修补",
+            "variable_delta": {
+              "repair_depth": 1,
+              "dorm_trust": 1,
+              "old_debt": 1
+            },
+            "next_hint": "下一组公共桌补话更容易开启，但旧账会更具体。"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C01-B",
+            "label": "保持体面距离",
+            "variable_delta": {
+              "polite_distance": 1,
+              "avoidance": 1,
+              "dorm_warmth": -1
+            },
+            "next_hint": "下一组 C407 事项优先，关系温度更低。"
+          }
+        ]
+      },
+      "echo_from_return_points": [
+        "RET-DEFAULT-02",
+        "RET-DEFAULT-05"
+      ],
+      "forbidden_reopen_routes": [
+        "R5-ZHOU",
+        "R5-TANG",
+        "R5-LUCHEN",
+        "R5-LIEFLAT",
+        "R5-WANFENG",
+        "R5-ROMANCE"
+      ]
+    },
+    {
+      "block_id": "ACT6-DEFAULT-B02",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "block_order": 2,
+      "scene_ids": [
+        "ACT6-DEFAULT-S05",
+        "ACT6-DEFAULT-S06",
+        "ACT6-DEFAULT-S07",
+        "ACT6-DEFAULT-S08"
+      ],
+      "scene_summaries": [
+        "C407、课程材料和事实表开始挤压同一张公共桌。",
+        "外卖、表格和授权边界形成第一次综合返工。",
+        "专业稳定不等于亲密恢复，唐骁和陆沉的边界都被看见。",
+        "周屿用玩笑遮住缺席感，林亦舟必须决定先补关系还是先保事项。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-02",
+        "after_scene": "ACT6-DEFAULT-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C02-A",
+            "label": "公共桌补话",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "repair_depth": 1,
+              "project_stability": -1
+            },
+            "next_hint": "下一组饭局和一对一短谈更容易出现。"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C02-B",
+            "label": "C407 事项优先",
+            "variable_delta": {
+              "project_stability": 1,
+              "public_boundary": 1,
+              "dorm_warmth": -1
+            },
+            "next_hint": "下一组专业协作更稳，但饭桌温度更低。"
+          }
+        ]
+      },
+      "echo_from_return_points": [
+        "RET-DEFAULT-01",
+        "RET-DEFAULT-04",
+        "RET-DEFAULT-05"
+      ],
+      "forbidden_reopen_routes": [
+        "R5-TANG",
+        "R3-PERFECT",
+        "R4-WORK"
+      ]
+    },
+    {
+      "block_id": "ACT6-DEFAULT-B03",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "block_order": 3,
+      "scene_ids": [
+        "ACT6-DEFAULT-S09",
+        "ACT6-DEFAULT-S10",
+        "ACT6-DEFAULT-S11",
+        "ACT6-DEFAULT-S12"
+      ],
+      "scene_summaries": [
+        "凌空栈道、体育馆和公共桌之间形成低温照面。",
+        "外部人物只提供边界提醒，不替 4XX 判案。",
+        "集体饭局的预热开始出现，但人数和时间都不稳定。",
+        "一对一短谈可以发生，却会让另一个人等待。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-03",
+        "after_scene": "ACT6-DEFAULT-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C03-A",
+            "label": "集体饭局推进",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "time_debt": 1,
+              "proxy_risk": 1
+            },
+            "next_hint": "下一组饭局能推进，但替人占位风险上升。"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C03-B",
+            "label": "一对一短谈推进",
+            "variable_delta": {
+              "selected_private": 1,
+              "repair_depth": 1,
+              "misread": 1
+            },
+            "next_hint": "下一组某个室友温度提高，另一个室友可能误读。"
+          }
+        ]
+      },
+      "echo_from_return_points": [
+        "RET-DEFAULT-03",
+        "RET-DEFAULT-06",
+        "RET-DEFAULT-07"
+      ],
+      "forbidden_reopen_routes": [
+        "R5-ZHOU",
+        "R5-LUCHEN",
+        "R5-ROMANCE"
+      ]
+    },
+    {
+      "block_id": "ACT6-DEFAULT-B04",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "block_order": 4,
+      "scene_ids": [
+        "ACT6-DEFAULT-S13",
+        "ACT6-DEFAULT-S14",
+        "ACT6-DEFAULT-S15",
+        "ACT6-DEFAULT-S16"
+      ],
+      "scene_summaries": [
+        "清寝、快递、旧包裹和授权材料把旧账重新带出来。",
+        "物件归属不能由林亦舟代签、代拆、代丢。",
+        "说旧账会让冲突升温，只处理现实任务会让关系更低温。",
+        "毕业前的同框开始被公开边界限制。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-04",
+        "after_scene": "ACT6-DEFAULT-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C04-A",
+            "label": "说旧账",
+            "variable_delta": {
+              "old_debt": 1,
+              "repair_depth": 1,
+              "conflict_heat": 1
+            },
+            "next_hint": "最后一组有机会留下具体话，但温度不一定高。"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C04-B",
+            "label": "只处理现实任务",
+            "variable_delta": {
+              "project_stability": 1,
+              "polite_distance": 1,
+              "dorm_warmth": -1
+            },
+            "next_hint": "最后一组更可能体面远离或空白毕业。"
+          }
+        ]
+      },
+      "echo_from_return_points": [
+        "RET-DEFAULT-04",
+        "RET-DEFAULT-08"
+      ],
+      "forbidden_reopen_routes": [
+        "R5X-HARD",
+        "R5-ROMANCE",
+        "R5-WANFENG"
+      ]
+    },
+    {
+      "block_id": "ACT6-DEFAULT-B05",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "block_order": 5,
+      "scene_ids": [
+        "ACT6-DEFAULT-S17",
+        "ACT6-DEFAULT-S18",
+        "ACT6-DEFAULT-S19",
+        "ACT6-DEFAULT-S20"
+      ],
+      "scene_summaries": [
+        "毕业照、最后一顿饭、清寝和离校手续开始合流。",
+        "合照不能自动和解，饭局不能证明所有人都愿意留下。",
+        "有人迟到、有人不回、有人只处理手续，4XX 群仍然存在。",
+        "最后一句可以具体，也可以留白，但必须承认遗憾存在。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-05",
+        "after_scene": "ACT6-DEFAULT-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C05-A",
+            "label": "留下最后一句",
+            "variable_delta": {
+              "graduation_temperature": "unresolved_but_present",
+              "repair_depth": 1,
+              "dorm_trust": 1
+            },
+            "next_hint": "第七卷可结算为说开、继续低频联系或未完全和解但仍可见。"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C05-B",
+            "label": "允许空白毕业",
+            "variable_delta": {
+              "graduation_temperature": "polite_distance",
+              "polite_distance": 1,
+              "missed_chance": 1
+            },
+            "next_hint": "第七卷可结算为体面淡化、错过或不和解。"
+          }
+        ]
+      },
+      "echo_from_return_points": [
+        "RET-DEFAULT-06",
+        "RET-DEFAULT-08"
+      ],
+      "forbidden_reopen_routes": [
+        "R5X-HARD",
+        "R5-WANFENG",
+        "R5-ROMANCE"
+      ]
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "return_point_count": 8,
+    "act6_block_count": 5,
+    "act6_scene_total": 20,
+    "act6_directions_per_window": 2,
+    "minimum_directions_per_return_point": 3,
+    "required_entry_choice_echo_hook": true
+  }
+}

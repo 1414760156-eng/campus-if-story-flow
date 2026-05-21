@@ -1,0 +1,790 @@
+{
+  "schema_version": "if_page_json_sample_v1",
+  "generated_at": "2026-05-20",
+  "purpose": "给剧情小说母版 v4.0 的 IF 长线开发稿提供剧情页级 JSON 拆分样板，优先验证路线池锁定、第五卷最低主线选择、第六卷 20/4/2 节奏和后续回声字段。",
+  "scope": {
+    "sample_only": true,
+    "not_full_conversion": true,
+    "recommended_first_full_targets": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-WANFENG",
+      "R5-ROMANCE"
+    ]
+  },
+  "source_docs": [
+    "开发规格_IF路线Schema与P0节点池.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发长线_IF可玩支线DEFAULT-4XX宿舍修补线.md",
+    "开发长线_IF可玩支线R5-LUCHEN陆沉线.md",
+    "开发长线_IF可玩支线R5-WANFENG晚风线.md",
+    "开发长线_IF可玩支线R5-ROMANCE专注感情线.md"
+  ],
+  "hard_constraints": {
+    "act5_choice_floor_required": true,
+    "act5_minimum_mainline_choice_windows": 5,
+    "act5_required_windows": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_each_counted_window_requires_act6_echo_hook": true,
+    "act6_scene_total": 20,
+    "act6_block_count": 5,
+    "act6_scene_per_block": 4,
+    "act6_choice_window_total": 5,
+    "act6_choice_per_block": 1,
+    "act6_direction_per_choice_window": 2,
+    "act6_only_current_route_pool_directions": true,
+    "act6_forbid_reopening_full_other_routes": true
+  },
+  "route_samples": [
+    {
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "route_focus": "default_4xx",
+      "entry_node": "P0D_ACT5_SHORT_GROUP",
+      "entry_choice": "P0D_SHORT_GROUP_RETURN_TABLE",
+      "outflow_permission_class": "main_axis",
+      "allowed_next_routes": [
+        "R5-STAND",
+        "R5-WANFENG"
+      ],
+      "drift_guard": "DEFAULT-4XX 是宿舍修补基准线，不是大团圆或完美结局。"
+    },
+    {
+      "route_id": "R5-LUCHEN",
+      "route_pool_id": "POOL-R5-LUCHEN",
+      "route_focus": "luchen",
+      "entry_node": "P0D_ACT5_SHORT_GROUP",
+      "entry_choice": "P0D_STAND_WITH_LUCHEN",
+      "outflow_permission_class": "main_axis",
+      "drift_guard": "陆沉线写不代言、现实压力和沉默边界，不写成救赎奖励线。"
+    },
+    {
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "route_focus": "wanfeng",
+      "entry_node": "P0C_ACT5_WANFENG_BOUNDARY",
+      "entry_choice": "P0C_WANFENG_STEP_FORWARD",
+      "outflow_permission_class": "main_axis",
+      "drift_guard": "晚风线是主轴唯一直接亲密外流，不替代宿舍问题，也不跳入其它女生完整线。"
+    },
+    {
+      "route_id": "R5-ROMANCE",
+      "route_pool_id": "POOL-R5-ROMANCE",
+      "route_focus": "romance",
+      "entry_node": "P0C_ACT5_CANDIDATE_CONFIRM",
+      "entry_choice": "P0C_ROMANCE_LOCK_CANDIDATE",
+      "outflow_permission_class": "club_with_female_candidate",
+      "required_preconditions": {
+        "female_candidate_present": true,
+        "romance_outflow_allowed": true,
+        "romance_candidate_must_lock_one": [
+          "shen_jiahe",
+          "xia_zhiwei"
+        ]
+      },
+      "drift_guard": "R5-ROMANCE 只能由 A3 女生候选来源派生；主轴未选晚风不能直接跳入本线。"
+    }
+  ],
+  "route_state_template": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_outflow",
+    "route_pool_id": "POOL-R5-WANFENG",
+    "route_focus": "wanfeng",
+    "outflow_permission_class": "main_axis",
+    "female_candidate_present": false,
+    "romance_outflow_allowed": false,
+    "pool_entry_choice": "P0C_WANFENG_STEP_FORWARD",
+    "active_route_id": "R5-WANFENG",
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-ROMANCE"
+    ],
+    "soft_echo_routes": [
+      "DEFAULT-4XX",
+      "R5-LUCHEN",
+      "R5-ROMANCE"
+    ],
+    "primary_bond": "wanfeng",
+    "route_lock": false,
+    "hard_outflow": false,
+    "route_confidence": 3,
+    "act5_mainline_choice_count": 5,
+    "act5_required_windows_seen": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_choice_floor_met": true,
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "graduation_temperature": "unresolved_but_present"
+  },
+  "page_nodes": [
+    {
+      "id": "P0D_ACT5_SHORT_GROUP_SAMPLE",
+      "module": "P0-D",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act": "第五幕",
+      "scene": "事项群变短",
+      "location": "青枫居4XX / 微信事项群 / 公共桌",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "trigger": "强冲突之后，事项群从长句解释变成短句确认，公共桌上的空位和手机消息同时压过来。",
+      "player_question": "林亦舟此刻是回到公共桌当面处理，还是把关系拆成私聊、代说或静音？",
+      "act5_window_tag": "dorm_stand",
+      "mainline_anchor": [
+        "第五幕站队压力发生",
+        "宿舍强冲突不可取消",
+        "玩家必须选择如何面对 4XX"
+      ],
+      "choices": [
+        {
+          "choice_id": "P0D_SHORT_GROUP_RETURN_TABLE",
+          "label": "回公共桌，把最低事实当面说清",
+          "action_logic": "林亦舟不替任何人总结，只先确认谁缺席、谁还愿意坐下、哪些事今晚必须处理。",
+          "variable_delta": {
+            "dorm_trust": 1,
+            "repair_depth": 1,
+            "avoidance": -1
+          },
+          "route_effect": {
+            "route_focus": "default_4xx",
+            "route_confidence": 1,
+            "act5_mainline_choice_count": 1,
+            "act5_required_windows_seen_add": "dorm_stand"
+          },
+          "relationship_effect": {
+            "dorm_group": 1
+          },
+          "act6_echo_hook": "ACT6-DEFAULT-B01-public-table",
+          "next_hint": "第六卷公共桌仍会出现，但只作为修补基准线。"
+        },
+        {
+          "choice_id": "P0D_STAND_WITH_LUCHEN",
+          "label": "先站到陆沉旁边，但不替他说话",
+          "action_logic": "林亦舟把陆沉从被代言的位置拉出来，同时承认自己不知道全部现实压力。",
+          "variable_delta": {
+            "luchen_trust": 1,
+            "proxy_risk": -1,
+            "dorm_trust": -1
+          },
+          "route_effect": {
+            "route_focus": "luchen",
+            "route_pool_id": "POOL-R5-LUCHEN",
+            "pool_entry_choice": "P0D_STAND_WITH_LUCHEN",
+            "route_confidence": 1,
+            "act5_mainline_choice_count": 1,
+            "act5_required_windows_seen_add": "dorm_stand"
+          },
+          "relationship_effect": {
+            "luchen": 1,
+            "dorm_group": -0.5
+          },
+          "act6_echo_hook": "ACT6-LUCHEN-B01-not-speaking-for-him",
+          "next_hint": "如果后续继续投入陆沉线，第六卷只在 POOL-R5-LUCHEN 内承接。"
+        }
+      ],
+      "echo_hooks": [
+        "第六卷事项群语气",
+        "第六卷公共桌座位",
+        "第七卷毕业照站位"
+      ],
+      "drift_guard": "本节点不直接写结局，只记录玩家如何面对第五幕站队压力。"
+    },
+    {
+      "id": "P0C_ACT5_WANFENG_BOUNDARY_SAMPLE",
+      "module": "P0-C",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act": "第五幕",
+      "scene": "晚风停在门外",
+      "location": "青枫居楼下 / 微信语音 / 地铁口",
+      "participants": [
+        "林亦舟",
+        "晚风"
+      ],
+      "trigger": "晚风给出一个可以继续靠近的入口，但宿舍事项群和 C407 也同时需要林亦舟回应。",
+      "player_question": "林亦舟是否把亲密关系作为当前生活半径的一部分，而不是只把晚风当情绪出口？",
+      "act5_window_tag": "intimacy_or_wanfeng",
+      "mainline_anchor": [
+        "主轴亲密分歧发生",
+        "主轴只能直接进入晚风线",
+        "宿舍问题不会被晚风代替解决"
+      ],
+      "choices": [
+        {
+          "choice_id": "P0C_WANFENG_STEP_FORWARD",
+          "label": "继续靠近，但先说清自己还有 4XX 要处理",
+          "action_logic": "林亦舟承认想见晚风，也承认自己不能拿她当挡箭牌。",
+          "variable_delta": {
+            "wanfeng_link": 1,
+            "wanfeng_boundary": 1,
+            "romance_focus": 1,
+            "dorm_absence": 1
+          },
+          "route_effect": {
+            "route_pool_id": "POOL-R5-WANFENG",
+            "route_focus": "wanfeng",
+            "pool_entry_choice": "P0C_WANFENG_STEP_FORWARD",
+            "route_confidence": 1,
+            "act5_mainline_choice_count": 1,
+            "act5_required_windows_seen_add": "intimacy_or_wanfeng"
+          },
+          "relationship_effect": {
+            "wanfeng": 1,
+            "dorm_group": -0.5
+          },
+          "act6_echo_hook": "ACT6-WANFENG-B01-explain-first",
+          "next_hint": "进入晚风线后，第六卷不再重新开放宿舍站队组完整路线。"
+        },
+        {
+          "choice_id": "P0C_WANFENG_KEEP_FRIEND",
+          "label": "先保持朋友和游戏搭子的边界",
+          "action_logic": "林亦舟不把犹豫包装成承诺，避免让晚风替他承受宿舍旧账。",
+          "variable_delta": {
+            "wanfeng_boundary": 1,
+            "wanfeng_misread": -1,
+            "romance_focus": -1
+          },
+          "route_effect": {
+            "route_focus": "default_4xx",
+            "route_confidence": 0,
+            "act5_mainline_choice_count": 1,
+            "act5_required_windows_seen_add": "intimacy_or_wanfeng"
+          },
+          "relationship_effect": {
+            "wanfeng": 0,
+            "dorm_group": 0
+          },
+          "act6_echo_hook": "ACT6-DEFAULT-B02-wanfeng-soft-echo",
+          "next_hint": "晚风保留软回声，不成为完整命运池。"
+        }
+      ],
+      "echo_hooks": [
+        "第六卷晚风语音频率",
+        "第六卷公开边界",
+        "第七卷毕业后是否继续联系"
+      ],
+      "drift_guard": "晚风线不能写成奖励恋爱线；靠近会带来解释成本、时间债和宿舍缺席。"
+    },
+    {
+      "id": "P0C_ACT5_CANDIDATE_CONFIRM_SAMPLE",
+      "module": "P0-C",
+      "route_id": "R5-ROMANCE",
+      "route_pool_id": "POOL-R5-ROMANCE",
+      "act": "第五幕",
+      "scene": "社团女生候选来源确认",
+      "location": "共享文档 / 摄影社群 / 打印店 / 凌空栈道",
+      "participants": [
+        "林亦舟",
+        "沈嘉禾",
+        "夏知微"
+      ],
+      "trigger": "第三幕 A3 父池中已有女生候选连续出现，并承担过材料、授权或活动影像等现实任务。",
+      "player_question": "林亦舟是否从 A3 已经形成的生活半径里锁定一个对象，而不是临时开一条换女主线？",
+      "act5_window_tag": "activity_or_interest",
+      "required_preconditions": {
+        "outflow_permission_class": "club_with_female_candidate",
+        "female_candidate_present": true,
+        "romance_outflow_allowed": true
+      },
+      "mainline_anchor": [
+        "R5-ROMANCE 必须有 A3 女生来源",
+        "进入后必须单锁定一个对象",
+        "晚风线和宿舍站队组不被重新打开"
+      ],
+      "choices": [
+        {
+          "choice_id": "P0C_ROMANCE_LOCK_SHEN_JIAHE",
+          "label": "确认沈嘉禾方向",
+          "action_logic": "林亦舟把材料协作、共享文档、打印店和阳光书屋的连续照面承认为真实生活半径。",
+          "variable_delta": {
+            "romance_candidate": "shen_jiahe",
+            "shen_jiahe_link": 1,
+            "candidate_link": 1
+          },
+          "route_effect": {
+            "route_pool_id": "POOL-R5-ROMANCE",
+            "route_focus": "romance",
+            "pool_entry_choice": "P0C_ROMANCE_LOCK_CANDIDATE",
+            "route_confidence": 1,
+            "act5_mainline_choice_count": 1,
+            "act5_required_windows_seen_add": "activity_or_interest"
+          },
+          "relationship_effect": {
+            "shen_jiahe": 1,
+            "xia_zhiwei": -0.5,
+            "wanfeng": -0.5
+          },
+          "act6_echo_hook": "ACT6-ROMANCE-B01-shen-document-scope",
+          "next_hint": "第六卷两个方向都必须围绕沈嘉禾，不能把夏知微作为第二条完整线打开。"
+        },
+        {
+          "choice_id": "P0C_ROMANCE_LOCK_XIA_ZHIWEI",
+          "label": "确认夏知微方向",
+          "action_logic": "林亦舟把摄影社、照片授权、活动影像和凌空栈道的连续照面承认为真实生活半径。",
+          "variable_delta": {
+            "romance_candidate": "xia_zhiwei",
+            "xia_zhiwei_link": 1,
+            "candidate_link": 1
+          },
+          "route_effect": {
+            "route_pool_id": "POOL-R5-ROMANCE",
+            "route_focus": "romance",
+            "pool_entry_choice": "P0C_ROMANCE_LOCK_CANDIDATE",
+            "route_confidence": 1,
+            "act5_mainline_choice_count": 1,
+            "act5_required_windows_seen_add": "activity_or_interest"
+          },
+          "relationship_effect": {
+            "xia_zhiwei": 1,
+            "shen_jiahe": -0.5,
+            "wanfeng": -0.5
+          },
+          "act6_echo_hook": "ACT6-ROMANCE-B01-xia-photo-scope",
+          "next_hint": "第六卷两个方向都必须围绕夏知微，不能把沈嘉禾作为第二条完整线打开。"
+        }
+      ],
+      "echo_hooks": [
+        "第六卷候选生活圈",
+        "第六卷公开材料边界",
+        "第七卷毕业照片或共享文档"
+      ],
+      "drift_guard": "本节点不能从主轴直接生成其它女生完整线，也不能多对象均摊。"
+    },
+    {
+      "id": "P0E_ACT5_RULE_AND_PROJECT_SAMPLE",
+      "module": "P0-E",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act": "第五幕",
+      "scene": "C407 前的规则和项目确认",
+      "location": "C407 门口 / 共享盘 / 打印店",
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "沈嘉禾"
+      ],
+      "trigger": "C407 演示、材料归档和共享盘权限同时到期，玩家必须决定先保规则清晰还是先保关系温度。",
+      "player_question": "林亦舟是否愿意把规则说清，而不是把材料和关系都拖成默认同意？",
+      "act5_window_tag": "project_or_rule",
+      "mainline_anchor": [
+        "C407 或项目材料仍按母版发生",
+        "共享盘和归档不能被取消",
+        "规则压力会进入第六卷"
+      ],
+      "choices": [
+        {
+          "choice_id": "P0E_RULE_SCOPE_CLEAR",
+          "label": "先把权限、署名和截止时间写清",
+          "action_logic": "林亦舟让规则成为可被看见的边界，而不是让某个人背锅。",
+          "variable_delta": {
+            "project_stability": 1,
+            "public_boundary": 1,
+            "rule_pressure": 1
+          },
+          "route_effect": {
+            "route_confidence": 1,
+            "act5_mainline_choice_count": 1,
+            "act5_required_windows_seen_add": "project_or_rule"
+          },
+          "relationship_effect": {
+            "tang_xiao": 0.5,
+            "shen_jiahe": 0.5
+          },
+          "act6_echo_hook": "ACT6-PROJECT-B01-clear-scope",
+          "next_hint": "第六卷项目段会保留清晰边界，也保留规则压力。"
+        }
+      ],
+      "echo_hooks": [
+        "第六卷 C407 权限",
+        "第六卷共享盘返工",
+        "第七卷毕业材料边界"
+      ],
+      "drift_guard": "规则节点不能把唐骁线和 R3-PERFECT 混成同一条奖励线。"
+    },
+    {
+      "id": "P0E_ACT5_FLOOR_GATE_SAMPLE",
+      "module": "P0-E",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act": "第五幕",
+      "scene": "普通长线结算前检查",
+      "location": "路线判定层",
+      "participants": [
+        "林亦舟"
+      ],
+      "trigger": "玩家准备进入普通长线第六卷承接前，系统检查第五幕主线选择窗口是否达标。",
+      "player_question": "是否已经完成足够多的第五幕主线选择，而不是一次选择直接锁完整长线？",
+      "act5_window_tag": "avoidance_or_outflow",
+      "mainline_anchor": [
+        "普通长线结算前必须检查 act5_choice_floor_met",
+        "R5X-HARD 另按唯一硬外流处理",
+        "未达标时只能回到补足窗口或进入低温软回声"
+      ],
+      "gate_check": {
+        "required_count": 5,
+        "required_windows": [
+          "dorm_stand",
+          "intimacy_or_wanfeng",
+          "project_or_rule",
+          "activity_or_interest",
+          "avoidance_or_outflow"
+        ],
+        "requires_echo_hooks": true,
+        "pass_condition": "act5_choice_floor_met == true",
+        "fail_behavior": "do_not_lock_full_route"
+      },
+      "choices": [
+        {
+          "choice_id": "P0E_FLOOR_PASS_LOCK_CURRENT_POOL",
+          "label": "已完成五类窗口，进入当前命运池第六卷",
+          "action_logic": "系统只允许进入当前 route_pool_id 的第六卷 20 段承接。",
+          "variable_delta": {
+            "act5_choice_floor_met": true
+          },
+          "route_effect": {
+            "route_pool_id": "POOL-R5-WANFENG",
+            "active_route_id": "R5-WANFENG",
+            "act6_route_pool_locked": true
+          },
+          "relationship_effect": {},
+          "act6_echo_hook": "ACT6-WANFENG-B01-to-B05",
+          "next_hint": "进入 R5-WANFENG 的 20/4/2 第六卷结构。"
+        },
+        {
+          "choice_id": "P0E_FLOOR_FAIL_RETURN_TO_MISSING_WINDOW",
+          "label": "未完成五类窗口，回到缺失主线选择",
+          "action_logic": "系统不让普通长线提前完整锁死，只提示缺失哪类第五幕窗口。",
+          "variable_delta": {
+            "missed_chance": 1
+          },
+          "route_effect": {
+            "route_lock": false,
+            "act5_choice_floor_met": false
+          },
+          "relationship_effect": {},
+          "act6_echo_hook": "none",
+          "next_hint": "返回缺失的 dorm_stand、project_or_rule、activity_or_interest 等窗口补足。"
+        }
+      ],
+      "echo_hooks": [
+        "第六卷当前池锁定",
+        "第六卷不得回开其它完整命运线",
+        "第七卷毕业温度按当前池结算"
+      ],
+      "drift_guard": "这个门槛节点用于防止一次选择直接锁完整普通长线。"
+    }
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-WANFENG-B01",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "block_order": 1,
+      "scene_ids": [
+        "ACT6-WANFENG-S01",
+        "ACT6-WANFENG-S02",
+        "ACT6-WANFENG-S03",
+        "ACT6-WANFENG-S04"
+      ],
+      "scene_summaries": [
+        "晚风语音约定被事项群最低事实打断。",
+        "林亦舟在地铁口确认自己没有把宿舍问题藏起来。",
+        "4XX 公共桌出现空位和未读消息。",
+        "晚风问他是否只是需要一个躲开的地方。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-01",
+        "after_scene": "ACT6-WANFENG-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C01-A",
+            "label": "先解释见面安排",
+            "variable_delta": {
+              "wanfeng_boundary": 1,
+              "wanfeng_link": 1,
+              "dorm_absence": 1
+            },
+            "next_hint": "下一组进入公开边界和朋友圈可见。"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C01-B",
+            "label": "先处理事项群最低事实",
+            "variable_delta": {
+              "dorm_visibility": 1,
+              "wanfeng_misread": 1,
+              "dorm_absence": -1
+            },
+            "next_hint": "下一组进入解释成本和私人入口。"
+          }
+        ]
+      },
+      "forbidden_reopen_routes": [
+        "DEFAULT-4XX",
+        "R5-ZHOU",
+        "R5-TANG",
+        "R5-LUCHEN",
+        "R5-LIEFLAT",
+        "R5-ROMANCE"
+      ]
+    },
+    {
+      "block_id": "ACT6-WANFENG-B02",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "block_order": 2,
+      "scene_ids": [
+        "ACT6-WANFENG-S05",
+        "ACT6-WANFENG-S06",
+        "ACT6-WANFENG-S07",
+        "ACT6-WANFENG-S08"
+      ],
+      "scene_summaries": [
+        "朋友圈可见范围带来第一次公开边界压力。",
+        "晚风生活圈里有人认出林亦舟。",
+        "4XX 事项群只读他短句，误以为他默认缺席。",
+        "一条抖音状态让私人入口变得半公开。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-02",
+        "after_scene": "ACT6-WANFENG-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C02-A",
+            "label": "公开边界说清",
+            "variable_delta": {
+              "public_boundary": 1,
+              "wanfeng_boundary": 1,
+              "wanfeng_misread": -1
+            },
+            "next_hint": "下一组晚风生活圈能被更稳地承接。"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C02-B",
+            "label": "暂时只保留私人入口",
+            "variable_delta": {
+              "public_boundary": -1,
+              "wanfeng_misread": 1,
+              "intimacy_cost": 1
+            },
+            "next_hint": "下一组晚风生活圈会出现低温误读。"
+          }
+        ]
+      },
+      "forbidden_reopen_routes": [
+        "DEFAULT-4XX",
+        "R5-ROMANCE",
+        "R5-LUCHEN"
+      ]
+    },
+    {
+      "block_id": "ACT6-WANFENG-B03",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "block_order": 3,
+      "scene_ids": [
+        "ACT6-WANFENG-S09",
+        "ACT6-WANFENG-S10",
+        "ACT6-WANFENG-S11",
+        "ACT6-WANFENG-S12"
+      ],
+      "scene_summaries": [
+        "晚风的生活圈不是等待区，她也有自己的队伍和安排。",
+        "林亦舟第一次在她的朋友面前显得不熟练。",
+        "礼物和交通费让钱压成为亲密关系的一部分。",
+        "宿舍里有人把他的缺席理解成已经选边。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-03",
+        "after_scene": "ACT6-WANFENG-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C03-A",
+            "label": "尊重晚风生活圈",
+            "variable_delta": {
+              "wanfeng_link": 1,
+              "future_talk": 1,
+              "time_debt": 1
+            },
+            "next_hint": "下一组转入两边解释和资源分配。"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C03-B",
+            "label": "要求更多优先权",
+            "variable_delta": {
+              "wanfeng_misread": 1,
+              "intimacy_cost": 1,
+              "time_debt": 1
+            },
+            "next_hint": "下一组会放大被当作挡箭牌的风险。"
+          }
+        ]
+      },
+      "forbidden_reopen_routes": [
+        "R5-ROMANCE",
+        "R5-ZHOU",
+        "R5-TANG"
+      ]
+    },
+    {
+      "block_id": "ACT6-WANFENG-B04",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "block_order": 4,
+      "scene_ids": [
+        "ACT6-WANFENG-S13",
+        "ACT6-WANFENG-S14",
+        "ACT6-WANFENG-S15",
+        "ACT6-WANFENG-S16"
+      ],
+      "scene_summaries": [
+        "4XX 的旧账被问到，晚风也听见了一部分。",
+        "林亦舟发现隐瞒两边都会变成新的误读。",
+        "C407 或毕业材料需要他选择到场顺序。",
+        "晚风提醒他别用一边拖住另一边。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-04",
+        "after_scene": "ACT6-WANFENG-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C04-A",
+            "label": "两边都解释",
+            "variable_delta": {
+              "wanfeng_boundary": 1,
+              "dorm_visibility": 1,
+              "time_debt": 1
+            },
+            "next_hint": "最后一组可以进入现实联系讨论。"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C04-B",
+            "label": "继续用一边拖住另一边",
+            "variable_delta": {
+              "wanfeng_misread": 1,
+              "dorm_absence": 1,
+              "missed_chance": 1
+            },
+            "next_hint": "最后一组会进入错过或甜但有代价。"
+          }
+        ]
+      },
+      "forbidden_reopen_routes": [
+        "DEFAULT-4XX",
+        "R5-LUCHEN",
+        "R5-ROMANCE"
+      ]
+    },
+    {
+      "block_id": "ACT6-WANFENG-B05",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "block_order": 5,
+      "scene_ids": [
+        "ACT6-WANFENG-S17",
+        "ACT6-WANFENG-S18",
+        "ACT6-WANFENG-S19",
+        "ACT6-WANFENG-S20"
+      ],
+      "scene_summaries": [
+        "毕业安排开始具体到城市、时间和联系频率。",
+        "最后一条语音不再只谈今晚，而谈之后怎么办。",
+        "4XX 的毕业流程照常发生，只是林亦舟的位置已经改变。",
+        "晚风问他要一个真实但不漂亮的答案。"
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-05",
+        "after_scene": "ACT6-WANFENG-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C05-A",
+            "label": "讨论毕业后现实联系",
+            "variable_delta": {
+              "future_talk": 1,
+              "graduation_temperature": "continue_contact",
+              "wanfeng_link": 1
+            },
+            "next_hint": "进入第七卷继续联系或私人入口温度。"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C05-B",
+            "label": "保留当下，不承诺之后",
+            "variable_delta": {
+              "future_talk": -1,
+              "graduation_temperature": "missed",
+              "intimacy_cost": 1
+            },
+            "next_hint": "进入第七卷体面分别、错过或甜但有代价温度。"
+          }
+        ]
+      },
+      "forbidden_reopen_routes": [
+        "DEFAULT-4XX",
+        "R5-ROMANCE",
+        "R5X-HARD"
+      ]
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "page_node_required_keys": [
+      "id",
+      "module",
+      "route_id",
+      "act",
+      "scene",
+      "location",
+      "participants",
+      "trigger",
+      "player_question",
+      "mainline_anchor",
+      "choices",
+      "echo_hooks",
+      "drift_guard"
+    ],
+    "choice_required_keys": [
+      "choice_id",
+      "label",
+      "action_logic",
+      "variable_delta",
+      "route_effect",
+      "relationship_effect",
+      "next_hint"
+    ],
+    "act6_block_assertions": {
+      "block_count": 5,
+      "scene_total": 20,
+      "directions_per_choice_window": 2
+    }
+  }
+}

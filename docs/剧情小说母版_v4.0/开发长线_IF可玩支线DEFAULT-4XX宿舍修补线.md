@@ -747,6 +747,18 @@
 }
 ```
 
+## 第六卷 20 段承接映射占位
+
+`act6_20_scene_mapping` 拆分时必须服从 `开发规则_IF第五第六卷玩法节奏硬约束.md`：第六卷固定 20 个剧情段，5 个四段组；每 4 段落 1 个选择窗口；每个窗口只给两个 `DEFAULT-4XX` 池内方向。
+
+| 四段组 | 剧情段 | 选择窗口 | 仅保留两个池内方向 |
+|---|---|---|---|
+| `ACT6-DEFAULT-B01` | `ACT6-DEFAULT-S01` 至 `ACT6-DEFAULT-S04` | `ACT6-DEFAULT-CHOICE-01` | 当面修补 / 保持体面距离 |
+| `ACT6-DEFAULT-B02` | `ACT6-DEFAULT-S05` 至 `ACT6-DEFAULT-S08` | `ACT6-DEFAULT-CHOICE-02` | 公共桌补话 / C407 事项优先 |
+| `ACT6-DEFAULT-B03` | `ACT6-DEFAULT-S09` 至 `ACT6-DEFAULT-S12` | `ACT6-DEFAULT-CHOICE-03` | 集体饭局推进 / 一对一短谈推进 |
+| `ACT6-DEFAULT-B04` | `ACT6-DEFAULT-S13` 至 `ACT6-DEFAULT-S16` | `ACT6-DEFAULT-CHOICE-04` | 说旧账 / 只处理现实任务 |
+| `ACT6-DEFAULT-B05` | `ACT6-DEFAULT-S17` 至 `ACT6-DEFAULT-S20` | `ACT6-DEFAULT-CHOICE-05` | 留下最后一句 / 允许空白毕业 |
+
 ## 防漂移总则
 
 - 本线不是完美线，也不是真结局。

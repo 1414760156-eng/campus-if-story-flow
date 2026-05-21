@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>剧情开发文档阅读器</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5f6f8;
+        --panel: #ffffff;
+        --text: #1f2933;
+        --muted: #667085;
+        --line: #d8dee8;
+        --accent: #2563eb;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--text);
+        font: 15px/1.7 "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        border-right: 1px solid var(--line);
+        background: #eef1f6;
+        padding: 18px 14px;
+      }
+
+      .sidebar h1 {
+        margin: 0 0 14px;
+        font-size: 18px;
+        line-height: 1.35;
+      }
+
+      .hint {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .doc-button {
+        width: 100%;
+        margin: 0 0 8px;
+        padding: 10px 12px;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        background: transparent;
+        color: var(--text);
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .doc-button:hover,
+      .doc-button.active {
+        border-color: #b7c7ea;
+        background: #ffffff;
+      }
+
+      .doc-button strong {
+        display: block;
+        font-size: 14px;
+      }
+
+      .doc-button span {
+        display: block;
+        overflow: hidden;
+        color: var(--muted);
+        font-size: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .content {
+        min-width: 0;
+        padding: 28px clamp(18px, 4vw, 52px);
+      }
+
+      .doc-meta {
+        margin-bottom: 18px;
+      }
+
+      .doc-meta h2 {
+        margin: 0;
+        font-size: 26px;
+        line-height: 1.35;
+      }
+
+      .path {
+        margin-top: 6px;
+        color: var(--muted);
+        font-family: Consolas, "Cascadia Mono", monospace;
+        font-size: 12px;
+        word-break: break-all;
+      }
+
+      pre {
+        margin: 0;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+        font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+        line-height: 1.75;
+        overflow: auto;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      @media (max-width: 760px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="layout">
+      <aside class="sidebar">
+        <h1>剧情开发文档阅读器</h1>
+        <p class="hint">右侧浏览器打不开 .md 时，用这个 HTML 入口阅读。</p>
+        <div id="doc-list"></div>
+      </aside>
+      <section class="content">
+        <div class="doc-meta">
+          <h2 id="doc-title"></h2>
+          <div id="doc-path" class="path"></div>
+        </div>
+        <pre id="doc-content"></pre>
+      </section>
+    </main>
+
+    <script src="md-reader-data.js"></script>
+    <script>
+      (function boot() {
+        const docs = Array.isArray(window.MarkdownReaderData) ? window.MarkdownReaderData : [];
+        const list = document.getElementById("doc-list");
+        const title = document.getElementById("doc-title");
+        const path = document.getElementById("doc-path");
+        const content = document.getElementById("doc-content");
+        let activeIndex = 0;
+
+        function renderDoc(index) {
+          activeIndex = index;
+          const doc = docs[index] || { title: "未找到文档", path: "", content: "md-reader-data.js 没有加载到可读内容。" };
+          title.textContent = doc.title;
+          path.textContent = doc.path;
+          content.textContent = doc.content || "";
+          [...list.querySelectorAll("button")].forEach((button, buttonIndex) => {
+            button.classList.toggle("active", buttonIndex === activeIndex);
+          });
+        }
+
+        docs.forEach((doc, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "doc-button";
+          button.innerHTML = `<strong></strong><span></span>`;
+          button.querySelector("strong").textContent = doc.title;
+          button.querySelector("span").textContent = doc.path;
+          button.addEventListener("click", () => renderDoc(index));
+          list.appendChild(button);
+        });
+
+        renderDoc(0);
+      })();
+    </script>
+  </body>
+</html>
