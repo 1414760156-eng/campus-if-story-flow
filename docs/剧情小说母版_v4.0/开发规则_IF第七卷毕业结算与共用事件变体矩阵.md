@@ -254,3 +254,17 @@
 1. 先把本文件接入 P0 总索引和长篇扩展总表。
 2. 后续写剧情页级细稿时，应优先拆 `ACT7-E03-LAST-NEW-YEAR`、`ACT7-E06-THESIS-REVISION` 和 `ACT7-E07-DEFENSE`，因为这三个点最容易被写成泛化毕业氛围。
 3. 正式 JSON 可在第六卷 20 段之后追加 `act7_settlement_events` 数组，统一读取当前 `route_pool_id` 输出文本变体。
+
+## 2026-05-21 接入记录：ACT7-E06 剧情页级细稿
+
+`开发细稿_IF第七卷ACT7-E06改论文毕业设计剧情页.md` 已完成第一版。
+
+本细稿把 `ACT7-E06-THESIS-REVISION` 明确为“改论文 / 改毕业设计关系结算事件”，要求所有路线都记录：
+
+- `thesis_revision_comments_seen`
+- `thesis_revision_version`
+- `thesis_revision_helper`
+- `thesis_boundary_checked`
+- `revision_submitted_before_deadline`
+
+后续拆 `ACT7-E07-DEFENSE` 时，应读取本事件的提交版本和帮看关系，决定答辩门口谁在、谁不在、谁只发消息、谁赶流程。

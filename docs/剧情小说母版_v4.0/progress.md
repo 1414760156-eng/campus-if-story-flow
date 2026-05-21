@@ -2331,3 +2331,15 @@
 - 已明确完成条件：必须记录 `opening_contrast_seen = true`，否则 `ACT7-E03` 不算完成。
 - 已同步更新 `开发索引_IF分支P0文本总索引.md` 与 `开发规划_IF可玩支线长篇扩展总表.md`。
 - 下一步建议：拆 `ACT7-E06-THESIS-REVISION` 改论文 / 毕业设计剧情页级细稿，然后拆 `ACT7-E07-DEFENSE`。
+
+## 2026-05-21 IF ACT7-E06 改论文 / 毕业设计剧情页级细稿记录
+
+- 开工前已按用户要求先提交当前 28 个历史改动快照，提交为 `1ff74b7 Capture IF longline and Act7 development snapshot`，确保后续开发从干净工作区继续。
+- 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第七卷ACT7-E06改论文毕业设计剧情页.md`。
+- 本轮目标来自用户指示：顺着拆 `ACT7-E06-THESIS-REVISION`，直接承接 `ACT7-E03` 末尾那张“开题 / 毕业设计方向初表”。
+- 已把本事件定位为第七卷毕业结算层第二个核心细稿：不是论文正文，也不是试玩器脚本，而是把改论文 / 改毕业设计拆成可开发剧情页、选项页、变量回调和 JSON 事件结构。
+- 已保留母版锚点：C407、陈老师红批、“后续补充”、数据来源、十点前修改版、课程成果与主题材料边界、答辩前等待。
+- 已覆盖 11 个路线变体：`ACT7-DEFAULT`、`ACT7-ZHOU`、`ACT7-TANG`、`ACT7-LUCHEN`、`ACT7-LIEFLAT`、`ACT7-WANFENG`、`ACT7-ROMANCE`、`ACT7-WORK`、`ACT7-A3`、`ACT7-PERFECT`、`ACT7-R5X`。
+- 已明确完成条件：必须记录 `thesis_revision_comments_seen`、`thesis_revision_version`、`thesis_revision_helper`、`thesis_boundary_checked` 和 `revision_submitted_before_deadline`，其中 `thesis_boundary_checked = true`，否则 `ACT7-E06` 不算完成。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 与 `开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
+- 下一步建议：拆 `ACT7-E07-DEFENSE` 答辩 / 答辩后剧情页级细稿，承接本事件的提交版本、帮看关系和“谁还会在门口”的回声。
