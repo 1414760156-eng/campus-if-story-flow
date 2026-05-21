@@ -14,7 +14,8 @@
     "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
     "开发细稿_IF第七卷ACT7-E03最后一个新年剧情页.md",
     "开发细稿_IF第七卷ACT7-E06改论文毕业设计剧情页.md",
-    "开发细稿_IF第七卷ACT7-E07答辩剧情页.md"
+    "开发细稿_IF第七卷ACT7-E07答辩剧情页.md",
+    "开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md"
   ],
   "route_state": {
     "canon_line": "MOTHER-V4",
@@ -74,7 +75,12 @@
     "act7_core_events_in_json": [
       "ACT7-E03-LAST-NEW-YEAR",
       "ACT7-E06-THESIS-REVISION",
-      "ACT7-E07-DEFENSE"
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
     ],
     "act7_core_events_json_started": true,
     "act7_route_switch_allowed": false,
@@ -111,7 +117,35 @@
     "defense_boundary_checked",
     "defense_stability",
     "route_trust",
-    "time_debt"
+    "time_debt",
+    "grad_photo_batch_seen",
+    "grad_photo_scope",
+    "photo_cache_checked",
+    "photo_boundary_checked",
+    "photo_submit_decision",
+    "dorm_clear_list_seen",
+    "shared_item_owner_checked",
+    "old_items_resolved",
+    "clearance_boundary_checked",
+    "responsibility_clarity",
+    "dorm_key_ready",
+    "last_meal_vote_seen",
+    "last_meal_seat_confirmed",
+    "meal_arrival_state",
+    "meal_boundary_checked",
+    "meal_bill_settled",
+    "leaving_papers_seen",
+    "dorm_key_returned",
+    "campus_card_closed",
+    "certificate_received",
+    "archive_transfer_checked",
+    "leaving_boundary_checked",
+    "station_arrival_seen",
+    "station_items_kept",
+    "final_group_state",
+    "ending_temperature_locked",
+    "station_boundary_checked",
+    "relationship_truth"
   ],
   "entry_node": {
     "id": "D_00_SHORT_GROUP",
@@ -1901,6 +1935,713 @@
         "say_clear",
         "polite_distance"
       ]
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第六章《毕业照》及第七章《答辩以后》",
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场北侧看台 / 融媒体共享盘 / B204 / C407",
+      "scene_function": "检验同框资格和公开风险，确认照片不等于和解",
+      "reads_from": [
+        "ACT7-E03-LAST-NEW-YEAR.public_scope",
+        "ACT7-E07-DEFENSE.defense_message_echo",
+        "public_boundary",
+        "graduation_temperature"
+      ],
+      "required_completion_flags": [
+        "grad_photo_batch_seen",
+        "photo_cache_checked",
+        "photo_boundary_checked"
+      ],
+      "must_record": [
+        "grad_photo_scope",
+        "photo_submit_decision",
+        "graduation_temperature"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "许棠",
+        "晚风"
+      ],
+      "core_objects": [
+        "毕业照批次表",
+        "寝室合照预览",
+        "融媒体共享盘缓存",
+        "仅留存授权",
+        "站位名单"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E08-DEFAULT-P01",
+          "beat": "批次表",
+          "text_brief": "晨光体育场北侧看台贴出个人照、班级照、寝室合照三叠名单，规则写着迟到顺延、缺席不补。",
+          "choice_hook": [
+            "自己核自己的批次",
+            "在 4XX 群问谁到了"
+          ],
+          "updates": {
+            "grad_photo_batch_seen": true,
+            "project_stability": 1,
+            "dorm_visibility": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-DEFAULT-P02",
+          "beat": "错过第三组",
+          "text_brief": "唐骁线上面试延迟，周屿主持彩排点名，陆沉图书馆交接，林亦舟 C407 二次确认，第三组缺一人。",
+          "choice_hook": [
+            "接受缺席不补",
+            "等最后一张补拍"
+          ],
+          "updates": {
+            "meal_arrival_state": "not_started",
+            "graduation_temperature": "present_but_not_close",
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-DEFAULT-P03",
+          "beat": "预览缓存",
+          "text_brief": "4XX 合照未提交，但预览缩略图出现在融媒体共享盘缓存里。",
+          "choice_hook": [
+            "标注仅留存并撤缓存",
+            "提交低风险版本"
+          ],
+          "updates": {
+            "photo_cache_checked": true,
+            "public_boundary": 1,
+            "public_scope_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-DEFAULT-P04",
+          "beat": "照片回声",
+          "text_brief": "晚风提醒拍到和说开是两件事，许棠只处理流程，不替 4XX 写漂亮说明。",
+          "choice_hook": [
+            "只留存说明",
+            "补一句私人说明"
+          ],
+          "updates": {
+            "grad_photo_scope": "only_archive",
+            "photo_boundary_checked": true,
+            "old_debt": 1,
+            "repair_depth": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E08-DEFAULT-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-DEFAULT-C01-A",
+            "label": "仅留存并撤缓存",
+            "variable_delta": {
+              "photo_cache_checked": true,
+              "photo_boundary_checked": true,
+              "public_boundary": 1,
+              "photo_submit_decision": "archive_only"
+            },
+            "next_hint": "毕业照进入体面在场或礼貌距离，不承担和解证明。"
+          },
+          {
+            "direction_id": "ACT7-E08-DEFAULT-C01-B",
+            "label": "补一句私人说明",
+            "variable_delta": {
+              "photo_cache_checked": true,
+              "photo_boundary_checked": true,
+              "old_debt": 1,
+              "repair_depth": 1,
+              "photo_submit_decision": "private_note_attached"
+            },
+            "next_hint": "清寝和饭局更容易出现具体话，但公开误读风险上升。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把寝室合照写成全员自动和解。",
+        "不得让许棠、晚风或融媒体流程替 4XX 写私人说明。",
+        "不得把仅留存改成默认可公开。"
+      ],
+      "ending_hooks": [
+        "present_but_not_close",
+        "polite_distance",
+        "say_clear"
+      ]
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第八章《清寝》",
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居 4XX / 宿管窗口 / 校园快递站 / 公共桌",
+      "scene_function": "检验谁能处理旧物但不代替别人确认",
+      "reads_from": [
+        "ACT7-E08-GRAD-PHOTO.grad_photo_scope",
+        "photo_boundary_checked",
+        "public_boundary",
+        "dorm_trust"
+      ],
+      "required_completion_flags": [
+        "dorm_clear_list_seen",
+        "shared_item_owner_checked",
+        "clearance_boundary_checked"
+      ],
+      "must_record": [
+        "old_items_resolved",
+        "dorm_key_ready",
+        "last_meal_vote_seen"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "宿管阿姨"
+      ],
+      "core_objects": [
+        "清寝共享清单",
+        "黑 U 盘",
+        "未知快递袋",
+        "空调遥控器",
+        "公共钥匙袋",
+        "蓝伞"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E09-DEFAULT-P01",
+          "beat": "清单入场",
+          "text_brief": "林亦舟打开 4XX 清寝共享清单，先跳出来的是周屿彩排、唐骁线上复核、陆沉图书馆在岗三条缺席理由。",
+          "choice_hook": [
+            "先列只属于自己的物品",
+            "把公共桌单独列一栏"
+          ],
+          "updates": {
+            "dorm_clear_list_seen": true,
+            "clearance_boundary_checked": true,
+            "shared_item_owner_checked": true
+          }
+        },
+        {
+          "page_id": "ACT7-E09-DEFAULT-P02",
+          "beat": "旧物归属",
+          "text_brief": "黑 U 盘、未知快递袋、门后挂钩、蓝伞、空调遥控器和钥匙压到同一张表里。",
+          "choice_hook": [
+            "等本人确认",
+            "临时贴暂存便签"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "old_items_resolved": "temporary_keep"
+          }
+        },
+        {
+          "page_id": "ACT7-E09-DEFAULT-P03",
+          "beat": "宿管预检",
+          "text_brief": "宿管阿姨提醒别好心替人扔，预检查不看感情，只看责任。",
+          "choice_hook": [
+            "拍照留存",
+            "写协助说明"
+          ],
+          "updates": {
+            "shared_item_owner_checked": true,
+            "responsibility_clarity": 1,
+            "dorm_key_ready": true
+          }
+        },
+        {
+          "page_id": "ACT7-E09-DEFAULT-P04",
+          "beat": "饭局通知",
+          "text_brief": "预检查通过，但班级群发来毕业前最后一顿饭人数确认，4XX 那一栏仍空着。",
+          "choice_hook": [
+            "只转发提醒",
+            "问他们是否到场"
+          ],
+          "updates": {
+            "last_meal_vote_seen": true,
+            "dorm_visibility": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E09-DEFAULT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-DEFAULT-C01-A",
+            "label": "全部等本人确认",
+            "variable_delta": {
+              "shared_item_owner_checked": true,
+              "clearance_boundary_checked": true,
+              "graduation_temperature": "polite_distance"
+            },
+            "next_hint": "关系更清楚但温度偏低。"
+          },
+          {
+            "direction_id": "ACT7-E09-DEFAULT-C01-B",
+            "label": "公共物临时暂存",
+            "variable_delta": {
+              "old_items_resolved": "temporary_keep",
+              "dorm_trust": 1,
+              "proxy_risk": 1
+            },
+            "next_hint": "饭局可多一句话，但必须补本人确认。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得让林亦舟擅自丢掉、签收、清空或公开别人的旧物。",
+        "不得把清寝写成单纯怀旧陈列。",
+        "不得把协助写成重新替别人负责。"
+      ],
+      "ending_hooks": [
+        "polite_distance",
+        "present_but_not_close",
+        "not_reconciled"
+      ]
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第九章《最后一顿饭》",
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东区商业街东北饺子馆 / 后街烧烤投票 / 4XX 群",
+      "scene_function": "检验是否还有一张桌和一个座位，但不保证以后同路",
+      "reads_from": [
+        "ACT7-E09-DORM-CLEAR.old_items_resolved",
+        "last_meal_vote_seen",
+        "dorm_visibility",
+        "graduation_temperature"
+      ],
+      "required_completion_flags": [
+        "last_meal_vote_seen",
+        "last_meal_seat_confirmed",
+        "meal_boundary_checked"
+      ],
+      "must_record": [
+        "meal_arrival_state",
+        "meal_bill_settled",
+        "leaving_papers_seen"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "许棠"
+      ],
+      "core_objects": [
+        "最后一顿饭投票",
+        "东北饺子馆小票",
+        "AA 记录",
+        "旧小票",
+        "离校手续清单"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E10-DEFAULT-P01",
+          "beat": "投票链接",
+          "text_brief": "班级群发今晚八点截止、过时不补，东区商业街东北饺子馆和后街烧烤二选一，4XX 空栏仍在。",
+          "choice_hook": [
+            "只填自己",
+            "在 4XX 群问一次"
+          ],
+          "updates": {
+            "last_meal_vote_seen": true,
+            "last_meal_seat_confirmed": "self_only",
+            "dorm_visibility": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-DEFAULT-P02",
+          "beat": "到场顺序",
+          "text_brief": "唐骁先到但不替人占位，周屿彩排迟到，陆沉因未知快递袋迟到。",
+          "choice_hook": [
+            "不替留座",
+            "留一个可取消空位"
+          ],
+          "updates": {
+            "meal_arrival_state": "late_present",
+            "public_boundary": 1,
+            "time_debt": 1,
+            "dorm_warmth": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-DEFAULT-P03",
+          "beat": "饭桌回声",
+          "text_brief": "旧小票、两毛钱、大拉皮、AA 和最后一顿饭把前文旧账压到桌面。",
+          "choice_hook": [
+            "说一句旧账",
+            "让饭局只吃饭"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "old_debt": 1,
+            "meal_bill_settled": true
+          }
+        },
+        {
+          "page_id": "ACT7-E10-DEFAULT-P04",
+          "beat": "手续推入",
+          "text_brief": "离校手续清单发布，退寝交钥匙、校园卡注销、证书领取、档案转递和武生院站一起压来。",
+          "choice_hook": [
+            "先保存清单",
+            "问谁明天哪个批次"
+          ],
+          "updates": {
+            "leaving_papers_seen": true,
+            "dorm_visibility": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E10-DEFAULT-P01",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-DEFAULT-C01-A",
+            "label": "只确认自己的座位",
+            "variable_delta": {
+              "last_meal_seat_confirmed": "self_only",
+              "meal_boundary_checked": true,
+              "graduation_temperature": "polite_distance"
+            },
+            "next_hint": "饭局更体面，但私人话可能减少。"
+          },
+          {
+            "direction_id": "ACT7-E10-DEFAULT-C01-B",
+            "label": "只问一次，不替决定",
+            "variable_delta": {
+              "last_meal_seat_confirmed": "asked_once",
+              "meal_boundary_checked": true,
+              "graduation_temperature": "present_but_not_close"
+            },
+            "next_hint": "可以短暂同桌，但迟到和空位仍成立。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把最后一顿饭写成毕业大团圆。",
+        "不得让林亦舟替 4XX 全员占座、投票或确认。",
+        "不得用饭桌替代离校手续的现实压力。"
+      ],
+      "ending_hooks": [
+        "present_but_not_close",
+        "say_clear",
+        "polite_distance"
+      ]
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第十章《武生院站》前半",
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "青枫居宿管窗口 / 证书领取点 / 校园卡窗口 / C407 归档补扫 / 校门",
+      "scene_function": "确认大学生活被学校流程盖章，所有关键动作必须本人办理",
+      "reads_from": [
+        "ACT7-E10-LAST-MEAL.meal_arrival_state",
+        "leaving_papers_seen",
+        "meal_boundary_checked",
+        "public_boundary"
+      ],
+      "required_completion_flags": [
+        "leaving_papers_seen",
+        "dorm_key_returned",
+        "leaving_boundary_checked"
+      ],
+      "must_record": [
+        "campus_card_closed",
+        "certificate_received",
+        "archive_transfer_checked",
+        "station_arrival_seen"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "宿管阿姨",
+        "晚风"
+      ],
+      "core_objects": [
+        "离校手续清单",
+        "退寝钥匙",
+        "校园卡",
+        "毕业证",
+        "档案转递确认",
+        "线路图书签"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E11-DEFAULT-P01",
+          "beat": "清单发布",
+          "text_brief": "离校手续清单把 4XX 拆成退寝、校园卡、证书、档案和归档补扫几条线。",
+          "choice_hook": [
+            "先跑自己的手续",
+            "和 4XX 对一次批次"
+          ],
+          "updates": {
+            "leaving_papers_seen": true,
+            "leaving_boundary_checked": true,
+            "dorm_visibility": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-DEFAULT-P02",
+          "beat": "退寝交钥匙",
+          "text_brief": "宿管窗口只收本人钥匙和确认，公共钥匙袋必须写清来源。",
+          "choice_hook": [
+            "交本人钥匙",
+            "确认公共钥匙袋"
+          ],
+          "updates": {
+            "dorm_key_returned": true,
+            "shared_item_owner_checked": true
+          }
+        },
+        {
+          "page_id": "ACT7-E11-DEFAULT-P03",
+          "beat": "证书档案",
+          "text_brief": "毕业证、学位证、档案转递和 C407 归档补扫同时排队。",
+          "choice_hook": [
+            "先签收证书",
+            "先补扫归档页"
+          ],
+          "updates": {
+            "certificate_received": true,
+            "archive_transfer_checked": true,
+            "campus_card_closed": true
+          }
+        },
+        {
+          "page_id": "ACT7-E11-DEFAULT-P04",
+          "beat": "校门前",
+          "text_brief": "行李从青枫居拖到校门，晚风只给线路图书签，不替林亦舟处理 4XX 手续。",
+          "choice_hook": [
+            "约站口短停",
+            "各自先走"
+          ],
+          "updates": {
+            "station_arrival_seen": true,
+            "graduation_temperature": "polite_distance"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E11-DEFAULT-P01",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-DEFAULT-C01-A",
+            "label": "先完成自己的手续",
+            "variable_delta": {
+              "leaving_boundary_checked": true,
+              "project_stability": 1,
+              "graduation_temperature": "polite_distance"
+            },
+            "next_hint": "流程清楚，站口私人话减少。"
+          },
+          {
+            "direction_id": "ACT7-E11-DEFAULT-C01-B",
+            "label": "对一次批次但不代办",
+            "variable_delta": {
+              "leaving_boundary_checked": true,
+              "dorm_trust": 1,
+              "time_debt": 1
+            },
+            "next_hint": "站口有机会短暂停留。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得代签、代领证书、代交钥匙或代确认档案。",
+        "不得让晚风替代宿舍离校手续与告别。",
+        "不得把盖章流程写成纯行政流水账。"
+      ],
+      "ending_hooks": [
+        "polite_distance",
+        "present_but_not_close",
+        "not_reconciled"
+      ]
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第十章《武生院站》后半",
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "DEFAULT-ENDING",
+      "main_location": "校门 / 武生院站口 / 安检口 / 阳逻线站台 / 4XX 群",
+      "scene_function": "输出 DEFAULT-4XX 最终毕业温度",
+      "reads_from": [
+        "ACT7-E11-LEAVING-PAPERS.station_arrival_seen",
+        "ACT7-E11-LEAVING-PAPERS.leaving_boundary_checked",
+        "meal_boundary_checked",
+        "graduation_temperature"
+      ],
+      "required_completion_flags": [
+        "station_arrival_seen",
+        "station_boundary_checked",
+        "ending_temperature_locked"
+      ],
+      "must_record": [
+        "station_items_kept",
+        "final_group_state",
+        "graduation_temperature"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "晚风"
+      ],
+      "core_objects": [
+        "行李箱",
+        "周屿布袋",
+        "旧门禁卡",
+        "旧主持队挂绳",
+        "陆沉旧书",
+        "晚风线路图书签",
+        "4XX 群"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E12-DEFAULT-P01",
+          "beat": "站口抵达",
+          "text_brief": "校门到武生院站口不长，但被行李、临停、地铁口和各自去向走成很多段。",
+          "choice_hook": [
+            "站口等五分钟",
+            "自己先进站"
+          ],
+          "updates": {
+            "station_arrival_seen": true,
+            "graduation_temperature": "present_but_not_close"
+          }
+        },
+        {
+          "page_id": "ACT7-E12-DEFAULT-P02",
+          "beat": "三人离开",
+          "text_brief": "唐骁说别总在中间，也别完全不在，周屿给布袋，陆沉给旧书。",
+          "choice_hook": [
+            "收下共同留存",
+            "当场问清每件东西"
+          ],
+          "updates": {
+            "station_items_kept": [
+              "joint_keep_bag",
+              "old_access_card",
+              "old_book"
+            ],
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-DEFAULT-P03",
+          "beat": "晚风回声",
+          "text_brief": "晚风不来送，只通过线路图书签和站口照片确认可以站一会儿，也会走。",
+          "choice_hook": [
+            "给晚风发站口照片",
+            "不转发任何照片"
+          ],
+          "updates": {
+            "relationship_truth": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-DEFAULT-P04",
+          "beat": "群消息",
+          "text_brief": "唐骁发以后有事群里说，周屿问没事也能说吧，陆沉回可以，林亦舟发那就别解散。",
+          "choice_hook": [
+            "发别解散",
+            "只报到站"
+          ],
+          "updates": {
+            "final_group_state": "not_disbanded",
+            "ending_temperature_locked": "present_but_not_close",
+            "station_boundary_checked": true,
+            "graduation_temperature": "present_but_not_close"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E12-DEFAULT-P04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-DEFAULT-C01-A",
+            "label": "发那就别解散",
+            "variable_delta": {
+              "final_group_state": "not_disbanded",
+              "ending_temperature_locked": "present_but_not_close",
+              "station_boundary_checked": true
+            },
+            "next_hint": "群保留低频可能；若前置说清足够，可升到 say_clear。"
+          },
+          {
+            "direction_id": "ACT7-E12-DEFAULT-C01-B",
+            "label": "只报到站",
+            "variable_delta": {
+              "final_group_state": "low_frequency",
+              "ending_temperature_locked": "polite_distance",
+              "station_boundary_checked": true
+            },
+            "next_hint": "保持体面低频；若旧账高且修补不足，可落到 not_reconciled。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把别解散写成四人以后必然亲密。",
+        "不得把武生院站写成火车站、高铁站或公交换乘中心。",
+        "不得让晚风替代 4XX 的站口收束。",
+        "不得用毕业快乐或以后常联系替代具体物件和具体消息。"
+      ],
+      "ending_hooks": [
+        "say_clear",
+        "present_but_not_close",
+        "polite_distance",
+        "not_reconciled"
+      ]
     }
   ],
   "validation_targets": {
@@ -1911,18 +2652,29 @@
     "act6_directions_per_window": 2,
     "minimum_directions_per_return_point": 3,
     "required_entry_choice_echo_hook": true,
-    "act7_core_event_count": 3,
+    "act7_core_event_count": 8,
     "act7_required_event_count": 12,
     "act7_route_switch_allowed": false,
     "act7_required_core_events": [
       "ACT7-E03-LAST-NEW-YEAR",
       "ACT7-E06-THESIS-REVISION",
-      "ACT7-E07-DEFENSE"
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
     ],
     "act7_required_completion_flags": [
       "opening_contrast_seen",
       "thesis_boundary_checked",
-      "defense_boundary_checked"
+      "defense_boundary_checked",
+      "photo_boundary_checked",
+      "clearance_boundary_checked",
+      "meal_boundary_checked",
+      "leaving_boundary_checked",
+      "station_boundary_checked",
+      "ending_temperature_locked"
     ]
   }
 }

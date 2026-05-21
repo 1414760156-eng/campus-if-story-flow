@@ -796,3 +796,28 @@
 
 1. 将本细稿 5 个事件接入 `开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json` 的 `act7_settlement_events`。
 2. 接入后把 `validation_targets.act7_core_event_count` 从 3 更新为 8；`act7_required_event_count` 仍保持 12，等待后续补 E01、E02、E04、E05。
+
+## 2026-05-21 DEFAULT-4XX 第七卷 E08-E12 正式 JSON 接入记录
+
+已更新文件：`开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json`。
+
+本轮把已完成的毕业收束细稿接入 DEFAULT-4XX 正式剧情页级 JSON，使 `act7_settlement_events` 从 3 个事件扩展为 8 个事件。
+
+本次新增 JSON 事件：
+
+- `ACT7-E08-GRAD-PHOTO`
+- `ACT7-E09-DORM-CLEAR`
+- `ACT7-E10-LAST-MEAL`
+- `ACT7-E11-LEAVING-PAPERS`
+- `ACT7-E12-STATION-AFTER`
+
+当前 DEFAULT-4XX 第七卷 JSON 状态：
+
+- **已接入**：E03、E06、E07、E08、E09、E10、E11、E12。
+- **未接入**：E01、E02、E04、E05。
+- **校验目标**：`act7_core_event_count = 8`，`act7_required_event_count = 12`，`act7_route_switch_allowed = false`。
+
+后续建议：
+
+1. 补 `ACT7-E01-PRE-REGISTER`、`ACT7-E02-PUBLIC-SCOPE`、`ACT7-E04-THESIS-TOPIC`、`ACT7-E05-MARCH-QUEUE` 的 DEFAULT JSON。
+2. 12 个事件齐后，再进入其它路线的同母事件变体。

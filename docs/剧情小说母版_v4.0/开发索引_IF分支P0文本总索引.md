@@ -491,3 +491,18 @@ JSON 节点草案顺延到长支线模板稳定之后再做，避免支线只有
 - 已拆出 `ACT7-E08-GRAD-PHOTO`、`ACT7-E09-DORM-CLEAR`、`ACT7-E10-LAST-MEAL`、`ACT7-E11-LEAVING-PAPERS`、`ACT7-E12-STATION-AFTER` 五个事件。
 - 每个事件都保留 4 个剧情页、1 个二方向选择窗口、完成条件、禁止项和结局温度钩子。
 - 下一步应把这 5 个事件追加进 DEFAULT-4XX 正式 JSON 的 `act7_settlement_events`，让 DEFAULT 第七卷先形成 E03/E06/E07/E08-E12 的后半闭环。
+
+## 2026-05-21 追加：DEFAULT-4XX 第七卷 E08-E12 正式 JSON 接入
+
+更新文件：
+
+| 文件 | 当前状态 | 用途 |
+|---|---|---|
+| `开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json` | 已接入第七卷后半收束事件 | 将 `ACT7-E08-GRAD-PHOTO` 至 `ACT7-E12-STATION-AFTER` 追加进 `act7_settlement_events`，使 DEFAULT-4XX 正式 JSON 当前覆盖 8 个第七卷事件。 |
+
+使用说明：
+
+- 当前正式 JSON 已覆盖 `ACT7-E03`、`ACT7-E06`、`ACT7-E07`、`ACT7-E08`、`ACT7-E09`、`ACT7-E10`、`ACT7-E11`、`ACT7-E12`。
+- `validation_targets.act7_core_event_count` 已更新为 8；`act7_required_event_count` 仍为 12。
+- 尚未接入正式 JSON 的第七卷事件为 `ACT7-E01-PRE-REGISTER`、`ACT7-E02-PUBLIC-SCOPE`、`ACT7-E04-THESIS-TOPIC`、`ACT7-E05-MARCH-QUEUE`。
+- 后续建议先补这 4 个早段事件的 DEFAULT JSON，形成完整 12 事件闭环，再批量复制结构去写其它路线变体。

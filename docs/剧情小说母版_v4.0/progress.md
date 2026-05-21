@@ -2377,3 +2377,13 @@
 - 已明确完成条件：每个事件必须记录自己的边界检查字段，并保持 `route_switch_allowed = false`；站口最终温度允许 `say_clear`、`present_but_not_close`、`polite_distance`、`not_reconciled` 多结果成立。
 - 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 与 `开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
 - 下一步建议：把本细稿 5 个事件追加进 DEFAULT-4XX 正式 JSON 的 `act7_settlement_events`。
+
+## 2026-05-21 IF DEFAULT-4XX 第七卷 E08-E12 正式 JSON 接入记录
+
+- 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json`。
+- 本轮目标来自上一轮建议：把 `ACT7-E08-GRAD-PHOTO` 至 `ACT7-E12-STATION-AFTER` 追加进 DEFAULT-4XX 正式 JSON。
+- 已新增 5 个 `act7_settlement_events`：毕业照 / 影像授权、清寝 / 旧物处理、最后一顿饭、离校手续 / 证书 / 档案、武生院站 / 毕业后消息。
+- 当前 DEFAULT-4XX 正式 JSON 已覆盖 8 个第七卷事件：E03、E06、E07、E08、E09、E10、E11、E12。
+- 已把 `source_docs` 接入 `开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md`，并把相关毕业照、清寝、饭局、离校、站口变量加入 `local_variables`。
+- 已将 `validation_targets.act7_core_event_count` 更新为 8，`act7_required_event_count` 仍保持 12。
+- 下一步建议：补齐 DEFAULT-4XX 正式 JSON 中尚未接入的 `ACT7-E01-PRE-REGISTER`、`ACT7-E02-PUBLIC-SCOPE`、`ACT7-E04-THESIS-TOPIC`、`ACT7-E05-MARCH-QUEUE`。

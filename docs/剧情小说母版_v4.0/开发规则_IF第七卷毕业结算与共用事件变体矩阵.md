@@ -323,3 +323,22 @@ JSON 层新增校验目标：
 - `ACT7-E12-STATION-AFTER`
 
 后续正式 JSON 接入时，应把以上 5 个事件追加进 `act7_settlement_events`。接入后，DEFAULT-4XX 的第七卷 JSON 将覆盖 E03、E06、E07、E08、E09、E10、E11、E12 共 8 个事件；E01、E02、E04、E05 仍需单独补齐。
+
+## 2026-05-21 接入记录：DEFAULT-4XX 第七卷 E08-E12 正式 JSON
+
+`开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json` 已追加：
+
+- `ACT7-E08-GRAD-PHOTO`
+- `ACT7-E09-DORM-CLEAR`
+- `ACT7-E10-LAST-MEAL`
+- `ACT7-E11-LEAVING-PAPERS`
+- `ACT7-E12-STATION-AFTER`
+
+至此，DEFAULT-4XX 正式 JSON 当前覆盖 8 个第七卷事件。尚未接入的 4 个事件为：
+
+- `ACT7-E01-PRE-REGISTER`
+- `ACT7-E02-PUBLIC-SCOPE`
+- `ACT7-E04-THESIS-TOPIC`
+- `ACT7-E05-MARCH-QUEUE`
+
+后续补齐上述 4 个事件后，DEFAULT-4XX 的第七卷 JSON 才算完整 12 事件闭环。
