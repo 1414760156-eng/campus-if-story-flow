@@ -268,3 +268,25 @@
 - `revision_submitted_before_deadline`
 
 后续拆 `ACT7-E07-DEFENSE` 时，应读取本事件的提交版本和帮看关系，决定答辩门口谁在、谁不在、谁只发消息、谁赶流程。
+
+## 2026-05-21 接入记录：ACT7-E07 剧情页级细稿
+
+`开发细稿_IF第七卷ACT7-E07答辩剧情页.md` 已完成第一版。
+
+本细稿把 `ACT7-E07-DEFENSE` 明确为“答辩 / 答辩后关系等待与补交结算事件”，要求所有路线读取 `ACT7-E06` 的：
+
+- `thesis_revision_version`
+- `thesis_revision_helper`
+- `thesis_boundary_checked`
+- `revision_submitted_before_deadline`
+
+并记录：
+
+- `defense_order_seen`
+- `defense_waiting_state`
+- `defense_revision_after_seen`
+- `defense_post_submit_done`
+- `defense_message_echo`
+- `defense_boundary_checked`
+
+后续拆正式 JSON 时，应先把 `ACT7-E03`、`ACT7-E06`、`ACT7-E07` 三个核心事件接入 `act7_settlement_events`，再补齐毕业照、清寝、最后一顿饭、离校手续和站后回声。

@@ -2342,4 +2342,16 @@
 - 已覆盖 11 个路线变体：`ACT7-DEFAULT`、`ACT7-ZHOU`、`ACT7-TANG`、`ACT7-LUCHEN`、`ACT7-LIEFLAT`、`ACT7-WANFENG`、`ACT7-ROMANCE`、`ACT7-WORK`、`ACT7-A3`、`ACT7-PERFECT`、`ACT7-R5X`。
 - 已明确完成条件：必须记录 `thesis_revision_comments_seen`、`thesis_revision_version`、`thesis_revision_helper`、`thesis_boundary_checked` 和 `revision_submitted_before_deadline`，其中 `thesis_boundary_checked = true`，否则 `ACT7-E06` 不算完成。
 - 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 与 `开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
-- 下一步建议：拆 `ACT7-E07-DEFENSE` 答辩 / 答辩后剧情页级细稿，承接本事件的提交版本、帮看关系和“谁还会在门口”的回声。
+- `ACT7-E07-DEFENSE` 已拆出第一版剧情页级细稿，承接本事件的提交版本、帮看关系和“谁还会在门口”的回声。
+
+## 2026-05-21 IF ACT7-E07 答辩 / 答辩后剧情页级细稿记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第七卷ACT7-E07答辩剧情页.md`。
+- 本轮目标来自用户指示“继续”，按审计报告建议顺着 `ACT7-E06-THESIS-REVISION` 拆 `ACT7-E07-DEFENSE`。
+- 已把本事件定位为第七卷毕业结算层第三个核心细稿：不是答辩正文，也不是试玩器脚本，而是把答辩 / 答辩后拆成可开发剧情页、选项页、变量回调和 JSON 事件结构。
+- 已保留母版锚点：C407、答辩顺序表、答辩教室走廊、签字、小章、修改后提交、答辩后第一条消息。
+- 已明确承接字段：读取 `ACT7-E06` 的 `thesis_revision_version`、`thesis_revision_helper`、`thesis_boundary_checked` 和 `revision_submitted_before_deadline`。
+- 已覆盖 11 个路线变体：`ACT7-DEFAULT`、`ACT7-ZHOU`、`ACT7-TANG`、`ACT7-LUCHEN`、`ACT7-LIEFLAT`、`ACT7-WANFENG`、`ACT7-ROMANCE`、`ACT7-WORK`、`ACT7-A3`、`ACT7-PERFECT`、`ACT7-R5X`。
+- 已明确完成条件：必须记录 `defense_order_seen`、`defense_waiting_state`、`defense_revision_after_seen`、`defense_post_submit_done`、`defense_message_echo` 和 `defense_boundary_checked`，其中 `defense_boundary_checked = true`，否则 `ACT7-E07` 不算完成。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 与 `开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
+- 下一步建议：把 `ACT7-E03`、`ACT7-E06`、`ACT7-E07` 三个核心事件写入正式 JSON 的第七卷结算层；之后再补 `ACT7-E08-GRAD-PHOTO` 至 `ACT7-E12-STATION-AFTER`。

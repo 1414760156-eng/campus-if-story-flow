@@ -444,4 +444,20 @@ JSON 节点草案顺延到长支线模板稳定之后再做，避免支线只有
 - 所有路线都必须经过 `ACT7-E06-THESIS-REVISION`，但根据 `route_pool_id` 输出不同的帮看关系、改稿地点、版本边界和答辩前回声。
 - 已覆盖 `ACT7-DEFAULT`、`ACT7-ZHOU`、`ACT7-TANG`、`ACT7-LUCHEN`、`ACT7-LIEFLAT`、`ACT7-WANFENG`、`ACT7-ROMANCE`、`ACT7-WORK`、`ACT7-A3`、`ACT7-PERFECT`、`ACT7-R5X`。
 - 本事件完成时必须记录 `thesis_boundary_checked = true`，否则不算完成；它要求明确区分课程成果、主题材料、私人故事和当前路线人物的帮看权限。
-- 下一步应拆 `ACT7-E07-DEFENSE`，处理答辩前等待、答辩后补交和消息回声。
+- `ACT7-E07-DEFENSE` 已继续拆出第一版剧情页级细稿；后续应把 `ACT7-E03`、`ACT7-E06`、`ACT7-E07` 三个核心事件接入正式 JSON 的第七卷结算层。
+
+## 2026-05-21 追加：ACT7-E07 答辩 / 答辩后剧情页级细稿
+
+新增文件：
+
+| 文件 | 当前状态 | 用途 |
+|---|---|---|
+| `开发细稿_IF第七卷ACT7-E07答辩剧情页.md` | 第一版完成 | 将 `ACT7-E07-DEFENSE` 拆为可开发剧情页，承接 `ACT7-E06` 的提交版本、帮看关系和边界检查，覆盖答辩顺序表、门口等待、签字小章、修改后提交、答辩后消息回声和 11 个路线变体。 |
+
+使用说明：
+
+- 本文件不是答辩正文，也不是试玩器脚本，而是把答辩 / 答辩后拆成第七卷关系等待、补交顺序和毕业温度结算事件。
+- 所有路线都必须经过 `ACT7-E07-DEFENSE`，但根据 `route_pool_id` 输出不同的门口在场方式、补交优先级、第一条答辩后消息和毕业温度。
+- 已覆盖 `ACT7-DEFAULT`、`ACT7-ZHOU`、`ACT7-TANG`、`ACT7-LUCHEN`、`ACT7-LIEFLAT`、`ACT7-WANFENG`、`ACT7-ROMANCE`、`ACT7-WORK`、`ACT7-A3`、`ACT7-PERFECT`、`ACT7-R5X`。
+- 本事件完成时必须记录 `defense_boundary_checked = true`，否则不算完成；它要求明确写出答辩门口谁在、谁不在、谁只发消息、谁赶流程、谁等到最后一分钟，以及答辩后补交是否由本人完成。
+- 下一步应把 `ACT7-E03`、`ACT7-E06`、`ACT7-E07` 三个核心事件写入正式 JSON 第七卷结算层，再补 `ACT7-E08` 至 `ACT7-E12` 的剩余毕业事件页。
