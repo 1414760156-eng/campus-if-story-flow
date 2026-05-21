@@ -309,3 +309,17 @@ JSON 层新增校验目标：
 - `act7_required_completion_flags = ["opening_contrast_seen", "thesis_boundary_checked", "defense_boundary_checked"]`
 
 后续补齐 `ACT7-E08` 至 `ACT7-E12` 时，应继续沿用本数组结构，并保持每个事件的 `same_mother_event = true` 与 `route_switch_allowed = false`。
+
+## 2026-05-21 接入记录：ACT7-E08 至 E12 毕业收束细稿
+
+`开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md` 已完成第一版。
+
+本细稿限定为 `DEFAULT-4XX` / `POOL-DEFAULT-4XX` / `ACT7-DEFAULT`，并把第七卷后半收束拆成：
+
+- `ACT7-E08-GRAD-PHOTO`
+- `ACT7-E09-DORM-CLEAR`
+- `ACT7-E10-LAST-MEAL`
+- `ACT7-E11-LEAVING-PAPERS`
+- `ACT7-E12-STATION-AFTER`
+
+后续正式 JSON 接入时，应把以上 5 个事件追加进 `act7_settlement_events`。接入后，DEFAULT-4XX 的第七卷 JSON 将覆盖 E03、E06、E07、E08、E09、E10、E11、E12 共 8 个事件；E01、E02、E04、E05 仍需单独补齐。

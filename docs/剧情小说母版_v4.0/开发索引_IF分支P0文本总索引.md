@@ -476,3 +476,18 @@ JSON 节点草案顺延到长支线模板稳定之后再做，避免支线只有
 - 三个事件都保留 `route_switch_allowed = false`，承接第七卷毕业结算矩阵中“不重新开线，只结算已锁路线”的规则。
 - `ACT7-E03` 记录 `opening_contrast_seen`、公开范围、空白目录和旧物权限；`ACT7-E06` 记录 `thesis_revision_version`、帮看关系、边界检查和十点前提交；`ACT7-E07` 记录答辩顺序、门口等待、补交、答辩后消息和 `defense_boundary_checked`。
 - `validation_targets` 已追加第七卷核心事件数量、12 事件总目标、禁止换线和三个必备完成标记，后续补 `ACT7-E08` 至 `ACT7-E12` 时继续扩展同一数组。
+
+## 2026-05-21 追加：ACT7-E08 至 E12 毕业收束剧情页级细稿
+
+新增文件：
+
+| 文件 | 当前状态 | 用途 |
+|---|---|---|
+| `开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md` | 第一版完成 | 将 DEFAULT-4XX 第七卷后半段毕业收束拆成可接 JSON 的剧情页级细稿，覆盖毕业照、清寝、最后一顿饭、离校手续和武生院站后回声。 |
+
+使用说明：
+
+- 本文件只覆盖 `route_id = DEFAULT-4XX`、`route_pool_id = POOL-DEFAULT-4XX`、`act7_variant_id = ACT7-DEFAULT`，不替其它路线预写文本。
+- 已拆出 `ACT7-E08-GRAD-PHOTO`、`ACT7-E09-DORM-CLEAR`、`ACT7-E10-LAST-MEAL`、`ACT7-E11-LEAVING-PAPERS`、`ACT7-E12-STATION-AFTER` 五个事件。
+- 每个事件都保留 4 个剧情页、1 个二方向选择窗口、完成条件、禁止项和结局温度钩子。
+- 下一步应把这 5 个事件追加进 DEFAULT-4XX 正式 JSON 的 `act7_settlement_events`，让 DEFAULT 第七卷先形成 E03/E06/E07/E08-E12 的后半闭环。

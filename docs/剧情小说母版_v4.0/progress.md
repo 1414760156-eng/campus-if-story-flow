@@ -2366,3 +2366,14 @@
 - `ACT7-E07` 已落入 C407 答辩顺序表、门口等待、小章 / 签字 / 修改后提交和 4XX 群回声，要求记录 `defense_boundary_checked = true`。
 - 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 与 `开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
 - 下一步建议：继续补 `ACT7-E08-GRAD-PHOTO` 至 `ACT7-E12-STATION-AFTER` 的 DEFAULT-4XX 剩余毕业事件页，再考虑批量生成其它路线的第七卷事件变体。
+
+## 2026-05-21 IF ACT7-E08 至 E12 毕业收束剧情页级细稿记录
+
+- 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md`。
+- 本轮目标来自接续建议：先把 DEFAULT-4XX 第七卷剩余毕业事件页拆稳，再接入正式 JSON。
+- 已把本文件限定为 `route_id = DEFAULT-4XX`、`route_pool_id = POOL-DEFAULT-4XX`、`act7_variant_id = ACT7-DEFAULT`，不提前替其它路线生成伪完整文本。
+- 已覆盖 5 个事件：`ACT7-E08-GRAD-PHOTO`、`ACT7-E09-DORM-CLEAR`、`ACT7-E10-LAST-MEAL`、`ACT7-E11-LEAVING-PAPERS`、`ACT7-E12-STATION-AFTER`。
+- 已保留母版锚点：毕业照批次 / 缺席不补、预览缩略图缓存、清寝共享清单、公共 U 盘、未知快递袋、东北饺子馆最后一顿饭、退寝交钥匙、证书档案、武生院站和 4XX 群“不解散”。
+- 已明确完成条件：每个事件必须记录自己的边界检查字段，并保持 `route_switch_allowed = false`；站口最终温度允许 `say_clear`、`present_but_not_close`、`polite_distance`、`not_reconciled` 多结果成立。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 与 `开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
+- 下一步建议：把本细稿 5 个事件追加进 DEFAULT-4XX 正式 JSON 的 `act7_settlement_events`。

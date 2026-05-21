@@ -777,3 +777,22 @@
 
 1. 沿同一 JSON 结构继续补 `ACT7-E08-GRAD-PHOTO`、`ACT7-E09-DORM-CLEAR`、`ACT7-E10-LAST-MEAL`、`ACT7-E11-LEAVING-PAPERS`、`ACT7-E12-STATION-AFTER`。
 2. DEFAULT-4XX 的 12 个第七卷事件补齐并校验后，再批量生成三室友线、晚风 / 感情线、工作 / 活动 / 完美线和 5X 的同事件变体。
+
+## 2026-05-21 ACT7-E08 至 E12 毕业收束剧情页级细稿完成记录
+
+已完成文件：`开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md`。
+
+该文件把 DEFAULT-4XX 第七卷后半段从正文母版拆成可开发事件页。它承接 `ACT7-E07-DEFENSE` 的答辩门口、补交和群消息回声，继续处理毕业照、清寝、最后一顿饭、离校手续和武生院站后回声。
+
+本细稿当前完成度：
+
+- **覆盖事件**：`ACT7-E08-GRAD-PHOTO`、`ACT7-E09-DORM-CLEAR`、`ACT7-E10-LAST-MEAL`、`ACT7-E11-LEAVING-PAPERS`、`ACT7-E12-STATION-AFTER`。
+- **路线限定**：只写 `POOL-DEFAULT-4XX` / `ACT7-DEFAULT`，其它路线后续另写文本变体。
+- **页面结构**：每个事件 4 个剧情页，1 个二方向选择窗口，保留完成条件和禁止项。
+- **母版锚点**：保留晨光体育场毕业照、融媒体共享盘缓存、青枫居清寝、公共 U 盘、东北饺子馆、离校手续、证书档案、武生院站和 4XX 群“不解散”。
+- **温度控制**：最终允许 `say_clear`、`present_but_not_close`、`polite_distance`、`not_reconciled` 多种 DEFAULT 结局成立。
+
+后续建议：
+
+1. 将本细稿 5 个事件接入 `开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json` 的 `act7_settlement_events`。
+2. 接入后把 `validation_targets.act7_core_event_count` 从 3 更新为 8；`act7_required_event_count` 仍保持 12，等待后续补 E01、E02、E04、E05。
