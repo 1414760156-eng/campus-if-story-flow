@@ -2355,3 +2355,14 @@
 - 已明确完成条件：必须记录 `defense_order_seen`、`defense_waiting_state`、`defense_revision_after_seen`、`defense_post_submit_done`、`defense_message_echo` 和 `defense_boundary_checked`，其中 `defense_boundary_checked = true`，否则 `ACT7-E07` 不算完成。
 - 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 与 `开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
 - 下一步建议：把 `ACT7-E03`、`ACT7-E06`、`ACT7-E07` 三个核心事件写入正式 JSON 的第七卷结算层；之后再补 `ACT7-E08-GRAD-PHOTO` 至 `ACT7-E12-STATION-AFTER`。
+
+## 2026-05-21 IF DEFAULT-4XX 第七卷核心事件正式 JSON 接入记录
+
+- 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json`。
+- 本轮目标来自上一轮建议：把 `ACT7-E03-LAST-NEW-YEAR`、`ACT7-E06-THESIS-REVISION`、`ACT7-E07-DEFENSE` 三个核心事件写入正式 JSON 的第七卷结算层。
+- 已在 DEFAULT-4XX 正式 JSON 中新增 `act7_settlement_events` 数组，当前含 3 个事件；每个事件均绑定 `route_id = DEFAULT-4XX`、`route_pool_id = POOL-DEFAULT-4XX`、`act7_variant_id = ACT7-DEFAULT`。
+- `ACT7-E03` 已落入 B204 主题材料会、空白目录、军训手机袋、公开素材为空确认表和开学 / 最后一个新年对照，要求记录 `opening_contrast_seen = true`。
+- `ACT7-E06` 已落入陈老师红批、`thesis_revision_v2.docx`、4XX 公共桌、十点前提交和“帮看不等于替写”边界，要求记录 `thesis_boundary_checked = true`。
+- `ACT7-E07` 已落入 C407 答辩顺序表、门口等待、小章 / 签字 / 修改后提交和 4XX 群回声，要求记录 `defense_boundary_checked = true`。
+- 已同步更新 `开发索引_IF分支P0文本总索引.md`、`开发规划_IF可玩支线长篇扩展总表.md` 与 `开发规则_IF第七卷毕业结算与共用事件变体矩阵.md`。
+- 下一步建议：继续补 `ACT7-E08-GRAD-PHOTO` 至 `ACT7-E12-STATION-AFTER` 的 DEFAULT-4XX 剩余毕业事件页，再考虑批量生成其它路线的第七卷事件变体。

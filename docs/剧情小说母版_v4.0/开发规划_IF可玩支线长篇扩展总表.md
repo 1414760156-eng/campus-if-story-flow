@@ -758,3 +758,22 @@
 
 1. 先把 `ACT7-E03`、`ACT7-E06`、`ACT7-E07` 三个核心事件写入正式 JSON 的第七卷结算层。
 2. 再补 `ACT7-E08-GRAD-PHOTO` 至 `ACT7-E12-STATION-AFTER` 的剩余毕业事件页。
+
+## 2026-05-21 DEFAULT-4XX 第七卷核心事件正式 JSON 接入记录
+
+已更新文件：`开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json`。
+
+本轮把已完成的三个第七卷核心细稿接入 DEFAULT-4XX 正式剧情页级 JSON。它不是把 12 个毕业事件一次写完，而是在现有入口、8 个内回流点、第六卷 20 段之后，先建立第七卷结算层的数据形状。
+
+本 JSON 当前新增内容：
+
+- **第七卷状态**：`route_state` 已加入 `act7_variant_id = ACT7-DEFAULT`、`act7_required_event_count = 12`、`act7_core_events_json_started = true` 和 `act7_route_switch_allowed = false`。
+- **本地变量**：已追加新年公开范围、论文修改、答辩等待、补交与边界检查相关字段。
+- **核心事件**：`act7_settlement_events` 当前包含 `ACT7-E03-LAST-NEW-YEAR`、`ACT7-E06-THESIS-REVISION`、`ACT7-E07-DEFENSE` 三个事件。
+- **DEFAULT 线页面**：每个事件各保留 4 个剧情页拍点、1 个二方向选择窗口、完成条件、禁止效果和结局温度钩子。
+- **校验目标**：`validation_targets` 已记录第七卷核心事件数量、12 事件总目标、禁止换线和三个核心完成标记。
+
+后续建议：
+
+1. 沿同一 JSON 结构继续补 `ACT7-E08-GRAD-PHOTO`、`ACT7-E09-DORM-CLEAR`、`ACT7-E10-LAST-MEAL`、`ACT7-E11-LEAVING-PAPERS`、`ACT7-E12-STATION-AFTER`。
+2. DEFAULT-4XX 的 12 个第七卷事件补齐并校验后，再批量生成三室友线、晚风 / 感情线、工作 / 活动 / 完美线和 5X 的同事件变体。

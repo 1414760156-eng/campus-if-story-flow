@@ -290,3 +290,22 @@
 - `defense_boundary_checked`
 
 后续拆正式 JSON 时，应先把 `ACT7-E03`、`ACT7-E06`、`ACT7-E07` 三个核心事件接入 `act7_settlement_events`，再补齐毕业照、清寝、最后一顿饭、离校手续和站后回声。
+
+## 2026-05-21 接入记录：DEFAULT-4XX 第七卷核心事件正式 JSON
+
+`开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json` 已在第六卷 20 段之后新增 `act7_settlement_events` 数组，并先接入三项核心事件：
+
+- `ACT7-E03-LAST-NEW-YEAR`
+- `ACT7-E06-THESIS-REVISION`
+- `ACT7-E07-DEFENSE`
+
+本次接入限定为 `route_id = DEFAULT-4XX`、`route_pool_id = POOL-DEFAULT-4XX`、`act7_variant_id = ACT7-DEFAULT`。其它路线仍需后续按同一母事件另写文本变体，不得直接复用 DEFAULT 文本。
+
+JSON 层新增校验目标：
+
+- `act7_core_event_count = 3`
+- `act7_required_event_count = 12`
+- `act7_route_switch_allowed = false`
+- `act7_required_completion_flags = ["opening_contrast_seen", "thesis_boundary_checked", "defense_boundary_checked"]`
+
+后续补齐 `ACT7-E08` 至 `ACT7-E12` 时，应继续沿用本数组结构，并保持每个事件的 `same_mother_event = true` 与 `route_switch_allowed = false`。

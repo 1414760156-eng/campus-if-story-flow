@@ -461,3 +461,18 @@ JSON 节点草案顺延到长支线模板稳定之后再做，避免支线只有
 - 已覆盖 `ACT7-DEFAULT`、`ACT7-ZHOU`、`ACT7-TANG`、`ACT7-LUCHEN`、`ACT7-LIEFLAT`、`ACT7-WANFENG`、`ACT7-ROMANCE`、`ACT7-WORK`、`ACT7-A3`、`ACT7-PERFECT`、`ACT7-R5X`。
 - 本事件完成时必须记录 `defense_boundary_checked = true`，否则不算完成；它要求明确写出答辩门口谁在、谁不在、谁只发消息、谁赶流程、谁等到最后一分钟，以及答辩后补交是否由本人完成。
 - 下一步应把 `ACT7-E03`、`ACT7-E06`、`ACT7-E07` 三个核心事件写入正式 JSON 第七卷结算层，再补 `ACT7-E08` 至 `ACT7-E12` 的剩余毕业事件页。
+
+## 2026-05-21 追加：DEFAULT-4XX 第七卷核心事件正式 JSON 接入
+
+更新文件：
+
+| 文件 | 当前状态 | 用途 |
+|---|---|---|
+| `开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json` | 已接入第七卷核心事件 | 在第六卷 20 段正式数据之后新增 `act7_settlement_events`，先落入 `ACT7-E03-LAST-NEW-YEAR`、`ACT7-E06-THESIS-REVISION`、`ACT7-E07-DEFENSE` 三个 DEFAULT-4XX 核心结算事件。 |
+
+使用说明：
+
+- 本次只接入 `POOL-DEFAULT-4XX` / `ACT7-DEFAULT` 的正式 JSON，不提前替其它路线生成伪完整数据。
+- 三个事件都保留 `route_switch_allowed = false`，承接第七卷毕业结算矩阵中“不重新开线，只结算已锁路线”的规则。
+- `ACT7-E03` 记录 `opening_contrast_seen`、公开范围、空白目录和旧物权限；`ACT7-E06` 记录 `thesis_revision_version`、帮看关系、边界检查和十点前提交；`ACT7-E07` 记录答辩顺序、门口等待、补交、答辩后消息和 `defense_boundary_checked`。
+- `validation_targets` 已追加第七卷核心事件数量、12 事件总目标、禁止换线和三个必备完成标记，后续补 `ACT7-E08` 至 `ACT7-E12` 时继续扩展同一数组。

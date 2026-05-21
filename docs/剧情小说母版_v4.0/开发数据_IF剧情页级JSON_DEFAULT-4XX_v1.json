@@ -1,6 +1,6 @@
 {
   "schema_version": "if_route_json_v1",
-  "generated_at": "2026-05-20",
+  "generated_at": "2026-05-21",
   "route_id": "DEFAULT-4XX",
   "route_name": "宿舍修补线",
   "route_pool_id": "POOL-DEFAULT-4XX",
@@ -10,7 +10,11 @@
     "开发长线_IF可玩支线DEFAULT-4XX宿舍修补线.md",
     "开发细稿_IF可玩支线DEFAULT-4XX内回流剧情页.md",
     "开发样板_IF剧情页级JSON拆分样板_v1.json",
-    "开发规则_IF第五第六卷玩法节奏硬约束.md"
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发细稿_IF第七卷ACT7-E03最后一个新年剧情页.md",
+    "开发细稿_IF第七卷ACT7-E06改论文毕业设计剧情页.md",
+    "开发细稿_IF第七卷ACT7-E07答辩剧情页.md"
   ],
   "route_state": {
     "canon_line": "MOTHER-V4",
@@ -65,6 +69,15 @@
     "act6_choice_window_count": 5,
     "act6_directions_per_window": 2,
     "act6_route_pool_locked": true,
+    "act7_variant_id": "ACT7-DEFAULT",
+    "act7_required_event_count": 12,
+    "act7_core_events_in_json": [
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE"
+    ],
+    "act7_core_events_json_started": true,
+    "act7_route_switch_allowed": false,
     "graduation_temperature": "unresolved_but_present"
   },
   "local_variables": [
@@ -76,7 +89,29 @@
     "proxy_risk",
     "public_boundary",
     "project_stability",
-    "graduation_temperature"
+    "graduation_temperature",
+    "old_object_weight",
+    "dorm_visibility",
+    "new_year_material_status",
+    "public_scope",
+    "story_consent",
+    "opening_contrast_seen",
+    "thesis_revision_comments_seen",
+    "thesis_revision_version",
+    "thesis_revision_helper",
+    "thesis_boundary_checked",
+    "revision_submitted_before_deadline",
+    "data_source_clear",
+    "public_scope_risk",
+    "defense_order_seen",
+    "defense_waiting_state",
+    "defense_revision_after_seen",
+    "defense_post_submit_done",
+    "defense_message_echo",
+    "defense_boundary_checked",
+    "defense_stability",
+    "route_trust",
+    "time_debt"
   ],
   "entry_node": {
     "id": "D_00_SHORT_GROUP",
@@ -1447,6 +1482,427 @@
       ]
     }
   ],
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E03最后一个新年剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第七卷第三章《最后一个新年》",
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "B204 主题材料会 / 4XX 公共桌",
+      "scene_function": "把最后一个新年写成公开范围、旧物权限和开学处境对照",
+      "reads_from": [
+        "route_pool_id",
+        "act7_variant_id",
+        "graduation_temperature",
+        "dorm_warmth",
+        "public_boundary",
+        "old_debt"
+      ],
+      "required_completion_flags": [
+        "opening_contrast_seen"
+      ],
+      "must_record": [
+        "new_year_material_status",
+        "public_scope",
+        "story_consent",
+        "opening_contrast_seen"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "辅导员"
+      ],
+      "core_objects": [
+        "空白目录",
+        "军训手机袋",
+        "公开素材为空确认表",
+        "唐骁电子确认表",
+        "没编号的糖"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E03-DEFAULT-P01",
+          "beat": "入场",
+          "text_brief": "林亦舟带空白目录进入 B204，唐骁确认格式，周屿摸糖盒，陆沉带空白确认表。",
+          "choice_hook": [
+            "维持空白目录",
+            "让某个小物件上桌"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "old_object_weight": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-DEFAULT-P02",
+          "beat": "核验",
+          "text_brief": "后排质疑空白是否算参与，辅导员说明空白目录不被剪进视频。",
+          "choice_hook": [
+            "只提交空白确认",
+            "解释为什么没有东西"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-DEFAULT-P03",
+          "beat": "旧物",
+          "text_brief": "军训手机袋出现，四个人都被拉回第一卷开学后的手机事件。",
+          "choice_hook": [
+            "不接旧事",
+            "承认不是没有东西"
+          ],
+          "updates": {
+            "not_reconciled": 1,
+            "say_clear": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-DEFAULT-P04",
+          "beat": "回声",
+          "text_brief": "唐骁做电子确认表，周屿把糖放下又收回，陆沉说够了。",
+          "choice_hook": [
+            "PDF 留档",
+            "仅现场通过"
+          ],
+          "updates": {
+            "public_scope": "class_archive_only",
+            "opening_contrast_seen": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E03-DEFAULT-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-DEFAULT-C01-A",
+            "label": "只交空白确认",
+            "variable_delta": {
+              "public_boundary": 1,
+              "dorm_visibility": 1,
+              "opening_contrast_seen": true
+            },
+            "next_hint": "毕业照公开风险降低，但 4XX 仍保留体面距离。"
+          },
+          {
+            "direction_id": "ACT7-E03-DEFAULT-C01-B",
+            "label": "承认旧物存在",
+            "variable_delta": {
+              "old_object_weight": 1,
+              "old_debt": 1,
+              "opening_contrast_seen": true
+            },
+            "next_hint": "后续论文和答辩门口更容易出现一句具体回应。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把空白目录写成全员和解。",
+        "不得因为旧物上桌重新开放室友站队线。",
+        "不得跳过开学与最后一个新年的明确对照。"
+      ],
+      "ending_hooks": [
+        "say_clear",
+        "present_but_not_close",
+        "not_reconciled"
+      ]
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E06改论文毕业设计剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第七卷第六章《改到十点以前》",
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 4XX 公共桌 / 共享盘归档窗口",
+      "scene_function": "把改论文 / 毕业设计写成关系边界和版本责任结算",
+      "reads_from": [
+        "ACT7-E03-LAST-NEW-YEAR.new_year_material_status",
+        "ACT7-E03-LAST-NEW-YEAR.public_scope",
+        "ACT7-E03-LAST-NEW-YEAR.opening_contrast_seen",
+        "project_stability",
+        "proxy_risk",
+        "public_boundary"
+      ],
+      "required_completion_flags": [
+        "thesis_boundary_checked",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_revision_comments_seen",
+        "thesis_revision_version",
+        "thesis_revision_helper",
+        "thesis_boundary_checked",
+        "revision_submitted_before_deadline"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "陈老师"
+      ],
+      "core_objects": [
+        "陈老师红批",
+        "thesis_revision_v2.docx",
+        "C407 共享盘归档表",
+        "十点前提交记录",
+        "4XX 公共桌"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E06-DEFAULT-P01",
+          "beat": "红批",
+          "text_brief": "陈老师划掉“后续补充”，要求林亦舟补清数据来源和展示边界。",
+          "choice_hook": [
+            "自己先改核心说明",
+            "把整稿发 4XX 群"
+          ],
+          "updates": {
+            "thesis_revision_comments_seen": true,
+            "project_stability": 1,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-DEFAULT-P02",
+          "beat": "给谁看",
+          "text_brief": "唐骁可看版本名，周屿可看说明口径，陆沉可看来源边界，但没人该替他写。",
+          "choice_hook": [
+            "分别只问一个问题",
+            "让三个人一起看"
+          ],
+          "updates": {
+            "thesis_revision_helper": "4xx_limited_review",
+            "public_boundary": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-DEFAULT-P03",
+          "beat": "改稿",
+          "text_brief": "公共桌上只放修改页，不放旧物；四个人的意见短而具体。",
+          "choice_hook": [
+            "只采纳可验证建议",
+            "把私人解释写进致谢"
+          ],
+          "updates": {
+            "data_source_clear": 1,
+            "public_scope_risk": 1,
+            "thesis_boundary_checked": true
+          }
+        },
+        {
+          "page_id": "ACT7-E06-DEFAULT-P04",
+          "beat": "提交",
+          "text_brief": "十点前上传修改版，群里只剩“已传”“收到”。",
+          "choice_hook": [
+            "给 4XX 回一句谢谢",
+            "不再展开"
+          ],
+          "updates": {
+            "thesis_revision_version": "thesis_revision_v2.docx",
+            "revision_submitted_before_deadline": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E06-DEFAULT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-DEFAULT-C01-A",
+            "label": "分别只问一个问题",
+            "variable_delta": {
+              "public_boundary": 1,
+              "project_stability": 1,
+              "thesis_boundary_checked": true
+            },
+            "next_hint": "答辩门口更容易出现短而具体的照看。"
+          },
+          {
+            "direction_id": "ACT7-E06-DEFAULT-C01-B",
+            "label": "让三个人一起看",
+            "variable_delta": {
+              "old_debt": 1,
+              "proxy_risk": 1,
+              "thesis_boundary_checked": true
+            },
+            "next_hint": "补交仍可完成，但答辩等待会带上更重的旧账。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把改论文写成大家一起熬夜所以和好。",
+        "不得让 4XX 任一人替林亦舟决定毕业设计内容。",
+        "不得把私人旧事写进课程成果或主题材料。"
+      ],
+      "ending_hooks": [
+        "present_but_not_close",
+        "polite_distance",
+        "say_clear"
+      ]
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E07答辩剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第七卷第七章《答辩以后》",
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "教学楼 C407 / 答辩教室走廊 / 打印店 / B204",
+      "scene_function": "把答辩 / 答辩后写成关系等待、补交顺序和毕业温度结算",
+      "reads_from": [
+        "ACT7-E06-THESIS-REVISION.thesis_revision_version",
+        "ACT7-E06-THESIS-REVISION.thesis_revision_helper",
+        "ACT7-E06-THESIS-REVISION.thesis_boundary_checked",
+        "ACT7-E06-THESIS-REVISION.revision_submitted_before_deadline",
+        "graduation_temperature"
+      ],
+      "required_completion_flags": [
+        "defense_boundary_checked",
+        "defense_post_submit_done"
+      ],
+      "must_record": [
+        "defense_order_seen",
+        "defense_waiting_state",
+        "defense_revision_after_seen",
+        "defense_post_submit_done",
+        "defense_message_echo",
+        "defense_boundary_checked"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "答辩老师"
+      ],
+      "core_objects": [
+        "答辩顺序表",
+        "C407 小章",
+        "修改后提交页",
+        "补交清单",
+        "4XX 群里的过了"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E07-DEFAULT-P01",
+          "beat": "顺序表",
+          "text_brief": "林亦舟看到自己的顺序，E06 的 thesis_revision_v2.docx 被列为答辩用版。",
+          "choice_hook": [
+            "自己核材料",
+            "问 4XX 谁在附近"
+          ],
+          "updates": {
+            "defense_order_seen": true,
+            "defense_stability": 1,
+            "dorm_visibility": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-DEFAULT-P02",
+          "beat": "门口",
+          "text_brief": "唐骁看补交清单，周屿压住玩笑，陆沉只在走廊边停了一下。",
+          "choice_hook": [
+            "让他们各自去忙",
+            "希望他们等到结束"
+          ],
+          "updates": {
+            "defense_waiting_state": "4xx_short_presence",
+            "public_boundary": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-DEFAULT-P03",
+          "beat": "补交",
+          "text_brief": "答辩后需要补一处图表来源说明，谁都能提醒，但没人能替他签字。",
+          "choice_hook": [
+            "先补交签字",
+            "先回 4XX 消息"
+          ],
+          "updates": {
+            "defense_revision_after_seen": true,
+            "defense_post_submit_done": true,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-DEFAULT-P04",
+          "beat": "回声",
+          "text_brief": "群里出现“过了”“收到”“别忘了盖章”，像照看也像流程。",
+          "choice_hook": [
+            "问最后饭局怎么走",
+            "只回一句谢谢"
+          ],
+          "updates": {
+            "defense_message_echo": "4xx_group_short_reply",
+            "defense_boundary_checked": true,
+            "graduation_temperature": "present_but_not_close"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E07-DEFAULT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-DEFAULT-C01-A",
+            "label": "先补交签字",
+            "variable_delta": {
+              "project_stability": 1,
+              "defense_post_submit_done": true,
+              "defense_boundary_checked": true
+            },
+            "next_hint": "毕业照和饭局更偏体面在场。"
+          },
+          {
+            "direction_id": "ACT7-E07-DEFAULT-C01-B",
+            "label": "先回 4XX 消息",
+            "variable_delta": {
+              "route_trust": 1,
+              "time_debt": 1,
+              "defense_boundary_checked": true
+            },
+            "next_hint": "最后一顿饭有机会多一句话，但补交流程压力上升。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把答辩门口写成 4XX 大团圆。",
+        "不得让任何人替林亦舟签字、盖章或提交修改后版本。",
+        "不得因为有人等他就重新打开其它完整路线。"
+      ],
+      "ending_hooks": [
+        "present_but_not_close",
+        "say_clear",
+        "polite_distance"
+      ]
+    }
+  ],
   "validation_targets": {
     "json_must_parse": true,
     "return_point_count": 8,
@@ -1454,6 +1910,19 @@
     "act6_scene_total": 20,
     "act6_directions_per_window": 2,
     "minimum_directions_per_return_point": 3,
-    "required_entry_choice_echo_hook": true
+    "required_entry_choice_echo_hook": true,
+    "act7_core_event_count": 3,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE"
+    ],
+    "act7_required_completion_flags": [
+      "opening_contrast_seen",
+      "thesis_boundary_checked",
+      "defense_boundary_checked"
+    ]
   }
 }
