@@ -2,7 +2,7 @@
 
 本文用于把已开发的 IF 长线从第五幕入口、第六幕承接、第七幕结算接成一张可执行路线图。
 
-2026-05-23 口径修正：本文件原先只按 5/6/7 检查，容易把“P0-A / P0-B 早期入口 + Act6 / Act7 已有数据”误写成“全链路完成”。当前硬规则改为：所有完整路线都必须经过第五幕；第三幕 / 第四幕外流后，还要先在当前池内经历第四幕生活半径分化，再进入第五幕池内承接 / 锁池。`A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` 的 Act4 / Act5 桥接已补入正式 JSON；`R4-WORK` 仍需补或复核 Act5 桥接层。
+2026-05-23 口径修正：本文件原先只按 5/6/7 检查，容易把“P0-A / P0-B 早期入口 + Act6 / Act7 已有数据”误写成“全链路完成”。当前硬规则改为：所有完整路线都必须经过第五幕；第三幕 / 第四幕外流后，还要先在当前池内经历第四幕生活半径分化，再进入第五幕池内承接 / 锁池。`A3-ACTIVITY-PUBLIC`、`R3-PERFECT` 与 `R4-WORK` 的早期外流桥接均已补入正式 JSON。
 
 本文件不是第六幕完整剧情页，也不替代各路线长线文件。它只回答三个问题：
 
@@ -39,11 +39,11 @@ Act5 主线五类窗口 / 早期父池确认
 
 | 层级 | 当前状态 | 说明 |
 |---|---|---|
-| Act5 入口层 | 部分完整 / 早期线继续补 | P0-C 晚风 / 专注感情入口、P0-D 站队入口、P0-E 5X 硬锁入口均已转正式页级 JSON；`A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` 已补 Act4 生活半径与 Act5 池内桥接；`R4-WORK` 仍需补或复核池内承接。 |
+| Act5 入口层 | 结构完整 | P0-C 晚风 / 专注感情入口、P0-D 站队入口、P0-E 5X 硬锁入口均已转正式页级 JSON；`A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` 已补 Act4 生活半径与 Act5 池内桥接；`R4-WORK` 已补 `ACT5-WORK` 池内承接。 |
 | Act6 承接层 | 11 条完整页级接入 | `R5X-HARD`、`R5-WANFENG`、`A3-ACTIVITY-PUBLIC`、`R3-PERFECT`、`R5-ROMANCE`、`R4-WORK`、`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 均已完成第六幕 20 页定形层。 |
 | Act7 结算层 | 已正式 JSON 收口 | 11 条线均为 12 事件、48 页、24 方向，source_docs 与事件链已校验通过。 |
 
-结论：Act6 已完成 11 / 11 条完整页级接入，Act7 已完成 11 / 11 条结算；`A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` 的早期外流桥接已补齐。全链路冻结仍需继续处理 `R4-WORK` 的 Act5 缺口。
+结论：Act6 已完成 11 / 11 条完整页级接入，Act7 已完成 11 / 11 条结算；`A3-ACTIVITY-PUBLIC`、`R3-PERFECT` 与 `R4-WORK` 的早期外流桥接已补齐。全链路结构缺口已收口。
 
 ## Act6 block ID 清单
 
@@ -68,7 +68,7 @@ Act5 主线五类窗口 / 早期父池确认
 | `DEFAULT-4XX` | 默认宿舍修补；`DEFAULT-ENTRY-01/02/03`；要求 `dorm_repair >= 2`、`avoidance <= 2`、未进 5X；P0-D 共用入口已在本 JSON 中接入 | `ACT6-DEFAULT-B01` 至 `B05`；第六幕完整页级 JSON 已接入 | `dorm_trust`、`dorm_warmth`、`repair_depth`、`avoidance`、`old_debt`、`public_boundary`、`project_stability`、`relationship_truth`、`final_group_state`、`graduation_temperature` | `开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json` | P0-D 入口、第六幕完整页级 JSON 与第七幕正式 JSON 均已接入；可作为站队组剩余路线的结构基准。 |
 | `A3-ACTIVITY-PUBLIC` | 第三幕活动父池；P0-A 父池入口 5 节点 / 20 页、Act4 生活半径 14 页、Act5 桥接 20 页均已接入 | `ACT6-A3-B01` 至 `B05` | `a3_public_scope`、`activity_link`、`activity_certificate_status`、`activity_image_scope_checked`、`a3_final_contact_scope`、`dorm_warmth`、`act5_a3_bridge_ready` | `开发数据_IF剧情页级JSON_A3-ACTIVITY-PUBLIC_v1.json` | P0-A -> Act4 -> Act5 -> Act6 -> Act7 已接通；后续只需 P2 文案审读。 |
 | `R3-PERFECT` | A3 子外流；`P0A_ACT3_ROUTE_CONFIRM` + `P0A_PERFECT_ACCEPT_SCOPE`；P0-A 完美派生确认、Act4 生活半径 14 页、Act5 桥接 20 页均已接入 | `ACT6-PERFECT-B01` 至 `B05` | `scope_clarity`、`tooling_risk`、`private_delay`、`private_blank_seen`、`handoff_scope_checked`、`perfect_contact_scope` | `开发数据_IF剧情页级JSON_R3-PERFECT_v1.json` | P0-A -> Act4 -> Act5 -> Act6 -> Act7 已接通；后续只需 P2 文案审读。 |
-| `R4-WORK` | 第四幕暑假兼职；P0-B 工作入口 5 节点 / 20 页已接入 | `ACT6-WORK-B01` 至 `B05` | `work_shift`、`money_pressure`、`shift_boundary_checked`、`work_certificate_status`、`wage_confirmed`、`work_final_contact_scope` | `开发数据_IF剧情页级JSON_R4-WORK_v1.json` | 第四幕是工作线主场；Act6 / Act7 已有，但仍需复核 / 补第五幕如何承接钱压、排班、错过照面和宿舍缺席。 |
+| `R4-WORK` | 第四幕暑假兼职；P0-B 工作入口 5 节点 / 20 页已接入；`ACT5-WORK` 5 节点 / 20 页已接入 | `ACT6-WORK-B01` 至 `B05` | `work_shift`、`money_pressure`、`shift_boundary_checked`、`work_certificate_status`、`wage_confirmed`、`work_final_contact_scope` | `开发数据_IF剧情页级JSON_R4-WORK_v1.json` | `P0-B -> ACT5-WORK -> ACT6-WORK -> ACT7-WORK` 已接通；后续只做 P2 审读。 |
 | `R5-WANFENG` | 主轴唯一亲密外流；P0-C 晚风入口 5 节点 / 20 页已接入，覆盖边界、现实见面、礼物成本、公开边界和锁池确认 | `ACT6-WANFENG-B01` 至 `B05` | `wanfeng_private_entry`、`wanfeng_boundary`、`wanfeng_future_frequency`、`wanfeng_final_contact_scope`、`dorm_warmth`、`old_debt` | `开发数据_IF剧情页级JSON_R5-WANFENG_v1.json` | P0-C 晚风入口、第六幕完整页级 JSON 与第七幕正式 JSON 均已接入。 |
 | `R5-ROMANCE` | A3 女生候选派生；P0-C 专注感情入口 5 节点 / 20 页已接入，必须已有 `club_with_female_candidate` 来源并锁 `shen_jiahe` 或 `xia_zhiwei` | `ACT6-ROMANCE-B01` 至 `B05` | `romance_candidate`、`candidate_private_entry`、`candidate_public_scope`、`candidate_final_contact_scope`、`dorm_absence`、`money_pressure` | `开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json` | P0-C 候选入口、第六幕完整页级 JSON 与第七幕正式 JSON 均已接入。 |
 | `R5-ZHOU` | 第五幕站队；P0-D 共用入口已在 `DEFAULT-4XX` JSON 中接入，方向 `P0D_STAND_WITH_ZHOU` | `ACT6-ZHOU-B01` 至 `B05`；第六幕完整页级 JSON 已接入 | `zhou_trust`、`activity_link`、`public_boundary`、`money_boundary`、`tang_misread`、`qinyue_pressure`、`zhou_final_contact_scope`、`graduation_temperature` | `开发数据_IF剧情页级JSON_R5-ZHOU_v1.json` | 第六幕完整页级 JSON 与第七幕正式 JSON 均已接入；P0-D 入口共用 DEFAULT 数据源。 |
@@ -147,7 +147,7 @@ Act5 主线五类窗口 / 早期父池确认
 3. `A3-ACTIVITY-PUBLIC`：P0-A 父池入口与第六幕完整页级 JSON 已接入。
 4. `R3-PERFECT`：P0-A 完美派生确认与第六幕完整页级 JSON 已接入。
 5. `R5-ROMANCE`：P0-C 候选入口、第六幕完整页级 JSON 与第七幕正式 JSON 已接入。
-6. `R4-WORK`：P0-B 入口、第六幕完整页级 JSON 与第七幕正式 JSON 已接入。
+6. `R4-WORK`：P0-B 入口、`ACT5-WORK` 桥接、第六幕完整页级 JSON 与第七幕正式 JSON 已接入。
 7. `DEFAULT-4XX`：P0-D 共用入口、第六幕完整页级 JSON 与第七幕正式 JSON 已接入，可作为站队组剩余路线的结构基准。
 8. `R5-ZHOU`：第六幕完整页级 JSON 与第七幕正式 JSON 已接入。
 9. `R5-TANG`：第六幕完整页级 JSON 与第七幕正式 JSON 已接入。
@@ -168,9 +168,9 @@ Act5 主线五类窗口 / 早期父池确认
 
 ## 当前结论
 
-5/6/7 现在只能按“Act6 / Act7 已收齐，P0-C / P0-D / P0-E 第五幕入口完整，A3 与 R3 早期外流桥接已补齐”的口径理解。`R4-WORK` 还必须补 / 复核 Act5 池内承接，不能直接冻结。
+5/6/7 现在只能按“Act6 / Act7 已收齐，P0-C / P0-D / P0-E 第五幕入口完整，A3、R3 与 R4 早期外流桥接已补齐”的口径理解。`R4-WORK` 已补 `ACT5-WORK`，不再是结构断链。
 
-当前结论：不建议继续新增第七幕变体。11 条路线 Act6 均已转完整页级 JSON，Act7 均已收口；`A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` 已补 Act4 / Act5 桥接，`R4-WORK` 仍不能列为全链路冻结。
+当前结论：不建议继续新增第七幕变体。11 条路线 Act6 均已转完整页级 JSON，Act7 均已收口；`A3-ACTIVITY-PUBLIC`、`R3-PERFECT` 与 `R4-WORK` 已补早期外流桥接，结构层可进入冻结复核。
 
 ## 2026-05-23 纵向连读审计记录
 
@@ -181,19 +181,19 @@ Act5 主线五类窗口 / 早期父池确认
 - 11 条路线均已有“入口数据 -> 第六幕定形 -> 第七幕结算”的可读数据，但早期外流线不能再简化为“第五幕入口已完成”。
 - P0-D 站队入口继续作为 `DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 的共用入口，不需要拆成五套重复入口。
 - P0-C 已区分晚风主轴私人入口和 A3 候选对象派生入口，不应互相跳转。
-- P0-A / P0-B / P0-E 分别承接活动父池 / 完美派生、工作线和 5X 硬外流；其中 P0-E 已是第五幕硬锁入口，A3 父池与 R3 完美派生已补当前池第四幕生活半径和第五幕承接，P0-B 工作线仍需补第五幕承接。
-- 当前不再建议新增第七幕事件；后续结构开发应先补完美线 Act4 / Act5 桥接，再复核 / 补工作线 Act5 承接，之后做 P2 正文审读或玩家侧路线摘要。
+- P0-A / P0-B / P0-E 分别承接活动父池 / 完美派生、工作线和 5X 硬外流；其中 P0-E 已是第五幕硬锁入口，A3 父池、R3 完美派生与 P0-B 工作线均已补当前池第四幕生活半径 / 第五幕承接或工作线桥接。
+- 当前不再建议新增第七幕事件；后续结构开发应转入旧口径残留清理、P2 正文审读或玩家侧路线摘要。
 
 ## 2026-05-22 复核记录：5/6/7 全路线一致性审计
 
 本轮已完成 11 个路线 JSON 的 5/6/7 全链复核。
 
-- Act5 入口层：P0-C、P0-D、P0-E 均可定位并已接入；A3 父池与 R3 完美子外流已补 Act4 / Act5 桥接；P0-B 工作线仍需补 / 复核当前池承接。
+- Act5 入口层：P0-C、P0-D、P0-E 均可定位并已接入；A3 父池、R3 完美子外流与 P0-B 工作线均已补 Act4 / Act5 或 Act5 桥接。
 - Act6 detail blocks：11 条路线均为 5 组 / 20 页 / 5 个双方向选择窗 / 10 个方向，最后统一进入 `ACT6-END`。
 - Act7 settlement events：11 条路线均为 12 事件 / 48 页 / 12 个选择窗 / 24 个方向，事件链为 `ACT6-END -> ACT7-E01...E12 -> 路线ENDING`。
 - 已修补 `R5-ZHOU` Act7 变量表达式键，将 `变量 +1` / `变量 = 值` 归一为标准 `updates` / `variable_delta` 键值。
 - 已补齐入口 / 完成条件变量池和 3 处 Act6 末组 `next_block = ACT6-END`。
-- 当前审计结果修正：JSON 解析、source_docs 文件存在、变量缺口、旧状态残留、Act6/Act7 结构通过；Act5 对 `R4-WORK` 早期外流线仍不应标为无缺口。
+- 当前审计结果修正：JSON 解析、source_docs 文件存在、变量缺口、旧状态残留、Act5 / Act6 / Act7 结构通过；`R4-WORK` 早期外流线已补 `ACT5-WORK`。
 
 ## 2026-05-22 审读记录：Act7 站队组收口质量
 

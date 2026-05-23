@@ -5,12 +5,14 @@
   "route_name": "工作线",
   "route_pool_id": "POOL-R4-WORK",
   "route_level": "B",
-  "purpose": "Act4 P0-B entry plus Act6 and Act7 page-level JSON for R4-WORK. P0-B now covers 5 work-entry events, 20 entry pages, and 5 four-direction choice windows; Act6 covers 20 ACT6-WORK formal scenes and 5 two-direction choice windows; Act7 covers 12 ACT7-WORK same-mother-event variants.",
+  "purpose": "Act4 P0-B entry, Act5 bridge, Act6, and Act7 page-level JSON for R4-WORK. P0-B covers 5 work-entry events, 20 entry pages, and 5 four-direction choice windows; Act5-WORK covers 5 bridge nodes, 20 pages, and 5 three-direction choice windows; Act6 covers 20 ACT6-WORK formal scenes and 5 two-direction choice windows; Act7 covers 12 ACT7-WORK same-mother-event variants.",
   "source_docs": [
     "开发文本_IF分支P0-B第四幕暑假兼职线.md",
     "开发长线_IF可玩支线R4-WORK暑假兼职线.md",
+    "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
     "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
     "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发规则_IF第四幕生活半径与池内流硬约束.md",
     "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
     "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
     "开发规格_IF路线Schema与P0节点池.md",
@@ -47,6 +49,21 @@
       "P0B_ACT4_MISSED_MEET",
       "P0B_ACT4_ROUTE_CONFIRM"
     ],
+    "act5_bridge_variant_id": "ACT5-WORK",
+    "act5_source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+    "act5_bridge_node_count": 5,
+    "act5_bridge_page_count": 20,
+    "act5_bridge_choice_window_count": 5,
+    "act5_bridge_direction_count": 15,
+    "act5_choice_floor_met": true,
+    "act5_required_windows_seen": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_next_node": "ACT6-WORK-B01",
     "closed_route_ids": [
       "DEFAULT-4XX",
       "R5-ZHOU",
@@ -121,12 +138,17 @@
     ]
   },
   "local_variables": [
+    "act5_choice_floor_met",
+    "act5_required_windows_seen",
+    "act5_work_bridge_ready",
+    "act6_echo_hook",
     "act6_closed",
     "act6_route_pool_locked",
     "act6_to_act7_handoff_ready",
     "activity_link",
     "avoidance",
     "certificate_or_archive_seen",
+    "closed_route_ids_kept_closed",
     "defense_boundary_checked",
     "defense_order_seen",
     "defense_post_submit_done",
@@ -135,6 +157,7 @@
     "dorm_misread",
     "dorm_trust",
     "dorm_warmth",
+    "drift_guard_triggered",
     "energy_low",
     "energy_low_recorded",
     "express_shift_seen",
@@ -894,7 +917,7 @@
       "source_detail_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
       "route_switch_allowed": true,
       "previous_node": "P0B_ACT4_MISSED_MEET",
-      "next_node": "ACT6-WORK-B01",
+      "next_node": "ACT5-WORK-B01",
       "location": "快递站 / 青枫居 4XX / 食堂二楼 / 星辰书屋",
       "participants": [
         "林亦舟",
@@ -1010,7 +1033,7 @@
               "route_lock": "R4-WORK",
               "route_switch_allowed": false
             },
-            "next_block": "ACT6-WORK-B01",
+            "next_node": "ACT5-WORK-B01",
             "next_route": "R4-WORK"
           },
           {
@@ -1060,6 +1083,513 @@
             },
             "next_node": "R5-LIEFLAT-ACT5-PRECHECK",
             "next_route": "R5-LIEFLAT"
+          }
+        ]
+      }
+    }
+  ],
+  "act5_bridge_nodes": [
+    {
+      "node_id": "ACT5-WORK-B01",
+      "node_name": "宿舍站队从排班缺席开始",
+      "module": "ACT5-WORK",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "P0B_ACT4_ROUTE_CONFIRM",
+      "next_node": "ACT5-WORK-B02",
+      "act5_window_tag": "dorm_stand",
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S01",
+          "location": "青枫居 4XX",
+          "text_brief": "强冲突前，公共桌已经把林亦舟的名字写在晚班后补说明旁边。",
+          "updates": {
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S02",
+          "location": "快递站排班表",
+          "text_brief": "固定班第一次和 4XX 当面处理撞上，钱压不再是临时跑腿。",
+          "updates": {
+            "work_shift": 1,
+            "money_pressure": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S03",
+          "location": "C407 门口",
+          "text_brief": "唐骁只问他今晚能不能到场，不问他为什么缺钱。",
+          "updates": {
+            "project_stability": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S04",
+          "location": "4XX 门口",
+          "text_brief": "林亦舟必须决定把排班、钱和缺席说到什么程度。",
+          "updates": {
+            "act5_required_windows_seen": "dorm_stand"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-01",
+        "after_page": "ACT5-WORK-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C01-A",
+            "label": "固定班照接，给 4XX 最低事实",
+            "variable_delta": {
+              "work_shift": 1,
+              "dorm_absence": 1,
+              "public_boundary": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-WORK-B01-shift-fact"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B02"
+          },
+          {
+            "direction_id": "ACT5-WORK-C01-B",
+            "label": "请假半小时，当面解释钱压",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "money_pressure": 1,
+              "shift_boundary_checked": true,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-WORK-B01-repair-entry"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B02"
+          },
+          {
+            "direction_id": "ACT5-WORK-C01-C",
+            "label": "不讲家里，只说今晚有班",
+            "variable_delta": {
+              "family_signal": 1,
+              "dorm_misread": 1,
+              "public_boundary": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-WORK-B01-known-fact-unknown-reason"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B02"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-WORK-B02",
+      "node_name": "亲密 / 晚风只能低频照面",
+      "module": "ACT5-WORK",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-WORK-B01",
+      "next_node": "ACT5-WORK-B03",
+      "act5_window_tag": "intimacy_or_wanfeng",
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S05",
+          "location": "快递站后门 / 手机",
+          "text_brief": "晚风发来一句下班后还回吗，这不是晚风线入口，只是私人联系频率测试。",
+          "updates": {
+            "work_private_entry": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S06",
+          "location": "东区商业街",
+          "text_brief": "林亦舟看到活动散场的人经过，自己还在等最后一车件。",
+          "updates": {
+            "time_debt": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S07",
+          "location": "便利店门口",
+          "text_brief": "他可以回晚风，也可以先把 4XX 的最低事实补上，但两边都不能替他上班。",
+          "updates": {
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S08",
+          "location": "青枫居楼下",
+          "text_brief": "亲密关系在本线里变成时间可用性，而不是告白或换线。",
+          "updates": {
+            "act5_required_windows_seen": "intimacy_or_wanfeng"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-02",
+        "after_page": "ACT5-WORK-S08",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C02-A",
+            "label": "把排班和回寝时间说给晚风",
+            "variable_delta": {
+              "work_private_entry": 1,
+              "wanfeng_distance": 1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-WORK-B04-wanfeng-low-frequency"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B03"
+          },
+          {
+            "direction_id": "ACT5-WORK-C02-B",
+            "label": "只说有班，不解释更多",
+            "variable_delta": {
+              "polite_distance": 1,
+              "work_shift": 1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-WORK-B04-private-entry-narrowed"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B03"
+          },
+          {
+            "direction_id": "ACT5-WORK-C02-C",
+            "label": "先回 4XX 说明不是躲人",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "time_debt": 1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-WORK-B01-dorm-truth-before-shift"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B03"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-WORK-B03",
+      "node_name": "项目 / 规则 / 证明材料",
+      "module": "ACT5-WORK",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-WORK-B02",
+      "next_node": "ACT5-WORK-B04",
+      "act5_window_tag": "project_or_rule",
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S09",
+          "location": "打印店",
+          "text_brief": "勤工证明、家庭说明、课程补交材料和 C407 分工表被夹进同一个文件袋。",
+          "updates": {
+            "work_material_boundary_checked": true,
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S10",
+          "location": "明德楼材料窗口",
+          "text_brief": "老师只认本人签字和证明格式，不认室友帮忙说一下。",
+          "updates": {
+            "work_certificate_status": "pending",
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S11",
+          "location": "C407 机房",
+          "text_brief": "唐骁把项目拆成可交付和不可到场两列，规则变成现实边界。",
+          "updates": {
+            "project_stability": 1,
+            "work_schedule_checked": true
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S12",
+          "location": "教学楼楼梯口",
+          "text_brief": "林亦舟发现证明能解释缺席，但不能自动修补关系。",
+          "updates": {
+            "act5_required_windows_seen": "project_or_rule"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-03",
+        "after_page": "ACT5-WORK-S12",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C03-A",
+            "label": "先补勤工证明和收入说明",
+            "variable_delta": {
+              "work_certificate_status": "prepared",
+              "work_material_boundary_checked": true,
+              "money_pressure": -1,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-WORK-B03-certificate-ready"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B04"
+          },
+          {
+            "direction_id": "ACT5-WORK-C03-B",
+            "label": "先补 C407 项目分工",
+            "variable_delta": {
+              "project_stability": 1,
+              "time_debt": 1,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-WORK-B02-c407-low-temperature"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B04"
+          },
+          {
+            "direction_id": "ACT5-WORK-C03-C",
+            "label": "写清可交付和不可到场",
+            "variable_delta": {
+              "public_boundary": 1,
+              "work_schedule_checked": true,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-WORK-B01-schedule-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B04"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-WORK-B04",
+      "node_name": "工作生活半径确认",
+      "module": "ACT5-WORK",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-WORK-B03",
+      "next_node": "ACT5-WORK-B05",
+      "act5_window_tag": "activity_or_interest",
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S13",
+          "location": "快递站清点台",
+          "text_brief": "负责人问他下周能不能固定来，不像请求，更像把他写进表格。",
+          "updates": {
+            "work_shift": 1,
+            "work_reliability": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S14",
+          "location": "九龙壁舞台边",
+          "text_brief": "周屿路过说你现在比我还像有固定岗位的人，玩笑停在半句。",
+          "updates": {
+            "activity_link": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S15",
+          "location": "活动群 / 事项群",
+          "text_brief": "活动、课程和宿舍都还能找他，但它们都必须绕开排班表。",
+          "updates": {
+            "work_schedule_checked": true,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT5-WORK-S16",
+          "location": "青枫居楼下",
+          "text_brief": "工作牌、文件袋和宿舍门同时在他手里。",
+          "updates": {
+            "act5_required_windows_seen": "activity_or_interest"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-04",
+        "after_page": "ACT5-WORK-S16",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C04-A",
+            "label": "固定班成为主生活半径",
+            "variable_delta": {
+              "route_pool_locked": true,
+              "work_shift": 1,
+              "work_reliability": 1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-WORK-B01-fixed-shift-default"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B05"
+          },
+          {
+            "direction_id": "ACT5-WORK-C04-B",
+            "label": "降低班次，保一次宿舍照面",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "money_pressure": 1,
+              "work_reliability": -1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-WORK-B04-warm-but-unstable-income"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B05"
+          },
+          {
+            "direction_id": "ACT5-WORK-C04-C",
+            "label": "给排班、活动、作业都写停止条件",
+            "variable_delta": {
+              "self_control": 1,
+              "public_boundary": 1,
+              "time_debt": -1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-WORK-B01-boundary-cold"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-WORK-B05"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-WORK-B05",
+      "node_name": "回避 / 外流门槛关闭",
+      "module": "ACT5-WORK",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-WORK-B04",
+      "next_node": "ACT6-WORK-B01",
+      "act5_window_tag": "avoidance_or_outflow",
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S17",
+          "location": "青枫居楼下",
+          "text_brief": "许澈或新圈消息只作为外部诱因出现，不能把工作线改成 5X。"
+        },
+        {
+          "page_id": "ACT5-WORK-S18",
+          "location": "快递站后门 / 事项群",
+          "text_brief": "摆烂式静音能省解释，但工资、证明和晚归登记都会留下空格。"
+        },
+        {
+          "page_id": "ACT5-WORK-S19",
+          "location": "明德楼门口",
+          "text_brief": "林亦舟确认：本线继续用钱压、排班和证明材料承接第六幕。"
+        },
+        {
+          "page_id": "ACT5-WORK-S20",
+          "location": "C407 机房外",
+          "text_brief": "工作线第五幕桥接完成，变量交给 ACT6-WORK-B01。",
+          "updates": {
+            "act5_work_bridge_ready": true,
+            "act5_choice_floor_met": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-05",
+        "after_page": "ACT5-WORK-S20",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C05-A",
+            "label": "留在工作线，写清第一周安排",
+            "variable_delta": {
+              "act5_work_bridge_ready": true,
+              "route_pool_locked": true,
+              "work_schedule_checked": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-WORK-B01-shift-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-WORK-B01"
+          },
+          {
+            "direction_id": "ACT5-WORK-C05-B",
+            "label": "保留宿舍回声，但不回默认线",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "closed_route_ids_kept_closed": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-WORK-B04-dorm-soft-echo"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-WORK-B01"
+          },
+          {
+            "direction_id": "ACT5-WORK-C05-C",
+            "label": "拒绝 5X / 摆烂诱因，按现实清单走",
+            "variable_delta": {
+              "hard_outflow": false,
+              "drift_guard_triggered": true,
+              "work_reliability": 1,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-WORK-B01-no-hard-outflow"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-WORK-B01"
           }
         ]
       }
@@ -1149,6 +1679,7 @@
       "act6_variant_id": "ACT6-WORK",
       "source_detail_doc": "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
       "route_switch_allowed": false,
+      "previous_block": "ACT5-WORK-B05",
       "next_block": "ACT6-WORK-B02",
       "scene_range": [
         "ACT6-WORK-S01",
@@ -3300,6 +3831,22 @@
       "p0b_entry_locked"
     ],
     "p0b_source_detail_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+    "act5_bridge_variant_id": "ACT5-WORK",
+    "act5_source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+    "act5_bridge_node_count": 5,
+    "act5_bridge_page_count": 20,
+    "act5_bridge_choice_window_count": 5,
+    "act5_bridge_direction_count": 15,
+    "act5_each_choice_direction_count": 3,
+    "act5_choice_floor_met": true,
+    "act5_required_windows_seen": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_bridge_next_node": "ACT6-WORK-B01",
     "act6_variant_id": "ACT6-WORK",
     "act6_block_count": 5,
     "act6_scene_count": 20,
