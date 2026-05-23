@@ -1,0 +1,2472 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-21",
+  "route_id": "R5-LIEFLAT",
+  "route_name": "摆烂线",
+  "route_pool_id": "POOL-R5-LIEFLAT",
+  "route_level": "B",
+  "purpose": "把 R5-LIEFLAT 摆烂线的第六卷定形层与第七卷毕业结算接入正式剧情页级 JSON，覆盖 ACT6-LIEFLAT 20 个剧情页和 ACT7-LIEFLAT 12 个同母事件变体；P0-D 入口继续共用 DEFAULT-4XX 数据源。",
+  "source_docs": [
+    "开发长线_IF可玩支线R5-LIEFLAT摆烂线.md",
+    "开发细稿_IF第六卷ACT6-LIEFLAT摆烂线正式剧情页.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+    "开发数据_IF剧情页级JSON_R5-ZHOU_v1.json",
+    "开发数据_IF剧情页级JSON_R5-TANG_v1.json",
+    "开发数据_IF剧情页级JSON_R5-LUCHEN_v1.json",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_outflow",
+    "route_pool_id": "POOL-R5-LIEFLAT",
+    "route_focus": "avoidance",
+    "outflow_permission_class": "life_style",
+    "pool_entry_choice": "P0D_STAND_NO_REPLY",
+    "active_route_id": "R5-LIEFLAT",
+    "primary_bond": "avoidance",
+    "route_lock": "R5-LIEFLAT",
+    "route_switch_allowed": false,
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-ROMANCE",
+      "R5-WANFENG",
+      "R4-WORK",
+      "R3-PERFECT",
+      "A3-ACTIVITY-PUBLIC",
+      "R5X-HARD"
+    ],
+    "soft_echo_routes": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5X-HARD"
+    ],
+    "act7_variant_id": "ACT7-LIEFLAT",
+    "act7_required_event_count": 12,
+    "act7_core_events_json_started": true,
+    "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_temperature_candidates": [
+      "LIEFLAT-END-POLITE-FADE",
+      "LIEFLAT-END-LOW-PRESENCE",
+      "LIEFLAT-END-LATE-MESSAGE",
+      "LIEFLAT-END-MISSED",
+      "LIEFLAT-END-5X-SHADOW"
+    ],
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "act6_full_page_json_status": "full_page_json_ready"
+  },
+  "local_variables": [
+    "act6_closed",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready",
+    "avoidance",
+    "certificate_or_archive_seen",
+    "clearance_boundary_checked",
+    "defense_boundary_checked",
+    "defense_post_submit_done",
+    "dorm_key_returned",
+    "dorm_trust",
+    "expired_entry_checked",
+    "expired_form_seen",
+    "external_echo",
+    "grad_photo_result_recorded",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "hard_outflow_shadow",
+    "late_message_sent",
+    "late_regret",
+    "leaving_boundary_checked",
+    "lieflat_contact_scope",
+    "lieflat_score",
+    "lost_chance",
+    "low_conflict",
+    "low_presence_checked",
+    "march_boundary_checked",
+    "meal_attendance_locked",
+    "meal_boundary_checked",
+    "missed_chance",
+    "money_pressure",
+    "old_dorm_distance",
+    "old_object_scope_checked",
+    "opening_contrast_seen",
+    "photo_boundary_checked",
+    "polite_distance",
+    "pre_register_boundary_checked",
+    "project_stability",
+    "public_boundary",
+    "public_consent_checked",
+    "public_scope_boundary_checked",
+    "queue_item_submitted",
+    "repair_attempt",
+    "revision_submitted_before_deadline",
+    "route_pool_locked",
+    "shared_item_owner_checked",
+    "station_after_echo_seen",
+    "thesis_boundary_checked",
+    "thesis_revision_version",
+    "thesis_topic_submitted",
+    "time_debt",
+    "topic_boundary_checked",
+    "topic_self_signed",
+    "wanfeng_low_echo"
+  ],
+  "entry_node": {
+    "node_id": "D_00_SHORT_GROUP",
+    "entry_choice": "P0D_STAND_NO_REPLY",
+    "route_lock_after_entry": "POOL-R5-LIEFLAT",
+    "route_switch_allowed_after_entry": false
+  },
+  "return_points": [
+    "RET-LIEFLAT-01",
+    "RET-LIEFLAT-02",
+    "RET-LIEFLAT-03",
+    "RET-LIEFLAT-04",
+    "RET-LIEFLAT-05"
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-LIEFLAT-B01",
+      "scene_range": [
+        "ACT6-LIEFLAT-S01",
+        "ACT6-LIEFLAT-S04"
+      ],
+      "choice_window_id": "ACT6-LIEFLAT-CHOICE-01",
+      "allowed_directions": [
+        "continue_muting",
+        "reply_minimum_fact"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-LIEFLAT-B02",
+      "scene_range": [
+        "ACT6-LIEFLAT-S05",
+        "ACT6-LIEFLAT-S08"
+      ],
+      "choice_window_id": "ACT6-LIEFLAT-CHOICE-02",
+      "allowed_directions": [
+        "short_escape_opening",
+        "return_to_common_table_one_action"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-LIEFLAT-B03",
+      "scene_range": [
+        "ACT6-LIEFLAT-S09",
+        "ACT6-LIEFLAT-S12"
+      ],
+      "choice_window_id": "ACT6-LIEFLAT-CHOICE-03",
+      "allowed_directions": [
+        "stay_observer",
+        "complete_one_specific_task"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-LIEFLAT-B04",
+      "scene_range": [
+        "ACT6-LIEFLAT-S13",
+        "ACT6-LIEFLAT-S16"
+      ],
+      "choice_window_id": "ACT6-LIEFLAT-CHOICE-04",
+      "allowed_directions": [
+        "admit_it_is_missed",
+        "act_like_nothing_happened"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-LIEFLAT-B05",
+      "scene_range": [
+        "ACT6-LIEFLAT-S17",
+        "ACT6-LIEFLAT-S20"
+      ],
+      "choice_window_id": "ACT6-LIEFLAT-CHOICE-05",
+      "allowed_directions": [
+        "polite_fade",
+        "blank_graduation"
+      ],
+      "conversion_status": "full_page_json_ready"
+    }
+  ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-LIEFLAT-B01",
+      "block_name": "静音与最低事实",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act6_variant_id": "ACT6-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-LIEFLAT摆烂线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-LIEFLAT-B02",
+      "scene_range": [
+        "ACT6-LIEFLAT-S01",
+        "ACT6-LIEFLAT-S04"
+      ],
+      "main_location": "4XX 事项群 / 床上 / 公共桌 / 通知栏",
+      "scene_function": "建立不站队也是态度的摆烂线第六幕开局。",
+      "required_completion_flags": [
+        "route_pool_locked",
+        "avoidance",
+        "low_conflict"
+      ],
+      "must_record": [
+        "avoidance",
+        "low_conflict",
+        "dorm_trust",
+        "time_debt",
+        "lost_chance",
+        "old_dorm_distance",
+        "late_regret",
+        "missed_chance",
+        "public_boundary",
+        "lieflat_score"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-LIEFLAT-S01",
+          "location": "4XX 事项群 / 床上",
+          "text_brief": "群消息连续弹出。周屿发了半句玩笑，唐骁贴了截止时间，陆沉只回收到；林亦舟把手机扣下。",
+          "choice_hook": [
+            "先静音",
+            "只看通知",
+            "不立刻表态"
+          ],
+          "updates": {
+            "avoidance": 1,
+            "low_conflict": 1,
+            "dorm_trust": -1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S02",
+          "location": "手机界面 / 4XX 门口",
+          "text_brief": "林亦舟打了“你们先说”，又删掉；门外有人经过，没有敲他的门。",
+          "choice_hook": [
+            "打字又删掉",
+            "等别人先说",
+            "把手机扣下"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "lost_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S03",
+          "location": "公共桌 / 群聊回声",
+          "text_brief": "公共桌最后只剩“那就先这样”。没有人骂他，也没人再单独问他怎么看。",
+          "choice_hook": [
+            "接受没人再问",
+            "回看旧消息",
+            "不补态度"
+          ],
+          "updates": {
+            "old_dorm_distance": 1,
+            "late_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S04",
+          "location": "床边 / 通知栏",
+          "text_brief": "通知栏停了，冲突也暂时停了。林亦舟必须决定继续静音，还是只回一句最低事实。",
+          "choice_hook": [
+            "继续静音",
+            "回一句最低事实",
+            "不展开旧账"
+          ],
+          "updates": {
+            "missed_chance": 1,
+            "public_boundary": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-LIEFLAT-CHOICE-01",
+        "after_page": "ACT6-LIEFLAT-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-LIEFLAT-C01-A",
+            "label": "继续静音",
+            "variable_delta": {
+              "lieflat_score": 2,
+              "avoidance": 1,
+              "dorm_trust": -1
+            },
+            "next_block": "ACT6-LIEFLAT-B02"
+          },
+          {
+            "direction_id": "ACT6-LIEFLAT-C01-B",
+            "label": "回一句最低事实",
+            "variable_delta": {
+              "late_regret": 1,
+              "public_boundary": 1,
+              "low_conflict": -1
+            },
+            "next_block": "ACT6-LIEFLAT-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-LIEFLAT-B02",
+      "block_name": "短逃与公共桌动作",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act6_variant_id": "ACT6-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-LIEFLAT摆烂线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-LIEFLAT-B03",
+      "scene_range": [
+        "ACT6-LIEFLAT-S05",
+        "ACT6-LIEFLAT-S08"
+      ],
+      "main_location": "手机游戏 / 私聊 / 后街便利店 / 青枫居楼下",
+      "scene_function": "写短逃的诱惑和代价，确保晚风、许澈只作为软回声。",
+      "required_completion_flags": [
+        "time_debt",
+        "hard_outflow_shadow",
+        "repair_attempt"
+      ],
+      "must_record": [
+        "lieflat_score",
+        "time_debt",
+        "wanfeng_low_echo",
+        "avoidance",
+        "hard_outflow_shadow",
+        "money_pressure",
+        "old_dorm_distance",
+        "repair_attempt",
+        "missed_chance",
+        "dorm_trust",
+        "late_regret"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-LIEFLAT-S05",
+          "location": "手机游戏 / 床上",
+          "text_brief": "游戏结算页弹出“再来一局”，4XX 群未读压在通知栏下面。",
+          "choice_hook": [
+            "再来一局",
+            "看一眼群",
+            "先不退出"
+          ],
+          "updates": {
+            "lieflat_score": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S06",
+          "location": "私聊 / 门禁时间",
+          "text_brief": "晚风发来低频消息，问他是不是还在忙。林亦舟可以回她，但这不解决 4XX。",
+          "choice_hook": [
+            "只回晚风",
+            "说今天不聊",
+            "继续不回群"
+          ],
+          "updates": {
+            "wanfeng_low_echo": 1,
+            "avoidance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S07",
+          "location": "后街便利店 / 台球厅门口",
+          "text_brief": "许澈在门口擦肩，新圈看起来轻松。林亦舟停了一下，但没有真正跟过去。",
+          "choice_hook": [
+            "聊两句",
+            "不跟走",
+            "买夜宵拖时间"
+          ],
+          "updates": {
+            "hard_outflow_shadow": 1,
+            "money_pressure": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S08",
+          "location": "青枫居楼下 / 公共桌回声",
+          "text_brief": "4XX 的灯还亮着。林亦舟必须决定继续短逃，还是回公共桌补一个具体动作。",
+          "choice_hook": [
+            "短逃开场",
+            "补一个动作",
+            "不重开旧账"
+          ],
+          "updates": {
+            "old_dorm_distance": 1,
+            "repair_attempt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-LIEFLAT-CHOICE-02",
+        "after_page": "ACT6-LIEFLAT-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-LIEFLAT-C02-A",
+            "label": "短逃开场",
+            "variable_delta": {
+              "lieflat_score": 1,
+              "time_debt": 2,
+              "missed_chance": 1
+            },
+            "next_block": "ACT6-LIEFLAT-B03"
+          },
+          {
+            "direction_id": "ACT6-LIEFLAT-C02-B",
+            "label": "回公共桌补一个动作",
+            "variable_delta": {
+              "repair_attempt": 1,
+              "dorm_trust": 1,
+              "late_regret": 1
+            },
+            "next_block": "ACT6-LIEFLAT-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-LIEFLAT-B03",
+      "block_name": "旁观与具体任务",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act6_variant_id": "ACT6-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-LIEFLAT摆烂线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-LIEFLAT-B04",
+      "scene_range": [
+        "ACT6-LIEFLAT-S09",
+        "ACT6-LIEFLAT-S12"
+      ],
+      "main_location": "C407 / 共享文档 / 打印店 / 教务平台",
+      "scene_function": "把 C407、表格和材料截止压到摆烂线里，确认补任务不等于深修补。",
+      "required_completion_flags": [
+        "expired_form_seen",
+        "project_stability",
+        "missed_chance"
+      ],
+      "must_record": [
+        "expired_form_seen",
+        "dorm_trust",
+        "lost_chance",
+        "low_conflict",
+        "time_debt",
+        "project_stability",
+        "late_regret",
+        "missed_chance",
+        "old_dorm_distance",
+        "repair_attempt",
+        "graduation_temperature"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-LIEFLAT-S09",
+          "location": "C407 / 共享文档",
+          "text_brief": "共享文档有一栏空着，唐骁只在群里贴截止，没有再私聊催他。",
+          "choice_hook": [
+            "看空栏",
+            "不等私聊",
+            "确认截止"
+          ],
+          "updates": {
+            "expired_form_seen": 1,
+            "dorm_trust": -1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S10",
+          "location": "打印店 / 课堂材料",
+          "text_brief": "周屿已经把活动材料交给别人，陆沉也只确认自己的部分；林亦舟发现最低项还能补。",
+          "choice_hook": [
+            "只补最低项",
+            "继续旁观",
+            "问还能不能补"
+          ],
+          "updates": {
+            "lost_chance": 1,
+            "low_conflict": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S11",
+          "location": "教务平台 / 手机",
+          "text_brief": "系统还有一次补交机会，倒计时比群消息更直接。",
+          "choice_hook": [
+            "立刻补",
+            "等一等",
+            "截图放着"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "project_stability": -1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S12",
+          "location": "C407 门口",
+          "text_brief": "没有人再围着他问原因。林亦舟必须决定保持旁观，还是补一个具体任务。",
+          "choice_hook": [
+            "保持旁观",
+            "补一个具体任务",
+            "不解释旧账"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "missed_chance": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-LIEFLAT-CHOICE-03",
+        "after_page": "ACT6-LIEFLAT-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-LIEFLAT-C03-A",
+            "label": "保持旁观",
+            "variable_delta": {
+              "old_dorm_distance": 2,
+              "missed_chance": 1,
+              "low_conflict": 1
+            },
+            "next_block": "ACT6-LIEFLAT-B04"
+          },
+          {
+            "direction_id": "ACT6-LIEFLAT-C03-B",
+            "label": "补一个具体任务",
+            "variable_delta": {
+              "repair_attempt": 1,
+              "project_stability": 1,
+              "graduation_temperature": 1
+            },
+            "next_block": "ACT6-LIEFLAT-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-LIEFLAT-B04",
+      "block_name": "入口过期与无事发生",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act6_variant_id": "ACT6-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-LIEFLAT摆烂线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-LIEFLAT-B05",
+      "scene_range": [
+        "ACT6-LIEFLAT-S13",
+        "ACT6-LIEFLAT-S16"
+      ],
+      "main_location": "湖边 / 青枫居楼下 / 4XX 群 / 教务平台",
+      "scene_function": "呈现摆烂线低温核心：入口过期，但没有戏剧化爆炸。",
+      "required_completion_flags": [
+        "expired_entry_checked",
+        "late_regret",
+        "old_dorm_distance"
+      ],
+      "must_record": [
+        "avoidance",
+        "late_regret",
+        "external_echo",
+        "old_dorm_distance",
+        "expired_entry_checked",
+        "lost_chance",
+        "missed_chance",
+        "low_conflict",
+        "graduation_temperature",
+        "repair_attempt",
+        "lieflat_score"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-LIEFLAT-S13",
+          "location": "湖边 / 青枫居楼下",
+          "text_brief": "林亦舟在楼下绕了一圈，4XX 的灯亮着，但没人下来找他。",
+          "choice_hook": [
+            "继续绕湖",
+            "看楼上灯",
+            "不发定位"
+          ],
+          "updates": {
+            "avoidance": 1,
+            "late_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S14",
+          "location": "湖边栈道 / 软照面",
+          "text_brief": "夏知微或生活人物只是聊照片、路灯和截止时间，不替他解释宿舍关系。",
+          "choice_hook": [
+            "聊别的",
+            "不借人兜底",
+            "结束照面"
+          ],
+          "updates": {
+            "external_echo": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S15",
+          "location": "4XX 群 / 教务平台",
+          "text_brief": "群话题已经结束，系统提示提交关闭。没有人责怪他，但也没人替他重开。",
+          "choice_hook": [
+            "看过期提示",
+            "不要求重开",
+            "承认入口没了"
+          ],
+          "updates": {
+            "expired_entry_checked": 1,
+            "lost_chance": 1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S16",
+          "location": "4XX 门口",
+          "text_brief": "门内有人关灯，林亦舟站了一会儿。必须决定承认已经错过，还是装作无事发生。",
+          "choice_hook": [
+            "承认已经错过",
+            "装作无事发生",
+            "不让别人追出来"
+          ],
+          "updates": {
+            "low_conflict": 1,
+            "graduation_temperature": -1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-LIEFLAT-CHOICE-04",
+        "after_page": "ACT6-LIEFLAT-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-LIEFLAT-C04-A",
+            "label": "承认已经错过",
+            "variable_delta": {
+              "late_regret": 2,
+              "repair_attempt": 1,
+              "old_dorm_distance": 1
+            },
+            "next_block": "ACT6-LIEFLAT-B05"
+          },
+          {
+            "direction_id": "ACT6-LIEFLAT-C04-B",
+            "label": "装作无事发生",
+            "variable_delta": {
+              "lieflat_score": 2,
+              "missed_chance": 2,
+              "graduation_temperature": -1
+            },
+            "next_block": "ACT6-LIEFLAT-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-LIEFLAT-B05",
+      "block_name": "低存在感与空白毕业",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act6_variant_id": "ACT6-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-LIEFLAT摆烂线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-END",
+      "scene_range": [
+        "ACT6-LIEFLAT-S17",
+        "ACT6-LIEFLAT-S20"
+      ],
+      "main_location": "毕业照队列 / 饭局投票 / 清寝 / 学院窗口 / 校门",
+      "scene_function": "把摆烂线第六幕交给第七幕，用边缘同框、没留座和离校空栏预结算毕业温度。",
+      "required_completion_flags": [
+        "low_presence_checked",
+        "meal_attendance_locked",
+        "lieflat_contact_scope",
+        "graduation_temperature",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "low_presence_checked",
+        "old_dorm_distance",
+        "meal_attendance_locked",
+        "missed_chance",
+        "leaving_boundary_checked",
+        "polite_distance",
+        "graduation_temperature",
+        "act6_to_act7_handoff_ready",
+        "late_regret",
+        "lieflat_contact_scope"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-LIEFLAT-S17",
+          "location": "毕业照队列 / 操场",
+          "text_brief": "合照队伍排好时，林亦舟站在边缘。没人赶他走，也没人特意叫他往中间站。",
+          "choice_hook": [
+            "站在边缘",
+            "不抢中间位",
+            "接受低存在感"
+          ],
+          "updates": {
+            "low_presence_checked": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S18",
+          "location": "饭局投票 / 群聊",
+          "text_brief": "最后一顿饭投票锁定，座位数没有等他的回复。",
+          "choice_hook": [
+            "看投票锁定",
+            "不要求加座",
+            "确认没人等他"
+          ],
+          "updates": {
+            "meal_attendance_locked": 1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S19",
+          "location": "清寝 / 学院窗口",
+          "text_brief": "离校表最后一栏空着，流程不再需要他补解释，只需要本人签字。",
+          "choice_hook": [
+            "本人签字",
+            "不补解释",
+            "让空栏留着"
+          ],
+          "updates": {
+            "leaving_boundary_checked": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-LIEFLAT-S20",
+          "location": "校门 / 武生院站前回声",
+          "text_brief": "第六幕最后确认毕业温度。林亦舟必须决定体面淡化，还是让关系空白毕业。",
+          "choice_hook": [
+            "体面淡化",
+            "空白毕业",
+            "不强行回头"
+          ],
+          "updates": {
+            "graduation_temperature": 1,
+            "act6_to_act7_handoff_ready": 1,
+            "act6_closed": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-LIEFLAT-CHOICE-05",
+        "after_page": "ACT6-LIEFLAT-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-LIEFLAT-C05-A",
+            "label": "体面淡化",
+            "variable_delta": {
+              "graduation_temperature": 1,
+              "late_regret": 1,
+              "lieflat_contact_scope": 1
+            },
+            "next_block": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-LIEFLAT-C05-B",
+            "label": "空白毕业",
+            "variable_delta": {
+              "graduation_temperature": -2,
+              "old_dorm_distance": 2,
+              "low_presence_checked": 1
+            },
+            "next_block": "ACT6-END"
+          }
+        ]
+      }
+    }
+  ],
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "B204 / 教务系统提醒 / 青枫居 4XX",
+      "scene_function": "预登记仍然要交，但提醒林亦舟的人从室友变成了系统通知。",
+      "required_completion_flags": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "low_presence_checked"
+      ],
+      "must_record": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "low_presence_checked",
+        "late_regret",
+        "lieflat_score",
+        "time_debt",
+        "missed_chance",
+        "avoidance",
+        "low_conflict",
+        "dorm_trust",
+        "old_dorm_distance",
+        "expired_entry_checked"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E01-LIEFLAT-P01",
+          "beat": "系统提醒",
+          "text_brief": "B204 的预登记表发下很久，林亦舟在系统弹窗里才想起自己还没填。",
+          "choice_hook": [
+            "立刻补最低项",
+            "先关掉提醒"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "lieflat_score": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`late_regret +1`；B：`lieflat_score +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E01-LIEFLAT-P02",
+          "beat": "空栏停住",
+          "text_brief": "“毕业后联系人”一栏空着，4XX 群里已经没人再单独问他写谁。",
+          "choice_hook": [
+            "写公共邮箱和手机号",
+            "先空着等晚点再说"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "missed_chance": 1,
+            "avoidance": 1
+          },
+          "updates_text": "A：`pre_register_boundary_checked = true`；B：`missed_chance +1`, `avoidance +1`。"
+        },
+        {
+          "page_id": "ACT7-E01-LIEFLAT-P03",
+          "beat": "去向待定",
+          "text_brief": "去向栏可以写待定，但需要复核。林亦舟把光标停在输入框里很久。",
+          "choice_hook": [
+            "写待定并接受系统复核",
+            "写一个模糊方向"
+          ],
+          "updates": {
+            "graduation_direction_status": "pending_with_review",
+            "low_conflict": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`graduation_direction_status = pending_with_review`；B：`low_conflict +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E01-LIEFLAT-P04",
+          "beat": "交表截止",
+          "text_brief": "系统显示“提交成功”，没有人骂他晚，也没有人夸他赶上。",
+          "choice_hook": [
+            "在群里回一句已交",
+            "什么都不说"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "late_regret": 1,
+            "old_dorm_distance": 1,
+            "low_presence_checked": true
+          },
+          "updates_text": "A：`dorm_trust +1`, `late_regret +1`；B：`old_dorm_distance +1`, `low_presence_checked = true`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E01-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-LIEFLAT-C01-A",
+            "label": "立刻补最低项",
+            "variable_delta": {
+              "pre_register_boundary_checked": true,
+              "late_regret": 1,
+              "time_debt": 1
+            },
+            "variable_delta_text": "pre_register_boundary_checked = true`、`late_regret +1`、`time_debt +1`。"
+          },
+          {
+            "direction_id": "ACT7-E01-LIEFLAT-C01-B",
+            "label": "先空着，晚点再说",
+            "variable_delta": {
+              "lieflat_score": 1,
+              "missed_chance": 1,
+              "expired_entry_checked": true
+            },
+            "variable_delta_text": "lieflat_score +1`、`missed_chance +1`、`expired_entry_checked = true`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "班级材料群 / 共享盘权限页 / 西园餐厅",
+      "scene_function": "公开范围不再是主动边界选择，而是拖到默认最低可见。",
+      "required_completion_flags": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "low_presence_checked"
+      ],
+      "must_record": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "low_presence_checked",
+        "public_boundary",
+        "avoidance",
+        "time_debt",
+        "lieflat_score",
+        "low_conflict",
+        "late_regret",
+        "dorm_trust",
+        "old_dorm_distance"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E02-LIEFLAT-P01",
+          "beat": "群公告",
+          "text_brief": "材料群要求确认照片和经历公开范围，唐骁只发群公告，没有私聊催他。",
+          "choice_hook": [
+            "点开公告",
+            "先当没看见"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "avoidance": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`avoidance +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-LIEFLAT-P02",
+          "beat": "默认最低",
+          "text_brief": "截止前系统默认仅班级内部可见，林亦舟发现这也算一种选择。",
+          "choice_hook": [
+            "主动改成仅留存",
+            "接受默认范围"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "lieflat_score": 1,
+            "low_conflict": 1
+          },
+          "updates_text": "A：`public_scope_boundary_checked = true`；B：`lieflat_score +1`, `low_conflict +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-LIEFLAT-P03",
+          "beat": "素材空格",
+          "text_brief": "“个人经历补充”空着，周屿没有再拿玩笑帮他圆场。",
+          "choice_hook": [
+            "补一句最低事实",
+            "空着提交"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "dorm_trust": 1,
+            "low_presence_checked": true,
+            "old_dorm_distance": 1
+          },
+          "updates_text": "A：`late_regret +1`, `dorm_trust +1`；B：`low_presence_checked = true`, `old_dorm_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-LIEFLAT-P04",
+          "beat": "确认回执",
+          "text_brief": "回执生成后，他的名字在列表里很普通，像从没缺席过，也像从没被等过。",
+          "choice_hook": [
+            "截图发群",
+            "只保存回执"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "old_dorm_distance": 1,
+            "low_conflict": 1
+          },
+          "updates_text": "A：`dorm_trust +1`；B：`old_dorm_distance +1`, `low_conflict +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E02-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-LIEFLAT-C01-A",
+            "label": "主动改成仅留存",
+            "variable_delta": {
+              "public_scope_boundary_checked": true,
+              "late_regret": 1,
+              "dorm_trust": 1
+            },
+            "variable_delta_text": "public_scope_boundary_checked = true`、`late_regret +1`、`dorm_trust +1`。"
+          },
+          {
+            "direction_id": "ACT7-E02-LIEFLAT-C01-B",
+            "label": "接受系统默认",
+            "variable_delta": {
+              "lieflat_score": 1,
+              "low_presence_checked": true,
+              "old_dorm_distance": 1
+            },
+            "variable_delta_text": "lieflat_score +1`、`low_presence_checked = true`、`old_dorm_distance +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "青枫居 4XX / 共享盘目录 / 后街便利店",
+      "scene_function": "最后一个新年的空白目录不是抵抗，而是林亦舟又晚了一步。",
+      "required_completion_flags": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "expired_entry_checked"
+      ],
+      "must_record": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "expired_entry_checked",
+        "late_regret",
+        "avoidance",
+        "missed_chance",
+        "low_presence_checked",
+        "dorm_trust",
+        "hard_outflow_shadow",
+        "time_debt",
+        "old_dorm_distance",
+        "public_boundary"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E03-LIEFLAT-P01",
+          "beat": "目录已建",
+          "text_brief": "共享盘里已经建好“最后一个新年”目录，林亦舟打开时里面有三个人的素材。",
+          "choice_hook": [
+            "现在补一张照片",
+            "先退出目录"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "avoidance": 1,
+            "missed_chance": 1
+          },
+          "updates_text": "A：`late_regret +1`；B：`avoidance +1`, `missed_chance +1`。"
+        },
+        {
+          "page_id": "ACT7-E03-LIEFLAT-P02",
+          "beat": "空白不是边界",
+          "text_brief": "他的文件夹空着，不像“不公开”，更像没人知道他还想不想交。",
+          "choice_hook": [
+            "写“不公开，仅留存”",
+            "让空文件夹继续空着"
+          ],
+          "updates": {
+            "opening_contrast_seen": true,
+            "expired_entry_checked": true,
+            "low_presence_checked": true
+          },
+          "updates_text": "A：`opening_contrast_seen = true`；B：`expired_entry_checked = true`, `low_presence_checked = true`。"
+        },
+        {
+          "page_id": "ACT7-E03-LIEFLAT-P03",
+          "beat": "后街短逃",
+          "text_brief": "他去后街便利店买饮料，门口有新圈人物擦肩，但没有真正叫住他。",
+          "choice_hook": [
+            "直接回寝补材料",
+            "在便利店多待一会儿"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "dorm_trust": 1,
+            "hard_outflow_shadow": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`late_regret +1`, `dorm_trust +1`；B：`hard_outflow_shadow +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E03-LIEFLAT-P04",
+          "beat": "旧物缺席",
+          "text_brief": "4XX 公共桌上有旧物清单，他的那栏写着“未确认”。",
+          "choice_hook": [
+            "补确认",
+            "明天再看"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "missed_chance": 1,
+            "old_dorm_distance": 1
+          },
+          "updates_text": "A：`old_object_scope_checked = true`；B：`missed_chance +1`, `old_dorm_distance +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E03-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-LIEFLAT-C01-A",
+            "label": "补“不公开，仅留存”",
+            "variable_delta": {
+              "opening_contrast_seen": true,
+              "public_boundary": 1,
+              "late_regret": 1
+            },
+            "variable_delta_text": "opening_contrast_seen = true`、`public_boundary +1`、`late_regret +1`。"
+          },
+          {
+            "direction_id": "ACT7-E03-LIEFLAT-C01-B",
+            "label": "让空文件夹继续空着",
+            "variable_delta": {
+              "expired_entry_checked": true,
+              "low_presence_checked": true,
+              "missed_chance": 1
+            },
+            "variable_delta_text": "expired_entry_checked = true`、`low_presence_checked = true`、`missed_chance +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "毕业设计方向与开题",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 / B204 复核会 / 教务平台",
+      "scene_function": "开题方向拖到最低可填，流程仍能走，但没人再帮他把方向聊热。",
+      "required_completion_flags": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "thesis_topic_submitted"
+      ],
+      "must_record": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "thesis_topic_submitted",
+        "time_debt",
+        "lieflat_score",
+        "late_regret",
+        "old_dorm_distance",
+        "repair_attempt",
+        "low_conflict",
+        "graduation_temperature",
+        "dorm_trust",
+        "low_presence_checked",
+        "expired_entry_checked"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E04-LIEFLAT-P01",
+          "beat": "表格未读",
+          "text_brief": "开题方向表在群里发过两遍，林亦舟第一次认真看时已经是复核前一晚。",
+          "choice_hook": [
+            "立刻填最低版",
+            "先收藏链接"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "time_debt": 1,
+            "lieflat_score": 1
+          },
+          "updates_text": "A：`topic_boundary_checked = true`；B：`time_debt +1`, `lieflat_score +1`。"
+        },
+        {
+          "page_id": "ACT7-E04-LIEFLAT-P02",
+          "beat": "导师签字",
+          "text_brief": "导师组问他的方向是否确认，唐骁只在群里提醒“按时签”。",
+          "choice_hook": [
+            "自己去签",
+            "问现在还能不能改"
+          ],
+          "updates": {
+            "topic_self_signed": true,
+            "late_regret": 1,
+            "old_dorm_distance": 1
+          },
+          "updates_text": "A：`topic_self_signed = true`；B：`late_regret +1`, `old_dorm_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E04-LIEFLAT-P03",
+          "beat": "最低方向",
+          "text_brief": "他写下一个安全但没什么温度的方向，像把未来先放进最窄的格子。",
+          "choice_hook": [
+            "补一句真实兴趣",
+            "保持安全方向"
+          ],
+          "updates": {
+            "repair_attempt": 1,
+            "late_regret": 1,
+            "low_conflict": 1,
+            "graduation_temperature": "polite_distance"
+          },
+          "updates_text": "A：`repair_attempt +1`, `late_regret +1`；B：`low_conflict +1`, `graduation_temperature = polite_distance`。"
+        },
+        {
+          "page_id": "ACT7-E04-LIEFLAT-P04",
+          "beat": "表格通过",
+          "text_brief": "表格通过了，C407 没人多问他怎么想，流程替他们省掉了那句话。",
+          "choice_hook": [
+            "在群里回已过",
+            "不再回"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "old_dorm_distance": 1,
+            "low_presence_checked": true
+          },
+          "updates_text": "A：`dorm_trust +1`；B：`old_dorm_distance +1`, `low_presence_checked = true`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E04-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-LIEFLAT-C01-A",
+            "label": "自己去签最低版",
+            "variable_delta": {
+              "topic_boundary_checked": true,
+              "topic_self_signed": true,
+              "time_debt": 1
+            },
+            "variable_delta_text": "topic_boundary_checked = true`、`topic_self_signed = true`、`time_debt +1`。"
+          },
+          {
+            "direction_id": "ACT7-E04-LIEFLAT-C01-B",
+            "label": "问现在还能不能改",
+            "variable_delta": {
+              "late_regret": 1,
+              "old_dorm_distance": 1,
+              "expired_entry_checked": true
+            },
+            "variable_delta_text": "late_regret +1`、`old_dorm_distance +1`、`expired_entry_checked = true`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月事项排队",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "明德楼窗口 / C407 / 打印店",
+      "scene_function": "三四月事项仍然排队，但单独提醒他的那个人变少了。",
+      "required_completion_flags": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "expired_entry_checked"
+      ],
+      "must_record": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "expired_entry_checked",
+        "time_debt",
+        "missed_chance",
+        "low_conflict",
+        "late_regret",
+        "dorm_trust",
+        "old_dorm_distance",
+        "lieflat_score",
+        "low_presence_checked"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E05-LIEFLAT-P01",
+          "beat": "窗口过号",
+          "text_brief": "明德楼窗口叫号很快，林亦舟刚到，屏幕上他的号已经过了三位。",
+          "choice_hook": [
+            "重新取号",
+            "先去买水"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "time_debt": 1,
+            "missed_chance": 1
+          },
+          "updates_text": "A：`march_boundary_checked = true`；B：`time_debt +1`, `missed_chance +1`。"
+        },
+        {
+          "page_id": "ACT7-E05-LIEFLAT-P02",
+          "beat": "群公告已沉",
+          "text_brief": "毕业照信息、证书核验和补交材料都在群公告里，他往上翻才看到。",
+          "choice_hook": [
+            "逐项补最低信息",
+            "只补最急的一项"
+          ],
+          "updates": {
+            "queue_item_submitted": true,
+            "low_conflict": 1,
+            "expired_entry_checked": true
+          },
+          "updates_text": "A：`queue_item_submitted = true`；B：`low_conflict +1`, `expired_entry_checked = true`。"
+        },
+        {
+          "page_id": "ACT7-E05-LIEFLAT-P03",
+          "beat": "没人私催",
+          "text_brief": "周屿发过活动提醒，唐骁发过清单，陆沉发过一个“收到”。没有人再单独叫他。",
+          "choice_hook": [
+            "主动问还缺什么",
+            "当作没人需要他"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "dorm_trust": 1,
+            "old_dorm_distance": 1,
+            "lieflat_score": 1
+          },
+          "updates_text": "A：`late_regret +1`, `dorm_trust +1`；B：`old_dorm_distance +1`, `lieflat_score +1`。"
+        },
+        {
+          "page_id": "ACT7-E05-LIEFLAT-P04",
+          "beat": "最低过关",
+          "text_brief": "最后系统显示“材料已收”，但备注里有两个“未补充”。",
+          "choice_hook": [
+            "记下待补",
+            "关掉页面"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "missed_chance": 1,
+            "low_presence_checked": true
+          },
+          "updates_text": "A：`march_boundary_checked = true`；B：`missed_chance +1`, `low_presence_checked = true`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E05-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-LIEFLAT-C01-A",
+            "label": "逐项补最低信息",
+            "variable_delta": {
+              "march_boundary_checked": true,
+              "queue_item_submitted": true,
+              "late_regret": 1
+            },
+            "variable_delta_text": "march_boundary_checked = true`、`queue_item_submitted = true`、`late_regret +1`。"
+          },
+          {
+            "direction_id": "ACT7-E05-LIEFLAT-C01-B",
+            "label": "只补最急的一项",
+            "variable_delta": {
+              "expired_entry_checked": true,
+              "missed_chance": 1,
+              "low_presence_checked": true
+            },
+            "variable_delta_text": "expired_entry_checked = true`、`missed_chance +1`、`low_presence_checked = true`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "论文与毕设修改",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 共享盘 / 打印店",
+      "scene_function": "改稿拖到最低可交版，错过别人愿意帮他看稿的时间。",
+      "required_completion_flags": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline",
+        "time_debt",
+        "lieflat_score",
+        "late_regret",
+        "missed_chance",
+        "low_conflict",
+        "expired_entry_checked",
+        "dorm_trust",
+        "old_dorm_distance",
+        "low_presence_checked"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E06-LIEFLAT-P01",
+          "beat": "红批未读",
+          "text_brief": "导师红批早就发到共享盘，林亦舟打开时群里已经在讨论终版命名。",
+          "choice_hook": [
+            "立刻改最低版",
+            "先保存到桌面"
+          ],
+          "updates": {
+            "thesis_boundary_checked": true,
+            "time_debt": 1,
+            "lieflat_score": 1
+          },
+          "updates_text": "A：`thesis_boundary_checked = true`；B：`time_debt +1`, `lieflat_score +1`。"
+        },
+        {
+          "page_id": "ACT7-E06-LIEFLAT-P02",
+          "beat": "帮看过期",
+          "text_brief": "唐骁之前说过能帮看格式，周屿说过能帮看摘要，但现在时间都不合适了。",
+          "choice_hook": [
+            "自己改格式",
+            "迟来问一句还能看吗"
+          ],
+          "updates": {
+            "thesis_revision_version": "minimum_pass",
+            "late_regret": 1,
+            "missed_chance": 1
+          },
+          "updates_text": "A：`thesis_revision_version = minimum_pass`；B：`late_regret +1`, `missed_chance +1`。"
+        },
+        {
+          "page_id": "ACT7-E06-LIEFLAT-P03",
+          "beat": "最低可交",
+          "text_brief": "他交出一个能过系统的版本，内容没错，只是少了本可以被提醒的余地。",
+          "choice_hook": [
+            "提交前再读一遍",
+            "直接提交"
+          ],
+          "updates": {
+            "revision_submitted_before_deadline": true,
+            "low_conflict": 1,
+            "expired_entry_checked": true
+          },
+          "updates_text": "A：`revision_submitted_before_deadline = true`；B：`low_conflict +1`, `expired_entry_checked = true`。"
+        },
+        {
+          "page_id": "ACT7-E06-LIEFLAT-P04",
+          "beat": "截止前后",
+          "text_brief": "提交按钮亮起又暗下去，系统提示成功。群里没有人为他松口气。",
+          "choice_hook": [
+            "回群说已交",
+            "只截屏留存"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "late_regret": 1,
+            "old_dorm_distance": 1,
+            "low_presence_checked": true
+          },
+          "updates_text": "A：`dorm_trust +1`, `late_regret +1`；B：`old_dorm_distance +1`, `low_presence_checked = true`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E06-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-LIEFLAT-C01-A",
+            "label": "自己改最低可交版",
+            "variable_delta": {
+              "thesis_boundary_checked": true,
+              "thesis_revision_version": "minimum_pass",
+              "time_debt": 1
+            },
+            "variable_delta_text": "thesis_boundary_checked = true`、`thesis_revision_version = minimum_pass`、`time_debt +1`。"
+          },
+          {
+            "direction_id": "ACT7-E06-LIEFLAT-C01-B",
+            "label": "迟来问还能不能看",
+            "variable_delta": {
+              "late_regret": 1,
+              "missed_chance": 1,
+              "expired_entry_checked": true
+            },
+            "variable_delta_text": "late_regret +1`、`missed_chance +1`、`expired_entry_checked = true`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩日",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "C407 答辩门口 / 补交窗口 / 4XX 群",
+      "scene_function": "答辩通过，群里礼貌恭喜，没人继续问他想不想一起走。",
+      "required_completion_flags": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "low_presence_checked"
+      ],
+      "must_record": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "low_presence_checked",
+        "dorm_trust",
+        "old_dorm_distance",
+        "lieflat_score",
+        "low_conflict",
+        "late_regret",
+        "missed_chance",
+        "polite_distance"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E07-LIEFLAT-P01",
+          "beat": "门口晚到",
+          "text_brief": "答辩门口还有人等，但不是专门等他。他到的时候前一组刚出来。",
+          "choice_hook": [
+            "向他们点头",
+            "站到队尾"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "old_dorm_distance": 1,
+            "low_presence_checked": true
+          },
+          "updates_text": "A：`dorm_trust +1`；B：`old_dorm_distance +1`, `low_presence_checked = true`。"
+        },
+        {
+          "page_id": "ACT7-E07-LIEFLAT-P02",
+          "beat": "顺序表",
+          "text_brief": "顺序表上他的名字在中间，流程很清楚，清楚到不需要谁多问。",
+          "choice_hook": [
+            "核对补交项",
+            "只看自己序号"
+          ],
+          "updates": {
+            "defense_boundary_checked": true,
+            "lieflat_score": 1,
+            "low_conflict": 1
+          },
+          "updates_text": "A：`defense_boundary_checked = true`；B：`lieflat_score +1`, `low_conflict +1`。"
+        },
+        {
+          "page_id": "ACT7-E07-LIEFLAT-P03",
+          "beat": "礼貌恭喜",
+          "text_brief": "答辩通过后群里有人发“恭喜”，大家都回得很快，也很礼貌。",
+          "choice_hook": [
+            "回一句谢谢",
+            "发个表情"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "low_presence_checked": true,
+            "old_dorm_distance": 1
+          },
+          "updates_text": "A：`late_regret +1`；B：`low_presence_checked = true`, `old_dorm_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E07-LIEFLAT-P04",
+          "beat": "补交窗口",
+          "text_brief": "补交窗口还开着，他一个人把签字和小章办完，没有人继续问他要不要吃饭。",
+          "choice_hook": [
+            "问饭局还在不在",
+            "先回寝"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "dorm_trust": 1,
+            "missed_chance": 1,
+            "old_dorm_distance": 1
+          },
+          "updates_text": "A：`late_regret +1`, `dorm_trust +1`；B：`missed_chance +1`, `old_dorm_distance +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E07-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-LIEFLAT-C01-A",
+            "label": "核对补交项，流程过关",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "defense_post_submit_done": true,
+              "polite_distance": 1
+            },
+            "variable_delta_text": "defense_boundary_checked = true`、`defense_post_submit_done = true`、`polite_distance +1`。"
+          },
+          {
+            "direction_id": "ACT7-E07-LIEFLAT-C01-B",
+            "label": "只看自己序号，少说一句",
+            "variable_delta": {
+              "low_presence_checked": true,
+              "old_dorm_distance": 1,
+              "missed_chance": 1
+            },
+            "variable_delta_text": "low_presence_checked = true`、`old_dorm_distance +1`、`missed_chance +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场 / 影像授权表 / 4XX 群",
+      "scene_function": "毕业照有他，但站在边缘；补拍和授权不再被反复确认。",
+      "required_completion_flags": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "low_presence_checked"
+      ],
+      "must_record": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "low_presence_checked",
+        "late_regret",
+        "dorm_trust",
+        "lieflat_score",
+        "public_boundary",
+        "old_dorm_distance",
+        "missed_chance",
+        "graduation_temperature",
+        "expired_entry_checked"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E08-LIEFLAT-P01",
+          "beat": "队形边缘",
+          "text_brief": "毕业照队形已经排好，林亦舟被安排在边缘，位置合理，也没人觉得不对。",
+          "choice_hook": [
+            "接受边位",
+            "问还能不能换"
+          ],
+          "updates": {
+            "low_presence_checked": true,
+            "late_regret": 1,
+            "dorm_trust": 1
+          },
+          "updates_text": "A：`low_presence_checked = true`；B：`late_regret +1`, `dorm_trust +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-LIEFLAT-P02",
+          "beat": "授权默认",
+          "text_brief": "影像授权表默认班级内部可见，他差点没注意到还要确认。",
+          "choice_hook": [
+            "勾仅留存",
+            "接受默认"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "lieflat_score": 1,
+            "public_boundary": 1
+          },
+          "updates_text": "A：`photo_boundary_checked = true`；B：`lieflat_score +1`, `public_boundary +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-LIEFLAT-P03",
+          "beat": "缩略图缓存",
+          "text_brief": "预览缩略图里他在边上，脸很清楚，但不像谁会专门点开放大。",
+          "choice_hook": [
+            "保存照片",
+            "不保存"
+          ],
+          "updates": {
+            "grad_photo_result_recorded": true,
+            "old_dorm_distance": 1,
+            "missed_chance": 1
+          },
+          "updates_text": "A：`grad_photo_result_recorded = true`；B：`old_dorm_distance +1`, `missed_chance +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-LIEFLAT-P04",
+          "beat": "补拍过期",
+          "text_brief": "补拍窗口关闭前，群里提醒过一次。他看到时已经过了半小时。",
+          "choice_hook": [
+            "接受现有照片",
+            "迟来问还能补吗"
+          ],
+          "updates": {
+            "graduation_temperature": "present_but_not_close",
+            "expired_entry_checked": true,
+            "late_regret": 1
+          },
+          "updates_text": "A：`graduation_temperature = present_but_not_close`；B：`expired_entry_checked = true`, `late_regret +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E08-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-LIEFLAT-C01-A",
+            "label": "勾仅留存并确认",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "grad_photo_result_recorded": true,
+              "late_regret": 1
+            },
+            "variable_delta_text": "photo_boundary_checked = true`、`grad_photo_result_recorded = true`、`late_regret +1`。"
+          },
+          {
+            "direction_id": "ACT7-E08-LIEFLAT-C01-B",
+            "label": "接受默认范围",
+            "variable_delta": {
+              "low_presence_checked": true,
+              "old_dorm_distance": 1,
+              "public_boundary": 1
+            },
+            "variable_delta_text": "low_presence_checked = true`、`old_dorm_distance +1`、`public_boundary +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝与旧物",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居 4XX / 宿管窗口 / 公共桌",
+      "scene_function": "清寝旧物被流程处理，公共桌不再等他决定。",
+      "required_completion_flags": [
+        "clearance_boundary_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned"
+      ],
+      "must_record": [
+        "clearance_boundary_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned",
+        "time_debt",
+        "missed_chance",
+        "old_dorm_distance",
+        "low_conflict",
+        "late_regret",
+        "dorm_trust",
+        "low_presence_checked"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E09-LIEFLAT-P01",
+          "beat": "清单已分",
+          "text_brief": "公共桌上的清寝清单已经分好类，他的几件小东西被放在“待认领”旁边。",
+          "choice_hook": [
+            "现在认领",
+            "先去宿管窗口"
+          ],
+          "updates": {
+            "clearance_boundary_checked": true,
+            "time_debt": 1,
+            "missed_chance": 1
+          },
+          "updates_text": "A：`clearance_boundary_checked = true`；B：`time_debt +1`, `missed_chance +1`。"
+        },
+        {
+          "page_id": "ACT7-E09-LIEFLAT-P02",
+          "beat": "旧物默认",
+          "text_brief": "遥控器、公共 U 盘和一袋旧纸都已经被别人按规则处理。没人问他同不同意。",
+          "choice_hook": [
+            "确认处理结果",
+            "不再追问"
+          ],
+          "updates": {
+            "shared_item_owner_checked": true,
+            "old_dorm_distance": 1,
+            "low_conflict": 1
+          },
+          "updates_text": "A：`shared_item_owner_checked = true`；B：`old_dorm_distance +1`, `low_conflict +1`。"
+        },
+        {
+          "page_id": "ACT7-E09-LIEFLAT-P03",
+          "beat": "钥匙窗口",
+          "text_brief": "宿管窗口只问钥匙和床位，不问这四年发生过什么。",
+          "choice_hook": [
+            "按流程交钥匙",
+            "回 4XX 再看一眼"
+          ],
+          "updates": {
+            "dorm_key_returned": true,
+            "late_regret": 1,
+            "dorm_trust": 1
+          },
+          "updates_text": "A：`dorm_key_returned = true`；B：`late_regret +1`, `dorm_trust +1`。"
+        },
+        {
+          "page_id": "ACT7-E09-LIEFLAT-P04",
+          "beat": "空桌回声",
+          "text_brief": "他再回公共桌时，桌面已经干净，只剩一张没写名字的便签。",
+          "choice_hook": [
+            "收起便签",
+            "留在桌上"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "low_presence_checked": true,
+            "missed_chance": 1
+          },
+          "updates_text": "A：`late_regret +1`；B：`low_presence_checked = true`, `missed_chance +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E09-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-LIEFLAT-C01-A",
+            "label": "确认旧物处理结果",
+            "variable_delta": {
+              "clearance_boundary_checked": true,
+              "shared_item_owner_checked": true,
+              "late_regret": 1
+            },
+            "variable_delta_text": "clearance_boundary_checked = true`、`shared_item_owner_checked = true`、`late_regret +1`。"
+          },
+          {
+            "direction_id": "ACT7-E09-LIEFLAT-C01-B",
+            "label": "不再追问，按流程清掉",
+            "variable_delta": {
+              "old_dorm_distance": 1,
+              "low_presence_checked": true,
+              "missed_chance": 1
+            },
+            "variable_delta_text": "old_dorm_distance +1`、`low_presence_checked = true`、`missed_chance +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东北饺子馆 / 4XX 群 / 校门口",
+      "scene_function": "最后一顿饭人数锁定，没留座不是恶意，是默认他可能不来。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "lieflat_contact_scope"
+      ],
+      "must_record": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "lieflat_contact_scope",
+        "late_regret",
+        "lieflat_score",
+        "old_dorm_distance",
+        "missed_chance",
+        "low_presence_checked",
+        "dorm_trust",
+        "graduation_temperature",
+        "avoidance"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E10-LIEFLAT-P01",
+          "beat": "投票已过",
+          "text_brief": "饭局地点投票已经结束，林亦舟打开时只剩“已订位”。",
+          "choice_hook": [
+            "问还能不能加人",
+            "点个表情"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "lieflat_score": 1,
+            "old_dorm_distance": 1
+          },
+          "updates_text": "A：`late_regret +1`；B：`lieflat_score +1`, `old_dorm_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E10-LIEFLAT-P02",
+          "beat": "人数锁定",
+          "text_brief": "东北饺子馆座位按人数锁了，服务员问“还有人吗”，没人立刻看向他。",
+          "choice_hook": [
+            "说自己会到",
+            "说你们先吃"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "missed_chance": 1,
+            "low_presence_checked": true
+          },
+          "updates_text": "A：`meal_boundary_checked = true`；B：`missed_chance +1`, `low_presence_checked = true`。"
+        },
+        {
+          "page_id": "ACT7-E10-LIEFLAT-P03",
+          "beat": "到场边座",
+          "text_brief": "他到的时候靠边还有一个位置，不是特意留的，只是刚好空着。",
+          "choice_hook": [
+            "坐下吃完",
+            "只打包带走"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "graduation_temperature": "polite_distance",
+            "old_dorm_distance": 1,
+            "avoidance": 1
+          },
+          "updates_text": "A：`dorm_trust +1`, `graduation_temperature = polite_distance`；B：`old_dorm_distance +1`, `avoidance +1`。"
+        },
+        {
+          "page_id": "ACT7-E10-LIEFLAT-P04",
+          "beat": "饭后散场",
+          "text_brief": "散场时大家说“路上小心”，没有人再拦住他补那句迟来的话。",
+          "choice_hook": [
+            "私聊发一句谢谢",
+            "什么都不发"
+          ],
+          "updates": {
+            "late_regret": 1,
+            "lieflat_contact_scope": "late_message",
+            "old_dorm_distance": 1,
+            "graduation_temperature": "low_presence"
+          },
+          "updates_text": "A：`late_regret +1`, `lieflat_contact_scope = late_message`；B：`old_dorm_distance +1`, `graduation_temperature = low_presence`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E10-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-LIEFLAT-C01-A",
+            "label": "明确自己会到",
+            "variable_delta": {
+              "meal_boundary_checked": true,
+              "dorm_trust": 1,
+              "late_regret": 1
+            },
+            "variable_delta_text": "meal_boundary_checked = true`、`dorm_trust +1`、`late_regret +1`。"
+          },
+          {
+            "direction_id": "ACT7-E10-LIEFLAT-C01-B",
+            "label": "说你们先吃",
+            "variable_delta": {
+              "missed_chance": 1,
+              "low_presence_checked": true,
+              "old_dorm_distance": 1
+            },
+            "variable_delta_text": "missed_chance +1`、`low_presence_checked = true`、`old_dorm_distance +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "明德楼离校窗口 / 证书领取处 / 档案转递窗口",
+      "scene_function": "离校手续盖章时，空栏终于不用填了，但这不是补救。",
+      "required_completion_flags": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "expired_entry_checked"
+      ],
+      "must_record": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "expired_entry_checked",
+        "time_debt",
+        "missed_chance",
+        "dorm_trust",
+        "low_presence_checked",
+        "old_dorm_distance",
+        "lieflat_score",
+        "low_conflict",
+        "money_pressure",
+        "late_regret",
+        "graduation_temperature",
+        "lieflat_contact_scope"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E11-LIEFLAT-P01",
+          "beat": "绿勾清单",
+          "text_brief": "离校系统一项项变绿，林亦舟忽然发现流程比人更耐心。",
+          "choice_hook": [
+            "按清单完成",
+            "先放着等晚点"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "time_debt": 1,
+            "missed_chance": 1
+          },
+          "updates_text": "A：`leaving_boundary_checked = true`；B：`time_debt +1`, `missed_chance +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-LIEFLAT-P02",
+          "beat": "证书领取",
+          "text_brief": "证书领取处只核身份证，旁边有人合照，他站在队尾没有加入。",
+          "choice_hook": [
+            "领取后回群报备",
+            "直接装进包里"
+          ],
+          "updates": {
+            "certificate_or_archive_seen": true,
+            "dorm_trust": 1,
+            "low_presence_checked": true,
+            "old_dorm_distance": 1
+          },
+          "updates_text": "A：`certificate_or_archive_seen = true`, `dorm_trust +1`；B：`low_presence_checked = true`, `old_dorm_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-LIEFLAT-P03",
+          "beat": "空栏消失",
+          "text_brief": "档案窗口盖完章，那些曾经空着的栏位终于都变成“无需补充”。",
+          "choice_hook": [
+            "截图留档",
+            "关掉页面"
+          ],
+          "updates": {
+            "expired_entry_checked": true,
+            "lieflat_score": 1,
+            "low_conflict": 1
+          },
+          "updates_text": "A：`expired_entry_checked = true`；B：`lieflat_score +1`, `low_conflict +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-LIEFLAT-P04",
+          "beat": "校园卡",
+          "text_brief": "校园卡退余额只剩几块钱，像这条线里所有没来得及说的话。",
+          "choice_hook": [
+            "退掉余额",
+            "留作纪念"
+          ],
+          "updates": {
+            "money_pressure": 1,
+            "late_regret": 1,
+            "graduation_temperature": "missed"
+          },
+          "updates_text": "A：`money_pressure +1`；B：`late_regret +1`, `graduation_temperature = missed`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E11-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-LIEFLAT-C01-A",
+            "label": "领取后回群报备",
+            "variable_delta": {
+              "leaving_boundary_checked": true,
+              "certificate_or_archive_seen": true,
+              "dorm_trust": 1
+            },
+            "variable_delta_text": "leaving_boundary_checked = true`、`certificate_or_archive_seen = true`、`dorm_trust +1`。"
+          },
+          {
+            "direction_id": "ACT7-E11-LIEFLAT-C01-B",
+            "label": "直接装进包里",
+            "variable_delta": {
+              "low_presence_checked": true,
+              "old_dorm_distance": 1,
+              "lieflat_contact_scope": "blank"
+            },
+            "variable_delta_text": "low_presence_checked = true`、`old_dorm_distance +1`、`lieflat_contact_scope = blank`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站后",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "act7_variant_id": "ACT7-LIEFLAT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "LIEFLAT-ENDING",
+      "main_location": "武生院站 / 地铁口 / 4XX 群",
+      "scene_function": "输出摆烂线最终温度：体面淡化、迟来私聊、低存在感、错过或 5X 影子。",
+      "required_completion_flags": [
+        "lieflat_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen"
+      ],
+      "must_record": [
+        "lieflat_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen",
+        "low_presence_checked",
+        "late_message_sent",
+        "late_regret",
+        "missed_chance",
+        "lost_chance",
+        "hard_outflow_shadow",
+        "old_dorm_distance"
+      ],
+      "participants_hint": "Use ACT7-LIEFLAT detail doc and same mother event scene; do not add route-switch behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E12-LIEFLAT-P01",
+          "beat": "站口人流",
+          "text_brief": "武生院站人很多，林亦舟站在出入口旁边，发现没人知道他具体哪一班车。",
+          "choice_hook": [
+            "在群里报站",
+            "直接进站"
+          ],
+          "updates": {
+            "lieflat_contact_scope": "group_polite",
+            "low_presence_checked": true
+          },
+          "updates_text": "A：`lieflat_contact_scope = group_polite`；B：`low_presence_checked = true`。"
+        },
+        {
+          "page_id": "ACT7-E12-LIEFLAT-P02",
+          "beat": "迟来私聊",
+          "text_brief": "他点开某个私聊框，输入“之前有些事”，又停住。",
+          "choice_hook": [
+            "发出最低一句",
+            "删除草稿"
+          ],
+          "updates": {
+            "late_message_sent": true,
+            "late_regret": 1,
+            "missed_chance": 1,
+            "lost_chance": 1
+          },
+          "updates_text": "A：`late_message_sent = true`, `late_regret +1`；B：`missed_chance +1`, `lost_chance +1`。"
+        },
+        {
+          "page_id": "ACT7-E12-LIEFLAT-P03",
+          "beat": "后街影子",
+          "text_brief": "地铁口外有去后街的车，许澈或新圈人物的头像短暂亮起，但没有形成邀请。",
+          "choice_hook": [
+            "看一眼就关掉",
+            "回一个表情"
+          ],
+          "updates": {
+            "hard_outflow_shadow": "branch_dependent",
+            "old_dorm_distance": 1
+          },
+          "updates_text": "A：`hard_outflow_shadow +1`；B：`hard_outflow_shadow +2`, `old_dorm_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E12-LIEFLAT-P04",
+          "beat": "最后一栏",
+          "text_brief": "群里有人发“到了说”，林亦舟这次回得很快，但那已经只是礼貌。",
+          "choice_hook": [
+            "回“到了”",
+            "不再回"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent",
+            "lieflat_contact_scope": "blank"
+          },
+          "updates_text": "A：`graduation_temperature = polite_fade`；B：`graduation_temperature = missed`, `lieflat_contact_scope = blank`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-LIEFLAT-CHOICE-01",
+        "after_page": "ACT7-E12-LIEFLAT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-LIEFLAT-C01-A",
+            "label": "发出最低一句迟来私聊",
+            "variable_delta": {
+              "late_message_sent": true,
+              "lieflat_contact_scope": "late_message",
+              "graduation_temperature": "late_message"
+            },
+            "variable_delta_text": "late_message_sent = true`、`lieflat_contact_scope = late_message`、`graduation_temperature = late_message`。"
+          },
+          {
+            "direction_id": "ACT7-E12-LIEFLAT-C01-B",
+            "label": "删除草稿，按流程离校",
+            "variable_delta": {
+              "missed_chance": 1,
+              "lieflat_contact_scope": "blank",
+              "graduation_temperature": "missed"
+            },
+            "variable_delta_text": "missed_chance +1`、`lieflat_contact_scope = blank`、`graduation_temperature = missed`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "Do not write this as a comedy, laziness, or content-saving route.",
+        "Do not treat no-stand as neutral preservation; its cost is expired entry and low presence.",
+        "Do not open other full routes through Wanfeng, Xu Che, or backstreet echoes."
+      ]
+    }
+  ],
+  "ending_candidates": [
+    {
+      "ending_id": "LIEFLAT-END-LATE-MESSAGE",
+      "condition_hint": "late_message_sent = true, lieflat_contact_scope = late_message",
+      "text_landing": "摆烂线没有奖励大团圆，只留下一句迟来的最低私聊。"
+    },
+    {
+      "ending_id": "LIEFLAT-END-BLANK-GRADUATION",
+      "condition_hint": "lieflat_contact_scope = blank, missed_chance >= 4",
+      "text_landing": "入口过期后，毕业现场按流程结束，关系空白被完整保留下来。"
+    },
+    {
+      "ending_id": "LIEFLAT-END-LOW-PRESENCE",
+      "condition_hint": "low_presence_checked = true, dorm_trust <= 2",
+      "text_landing": "没有站队换来短期安静，也换来低存在感和无人私催。"
+    },
+    {
+      "ending_id": "LIEFLAT-END-EXPIRED-ENTRY",
+      "condition_hint": "expired_entry_checked = true or expired_form_seen = true",
+      "text_landing": "很多入口不是坏掉，而是过期；错过本身成为这条线的结局温度。"
+    },
+    {
+      "ending_id": "LIEFLAT-END-HARD-SHADOW",
+      "condition_hint": "hard_outflow_shadow = true, late_regret >= 3",
+      "text_landing": "5X 的影子只作为远处回声，不重新打开逃离按钮。"
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "route_id": "R5-LIEFLAT",
+    "route_pool_id": "POOL-R5-LIEFLAT",
+    "act7_variant_id": "ACT7-LIEFLAT",
+    "act7_core_event_count": 12,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_required_completion_flags": [
+      "pre_register_boundary_checked",
+      "graduation_direction_status",
+      "low_presence_checked",
+      "public_scope_boundary_checked",
+      "public_consent_checked",
+      "opening_contrast_seen",
+      "old_object_scope_checked",
+      "expired_entry_checked",
+      "topic_boundary_checked",
+      "topic_self_signed",
+      "thesis_topic_submitted",
+      "march_boundary_checked",
+      "queue_item_submitted",
+      "thesis_boundary_checked",
+      "thesis_revision_version",
+      "revision_submitted_before_deadline",
+      "defense_boundary_checked",
+      "defense_post_submit_done",
+      "photo_boundary_checked",
+      "grad_photo_result_recorded",
+      "clearance_boundary_checked",
+      "shared_item_owner_checked",
+      "dorm_key_returned",
+      "meal_boundary_checked",
+      "meal_attendance_locked",
+      "lieflat_contact_scope",
+      "leaving_boundary_checked",
+      "certificate_or_archive_seen",
+      "graduation_temperature",
+      "station_after_echo_seen"
+    ],
+    "act7_each_event_page_count": 4,
+    "act7_each_event_direction_count": 2,
+    "act7_source_detail_doc": "开发细稿_IF第七卷ACT7-LIEFLAT摆烂线事件变体剧情页.md",
+    "act5_full_page_json_status": "not_converted_in_this_file",
+    "act6_full_page_json_status": "full_page_json_ready",
+    "act6_detail_block_count": 5,
+    "act6_page_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_direction_count": 10,
+    "act6_each_block_page_count": 4,
+    "act6_each_block_direction_count": 2,
+    "act6_route_switch_allowed": false,
+    "act6_source_detail_doc": "开发细稿_IF第六卷ACT6-LIEFLAT摆烂线正式剧情页.md",
+    "act6_required_completion_flags": [
+      "route_pool_locked",
+      "lieflat_score",
+      "avoidance",
+      "lost_chance",
+      "missed_chance",
+      "low_conflict",
+      "late_regret",
+      "dorm_trust",
+      "old_dorm_distance",
+      "time_debt",
+      "money_pressure",
+      "hard_outflow_shadow",
+      "expired_entry_checked",
+      "low_presence_checked",
+      "meal_attendance_locked",
+      "lieflat_contact_scope",
+      "graduation_temperature",
+      "act6_to_act7_handoff_ready"
+    ]
+  }
+}

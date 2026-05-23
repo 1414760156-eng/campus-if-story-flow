@@ -1,0 +1,2448 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-21",
+  "route_id": "R5-ZHOU",
+  "route_name": "周屿线",
+  "route_pool_id": "POOL-R5-ZHOU",
+  "route_level": "A",
+  "purpose": "把 R5-ZHOU 周屿线的第七卷毕业结算接入正式剧情页级 JSON，覆盖 ACT7-ZHOU 12 个同母事件变体；本文件为周屿线 Act7 数据源，不伪造尚未正式接入的第五卷和第六卷完整剧情页。",
+  "source_docs": [
+    "开发长线_IF可玩支线R5-ZHOU周屿线.md",
+    "开发细稿_IF第六卷ACT6-ZHOU周屿线正式剧情页.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_outflow",
+    "route_pool_id": "POOL-R5-ZHOU",
+    "route_focus": "zhou",
+    "outflow_permission_class": "main_axis",
+    "pool_entry_choice": "P0D_STAND_WITH_ZHOU",
+    "active_route_id": "R5-ZHOU",
+    "primary_bond": "zhou",
+    "route_lock": "R5-ZHOU",
+    "route_switch_allowed": false,
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "act6_full_page_json_status": "full_page_json_ready",
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-ROMANCE",
+      "R5-WANFENG",
+      "R4-WORK",
+      "R3-PERFECT",
+      "A3-ACTIVITY-PUBLIC",
+      "R5X-HARD"
+    ],
+    "soft_echo_routes": [
+      "DEFAULT-4XX",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT"
+    ],
+    "act7_variant_id": "ACT7-ZHOU",
+    "act7_required_event_count": 12,
+    "act7_core_events_json_started": true,
+    "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_temperature_candidates": [
+      "ZHOU-END-CONTACT",
+      "ZHOU-END-HALF-APOLOGY",
+      "ZHOU-END-POLITE",
+      "ZHOU-END-DISTANCE",
+      "ZHOU-END-REGRET"
+    ]
+  },
+  "local_variables": [
+    "act6_closed",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready",
+    "activity_link",
+    "advisor_group_checked",
+    "certificate_or_archive_seen",
+    "clearance_boundary_checked",
+    "continue_contact",
+    "defense_boundary_checked",
+    "defense_message_echo",
+    "defense_order_seen",
+    "dorm_absence",
+    "dorm_item_confirmed_by_self",
+    "dorm_warmth",
+    "ending_temperature_locked",
+    "face_debt",
+    "final_group_state",
+    "grad_photo_info_seen",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "joke_defense",
+    "leaving_boundary_checked",
+    "luchen_distance",
+    "march_boundary_checked",
+    "march_queue_seen",
+    "meal_attendance_locked",
+    "meal_boundary_checked",
+    "missed_chance",
+    "money_boundary",
+    "old_debt",
+    "opening_contrast_seen",
+    "photo_boundary_checked",
+    "photo_self_confirmed",
+    "polite_distance",
+    "pre_register_boundary_checked",
+    "present_but_not_close",
+    "project_stability",
+    "proxy_risk",
+    "public_boundary",
+    "public_consent_checked",
+    "public_scope",
+    "public_scope_boundary_checked",
+    "public_smooth",
+    "qinyue_pressure",
+    "repair_depth",
+    "revision_submitted_before_deadline",
+    "route_pool_locked",
+    "say_clear",
+    "shared_item_owner_checked",
+    "station_boundary_checked",
+    "story_consent",
+    "tang_misread",
+    "thesis_boundary_checked",
+    "thesis_revision_version",
+    "thesis_topic_form_seen",
+    "time_debt",
+    "topic_boundary_checked",
+    "topic_review_time",
+    "topic_self_signed",
+    "topic_status",
+    "zhou_activity_signature_scope",
+    "zhou_contact_scope_checked",
+    "zhou_final_contact_scope",
+    "zhou_half_apology_seen",
+    "zhou_trust",
+    "zhou_visibility",
+    "zhou_warmth"
+  ],
+  "entry_node": {
+    "node_id": "D_00_SHORT_GROUP",
+    "entry_choice": "P0D_STAND_WITH_ZHOU",
+    "route_lock_after_entry": "POOL-R5-ZHOU",
+    "route_switch_allowed_after_entry": false
+  },
+  "return_points": [
+    "RET-ZHOU-01",
+    "RET-ZHOU-02",
+    "RET-ZHOU-03",
+    "RET-ZHOU-04",
+    "RET-ZHOU-05",
+    "RET-ZHOU-06"
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-ZHOU-B01",
+      "scene_range": [
+        "ACT6-ZHOU-S01",
+        "ACT6-ZHOU-S04"
+      ],
+      "choice_window_id": "ACT6-ZHOU-CHOICE-01",
+      "allowed_directions": [
+        "活动现场陪跑",
+        "宿舍边界留白"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-ZHOU-B02",
+      "scene_range": [
+        "ACT6-ZHOU-S05",
+        "ACT6-ZHOU-S08"
+      ],
+      "choice_window_id": "ACT6-ZHOU-CHOICE-02",
+      "allowed_directions": [
+        "替周屿收场",
+        "不替周屿圆场"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-ZHOU-B03",
+      "scene_range": [
+        "ACT6-ZHOU-S09",
+        "ACT6-ZHOU-S12"
+      ],
+      "choice_window_id": "ACT6-ZHOU-CHOICE-03",
+      "allowed_directions": [
+        "公开材料写热闹",
+        "控制授权和口径"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-ZHOU-B04",
+      "scene_range": [
+        "ACT6-ZHOU-S13",
+        "ACT6-ZHOU-S16"
+      ],
+      "choice_window_id": "ACT6-ZHOU-CHOICE-04",
+      "allowed_directions": [
+        "当面解释唐骁误读",
+        "暂缓解释保活动进度"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-ZHOU-B05",
+      "scene_range": [
+        "ACT6-ZHOU-S17",
+        "ACT6-ZHOU-S20"
+      ],
+      "choice_window_id": "ACT6-ZHOU-CHOICE-05",
+      "allowed_directions": [
+        "毕业后低频联系",
+        "体面淡化"
+      ],
+      "conversion_status": "full_page_json_ready"
+    }
+  ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-ZHOU-B01",
+      "block_name": "活动现场陪跑与宿舍边界留白",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act6_variant_id": "ACT6-ZHOU",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-ZHOU周屿线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-ZHOU-B02",
+      "scene_range": [
+        "ACT6-ZHOU-S01",
+        "ACT6-ZHOU-S04"
+      ],
+      "main_location": "B206 / 活动群 / C407 / 彩排区",
+      "scene_function": "建立活动圈更近、4XX 更低温的周屿线第六幕代价。",
+      "required_completion_flags": [
+        "route_pool_locked",
+        "activity_link",
+        "public_boundary"
+      ],
+      "must_record": [
+        "activity_link",
+        "time_debt",
+        "tang_misread",
+        "zhou_trust",
+        "qinyue_pressure",
+        "public_boundary",
+        "dorm_absence",
+        "project_stability",
+        "luchen_distance",
+        "joke_defense",
+        "public_smooth"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-ZHOU-S01",
+          "location": "B206 门口 / 活动群",
+          "text_brief": "秦越催主持彩排名单，周屿发来救个场，不上台也行。4XX 群里唐骁同时催 C407 初版。",
+          "choice_hook": [
+            "先回周屿",
+            "先回 C407",
+            "两边都短回"
+          ],
+          "updates": {
+            "activity_link": 1,
+            "time_debt": 1,
+            "tang_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S02",
+          "location": "B206 / 空白流程文档",
+          "text_brief": "周屿把空白文档推过来，说自己嘴上能补。林亦舟看见主持词空格和活动签到表都等人填。",
+          "choice_hook": [
+            "帮补串词",
+            "只补流程",
+            "要周屿自己回秦越"
+          ],
+          "updates": {
+            "zhou_trust": 1,
+            "qinyue_pressure": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S03",
+          "location": "4XX 事项群 / C407 提醒",
+          "text_brief": "唐骁只发 23:00 截止，陆沉只交自己的部分。林亦舟越靠近活动现场，4XX 越像只读回声。",
+          "choice_hook": [
+            "补一句说明",
+            "不解释先彩排",
+            "请唐骁给十分钟"
+          ],
+          "updates": {
+            "dorm_absence": 1,
+            "project_stability": 1,
+            "luchen_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S04",
+          "location": "彩排区 / 走廊",
+          "text_brief": "周屿用玩笑把迟到挡过去，秦越看向林亦舟等他接话。林亦舟必须决定是陪跑现场，还是给宿舍边界留白。",
+          "choice_hook": [
+            "活动现场陪跑",
+            "宿舍边界留白",
+            "只说明最低事实"
+          ],
+          "updates": {
+            "joke_defense": 1,
+            "public_smooth": 1,
+            "public_boundary": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-ZHOU-CHOICE-01",
+        "after_page": "ACT6-ZHOU-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-ZHOU-C01-A",
+            "label": "活动现场陪跑",
+            "variable_delta": {
+              "activity_link": 1,
+              "zhou_trust": 1,
+              "dorm_absence": 1
+            },
+            "next_block": "ACT6-ZHOU-B02"
+          },
+          {
+            "direction_id": "ACT6-ZHOU-C01-B",
+            "label": "宿舍边界留白",
+            "variable_delta": {
+              "public_boundary": 1,
+              "project_stability": 1,
+              "zhou_trust": -1
+            },
+            "next_block": "ACT6-ZHOU-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-ZHOU-B02",
+      "block_name": "替周屿收场与不替圆场",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act6_variant_id": "ACT6-ZHOU",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-ZHOU周屿线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-ZHOU-B01",
+      "next_block": "ACT6-ZHOU-B03",
+      "scene_range": [
+        "ACT6-ZHOU-S05",
+        "ACT6-ZHOU-S08"
+      ],
+      "main_location": "B206 / 东区商业街 / 4XX 公共桌 / 楼梯间",
+      "scene_function": "处理周屿默认林亦舟替他圆场的风险。",
+      "required_completion_flags": [
+        "public_boundary",
+        "qinyue_pressure",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "activity_link",
+        "qinyue_pressure",
+        "zhou_activity_signature_scope",
+        "public_smooth",
+        "joke_defense",
+        "repair_depth",
+        "tang_misread",
+        "luchen_distance",
+        "project_stability",
+        "face_debt",
+        "money_boundary",
+        "zhou_trust"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-ZHOU-S05",
+          "location": "B206 / 主持彩排",
+          "text_brief": "彩排临时缺人，周屿把你站一下就行说得像玩笑。秦越已经把林亦舟名字写到临时协助栏边上。",
+          "choice_hook": [
+            "上台补场",
+            "只做后场",
+            "要求改成临时协助"
+          ],
+          "updates": {
+            "activity_link": 1,
+            "qinyue_pressure": 1,
+            "zhou_activity_signature_scope": "temporary_assist"
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S06",
+          "location": "东区商业街 / 小舞台预演",
+          "text_brief": "周屿临场圆了一个空档，旁人笑了。林亦舟知道这次笑声会让周屿更相信热闹能遮住难堪。",
+          "choice_hook": [
+            "跟着笑",
+            "轻声截住",
+            "事后私下说"
+          ],
+          "updates": {
+            "public_smooth": 1,
+            "joke_defense": 1,
+            "repair_depth": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S07",
+          "location": "4XX 公共桌回声",
+          "text_brief": "唐骁把 C407 文档锁了只读，陆沉只在群里发已交。没有人责备林亦舟，但也没有人等他解释。",
+          "choice_hook": [
+            "回群说明",
+            "只交自己的部分",
+            "继续留在活动场"
+          ],
+          "updates": {
+            "tang_misread": 1,
+            "luchen_distance": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S08",
+          "location": "楼梯间 / 饮料机旁",
+          "text_brief": "周屿请他喝饮料，说刚才你不接我就真尬了。这句话既是感谢，也是新的默认。",
+          "choice_hook": [
+            "替周屿收场",
+            "不替周屿圆场",
+            "只谈下一次边界"
+          ],
+          "updates": {
+            "face_debt": 1,
+            "money_boundary": 1,
+            "zhou_trust": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-ZHOU-CHOICE-02",
+        "after_page": "ACT6-ZHOU-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-ZHOU-C02-A",
+            "label": "替周屿收场",
+            "variable_delta": {
+              "public_smooth": 1,
+              "qinyue_pressure": 1,
+              "face_debt": 1
+            },
+            "next_block": "ACT6-ZHOU-B03"
+          },
+          {
+            "direction_id": "ACT6-ZHOU-C02-B",
+            "label": "不替周屿圆场",
+            "variable_delta": {
+              "public_boundary": 1,
+              "joke_defense": -1,
+              "zhou_trust": -1
+            },
+            "next_block": "ACT6-ZHOU-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-ZHOU-B03",
+      "block_name": "公开材料热闹与授权口径",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act6_variant_id": "ACT6-ZHOU",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-ZHOU周屿线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-ZHOU-B02",
+      "next_block": "ACT6-ZHOU-B04",
+      "scene_range": [
+        "ACT6-ZHOU-S09",
+        "ACT6-ZHOU-S12"
+      ],
+      "main_location": "融媒体门口 / 活动群 / 青枫居楼下 / B206",
+      "scene_function": "把周屿的公开顺滑推到素材和授权层面，检查热闹材料如何推迟旧账。",
+      "required_completion_flags": [
+        "public_consent_checked",
+        "zhou_activity_signature_scope",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "public_boundary",
+        "public_smooth",
+        "zhou_trust",
+        "public_consent_checked",
+        "tang_misread",
+        "luchen_distance",
+        "old_debt",
+        "zhou_activity_signature_scope",
+        "qinyue_pressure"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-ZHOU-S09",
+          "location": "融媒体门口 / 素材预览",
+          "text_brief": "许棠给出活动片段预览。周屿在画面里很会圆场，但停顿被剪得干净。",
+          "choice_hook": [
+            "保留停顿",
+            "剪得更顺",
+            "只内部留存"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "public_smooth": 1,
+            "zhou_trust": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S10",
+          "location": "朋友圈 / 活动群",
+          "text_brief": "活动群催是否可发，周屿嘴上说随便，手指却停在转发按钮上。公开热闹会影响 4XX 的看法。",
+          "choice_hook": [
+            "先问周屿",
+            "先问 4XX 授权",
+            "不公开"
+          ],
+          "updates": {
+            "zhou_trust": 1,
+            "public_consent_checked": true,
+            "tang_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S11",
+          "location": "青枫居楼下 / 手机",
+          "text_brief": "唐骁看见片段后只回项目材料呢，陆沉没有点赞。周屿说你看，他们就扫兴。",
+          "choice_hook": [
+            "解释授权边界",
+            "先安抚周屿",
+            "不解释"
+          ],
+          "updates": {
+            "tang_misread": 1,
+            "luchen_distance": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S12",
+          "location": "B206 / 共享盘",
+          "text_brief": "活动材料和 C407 归档都要署名。林亦舟必须决定是把公开材料写得热闹，还是控制授权和口径。",
+          "choice_hook": [
+            "公开材料写热闹",
+            "控制授权和口径",
+            "改成临时协助"
+          ],
+          "updates": {
+            "zhou_activity_signature_scope": "branch_dependent",
+            "qinyue_pressure": 1,
+            "public_boundary": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-ZHOU-CHOICE-03",
+        "after_page": "ACT6-ZHOU-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-ZHOU-C03-A",
+            "label": "公开材料写热闹",
+            "variable_delta": {
+              "public_smooth": 2,
+              "old_debt": 1,
+              "tang_misread": 1
+            },
+            "next_block": "ACT6-ZHOU-B04"
+          },
+          {
+            "direction_id": "ACT6-ZHOU-C03-B",
+            "label": "控制授权和口径",
+            "variable_delta": {
+              "public_boundary": 2,
+              "zhou_trust": 1,
+              "qinyue_pressure": 1
+            },
+            "next_block": "ACT6-ZHOU-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-ZHOU-B04",
+      "block_name": "唐骁误读解释与活动进度",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act6_variant_id": "ACT6-ZHOU",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-ZHOU周屿线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-ZHOU-B03",
+      "next_block": "ACT6-ZHOU-B05",
+      "scene_range": [
+        "ACT6-ZHOU-S13",
+        "ACT6-ZHOU-S16"
+      ],
+      "main_location": "C407 / B206 / 4XX 门口 / 台卡桌",
+      "scene_function": "让周屿线和 C407 正面相撞，决定解释误读还是保活动进度。",
+      "required_completion_flags": [
+        "project_stability",
+        "tang_misread",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "project_stability",
+        "tang_misread",
+        "dorm_absence",
+        "zhou_trust",
+        "qinyue_pressure",
+        "public_boundary",
+        "repair_depth",
+        "time_debt",
+        "activity_link"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-ZHOU-S13",
+          "location": "C407 / 共享文档",
+          "text_brief": "唐骁只发任务清单，不再解释多余内容。林亦舟发现自己在周屿线里获得的热闹，换来了 C407 的低温。",
+          "choice_hook": [
+            "当面问唐骁",
+            "先交自己的部分",
+            "转去活动场"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "tang_misread": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S14",
+          "location": "B206 / 活动群",
+          "text_brief": "秦越说台卡要改，周屿问他能不能先过去。周屿这次没有开大玩笑，只说你不来也行。",
+          "choice_hook": [
+            "先赶过去",
+            "让周屿自己回",
+            "请秦越找替补"
+          ],
+          "updates": {
+            "zhou_trust": 1,
+            "qinyue_pressure": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S15",
+          "location": "4XX 门口 / 楼道",
+          "text_brief": "唐骁正好出门，问他到底是按项目来，还是按人来。问题难听，但具体。",
+          "choice_hook": [
+            "解释唐骁误读",
+            "说今晚回来补",
+            "不解释先走"
+          ],
+          "updates": {
+            "tang_misread": 1,
+            "repair_depth": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S16",
+          "location": "台卡桌 / C407 回声",
+          "text_brief": "台卡快定稿，C407 也快提交。林亦舟只能选择当面解释唐骁误读，或者暂缓解释保活动进度。",
+          "choice_hook": [
+            "当面解释唐骁误读",
+            "暂缓解释保活动进度",
+            "只写最低说明"
+          ],
+          "updates": {
+            "activity_link": 1,
+            "project_stability": 1,
+            "public_boundary": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-ZHOU-CHOICE-04",
+        "after_page": "ACT6-ZHOU-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-ZHOU-C04-A",
+            "label": "当面解释唐骁误读",
+            "variable_delta": {
+              "tang_misread": -1,
+              "project_stability": 1,
+              "zhou_trust": -1
+            },
+            "next_block": "ACT6-ZHOU-B05"
+          },
+          {
+            "direction_id": "ACT6-ZHOU-C04-B",
+            "label": "暂缓解释保活动进度",
+            "variable_delta": {
+              "activity_link": 1,
+              "qinyue_pressure": 1,
+              "tang_misread": 1
+            },
+            "next_block": "ACT6-ZHOU-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-ZHOU-B05",
+      "block_name": "低频联系与体面淡化预结算",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act6_variant_id": "ACT6-ZHOU",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-ZHOU周屿线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-ZHOU-B04",
+      "next_event": "ACT6-END",
+      "scene_range": [
+        "ACT6-ZHOU-S17",
+        "ACT6-ZHOU-S20"
+      ],
+      "main_location": "B204 / 东区商业街 / 青枫居楼下 / 校门口",
+      "scene_function": "输出第七卷读取的活动留名、饭局边界、半句道歉、4XX 温度和周屿最终联系范围。",
+      "required_completion_flags": [
+        "act6_closed",
+        "act6_route_pool_locked",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "zhou_activity_signature_scope",
+        "public_boundary",
+        "face_debt",
+        "meal_boundary_checked",
+        "money_boundary",
+        "polite_distance",
+        "zhou_half_apology_seen",
+        "repair_depth",
+        "joke_defense",
+        "zhou_final_contact_scope",
+        "graduation_temperature",
+        "ending_temperature_locked"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-ZHOU-S17",
+          "location": "B204 / 毕业活动协助表",
+          "text_brief": "毕业活动协助表里默认写了林亦舟的名字。周屿说顺手写了，秦越等最终表。",
+          "choice_hook": [
+            "默认留名",
+            "改成临时协助",
+            "私下问为什么"
+          ],
+          "updates": {
+            "zhou_activity_signature_scope": "branch_dependent",
+            "public_boundary": 1,
+            "face_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S18",
+          "location": "东区商业街 / 最后饭局预热",
+          "text_brief": "饭局地点在东北饺子馆和后街之间摇摆。周屿想热闹一点，唐骁只问准点，陆沉看价格。",
+          "choice_hook": [
+            "留可取消位",
+            "不替人填",
+            "只确认自己到场"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "money_boundary": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S19",
+          "location": "青枫居楼下 / 清寝旧物",
+          "text_brief": "旧台卡、活动证和 4XX 旧物混在同一只袋子里。周屿终于说那天我话说难听了点，但没有完整道歉。",
+          "choice_hook": [
+            "接住半句",
+            "追完整道歉",
+            "停在这里"
+          ],
+          "updates": {
+            "zhou_half_apology_seen": true,
+            "repair_depth": 1,
+            "joke_defense": -1
+          }
+        },
+        {
+          "page_id": "ACT6-ZHOU-S20",
+          "location": "校门口 / 武生院站预回声",
+          "text_brief": "站台还没到，第七卷已经靠近。周屿问以后是不是还看活动，林亦舟知道还看不等于 4XX 复原。",
+          "choice_hook": [
+            "毕业后低频联系",
+            "体面淡化",
+            "只说到站发消息"
+          ],
+          "updates": {
+            "zhou_final_contact_scope": "branch_dependent",
+            "graduation_temperature": "branch_dependent",
+            "ending_temperature_locked": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-ZHOU-CHOICE-05",
+        "after_page": "ACT6-ZHOU-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-ZHOU-C05-A",
+            "label": "毕业后低频联系",
+            "variable_delta": {
+              "zhou_final_contact_scope": "low_frequency_real",
+              "graduation_temperature": "zhou_low_frequency",
+              "zhou_half_apology_seen": true
+            },
+            "next_event": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-ZHOU-C05-B",
+            "label": "体面淡化",
+            "variable_delta": {
+              "zhou_final_contact_scope": "polite_distance",
+              "graduation_temperature": "polite_distance",
+              "polite_distance": 1
+            },
+            "next_event": "ACT6-END"
+          }
+        ]
+      },
+      "next_block": "ACT6-END"
+    }
+  ],
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "B204 / 主持队群消息 / 青枫居 4XX",
+      "scene_function": "确认周屿的个人去向不能被活动联络关系覆盖。",
+      "required_completion_flags": [
+        "zhou_contact_scope_checked",
+        "pre_register_boundary_checked",
+        "graduation_direction_status"
+      ],
+      "must_record": [
+        "zhou_contact_scope_checked",
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "activity_link",
+        "qinyue_pressure",
+        "public_boundary",
+        "zhou_activity_signature_scope",
+        "public_smooth",
+        "face_debt",
+        "zhou_trust",
+        "proxy_risk"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E01-ZHOU-P01",
+          "beat": "入场",
+          "text_brief": "B204 预登记表发下来，周屿手里还夹着主持队工作证，手机上秦越催活动联系人确认。",
+          "choice_hook": [
+            "先核个人手机号",
+            "先看活动联系人栏。"
+          ],
+          "updates": {
+            "zhou_contact_scope_checked": true,
+            "activity_link": 1,
+            "qinyue_pressure": 1
+          },
+          "updates_text": "A：`zhou_contact_scope_checked = true`；B：`activity_link +1`, `qinyue_pressure +1`。"
+        },
+        {
+          "page_id": "ACT7-E01-ZHOU-P02",
+          "beat": "联系方式",
+          "text_brief": "周屿想把“活动联系我也行”顺手写进备注，像把毕业也讲成排班。",
+          "choice_hook": [
+            "备注只写个人可达",
+            "写“活动协助另表”。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "zhou_activity_signature_scope": "separate_sheet"
+          },
+          "updates_text": "A：`public_boundary +1`；B：`zhou_activity_signature_scope = separate_sheet`。"
+        },
+        {
+          "page_id": "ACT7-E01-ZHOU-P03",
+          "beat": "去向待定",
+          "text_brief": "去向栏不能空，周屿说“哪里缺人去哪”，辅导员要求写待定也要复核。",
+          "choice_hook": [
+            "写待定等周屿本人确认",
+            "写活动方向但标注未定。"
+          ],
+          "updates": {
+            "graduation_direction_status": "pending_with_review",
+            "public_smooth": 1,
+            "face_debt": 1
+          },
+          "updates_text": "A：`graduation_direction_status = pending_with_review`；B：`public_smooth +1`, `face_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E01-ZHOU-P04",
+          "beat": "本人确认",
+          "text_brief": "林亦舟把自己的表压住，没替周屿填；周屿笑了一下，说“行，别显得我没人找”。",
+          "choice_hook": [
+            "各自签字",
+            "帮他看备注是否太满。"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "zhou_trust": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`pre_register_boundary_checked = true`；B：`zhou_trust +1`, `proxy_risk +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E01-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-ZHOU-C01-A",
+            "label": "联系人分开写",
+            "variable_delta": {
+              "zhou_contact_scope_checked": true,
+              "pre_register_boundary_checked": true,
+              "public_boundary": 1
+            },
+            "variable_delta_text": "zhou_contact_scope_checked = true`、`pre_register_boundary_checked = true`、`public_boundary +1`。"
+          },
+          {
+            "direction_id": "ACT7-E01-ZHOU-C01-B",
+            "label": "活动备注另表",
+            "variable_delta": {
+              "zhou_activity_signature_scope": "separate_sheet",
+              "activity_link": 1,
+              "qinyue_pressure": 1
+            },
+            "variable_delta_text": "zhou_activity_signature_scope = separate_sheet`、`activity_link +1`、`qinyue_pressure +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "西园餐厅 / 主题材料群 / 活动素材盘",
+      "scene_function": "确认周屿的主持素材、玩笑片段和私人停顿不能默认公开。",
+      "required_completion_flags": [
+        "public_consent_checked",
+        "public_scope_boundary_checked",
+        "zhou_activity_signature_scope"
+      ],
+      "must_record": [
+        "public_consent_checked",
+        "public_scope_boundary_checked",
+        "zhou_activity_signature_scope",
+        "public_boundary",
+        "public_smooth",
+        "zhou_trust",
+        "joke_defense",
+        "old_debt",
+        "proxy_risk",
+        "polite_distance",
+        "public_scope",
+        "face_debt"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E02-ZHOU-P01",
+          "beat": "模板更新",
+          "text_brief": "主题材料模板要求写公开范围，秦越顺手把周屿主持片段列进候选素材。",
+          "choice_hook": [
+            "标成仅留存",
+            "先放进候选。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "public_smooth": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`public_smooth +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-ZHOU-P02",
+          "beat": "停顿片段",
+          "text_brief": "片段里周屿有半秒停顿，后面用玩笑盖过去；周屿说“剪掉就行”。",
+          "choice_hook": [
+            "保留停顿但不公开",
+            "剪成顺滑版。"
+          ],
+          "updates": {
+            "zhou_trust": 1,
+            "public_boundary": 1,
+            "joke_defense": 1,
+            "old_debt": 1
+          },
+          "updates_text": "A：`zhou_trust +1`, `public_boundary +1`；B：`joke_defense +1`, `old_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-ZHOU-P03",
+          "beat": "本人确认",
+          "text_brief": "林亦舟把“谁能公开谁确认”写进表，周屿不太舒服，但没抢笔。",
+          "choice_hook": [
+            "让周屿自己写范围",
+            "林亦舟先替他列选项。"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`public_scope_boundary_checked = true`；B：`proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-ZHOU-P04",
+          "beat": "不公开有效",
+          "text_brief": "辅导员确认“不公开”不影响参与毕业活动，周屿把串词纸折成更小一块。",
+          "choice_hook": [
+            "提交仅留存",
+            "暂放空模板。"
+          ],
+          "updates": {
+            "public_consent_checked": true,
+            "polite_distance": 1
+          },
+          "updates_text": "A：`public_consent_checked = true`；B：`polite_distance +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E02-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-ZHOU-C01-A",
+            "label": "停顿只留存",
+            "variable_delta": {
+              "public_boundary": 2,
+              "zhou_trust": 1,
+              "public_scope": "archive_only"
+            },
+            "variable_delta_text": "public_boundary +2`、`zhou_trust +1`、`public_scope = archive_only`。"
+          },
+          {
+            "direction_id": "ACT7-E02-ZHOU-C01-B",
+            "label": "剪成顺滑版",
+            "variable_delta": {
+              "public_smooth": 2,
+              "joke_defense": 1,
+              "face_debt": 1
+            },
+            "variable_delta_text": "public_smooth +2`、`joke_defense +1`、`face_debt +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "B204 主题材料会 / 青枫居 4XX 公共桌",
+      "scene_function": "把最后一个新年写成热闹退场后的不公开权。",
+      "required_completion_flags": [
+        "opening_contrast_seen",
+        "public_scope",
+        "story_consent"
+      ],
+      "must_record": [
+        "opening_contrast_seen",
+        "public_scope",
+        "story_consent",
+        "zhou_visibility",
+        "public_boundary",
+        "zhou_warmth",
+        "zhou_trust",
+        "public_smooth",
+        "zhou_half_apology_seen",
+        "activity_link",
+        "joke_defense"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E03-ZHOU-P01",
+          "beat": "入场",
+          "text_brief": "周屿刚从主持队过来，手里有串词纸，纸角被汗浸软。",
+          "choice_hook": [
+            "让他带串词纸上桌",
+            "只带空白目录。"
+          ],
+          "updates": {
+            "zhou_visibility": 1,
+            "public_boundary": 1
+          },
+          "updates_text": "A：`zhou_visibility +1`；B：`public_boundary +1`。"
+        },
+        {
+          "page_id": "ACT7-E03-ZHOU-P02",
+          "beat": "核验",
+          "text_brief": "有人问能不能讲一段“主持人成长故事”，周屿下意识想开玩笑。",
+          "choice_hook": [
+            "接住玩笑但不扩写",
+            "提醒他可不讲。"
+          ],
+          "updates": {
+            "zhou_warmth": 1,
+            "zhou_trust": 1
+          },
+          "updates_text": "A：`zhou_warmth +1`；B：`zhou_trust +1`。"
+        },
+        {
+          "page_id": "ACT7-E03-ZHOU-P03",
+          "beat": "旧物",
+          "text_brief": "糖盒和串词纸并排，热闹物件忽然像一张不太好看的证据。",
+          "choice_hook": [
+            "糖盒只留存",
+            "串词纸进活动材料。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "public_smooth": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`public_smooth +1`。"
+        },
+        {
+          "page_id": "ACT7-E03-ZHOU-P04",
+          "beat": "回声",
+          "text_brief": "周屿把糖递出去又收回，最后只在确认表写“灯光照可用”。",
+          "choice_hook": [
+            "留公共素材",
+            "留私人空白。"
+          ],
+          "updates": {
+            "zhou_half_apology_seen": "tendency",
+            "activity_link": 1
+          },
+          "updates_text": "A：`activity_link +1`；B：`zhou_half_apology_seen` 倾向。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E03-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-ZHOU-C01-A",
+            "label": "接住玩笑但不扩写",
+            "variable_delta": {
+              "public_smooth": 1,
+              "zhou_trust": 1,
+              "joke_defense": true
+            },
+            "variable_delta_text": "public_smooth +1`、`zhou_trust +1`、`joke_defense` 不下降。"
+          },
+          {
+            "direction_id": "ACT7-E03-ZHOU-C01-B",
+            "label": "提醒他可以不讲",
+            "variable_delta": {
+              "public_boundary": 1,
+              "joke_defense": -1,
+              "zhou_trust": 1
+            },
+            "variable_delta_text": "public_boundary +1`、`joke_defense -1`、`zhou_trust +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "开题 / 毕业设计方向",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 门口 / B204 第二轮复核会 / 活动素材盘",
+      "scene_function": "把毕业设计方向和周屿活动素材拆开，确认谁能签、谁不能被写进课题。",
+      "required_completion_flags": [
+        "thesis_topic_form_seen",
+        "topic_self_signed",
+        "topic_boundary_checked"
+      ],
+      "must_record": [
+        "thesis_topic_form_seen",
+        "topic_self_signed",
+        "topic_boundary_checked",
+        "advisor_group_checked",
+        "activity_link",
+        "topic_status",
+        "project_stability",
+        "qinyue_pressure",
+        "proxy_risk",
+        "topic_review_time",
+        "zhou_trust",
+        "public_boundary"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E04-ZHOU-P01",
+          "beat": "导师组名单",
+          "text_brief": "周屿指着校园活动信息展示方向，说“你写这个不是正好？”",
+          "choice_hook": [
+            "让周屿自己问导师组",
+            "先听周屿建议。"
+          ],
+          "updates": {
+            "advisor_group_checked": true,
+            "activity_link": 1
+          },
+          "updates_text": "A：`advisor_group_checked = true`；B：`activity_link +1`。"
+        },
+        {
+          "page_id": "ACT7-E04-ZHOU-P02",
+          "beat": "三张表",
+          "text_brief": "去向预登记、毕业设计方向初表和导师组意向表叠在一起，活动素材盘图标还亮着。",
+          "choice_hook": [
+            "方向待定并签名",
+            "填活动信息展示。"
+          ],
+          "updates": {
+            "topic_status": "pending_with_reason",
+            "project_stability": 1,
+            "qinyue_pressure": 1
+          },
+          "updates_text": "A：`topic_status = pending_with_reason`；B：`project_stability +1`, `qinyue_pressure +1`。"
+        },
+        {
+          "page_id": "ACT7-E04-ZHOU-P03",
+          "beat": "四人分流",
+          "text_brief": "周屿填主持活动管理相关，唐骁看格式，陆沉只划掉无关来源，林亦舟没有替任何人写方向。",
+          "choice_hook": [
+            "只签自己的表不替周屿",
+            "帮周屿看表述。"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`topic_boundary_checked = true`；B：`proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E04-ZHOU-P04",
+          "beat": "邮件回执",
+          "text_brief": "陈老师回邮件让林亦舟先说明自己的数据来源，周屿发“别把我写太漂亮”。",
+          "choice_hook": [
+            "保存活动邮件回执",
+            "把这句发给周屿确认。"
+          ],
+          "updates": {
+            "topic_review_time": "周三 C407",
+            "zhou_trust": 1,
+            "public_boundary": 1
+          },
+          "updates_text": "A：`topic_review_time = \"周三 C407\"`；B：`zhou_trust +1`, `public_boundary +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E04-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-ZHOU-C01-A",
+            "label": "待定并本人签字",
+            "variable_delta": {
+              "thesis_topic_form_seen": true,
+              "topic_self_signed": true,
+              "topic_boundary_checked": true
+            },
+            "variable_delta_text": "thesis_topic_form_seen = true`、`topic_self_signed = true`、`topic_boundary_checked = true`。"
+          },
+          {
+            "direction_id": "ACT7-E04-ZHOU-C01-B",
+            "label": "活动方向但先复核",
+            "variable_delta": {
+              "thesis_topic_form_seen": true,
+              "project_stability": 1,
+              "qinyue_pressure": 1,
+              "topic_self_signed": true
+            },
+            "variable_delta_text": "thesis_topic_form_seen = true`、`project_stability +1`、`qinyue_pressure +1`、`topic_self_signed = true`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月毕业事项排队",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "B204 / 明德楼学工窗口 / 主持彩排后台 / 晨光体育场通知",
+      "scene_function": "把主持彩排、证书核验、毕业照信息采集和开题复核压到同一时间段。",
+      "required_completion_flags": [
+        "march_queue_seen",
+        "grad_photo_info_seen",
+        "march_boundary_checked"
+      ],
+      "must_record": [
+        "march_queue_seen",
+        "grad_photo_info_seen",
+        "march_boundary_checked",
+        "activity_link",
+        "time_debt",
+        "qinyue_pressure",
+        "proxy_risk",
+        "project_stability",
+        "zhou_trust",
+        "face_debt",
+        "public_boundary"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E05-ZHOU-P01",
+          "beat": "事项预排",
+          "text_brief": "三四月事项预排贴出来，周屿彩排、证书核验、毕业照信息采集撞在同一周。",
+          "choice_hook": [
+            "先处理自己的复核",
+            "帮周屿看彩排空档。"
+          ],
+          "updates": {
+            "march_queue_seen": true,
+            "activity_link": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`march_queue_seen = true`；B：`activity_link +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E05-ZHOU-P02",
+          "beat": "窗口挤压",
+          "text_brief": "明德楼窗口排队，秦越催主持队名单，周屿说“你先去，我能编”。",
+          "choice_hook": [
+            "只转达活动窗口规则",
+            "帮他问补交口径。"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "qinyue_pressure": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`march_boundary_checked = true`；B：`qinyue_pressure +1`, `proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E05-ZHOU-P03",
+          "beat": "开题红批前置",
+          "text_brief": "陈老师要求十点前改数据来源，周屿的彩排消息同时弹出来。",
+          "choice_hook": [
+            "自己改数据来源",
+            "先问周屿活动数据口径。"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "zhou_trust": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`project_stability +1`；B：`zhou_trust +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E05-ZHOU-P04",
+          "beat": "缺席不补拍",
+          "text_brief": "毕业照信息采集写着缺席不补拍，周屿说他可以“主持完冲过去”。",
+          "choice_hook": [
+            "要求本人确认批次",
+            "先给他占消息提醒。"
+          ],
+          "updates": {
+            "grad_photo_info_seen": true,
+            "face_debt": 1
+          },
+          "updates_text": "A：`grad_photo_info_seen = true`；B：`face_debt +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E05-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-ZHOU-C01-A",
+            "label": "只转达规则，不代跑",
+            "variable_delta": {
+              "march_queue_seen": true,
+              "march_boundary_checked": true,
+              "public_boundary": 1
+            },
+            "variable_delta_text": "march_queue_seen = true`、`march_boundary_checked = true`、`public_boundary +1`。"
+          },
+          {
+            "direction_id": "ACT7-E05-ZHOU-C01-B",
+            "label": "现场协助但本人确认",
+            "variable_delta": {
+              "march_queue_seen": true,
+              "zhou_trust": 1,
+              "time_debt": 1,
+              "qinyue_pressure": 1
+            },
+            "variable_delta_text": "march_queue_seen = true`、`zhou_trust +1`、`time_debt +1`、`qinyue_pressure +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "改论文 / 改毕业设计",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 九龙壁后台 / 4XX 公共桌",
+      "scene_function": "检验周屿的临场口径能不能只作为提醒，而不是替林亦舟改稿。",
+      "required_completion_flags": [
+        "thesis_revision_version",
+        "thesis_boundary_checked",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_revision_version",
+        "thesis_boundary_checked",
+        "revision_submitted_before_deadline",
+        "project_stability",
+        "zhou_trust",
+        "time_debt",
+        "public_boundary",
+        "proxy_risk",
+        "zhou_visibility",
+        "missed_chance",
+        "zhou_half_apology_seen",
+        "activity_link"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E06-ZHOU-P01",
+          "beat": "红批",
+          "text_brief": "导师要求把“活动效果”改成可验证的展示逻辑，周屿那边彩排同时催人。",
+          "choice_hook": [
+            "先改自己的摘要",
+            "先帮周屿看口径。"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "zhou_trust": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`project_stability +1`；B：`zhou_trust +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E06-ZHOU-P02",
+          "beat": "给谁看",
+          "text_brief": "周屿发来一句“你这段像主持串词”，玩笑背后是他也赶。",
+          "choice_hook": [
+            "接住建议但不让他代写",
+            "让他帮润色整段。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E06-ZHOU-P03",
+          "beat": "改稿",
+          "text_brief": "九龙壁后台和 C407 修改稿同时开着，热闹不等于余裕。",
+          "choice_hook": [
+            "让周屿去彩排",
+            "请他多留十分钟。"
+          ],
+          "updates": {
+            "zhou_visibility": 1,
+            "missed_chance": 1
+          },
+          "updates_text": "A：`zhou_visibility +1`；B：`missed_chance +1`。"
+        },
+        {
+          "page_id": "ACT7-E06-ZHOU-P04",
+          "beat": "提交",
+          "text_brief": "修改版提交后，周屿只回“别写太漂亮”，像玩笑也像提醒。",
+          "choice_hook": [
+            "留下这句作答辩前回声",
+            "删掉私人痕迹。"
+          ],
+          "updates": {
+            "zhou_half_apology_seen": "tendency",
+            "public_boundary": 1
+          },
+          "updates_text": "A：`zhou_half_apology_seen` 倾向；B：`public_boundary +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E06-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-ZHOU-C01-A",
+            "label": "只接一句口径提醒",
+            "variable_delta": {
+              "thesis_boundary_checked": true,
+              "public_boundary": 1,
+              "zhou_trust": 1
+            },
+            "variable_delta_text": "thesis_boundary_checked = true`、`public_boundary +1`、`zhou_trust +1`。"
+          },
+          {
+            "direction_id": "ACT7-E06-ZHOU-C01-B",
+            "label": "让周屿多看十分钟",
+            "variable_delta": {
+              "time_debt": 1,
+              "proxy_risk": 1,
+              "activity_link": 1
+            },
+            "variable_delta_text": "time_debt +1`、`proxy_risk +1`、`activity_link +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩 / 答辩以后",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "C407 答辩门口 / 活动现场后台 / 打印店",
+      "scene_function": "检验周屿能不能从活动现场赶来，并在门口停住玩笑。",
+      "required_completion_flags": [
+        "defense_order_seen",
+        "defense_boundary_checked",
+        "defense_message_echo"
+      ],
+      "must_record": [
+        "defense_order_seen",
+        "defense_boundary_checked",
+        "defense_message_echo",
+        "activity_link",
+        "zhou_trust",
+        "time_debt",
+        "say_clear",
+        "joke_defense",
+        "public_boundary",
+        "proxy_risk",
+        "zhou_half_apology_seen",
+        "zhou_final_contact_scope",
+        "public_smooth"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E07-ZHOU-P01",
+          "beat": "顺序表",
+          "text_brief": "林亦舟顺序靠后，周屿那边活动收尾同时催归还工作证。",
+          "choice_hook": [
+            "让周屿先处理活动",
+            "发消息问他能不能来。"
+          ],
+          "updates": {
+            "activity_link": 1,
+            "zhou_trust": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`activity_link +1`；B：`zhou_trust +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E07-ZHOU-P02",
+          "beat": "门口",
+          "text_brief": "周屿可能从活动现场赶来，想逗一句又停住。",
+          "choice_hook": [
+            "接住他的停顿",
+            "用玩笑盖过去。"
+          ],
+          "updates": {
+            "say_clear": 1,
+            "joke_defense": 1
+          },
+          "updates_text": "A：`say_clear +1`；B：`joke_defense +1`。"
+        },
+        {
+          "page_id": "ACT7-E07-ZHOU-P03",
+          "beat": "补交",
+          "text_brief": "答辩后要补签活动数据来源，周屿知道口径但不能替他写。",
+          "choice_hook": [
+            "自己补来源",
+            "请周屿帮看一句是否太漂亮。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E07-ZHOU-P04",
+          "beat": "回声",
+          "text_brief": "周屿发“别写我等过你”，像玩笑也像真的。",
+          "choice_hook": [
+            "留下这句进入饭局回声",
+            "删掉私人痕迹。"
+          ],
+          "updates": {
+            "zhou_half_apology_seen": true,
+            "zhou_final_contact_scope": "low_frequency"
+          },
+          "updates_text": "A：`zhou_half_apology_seen = true`；B：`zhou_final_contact_scope = low_frequency`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E07-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-ZHOU-C01-A",
+            "label": "接住停顿",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "zhou_half_apology_seen": true,
+              "say_clear": 1
+            },
+            "variable_delta_text": "defense_boundary_checked = true`、`zhou_half_apology_seen = true`、`say_clear +1`。"
+          },
+          {
+            "direction_id": "ACT7-E07-ZHOU-C01-B",
+            "label": "玩笑盖过去",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "joke_defense": 1,
+              "public_smooth": 1
+            },
+            "variable_delta_text": "defense_boundary_checked = true`、`joke_defense +1`、`public_smooth +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照 / 影像授权",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场北侧看台 / 活动照片共享盘 / 4XX 群",
+      "scene_function": "检验同框资格和活动照片授权，确认毕业照不是和解证明。",
+      "required_completion_flags": [
+        "grad_photo_info_seen",
+        "photo_boundary_checked",
+        "photo_self_confirmed"
+      ],
+      "must_record": [
+        "grad_photo_info_seen",
+        "photo_boundary_checked",
+        "photo_self_confirmed",
+        "activity_link",
+        "polite_distance",
+        "time_debt",
+        "zhou_trust",
+        "public_boundary",
+        "public_smooth",
+        "proxy_risk",
+        "joke_defense"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E08-ZHOU-P01",
+          "beat": "批次表",
+          "text_brief": "周屿主持彩排点名和寝室合照批次相邻，名单上林亦舟仍被写在活动协助栏。",
+          "choice_hook": [
+            "先核寝室合照",
+            "先核活动协助照。"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "activity_link": 1
+          },
+          "updates_text": "A：`photo_boundary_checked = true`；B：`activity_link +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-ZHOU-P02",
+          "beat": "错过第三组",
+          "text_brief": "周屿从彩排点赶来，手里工作证还没摘，第三组已经拍完。",
+          "choice_hook": [
+            "接受活动缺席不补",
+            "等最后一张补拍。"
+          ],
+          "updates": {
+            "polite_distance": 1,
+            "time_debt": 1,
+            "zhou_trust": 1
+          },
+          "updates_text": "A：`polite_distance +1`；B：`time_debt +1`, `zhou_trust +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-ZHOU-P03",
+          "beat": "预览缩略图",
+          "text_brief": "活动照比寝室照更顺，周屿说“这张能用”，林亦舟看见停顿被裁掉。",
+          "choice_hook": [
+            "标注仅活动留存",
+            "允许毕业材料使用。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "public_smooth": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`public_smooth +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-ZHOU-P04",
+          "beat": "授权确认",
+          "text_brief": "周屿自己勾了“仅留存”，又把笔推给林亦舟，让他勾自己的。",
+          "choice_hook": [
+            "各自确认",
+            "互相核一遍。"
+          ],
+          "updates": {
+            "photo_self_confirmed": true,
+            "zhou_trust": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`photo_self_confirmed = true`；B：`zhou_trust +1`, `proxy_risk +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E08-ZHOU-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-ZHOU-C01-A",
+            "label": "活动照仅留存",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "public_boundary": 1,
+              "joke_defense": -1
+            },
+            "variable_delta_text": "photo_boundary_checked = true`、`public_boundary +1`、`joke_defense -1`。"
+          },
+          {
+            "direction_id": "ACT7-E08-ZHOU-C01-B",
+            "label": "允许活动材料使用",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "public_smooth": 1,
+              "activity_link": 1
+            },
+            "variable_delta_text": "photo_boundary_checked = true`、`public_smooth +1`、`activity_link +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝 / 旧物处理",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居 4XX / 宿管窗口 / 活动布袋",
+      "scene_function": "处理台卡、糖盒、活动布袋和公共桌旧物，确认谁能留、谁不能替谁丢。",
+      "required_completion_flags": [
+        "clearance_boundary_checked",
+        "shared_item_owner_checked",
+        "dorm_item_confirmed_by_self"
+      ],
+      "must_record": [
+        "clearance_boundary_checked",
+        "shared_item_owner_checked",
+        "dorm_item_confirmed_by_self",
+        "public_boundary",
+        "face_debt",
+        "qinyue_pressure",
+        "zhou_half_apology_seen",
+        "polite_distance",
+        "zhou_trust"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E09-ZHOU-P01",
+          "beat": "清单入场",
+          "text_brief": "清寝共享清单跳出“周屿彩排物料未归还”，公共桌下还有一只活动布袋。",
+          "choice_hook": [
+            "先列自己的物品",
+            "单列活动布袋。"
+          ],
+          "updates": {
+            "clearance_boundary_checked": true,
+            "shared_item_owner_checked": true
+          },
+          "updates_text": "A：`clearance_boundary_checked = true`；B：`shared_item_owner_checked = true`。"
+        },
+        {
+          "page_id": "ACT7-E09-ZHOU-P02",
+          "beat": "旧物归属",
+          "text_brief": "糖盒、串词纸、没用完的胸牌贴在一起，周屿说“丢了也行”。",
+          "choice_hook": [
+            "让他自己勾选",
+            "替他装进布袋。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "face_debt": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`face_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E09-ZHOU-P03",
+          "beat": "宿管窗口",
+          "text_brief": "宿管阿姨只看清单不问故事，周屿第一次没把气氛逗起来。",
+          "choice_hook": [
+            "只交本人确认",
+            "顺手补活动物料说明。"
+          ],
+          "updates": {
+            "clearance_boundary_checked": true,
+            "qinyue_pressure": 1
+          },
+          "updates_text": "A：`clearance_boundary_checked = true`；B：`qinyue_pressure +1`。"
+        },
+        {
+          "page_id": "ACT7-E09-ZHOU-P04",
+          "beat": "公共桌空位",
+          "text_brief": "公共桌空出来，活动布袋被周屿挂到自己椅背，没再放到桌中央。",
+          "choice_hook": [
+            "不追问",
+            "问他要不要留一张台卡。"
+          ],
+          "updates": {
+            "zhou_half_apology_seen": "tendency",
+            "polite_distance": 1
+          },
+          "updates_text": "A：`polite_distance +1`；B：`zhou_half_apology_seen` 倾向。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E09-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-ZHOU-C01-A",
+            "label": "让周屿自己勾选",
+            "variable_delta": {
+              "clearance_boundary_checked": true,
+              "public_boundary": 1,
+              "face_debt": -1
+            },
+            "variable_delta_text": "clearance_boundary_checked = true`、`public_boundary +1`、`face_debt -1`。"
+          },
+          {
+            "direction_id": "ACT7-E09-ZHOU-C01-B",
+            "label": "帮他装袋但不替丢",
+            "variable_delta": {
+              "shared_item_owner_checked": true,
+              "zhou_trust": 1,
+              "face_debt": 1
+            },
+            "variable_delta_text": "shared_item_owner_checked = true`、`zhou_trust +1`、`face_debt +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东北饺子馆 / 后街 / 班级群",
+      "scene_function": "检验请客能不能不再替代道歉，饭桌能不能不被热闹盖掉。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "zhou_half_apology_seen",
+        "polite_distance"
+      ],
+      "must_record": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "zhou_half_apology_seen",
+        "polite_distance",
+        "money_boundary",
+        "face_debt",
+        "public_boundary",
+        "dorm_warmth",
+        "time_debt",
+        "public_smooth",
+        "repair_depth",
+        "old_debt"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E10-ZHOU-P01",
+          "beat": "人数确认",
+          "text_brief": "周屿在群里说他请饮料，唐骁只回人数，陆沉回“到”。",
+          "choice_hook": [
+            "AA 写清",
+            "接受周屿请饮料。"
+          ],
+          "updates": {
+            "money_boundary": 1,
+            "face_debt": 1
+          },
+          "updates_text": "A：`money_boundary +1`；B：`face_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E10-ZHOU-P02",
+          "beat": "到场顺序",
+          "text_brief": "周屿迟到两分钟，进门就想说笑，看到空位又停住。",
+          "choice_hook": [
+            "不替留座",
+            "留一个可取消空位。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "dorm_warmth": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`dorm_warmth +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E10-ZHOU-P03",
+          "beat": "半句旧账",
+          "text_brief": "周屿把筷套折了又展开，说“以前有些话吧，挺没劲的。”",
+          "choice_hook": [
+            "接住半句",
+            "转成轻松话题。"
+          ],
+          "updates": {
+            "zhou_half_apology_seen": true,
+            "public_smooth": 1
+          },
+          "updates_text": "A：`zhou_half_apology_seen = true`；B：`public_smooth +1`。"
+        },
+        {
+          "page_id": "ACT7-E10-ZHOU-P04",
+          "beat": "结账",
+          "text_brief": "账单被扫码分摊，周屿没再抢着付，只把一瓶没开的饮料推过来。",
+          "choice_hook": [
+            "收下但 AA",
+            "退回饮料。"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "polite_distance": 1
+          },
+          "updates_text": "A：`meal_boundary_checked = true`；B：`polite_distance +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E10-ZHOU-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-ZHOU-C01-A",
+            "label": "接住半句道歉",
+            "variable_delta": {
+              "zhou_half_apology_seen": true,
+              "repair_depth": 1,
+              "face_debt": -1
+            },
+            "variable_delta_text": "zhou_half_apology_seen = true`、`repair_depth +1`、`face_debt -1`。"
+          },
+          {
+            "direction_id": "ACT7-E10-ZHOU-C01-B",
+            "label": "饭桌保持体面",
+            "variable_delta": {
+              "public_smooth": 1,
+              "meal_boundary_checked": true,
+              "old_debt": 1
+            },
+            "variable_delta_text": "public_smooth +1`、`meal_boundary_checked = true`、`old_debt +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续 / 证书 / 档案",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "明德楼离校窗口 / 活动证明领取处 / 武生院站动线",
+      "scene_function": "收束离校手续和活动协助署名，确认周屿线的公开身份不覆盖私人边界。",
+      "required_completion_flags": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "zhou_activity_signature_scope"
+      ],
+      "must_record": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "zhou_activity_signature_scope",
+        "activity_link",
+        "time_debt",
+        "public_smooth",
+        "say_clear",
+        "polite_distance",
+        "zhou_trust",
+        "public_boundary",
+        "qinyue_pressure",
+        "tang_misread"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E11-ZHOU-P01",
+          "beat": "离校单",
+          "text_brief": "离校单、证书和档案排队，周屿另有一张活动协助证明要盖章。",
+          "choice_hook": [
+            "先办自己的离校单",
+            "陪他去活动证明窗口。"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "activity_link": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`leaving_boundary_checked = true`；B：`activity_link +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-ZHOU-P02",
+          "beat": "署名复核",
+          "text_brief": "活动证明里林亦舟被写成协助，秦越问是否改成临时协助。",
+          "choice_hook": [
+            "改成临时协助",
+            "保留完整协助。"
+          ],
+          "updates": {
+            "zhou_activity_signature_scope": "temporary_assist",
+            "public_smooth": 1
+          },
+          "updates_text": "A：`zhou_activity_signature_scope = temporary_assist`；B：`public_smooth +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-ZHOU-P03",
+          "beat": "档案封口",
+          "text_brief": "档案袋封口后，周屿说“你看，盖章比人诚实”。",
+          "choice_hook": [
+            "回他一句具体话",
+            "只看封条。"
+          ],
+          "updates": {
+            "say_clear": 1,
+            "polite_distance": 1
+          },
+          "updates_text": "A：`say_clear +1`；B：`polite_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-ZHOU-P04",
+          "beat": "证书离场",
+          "text_brief": "周屿把工作证从挂绳上摘下来，和毕业证分开放。",
+          "choice_hook": [
+            "不再帮他收",
+            "提醒别落下。"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "zhou_trust": 1
+          },
+          "updates_text": "A：`leaving_boundary_checked = true`；B：`zhou_trust +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E11-ZHOU-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-ZHOU-C01-A",
+            "label": "改成临时协助",
+            "variable_delta": {
+              "zhou_activity_signature_scope": "temporary_assist",
+              "public_boundary": 2,
+              "qinyue_pressure": -1
+            },
+            "variable_delta_text": "zhou_activity_signature_scope = temporary_assist`、`public_boundary +2`、`qinyue_pressure -1`。"
+          },
+          {
+            "direction_id": "ACT7-E11-ZHOU-C01-B",
+            "label": "保留完整协助",
+            "variable_delta": {
+              "activity_link": 1,
+              "public_smooth": 1,
+              "tang_misread": 1
+            },
+            "variable_delta_text": "activity_link +1`、`public_smooth +1`、`tang_misread +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站 / 毕业后消息",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "act7_variant_id": "ACT7-ZHOU",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "ZHOU-ENDING",
+      "main_location": "武生院站 / 地铁口 / 4XX 群 / 周屿私聊",
+      "scene_function": "输出周屿线最终温度：半句道歉、低频联系、体面淡化或迟来遗憾。",
+      "required_completion_flags": [
+        "station_boundary_checked",
+        "ending_temperature_locked",
+        "zhou_final_contact_scope",
+        "polite_distance"
+      ],
+      "must_record": [
+        "station_boundary_checked",
+        "ending_temperature_locked",
+        "zhou_final_contact_scope",
+        "polite_distance",
+        "zhou_half_apology_seen",
+        "joke_defense",
+        "public_boundary",
+        "say_clear",
+        "continue_contact",
+        "final_group_state",
+        "present_but_not_close"
+      ],
+      "participants_hint": "按周屿线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E12-ZHOU-P01",
+          "beat": "站口短停",
+          "text_brief": "武生院站口人流很快，周屿拎着活动布袋，说“别搞得像散伙主持词”。",
+          "choice_hook": [
+            "让他说完",
+            "顺着玩笑过去。"
+          ],
+          "updates": {
+            "zhou_half_apology_seen": "tendency",
+            "joke_defense": 1
+          },
+          "updates_text": "A：`zhou_half_apology_seen` 倾向；B：`joke_defense +1`。"
+        },
+        {
+          "page_id": "ACT7-E12-ZHOU-P02",
+          "beat": "布袋交接",
+          "text_brief": "布袋里有一张没用上的台卡和一颗没编号的糖，周屿说“这个你别公开”。",
+          "choice_hook": [
+            "收下仅留存",
+            "当场问为什么给。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "say_clear": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`say_clear +1`。"
+        },
+        {
+          "page_id": "ACT7-E12-ZHOU-P03",
+          "beat": "私聊频率",
+          "text_brief": "进站前周屿问“以后没事也能发你吧”，声音比平时低。",
+          "choice_hook": [
+            "说可以，但低频",
+            "让他有事再说。"
+          ],
+          "updates": {
+            "zhou_final_contact_scope": "low_frequency_real",
+            "polite_distance": 1
+          },
+          "updates_text": "A：`zhou_final_contact_scope = low_frequency_real`；B：`polite_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E12-ZHOU-P04",
+          "beat": "群消息",
+          "text_brief": "4XX 群里有人报到站，周屿发了个表情又撤回，改成“到了说一声”。",
+          "choice_hook": [
+            "回“到了说”",
+            "私聊回他半句。"
+          ],
+          "updates": {
+            "continue_contact": "tendency",
+            "final_group_state": "not_disbanded"
+          },
+          "updates_text": "A：`final_group_state = not_disbanded`；B：`continue_contact` 倾向。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-ZHOU-CHOICE-01",
+        "after_page": "ACT7-E12-ZHOU-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-ZHOU-C01-A",
+            "label": "低频但真实联系",
+            "variable_delta": {
+              "zhou_final_contact_scope": "low_frequency_real",
+              "continue_contact": true,
+              "ending_temperature_locked": true
+            },
+            "variable_delta_text": "zhou_final_contact_scope = low_frequency_real`、`continue_contact`、`ending_temperature_locked = true`。"
+          },
+          {
+            "direction_id": "ACT7-E12-ZHOU-C01-B",
+            "label": "体面收住",
+            "variable_delta": {
+              "polite_distance": 1,
+              "present_but_not_close": true,
+              "ending_temperature_locked": true
+            },
+            "variable_delta_text": "polite_distance +1`、`present_but_not_close`、`ending_temperature_locked = true`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把周屿线写成活动圈奖励线。",
+        "不得让林亦舟替周屿填表、签字、公开授权或解释缺席。",
+        "不得用毕业照、最后饭局或站口消息强行完成 4XX 大团圆。"
+      ]
+    }
+  ],
+  "ending_candidates": [
+    {
+      "ending_id": "ZHOU-END-LOW-FREQUENCY-REAL",
+      "condition_hint": "zhou_final_contact_scope = low_frequency_real, zhou_trust >= 5, public_boundary >= 3",
+      "text_landing": "活动热闹退潮后仍保留低频私聊，不靠公开场面证明关系。"
+    },
+    {
+      "ending_id": "ZHOU-END-HALF-APOLOGY",
+      "condition_hint": "zhou_half_apology_seen = true, face_debt <= 3",
+      "text_landing": "周屿没有把话说满，但半句道歉留在毕业现场，关系不热闹却真实。"
+    },
+    {
+      "ending_id": "ZHOU-END-POLITE-DISTANCE",
+      "condition_hint": "polite_distance >= 4, zhou_final_contact_scope != low_frequency_real",
+      "text_landing": "他们保住体面和活动记录，却把私下联系降到很低。"
+    },
+    {
+      "ending_id": "ZHOU-END-ACTIVITY-COST",
+      "condition_hint": "face_debt >= 5 or dorm_absence >= 4",
+      "text_landing": "靠近周屿换来活动圈人情，也留下宿舍缺席和公开误读的成本。"
+    },
+    {
+      "ending_id": "ZHOU-END-MISREAD",
+      "condition_hint": "tang_misread >= 4 or luchen_distance >= 4",
+      "text_landing": "未被选择的人没有消失，误读和距离在毕业后继续低温回响。"
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "route_id": "R5-ZHOU",
+    "route_pool_id": "POOL-R5-ZHOU",
+    "act7_variant_id": "ACT7-ZHOU",
+    "act7_core_event_count": 12,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_required_completion_flags": [
+      "zhou_contact_scope_checked",
+      "pre_register_boundary_checked",
+      "graduation_direction_status",
+      "public_consent_checked",
+      "public_scope_boundary_checked",
+      "zhou_activity_signature_scope",
+      "opening_contrast_seen",
+      "public_scope",
+      "story_consent",
+      "thesis_topic_form_seen",
+      "topic_self_signed",
+      "topic_boundary_checked",
+      "march_queue_seen",
+      "grad_photo_info_seen",
+      "march_boundary_checked",
+      "thesis_revision_version",
+      "thesis_boundary_checked",
+      "revision_submitted_before_deadline",
+      "defense_order_seen",
+      "defense_boundary_checked",
+      "defense_message_echo",
+      "photo_boundary_checked",
+      "photo_self_confirmed",
+      "clearance_boundary_checked",
+      "shared_item_owner_checked",
+      "dorm_item_confirmed_by_self",
+      "meal_boundary_checked",
+      "meal_attendance_locked",
+      "zhou_half_apology_seen",
+      "polite_distance",
+      "leaving_boundary_checked",
+      "certificate_or_archive_seen",
+      "station_boundary_checked",
+      "ending_temperature_locked",
+      "zhou_final_contact_scope"
+    ],
+    "act7_each_event_page_count": 4,
+    "act7_each_event_direction_count": 2,
+    "act7_source_detail_doc": "开发细稿_IF第七卷ACT7-ZHOU周屿线事件变体剧情页.md",
+    "act5_full_page_json_status": "not_converted_in_this_file",
+    "act6_full_page_json_status": "full_page_json_ready",
+    "act6_detail_block_count": 5,
+    "act6_page_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_direction_count": 10
+  }
+}

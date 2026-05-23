@@ -1,0 +1,3550 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-22",
+  "route_id": "R3-PERFECT",
+  "route_name": "完美子外流",
+  "route_pool_id": "POOL-R3-PERFECT",
+  "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+  "route_level": "B",
+  "purpose": "Act3 P0-A perfect derivation, Act4 life-radius layer, Act5 bridge layer, Act6, and Act7 page-level JSON for R3-PERFECT. P0-A derives mode_perfect from A3 parent pool into R3-PERFECT; Act4 carries low-risk life radius and private delay; Act5 covers five required bridge windows; Act6/Act7 complete route shaping and graduation settlement.",
+  "source_docs": [
+    "开发文本_IF分支P0-A第三幕社团完美线.md",
+    "开发规格_IF路线Schema与P0节点池.md",
+    "开发长线_IF可玩支线R3-PERFECT完美子外流.md",
+    "开发细稿_IF第四幕ACT4-PERFECT完美子外流生活半径剧情页.md",
+    "开发细稿_IF第六卷ACT6-PERFECT完美子外流正式剧情页.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发数据_IF剧情页级JSON_A3-ACTIVITY-PUBLIC_v1.json",
+    "开发数据_IF剧情页级JSON_R5-TANG_v1.json",
+    "开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json",
+    "开发规则_IF第四幕生活半径与池内流硬约束.md",
+    "开发细稿_IF第五幕ACT5-PERFECT完美子外流桥接剧情页.md"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_outflow",
+    "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+    "route_pool_id": "POOL-R3-PERFECT",
+    "route_focus": "perfect",
+    "route_mode_tag": "mode_perfect",
+    "outflow_stage": "act3_activity",
+    "entry_node": "P0A_ACT3_ROUTE_CONFIRM",
+    "pool_entry_choice": "P0A_PERFECT_ACCEPT_SCOPE",
+    "active_route_id": "R3-PERFECT",
+    "primary_bond": "public_credit_with_cost",
+    "romance_origin": "none",
+    "route_lock": "R3-PERFECT",
+    "route_switch_allowed": false,
+    "hard_outflow": false,
+    "p0a_derivation_json_status": "full_page_json_ready",
+    "p0a_derivation_node_count": 1,
+    "p0a_derivation_page_count": 4,
+    "p0a_derivation_choice_window_count": 1,
+    "p0a_derivation_direction_count": 4,
+    "p0a_source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+    "act4_variant_id": "ACT4-PERFECT",
+    "act4_source_detail_doc": "开发细稿_IF第四幕ACT4-PERFECT完美子外流生活半径剧情页.md",
+    "act4_scene_count": 14,
+    "act4_block_count": 5,
+    "act4_choice_window_count": 5,
+    "act4_directions_per_window_min": 3,
+    "act4_direction_count": 15,
+    "act4_route_pool_locked": true,
+    "act4_next_node": "ACT5-PERFECT-B01",
+    "act4_required_nodes": [
+      "ACT4-PERFECT-B01",
+      "ACT4-PERFECT-B02",
+      "ACT4-PERFECT-B03",
+      "ACT4-PERFECT-B04",
+      "ACT4-PERFECT-B05"
+    ],
+    "act5_bridge_variant_id": "ACT5-PERFECT",
+    "act5_source_detail_doc": "开发细稿_IF第五幕ACT5-PERFECT完美子外流桥接剧情页.md",
+    "act5_bridge_node_count": 5,
+    "act5_bridge_page_count": 20,
+    "act5_bridge_choice_window_count": 5,
+    "act5_bridge_direction_count": 15,
+    "act5_choice_floor_met": true,
+    "act5_required_windows_seen": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_next_node": "ACT6-PERFECT-B01",
+    "act6_variant_id": "ACT6-PERFECT",
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "act6_full_page_json_started": true,
+    "act6_core_scenes_in_json": [
+      "ACT6-PERFECT-S01",
+      "ACT6-PERFECT-S02",
+      "ACT6-PERFECT-S03",
+      "ACT6-PERFECT-S04",
+      "ACT6-PERFECT-S05",
+      "ACT6-PERFECT-S06",
+      "ACT6-PERFECT-S07",
+      "ACT6-PERFECT-S08",
+      "ACT6-PERFECT-S09",
+      "ACT6-PERFECT-S10",
+      "ACT6-PERFECT-S11",
+      "ACT6-PERFECT-S12",
+      "ACT6-PERFECT-S13",
+      "ACT6-PERFECT-S14",
+      "ACT6-PERFECT-S15",
+      "ACT6-PERFECT-S16",
+      "ACT6-PERFECT-S17",
+      "ACT6-PERFECT-S18",
+      "ACT6-PERFECT-S19",
+      "ACT6-PERFECT-S20"
+    ],
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "A3-ACTIVITY-PUBLIC",
+      "R4-WORK",
+      "R5-WANFENG",
+      "R5-ROMANCE",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5X-HARD"
+    ],
+    "soft_echo_routes": [
+      "A3-ACTIVITY-PUBLIC",
+      "DEFAULT-4XX",
+      "R5-TANG",
+      "R5-ZHOU",
+      "R5-ROMANCE"
+    ],
+    "act7_variant_id": "ACT7-PERFECT",
+    "act7_required_event_count": 12,
+    "act7_core_events_json_started": true,
+    "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_temperature_candidates": [
+      "PERFECT-END-CLEAR-PUBLIC",
+      "PERFECT-END-TOOLING",
+      "PERFECT-END-POLITE-DISTANCE",
+      "PERFECT-END-LATE-PRIVATE",
+      "PERFECT-END-LOW-TEMPERATURE",
+      "PERFECT-END-QUIET-BOUNDARY"
+    ]
+  },
+  "local_variables": [
+    "a3_final_choice",
+    "a3_join_result",
+    "a3_mode_votes",
+    "act6_choice_window_count",
+    "act6_closed",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready",
+    "activity_link",
+    "certificate_or_archive_seen",
+    "child_outflow_id",
+    "defense_boundary_checked",
+    "defense_order_seen",
+    "defense_post_submit_done",
+    "dorm_key_returned",
+    "dorm_warmth",
+    "dorm_warmth_risk",
+    "emotional_delay",
+    "grad_photo_result_recorded",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "handoff_scope_checked",
+    "leaving_boundary_checked",
+    "loss_control_checked",
+    "march_boundary_checked",
+    "meal_attendance_locked",
+    "meal_boundary_checked",
+    "old_debt",
+    "old_debt_recorded",
+    "old_debt_risk",
+    "old_object_scope_checked",
+    "opening_contrast_seen",
+    "p0a_perfect_confirmed",
+    "perfect_contact_scope",
+    "perfect_reply_after_meal",
+    "photo_boundary_checked",
+    "pre_register_boundary_checked",
+    "private_blank_seen",
+    "private_delay",
+    "private_delay_checked",
+    "project_stability",
+    "public_boundary",
+    "public_boundary_checked",
+    "public_consent_checked",
+    "public_credit",
+    "public_misread",
+    "public_scope_boundary_checked",
+    "queue_item_submitted",
+    "revision_submitted_before_deadline",
+    "route_confidence",
+    "route_focus_tag",
+    "route_mode_tag",
+    "route_pool_locked",
+    "route_switch_allowed_false",
+    "scope_clarity",
+    "scope_clarity_checked",
+    "self_control",
+    "shared_item_owner_checked",
+    "shen_jiahe_link",
+    "station_after_echo_seen",
+    "thesis_boundary_checked",
+    "thesis_revision_version",
+    "time_debt",
+    "tooling_risk",
+    "topic_boundary_checked",
+    "topic_self_signed",
+    "xia_zhiwei_link",
+    "zhou_trust",
+    "act4_daily_radius",
+    "act4_micro_inflow_count",
+    "act4_perfect_choice_window_count",
+    "act4_perfect_direction_count",
+    "act4_perfect_handoff_ready",
+    "act5_choice_floor_met",
+    "act5_echo_hook",
+    "act5_entry_bias",
+    "act5_perfect_bridge_ready",
+    "act5_perfect_choice_window_count",
+    "act5_perfect_direction_count",
+    "act5_required_windows_seen",
+    "act6_echo_hook",
+    "closed_route_ids_kept_closed",
+    "drift_guard_triggered",
+    "hard_outflow",
+    "micro_influence_source",
+    "micro_influence_weight",
+    "new_full_route_unlock_allowed"
+  ],
+  "entry_node": {
+    "node_id": "P0A_ACT3_ROUTE_CONFIRM",
+    "entry_choice": "P0A_PERFECT_ACCEPT_SCOPE",
+    "route_lock_after_entry": "POOL-R3-PERFECT",
+    "route_switch_allowed_after_entry": false
+  },
+  "p0a_perfect_derivation_nodes": [
+    {
+      "node_id": "P0A_ACT3_ROUTE_CONFIRM",
+      "node_name": "完美线确认节点",
+      "module": "P0-A",
+      "act": "ACT3",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0A_ACT3_DORM_HEAT_MANAGE",
+      "next_node": "ACT4-PERFECT-B01",
+      "location": "教学楼课后 / 明德楼材料窗口 / 主持队复盘桌 / C407 机房外",
+      "participants": [
+        "林亦舟",
+        "秦越",
+        "周屿",
+        "唐骁",
+        "沈嘉禾"
+      ],
+      "scene_function": "把 A3 父池中持续成立的 mode_perfect 转成 R3-PERFECT 子外流，确认职责、停止条件、宿舍降温和后续 Act6 承接。",
+      "entry_conditions": {
+        "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+        "a3_final_choice": [
+          "keep_first",
+          "keep_second"
+        ],
+        "route_mode_tag": "mode_perfect",
+        "self_control_min": 4,
+        "public_credit_min": 3,
+        "emotional_delay_min": 2
+      },
+      "required_completion_flags": [
+        "p0a_perfect_confirmed",
+        "scope_clarity_checked",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "child_outflow_id",
+        "route_mode_tag",
+        "scope_clarity",
+        "public_credit",
+        "tooling_risk",
+        "private_delay",
+        "dorm_warmth",
+        "old_debt"
+      ],
+      "pages": [
+        {
+          "page_id": "P0A-PERFECT-S01",
+          "location": "教学楼课后",
+          "text_brief": "秦越问他能不能固定接活动流程。林亦舟手里已经有三张表，表都清楚，只有自己还要不要继续默认接住不清楚。",
+          "choice_hook": [
+            "接职责内事项",
+            "拒绝长期协助",
+            "先回 4XX"
+          ],
+          "updates": {
+            "public_credit": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "P0A-PERFECT-S02",
+          "location": "明德楼材料窗口",
+          "text_brief": "沈嘉禾提醒他写清停止条件。不是别接，是接之前要知道到哪里为止。",
+          "choice_hook": [
+            "写清停止条件",
+            "保留模糊好用",
+            "请她只核格式"
+          ],
+          "updates": {
+            "scope_clarity": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "P0A-PERFECT-S03",
+          "location": "主持队复盘桌",
+          "text_brief": "周屿说你别真把自己招进去，唐骁只问具体交付。两句话把私人温度和公开效率分开了。",
+          "choice_hook": [
+            "承认会更少回寝",
+            "说只是顺手",
+            "先把交付写完"
+          ],
+          "updates": {
+            "dorm_warmth": -1,
+            "old_debt": 1,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "P0A-PERFECT-S04",
+          "location": "C407 机房外",
+          "text_brief": "完美线不是奖励，而是他选择把事情安排好，同时接受很多话会被推迟。这个确认会直接接到第六幕的项目和毕业材料。",
+          "choice_hook": [
+            "接长期协助但限定职责",
+            "回 4XX 处理当面关系",
+            "继续替周屿兜情绪",
+            "建立协作边界"
+          ],
+          "updates": {
+            "emotional_delay": 1,
+            "self_control": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0A-PERFECT-CHOICE-01",
+        "after_page": "P0A-PERFECT-S04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0A-PERFECT-C01-A",
+            "label": "接长期协助，但只做职责内事项",
+            "variable_delta": {
+              "child_outflow_id": "R3-PERFECT",
+              "route_mode_tag": "mode_perfect",
+              "scope_clarity": 2,
+              "public_credit": 1,
+              "private_delay": 1
+            },
+            "route_effect": {
+              "active_route_id": "R3-PERFECT",
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_lock": "R3-PERFECT"
+            },
+            "next_node": "ACT4-PERFECT-B01"
+          },
+          {
+            "direction_id": "P0A-PERFECT-C01-B",
+            "label": "拒绝长期协助，回 4XX 处理当面关系",
+            "variable_delta": {
+              "child_outflow_id": "none",
+              "dorm_warmth": 2,
+              "activity_link": -1,
+              "private_delay": -1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_pool_id": "POOL-DEFAULT-4XX",
+              "route_lock": false
+            },
+            "next_node": "DEFAULT-4XX-ACT5-ENTRY"
+          },
+          {
+            "direction_id": "P0A-PERFECT-C01-C",
+            "label": "接下协助，同时继续替周屿兜情绪",
+            "variable_delta": {
+              "child_outflow_id": "none",
+              "zhou_trust": 1,
+              "time_debt": 1,
+              "scope_clarity": -1
+            },
+            "route_effect": {
+              "active_route_id": "R5-ZHOU-PRE",
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_lock": false
+            },
+            "next_node": "P0D_ZHOU_PRECHECK"
+          },
+          {
+            "direction_id": "P0A-PERFECT-C01-D",
+            "label": "接下协助，并找沈嘉禾或唐骁建立协作边界",
+            "variable_delta": {
+              "child_outflow_id": "R3-PERFECT",
+              "scope_clarity": 1,
+              "shen_jiahe_link": 1,
+              "project_stability": 1,
+              "tooling_risk": -1
+            },
+            "route_effect": {
+              "active_route_id": "R3-PERFECT",
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_lock": "R3-PERFECT"
+            },
+            "next_node": "ACT4-PERFECT-B01"
+          }
+        ]
+      }
+    }
+  ],
+  "act4_detail_blocks": [
+    {
+      "block_id": "ACT4-PERFECT-B01",
+      "block_name": "停止条件和暑假表",
+      "act": "ACT4",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-PERFECT完美子外流生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "P0A_ACT3_ROUTE_CONFIRM",
+      "next_block": "ACT4-PERFECT-B02",
+      "scene_range": [
+        "ACT4-PERFECT-S01",
+        "ACT4-PERFECT-S03"
+      ],
+      "scene_function": "把第三幕完美派生落到暑假生活半径：停止条件、公开信用和第一次宿舍低温。",
+      "required_completion_flags": [
+        "act4_daily_radius",
+        "act5_echo_hook"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-PERFECT-S01",
+          "location": "活动群 / 明德楼走廊",
+          "text_brief": "秦越把暑假流程表发给他，第一句不是请求，而是“你最清楚格式”。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S02",
+          "location": "共享文档权限页",
+          "text_brief": "许棠提醒表格要写负责人、截止和停止条件，不能只写“林亦舟确认”。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S03",
+          "location": "青枫居 4XX 事项群",
+          "text_brief": "唐骁把项目表改成不等他口头解释的版本，陆沉只问“你今晚回吗”。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-PERFECT-CHOICE-01",
+        "after_page": "ACT4-PERFECT-S03",
+        "directions": [
+          {
+            "direction_id": "ACT4-PERFECT-C01-A",
+            "label": "接流程表，但写清停止条件",
+            "variable_delta": {
+              "self_control": 1,
+              "scope_clarity": 1,
+              "public_credit": 1,
+              "act5_echo_hook": "perfect_stop_condition_written"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B02"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C01-B",
+            "label": "回 4XX 说明今晚时间",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "private_delay": -1,
+              "act5_echo_hook": "perfect_stop_condition_written"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B02"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C01-C",
+            "label": "不让自己变成唯一联系人",
+            "variable_delta": {
+              "tooling_risk": -1,
+              "public_boundary": 1,
+              "act5_echo_hook": "perfect_stop_condition_written"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-PERFECT-B02",
+      "block_name": "公开材料无错",
+      "act": "ACT4",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-PERFECT完美子外流生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-PERFECT-B01",
+      "next_block": "ACT4-PERFECT-B03",
+      "scene_range": [
+        "ACT4-PERFECT-S04",
+        "ACT4-PERFECT-S06"
+      ],
+      "scene_function": "用材料、附件和照片授权证明本线的公开无错，同时保留候选人物的边界功能。",
+      "required_completion_flags": [
+        "public_boundary_checked",
+        "act5_echo_hook"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-PERFECT-S04",
+          "location": "打印店",
+          "text_brief": "活动证明、班会附件和课程项目材料同时排队，所有版本都需要“不出错”。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S05",
+          "location": "明德楼材料窗口",
+          "text_brief": "沈嘉禾只核附件顺序，明确说“格式清楚不等于以后都该你看”。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S06",
+          "location": "摄影社群 / 修片桌",
+          "text_brief": "夏知微退回一张能认出寝室号的照片，提醒留证也要有边界。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-PERFECT-CHOICE-02",
+        "after_page": "ACT4-PERFECT-S06",
+        "directions": [
+          {
+            "direction_id": "ACT4-PERFECT-C02-A",
+            "label": "把公开材料一次交清",
+            "variable_delta": {
+              "public_credit": 1,
+              "public_boundary": 1,
+              "act5_echo_hook": "perfect_public_material_clean"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B03"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C02-B",
+            "label": "只让沈嘉禾核格式",
+            "variable_delta": {
+              "shen_jiahe_link": 1,
+              "scope_clarity": 1,
+              "act5_echo_hook": "perfect_public_material_clean"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B03"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C02-C",
+            "label": "只留不露脸照片版本",
+            "variable_delta": {
+              "xia_zhiwei_link": 1,
+              "photo_boundary_checked": true,
+              "act5_echo_hook": "perfect_public_material_clean"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-PERFECT-B03",
+      "block_name": "宿舍低温回声",
+      "act": "ACT4",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-PERFECT完美子外流生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-PERFECT-B02",
+      "next_block": "ACT4-PERFECT-B04",
+      "scene_range": [
+        "ACT4-PERFECT-S07",
+        "ACT4-PERFECT-S09"
+      ],
+      "scene_function": "把完美线的代价落回 4XX：事情更清楚，私人解释更晚，房间更低温。",
+      "required_completion_flags": [
+        "private_delay_checked",
+        "act5_echo_hook"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-PERFECT-S07",
+          "location": "青枫居 4XX 公共桌",
+          "text_brief": "公共桌上项目、取件码和洗衣卡都分栏清楚，没人需要等他来补解释。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S08",
+          "location": "西园餐桌",
+          "text_brief": "周屿说“你现在做事像带说明书”，语气轻，但不是玩笑。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S09",
+          "location": "C407 机房外",
+          "text_brief": "唐骁认可表清楚，但提醒他“别把人也排成表”。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-PERFECT-CHOICE-03",
+        "after_page": "ACT4-PERFECT-S09",
+        "directions": [
+          {
+            "direction_id": "ACT4-PERFECT-C03-A",
+            "label": "继续把事情列清楚",
+            "variable_delta": {
+              "self_control": 1,
+              "public_misread": 1,
+              "act5_echo_hook": "perfect_dorm_low_temperature"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B04"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C03-B",
+            "label": "承认自己延后了私人解释",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "old_debt": -1,
+              "act5_echo_hook": "perfect_dorm_low_temperature"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B04"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C03-C",
+            "label": "不替周屿或唐骁总结关系",
+            "variable_delta": {
+              "public_boundary": 1,
+              "old_debt": 1,
+              "act5_echo_hook": "perfect_dorm_low_temperature"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-PERFECT-B04",
+      "block_name": "候选边界和工具化风险",
+      "act": "ACT4",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-PERFECT完美子外流生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-PERFECT-B03",
+      "next_block": "ACT4-PERFECT-B05",
+      "scene_range": [
+        "ACT4-PERFECT-S10",
+        "ACT4-PERFECT-S12"
+      ],
+      "scene_function": "保留沈嘉禾、夏知微的材料 / 照片边界功能，同时显化默认兜底风险。",
+      "required_completion_flags": [
+        "scope_clarity_checked",
+        "act5_echo_hook"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-PERFECT-S10",
+          "location": "明德楼材料窗口",
+          "text_brief": "沈嘉禾第二次提醒停止条件，她的功能仍是材料边界，不是感情救场。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S11",
+          "location": "摄影社修片桌",
+          "text_brief": "夏知微第二次出现，只处理照片和观看边界，不进入亲密锁线。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S12",
+          "location": "活动复盘共享文档",
+          "text_brief": "文档历史证明林亦舟一直可靠，也证明他越来越容易被默认继续做。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-PERFECT-CHOICE-04",
+        "after_page": "ACT4-PERFECT-S12",
+        "directions": [
+          {
+            "direction_id": "ACT4-PERFECT-C04-A",
+            "label": "写清职责范围和交接人",
+            "variable_delta": {
+              "scope_clarity": 1,
+              "tooling_risk": -1,
+              "act5_echo_hook": "perfect_tooling_risk_visible"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B05"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C04-B",
+            "label": "保留沈嘉禾材料回声",
+            "variable_delta": {
+              "shen_jiahe_link": 1,
+              "public_boundary": 1,
+              "act5_echo_hook": "perfect_tooling_risk_visible"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B05"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C04-C",
+            "label": "保留夏知微照片回声",
+            "variable_delta": {
+              "xia_zhiwei_link": 1,
+              "public_consent_checked": true,
+              "act5_echo_hook": "perfect_tooling_risk_visible"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-PERFECT-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-PERFECT-B05",
+      "block_name": "返校前交接",
+      "act": "ACT4",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-PERFECT完美子外流生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-PERFECT-B04",
+      "next_block": "ACT5-PERFECT-B01",
+      "scene_range": [
+        "ACT4-PERFECT-S13",
+        "ACT4-PERFECT-S14"
+      ],
+      "scene_function": "用公开无错、宿舍低温和停止默认兜底三组压力交给第五幕。",
+      "required_completion_flags": [
+        "act4_perfect_handoff_ready",
+        "act5_echo_hook"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-PERFECT-S13",
+          "location": "明德楼一楼大厅",
+          "text_brief": "活动证明、项目附件、公开授权和宿舍旧账一起等返校后处理。"
+        },
+        {
+          "page_id": "ACT4-PERFECT-S14",
+          "location": "青枫居楼下",
+          "text_brief": "林亦舟带着整理好的文件袋回寝，袋子很薄，私人话却还没有说。",
+          "updates": {
+            "act4_perfect_handoff_ready": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-PERFECT-CHOICE-05",
+        "after_page": "ACT4-PERFECT-S14",
+        "directions": [
+          {
+            "direction_id": "ACT4-PERFECT-C05-A",
+            "label": "带着公开无错进入第五幕",
+            "variable_delta": {
+              "public_credit": 1,
+              "act4_perfect_handoff_ready": true,
+              "act5_echo_hook": "perfect_act5_bridge_required"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B01"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C05-B",
+            "label": "带着宿舍低温进入第五幕",
+            "variable_delta": {
+              "dorm_warmth": -1,
+              "old_debt": 1,
+              "act5_echo_hook": "perfect_act5_bridge_required"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B01"
+          },
+          {
+            "direction_id": "ACT4-PERFECT-C05-C",
+            "label": "带着停止默认兜底进入第五幕",
+            "variable_delta": {
+              "scope_clarity": 1,
+              "private_delay": 1,
+              "act5_echo_hook": "perfect_act5_bridge_required"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B01"
+          }
+        ]
+      }
+    }
+  ],
+  "act5_bridge_nodes": [
+    {
+      "node_id": "ACT5-PERFECT-B01",
+      "node_name": "宿舍站队和事实表",
+      "module": "ACT5-PERFECT",
+      "act": "ACT5",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-PERFECT完美子外流桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT4-PERFECT-B05",
+      "next_node": "ACT5-PERFECT-B02",
+      "act5_window_tag": "dorm_stand",
+      "pages": [
+        {
+          "page_id": "ACT5-PERFECT-S01",
+          "location": "青枫居 4XX",
+          "text_brief": "强冲突前，林亦舟已经习惯先列事实、来源、责任人和截止。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S02",
+          "location": "事项群",
+          "text_brief": "唐骁认可表清楚，周屿没有接玩笑，陆沉只问是否需要当面说。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S03",
+          "location": "教学楼走廊",
+          "text_brief": "秦越催活动补场，时间撞上 4XX 当面处理。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S04",
+          "location": "4XX 门口",
+          "text_brief": "林亦舟必须决定先用事实表进入冲突，还是承认自己把私人话推迟太久。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-PERFECT-CHOICE-01",
+        "after_page": "ACT5-PERFECT-S04",
+        "directions": [
+          {
+            "direction_id": "ACT5-PERFECT-C01-A",
+            "label": "先列事实表，再补私人解释",
+            "variable_delta": {
+              "self_control": 1,
+              "public_misread": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-PERFECT-B01-fact-table-before-private"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B02"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C01-B",
+            "label": "先把缺席当面说清",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "private_delay": -1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-PERFECT-B01-dorm-explain-entry"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B02"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C01-C",
+            "label": "只说自己负责的部分",
+            "variable_delta": {
+              "scope_clarity": 1,
+              "old_debt": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-PERFECT-B01-low-temperature-scope"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B02"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-PERFECT-B02",
+      "node_name": "亲密不能项目化",
+      "module": "ACT5-PERFECT",
+      "act": "ACT5",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-PERFECT完美子外流桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-PERFECT-B01",
+      "next_node": "ACT5-PERFECT-B03",
+      "act5_window_tag": "intimacy_or_wanfeng",
+      "pages": [
+        {
+          "page_id": "ACT5-PERFECT-S05",
+          "location": "微信 / 游戏消息",
+          "text_brief": "晚风只发一句“别把自己也排进去”，不是晚风线入口，只是提醒。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S06",
+          "location": "明德楼材料窗口",
+          "text_brief": "沈嘉禾指出材料没错，但关系不是格式检查。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S07",
+          "location": "摄影社修片桌",
+          "text_brief": "夏知微退回照片，提醒公开留证不能代替同意。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S08",
+          "location": "西园餐桌",
+          "text_brief": "林亦舟发现自己可以把材料说清，却很难把“我也在意”说清。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-PERFECT-CHOICE-02",
+        "after_page": "ACT5-PERFECT-S08",
+        "directions": [
+          {
+            "direction_id": "ACT5-PERFECT-C02-A",
+            "label": "向晚风说真实状态，但不转晚风线",
+            "variable_delta": {
+              "private_blank_seen": true,
+              "emotional_delay": -1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-PERFECT-B04-low-frequency-wanfeng-reminder"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B03"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C02-B",
+            "label": "确认沈嘉禾只是材料边界",
+            "variable_delta": {
+              "shen_jiahe_link": 1,
+              "scope_clarity": 1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-PERFECT-B02-shen-format-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B03"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C02-C",
+            "label": "确认夏知微只是照片边界",
+            "variable_delta": {
+              "xia_zhiwei_link": 1,
+              "public_consent_checked": true,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-PERFECT-B02-xia-photo-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B03"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-PERFECT-B03",
+      "node_name": "项目 / 规则 / 公开边界",
+      "module": "ACT5-PERFECT",
+      "act": "ACT5",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-PERFECT完美子外流桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-PERFECT-B02",
+      "next_node": "ACT5-PERFECT-B04",
+      "act5_window_tag": "project_or_rule",
+      "pages": [
+        {
+          "page_id": "ACT5-PERFECT-S09",
+          "location": "C407 机房",
+          "text_brief": "唐骁把课程项目拆成版本、接口和责任人，像一面流程镜子。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S10",
+          "location": "明德楼材料窗口",
+          "text_brief": "公开材料补件和课程项目截止撞在一起，两边都默认他能处理。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S11",
+          "location": "打印店",
+          "text_brief": "署名、授权、附件和项目分工都需要清楚版本。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S12",
+          "location": "教学楼楼梯口",
+          "text_brief": "林亦舟意识到“没有错”不等于“没有亏欠”。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-PERFECT-CHOICE-03",
+        "after_page": "ACT5-PERFECT-S12",
+        "directions": [
+          {
+            "direction_id": "ACT5-PERFECT-C03-A",
+            "label": "先保公开材料无错",
+            "variable_delta": {
+              "public_credit": 1,
+              "public_boundary": 1,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-PERFECT-B02-public-material-complete"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B04"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C03-B",
+            "label": "先补 C407 项目分工",
+            "variable_delta": {
+              "project_stability": 1,
+              "scope_clarity": 1,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-PERFECT-B03-tang-process-mirror"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B04"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C03-C",
+            "label": "先写交接人和停止条件",
+            "variable_delta": {
+              "tooling_risk": -1,
+              "handoff_scope_checked": true,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-PERFECT-B05-handoff-scope"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B04"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-PERFECT-B04",
+      "node_name": "公开信用主轴确认",
+      "module": "ACT5-PERFECT",
+      "act": "ACT5",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-PERFECT完美子外流桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-PERFECT-B03",
+      "next_node": "ACT5-PERFECT-B05",
+      "act5_window_tag": "activity_or_interest",
+      "pages": [
+        {
+          "page_id": "ACT5-PERFECT-S13",
+          "location": "活动复盘桌",
+          "text_brief": "有人说“以后这种事还是找林亦舟”，公开信用开始变成默认分工。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S14",
+          "location": "九龙壁舞台边",
+          "text_brief": "周屿说“你现在连退场都能写流程”，不像玩笑。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S15",
+          "location": "活动共享文档",
+          "text_brief": "林亦舟要决定继续当可靠的人，还是把交接和停止条件推到台前。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S16",
+          "location": "青枫居楼下",
+          "text_brief": "文件袋、宿舍门和活动消息同时在他手里。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-PERFECT-CHOICE-04",
+        "after_page": "ACT5-PERFECT-S16",
+        "directions": [
+          {
+            "direction_id": "ACT5-PERFECT-C04-A",
+            "label": "保持公开信用为主生活半径",
+            "variable_delta": {
+              "route_pool_locked": true,
+              "public_credit": 1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-PERFECT-B01-public-credit-main-radius"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B05"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C04-B",
+            "label": "降低默认兜底，只保必要职责",
+            "variable_delta": {
+              "scope_clarity": 1,
+              "tooling_risk": -1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-PERFECT-B02-default-contact-reduced"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B05"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C04-C",
+            "label": "为 4XX 留一次当面饭局",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "time_debt": 1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-PERFECT-B04-dorm-meal-reserved"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-PERFECT-B05"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-PERFECT-B05",
+      "node_name": "回避 / 外流门槛关闭",
+      "module": "ACT5-PERFECT",
+      "act": "ACT5",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-PERFECT完美子外流桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-PERFECT-B04",
+      "next_node": "ACT6-PERFECT-B01",
+      "act5_window_tag": "avoidance_or_outflow",
+      "pages": [
+        {
+          "page_id": "ACT5-PERFECT-S17",
+          "location": "青枫居楼下",
+          "text_brief": "许澈或新圈消息只作为外部诱因出现，不能把完美线改成 5X。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S18",
+          "location": "活动群 / 事项群",
+          "text_brief": "两个群都在等他确认，但都不是完整新路线入口。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S19",
+          "location": "明德楼门口",
+          "text_brief": "林亦舟确认：本线继续用公开信用、停止条件和私人空格承接第六幕。"
+        },
+        {
+          "page_id": "ACT5-PERFECT-S20",
+          "location": "C407 机房外",
+          "text_brief": "完美线第五幕桥接完成，变量交给 ACT6-PERFECT-B01。",
+          "updates": {
+            "act5_perfect_bridge_ready": true,
+            "act5_choice_floor_met": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-PERFECT-CHOICE-05",
+        "after_page": "ACT5-PERFECT-S20",
+        "directions": [
+          {
+            "direction_id": "ACT5-PERFECT-C05-A",
+            "label": "留在完美线，写清停止条件",
+            "variable_delta": {
+              "act5_perfect_bridge_ready": true,
+              "route_pool_locked": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-PERFECT-B01-scope-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-PERFECT-B01"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C05-B",
+            "label": "保留宿舍回声，但不回默认线",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "closed_route_ids_kept_closed": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-PERFECT-B04-dorm-soft-echo"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-PERFECT-B01"
+          },
+          {
+            "direction_id": "ACT5-PERFECT-C05-C",
+            "label": "拒绝 5X 硬外流诱因",
+            "variable_delta": {
+              "hard_outflow": false,
+              "drift_guard_triggered": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-PERFECT-B01-no-hard-outflow"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-PERFECT-B01"
+          }
+        ]
+      }
+    }
+  ],
+  "return_points": [
+    "RET-PERFECT-01",
+    "RET-PERFECT-02",
+    "RET-PERFECT-03",
+    "RET-PERFECT-04",
+    "RET-PERFECT-05",
+    "RET-PERFECT-06"
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-PERFECT-B01",
+      "scene_range": [
+        "ACT6-PERFECT-S01",
+        "ACT6-PERFECT-S04"
+      ],
+      "choice_window_id": "ACT6-PERFECT-CHOICE-01",
+      "allowed_directions": [
+        "写清职责边界",
+        "先修补私人解释"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-PERFECT-B02",
+      "scene_range": [
+        "ACT6-PERFECT-S05",
+        "ACT6-PERFECT-S08"
+      ],
+      "choice_window_id": "ACT6-PERFECT-CHOICE-02",
+      "allowed_directions": [
+        "保公开材料完整",
+        "降低被默认兜底"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-PERFECT-B03",
+      "scene_range": [
+        "ACT6-PERFECT-S09",
+        "ACT6-PERFECT-S12"
+      ],
+      "choice_window_id": "ACT6-PERFECT-CHOICE-03",
+      "allowed_directions": [
+        "继续损失控制",
+        "承认自己延后太久"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-PERFECT-B04",
+      "scene_range": [
+        "ACT6-PERFECT-S13",
+        "ACT6-PERFECT-S16"
+      ],
+      "choice_window_id": "ACT6-PERFECT-CHOICE-04",
+      "allowed_directions": [
+        "保持体面低温",
+        "留一次当面饭局"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-PERFECT-B05",
+      "scene_range": [
+        "ACT6-PERFECT-S17",
+        "ACT6-PERFECT-S20"
+      ],
+      "choice_window_id": "ACT6-PERFECT-CHOICE-05",
+      "allowed_directions": [
+        "毕业材料完整交接",
+        "毕业后停止默认兜底"
+      ],
+      "conversion_status": "full_page_json_ready"
+    }
+  ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-PERFECT-B01",
+      "block_name": "职责边界与私人解释",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-PERFECT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-PERFECT完美子外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT5-PERFECT-B05",
+      "next_block": "ACT6-PERFECT-B02",
+      "scene_range": [
+        "ACT6-PERFECT-S01",
+        "ACT6-PERFECT-S04"
+      ],
+      "mother_lockpoints": [
+        "活动材料交接",
+        "C407 预备",
+        "公开权限",
+        "4XX 私人解释"
+      ],
+      "scene_function": "进入完美子外流后，先把职责范围和私人解释并排压到同一天，让公开清楚和亲近延迟同时出现。",
+      "required_completion_flags": [
+        "scope_clarity_checked",
+        "private_blank_seen",
+        "act6_choice_window_count"
+      ],
+      "must_record": [
+        "public_credit",
+        "tooling_risk",
+        "project_stability",
+        "public_boundary",
+        "scope_clarity",
+        "private_delay",
+        "dorm_warmth",
+        "public_misread",
+        "old_debt",
+        "private_blank_seen",
+        "time_debt",
+        "self_control"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-PERFECT-S01",
+          "location": "B204 / 活动材料交接表",
+          "text_brief": "活动负责人把第六卷材料确认表发给他，说你最熟。同一屏里，C407 预备也要求本人确认。",
+          "choice_hook": [
+            "接表前写交接人",
+            "先帮现有表",
+            "先回 C407"
+          ],
+          "updates": {
+            "public_credit": 1,
+            "tooling_risk": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S02",
+          "location": "共享文档权限页",
+          "text_brief": "许棠提醒公开稿权限要分清谁能改、谁能看、谁负责最后确认。林亦舟手边的 4XX 消息还没有回。",
+          "choice_hook": [
+            "写清权限",
+            "先回 4XX",
+            "暂时保持默认权限"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "scope_clarity": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S03",
+          "location": "青枫居 4XX",
+          "text_brief": "周屿叫他流程哥，唐骁说表确实清楚，陆沉只问他今晚还回不回。夸奖没有让房间变热。",
+          "choice_hook": [
+            "解释自己不是只处理表",
+            "让玩笑过去",
+            "先确认今晚时间"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "public_misread": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S04",
+          "location": "教学楼走廊 / 输入框",
+          "text_brief": "林亦舟在职责范围最后一行停住，另一边的私人解释也只打到一半。",
+          "choice_hook": [
+            "先写停止条件",
+            "先把私人话发出去",
+            "两边都暂存"
+          ],
+          "updates": {
+            "private_blank_seen": true,
+            "time_debt": 1,
+            "self_control": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-PERFECT-CHOICE-01",
+        "after_page": "ACT6-PERFECT-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-PERFECT-C01-A",
+            "label": "写清职责边界",
+            "variable_delta": {
+              "scope_clarity": 2,
+              "tooling_risk": -1,
+              "public_credit": 1,
+              "private_delay": 1
+            },
+            "next_block": "ACT6-PERFECT-B02"
+          },
+          {
+            "direction_id": "ACT6-PERFECT-C01-B",
+            "label": "先修补私人解释",
+            "variable_delta": {
+              "dorm_warmth": 2,
+              "private_delay": -1,
+              "public_credit": -1,
+              "scope_clarity": -1
+            },
+            "next_block": "ACT6-PERFECT-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-PERFECT-B02",
+      "block_name": "公开材料完整与默认兜底",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-PERFECT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-PERFECT完美子外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-PERFECT-B01",
+      "next_block": "ACT6-PERFECT-B03",
+      "scene_range": [
+        "ACT6-PERFECT-S05",
+        "ACT6-PERFECT-S08"
+      ],
+      "mother_lockpoints": [
+        "活动证明",
+        "共享盘权限",
+        "沈嘉禾格式回声",
+        "夏知微照片边界"
+      ],
+      "scene_function": "把公开信用具体化成证明、授权、共享盘和交接人，同时暴露大家默认他继续兜底的风险。",
+      "required_completion_flags": [
+        "public_boundary_checked",
+        "handoff_scope_checked",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "public_credit",
+        "tooling_risk",
+        "project_stability",
+        "public_boundary",
+        "handoff_scope_checked",
+        "activity_link",
+        "shen_jiahe_link",
+        "scope_clarity",
+        "xia_zhiwei_link",
+        "private_blank_seen",
+        "dorm_warmth"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-PERFECT-S05",
+          "location": "活动证明页 / C407 材料",
+          "text_brief": "活动证明和 C407 材料都没有错，但两个窗口都默认他能把最后一遍看完。",
+          "choice_hook": [
+            "先核自己的部分",
+            "顺手核全组",
+            "写交接人"
+          ],
+          "updates": {
+            "public_credit": 1,
+            "tooling_risk": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S06",
+          "location": "共享盘 / 授权回执",
+          "text_brief": "文件夹按用途、来源和授权范围排好，负责人问毕业后还找他能不能最快。",
+          "choice_hook": [
+            "写清毕业前交接",
+            "保留自己为联系人",
+            "只改权限不回话"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "handoff_scope_checked": true,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S07",
+          "location": "打印店 / 沈嘉禾",
+          "text_brief": "沈嘉禾指出附件顺序没问题，但说格式清楚不等于以后都该你看。她只承担材料边界提醒。",
+          "choice_hook": [
+            "只核格式",
+            "写清她不承担后续",
+            "让她再看一版"
+          ],
+          "updates": {
+            "shen_jiahe_link": 1,
+            "scope_clarity": 1,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S08",
+          "location": "摄影社群 / 夏知微图包",
+          "text_brief": "夏知微删掉一张正脸太清楚的图，说有些东西不是能留证就该留。",
+          "choice_hook": [
+            "确认公开图包",
+            "只留背影",
+            "删掉私人痕迹"
+          ],
+          "updates": {
+            "xia_zhiwei_link": 1,
+            "public_boundary": 1,
+            "private_blank_seen": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-PERFECT-CHOICE-02",
+        "after_page": "ACT6-PERFECT-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-PERFECT-C02-A",
+            "label": "保公开材料完整",
+            "variable_delta": {
+              "public_credit": 2,
+              "public_boundary": 1,
+              "tooling_risk": 1,
+              "dorm_warmth": -1
+            },
+            "next_block": "ACT6-PERFECT-B03"
+          },
+          {
+            "direction_id": "ACT6-PERFECT-C02-B",
+            "label": "降低被默认兜底",
+            "variable_delta": {
+              "tooling_risk": -2,
+              "scope_clarity": 1,
+              "public_credit": -1,
+              "dorm_warmth": 1
+            },
+            "next_block": "ACT6-PERFECT-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-PERFECT-B03",
+      "block_name": "损失控制与延后承认",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-PERFECT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-PERFECT完美子外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-PERFECT-B02",
+      "next_block": "ACT6-PERFECT-B04",
+      "scene_range": [
+        "ACT6-PERFECT-S09",
+        "ACT6-PERFECT-S12"
+      ],
+      "mother_lockpoints": [
+        "事项群短句",
+        "事实表",
+        "C407 截止",
+        "4XX 旧账"
+      ],
+      "scene_function": "第五幕强冲突后，林亦舟能把损失压下来，但必须面对自己把解释延后太久的事实。",
+      "required_completion_flags": [
+        "loss_control_checked",
+        "private_delay_checked",
+        "old_debt_recorded"
+      ],
+      "must_record": [
+        "self_control",
+        "public_misread",
+        "old_debt",
+        "project_stability",
+        "public_credit",
+        "private_delay",
+        "dorm_warmth",
+        "private_blank_seen",
+        "emotional_delay",
+        "scope_clarity",
+        "tooling_risk"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-PERFECT-S09",
+          "location": "4XX 事项群",
+          "text_brief": "事项群比以前短。林亦舟把时间、来源、授权和责任人列成事实表，群里没人反驳。",
+          "choice_hook": [
+            "先列事实",
+            "先问情绪",
+            "不发完整表"
+          ],
+          "updates": {
+            "self_control": 1,
+            "public_misread": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S10",
+          "location": "C407 / 材料窗口",
+          "text_brief": "截止前，他把可能出错的版本都压下去。窗口夸他稳，唐骁只提醒他别把自己也压进去。",
+          "choice_hook": [
+            "继续损失控制",
+            "写清只到这版",
+            "先回寝室"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "public_credit": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S11",
+          "location": "公共桌 / 周屿短句",
+          "text_brief": "周屿看着事实表问：你是不是觉得我们也能这么排？这句话没有玩笑尾音。",
+          "choice_hook": [
+            "承认不能全靠表",
+            "说先把事处理完",
+            "暂时不接话"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "old_debt": 1,
+            "public_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S12",
+          "location": "共享文档历史",
+          "text_brief": "文档历史里每一步都清楚，只有他什么时候开始不解释，找不到版本号。",
+          "choice_hook": [
+            "标注私人延后",
+            "继续只保事实",
+            "删除无关痕迹"
+          ],
+          "updates": {
+            "private_blank_seen": true,
+            "emotional_delay": 1,
+            "scope_clarity": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-PERFECT-CHOICE-03",
+        "after_page": "ACT6-PERFECT-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-PERFECT-C03-A",
+            "label": "继续损失控制",
+            "variable_delta": {
+              "self_control": 2,
+              "public_credit": 1,
+              "dorm_warmth": -1,
+              "public_misread": 1
+            },
+            "next_block": "ACT6-PERFECT-B04"
+          },
+          {
+            "direction_id": "ACT6-PERFECT-C03-B",
+            "label": "承认自己延后太久",
+            "variable_delta": {
+              "private_delay": -2,
+              "dorm_warmth": 2,
+              "public_credit": -1,
+              "tooling_risk": -1
+            },
+            "next_block": "ACT6-PERFECT-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-PERFECT-B04",
+      "block_name": "体面低温与当面饭局",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-PERFECT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-PERFECT完美子外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-PERFECT-B03",
+      "next_block": "ACT6-PERFECT-B05",
+      "scene_range": [
+        "ACT6-PERFECT-S13",
+        "ACT6-PERFECT-S16"
+      ],
+      "mother_lockpoints": [
+        "活动复盘",
+        "最后饭局预热",
+        "晚风软提醒",
+        "4XX 座位"
+      ],
+      "scene_function": "让完美线进入关系定形：维持体面可以避免难堪，但当面饭局才保留真实联系入口。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "private_blank_seen",
+        "route_switch_allowed_false"
+      ],
+      "must_record": [
+        "public_credit",
+        "tooling_risk",
+        "public_misread",
+        "dorm_warmth",
+        "private_delay",
+        "time_debt",
+        "private_blank_seen",
+        "scope_clarity",
+        "self_control",
+        "graduation_temperature"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-PERFECT-S13",
+          "location": "活动复盘 / 楼梯口",
+          "text_brief": "复盘会表扬流程稳定，有人说以后这种事还是找林亦舟。他听见后没有立刻反驳。",
+          "choice_hook": [
+            "接受表扬",
+            "写清下次交接",
+            "私下找负责人说明"
+          ],
+          "updates": {
+            "public_credit": 1,
+            "tooling_risk": 1,
+            "public_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S14",
+          "location": "4XX 群 / 最后一顿饭预热",
+          "text_brief": "4XX 讨论饭局时间，活动群同时问他能不能再核一遍归档。两个窗口都没有错，冲突却很清楚。",
+          "choice_hook": [
+            "先回饭局时间",
+            "先核归档",
+            "给两边都发短句"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "private_delay": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S15",
+          "location": "微信 / 低频提醒",
+          "text_brief": "晚风只发来一句别把自己也排进去。这不是晚风线入口，只是提醒他流程不能替代亲近。",
+          "choice_hook": [
+            "回复一点真实状态",
+            "只说忙完再聊",
+            "不回"
+          ],
+          "updates": {
+            "private_blank_seen": true,
+            "public_misread": -1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S16",
+          "location": "青枫居公共桌",
+          "text_brief": "公共桌上还给他留着位置，没人催他坐。他要决定维持体面低温，还是为饭局空出一次真实时间。",
+          "choice_hook": [
+            "保持体面低温",
+            "留一次当面饭局",
+            "先把材料收尾"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "old_debt": 1,
+            "self_control": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-PERFECT-CHOICE-04",
+        "after_page": "ACT6-PERFECT-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-PERFECT-C04-A",
+            "label": "保持体面低温",
+            "variable_delta": {
+              "scope_clarity": 1,
+              "self_control": 1,
+              "private_delay": 1,
+              "dorm_warmth": -1,
+              "graduation_temperature": "polite_distance"
+            },
+            "next_block": "ACT6-PERFECT-B05"
+          },
+          {
+            "direction_id": "ACT6-PERFECT-C04-B",
+            "label": "留一次当面饭局",
+            "variable_delta": {
+              "dorm_warmth": 2,
+              "private_delay": -1,
+              "time_debt": 1,
+              "public_credit": -1,
+              "graduation_temperature": "late_private"
+            },
+            "next_block": "ACT6-PERFECT-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-PERFECT-B05",
+      "block_name": "毕业材料交接与停止默认兜底",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-PERFECT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-PERFECT完美子外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-PERFECT-B04",
+      "next_block": "ACT6-END",
+      "scene_range": [
+        "ACT6-PERFECT-S17",
+        "ACT6-PERFECT-S20"
+      ],
+      "mother_lockpoints": [
+        "毕业预登记",
+        "离校材料",
+        "交接人",
+        "武生院站预回声"
+      ],
+      "scene_function": "把完美线第六幕收束为第七幕可读取的公开材料完整度、停止默认兜底、私人低频联系和毕业温度。",
+      "required_completion_flags": [
+        "act6_closed",
+        "act6_route_pool_locked",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "handoff_scope_checked",
+        "public_credit",
+        "tooling_risk",
+        "perfect_contact_scope",
+        "scope_clarity",
+        "activity_link",
+        "dorm_warmth",
+        "old_debt",
+        "private_delay",
+        "graduation_temperature"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-PERFECT-S17",
+          "location": "教务系统 / 材料交接页",
+          "text_brief": "毕业去向预登记快开始，活动材料交接页也亮着。林亦舟所有公开材料都能对上号。",
+          "choice_hook": [
+            "先核毕业表",
+            "先写交接说明",
+            "顺手帮别人看格式"
+          ],
+          "updates": {
+            "handoff_scope_checked": true,
+            "public_credit": 1,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S18",
+          "location": "离校手续 / 共享盘",
+          "text_brief": "有人问毕业后还能不能找他，理由是还是你熟。这句话让他第一次认真看交接人一栏。",
+          "choice_hook": [
+            "写明交接人",
+            "保留自己低频联系人",
+            "不回应毕业后"
+          ],
+          "updates": {
+            "perfect_contact_scope": "branch_dependent",
+            "scope_clarity": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S19",
+          "location": "4XX 公共桌 / 最后确认",
+          "text_brief": "4XX 问最后饭局和离校手续。他能把每件事排清楚，却不能再把私人话放到表格后面。",
+          "choice_hook": [
+            "给 4XX 具体时间",
+            "只回手续进度",
+            "先写私人一句"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "old_debt": -1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT6-PERFECT-S20",
+          "location": "武生院站预回声 / 交接说明",
+          "text_brief": "站台还没到，交接说明已经写到最后一行：毕业后不再默认由本人确认。光标停在这句后面。",
+          "choice_hook": [
+            "完整交接公开材料",
+            "毕业后停止默认兜底",
+            "留私人低频联系"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent",
+            "handoff_scope_checked": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-PERFECT-CHOICE-05",
+        "after_page": "ACT6-PERFECT-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-PERFECT-C05-A",
+            "label": "毕业材料完整交接",
+            "variable_delta": {
+              "handoff_scope_checked": true,
+              "perfect_contact_scope": "public_low_frequency",
+              "public_credit": 2,
+              "tooling_risk": 1,
+              "graduation_temperature": "clear_public_or_tooling"
+            },
+            "next_block": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-PERFECT-C05-B",
+            "label": "毕业后停止默认兜底",
+            "variable_delta": {
+              "perfect_contact_scope": "low_contact_with_boundary",
+              "tooling_risk": -2,
+              "scope_clarity": 1,
+              "public_credit": -1,
+              "graduation_temperature": "quiet_boundary"
+            },
+            "next_block": "ACT6-END"
+          }
+        ]
+      }
+    }
+  ],
+  "act6_to_act7_handoff": {
+    "act6_closed": true,
+    "act6_route_pool_locked": true,
+    "route_switch_allowed": false,
+    "soft_echo_routes_only": true,
+    "next_event": "ACT7-E01-PRE-REGISTER",
+    "must_carry": [
+      "self_control",
+      "public_credit",
+      "scope_clarity",
+      "tooling_risk",
+      "private_delay",
+      "private_blank_seen",
+      "handoff_scope_checked",
+      "perfect_contact_scope",
+      "dorm_warmth",
+      "public_misread",
+      "old_debt",
+      "graduation_temperature"
+    ]
+  },
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "B204 / 教务系统 / 活动材料交接表",
+      "scene_function": "预登记表格最清楚，但私人联系人一栏最难写。",
+      "required_completion_flags": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "private_blank_seen"
+      ],
+      "must_record": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "private_blank_seen",
+        "scope_clarity",
+        "tooling_risk",
+        "activity_link",
+        "dorm_warmth"
+      ],
+      "participants_hint": "Perfect line should reveal private blank space, not reward error-free paperwork.",
+      "pages": [
+        {
+          "page_id": "ACT7-E01-PERFECT-P01",
+          "beat": "表格无错",
+          "text_brief": "B204 发毕业去向预登记，林亦舟比别人更快核对手机号、邮箱、去向和材料备注。",
+          "choice_hook": [
+            "先按学校表格核准",
+            "顺手帮旁边同学看格式"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "tooling_risk": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-PERFECT-P02",
+          "beat": "私人联系人",
+          "text_brief": "紧急联系人和毕业后联系人都能填，只有毕业后谁真正会问他这一格不存在。",
+          "choice_hook": [
+            "填清流程联系人和私人空格",
+            "只把所有事项填得无错"
+          ],
+          "updates": {
+            "private_blank_seen": true,
+            "scope_clarity": 1,
+            "self_control": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-PERFECT-P03",
+          "beat": "交接说明",
+          "text_brief": "活动材料交接表也递过来，负责人说你最熟，毕业后也能找你吧。",
+          "choice_hook": [
+            "写明交接人",
+            "暂时保留自己为默认联系人"
+          ],
+          "updates": {
+            "handoff_scope_checked": true,
+            "tooling_risk": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-PERFECT-P04",
+          "beat": "提交以后",
+          "text_brief": "表格提交成功，4XX 群问谁一起办离校，活动群问谁能最终核一遍材料。",
+          "choice_hook": [
+            "先回 4XX 具体时间",
+            "先回材料确认"
+          ],
+          "updates": {
+            "graduation_direction_status": "submitted",
+            "dorm_warmth": 1,
+            "public_credit": 1,
+            "private_delay": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E01-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-PERFECT-C01-A",
+            "label": "填清流程联系人和私人空格",
+            "variable_delta": {
+              "pre_register_boundary_checked": true,
+              "private_blank_seen": true,
+              "scope_clarity": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E01-PERFECT-C01-B",
+            "label": "只把所有事项填得无错",
+            "variable_delta": {
+              "self_control": 1,
+              "private_delay": 1,
+              "graduation_temperature": "public_clear_private_blank"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "班级材料群 / 共享文档权限页 / 授权回执",
+      "scene_function": "公开范围、署名、授权和停止条件都清楚，却也让他继续被默认兜底。",
+      "required_completion_flags": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "handoff_scope_checked"
+      ],
+      "must_record": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "handoff_scope_checked",
+        "public_boundary",
+        "scope_clarity",
+        "tooling_risk",
+        "private_blank_seen"
+      ],
+      "participants_hint": "Public scope should include stop conditions, not only clean authorization.",
+      "pages": [
+        {
+          "page_id": "ACT7-E02-PERFECT-P01",
+          "beat": "范围公告",
+          "text_brief": "班级材料群要求确认公开范围，林亦舟已经把截图、照片、署名和用途分好类。",
+          "choice_hook": [
+            "先读公开材料授权要求",
+            "先帮群里整理模板"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "public_credit": 1,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-PERFECT-P02",
+          "beat": "停止条件",
+          "text_brief": "公开材料不只是能不能发，也包括谁负责、到哪里为止、毕业后谁不再默认兜底。",
+          "choice_hook": [
+            "写清公开范围和停止条件",
+            "默认自己继续兜底"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "scope_clarity": 1,
+            "tooling_risk": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-PERFECT-P03",
+          "beat": "署名回声",
+          "text_brief": "许棠说这样写最稳，唐骁看了一眼说稳是稳，就是太像交接文档。",
+          "choice_hook": [
+            "保留冷一点的清楚",
+            "改得更像感谢稿"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "public_misread": 1,
+            "scope_clarity": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-PERFECT-P04",
+          "beat": "回执归档",
+          "text_brief": "回执生成，文件夹命名没有错。没有一个文件夹叫我也需要说。",
+          "choice_hook": [
+            "保存回执并留私人备注",
+            "只完成归档"
+          ],
+          "updates": {
+            "public_consent_checked": true,
+            "private_blank_seen": true,
+            "emotional_delay": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E02-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-PERFECT-C01-A",
+            "label": "写清公开范围和停止条件",
+            "variable_delta": {
+              "public_scope_boundary_checked": true,
+              "scope_clarity": 1,
+              "tooling_risk": -1
+            }
+          },
+          {
+            "direction_id": "ACT7-E02-PERFECT-C01-B",
+            "label": "默认自己继续兜底",
+            "variable_delta": {
+              "tooling_risk": 1,
+              "public_credit": 1,
+              "graduation_temperature": "tooling"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "青枫居 4XX / 共享盘目录 / 活动归档页",
+      "scene_function": "最后一个新年目录清楚到几乎没有错，私人话却仍空着。",
+      "required_completion_flags": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "private_blank_seen"
+      ],
+      "must_record": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "private_blank_seen",
+        "public_credit",
+        "private_delay",
+        "dorm_warmth",
+        "old_debt"
+      ],
+      "participants_hint": "A clean archive cannot be the whole emotional record.",
+      "pages": [
+        {
+          "page_id": "ACT7-E03-PERFECT-P01",
+          "beat": "目录整齐",
+          "text_brief": "最后一个新年目录按时间、来源、授权范围排得很清楚，清楚得不像一次热闹。",
+          "choice_hook": [
+            "打开目录核来源",
+            "先看是否缺文件"
+          ],
+          "updates": {
+            "opening_contrast_seen": true,
+            "self_control": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-PERFECT-P02",
+          "beat": "私人空格",
+          "text_brief": "目录、来源、确认人都齐，唯独当时没有说出口的那句话没有位置。",
+          "choice_hook": [
+            "留下私人空格说明",
+            "只留整理完的目录"
+          ],
+          "updates": {
+            "private_blank_seen": true,
+            "dorm_warmth": 1,
+            "private_delay": 1,
+            "public_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-PERFECT-P03",
+          "beat": "旧物标注",
+          "text_brief": "旧传单、签到表、外卖小票都能标来源。周屿问那我们算什么来源。",
+          "choice_hook": [
+            "承认不是所有事都能归档",
+            "用玩笑带过"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "old_debt": -1,
+            "emotional_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-PERFECT-P04",
+          "beat": "目录提交",
+          "text_brief": "归档提交成功，活动群说太清楚了，4XX 群却安静了几秒。",
+          "choice_hook": [
+            "回 4XX 一句具体话",
+            "先回活动群"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "public_credit": 1,
+            "private_delay": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E03-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-PERFECT-C01-A",
+            "label": "留下私人空格说明",
+            "variable_delta": {
+              "opening_contrast_seen": true,
+              "private_blank_seen": true,
+              "dorm_warmth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E03-PERFECT-C01-B",
+            "label": "只留整理完的目录",
+            "variable_delta": {
+              "public_credit": 1,
+              "private_delay": 1,
+              "graduation_temperature": "public_clear_private_blank"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "毕业设计方向与开题",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 / B204 开题复核 / 履历附件",
+      "scene_function": "开题依据、履历和职责边界分得很干净，风险是把自己也写进流程。",
+      "required_completion_flags": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "scope_clarity"
+      ],
+      "must_record": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "scope_clarity",
+        "project_stability",
+        "tooling_risk",
+        "private_blank_seen"
+      ],
+      "participants_hint": "The resume cannot replace thesis basis or private explanation.",
+      "pages": [
+        {
+          "page_id": "ACT7-E04-PERFECT-P01",
+          "beat": "开题表",
+          "text_brief": "开题表没有错别字，参考依据和实践来源都列得很稳。",
+          "choice_hook": [
+            "先核题目依据",
+            "先补履历附件"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "public_credit": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-PERFECT-P02",
+          "beat": "职责边界",
+          "text_brief": "活动履历能说明他做过什么，却不能替论文和关系背书。",
+          "choice_hook": [
+            "写清题目依据和职责边界",
+            "用完整履历替代解释"
+          ],
+          "updates": {
+            "scope_clarity": 1,
+            "project_stability": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-PERFECT-P03",
+          "beat": "导师签字",
+          "text_brief": "导师签字前，旁边同学请他顺手看格式，唐骁只说你可以拒绝。",
+          "choice_hook": [
+            "先签自己的字",
+            "顺手帮别人看完"
+          ],
+          "updates": {
+            "topic_self_signed": true,
+            "tooling_risk": -1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-PERFECT-P04",
+          "beat": "题目落定",
+          "text_brief": "题目通过，文件名很干净。他不知道该把我很累命名成什么版本。",
+          "choice_hook": [
+            "给自己留一条备注",
+            "直接归档终版"
+          ],
+          "updates": {
+            "private_blank_seen": true,
+            "self_control": 1,
+            "emotional_delay": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E04-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-PERFECT-C01-A",
+            "label": "写清题目依据和职责边界",
+            "variable_delta": {
+              "topic_boundary_checked": true,
+              "scope_clarity": 1,
+              "project_stability": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E04-PERFECT-C01-B",
+            "label": "用完整履历替代解释",
+            "variable_delta": {
+              "public_credit": 1,
+              "private_delay": 1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月事项排队",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "明德楼窗口 / 证书核验处 / 材料交接群",
+      "scene_function": "三四月事项排得很稳，但别人开始默认他能顺手替大家收尾。",
+      "required_completion_flags": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "handoff_scope_checked"
+      ],
+      "must_record": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "handoff_scope_checked",
+        "tooling_risk",
+        "scope_clarity",
+        "dorm_warmth",
+        "old_debt"
+      ],
+      "participants_hint": "Queue stability should not become proxy handling.",
+      "pages": [
+        {
+          "page_id": "ACT7-E05-PERFECT-P01",
+          "beat": "队列计划",
+          "text_brief": "三四月事项同时排队，他把窗口、证明、证书和照片采集排成一张不冲突的表。",
+          "choice_hook": [
+            "先看本人事项",
+            "先帮群里排总表"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "public_credit": 1,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-PERFECT-P02",
+          "beat": "代办边界",
+          "text_brief": "有人说顺手一起问一下，窗口却只认本人确认。",
+          "choice_hook": [
+            "按本人事项排优先级",
+            "顺手替别人补流程"
+          ],
+          "updates": {
+            "queue_item_submitted": true,
+            "scope_clarity": 1,
+            "tooling_risk": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-PERFECT-P03",
+          "beat": "材料清单",
+          "text_brief": "所有勾都能打，只有饭局和当面话没有被列进三四月事项。",
+          "choice_hook": [
+            "把饭局时间也写进表",
+            "先把流程全部清完"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "private_delay": 1,
+            "public_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-PERFECT-P04",
+          "beat": "窗口结束",
+          "text_brief": "事项赶上了，负责人夸他稳。4XX 公共桌那段最适合说话的时间也过去了。",
+          "choice_hook": [
+            "回群补一句具体话",
+            "只发已完成截图"
+          ],
+          "updates": {
+            "old_debt": -1,
+            "public_credit": 1,
+            "old_debt_risk": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E05-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-PERFECT-C01-A",
+            "label": "按本人事项排优先级",
+            "variable_delta": {
+              "march_boundary_checked": true,
+              "queue_item_submitted": true,
+              "scope_clarity": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E05-PERFECT-C01-B",
+            "label": "顺手替别人补流程",
+            "variable_delta": {
+              "tooling_risk": 1,
+              "time_debt": 1,
+              "graduation_temperature": "tooling"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "改论文 / 毕业设计",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 版本目录 / 共享盘交接页",
+      "scene_function": "改稿版本最干净，边界最清楚，也最容易继续被找去看别人的问题。",
+      "required_completion_flags": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline",
+        "handoff_scope_checked",
+        "tooling_risk",
+        "private_delay"
+      ],
+      "participants_hint": "Clean versioning must not imply endless review duty.",
+      "pages": [
+        {
+          "page_id": "ACT7-E06-PERFECT-P01",
+          "beat": "红批出现",
+          "text_brief": "导师红批标出摘要、图表和格式问题，林亦舟把版本号改得一眼能看懂。",
+          "choice_hook": [
+            "先改自己版本",
+            "先整理公共问题清单"
+          ],
+          "updates": {
+            "thesis_boundary_checked": true,
+            "public_credit": 1,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-PERFECT-P02",
+          "beat": "版本边界",
+          "text_brief": "共享盘里有人问他能不能顺便看一下。唐骁提醒顺便也会变成责任。",
+          "choice_hook": [
+            "只改自己版本并写交接",
+            "继续帮别人收尾"
+          ],
+          "updates": {
+            "thesis_revision_version": "self_revised_with_handoff",
+            "handoff_scope_checked": true,
+            "tooling_risk": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-PERFECT-P03",
+          "beat": "私人话延后",
+          "text_brief": "4XX 群问他今晚在不在，他看着十点前提交把话又推到十点以后。",
+          "choice_hook": [
+            "先回一个具体时间",
+            "提交完再说"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "private_delay": 1,
+            "emotional_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-PERFECT-P04",
+          "beat": "提交成功",
+          "text_brief": "提交成功，文件名干净得像没发生过混乱。可他知道混乱只是被压下去了。",
+          "choice_hook": [
+            "留下交接说明",
+            "直接归档终版"
+          ],
+          "updates": {
+            "revision_submitted_before_deadline": true,
+            "scope_clarity": 1,
+            "self_control": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E06-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-PERFECT-C01-A",
+            "label": "只改自己版本并写交接",
+            "variable_delta": {
+              "thesis_boundary_checked": true,
+              "thesis_revision_version": "self_revised_with_handoff",
+              "tooling_risk": -1
+            }
+          },
+          {
+            "direction_id": "ACT7-E06-PERFECT-C01-B",
+            "label": "继续帮别人收尾",
+            "variable_delta": {
+              "tooling_risk": 1,
+              "time_debt": 1,
+              "graduation_temperature": "tooling"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩日",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "C407 答辩门口 / 补交窗口 / 4XX 群",
+      "scene_function": "答辩材料清楚、补交流程稳定，结尾体面但不一定有人等他吃饭。",
+      "required_completion_flags": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "private_blank_seen"
+      ],
+      "must_record": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "private_blank_seen",
+        "public_misread",
+        "tooling_risk",
+        "dorm_warmth"
+      ],
+      "participants_hint": "A polite pass message should not erase relief or loneliness.",
+      "pages": [
+        {
+          "page_id": "ACT7-E07-PERFECT-P01",
+          "beat": "门口排队",
+          "text_brief": "答辩门口排队，他的材料顺序、签字页和备份都放在正确位置。",
+          "choice_hook": [
+            "核对答辩顺序",
+            "顺手提醒别人材料顺序"
+          ],
+          "updates": {
+            "defense_order_seen": true,
+            "public_credit": 1,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-PERFECT-P02",
+          "beat": "结果说法",
+          "text_brief": "答辩通过后，他能把补交项说得很清楚，却说不出自己其实松了一口气。",
+          "choice_hook": [
+            "说结果也说自己到场限制",
+            "只发体面通过消息"
+          ],
+          "updates": {
+            "defense_boundary_checked": true,
+            "private_blank_seen": true,
+            "public_misread": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-PERFECT-P03",
+          "beat": "补交窗口",
+          "text_brief": "补交窗口只认本人签字，活动群又问他能不能帮忙汇总答辩通过名单。",
+          "choice_hook": [
+            "先补交自己的材料",
+            "先帮汇总名单"
+          ],
+          "updates": {
+            "defense_post_submit_done": true,
+            "tooling_risk": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-PERFECT-P04",
+          "beat": "恭喜以后",
+          "text_brief": "4XX 群里有人发恭喜，他回得很得体，得体到没人继续追问。",
+          "choice_hook": [
+            "补一句具体感受",
+            "只回谢谢"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "public_misread": -1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E07-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-PERFECT-C01-A",
+            "label": "说结果也说自己到场限制",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "private_blank_seen": true,
+              "dorm_warmth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E07-PERFECT-C01-B",
+            "label": "只发体面通过消息",
+            "variable_delta": {
+              "public_misread": 1,
+              "private_delay": 1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场 / 影像授权表 / 活动照片归档页",
+      "scene_function": "毕业照授权和公开照边界都清楚，私人同框可能被流程照替代。",
+      "required_completion_flags": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "private_blank_seen"
+      ],
+      "must_record": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "private_blank_seen",
+        "public_boundary",
+        "private_delay",
+        "dorm_warmth"
+      ],
+      "participants_hint": "Correct image authorization cannot replace choosing to stand with people.",
+      "pages": [
+        {
+          "page_id": "ACT7-E08-PERFECT-P01",
+          "beat": "队形集合",
+          "text_brief": "晨光体育场排毕业照，他先确认班级队形、公开用途和图包命名。",
+          "choice_hook": [
+            "先完成班级合照再核公开照",
+            "先核公开图包"
+          ],
+          "updates": {
+            "grad_photo_result_recorded": true,
+            "public_credit": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-PERFECT-P02",
+          "beat": "授权边界",
+          "text_brief": "正脸、背影、活动照、班级照都能分清，只有站近一点不是授权表能解决的事。",
+          "choice_hook": [
+            "确认公开照和私人照边界",
+            "让流程照替代私人同框"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "public_boundary": 1,
+            "private_delay": 1,
+            "public_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-PERFECT-P03",
+          "beat": "4XX 同框",
+          "text_brief": "周屿说站近点，唐骁说别只顾对表，陆沉让出一个位置。",
+          "choice_hook": [
+            "站过去拍完",
+            "站在最方便出队的位置"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "self_control": 1,
+            "dorm_warmth_risk": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-PERFECT-P04",
+          "beat": "预览留存",
+          "text_brief": "预览图没有问题。没问题和有纪念意义不是同一件事。",
+          "choice_hook": [
+            "保存并私下发给 4XX",
+            "只归档公开版本"
+          ],
+          "updates": {
+            "private_blank_seen": true,
+            "dorm_warmth": 1,
+            "public_credit": 1,
+            "private_delay": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E08-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-PERFECT-C01-A",
+            "label": "确认公开照和私人照边界",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "public_boundary": 1,
+              "private_blank_seen": true
+            }
+          },
+          {
+            "direction_id": "ACT7-E08-PERFECT-C01-B",
+            "label": "让流程照替代私人同框",
+            "variable_delta": {
+              "private_delay": 1,
+              "public_misread": 1,
+              "graduation_temperature": "public_clear_private_blank"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝与旧物",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居 4XX / 公共桌 / 清寝清单",
+      "scene_function": "清寝清单无误，公共物品归属明确，但寝室像被整理成办公室。",
+      "required_completion_flags": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned"
+      ],
+      "must_record": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned",
+        "private_blank_seen",
+        "private_delay",
+        "dorm_warmth",
+        "public_misread"
+      ],
+      "participants_hint": "A completed checklist should expose, not hide, the coldness of the room.",
+      "pages": [
+        {
+          "page_id": "ACT7-E09-PERFECT-P01",
+          "beat": "清单展开",
+          "text_brief": "公共插排、U 盘、旧纸、洗衣卡和钥匙列成清单，没人能说不清楚。",
+          "choice_hook": [
+            "先分类确认",
+            "先把清单发群里"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "self_control": 1,
+            "public_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-PERFECT-P02",
+          "beat": "谁确认的",
+          "text_brief": "周屿在清单最后写谁确认的，那四个字比勾选框更难处理。",
+          "choice_hook": [
+            "清单后留下来当面说",
+            "清到无误就离开"
+          ],
+          "updates": {
+            "shared_item_owner_checked": true,
+            "dorm_warmth": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-PERFECT-P03",
+          "beat": "交钥匙",
+          "text_brief": "宿管窗口收钥匙，陆沉说干净得像没人住过。",
+          "choice_hook": [
+            "先交钥匙再回头看一眼",
+            "直接拍照留档"
+          ],
+          "updates": {
+            "dorm_key_returned": true,
+            "private_blank_seen": true,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-PERFECT-P04",
+          "beat": "空桌回声",
+          "text_brief": "公共桌空出来，清单完成，话却没有自动完成。",
+          "choice_hook": [
+            "坐下十分钟",
+            "去补最后一项交接"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "tooling_risk": 1,
+            "private_delay": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E09-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-PERFECT-C01-A",
+            "label": "清单后留下来当面说",
+            "variable_delta": {
+              "shared_item_owner_checked": true,
+              "dorm_warmth": 1,
+              "private_blank_seen": true
+            }
+          },
+          {
+            "direction_id": "ACT7-E09-PERFECT-C01-B",
+            "label": "清到无误就离开",
+            "variable_delta": {
+              "private_delay": 1,
+              "dorm_warmth": -1,
+              "graduation_temperature": "low_temperature"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东北饺子馆 / 活动材料群 / 校门口",
+      "scene_function": "最后一顿饭检验他能不能停一次兜底，先坐下来而不是先收尾。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "perfect_reply_after_meal"
+      ],
+      "must_record": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "perfect_reply_after_meal",
+        "tooling_risk",
+        "private_blank_seen",
+        "public_misread",
+        "dorm_warmth"
+      ],
+      "participants_hint": "The last meal tests whether he can stop being useful for one evening.",
+      "pages": [
+        {
+          "page_id": "ACT7-E10-PERFECT-P01",
+          "beat": "饭局撞尾款",
+          "text_brief": "4XX 最后一顿饭订好，材料群也说就差你最后核一下。",
+          "choice_hook": [
+            "先说明饭局和交接范围",
+            "先问材料要多久"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "tooling_risk": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-PERFECT-P02",
+          "beat": "停一次兜底",
+          "text_brief": "这一次不是他不会处理，而是他要不要停下来坐到桌边。",
+          "choice_hook": [
+            "为最后饭局停止一次兜底",
+            "先把最后材料收尾"
+          ],
+          "updates": {
+            "meal_attendance_locked": true,
+            "dorm_warmth": 1,
+            "public_credit": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-PERFECT-P03",
+          "beat": "饭桌上",
+          "text_brief": "周屿说他像什么都能安排好，唐骁补一句也像不需要别人安排。",
+          "choice_hook": [
+            "承认自己不是不需要",
+            "说这样省事"
+          ],
+          "updates": {
+            "public_misread": -1,
+            "private_blank_seen": true
+          }
+        },
+        {
+          "page_id": "ACT7-E10-PERFECT-P04",
+          "beat": "饭后确认",
+          "text_brief": "散场后，活动群还在等他。4XX 问他明天几点走。",
+          "choice_hook": [
+            "饭后再回材料交接",
+            "直接去补材料"
+          ],
+          "updates": {
+            "perfect_reply_after_meal": true,
+            "dorm_warmth": 1,
+            "tooling_risk": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E10-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-PERFECT-C01-A",
+            "label": "为最后饭局停止一次兜底",
+            "variable_delta": {
+              "meal_boundary_checked": true,
+              "meal_attendance_locked": true,
+              "dorm_warmth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E10-PERFECT-C01-B",
+            "label": "先把最后材料收尾",
+            "variable_delta": {
+              "public_credit": 1,
+              "private_delay": 1,
+              "graduation_temperature": "tooling"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "明德楼离校窗口 / 档案窗口 / 交接文档",
+      "scene_function": "离校手续、证书、档案和交接人都清楚，毕业后是否继续默认找他要结算。",
+      "required_completion_flags": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "perfect_contact_scope"
+      ],
+      "must_record": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "perfect_contact_scope",
+        "handoff_scope_checked",
+        "tooling_risk",
+        "private_blank_seen"
+      ],
+      "participants_hint": "Leaving papers need a handoff person, not permanent availability.",
+      "pages": [
+        {
+          "page_id": "ACT7-E11-PERFECT-P01",
+          "beat": "离校清单",
+          "text_brief": "离校系统一项项变绿，证书、档案、照片授权和材料交接都排在正确顺序。",
+          "choice_hook": [
+            "先办本人离校清单",
+            "先核最终交接文档"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "public_credit": 1,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-PERFECT-P02",
+          "beat": "交接人",
+          "text_brief": "活动负责人说以后还找你方便。林亦舟看见交接人那一栏还空着。",
+          "choice_hook": [
+            "写清交接人和停止默认",
+            "保持毕业后还能找他"
+          ],
+          "updates": {
+            "certificate_or_archive_seen": true,
+            "handoff_scope_checked": true,
+            "tooling_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-PERFECT-P03",
+          "beat": "第一周安排",
+          "text_brief": "第一周怎么过、住哪里、什么时候报到，都能说清。可他不确定该不该告诉 4XX。",
+          "choice_hook": [
+            "发一条具体行程",
+            "只发已办完"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "private_blank_seen": true,
+            "public_misread": 1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-PERFECT-P04",
+          "beat": "站前确认",
+          "text_brief": "去武生院站前，活动群问最终版能不能再问他，4XX 群问到了说一声。",
+          "choice_hook": [
+            "约定低频边界联系",
+            "只保体面流程确认"
+          ],
+          "updates": {
+            "perfect_contact_scope": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E11-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-PERFECT-C01-A",
+            "label": "写清交接人和停止默认",
+            "variable_delta": {
+              "certificate_or_archive_seen": true,
+              "handoff_scope_checked": true,
+              "tooling_risk": -1
+            }
+          },
+          {
+            "direction_id": "ACT7-E11-PERFECT-C01-B",
+            "label": "保持毕业后还能找他",
+            "variable_delta": {
+              "tooling_risk": 1,
+              "perfect_contact_scope": "still_available",
+              "graduation_temperature": "tooling"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站后",
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "act7_variant_id": "ACT7-PERFECT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "PERFECT-ENDING",
+      "main_location": "武生院站 / 地铁车厢 / 4XX 群与交接文档",
+      "scene_function": "输出完美线最终温度：公开清楚、工具化、体面低温、迟来私人话、低温或安静边界。",
+      "required_completion_flags": [
+        "perfect_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen"
+      ],
+      "must_record": [
+        "perfect_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen",
+        "tooling_risk",
+        "private_blank_seen",
+        "public_misread",
+        "dorm_warmth"
+      ],
+      "participants_hint": "The final beat decides whether he stops default usefulness and keeps a human contact.",
+      "pages": [
+        {
+          "page_id": "ACT7-E12-PERFECT-P01",
+          "beat": "进站前",
+          "text_brief": "武生院站口人很多，林亦舟手里没有漏办项。手机里还有一句以后有事还能找你吧。",
+          "choice_hook": [
+            "先报到站并关事项群",
+            "先回交接消息"
+          ],
+          "updates": {
+            "station_after_echo_seen": true,
+            "tooling_risk": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-PERFECT-P02",
+          "beat": "到站以后",
+          "text_brief": "地铁开出校园站，最后不是还有没有事没办，而是他还愿不愿意被默认继续办。",
+          "choice_hook": [
+            "清楚边界加低频真实联系",
+            "公开完整，私人留白"
+          ],
+          "updates": {
+            "perfect_contact_scope": "low_contact_with_boundary",
+            "tooling_risk": -1,
+            "private_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-PERFECT-P03",
+          "beat": "迟来一句",
+          "text_brief": "4XX 群里只有到了说一声。他终于可以不写表格，只写一句人话。",
+          "choice_hook": [
+            "发一句具体私人话",
+            "只回到了"
+          ],
+          "updates": {
+            "private_blank_seen": true,
+            "dorm_warmth": 1,
+            "public_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-PERFECT-P04",
+          "beat": "站后温度",
+          "text_brief": "交接文档停在已完成，私人空格还在。他可以把边界写清，也可以让空格继续空着。",
+          "choice_hook": [
+            "停止默认兜底并保留低频联系",
+            "维持体面距离"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-PERFECT-CHOICE-01",
+        "after_page": "ACT7-E12-PERFECT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-PERFECT-C01-A",
+            "label": "清楚边界加低频真实联系",
+            "variable_delta": {
+              "perfect_contact_scope": "low_contact_with_boundary",
+              "tooling_risk": -1,
+              "graduation_temperature": "quiet_boundary"
+            }
+          },
+          {
+            "direction_id": "ACT7-E12-PERFECT-C01-B",
+            "label": "公开完整，私人留白",
+            "variable_delta": {
+              "perfect_contact_scope": "public_clear_private_blank",
+              "private_delay": 1,
+              "graduation_temperature": "public_clear_private_blank"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "ending_candidates": [
+    {
+      "ending_id": "PERFECT-END-CLEAR-PUBLIC",
+      "condition_hint": "public_credit >= 5, public_boundary >= 4, scope_clarity >= 4",
+      "text_landing": "毕业材料、公开署名和去向说明都清楚；活动圈低频找他，但不再默认兜底。"
+    },
+    {
+      "ending_id": "PERFECT-END-TOOLING",
+      "condition_hint": "tooling_risk >= 5, private_delay >= 4",
+      "text_landing": "他被许多人记得很靠谱，毕业后仍有人找他补流程；私人关系却更少被问起。"
+    },
+    {
+      "ending_id": "PERFECT-END-POLITE-DISTANCE",
+      "condition_hint": "dorm_warmth <= 1, public_misread >= 4",
+      "text_landing": "4XX 承认他处理得好，但关系停在体面和事项确认。"
+    },
+    {
+      "ending_id": "PERFECT-END-LATE-PRIVATE",
+      "condition_hint": "private_blank_seen = true, dorm_warmth >= 2, scope_clarity >= 3",
+      "text_landing": "他终于在毕业前说出一两句具体的私人话，不圆满，但不再全靠表格。"
+    },
+    {
+      "ending_id": "PERFECT-END-LOW-TEMPERATURE",
+      "condition_hint": "emotional_delay >= 4, old_debt >= 4",
+      "text_landing": "所有材料都按时交了，许多话却过了最适合说的时候。"
+    },
+    {
+      "ending_id": "PERFECT-END-QUIET-BOUNDARY",
+      "condition_hint": "tooling_risk <= 2, public_boundary >= 4, perfect_contact_scope = low_contact_with_boundary",
+      "text_landing": "他学会不把自己也写成公共工具，毕业后联系少但边界清楚。"
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "route_id": "R3-PERFECT",
+    "route_pool_id": "POOL-R3-PERFECT",
+    "p0a_source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+    "p0a_derivation_node_count": 1,
+    "p0a_derivation_page_count": 4,
+    "p0a_derivation_choice_window_count": 1,
+    "p0a_derivation_direction_count": 4,
+    "p0a_required_derivation_nodes": [
+      "P0A_ACT3_ROUTE_CONFIRM"
+    ],
+    "p0a_derivation_route_switch_allowed": true,
+    "act4_variant_id": "ACT4-PERFECT",
+    "act4_source_detail_doc": "开发细稿_IF第四幕ACT4-PERFECT完美子外流生活半径剧情页.md",
+    "act4_block_count": 5,
+    "act4_scene_count": 14,
+    "act4_choice_window_count": 5,
+    "act4_each_choice_direction_count_min": 3,
+    "act4_direction_count": 15,
+    "act4_route_switch_allowed": false,
+    "act4_required_blocks": [
+      "ACT4-PERFECT-B01",
+      "ACT4-PERFECT-B02",
+      "ACT4-PERFECT-B03",
+      "ACT4-PERFECT-B04",
+      "ACT4-PERFECT-B05"
+    ],
+    "act5_bridge_variant_id": "ACT5-PERFECT",
+    "act5_source_detail_doc": "开发细稿_IF第五幕ACT5-PERFECT完美子外流桥接剧情页.md",
+    "act5_bridge_node_count": 5,
+    "act5_bridge_page_count": 20,
+    "act5_bridge_choice_window_count": 5,
+    "act5_bridge_direction_count": 15,
+    "act5_choice_floor_met": true,
+    "act5_required_windows_seen": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_bridge_next_node": "ACT6-PERFECT-B01",
+    "act6_variant_id": "ACT6-PERFECT",
+    "act6_block_count": 5,
+    "act6_scene_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_each_block_page_count": 4,
+    "act6_each_choice_direction_count": 2,
+    "act6_route_switch_allowed": false,
+    "act6_source_detail_doc": "开发细稿_IF第六卷ACT6-PERFECT完美子外流正式剧情页.md",
+    "act7_variant_id": "ACT7-PERFECT",
+    "act7_core_event_count": 12,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_required_completion_flags": [
+      "pre_register_boundary_checked",
+      "graduation_direction_status",
+      "private_blank_seen",
+      "public_scope_boundary_checked",
+      "public_consent_checked",
+      "handoff_scope_checked",
+      "opening_contrast_seen",
+      "old_object_scope_checked",
+      "topic_boundary_checked",
+      "topic_self_signed",
+      "scope_clarity",
+      "march_boundary_checked",
+      "queue_item_submitted",
+      "thesis_boundary_checked",
+      "thesis_revision_version",
+      "revision_submitted_before_deadline",
+      "defense_boundary_checked",
+      "defense_post_submit_done",
+      "photo_boundary_checked",
+      "grad_photo_result_recorded",
+      "shared_item_owner_checked",
+      "dorm_key_returned",
+      "meal_boundary_checked",
+      "meal_attendance_locked",
+      "perfect_reply_after_meal",
+      "leaving_boundary_checked",
+      "certificate_or_archive_seen",
+      "perfect_contact_scope",
+      "graduation_temperature",
+      "station_after_echo_seen"
+    ],
+    "act7_each_event_page_count": 4,
+    "act7_each_event_direction_count": 2,
+    "act7_source_detail_doc": "开发细稿_IF第七卷ACT7-PERFECT完美子外流事件变体剧情页.md",
+    "p0a_full_page_json_status": "full_page_json_ready",
+    "act5_full_page_json_status": "perfect_act5_bridge_full_page_json_ready",
+    "act6_full_page_json_status": "full_page_json_ready"
+  }
+}

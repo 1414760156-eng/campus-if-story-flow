@@ -1,0 +1,3152 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-22",
+  "route_id": "R5-WANFENG",
+  "route_name": "晚风线",
+  "route_pool_id": "POOL-R5-WANFENG",
+  "route_level": "A",
+  "purpose": "Act5 P0-C entry plus Act6 and Act7 page-level JSON for R5-WANFENG. Act5 now covers the main-axis Wanfeng intimacy entry; Act6 covers 20 ACT6-WANFENG formal scenes and 5 two-direction choice windows; Act7 covers 12 ACT7-WANFENG same-mother-event variants.",
+  "source_docs": [
+    "开发长线_IF可玩支线R5-WANFENG晚风线.md",
+    "开发文本_IF分支P0-C第五幕亲密分歧专注感情线.md",
+    "开发细稿_IF第六卷ACT6-WANFENG晚风线正式剧情页.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发规格_IF路线Schema与P0节点池.md",
+    "开发数据_IF剧情页级JSON_R5-ZHOU_v1.json",
+    "开发数据_IF剧情页级JSON_R5-TANG_v1.json",
+    "开发数据_IF剧情页级JSON_R5-LIEFLAT_v1.json",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_outflow",
+    "route_pool_id": "POOL-R5-WANFENG",
+    "route_focus": "main_axis_intimacy",
+    "outflow_stage": "act5_intimacy",
+    "entry_node": "P0C_ACT5_WANFENG_BOUNDARY",
+    "pool_entry_choice": "P0C_WANFENG_STEP_FORWARD",
+    "active_route_id": "R5-WANFENG",
+    "primary_bond": "wanfeng",
+    "romance_origin": "main_axis_wanfeng",
+    "route_lock": "R5-WANFENG",
+    "route_switch_allowed": false,
+    "p0c_entry_json_status": "full_page_json_ready",
+    "p0c_entry_source_doc": "开发文本_IF分支P0-C第五幕亲密分歧专注感情线.md",
+    "p0c_entry_node_count": 5,
+    "p0c_entry_page_count": 20,
+    "p0c_entry_choice_window_count": 5,
+    "p0c_entry_direction_count": 20,
+    "p0c_direct_main_axis_allowed": true,
+    "p0c_romance_requires_a3_candidate": true,
+    "p0c_required_entry_nodes": [
+      "P0C_ACT5_WANFENG_BOUNDARY",
+      "P0C_ACT5_WANFENG_REAL_MEET",
+      "P0C_ACT5_WANFENG_GIFT_COST",
+      "P0C_ACT5_WANFENG_PUBLIC_BOUNDARY",
+      "P0C_ACT5_WANFENG_ROUTE_LOCK"
+    ],
+    "act6_variant_id": "ACT6-WANFENG",
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "act6_full_page_json_started": true,
+    "act6_core_scenes_in_json": [
+      "ACT6-WANFENG-S01",
+      "ACT6-WANFENG-S02",
+      "ACT6-WANFENG-S03",
+      "ACT6-WANFENG-S04",
+      "ACT6-WANFENG-S05",
+      "ACT6-WANFENG-S06",
+      "ACT6-WANFENG-S07",
+      "ACT6-WANFENG-S08",
+      "ACT6-WANFENG-S09",
+      "ACT6-WANFENG-S10",
+      "ACT6-WANFENG-S11",
+      "ACT6-WANFENG-S12",
+      "ACT6-WANFENG-S13",
+      "ACT6-WANFENG-S14",
+      "ACT6-WANFENG-S15",
+      "ACT6-WANFENG-S16",
+      "ACT6-WANFENG-S17",
+      "ACT6-WANFENG-S18",
+      "ACT6-WANFENG-S19",
+      "ACT6-WANFENG-S20"
+    ],
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-ROMANCE",
+      "R4-WORK",
+      "R3-PERFECT",
+      "A3-ACTIVITY-PUBLIC",
+      "R5X-HARD"
+    ],
+    "soft_echo_routes": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT"
+    ],
+    "act7_variant_id": "ACT7-WANFENG",
+    "act7_required_event_count": 12,
+    "act7_core_events_json_started": true,
+    "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_temperature_candidates": [
+      "WANFENG-END-CONTINUE",
+      "WANFENG-END-PRIVATE-ENTRY",
+      "WANFENG-END-POLITE-PARTING",
+      "WANFENG-END-MISSED",
+      "WANFENG-END-SWEET-BUT-COSTLY"
+    ]
+  },
+  "local_variables": [
+    "act6_choice_window_count",
+    "act6_closed",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready",
+    "ambiguity",
+    "avoidance",
+    "both_sides_explained_or_deferred",
+    "certificate_or_archive_seen",
+    "defense_boundary_checked",
+    "defense_message_echo",
+    "defense_order_seen",
+    "defense_post_submit_done",
+    "dorm_absence",
+    "dorm_key_returned",
+    "dorm_visibility",
+    "dorm_warmth",
+    "future_talk",
+    "gift_debt",
+    "grad_photo_result_recorded",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "intimacy_cost",
+    "intimacy_link",
+    "late_regret",
+    "leaving_boundary_checked",
+    "march_boundary_checked",
+    "meal_attendance_locked",
+    "meal_boundary_checked",
+    "missed_chance",
+    "money_pressure",
+    "old_debt",
+    "old_dorm_distance",
+    "old_object_scope_checked",
+    "opening_contrast_seen",
+    "p0c_direct_main_axis_allowed",
+    "p0c_entry_json_status",
+    "p0c_entry_locked",
+    "photo_boundary_checked",
+    "pre_register_boundary_checked",
+    "priority_pressure_recorded",
+    "project_stability",
+    "project_stability_checked",
+    "public_boundary",
+    "public_boundary_checked",
+    "public_consent_checked",
+    "public_scope_boundary_checked",
+    "queue_item_submitted",
+    "relationship_truth",
+    "revision_submitted_before_deadline",
+    "romance_focus",
+    "romance_focus_open",
+    "route_pool_locked",
+    "route_switch_allowed_false_after_lock",
+    "shared_item_owner_checked",
+    "station_after_echo_seen",
+    "teasing_risk",
+    "thesis_boundary_checked",
+    "thesis_revision_version",
+    "time_debt",
+    "topic_boundary_checked",
+    "topic_self_signed",
+    "wanfeng_boundary",
+    "wanfeng_boundary_checked",
+    "wanfeng_city_seen",
+    "wanfeng_distance",
+    "wanfeng_final_contact_scope",
+    "wanfeng_future_frequency",
+    "wanfeng_life_circle_seen",
+    "wanfeng_link",
+    "wanfeng_meeting_time_checked",
+    "wanfeng_misread",
+    "wanfeng_private_entry",
+    "wanfeng_private_entry_checked",
+    "wanfeng_public_scope",
+    "wanfeng_voice_reply_seen"
+  ],
+  "entry_node": {
+    "node_id": "P0C_ACT5_WANFENG_BOUNDARY",
+    "entry_choice": "P0C_WANFENG_STEP_FORWARD",
+    "route_lock_after_entry": "POOL-R5-WANFENG",
+    "route_switch_allowed_after_entry": false
+  },
+  "p0c_entry_nodes": [
+    {
+      "node_id": "P0C_ACT5_WANFENG_BOUNDARY",
+      "node_name": "晚风停在门外",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "source_detail_doc": "开发文本_IF分支P0-C第五幕亲密分歧专注感情线.md",
+      "route_switch_allowed": true,
+      "previous_node": "ACT5-PRE-INTIMACY-WINDOW",
+      "next_node": "P0C_ACT5_WANFENG_REAL_MEET",
+      "scene_function": "把主轴唯一直接亲密外流收束到晚风：玩家可以推进、体面退回、回 4XX，或因回避滑向摆烂。",
+      "required_completion_flags": [
+        "p0c_entry_json_status",
+        "wanfeng_boundary_checked",
+        "p0c_direct_main_axis_allowed"
+      ],
+      "must_record": [
+        "wanfeng_link",
+        "wanfeng_boundary",
+        "dorm_absence",
+        "dorm_warmth",
+        "avoidance",
+        "wanfeng_misread",
+        "missed_chance",
+        "romance_focus_open",
+        "wanfeng_distance"
+      ],
+      "pages": [
+        {
+          "page_id": "P0C-WANFENG-B01-P01",
+          "beat": "微信邀请",
+          "location": "青枫居楼下 / 微信",
+          "text_brief": "晚风问他今晚要不要把那局打完，也问线下见面是不是还算数。4XX 群里同时弹出宿舍事项确认。",
+          "choice_hook": [
+            "先回晚风",
+            "先看 4XX 群",
+            "都标未读"
+          ],
+          "updates": {
+            "wanfeng_link": 1,
+            "dorm_absence": 1,
+            "dorm_visibility": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B01-P02",
+          "beat": "语音里的停顿",
+          "location": "游戏语音",
+          "text_brief": "晚风听出他心不在焉，问是不是寝室又出事。她没有催，只把麦关了一秒再打开。",
+          "choice_hook": [
+            "说一点实话",
+            "说只是小事",
+            "让她先等"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "wanfeng_misread": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B01-P03",
+          "beat": "门外和群里",
+          "location": "B204 外 / 事项群",
+          "text_brief": "宿舍那边要他当面说清，晚风那边只问他还要不要出来。林亦舟第一次意识到，亲密入口不是奖励，而是另一份解释成本。",
+          "choice_hook": [
+            "告诉晚风现在不适合",
+            "把消息按到后面",
+            "回 4XX"
+          ],
+          "updates": {
+            "romance_focus_open": 1,
+            "time_debt": 1,
+            "dorm_warmth": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B01-P04",
+          "beat": "楼下未赴约",
+          "location": "地铁口 / 青枫居楼下",
+          "text_brief": "晚风说可以晚一点，也可以不见。她把选择交回来，但不替他承担后果。",
+          "choice_hook": [
+            "往前走",
+            "停在朋友位置",
+            "回寝室",
+            "继续逃避"
+          ],
+          "updates": {
+            "wanfeng_link": 1,
+            "wanfeng_distance": 1,
+            "avoidance": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0C-WANFENG-B01-CHOICE-01",
+        "after_page": "P0C-WANFENG-B01-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0C-WANFENG-B01-A",
+            "label": "继续赴约，把关系往前推",
+            "variable_delta": {
+              "wanfeng_link": 2,
+              "romance_focus": 1,
+              "dorm_absence": 1
+            },
+            "next_node": "P0C_ACT5_WANFENG_REAL_MEET"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B01-B",
+            "label": "说清暂时只做朋友",
+            "variable_delta": {
+              "wanfeng_boundary": 1,
+              "wanfeng_distance": 1,
+              "romance_focus_open": 1
+            },
+            "next_route": "DEFAULT-4XX"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B01-C",
+            "label": "回 4XX 处理当面问题",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "romance_focus_open": 0
+            },
+            "next_route": "DEFAULT-4XX"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B01-D",
+            "label": "谁都不解释，继续拖延",
+            "variable_delta": {
+              "avoidance": 1,
+              "wanfeng_misread": 1,
+              "missed_chance": 1
+            },
+            "next_route": "R5-LIEFLAT"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0C_ACT5_WANFENG_REAL_MEET",
+      "node_name": "第一次现实靠近",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "source_detail_doc": "开发文本_IF分支P0-C第五幕亲密分歧专注感情线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0C_ACT5_WANFENG_BOUNDARY",
+      "next_node": "P0C_ACT5_WANFENG_GIFT_COST",
+      "scene_function": "确认晚风线不是纯线上安慰，而是现实见面、迟到、宿舍缺席和解释成本共同成立。",
+      "required_completion_flags": [
+        "wanfeng_link",
+        "dorm_absence",
+        "relationship_truth"
+      ],
+      "must_record": [
+        "wanfeng_link",
+        "relationship_truth",
+        "time_debt",
+        "project_stability",
+        "dorm_visibility",
+        "avoidance",
+        "wanfeng_misread"
+      ],
+      "pages": [
+        {
+          "page_id": "P0C-WANFENG-B02-P01",
+          "beat": "地铁口迟到",
+          "location": "地铁口",
+          "text_brief": "林亦舟赶到时晚风没有生气，只问他是不是一路都在看群消息。迟到把线上关系拉进了现实。",
+          "choice_hook": [
+            "解释迟到原因",
+            "只说到了",
+            "先问她冷不冷"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "wanfeng_link": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B02-P02",
+          "beat": "夜路上的旧账",
+          "location": "校园夜路",
+          "text_brief": "晚风没有替他骂任何人，只让他把最难说的一句先说完。林亦舟发现自己更愿意先把话说给她听。",
+          "choice_hook": [
+            "讲宿舍事实",
+            "绕开冲突",
+            "把话题转回游戏"
+          ],
+          "updates": {
+            "relationship_truth": 1,
+            "old_debt": 1,
+            "avoidance": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B02-P03",
+          "beat": "群消息变短",
+          "location": "事项群",
+          "text_brief": "4XX 群里后续只剩一句“你来不来”。晚风看见他亮起的屏幕，没有偷看，只说别让别人一直等。",
+          "choice_hook": [
+            "回最低事实",
+            "先陪晚风走完",
+            "说等会儿处理"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "project_stability": 1,
+            "wanfeng_boundary": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B02-P04",
+          "beat": "第一次明确靠近",
+          "location": "凌空栈道",
+          "text_brief": "靠近不等于表白。晚风只是问：下次见面，你能不能提前说清楚，而不是让她猜。",
+          "choice_hook": [
+            "答应说清",
+            "继续含混",
+            "改约回寝室"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "future_talk": 1,
+            "wanfeng_misread": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0C-WANFENG-B02-CHOICE-01",
+        "after_page": "P0C-WANFENG-B02-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0C-WANFENG-B02-A",
+            "label": "把宿舍事实说清楚",
+            "variable_delta": {
+              "relationship_truth": 1,
+              "wanfeng_boundary": 1,
+              "time_debt": 1
+            },
+            "next_node": "P0C_ACT5_WANFENG_GIFT_COST"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B02-B",
+            "label": "只保留轻松游戏感",
+            "variable_delta": {
+              "wanfeng_link": 1,
+              "avoidance": 1,
+              "wanfeng_misread": 1
+            },
+            "next_node": "P0C_ACT5_WANFENG_GIFT_COST"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B02-C",
+            "label": "改期，先处理宿舍最低事实",
+            "variable_delta": {
+              "project_stability": 1,
+              "dorm_visibility": 1,
+              "wanfeng_misread": 1
+            },
+            "next_route": "DEFAULT-4XX"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B02-D",
+            "label": "失约后不补解释",
+            "variable_delta": {
+              "missed_chance": 1,
+              "avoidance": 1,
+              "wanfeng_distance": 1
+            },
+            "next_route": "R5-LIEFLAT"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0C_ACT5_WANFENG_GIFT_COST",
+      "node_name": "礼物、节日和时间代价",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "source_detail_doc": "开发文本_IF分支P0-C第五幕亲密分歧专注感情线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0C_ACT5_WANFENG_REAL_MEET",
+      "next_node": "P0C_ACT5_WANFENG_PUBLIC_BOUNDARY",
+      "scene_function": "用笨拙礼物和室友误读确认亲密成本：甜、花钱、被看见和错过宿舍节点同时增加。",
+      "required_completion_flags": [
+        "intimacy_cost",
+        "money_pressure",
+        "dorm_visibility"
+      ],
+      "must_record": [
+        "gift_debt",
+        "money_pressure",
+        "wanfeng_link",
+        "time_debt",
+        "relationship_truth",
+        "dorm_visibility",
+        "teasing_risk",
+        "missed_chance",
+        "wanfeng_misread"
+      ],
+      "pages": [
+        {
+          "page_id": "P0C-WANFENG-B03-P01",
+          "beat": "淘宝订单",
+          "location": "4XX 公共桌",
+          "text_brief": "他查了半小时礼物攻略，最后买了一个不贵但很像认真想过的东西。周屿从公共桌边路过，看见快递短信。",
+          "choice_hook": [
+            "藏起订单",
+            "问室友建议",
+            "直接说给晚风"
+          ],
+          "updates": {
+            "gift_debt": 1,
+            "money_pressure": 1,
+            "dorm_visibility": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B03-P02",
+          "beat": "室友建议",
+          "location": "4XX",
+          "text_brief": "周屿说送花，唐骁问预算，陆沉只问她用不用得上。建议越多，林亦舟越像一个真正要负责的人。",
+          "choice_hook": [
+            "听实用建议",
+            "听热闹建议",
+            "不问了"
+          ],
+          "updates": {
+            "teasing_risk": 1,
+            "money_pressure": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B03-P03",
+          "beat": "快递站",
+          "location": "校园快递站",
+          "text_brief": "取件排队时，事项群又催他确认 C407 材料。他手里拿着礼物，像拿着一份明知道会占时间的选择。",
+          "choice_hook": [
+            "先取礼物",
+            "先回材料",
+            "让晚风自己选"
+          ],
+          "updates": {
+            "intimacy_cost": 1,
+            "time_debt": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B03-P04",
+          "beat": "不是补偿",
+          "location": "东区商业街",
+          "text_brief": "晚风接过东西时先问是不是为了道歉。林亦舟必须说明这不是补偿，而是他真的想把她算进今天。",
+          "choice_hook": [
+            "说清心意和边界",
+            "只说顺手",
+            "临时退缩"
+          ],
+          "updates": {
+            "relationship_truth": 1,
+            "wanfeng_link": 1,
+            "wanfeng_misread": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0C-WANFENG-B03-CHOICE-01",
+        "after_page": "P0C-WANFENG-B03-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0C-WANFENG-B03-A",
+            "label": "送实用礼物并说清不是补偿",
+            "variable_delta": {
+              "gift_debt": 1,
+              "money_pressure": 1,
+              "wanfeng_link": 1
+            },
+            "next_node": "P0C_ACT5_WANFENG_PUBLIC_BOUNDARY"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B03-B",
+            "label": "不送礼物，只陪她完成一件事",
+            "variable_delta": {
+              "time_debt": 1,
+              "relationship_truth": 1,
+              "dorm_absence": 1
+            },
+            "next_node": "P0C_ACT5_WANFENG_PUBLIC_BOUNDARY"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B03-C",
+            "label": "问室友建议，让关系被看见",
+            "variable_delta": {
+              "dorm_visibility": 1,
+              "teasing_risk": 1,
+              "public_boundary": 1
+            },
+            "next_node": "P0C_ACT5_WANFENG_PUBLIC_BOUNDARY"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B03-D",
+            "label": "临时退缩，不送也不解释",
+            "variable_delta": {
+              "missed_chance": 1,
+              "wanfeng_misread": 1,
+              "avoidance": 1
+            },
+            "next_route": "DEFAULT-4XX"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0C_ACT5_WANFENG_PUBLIC_BOUNDARY",
+      "node_name": "公开边界和第一次明确靠近",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "source_detail_doc": "开发文本_IF分支P0-C第五幕亲密分歧专注感情线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0C_ACT5_WANFENG_GIFT_COST",
+      "next_node": "P0C_ACT5_WANFENG_ROUTE_LOCK",
+      "scene_function": "处理朋友圈、室友目击和晚风生活圈，让公开边界成为锁线前的最后验证。",
+      "required_completion_flags": [
+        "public_boundary",
+        "wanfeng_private_entry",
+        "dorm_visibility"
+      ],
+      "must_record": [
+        "public_boundary",
+        "wanfeng_private_entry",
+        "wanfeng_link",
+        "dorm_visibility",
+        "wanfeng_misread",
+        "missed_chance",
+        "romance_focus"
+      ],
+      "pages": [
+        {
+          "page_id": "P0C-WANFENG-B04-P01",
+          "beat": "朋友圈可见",
+          "location": "微信朋友圈",
+          "text_brief": "晚风发了一张没有露脸的夜路照片。林亦舟发现可见范围比照片本身更难处理。",
+          "choice_hook": [
+            "确认可见范围",
+            "假装没看见",
+            "私聊问她"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "wanfeng_private_entry": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B04-P02",
+          "beat": "被室友撞见",
+          "location": "食堂侧门",
+          "text_brief": "周屿远远看见他和晚风站在一起，没起哄，只在群里问他晚上还回不回。误读没有爆炸，但已经开始计数。",
+          "choice_hook": [
+            "在群里给最低事实",
+            "只私聊晚风",
+            "什么都不回"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "time_debt": 1,
+            "teasing_risk": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B04-P03",
+          "beat": "程小满旁观",
+          "location": "东区商业街",
+          "text_brief": "程小满没有挑拨，只问晚风要不要先回去。晚风看着林亦舟，等他自己说边界。",
+          "choice_hook": [
+            "当面说清",
+            "只给私下承诺",
+            "把问题推后"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "wanfeng_boundary": 1,
+            "avoidance": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B04-P04",
+          "beat": "第一次明确靠近",
+          "location": "凌空栈道",
+          "text_brief": "林亦舟不是在决定要不要喜欢晚风，而是在决定愿不愿意承担被问、被误读和需要解释的成本。",
+          "choice_hook": [
+            "明确靠近并说清边界",
+            "保留私人入口",
+            "回头处理宿舍",
+            "被起哄后否认"
+          ],
+          "updates": {
+            "romance_focus": 1,
+            "wanfeng_link": 1,
+            "public_boundary": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0C-WANFENG-B04-CHOICE-01",
+        "after_page": "P0C-WANFENG-B04-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0C-WANFENG-B04-A",
+            "label": "明确靠近，但先说清公开边界",
+            "variable_delta": {
+              "public_boundary": 2,
+              "wanfeng_link": 1,
+              "romance_focus": 1
+            },
+            "next_node": "P0C_ACT5_WANFENG_ROUTE_LOCK"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B04-B",
+            "label": "暂时只保留私人入口",
+            "variable_delta": {
+              "wanfeng_private_entry": 1,
+              "public_boundary": 1,
+              "future_talk": -1
+            },
+            "next_node": "P0C_ACT5_WANFENG_ROUTE_LOCK"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B04-C",
+            "label": "因为宿舍冲突回头",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "romance_focus": -1,
+              "wanfeng_boundary": 1
+            },
+            "next_route": "DEFAULT-4XX"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B04-D",
+            "label": "被别人起哄后否认",
+            "variable_delta": {
+              "wanfeng_misread": 2,
+              "public_boundary": 0,
+              "missed_chance": 1
+            },
+            "next_route": "DEFAULT-4XX"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0C_ACT5_WANFENG_ROUTE_LOCK",
+      "node_name": "晚风线锁池确认",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "source_detail_doc": "开发文本_IF分支P0-C第五幕亲密分歧专注感情线.md",
+      "route_switch_allowed": false,
+      "previous_node": "P0C_ACT5_WANFENG_PUBLIC_BOUNDARY",
+      "next_node": "ACT6-WANFENG-B01",
+      "scene_function": "把 P0-C 主轴亲密入口落到 R5-WANFENG 当前池；未锁定则退回宿舍主轴或摆烂，不直跳 R5-ROMANCE。",
+      "required_completion_flags": [
+        "p0c_entry_locked",
+        "act6_route_pool_locked",
+        "route_switch_allowed_false_after_lock"
+      ],
+      "must_record": [
+        "p0c_entry_locked",
+        "wanfeng_link",
+        "romance_focus",
+        "wanfeng_boundary",
+        "wanfeng_private_entry",
+        "dorm_warmth",
+        "avoidance",
+        "missed_chance"
+      ],
+      "pages": [
+        {
+          "page_id": "P0C-WANFENG-B05-P01",
+          "beat": "入口关闭前",
+          "location": "青枫居楼下",
+          "text_brief": "晚风问的不是永远，而是下一次你还会不会提前说。这个问题足够把路线锁住。",
+          "choice_hook": [
+            "承认会继续靠近",
+            "说只能低频联系"
+          ],
+          "updates": {
+            "wanfeng_link": 1,
+            "future_talk": 1,
+            "wanfeng_boundary": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B05-P02",
+          "beat": "4XX 的空位",
+          "location": "4XX 事项群",
+          "text_brief": "群里没有吵起来，只是默认不再等他。晚风线成立的同时，宿舍温度也开始重新计算。",
+          "choice_hook": [
+            "给最低事实",
+            "先不解释"
+          ],
+          "updates": {
+            "dorm_absence": 1,
+            "dorm_visibility": 1,
+            "avoidance": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B05-P03",
+          "beat": "私人入口",
+          "location": "微信语音",
+          "text_brief": "晚风留下一句“到了说一声”。这不是终局，只是第六卷继续承担现实频率的入口。",
+          "choice_hook": [
+            "回到后报平安",
+            "只发一个表情"
+          ],
+          "updates": {
+            "wanfeng_private_entry": 1,
+            "wanfeng_voice_reply_seen": true,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "P0C-WANFENG-B05-P04",
+          "beat": "锁池",
+          "location": "剧情池切换",
+          "text_brief": "如果林亦舟选择继续靠近晚风，后续第六卷不再重新开放站队、其它感情线或 5X，只结算晚风生活圈和 4XX 回声。",
+          "choice_hook": [
+            "锁定晚风线",
+            "退回宿舍主轴",
+            "保持低频私人入口",
+            "逃避滑走"
+          ],
+          "updates": {
+            "p0c_entry_locked": true,
+            "romance_focus": 1,
+            "wanfeng_link": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0C-WANFENG-B05-CHOICE-01",
+        "after_page": "P0C-WANFENG-B05-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0C-WANFENG-B05-A",
+            "label": "锁定 R5-WANFENG",
+            "variable_delta": {
+              "p0c_entry_locked": true,
+              "wanfeng_link": 2,
+              "romance_focus": 2
+            },
+            "next_block": "ACT6-WANFENG-B01",
+            "next_route": "R5-WANFENG"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B05-B",
+            "label": "低频私人入口，不进入核心亲密线",
+            "variable_delta": {
+              "wanfeng_boundary": 1,
+              "wanfeng_private_entry": 1,
+              "romance_focus": -1
+            },
+            "next_route": "DEFAULT-4XX"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B05-C",
+            "label": "退回 4XX 当面处理",
+            "variable_delta": {
+              "dorm_warmth": 2,
+              "romance_focus": -1,
+              "wanfeng_boundary": 1
+            },
+            "next_route": "DEFAULT-4XX"
+          },
+          {
+            "direction_id": "P0C-WANFENG-B05-D",
+            "label": "继续逃避所有解释",
+            "variable_delta": {
+              "avoidance": 1,
+              "missed_chance": 1,
+              "wanfeng_misread": 1
+            },
+            "next_route": "R5-LIEFLAT"
+          }
+        ]
+      }
+    }
+  ],
+  "return_points": [
+    "RET-WANFENG-01",
+    "RET-WANFENG-02",
+    "RET-WANFENG-03",
+    "RET-WANFENG-04",
+    "RET-WANFENG-05",
+    "RET-WANFENG-06"
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-WANFENG-B01",
+      "scene_range": [
+        "ACT6-WANFENG-S01",
+        "ACT6-WANFENG-S04"
+      ],
+      "choice_window_id": "ACT6-WANFENG-CHOICE-01",
+      "allowed_directions": [
+        "先解释见面安排",
+        "先处理事项群最低事实"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-WANFENG-B02",
+      "scene_range": [
+        "ACT6-WANFENG-S05",
+        "ACT6-WANFENG-S08"
+      ],
+      "choice_window_id": "ACT6-WANFENG-CHOICE-02",
+      "allowed_directions": [
+        "公开边界说清",
+        "暂时只保留私人入口"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-WANFENG-B03",
+      "scene_range": [
+        "ACT6-WANFENG-S09",
+        "ACT6-WANFENG-S12"
+      ],
+      "choice_window_id": "ACT6-WANFENG-CHOICE-03",
+      "allowed_directions": [
+        "尊重晚风生活圈",
+        "要求更多优先权"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-WANFENG-B04",
+      "scene_range": [
+        "ACT6-WANFENG-S13",
+        "ACT6-WANFENG-S16"
+      ],
+      "choice_window_id": "ACT6-WANFENG-CHOICE-04",
+      "allowed_directions": [
+        "两边都解释",
+        "继续用一边拖住另一边"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-WANFENG-B05",
+      "scene_range": [
+        "ACT6-WANFENG-S17",
+        "ACT6-WANFENG-S20"
+      ],
+      "choice_window_id": "ACT6-WANFENG-CHOICE-05",
+      "allowed_directions": [
+        "讨论毕业后现实联系",
+        "保留当下不承诺"
+      ],
+      "conversion_status": "full_page_json_ready"
+    }
+  ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-WANFENG-B01",
+      "block_name": "见面安排与事项群最低事实",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act6_variant_id": "ACT6-WANFENG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WANFENG晚风线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "P0C_WANFENG_STEP_FORWARD",
+      "next_block": "ACT6-WANFENG-B02",
+      "scene_range": [
+        "ACT6-WANFENG-S01",
+        "ACT6-WANFENG-S04"
+      ],
+      "mother_lockpoints": [
+        "事项群短句",
+        "线下见面",
+        "C407 预备",
+        "4XX 低温回声"
+      ],
+      "scene_function": "进入晚风线后，同时把见面安排和 4XX 最低事实说清，而不是重新选线。",
+      "required_completion_flags": [
+        "wanfeng_boundary_checked",
+        "act6_choice_window_count",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "wanfeng_boundary",
+        "wanfeng_link",
+        "time_debt",
+        "project_stability",
+        "dorm_absence",
+        "dorm_visibility",
+        "wanfeng_misread"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WANFENG-S01",
+          "location": "青枫居楼道 / 微信",
+          "text_brief": "晚风问周末见面时间，4XX 群同时弹出 C407 分工确认。林亦舟看到两个窗口，没有立刻回任何一个。",
+          "choice_hook": [
+            "先点开晚风",
+            "先点开群",
+            "都先标未读"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "dorm_absence": 1,
+            "dorm_visibility": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S02",
+          "location": "游戏语音 / 公共桌回声",
+          "text_brief": "晚风听出他心不在焉，问是不是寝室那边又有事。公共桌上唐骁只发了一个截止时间。",
+          "choice_hook": [
+            "告诉晚风今晚要补事实",
+            "说只是小事",
+            "让她先等等"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "wanfeng_misread": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S03",
+          "location": "B204 外 / 事项群",
+          "text_brief": "课程材料需要本人确认。周屿在群里开了个玩笑，陆沉只回看你安排。林亦舟意识到他们不再默认等他。",
+          "choice_hook": [
+            "回最低事实",
+            "私聊其中一人",
+            "不解释直接赴约"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "dorm_warmth": -1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S04",
+          "location": "地铁口 / 校门",
+          "text_brief": "晚风提前到，没催。他如果迟到，必须给出具体理由；如果准时，4XX 那边就只剩短句。",
+          "choice_hook": [
+            "把迟到原因说全",
+            "只说到了",
+            "先给 4XX 留最低事实"
+          ],
+          "updates": {
+            "wanfeng_link": 1,
+            "wanfeng_boundary": 1,
+            "time_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-01",
+        "after_page": "ACT6-WANFENG-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C01-A",
+            "label": "先解释见面安排",
+            "variable_delta": {
+              "wanfeng_boundary": 2,
+              "wanfeng_link": 1,
+              "dorm_absence": 1
+            },
+            "next_block": "ACT6-WANFENG-B02"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C01-B",
+            "label": "先处理事项群最低事实",
+            "variable_delta": {
+              "project_stability": 1,
+              "dorm_visibility": 1,
+              "wanfeng_misread": 1
+            },
+            "next_block": "ACT6-WANFENG-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-WANFENG-B02",
+      "block_name": "公开边界与私人入口",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act6_variant_id": "ACT6-WANFENG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WANFENG晚风线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-WANFENG-B01",
+      "next_block": "ACT6-WANFENG-B03",
+      "scene_range": [
+        "ACT6-WANFENG-S05",
+        "ACT6-WANFENG-S08"
+      ],
+      "mother_lockpoints": [
+        "朋友圈可见",
+        "公开材料边界",
+        "宿舍误读",
+        "私人入口"
+      ],
+      "scene_function": "处理照片、状态、评论和 4XX 看见后的解释成本，让公开成为边界而不是奖励。",
+      "required_completion_flags": [
+        "public_boundary_checked",
+        "wanfeng_private_entry_checked",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "public_boundary",
+        "dorm_visibility",
+        "wanfeng_boundary",
+        "wanfeng_private_entry",
+        "wanfeng_misread",
+        "future_talk"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WANFENG-S05",
+          "location": "朋友圈 / 抖音状态",
+          "text_brief": "晚风发了游戏截图，林亦舟的 ID 在角落。周屿刷到后只发了一个可以啊。",
+          "choice_hook": [
+            "主动和晚风确认可见范围",
+            "当没看见",
+            "私下请她隐藏"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "dorm_visibility": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S06",
+          "location": "4XX 公共桌",
+          "text_brief": "唐骁没有评价关系，只问他今晚 C407 到不到；陆沉把打印页放在他桌上。关系被看见后，现实任务没有消失。",
+          "choice_hook": [
+            "承认关系存在但不展开",
+            "打哈哈",
+            "转回 C407 分工"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "project_stability": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S07",
+          "location": "校园夜路 / 私聊",
+          "text_brief": "晚风问他是不是不想让别人知道。她没有生气，只把问题问清楚。",
+          "choice_hook": [
+            "说清不是否认，只是不想乱发",
+            "说以后再说",
+            "反问她想不想公开"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "wanfeng_misread": 1,
+            "future_talk": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S08",
+          "location": "共享相册 / 事项群",
+          "text_brief": "一张照片能不能留、能不能发、谁能看，和 C407 材料授权一样都要本人确认。林亦舟第一次把恋爱边界和公共边界放在同一张清单里。",
+          "choice_hook": [
+            "写清照片边界",
+            "只保留私人入口",
+            "直接不发"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "wanfeng_private_entry": 1,
+            "dorm_warmth": -1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-02",
+        "after_page": "ACT6-WANFENG-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C02-A",
+            "label": "公开边界说清",
+            "variable_delta": {
+              "public_boundary": 2,
+              "dorm_visibility": 1,
+              "wanfeng_boundary": 1
+            },
+            "next_block": "ACT6-WANFENG-B03"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C02-B",
+            "label": "暂时只保留私人入口",
+            "variable_delta": {
+              "wanfeng_private_entry": 2,
+              "dorm_visibility": -1,
+              "future_talk": 0
+            },
+            "next_block": "ACT6-WANFENG-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-WANFENG-B03",
+      "block_name": "晚风生活圈与优先权压力",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act6_variant_id": "ACT6-WANFENG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WANFENG晚风线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-WANFENG-B02",
+      "next_block": "ACT6-WANFENG-B04",
+      "scene_range": [
+        "ACT6-WANFENG-S09",
+        "ACT6-WANFENG-S12"
+      ],
+      "mother_lockpoints": [
+        "晚风生活圈",
+        "队伍语音",
+        "4XX 低温照面",
+        "优先权压力"
+      ],
+      "scene_function": "写出晚风不是只等林亦舟的人，关系成熟度来自尊重而不是占有。",
+      "required_completion_flags": [
+        "wanfeng_life_circle_seen",
+        "priority_pressure_recorded",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "wanfeng_boundary",
+        "wanfeng_misread",
+        "future_talk",
+        "romance_focus",
+        "intimacy_cost",
+        "dorm_visibility",
+        "dorm_absence"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WANFENG-S09",
+          "location": "游戏语音 / 晚风宿舍背景音",
+          "text_brief": "程小满在背景里问又等他啊。晚风没有替林亦舟解释，只说他也有事。林亦舟第一次听见自己被别人旁观。",
+          "choice_hook": [
+            "主动道歉",
+            "接玩笑糊过去",
+            "假装没听见"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "wanfeng_misread": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S10",
+          "location": "队伍房间",
+          "text_brief": "闻峥和叶遥已经开了另一局。晚风可以找别人，不是非他不可。轻微吃味出现，但不能写成占有奖励。",
+          "choice_hook": [
+            "尊重她先开局",
+            "要她等自己",
+            "退出语音冷处理"
+          ],
+          "updates": {
+            "future_talk": 1,
+            "intimacy_cost": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S11",
+          "location": "食堂侧门 / 4XX 回声",
+          "text_brief": "周屿碰到他，开玩笑问今晚又不回。林亦舟如果只笑，会让缺席变成默认事实。",
+          "choice_hook": [
+            "说明自己晚点回",
+            "只说有约",
+            "问他们今晚安排"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "dorm_warmth": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S12",
+          "location": "私聊 / 夜路",
+          "text_brief": "晚风说她不会每次都等他解释完才开始自己的事。林亦舟需要处理优先权，而不是要求她无条件理解。",
+          "choice_hook": [
+            "承认她也有安排",
+            "要她多给自己一点时间",
+            "说自己最近很乱"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "romance_focus": 1,
+            "wanfeng_misread": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-03",
+        "after_page": "ACT6-WANFENG-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C03-A",
+            "label": "尊重晚风生活圈",
+            "variable_delta": {
+              "wanfeng_boundary": 2,
+              "future_talk": 1,
+              "romance_focus": 1
+            },
+            "next_block": "ACT6-WANFENG-B04"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C03-B",
+            "label": "要求更多优先权",
+            "variable_delta": {
+              "romance_focus": 1,
+              "intimacy_cost": 1,
+              "wanfeng_misread": 2
+            },
+            "next_block": "ACT6-WANFENG-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-WANFENG-B04",
+      "block_name": "两边都要解释",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act6_variant_id": "ACT6-WANFENG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WANFENG晚风线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-WANFENG-B03",
+      "next_block": "ACT6-WANFENG-B05",
+      "scene_range": [
+        "ACT6-WANFENG-S13",
+        "ACT6-WANFENG-S16"
+      ],
+      "mother_lockpoints": [
+        "C407",
+        "事项群",
+        "公开边界",
+        "宿舍旧账复发",
+        "亲密责任"
+      ],
+      "scene_function": "亲密关系不是免解释卡，林亦舟必须处理晚风和 4XX 两边的边界。",
+      "required_completion_flags": [
+        "both_sides_explained_or_deferred",
+        "project_stability_checked",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "wanfeng_boundary",
+        "public_boundary",
+        "project_stability",
+        "dorm_warmth",
+        "dorm_absence",
+        "old_debt",
+        "wanfeng_misread",
+        "graduation_temperature"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WANFENG-S13",
+          "location": "C407 / 共享文档",
+          "text_brief": "C407 演示预备临时提前，晚风原定线下见面。唐骁只问他是否能按时提交，不问他去哪。",
+          "choice_hook": [
+            "提前告诉晚风项目时间",
+            "压缩项目解释",
+            "两边都临时改口"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "wanfeng_misread": 1,
+            "avoidance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S14",
+          "location": "事项群 / 私聊",
+          "text_brief": "4XX 群里只剩收到。晚风问他是不是又要临时改。他看见两边都不再等完整解释。",
+          "choice_hook": [
+            "给 4XX 发具体安排",
+            "给晚风发具体补约",
+            "两边都发短句"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "wanfeng_boundary": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S15",
+          "location": "楼下 / 地铁口",
+          "text_brief": "他赶到时晚风没有生气，只问：你到底想让我等你，还是想让我帮你躲？这句话把宿舍旧账带进亲密关系。",
+          "choice_hook": [
+            "承认自己在躲",
+            "说不是她的问题",
+            "让她先别问"
+          ],
+          "updates": {
+            "wanfeng_boundary": 2,
+            "wanfeng_misread": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S16",
+          "location": "公共桌回声 / 夜路",
+          "text_brief": "周屿不再起哄，唐骁只让他确认下一次分工，陆沉说要去就提前说。晚风那边也等一个明确答复。",
+          "choice_hook": [
+            "两边都解释",
+            "用晚风拖住宿舍",
+            "用宿舍拖住晚风"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "dorm_absence": 1,
+            "wanfeng_misread": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-04",
+        "after_page": "ACT6-WANFENG-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C04-A",
+            "label": "两边都解释",
+            "variable_delta": {
+              "wanfeng_boundary": 2,
+              "public_boundary": 1,
+              "dorm_warmth": 1,
+              "old_debt": 1
+            },
+            "next_block": "ACT6-WANFENG-B05"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C04-B",
+            "label": "继续用一边拖住另一边",
+            "variable_delta": {
+              "avoidance": 1,
+              "wanfeng_misread": 2,
+              "dorm_absence": 1,
+              "graduation_temperature": "wanfeng_missed_risk"
+            },
+            "next_block": "ACT6-WANFENG-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-WANFENG-B05",
+      "block_name": "毕业前联系频率预结算",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act6_variant_id": "ACT6-WANFENG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WANFENG晚风线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-WANFENG-B04",
+      "next_block": "ACT6-END",
+      "scene_range": [
+        "ACT6-WANFENG-S17",
+        "ACT6-WANFENG-S20"
+      ],
+      "mother_lockpoints": [
+        "毕业去向预热",
+        "答辩预备",
+        "最后饭局预热",
+        "晚风未来安排"
+      ],
+      "scene_function": "把联系频率、私人入口、公开边界和宿舍旧账状态交给第七卷。",
+      "required_completion_flags": [
+        "act6_closed",
+        "act6_route_pool_locked",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "future_talk",
+        "wanfeng_future_frequency",
+        "wanfeng_final_contact_scope",
+        "wanfeng_private_entry",
+        "wanfeng_boundary",
+        "wanfeng_misread",
+        "graduation_temperature"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WANFENG-S17",
+          "location": "教务系统 / 微信语音",
+          "text_brief": "毕业去向预登记快开始，晚风提到自己的实习或城市安排。林亦舟第一次发现以后不再是语气词。",
+          "choice_hook": [
+            "问她具体安排",
+            "只说到时候再看",
+            "转回今晚见不见"
+          ],
+          "updates": {
+            "future_talk": 1,
+            "wanfeng_future_frequency": 1,
+            "avoidance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S18",
+          "location": "答辩预备 / 4XX 群",
+          "text_brief": "4XX 讨论答辩顺序和最后饭局。林亦舟想把两个安排都保住，但时间表不允许他含混。",
+          "choice_hook": [
+            "把晚风安排说成事实",
+            "只回答辩流程",
+            "不提任何私人安排"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "project_stability": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S19",
+          "location": "晚风语音 / 校门",
+          "text_brief": "晚风没有问你选谁，只问毕业以后你准备怎么联系我。这个问题比告白更具体。",
+          "choice_hook": [
+            "讨论频率和现实限制",
+            "保留当下不承诺",
+            "只说会联系"
+          ],
+          "updates": {
+            "wanfeng_future_frequency": 1,
+            "wanfeng_boundary": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WANFENG-S20",
+          "location": "武生院站预回声 / 夜路",
+          "text_brief": "站台还没到，但第七卷的影子已经出现：毕业照、清寝、饭局、离校手续都会问同一个问题，他还能不能把话说完整。",
+          "choice_hook": [
+            "写下联系频率",
+            "只保留私人入口",
+            "留到第七卷再说"
+          ],
+          "updates": {
+            "wanfeng_final_contact_scope": "branch_dependent",
+            "graduation_temperature": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WANFENG-CHOICE-05",
+        "after_page": "ACT6-WANFENG-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WANFENG-C05-A",
+            "label": "讨论毕业后现实联系",
+            "variable_delta": {
+              "future_talk": 2,
+              "wanfeng_future_frequency": "discussed",
+              "wanfeng_final_contact_scope": "concrete_low_frequency",
+              "graduation_temperature": "continue_or_private_entry"
+            },
+            "next_block": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-WANFENG-C05-B",
+            "label": "保留当下不承诺",
+            "variable_delta": {
+              "wanfeng_private_entry": 1,
+              "future_talk": -1,
+              "wanfeng_misread": 1,
+              "graduation_temperature": "polite_parting_or_missed"
+            },
+            "next_block": "ACT6-END"
+          }
+        ]
+      }
+    }
+  ],
+  "act6_to_act7_handoff": {
+    "act6_closed": true,
+    "act6_route_pool_locked": true,
+    "route_switch_allowed": false,
+    "soft_echo_routes_only": true,
+    "next_event": "ACT7-E01-PRE-REGISTER",
+    "must_carry": [
+      "wanfeng_private_entry",
+      "wanfeng_boundary",
+      "wanfeng_future_frequency",
+      "wanfeng_final_contact_scope",
+      "dorm_warmth",
+      "old_debt",
+      "public_boundary",
+      "wanfeng_misread",
+      "future_talk",
+      "graduation_temperature"
+    ]
+  },
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "B204 / 教务系统 / 微信语音",
+      "scene_function": "预登记把毕业后城市和联系方式写成格子，晚风问他到底填哪里。",
+      "required_completion_flags": [
+        "pre_register_boundary_checked",
+        "wanfeng_city_seen",
+        "graduation_direction_status"
+      ],
+      "must_record": [
+        "wanfeng_city_seen",
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "wanfeng_future_frequency",
+        "wanfeng_boundary",
+        "public_boundary",
+        "future_talk",
+        "wanfeng_misread",
+        "time_debt",
+        "graduation_temperature"
+      ],
+      "participants_hint": "Use ACT7-WANFENG detail doc and same mother event scene; Wanfeng appears through message or voice, not as a route switch.",
+      "pages": [
+        {
+          "page_id": "ACT7-E01-WANFENG-P01",
+          "beat": "表格亮起",
+          "text_brief": "B204 发下毕业去向预登记，林亦舟刚点开表格，晚风的消息跳出来：“你填哪里？”",
+          "choice_hook": [
+            "先看去向栏",
+            "先回晚风一句玩笑"
+          ],
+          "updates": {
+            "wanfeng_city_seen": true,
+            "avoidance": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-WANFENG-P02",
+          "beat": "城市成格",
+          "text_brief": "城市、手机号、邮箱都要本人确认。他第一次发现“以后见”不能只靠一句随口。",
+          "choice_hook": [
+            "写清城市和可联系邮箱",
+            "先写待定"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "future_talk": 1,
+            "time_debt": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-WANFENG-P03",
+          "beat": "联系人栏",
+          "text_brief": "“毕业后联系人”一栏不适合直接填晚风，林亦舟意识到亲密和手续不是一回事。",
+          "choice_hook": [
+            "填正式联系人，私下说明",
+            "把表格问题含混带过"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "public_boundary": "branch_dependent",
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-WANFENG-P04",
+          "beat": "提交回声",
+          "text_brief": "提交成功后，晚风没有问“你会不会来找我”，只问：“那你到那个城市以后，还会报平安吗？”",
+          "choice_hook": [
+            "约定到站报平安",
+            "说到时候再看"
+          ],
+          "updates": {
+            "graduation_direction_status": "submitted",
+            "wanfeng_future_frequency": 1,
+            "wanfeng_link": 1,
+            "future_talk": "branch_dependent",
+            "graduation_temperature": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E01-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-WANFENG-C01-A",
+            "label": "把城市和联系频率说清",
+            "variable_delta": {
+              "wanfeng_city_seen": true,
+              "future_talk": 1,
+              "wanfeng_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E01-WANFENG-C01-B",
+            "label": "先写待定，以后再说",
+            "variable_delta": {
+              "wanfeng_misread": 1,
+              "time_debt": 1,
+              "future_talk": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "班级材料群 / 朋友圈权限页 / 微信私聊",
+      "scene_function": "检验晚风线的公开边界：不公开必须是共识，不是林亦舟怕被问。",
+      "required_completion_flags": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "wanfeng_public_scope"
+      ],
+      "must_record": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "wanfeng_public_scope",
+        "wanfeng_private_entry",
+        "public_boundary",
+        "wanfeng_boundary",
+        "dorm_visibility",
+        "wanfeng_misread"
+      ],
+      "participants_hint": "Keep public scope as mutual boundary; do not use secrecy to erase responsibility.",
+      "pages": [
+        {
+          "page_id": "ACT7-E02-WANFENG-P01",
+          "beat": "授权公告",
+          "text_brief": "班级材料群要求确认照片和经历公开范围，晚风刚好发来一张只拍到他半个影子的照片。",
+          "choice_hook": [
+            "先读私发授权要求",
+            "先看照片"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "romance_focus": 1,
+            "dorm_visibility": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-WANFENG-P02",
+          "beat": "不公开共识",
+          "text_brief": "晚风说“不公开也行，不用拿出来证明给谁看”。林亦舟需要分清共识和回避。",
+          "choice_hook": [
+            "和她说清哪些能留存",
+            "默认不公开，不解释"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "wanfeng_boundary": 1,
+            "avoidance": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-WANFENG-P03",
+          "beat": "4XX 刷到",
+          "text_brief": "周屿刷到相似背景的照片，唐骁只问授权有没有填，陆沉没评价。",
+          "choice_hook": [
+            "承认有这张照片但不展开",
+            "用玩笑否认"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "public_boundary": "branch_dependent",
+            "wanfeng_misread": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT7-E02-WANFENG-P04",
+          "beat": "回执生成",
+          "text_brief": "回执里写着“仅留存”。晚风回了一个很轻的“收到”，没有追问他是不是怕。",
+          "choice_hook": [
+            "保存回执并发给她",
+            "只保存在自己手机里"
+          ],
+          "updates": {
+            "wanfeng_link": 1,
+            "public_consent_checked": true,
+            "wanfeng_public_scope": "private_retention",
+            "wanfeng_private_entry": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E02-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-WANFENG-C01-A",
+            "label": "把不公开说成共识",
+            "variable_delta": {
+              "public_scope_boundary_checked": true,
+              "wanfeng_boundary": 1,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E02-WANFENG-C01-B",
+            "label": "默认不公开但不解释",
+            "variable_delta": {
+              "avoidance": 1,
+              "wanfeng_misread": 1,
+              "public_boundary": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "青枫居 4XX / 共享盘目录 / 微信语音",
+      "scene_function": "最后一个新年通过消息、语音和“不公开”的共识出现，强调不用证明亲密。",
+      "required_completion_flags": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "wanfeng_private_entry"
+      ],
+      "must_record": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "wanfeng_private_entry",
+        "public_boundary",
+        "missed_chance",
+        "late_regret",
+        "dorm_absence",
+        "intimacy_cost",
+        "wanfeng_boundary"
+      ],
+      "participants_hint": "The New Year beat must contrast first-year blankness with private voice records and retained objects.",
+      "pages": [
+        {
+          "page_id": "ACT7-E03-WANFENG-P01",
+          "beat": "目录命名",
+          "text_brief": "共享盘里出现“最后一个新年”目录，林亦舟想起第一卷开学时手机里还没有这么多群。",
+          "choice_hook": [
+            "打开晚风旧物目录",
+            "先点开晚风语音"
+          ],
+          "updates": {
+            "opening_contrast_seen": true,
+            "romance_focus": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-WANFENG-P02",
+          "beat": "七秒语音",
+          "text_brief": "晚风发来七秒语音，说：“不想公开就不公开，别把不公开说得像你输了。”",
+          "choice_hook": [
+            "把语音私存进目录说明",
+            "只听完，不留下记录"
+          ],
+          "updates": {
+            "wanfeng_private_entry": 1,
+            "public_boundary": 1,
+            "wanfeng_misread": 1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-WANFENG-P03",
+          "beat": "旧物对照",
+          "text_brief": "公共桌上有旧耳机、地铁小票和一张没发出去的截图，四年从空白变成证据。",
+          "choice_hook": [
+            "标注仅自己留存",
+            "把旧截图删掉"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "wanfeng_private_entry": "branch_dependent",
+            "late_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-WANFENG-P04",
+          "beat": "新年回话",
+          "text_brief": "4XX 在群里问素材交不交，晚风那边等他一句“我知道”。",
+          "choice_hook": [
+            "两边都回一句完整的",
+            "只回晚风"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "wanfeng_boundary": 1,
+            "dorm_absence": 1,
+            "intimacy_cost": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E03-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-WANFENG-C01-A",
+            "label": "私存语音，确认不公开",
+            "variable_delta": {
+              "opening_contrast_seen": true,
+              "wanfeng_private_entry": 1,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E03-WANFENG-C01-B",
+            "label": "听完但不留下记录",
+            "variable_delta": {
+              "missed_chance": 1,
+              "wanfeng_misread": 1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "毕业设计方向与开题",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 / B204 开题复核 / 微信语音",
+      "scene_function": "开题方向把“接下来做什么”和“毕业后怎么联系”同时推到眼前。",
+      "required_completion_flags": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "wanfeng_future_frequency"
+      ],
+      "must_record": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "wanfeng_future_frequency",
+        "future_talk",
+        "wanfeng_boundary",
+        "time_debt",
+        "wanfeng_misread",
+        "project_stability",
+        "dorm_absence",
+        "intimacy_cost"
+      ],
+      "participants_hint": "Keep thesis topic and future frequency in the same pressure frame; do not turn Wanfeng into a thesis helper.",
+      "pages": [
+        {
+          "page_id": "ACT7-E04-WANFENG-P01",
+          "beat": "开题表",
+          "text_brief": "林亦舟在 C407 填毕业设计方向，晚风问：“你这题以后也会带到那个城市吗？”",
+          "choice_hook": [
+            "认真解释方向",
+            "说只是作业"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "future_talk": 1,
+            "avoidance": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-WANFENG-P02",
+          "beat": "未来频率",
+          "text_brief": "晚风没有问承诺，只问“那以后多久能聊一次比较现实”。这个问题比开题更难填。",
+          "choice_hook": [
+            "讨论现实联系频率",
+            "用论文忙糊过去"
+          ],
+          "updates": {
+            "wanfeng_future_frequency": 1,
+            "wanfeng_boundary": 1,
+            "time_debt": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-WANFENG-P03",
+          "beat": "导师签字",
+          "text_brief": "导师签字前，唐骁提醒版本名，4XX 没追问晚风；他们只看见林亦舟这次没有消失。",
+          "choice_hook": [
+            "先签字再回语音",
+            "先回晚风再签"
+          ],
+          "updates": {
+            "topic_self_signed": true,
+            "project_stability": 1,
+            "wanfeng_boundary": 1,
+            "dorm_absence": 1,
+            "intimacy_cost": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-WANFENG-P04",
+          "beat": "题目落定",
+          "text_brief": "题目提交成功，晚风说：“那我以后问你在忙什么，你别只回一个改稿。”",
+          "choice_hook": [
+            "答应说清实际进度",
+            "只回一个表情"
+          ],
+          "updates": {
+            "future_talk": 1,
+            "wanfeng_link": 1,
+            "wanfeng_misread": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E04-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-WANFENG-C01-A",
+            "label": "讨论毕业后现实频率",
+            "variable_delta": {
+              "wanfeng_future_frequency": 1,
+              "future_talk": 1,
+              "wanfeng_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E04-WANFENG-C01-B",
+            "label": "用开题忙先糊过去",
+            "variable_delta": {
+              "wanfeng_misread": 1,
+              "time_debt": 1,
+              "future_talk": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月事项排队",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "明德楼窗口 / 地铁口 / 打印店",
+      "scene_function": "三四月事项和晚风线下见面撞期，检验林亦舟是否提前说清。",
+      "required_completion_flags": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "wanfeng_meeting_time_checked"
+      ],
+      "must_record": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "wanfeng_meeting_time_checked",
+        "wanfeng_boundary",
+        "time_debt",
+        "wanfeng_misread",
+        "money_pressure",
+        "dorm_absence",
+        "intimacy_cost",
+        "dorm_visibility"
+      ],
+      "participants_hint": "The metro-mouth meeting is a time cost, not a romantic skip over graduation windows.",
+      "pages": [
+        {
+          "page_id": "ACT7-E05-WANFENG-P01",
+          "beat": "窗口排队",
+          "text_brief": "明德楼窗口排到证书核验，晚风发来地铁口照片，说她今天刚好路过。",
+          "choice_hook": [
+            "先看叫号",
+            "先回她在哪里"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "romance_focus": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-WANFENG-P02",
+          "beat": "撞期提醒",
+          "text_brief": "毕业照确认、材料补交和地铁口见面压在同一下午，他不能再用“马上”糊两边。",
+          "choice_hook": [
+            "提前说明先办材料",
+            "说自己尽快到"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "queue_item_submitted": true,
+            "wanfeng_misread": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-WANFENG-P03",
+          "beat": "地铁延迟",
+          "text_brief": "晚风在地铁口没有催，只拍了站牌。林亦舟知道这不是浪漫截图，是等人的时间。",
+          "choice_hook": [
+            "发具体预计时间",
+            "买奶茶当补偿"
+          ],
+          "updates": {
+            "wanfeng_meeting_time_checked": true,
+            "future_talk": 1,
+            "wanfeng_link": 1,
+            "money_pressure": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-WANFENG-P04",
+          "beat": "缺席不补",
+          "text_brief": "窗口关闭前他赶上了，但错过了 4XX 公共桌最适合问的一段。",
+          "choice_hook": [
+            "回群补晚风时间冲突",
+            "晚点再解释"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "dorm_absence": 1,
+            "intimacy_cost": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E05-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-WANFENG-C01-A",
+            "label": "先办材料，提前说明",
+            "variable_delta": {
+              "march_boundary_checked": true,
+              "wanfeng_boundary": 1,
+              "queue_item_submitted": true
+            }
+          },
+          {
+            "direction_id": "ACT7-E05-WANFENG-C01-B",
+            "label": "先赶见面，材料压后",
+            "variable_delta": {
+              "time_debt": 1,
+              "dorm_absence": 1,
+              "wanfeng_misread": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "论文与毕设修改",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 宿舍桌边 / 微信语音",
+      "scene_function": "晚风可以陪他听语音改摘要，但不能被写成免费工具；改稿同时追问未来频率。",
+      "required_completion_flags": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline",
+        "wanfeng_boundary",
+        "intimacy_cost",
+        "wanfeng_misread",
+        "time_debt",
+        "project_stability",
+        "wanfeng_future_frequency",
+        "wanfeng_private_entry"
+      ],
+      "participants_hint": "Wanfeng may accompany by voice, but must not become a free thesis tool.",
+      "pages": [
+        {
+          "page_id": "ACT7-E06-WANFENG-P01",
+          "beat": "红批弹出",
+          "text_brief": "导师红批里标了摘要问题，晚风那边问他要不要开语音陪着改。",
+          "choice_hook": [
+            "先读红批再回语音",
+            "直接接语音"
+          ],
+          "updates": {
+            "thesis_boundary_checked": true,
+            "romance_focus": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-WANFENG-P02",
+          "beat": "语音陪改",
+          "text_brief": "晚风听他念摘要，忽然说：“我可以陪你改，但你不能只在要我听的时候出现。”",
+          "choice_hook": [
+            "发摘要并说清今晚时间",
+            "只让她帮听句子"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "thesis_revision_version": "shared_summary",
+            "intimacy_cost": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-WANFENG-P03",
+          "beat": "版本命名",
+          "text_brief": "文件名从“终版”改成“查重前版”，晚风笑他大学四年终于承认终版不一定是终版。",
+          "choice_hook": [
+            "自己改格式，语音暂停",
+            "一边聊一边拖"
+          ],
+          "updates": {
+            "revision_submitted_before_deadline": true,
+            "time_debt": 1,
+            "project_stability": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT7-E06-WANFENG-P04",
+          "beat": "截止前夜",
+          "text_brief": "提交按钮亮起时，晚风说：“你先交。交完再告诉我。”这次她没有要求他立刻陪她。",
+          "choice_hook": [
+            "交完认真回复",
+            "只发提交截图"
+          ],
+          "updates": {
+            "wanfeng_link": 1,
+            "wanfeng_future_frequency": 1,
+            "wanfeng_private_entry": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E06-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-WANFENG-C01-A",
+            "label": "发摘要，也说清今晚时间",
+            "variable_delta": {
+              "thesis_boundary_checked": true,
+              "wanfeng_boundary": 1,
+              "thesis_revision_version": "shared_summary"
+            }
+          },
+          {
+            "direction_id": "ACT7-E06-WANFENG-C01-B",
+            "label": "只把晚风当陪改语音",
+            "variable_delta": {
+              "intimacy_cost": 1,
+              "wanfeng_misread": 1,
+              "public_boundary": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩日",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "C407 答辩门口 / 走廊 / 微信私聊",
+      "scene_function": "答辩结果检验林亦舟能不能认真说，而不是继续把重要事讲成玩笑。",
+      "required_completion_flags": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "defense_message_echo"
+      ],
+      "must_record": [
+        "defense_order_seen",
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "defense_message_echo",
+        "wanfeng_link",
+        "wanfeng_boundary",
+        "wanfeng_misread",
+        "avoidance",
+        "graduation_temperature"
+      ],
+      "participants_hint": "Wanfeng waits for the result through message; do not move her into the defense door as a new campus route.",
+      "pages": [
+        {
+          "page_id": "ACT7-E07-WANFENG-P01",
+          "beat": "门口等待",
+          "text_brief": "答辩门口人很多，晚风发来“你进去了吗”。她不在门口，但她等结果。",
+          "choice_hook": [
+            "回具体顺序",
+            "回还没死"
+          ],
+          "updates": {
+            "defense_order_seen": true,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-WANFENG-P02",
+          "beat": "结果问法",
+          "text_brief": "答辩结束，晚风问“过了吗”，后面又补一句“认真说”。",
+          "choice_hook": [
+            "把结果发成语音实话",
+            "只回过了再岔开"
+          ],
+          "updates": {
+            "defense_boundary_checked": true,
+            "wanfeng_link": 1,
+            "avoidance": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-WANFENG-P03",
+          "beat": "补交小章",
+          "text_brief": "补交窗口还开着，他不能为了马上回语音就漏掉签字和小章。",
+          "choice_hook": [
+            "先补交再语音",
+            "先找地方给她打电话"
+          ],
+          "updates": {
+            "defense_post_submit_done": true,
+            "wanfeng_boundary": 1,
+            "time_debt": 1,
+            "project_stability": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT7-E07-WANFENG-P04",
+          "beat": "走廊短笑",
+          "text_brief": "他在走廊听完晚风那句“可以夸你一句吗”，没有像以前那样把声音压得很低。",
+          "choice_hook": [
+            "接受夸奖并报备补交",
+            "转开话题"
+          ],
+          "updates": {
+            "defense_message_echo": true,
+            "graduation_temperature": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E07-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-WANFENG-C01-A",
+            "label": "把结果发成语音实话",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "wanfeng_link": 1,
+              "wanfeng_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E07-WANFENG-C01-B",
+            "label": "只回过了再岔开",
+            "variable_delta": {
+              "wanfeng_misread": 1,
+              "avoidance": 1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场 / 影像授权页 / 微信私聊",
+      "scene_function": "毕业照检验晚风线的公开边界：能不能私发、能不能留存、能不能不拿来证明。",
+      "required_completion_flags": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "wanfeng_private_entry"
+      ],
+      "must_record": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "wanfeng_private_entry",
+        "public_boundary",
+        "wanfeng_misread",
+        "dorm_visibility",
+        "future_talk",
+        "graduation_temperature"
+      ],
+      "participants_hint": "Photo sharing is private boundary settlement, not public proof of intimacy.",
+      "pages": [
+        {
+          "page_id": "ACT7-E08-WANFENG-P01",
+          "beat": "队形集合",
+          "text_brief": "晨光体育场排毕业照，晚风说想看一眼，但不是要他立刻发朋友圈。",
+          "choice_hook": [
+            "先拍完集体照",
+            "先自拍给她"
+          ],
+          "updates": {
+            "grad_photo_result_recorded": true,
+            "romance_focus": 1,
+            "dorm_visibility": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-WANFENG-P02",
+          "beat": "私发预览",
+          "text_brief": "影像授权页还没确认，林亦舟手里有一张预览小图。",
+          "choice_hook": [
+            "私发前先说明仅给她看",
+            "直接发过去"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "public_boundary": "branch_dependent",
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-WANFENG-P03",
+          "beat": "4XX 同框",
+          "text_brief": "周屿起哄要不要发给“那位”，唐骁问授权，陆沉只提醒别把原图乱传。",
+          "choice_hook": [
+            "承认会私发但不公开",
+            "说没有这回事"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "public_boundary": 1,
+            "wanfeng_misread": 2
+          }
+        },
+        {
+          "page_id": "ACT7-E08-WANFENG-P04",
+          "beat": "照片存档",
+          "text_brief": "晚风把照片存下，没有发动态，只说：“你这张终于不像临时补位。”",
+          "choice_hook": [
+            "回她一张站口照以后再发",
+            "说照片就这样吧"
+          ],
+          "updates": {
+            "wanfeng_private_entry": 1,
+            "future_talk": 1,
+            "graduation_temperature": "private_entry"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E08-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-WANFENG-C01-A",
+            "label": "先说明仅私发留存",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "public_boundary": 1,
+              "wanfeng_private_entry": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E08-WANFENG-C01-B",
+            "label": "直接发，边界后补",
+            "variable_delta": {
+              "public_boundary": -1,
+              "wanfeng_misread": 1,
+              "dorm_visibility": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝与旧物",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居 4XX / 宿管窗口 / 手机备份页",
+      "scene_function": "清寝时处理旧耳机、地铁小票、语音记录和没发出的草稿，决定哪些只私存。",
+      "required_completion_flags": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned"
+      ],
+      "must_record": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned",
+        "wanfeng_private_entry",
+        "wanfeng_boundary",
+        "dorm_visibility",
+        "dorm_absence",
+        "intimacy_cost",
+        "future_talk",
+        "wanfeng_misread"
+      ],
+      "participants_hint": "Cleanout should keep old objects concrete: earphones, transit slips, voice backups, and shared items.",
+      "pages": [
+        {
+          "page_id": "ACT7-E09-WANFENG-P01",
+          "beat": "耳机和线",
+          "text_brief": "林亦舟收出旧耳机和一根胶带缠过的数据线，很多晚风语音都从这里听过。",
+          "choice_hook": [
+            "留下旧耳机",
+            "扔掉坏线和耳机"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "wanfeng_private_entry": 1,
+            "late_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-WANFENG-P02",
+          "beat": "语音备份",
+          "text_brief": "手机备份提示空间不足，他必须决定旧语音、截图和游戏结算图要不要留。",
+          "choice_hook": [
+            "只留关键几条并标私存",
+            "全部删除省空间"
+          ],
+          "updates": {
+            "wanfeng_private_entry": "branch_dependent",
+            "wanfeng_boundary": 1,
+            "missed_chance": 1,
+            "graduation_temperature": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT7-E09-WANFENG-P03",
+          "beat": "公共桌旧账",
+          "text_brief": "4XX 公共桌还要确认 U 盘和遥控器，晚风没有打断，只让他先处理那边。",
+          "choice_hook": [
+            "先确认公共物品不公开共识",
+            "一边语音一边收"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "shared_item_owner_checked": true,
+            "dorm_absence": 1,
+            "intimacy_cost": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-WANFENG-P04",
+          "beat": "交钥匙",
+          "text_brief": "宿管窗口收走钥匙，晚风问他是不是以后就不用回那个房间了。",
+          "choice_hook": [
+            "说房间不用回，但人还要说明",
+            "说都结束了"
+          ],
+          "updates": {
+            "dorm_key_returned": true,
+            "future_talk": 1,
+            "wanfeng_link": 1,
+            "old_dorm_distance": 1,
+            "wanfeng_misread": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E09-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-WANFENG-C01-A",
+            "label": "私存关键语音和截图",
+            "variable_delta": {
+              "wanfeng_private_entry": 1,
+              "old_object_scope_checked": true,
+              "wanfeng_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E09-WANFENG-C01-B",
+            "label": "删除旧记录，轻装离开",
+            "variable_delta": {
+              "missed_chance": 1,
+              "wanfeng_private_entry": -1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东北饺子馆 / 校门口 / 微信语音",
+      "scene_function": "最后一顿饭检验他能不能同时尊重旧桌和晚风私聊，而不是用一边逃另一边。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "wanfeng_voice_reply_seen"
+      ],
+      "must_record": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "wanfeng_voice_reply_seen",
+        "wanfeng_boundary",
+        "wanfeng_future_frequency",
+        "time_debt",
+        "wanfeng_misread",
+        "dorm_visibility",
+        "dorm_absence",
+        "intimacy_cost"
+      ],
+      "participants_hint": "The last meal and Wanfeng voice cannot cancel each other; both require clear timing.",
+      "pages": [
+        {
+          "page_id": "ACT7-E10-WANFENG-P01",
+          "beat": "饭局投票",
+          "text_brief": "4XX 最后一顿饭订在东北饺子馆，晚风刚好问他今晚能不能语音。",
+          "choice_hook": [
+            "先告诉她有饭局",
+            "说晚点聊但不解释"
+          ],
+          "updates": {
+            "wanfeng_boundary": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-WANFENG-P02",
+          "beat": "座位和时间",
+          "text_brief": "饭局人数锁定，晚风没有要他缺席，只问他大概几点结束。",
+          "choice_hook": [
+            "报清饭后语音时间",
+            "只说晚点再说"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "meal_attendance_locked": true,
+            "wanfeng_future_frequency": 1,
+            "time_debt": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-WANFENG-P03",
+          "beat": "桌下消息",
+          "text_brief": "饭桌上有人说起毕业后城市，林亦舟手机里晚风发来“别在桌下偷聊”。",
+          "choice_hook": [
+            "放下手机，饭后回",
+            "继续低头回"
+          ],
+          "updates": {
+            "dorm_visibility": 1,
+            "wanfeng_boundary": 1,
+            "dorm_absence": 1,
+            "intimacy_cost": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-WANFENG-P04",
+          "beat": "饭后路口",
+          "text_brief": "散场后他站在校门口回语音，晚风说：“你先把那顿饭吃完，是对的。”",
+          "choice_hook": [
+            "认真讲饭局结果",
+            "只说吃完了"
+          ],
+          "updates": {
+            "wanfeng_voice_reply_seen": true,
+            "wanfeng_link": 1,
+            "future_talk": 1,
+            "graduation_temperature": "private_entry"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E10-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-WANFENG-C01-A",
+            "label": "报清饭后语音时间",
+            "variable_delta": {
+              "meal_boundary_checked": true,
+              "wanfeng_boundary": 1,
+              "wanfeng_future_frequency": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E10-WANFENG-C01-B",
+            "label": "只说晚点看情况",
+            "variable_delta": {
+              "wanfeng_misread": 1,
+              "time_debt": 1,
+              "intimacy_cost": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "明德楼离校窗口 / 证书领取处 / 武生院站路上",
+      "scene_function": "离校手续把城市、证书、档案和未来联系频率压成具体安排。",
+      "required_completion_flags": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "wanfeng_final_contact_scope"
+      ],
+      "must_record": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "wanfeng_final_contact_scope",
+        "future_talk",
+        "wanfeng_future_frequency",
+        "money_pressure",
+        "wanfeng_boundary",
+        "intimacy_cost",
+        "wanfeng_misread"
+      ],
+      "participants_hint": "Leaving papers should make future contact concrete through first-week schedule and station messages.",
+      "pages": [
+        {
+          "page_id": "ACT7-E11-WANFENG-P01",
+          "beat": "离校清单",
+          "text_brief": "离校系统一项项变绿，晚风问他今天几点离校，像问一次真正的行程。",
+          "choice_hook": [
+            "发离校完整行程",
+            "只说下午"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "future_talk": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-WANFENG-P02",
+          "beat": "证书档案",
+          "text_brief": "证书领取处只核身份证，档案窗口只问去向。晚风的问题却是“到了以后先忙什么”。",
+          "choice_hook": [
+            "报清到站后第一周",
+            "说先活下来"
+          ],
+          "updates": {
+            "certificate_or_archive_seen": true,
+            "wanfeng_future_frequency": 1,
+            "avoidance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-WANFENG-P03",
+          "beat": "校园卡余额",
+          "text_brief": "校园卡退余额只剩几块钱，够不了一次地铁换乘。亲密在这里也要算路费。",
+          "choice_hook": [
+            "说清暂时不约见",
+            "说有空就去找她"
+          ],
+          "updates": {
+            "money_pressure": 1,
+            "wanfeng_boundary": 1,
+            "future_talk": 1,
+            "intimacy_cost": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-WANFENG-P04",
+          "beat": "站前确认",
+          "text_brief": "武生院站路上，晚风问他到站后还会不会发消息。",
+          "choice_hook": [
+            "约定到站消息",
+            "说可能会很忙"
+          ],
+          "updates": {
+            "wanfeng_final_contact_scope": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E11-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-WANFENG-C01-A",
+            "label": "报清到站后第一周",
+            "variable_delta": {
+              "certificate_or_archive_seen": true,
+              "future_talk": 1,
+              "wanfeng_future_frequency": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E11-WANFENG-C01-B",
+            "label": "用玩笑岔开报平安",
+            "variable_delta": {
+              "avoidance": 1,
+              "wanfeng_misread": 1,
+              "graduation_temperature": "private_entry"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站后",
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "act7_variant_id": "ACT7-WANFENG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "WANFENG-ENDING",
+      "main_location": "武生院站 / 地铁车厢 / 微信语音",
+      "scene_function": "输出晚风线最终温度：继续联系、私人入口、体面分别、甜但有代价或错过。",
+      "required_completion_flags": [
+        "wanfeng_final_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen"
+      ],
+      "must_record": [
+        "wanfeng_final_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen",
+        "wanfeng_voice_reply_seen",
+        "dorm_visibility",
+        "time_debt",
+        "future_talk",
+        "wanfeng_misread",
+        "wanfeng_private_entry",
+        "missed_chance"
+      ],
+      "participants_hint": "The station beat resolves contact frequency; do not promise forever, only concrete arrival and follow-up behavior.",
+      "pages": [
+        {
+          "page_id": "ACT7-E12-WANFENG-P01",
+          "beat": "进站前",
+          "text_brief": "武生院站口人很多，林亦舟把行李箱拉到闸机前，晚风发来一句：“上车了吗？”",
+          "choice_hook": [
+            "先回晚风报站",
+            "先查宿舍群动静"
+          ],
+          "updates": {
+            "wanfeng_voice_reply_seen": true,
+            "dorm_visibility": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-WANFENG-P02",
+          "beat": "到站以后",
+          "text_brief": "地铁开出校园站，最后的选择不再是说不说喜欢，而是到站以后还回不回。",
+          "choice_hook": [
+            "约定到站报平安和低频联系",
+            "只说有空再聊"
+          ],
+          "updates": {
+            "wanfeng_final_contact_scope": "branch_dependent",
+            "future_talk": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-WANFENG-P03",
+          "beat": "最后一条语音",
+          "text_brief": "晚风发来最后一条短语音：“别说永远，先说到站以后给我发消息。”",
+          "choice_hook": [
+            "听完并回复",
+            "晚点再听"
+          ],
+          "updates": {
+            "wanfeng_link": 1,
+            "wanfeng_private_entry": 1,
+            "missed_chance": 1,
+            "wanfeng_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-WANFENG-P04",
+          "beat": "站后温度",
+          "text_brief": "出站后手机震了一下。林亦舟可以发“到了”，也可以让聊天框慢慢沉下去。",
+          "choice_hook": [
+            "发到了再补现实安排",
+            "只发表情停住"
+          ],
+          "updates": {
+            "station_after_echo_seen": true,
+            "graduation_temperature": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-WANFENG-CHOICE-01",
+        "after_page": "ACT7-E12-WANFENG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-WANFENG-C01-A",
+            "label": "到站报平安，保留低频联系",
+            "variable_delta": {
+              "wanfeng_final_contact_scope": "continue_contact",
+              "wanfeng_private_entry": 1,
+              "graduation_temperature": "continue_contact"
+            }
+          },
+          {
+            "direction_id": "ACT7-E12-WANFENG-C01-B",
+            "label": "有空再聊，聊天框沉下去",
+            "variable_delta": {
+              "wanfeng_final_contact_scope": "polite_parting",
+              "wanfeng_misread": 1,
+              "graduation_temperature": "missed"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "ending_candidates": [
+    {
+      "ending_id": "WANFENG-END-CONTINUE",
+      "condition_hint": "wanfeng_link >= 7, wanfeng_boundary >= 5, future_talk >= 3, wanfeng_misread <= 2",
+      "text_landing": "毕业后继续联系，不许诺永远，但有清楚的低频联系和下一次见面入口。"
+    },
+    {
+      "ending_id": "WANFENG-END-PRIVATE-ENTRY",
+      "condition_hint": "wanfeng_link >= 5, public_boundary >= 3, future_talk <= 2",
+      "text_landing": "关系不公开收束成私人入口：微信、语音、旧游戏房间或一张没有发出的照片。"
+    },
+    {
+      "ending_id": "WANFENG-END-POLITE-PARTING",
+      "condition_hint": "wanfeng_boundary >= 4, future_talk >= 2, romance_focus <= 5",
+      "text_landing": "关系真实存在过，但城市、实习和生活节奏分开，选择体面分别。"
+    },
+    {
+      "ending_id": "WANFENG-END-MISSED",
+      "condition_hint": "wanfeng_misread >= 5 or missed_chance >= 4",
+      "text_landing": "多次失约、含混和没有说清让关系停在差一点。"
+    },
+    {
+      "ending_id": "WANFENG-END-SWEET-BUT-COSTLY",
+      "condition_hint": "romance_focus >= 7, dorm_absence >= 5, public_boundary >= 2",
+      "text_landing": "晚风关系保住了，但 4XX 毕业温度明显降低，甜和缺席一起结算。"
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "route_id": "R5-WANFENG",
+    "route_pool_id": "POOL-R5-WANFENG",
+    "p0c_source_detail_doc": "开发文本_IF分支P0-C第五幕亲密分歧专注感情线.md",
+    "p0c_entry_node_count": 5,
+    "p0c_entry_page_count": 20,
+    "p0c_entry_choice_window_count": 5,
+    "p0c_entry_direction_count": 20,
+    "p0c_direct_main_axis_allowed": true,
+    "p0c_romance_requires_a3_candidate": true,
+    "p0c_required_entry_nodes": [
+      "P0C_ACT5_WANFENG_BOUNDARY",
+      "P0C_ACT5_WANFENG_REAL_MEET",
+      "P0C_ACT5_WANFENG_GIFT_COST",
+      "P0C_ACT5_WANFENG_PUBLIC_BOUNDARY",
+      "P0C_ACT5_WANFENG_ROUTE_LOCK"
+    ],
+    "act6_variant_id": "ACT6-WANFENG",
+    "act6_block_count": 5,
+    "act6_scene_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_each_block_page_count": 4,
+    "act6_each_choice_direction_count": 2,
+    "act6_route_switch_allowed": false,
+    "act6_required_completion_flags": [
+      "wanfeng_boundary_checked",
+      "act6_choice_window_count",
+      "route_pool_locked",
+      "public_boundary_checked",
+      "wanfeng_private_entry_checked",
+      "wanfeng_life_circle_seen",
+      "priority_pressure_recorded",
+      "both_sides_explained_or_deferred",
+      "project_stability_checked",
+      "act6_closed",
+      "act6_route_pool_locked",
+      "act6_to_act7_handoff_ready"
+    ],
+    "act6_source_detail_doc": "开发细稿_IF第六卷ACT6-WANFENG晚风线正式剧情页.md",
+    "act7_variant_id": "ACT7-WANFENG",
+    "act7_core_event_count": 12,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_required_completion_flags": [
+      "pre_register_boundary_checked",
+      "wanfeng_city_seen",
+      "graduation_direction_status",
+      "public_scope_boundary_checked",
+      "public_consent_checked",
+      "wanfeng_public_scope",
+      "opening_contrast_seen",
+      "old_object_scope_checked",
+      "wanfeng_private_entry",
+      "topic_boundary_checked",
+      "topic_self_signed",
+      "wanfeng_future_frequency",
+      "march_boundary_checked",
+      "queue_item_submitted",
+      "wanfeng_meeting_time_checked",
+      "thesis_boundary_checked",
+      "thesis_revision_version",
+      "revision_submitted_before_deadline",
+      "defense_boundary_checked",
+      "defense_post_submit_done",
+      "defense_message_echo",
+      "photo_boundary_checked",
+      "grad_photo_result_recorded",
+      "shared_item_owner_checked",
+      "dorm_key_returned",
+      "meal_boundary_checked",
+      "meal_attendance_locked",
+      "wanfeng_voice_reply_seen",
+      "leaving_boundary_checked",
+      "certificate_or_archive_seen",
+      "wanfeng_final_contact_scope",
+      "graduation_temperature",
+      "station_after_echo_seen"
+    ],
+    "act7_each_event_page_count": 4,
+    "act7_each_event_direction_count": 2,
+    "act7_source_detail_doc": "开发细稿_IF第七卷ACT7-WANFENG晚风线事件变体剧情页.md",
+    "act5_full_page_json_status": "p0c_wanfeng_entry_full_page_json_ready",
+    "act6_full_page_json_status": "full_page_json_ready"
+  }
+}

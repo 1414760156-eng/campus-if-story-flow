@@ -1,0 +1,3194 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-22",
+  "route_id": "R5X-HARD",
+  "route_name": "唯一硬外流线",
+  "route_pool_id": "POOL-R5X-HARD",
+  "route_parent_pool_id": null,
+  "route_level": "S",
+  "purpose": "Act5 P0-E hard-lock entry, Act6, and Act7 page-level JSON for R5X-HARD. P0-E now covers the 5 hard-outflow entry and confirmation nodes; Act6 covers 20 ACT6-R5X formal scenes and 5 two-direction choice windows, and Act7 covers 12 ACT7-R5X same-mother-event variants.",
+  "source_docs": [
+    "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
+    "开发规格_IF路线Schema与P0节点池.md",
+    "开发长线_IF可玩支线R5X-HARD唯一硬外流线.md",
+    "开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发数据_IF剧情页级JSON_R5-LIEFLAT_v1.json",
+    "开发数据_IF剧情页级JSON_R3-PERFECT_v1.json",
+    "开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "hard_outflow",
+    "route_pool_id": "POOL-R5X-HARD",
+    "route_focus": "5x",
+    "outflow_stage": "act5_hidden_hard_outflow",
+    "entry_node": "P0E_5X_LAST_DOOR",
+    "pool_entry_choice": "P0E_5X_FOLLOW_XUCHE",
+    "confirm_choice": "P0E_5X_CONFIRM_NO_RETURN",
+    "active_route_id": "R5X-HARD",
+    "primary_bond": "new_circle_thin_relation",
+    "route_lock": "5x",
+    "hard_outflow": true,
+    "route_switch_allowed": false,
+    "p0e_entry_json_status": "full_page_json_ready",
+    "p0e_entry_node_count": 5,
+    "p0e_entry_page_count": 20,
+    "p0e_entry_choice_window_count": 5,
+    "p0e_entry_direction_count": 20,
+    "p0e_source_detail_doc": "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
+    "p0e_required_entry_nodes": [
+      "P0E_5X_LAST_DOOR",
+      "P0E_5X_NEW_TABLE",
+      "P0E_5X_THIN_RELATION",
+      "P0E_5X_SOFT_PASSING",
+      "P0E_5X_GRAD_REGRET"
+    ],
+    "act6_variant_id": "ACT6-R5X",
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "act6_full_page_json_started": true,
+    "act6_core_scenes_in_json": [
+      "ACT6-R5X-S01",
+      "ACT6-R5X-S02",
+      "ACT6-R5X-S03",
+      "ACT6-R5X-S04",
+      "ACT6-R5X-S05",
+      "ACT6-R5X-S06",
+      "ACT6-R5X-S07",
+      "ACT6-R5X-S08",
+      "ACT6-R5X-S09",
+      "ACT6-R5X-S10",
+      "ACT6-R5X-S11",
+      "ACT6-R5X-S12",
+      "ACT6-R5X-S13",
+      "ACT6-R5X-S14",
+      "ACT6-R5X-S15",
+      "ACT6-R5X-S16",
+      "ACT6-R5X-S17",
+      "ACT6-R5X-S18",
+      "ACT6-R5X-S19",
+      "ACT6-R5X-S20"
+    ],
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-WANFENG",
+      "R5-ROMANCE",
+      "R3-PERFECT",
+      "R4-WORK",
+      "A3-ACTIVITY-PUBLIC"
+    ],
+    "soft_echo_routes": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-WANFENG",
+      "R5-ROMANCE",
+      "R3-PERFECT",
+      "R4-WORK",
+      "A3-ACTIVITY-PUBLIC",
+      "R5-LIEFLAT"
+    ],
+    "act7_variant_id": "ACT7-R5X",
+    "act7_required_event_count": 12,
+    "act7_core_events_json_started": true,
+    "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_temperature_candidates": [
+      "R5X-END-CLEAR-LEAVE",
+      "R5X-END-THIN-CIRCLE",
+      "R5X-END-XUCHE-BOUNDARY",
+      "R5X-END-OLD-MESSAGE",
+      "R5X-END-DELETED-PIN",
+      "R5X-END-STATION-NOTHING"
+    ]
+  },
+  "local_variables": [
+    "5x_regret",
+    "act6_choice_window_count",
+    "act6_closed",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready",
+    "avoidance",
+    "certificate_or_archive_seen",
+    "closed_route_ids_kept_closed",
+    "defense_boundary_checked",
+    "defense_order_seen",
+    "defense_post_submit_done",
+    "deleted_pin",
+    "door_slam_risk",
+    "dorm_key_returned",
+    "dorm_repair",
+    "dorm_trust",
+    "grad_photo_result_recorded",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "hard_outflow",
+    "hard_outflow_candidate",
+    "hard_outflow_gate_seen",
+    "identity_drift",
+    "last_door_seen",
+    "leaving_boundary_checked",
+    "luchen_trust",
+    "march_boundary_checked",
+    "meal_attendance_locked",
+    "meal_boundary_checked",
+    "message_cut",
+    "money_cost",
+    "new_circle_contact",
+    "new_circle_fit",
+    "new_circle_trust",
+    "new_circle_truth",
+    "new_circle_truth_checked",
+    "new_table_seen",
+    "old_debt_unspoken",
+    "old_dorm_distance",
+    "old_message_sent",
+    "old_object_scope_checked",
+    "opening_contrast_seen",
+    "p0e_hard_lock_confirmed",
+    "photo_boundary_checked",
+    "pre_register_boundary_checked",
+    "project_stability",
+    "public_boundary",
+    "public_consent_checked",
+    "public_scope_boundary_checked",
+    "queue_item_submitted",
+    "revision_submitted_before_deadline",
+    "route_lock",
+    "route_pool_locked",
+    "self_exposure",
+    "shared_item_owner_checked",
+    "soft_passing",
+    "soft_passing_recorded",
+    "station_after_echo_seen",
+    "tang_trust",
+    "thesis_boundary_checked",
+    "thesis_revision_version",
+    "thin_relation",
+    "thin_relation_seen",
+    "time_debt",
+    "topic_boundary_checked",
+    "topic_self_signed",
+    "xu_che_shadow",
+    "xuche_boundary_seen",
+    "zhou_trust"
+  ],
+  "entry_node": {
+    "node_id": "P0E_5X_LAST_DOOR",
+    "entry_choice": "P0E_5X_FOLLOW_XUCHE",
+    "confirm_choice": "P0E_5X_CONFIRM_NO_RETURN",
+    "route_lock_after_entry": "POOL-R5X-HARD",
+    "route_switch_allowed_after_entry": false
+  },
+  "p0e_entry_nodes": [
+    {
+      "node_id": "P0E_5X_LAST_DOOR",
+      "node_name": "最后一扇门",
+      "module": "P0-E",
+      "act": "ACT5",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "source_detail_doc": "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
+      "route_switch_allowed": true,
+      "hard_outflow_gate": true,
+      "previous_node": "P0D_ACT5_SHORT_GROUP",
+      "next_node": "P0E_5X_NEW_TABLE",
+      "location": "青枫居楼梯间 / 宿舍门口 / 楼下便利店 / 后街入口",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉",
+        "许澈"
+      ],
+      "scene_function": "让玩家在仍能回头的情况下看见唯一硬外流入口；只有继续离开并切断旧现场，才进入 5X 风险。",
+      "entry_conditions": {
+        "hard_outflow_candidate_min": 1,
+        "dorm_trust_max": 1,
+        "avoidance_min": 3,
+        "door_slam_risk_min": 2,
+        "old_debt_unspoken_min": 2,
+        "xu_che_shadow_min": 1
+      },
+      "required_completion_flags": [
+        "last_door_seen",
+        "hard_outflow_gate_seen"
+      ],
+      "must_record": [
+        "hard_outflow_candidate",
+        "route_lock",
+        "hard_outflow",
+        "old_dorm_distance",
+        "new_circle_contact",
+        "message_cut"
+      ],
+      "pages": [
+        {
+          "page_id": "P0E-5X-S01",
+          "location": "青枫居 4XX 门口",
+          "text_brief": "门里没有第二句话。4XX 群停在当前版本、你们先处理和一个撤回提示之间。",
+          "choice_hook": [
+            "回头敲门",
+            "站在门口不动",
+            "下楼"
+          ],
+          "updates": {
+            "door_slam_risk": 1,
+            "old_debt_unspoken": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S02",
+          "location": "楼梯间",
+          "text_brief": "楼梯灯亮得很白。林亦舟手指停在群提醒上，能听见楼下便利店扫码枪的短响。",
+          "choice_hook": [
+            "保留群提醒",
+            "静音群",
+            "给一个人私聊"
+          ],
+          "updates": {
+            "avoidance": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S03",
+          "location": "楼下便利店",
+          "text_brief": "许澈问去不去后街坐会儿，只问喝什么，不问宿舍发生了什么。",
+          "choice_hook": [
+            "跟许澈走",
+            "只买水",
+            "说要回去"
+          ],
+          "updates": {
+            "xu_che_shadow": 1,
+            "new_circle_contact": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S04",
+          "location": "后街入口",
+          "text_brief": "旧门还在楼上，新路就在路口。这里不是普通散心，而是要不要把旧现场交给别人处理。",
+          "choice_hook": [
+            "回头",
+            "下楼冷静但留提醒",
+            "跟许澈走",
+            "静音群继续离开"
+          ],
+          "updates": {
+            "hard_outflow_candidate": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0E-5X-CHOICE-01",
+        "after_page": "P0E-5X-S04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0E-5X-C01-A",
+            "label": "回头敲门，说我回来了，当面说",
+            "variable_delta": {
+              "dorm_repair": 1,
+              "avoidance": -1,
+              "hard_outflow_candidate": -1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_pool_id": "POOL-DEFAULT-4XX",
+              "route_lock": false
+            },
+            "next_node": "DEFAULT-4XX-ACT5-ENTRY"
+          },
+          {
+            "direction_id": "P0E-5X-C01-B",
+            "label": "下楼买水，但保留 4XX 群消息提醒",
+            "variable_delta": {
+              "avoidance": 1,
+              "hard_outflow_candidate": 1,
+              "message_cut": 0
+            },
+            "route_effect": {
+              "active_route_id": "R5-LIEFLAT-PRE",
+              "route_lock": false
+            },
+            "next_node": "P0E_5X_NEW_TABLE"
+          },
+          {
+            "direction_id": "P0E-5X-C01-C",
+            "label": "跟许澈去后街坐一会儿，不解释去向",
+            "variable_delta": {
+              "hard_outflow_candidate": 1,
+              "old_dorm_distance": 1,
+              "new_circle_contact": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD-CANDIDATE",
+              "route_pool_id": "POOL-R5X-HARD"
+            },
+            "next_node": "P0E_5X_NEW_TABLE"
+          },
+          {
+            "direction_id": "P0E-5X-C01-D",
+            "label": "静音 4XX 群，回一句你们先处理吧后继续往外走",
+            "variable_delta": {
+              "hard_outflow": true,
+              "route_lock": "5x",
+              "old_dorm_distance": 2,
+              "message_cut": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD",
+              "route_pool_id": "POOL-R5X-HARD",
+              "hard_outflow": true
+            },
+            "next_node": "P0E_5X_NEW_TABLE"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0E_5X_NEW_TABLE",
+      "node_name": "新桌子",
+      "module": "P0-E",
+      "act": "ACT5",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "source_detail_doc": "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
+      "route_switch_allowed": false,
+      "hard_outflow_gate": true,
+      "previous_node": "P0E_5X_LAST_DOOR",
+      "next_node": "P0E_5X_THIN_RELATION",
+      "location": "后街烧烤 / 东区商业街小馆 / 台球厅 / 便利店后门",
+      "participants": [
+        "林亦舟",
+        "许澈",
+        "韩野",
+        "蒋沐"
+      ],
+      "scene_function": "建立新圈子轻松感，同时标记它的松散性质；5X 不是许澈救援线。",
+      "required_completion_flags": [
+        "new_table_seen",
+        "new_circle_contact"
+      ],
+      "must_record": [
+        "new_circle_trust",
+        "thin_relation",
+        "self_exposure",
+        "new_circle_fit",
+        "old_dorm_distance"
+      ],
+      "pages": [
+        {
+          "page_id": "P0E-5X-S05",
+          "location": "后街烧烤",
+          "text_brief": "韩野把椅子往旁边一踢，说正好多一个人。桌上没人知道 4XX 的旧账。",
+          "choice_hook": [
+            "坐下",
+            "先旁听",
+            "说自己刚从寝室出来"
+          ],
+          "updates": {
+            "new_circle_contact": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S06",
+          "location": "台球厅",
+          "text_brief": "许澈给他递杆，说不会也行，输了下把换人。这里的规则很轻，轻得不像宿舍。",
+          "choice_hook": [
+            "接杆",
+            "只看",
+            "问费用"
+          ],
+          "updates": {
+            "new_circle_trust": 1,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S07",
+          "location": "便利店后门",
+          "text_brief": "蒋沐讲外卖拼单和兼职消息，熟得快，也没有谁保证下次还在。",
+          "choice_hook": [
+            "加入拼单",
+            "只听信息",
+            "问下次还来吗"
+          ],
+          "updates": {
+            "new_circle_fit": 1,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S08",
+          "location": "东区商业街小馆",
+          "text_brief": "4XX 群又亮了一次。他可以把旧人叫出来，也可以让新桌子继续只属于今晚。",
+          "choice_hook": [
+            "加入新桌",
+            "旁听不讲旧事",
+            "讲一点宿舍",
+            "试图叫旧人"
+          ],
+          "updates": {
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0E-5X-CHOICE-02",
+        "after_page": "P0E-5X-S08",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0E-5X-C02-A",
+            "label": "加入新桌子，接住许澈递来的位置",
+            "variable_delta": {
+              "new_circle_trust": 1,
+              "old_dorm_distance": 1,
+              "identity_drift": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_THIN_RELATION"
+          },
+          {
+            "direction_id": "P0E-5X-C02-B",
+            "label": "只旁听，不把自己讲进去",
+            "variable_delta": {
+              "thin_relation": 1,
+              "avoidance": 1,
+              "new_circle_trust": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_THIN_RELATION"
+          },
+          {
+            "direction_id": "P0E-5X-C02-C",
+            "label": "提起自己宿舍的事，试探许澈反应",
+            "variable_delta": {
+              "self_exposure": 1,
+              "new_circle_truth": 1,
+              "5x_regret": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_THIN_RELATION"
+          },
+          {
+            "direction_id": "P0E-5X-C02-D",
+            "label": "想把周屿 / 唐骁 / 陆沉也叫出来",
+            "variable_delta": {
+              "old_dorm_distance": -1,
+              "new_circle_fit": -1,
+              "5x_regret": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD",
+              "route_lock": "5x"
+            },
+            "next_node": "P0E_5X_THIN_RELATION"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0E_5X_THIN_RELATION",
+      "node_name": "薄关系显形",
+      "module": "P0-E",
+      "act": "ACT5",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "source_detail_doc": "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
+      "route_switch_allowed": false,
+      "hard_outflow_gate": true,
+      "previous_node": "P0E_5X_NEW_TABLE",
+      "next_node": "P0E_5X_SOFT_PASSING",
+      "location": "台球厅 / 校外小馆 / 后街夜市 / 二手交易见面点",
+      "participants": [
+        "林亦舟",
+        "许澈",
+        "韩野",
+        "蒋沐"
+      ],
+      "scene_function": "把新圈的轻松翻到责任背面，确认 5X 是主动离开旧现场后的薄关系单线。",
+      "required_completion_flags": [
+        "thin_relation_seen",
+        "route_lock"
+      ],
+      "must_record": [
+        "money_cost",
+        "thin_relation",
+        "new_circle_trust",
+        "5x_regret",
+        "identity_drift",
+        "old_dorm_distance"
+      ],
+      "pages": [
+        {
+          "page_id": "P0E-5X-S09",
+          "location": "台球厅前台",
+          "text_brief": "订桌的人临时不来，前台只认押金。韩野笑着说先垫一下，大家下次给。",
+          "choice_hook": [
+            "补钱",
+            "问清楚",
+            "装没事"
+          ],
+          "updates": {
+            "thin_relation": 1,
+            "money_cost": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S10",
+          "location": "校外小馆",
+          "text_brief": "蒋沐的兼职信息已经过期，她说消息就是这样，谁手快算谁的。",
+          "choice_hook": [
+            "接受松散规则",
+            "追问为什么不提前说",
+            "换话题"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S11",
+          "location": "后街夜市",
+          "text_brief": "4XX 群里有人发了 C407 明早确认。时间已经过了最适合回去的那一段。",
+          "choice_hook": [
+            "想回 4XX 看看",
+            "只读",
+            "继续坐到散场"
+          ],
+          "updates": {
+            "5x_regret": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S12",
+          "location": "二手交易见面点",
+          "text_brief": "许澈说别想太多。这句话能让今晚过去，也能让很多事永远不过来。",
+          "choice_hook": [
+            "补钱保轻松",
+            "问清薄关系",
+            "想回头",
+            "装没事"
+          ],
+          "updates": {
+            "identity_drift": 1,
+            "old_dorm_distance": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0E-5X-CHOICE-03",
+        "after_page": "P0E-5X-S12",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0E-5X-C03-A",
+            "label": "替新圈子补钱或补确认，保住轻松关系",
+            "variable_delta": {
+              "money_cost": 1,
+              "new_circle_trust": 1,
+              "thin_relation": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_SOFT_PASSING"
+          },
+          {
+            "direction_id": "P0E-5X-C03-B",
+            "label": "直接问清楚为什么没人提前说",
+            "variable_delta": {
+              "thin_relation": 2,
+              "new_circle_truth": 1,
+              "new_circle_trust": -1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_SOFT_PASSING"
+          },
+          {
+            "direction_id": "P0E-5X-C03-C",
+            "label": "想回 4XX 看看，但发现关键时间已经过了",
+            "variable_delta": {
+              "5x_regret": 1,
+              "old_dorm_distance": 1,
+              "route_lock": "5x"
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD",
+              "route_lock": "5x"
+            },
+            "next_node": "P0E_5X_SOFT_PASSING"
+          },
+          {
+            "direction_id": "P0E-5X-C03-D",
+            "label": "装作没事，继续坐到散场",
+            "variable_delta": {
+              "identity_drift": 1,
+              "old_dorm_distance": 1,
+              "message_cut": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_SOFT_PASSING"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0E_5X_SOFT_PASSING",
+      "node_name": "同场擦肩",
+      "module": "P0-E",
+      "act": "ACT6_ACT7_BRIDGE",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "source_detail_doc": "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
+      "route_switch_allowed": false,
+      "hard_outflow_gate": true,
+      "previous_node": "P0E_5X_THIN_RELATION",
+      "next_node": "P0E_5X_GRAD_REGRET",
+      "location": "C407 外侧 / 晨光体育场外围 / 青枫居清寝窗口 / 东区商业街 / 武生院站",
+      "participants": [
+        "林亦舟",
+        "许澈",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "scene_function": "声明进入 5X 后旧人只能软照面，不再打开宿舍、晚风、感情或 A3 完整转线。",
+      "required_completion_flags": [
+        "soft_passing_recorded",
+        "closed_route_ids_kept_closed"
+      ],
+      "must_record": [
+        "soft_passing",
+        "message_cut",
+        "old_dorm_distance",
+        "new_circle_trust",
+        "5x_regret"
+      ],
+      "pages": [
+        {
+          "page_id": "P0E-5X-S13",
+          "location": "C407 项目演示外侧",
+          "text_brief": "唐骁从机房出来，手里还是那份流程表。林亦舟看见了，但这次不再站到表格旁边。",
+          "choice_hook": [
+            "点头",
+            "短句问候",
+            "避开"
+          ],
+          "updates": {
+            "soft_passing": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S14",
+          "location": "晨光体育场外围",
+          "text_brief": "周屿在活动队形里笑得很响。笑声传过来，像隔着一整条已经走偏的路。",
+          "choice_hook": [
+            "看见但不走过去",
+            "发一句还好吗",
+            "继续新约"
+          ],
+          "updates": {
+            "old_dorm_distance": 1,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S15",
+          "location": "青枫居清寝窗口",
+          "text_brief": "陆沉把钥匙交出去，只点了一下头。宿管窗口排队很慢，没有给谁重开旧话的时间。",
+          "choice_hook": [
+            "点头回应",
+            "只读群消息",
+            "跟许澈离开"
+          ],
+          "updates": {
+            "message_cut": 1,
+            "soft_passing": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S16",
+          "location": "东区商业街",
+          "text_brief": "许澈问要不要去下一桌。旧人同场不是入口，新约也不是答案。",
+          "choice_hook": [
+            "旧人同场短句",
+            "借新约离开",
+            "只读不回",
+            "继续新圈"
+          ],
+          "updates": {
+            "new_circle_trust": 1,
+            "old_dorm_distance": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0E-5X-CHOICE-04",
+        "after_page": "P0E-5X-S16",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0E-5X-C04-A",
+            "label": "看见旧人，点头但不走过去",
+            "variable_delta": {
+              "soft_passing": 1,
+              "old_dorm_distance": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_GRAD_REGRET"
+          },
+          {
+            "direction_id": "P0E-5X-C04-B",
+            "label": "在群里只读，不补解释",
+            "variable_delta": {
+              "message_cut": 1,
+              "5x_regret": 1,
+              "old_dorm_distance": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_GRAD_REGRET"
+          },
+          {
+            "direction_id": "P0E-5X-C04-C",
+            "label": "短句问一句你们还好吗",
+            "variable_delta": {
+              "soft_passing": 1,
+              "old_dorm_distance": -1,
+              "5x_regret": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD",
+              "route_lock": "5x"
+            },
+            "next_node": "P0E_5X_GRAD_REGRET"
+          },
+          {
+            "direction_id": "P0E-5X-C04-D",
+            "label": "继续跟许澈去新圈子约定",
+            "variable_delta": {
+              "new_circle_trust": 1,
+              "old_dorm_distance": 1,
+              "identity_drift": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD"
+            },
+            "next_node": "P0E_5X_GRAD_REGRET"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0E_5X_GRAD_REGRET",
+      "node_name": "新圈散场",
+      "module": "P0-E",
+      "act": "ACT7",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "source_detail_doc": "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
+      "route_switch_allowed": false,
+      "hard_outflow_gate": true,
+      "previous_node": "P0E_5X_SOFT_PASSING",
+      "next_node": "ACT6-R5X-B01",
+      "location": "后街 / 青枫居清寝窗口 / 东区商业街 / 武生院站",
+      "participants": [
+        "林亦舟",
+        "许澈",
+        "韩野",
+        "蒋沐",
+        "4XX 远处回声"
+      ],
+      "scene_function": "把 5X 入口层收成硬锁确认和毕业温度种子：新圈散得轻，旧人远得重。",
+      "required_completion_flags": [
+        "p0e_hard_lock_confirmed",
+        "route_lock",
+        "hard_outflow"
+      ],
+      "must_record": [
+        "5x_regret",
+        "new_circle_truth",
+        "old_message_sent",
+        "deleted_pin",
+        "identity_drift",
+        "graduation_temperature"
+      ],
+      "pages": [
+        {
+          "page_id": "P0E-5X-S17",
+          "location": "后街",
+          "text_brief": "韩野说下次约，蒋沐说看排班。新桌子散开得很自然，自然到没人需要解释。",
+          "choice_hook": [
+            "接受散场",
+            "问下次",
+            "沉默"
+          ],
+          "updates": {
+            "thin_relation": 1,
+            "new_circle_truth": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S18",
+          "location": "青枫居清寝窗口",
+          "text_brief": "旧宿舍也在交钥匙。林亦舟站在另一个队伍里，忽然意识到离开不是被接住。",
+          "choice_hook": [
+            "给旧群发消息",
+            "继续不发",
+            "只看旧头像"
+          ],
+          "updates": {
+            "5x_regret": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S19",
+          "location": "东区商业街",
+          "text_brief": "许澈说以后来后街也不一定碰得到我。这句话很现实，也把新圈子的边界说完了。",
+          "choice_hook": [
+            "对许澈说清",
+            "只说再见",
+            "换话题"
+          ],
+          "updates": {
+            "xuche_boundary_seen": true,
+            "new_circle_truth": 1
+          }
+        },
+        {
+          "page_id": "P0E-5X-S20",
+          "location": "武生院站",
+          "text_brief": "旧群和新圈都在手机里。删除置顶、发旧消息，或什么都不做，都会把 5X 留成不可回流的线。",
+          "choice_hook": [
+            "发旧消息",
+            "对许澈说清",
+            "删除置顶",
+            "什么都不做"
+          ],
+          "updates": {
+            "station_after_echo_seen": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0E-5X-CHOICE-05",
+        "after_page": "P0E-5X-S20",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0E-5X-C05-A",
+            "label": "给 4XX 发最后一条旧消息",
+            "variable_delta": {
+              "5x_regret": -1,
+              "soft_passing": 1,
+              "old_message_sent": true,
+              "graduation_temperature": "5x_polite_echo"
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD",
+              "route_lock": "5x"
+            },
+            "next_node": "ACT6-R5X-B01"
+          },
+          {
+            "direction_id": "P0E-5X-C05-B",
+            "label": "给许澈说清我当时是逃出来的",
+            "variable_delta": {
+              "self_exposure": 1,
+              "new_circle_truth": 1,
+              "graduation_temperature": "5x_truth_told"
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD",
+              "route_lock": "5x"
+            },
+            "next_node": "ACT6-R5X-B01"
+          },
+          {
+            "direction_id": "P0E-5X-C05-C",
+            "label": "删除 4XX 聊天置顶，保留新圈子群",
+            "variable_delta": {
+              "old_dorm_distance": 1,
+              "identity_drift": 1,
+              "deleted_pin": true,
+              "graduation_temperature": "5x_deleted_pin"
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD",
+              "route_lock": "5x"
+            },
+            "next_node": "ACT6-R5X-B01"
+          },
+          {
+            "direction_id": "P0E-5X-C05-D",
+            "label": "什么都不做，跟着行李离开",
+            "variable_delta": {
+              "5x_regret": 2,
+              "old_message_sent": false,
+              "graduation_temperature": "5x_regret_high"
+            },
+            "route_effect": {
+              "active_route_id": "R5X-HARD",
+              "route_lock": "5x"
+            },
+            "next_node": "ACT6-R5X-B01"
+          }
+        ]
+      }
+    }
+  ],
+  "return_points": [
+    "RET-R5X-01",
+    "RET-R5X-02",
+    "RET-R5X-03",
+    "RET-R5X-04",
+    "RET-R5X-05",
+    "RET-R5X-06",
+    "RET-R5X-07",
+    "RET-R5X-08",
+    "RET-R5X-09"
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-R5X-B01",
+      "scene_range": [
+        "ACT6-R5X-S01",
+        "ACT6-R5X-S04"
+      ],
+      "choice_window_id": "ACT6-R5X-CHOICE-01",
+      "allowed_directions": [
+        "继续留在新圈",
+        "保最低公共责任但不回旧线"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-R5X-B02",
+      "scene_range": [
+        "ACT6-R5X-S05",
+        "ACT6-R5X-S08"
+      ],
+      "choice_window_id": "ACT6-R5X-CHOICE-02",
+      "allowed_directions": [
+        "接受薄关系边界",
+        "继续用轻松遮旧账"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-R5X-B03",
+      "scene_range": [
+        "ACT6-R5X-S09",
+        "ACT6-R5X-S12"
+      ],
+      "choice_window_id": "ACT6-R5X-CHOICE-03",
+      "allowed_directions": [
+        "旧人同场短句",
+        "借新约离开"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-R5X-B04",
+      "scene_range": [
+        "ACT6-R5X-S13",
+        "ACT6-R5X-S16"
+      ],
+      "choice_window_id": "ACT6-R5X-CHOICE-04",
+      "allowed_directions": [
+        "对许澈说清",
+        "继续不谈深事"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-R5X-B05",
+      "scene_range": [
+        "ACT6-R5X-S17",
+        "ACT6-R5X-S20"
+      ],
+      "choice_window_id": "ACT6-R5X-CHOICE-05",
+      "allowed_directions": [
+        "发旧消息但不回线",
+        "删除置顶并离开"
+      ],
+      "conversion_status": "full_page_json_ready"
+    }
+  ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-R5X-B01",
+      "block_name": "新圈半径与最低公共责任",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act6_variant_id": "ACT6-R5X",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_block": "P0E_5X_CONFIRM_NO_RETURN",
+      "next_block": "ACT6-R5X-B02",
+      "scene_range": [
+        "ACT6-R5X-S01",
+        "ACT6-R5X-S04"
+      ],
+      "mother_lockpoints": [
+        "事项群最低确认",
+        "C407 分工",
+        "便利店新桌",
+        "旧群低温回声"
+      ],
+      "scene_function": "锁入 5X 后，让玩家看见公共流程不会因为离开旧关系而消失。",
+      "required_completion_flags": [
+        "route_lock",
+        "hard_outflow",
+        "act6_choice_window_count"
+      ],
+      "must_record": [
+        "route_lock",
+        "hard_outflow",
+        "message_cut",
+        "new_circle_trust",
+        "project_stability",
+        "old_dorm_distance"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-R5X-S01",
+          "location": "便利店门口 / 楼下",
+          "text_brief": "许澈把一瓶水推给他，说韩野他们在后街占了桌。林亦舟手机上还停着第五幕那条旧群未读，门已经在楼上关上。",
+          "choice_hook": [
+            "接水不解释",
+            "回头看楼道",
+            "把旧群静音"
+          ],
+          "updates": {
+            "route_lock": "5x",
+            "hard_outflow": true,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S02",
+          "location": "后街小馆",
+          "text_brief": "韩野问他会不会打台球，蒋沐说不会也能凑。没人问 4XX 发生了什么，这种轻让他短暂松了一口气。",
+          "choice_hook": [
+            "坐到新桌",
+            "主动说一点旧事",
+            "只接玩笑"
+          ],
+          "updates": {
+            "new_circle_trust": 1,
+            "new_circle_truth": 1,
+            "identity_drift": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S03",
+          "location": "C407 共享文档 / 新圈群",
+          "text_brief": "C407 分工表仍需要他确认本人部分。旧群没有点名，只把截止时间发出来；新圈群同时问他要不要转场。",
+          "choice_hook": [
+            "先确认本人部分",
+            "先回新圈",
+            "两边都拖着"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "old_dorm_distance": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S04",
+          "location": "台球厅楼下 / 事项群",
+          "text_brief": "许澈说你要忙就先忙，语气里没有承诺也没有责怪。林亦舟第一次看见：不被追问也可能是不被等。",
+          "choice_hook": [
+            "继续赴新圈局",
+            "补最低公共责任",
+            "只截图不回"
+          ],
+          "updates": {
+            "new_circle_trust": 1,
+            "project_stability": 1,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-R5X-CHOICE-01",
+        "after_page": "ACT6-R5X-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-R5X-C01-A",
+            "label": "继续留在新圈",
+            "variable_delta": {
+              "new_circle_trust": 1,
+              "message_cut": 1,
+              "project_stability": -1,
+              "identity_drift": 1
+            },
+            "next_block": "ACT6-R5X-B02"
+          },
+          {
+            "direction_id": "ACT6-R5X-C01-B",
+            "label": "保最低公共责任但不回旧线",
+            "variable_delta": {
+              "project_stability": 1,
+              "new_circle_truth": 1,
+              "old_dorm_distance": 1
+            },
+            "next_block": "ACT6-R5X-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-R5X-B02",
+      "block_name": "薄关系显形",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act6_variant_id": "ACT6-R5X",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_block": "ACT6-R5X-B01",
+      "next_block": "ACT6-R5X-B03",
+      "scene_range": [
+        "ACT6-R5X-S05",
+        "ACT6-R5X-S08"
+      ],
+      "mother_lockpoints": [
+        "后街夜宵",
+        "台球费",
+        "事项群短句",
+        "新圈改约"
+      ],
+      "scene_function": "把新圈的轻写成具体代价，确认没有旧账也意味着没有深账。",
+      "required_completion_flags": [
+        "thin_relation_seen",
+        "new_circle_truth_checked",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "new_circle_truth",
+        "thin_relation",
+        "money_cost",
+        "message_cut",
+        "identity_drift",
+        "5x_regret"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-R5X-S05",
+          "location": "台球厅 / 收银台",
+          "text_brief": "韩野说先让林亦舟垫一下，蒋沐在群里发了个表情包。钱不多，但话说得很轻。",
+          "choice_hook": [
+            "直接垫钱",
+            "当场 AA",
+            "看许澈反应"
+          ],
+          "updates": {
+            "money_cost": 1,
+            "new_circle_truth": 1,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S06",
+          "location": "后街小馆",
+          "text_brief": "原定的夜宵改成别人一桌，蒋沐说下次吧。许澈没有替谁解释，只说今晚确实乱。",
+          "choice_hook": [
+            "问清改约",
+            "装作无所谓",
+            "找许澈单独坐会"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "thin_relation": 1,
+            "new_circle_trust": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S07",
+          "location": "青枫居群预览",
+          "text_brief": "旧群只发材料明早前交，没有人问他怎么不在。短句比吵架轻，也比吵架远。",
+          "choice_hook": [
+            "回收到",
+            "不回",
+            "私聊一句但不解释"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "message_cut": 1,
+            "soft_passing": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S08",
+          "location": "便利店后门",
+          "text_brief": "许澈说他们就是这样的，约得到就约，约不到也没事。这句话不是冷漠，只是边界。",
+          "choice_hook": [
+            "接受边界",
+            "继续说没事",
+            "把旧事岔开"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "thin_relation": 1,
+            "identity_drift": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-R5X-CHOICE-02",
+        "after_page": "ACT6-R5X-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-R5X-C02-A",
+            "label": "接受薄关系边界",
+            "variable_delta": {
+              "new_circle_truth": 2,
+              "thin_relation": 1,
+              "money_cost": -1,
+              "5x_regret": 1
+            },
+            "next_block": "ACT6-R5X-B03"
+          },
+          {
+            "direction_id": "ACT6-R5X-C02-B",
+            "label": "继续用轻松遮旧账",
+            "variable_delta": {
+              "identity_drift": 1,
+              "thin_relation": 2,
+              "message_cut": 1
+            },
+            "next_block": "ACT6-R5X-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-R5X-B03",
+      "block_name": "旧人同场短句",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act6_variant_id": "ACT6-R5X",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_block": "ACT6-R5X-B02",
+      "next_block": "ACT6-R5X-B04",
+      "scene_range": [
+        "ACT6-R5X-S09",
+        "ACT6-R5X-S12"
+      ],
+      "mother_lockpoints": [
+        "食堂同场",
+        "C407 外擦肩",
+        "活动现场远处",
+        "旧群短消息"
+      ],
+      "scene_function": "让旧人重新进入画面，但只作为软照面和短句，不开放旧路线按钮。",
+      "required_completion_flags": [
+        "soft_passing_recorded",
+        "closed_route_ids_kept_closed",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "soft_passing",
+        "old_dorm_distance",
+        "message_cut",
+        "old_message_sent",
+        "5x_regret"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-R5X-S09",
+          "location": "食堂侧门",
+          "text_brief": "周屿在队伍另一头看到他，笑了一下，又把话接回别人那里。那半拍停顿够长，长到林亦舟无法假装没看见。",
+          "choice_hook": [
+            "点头回应",
+            "低头走过",
+            "发一句短消息"
+          ],
+          "updates": {
+            "soft_passing": 1,
+            "old_dorm_distance": 1,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S10",
+          "location": "C407 门口",
+          "text_brief": "唐骁把材料交给老师，只问林亦舟本人页签有没有签。没有责备，也没有把他拉回旧分工。",
+          "choice_hook": [
+            "签本人页",
+            "问旧项目进度",
+            "只说辛苦了"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "soft_passing": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S11",
+          "location": "活动现场远处",
+          "text_brief": "陆沉从走廊另一边让开，晚风或社团候选只在动态里一闪。所有旧线都还在，只是不再等他进入。",
+          "choice_hook": [
+            "停一下",
+            "继续跟新圈走",
+            "截图后划掉"
+          ],
+          "updates": {
+            "soft_passing": 1,
+            "new_circle_trust": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S12",
+          "location": "校门 / 新圈来电",
+          "text_brief": "新圈约好的车到了，韩野催他快点。旧群里有人发到了说一声，语气像公共提醒。",
+          "choice_hook": [
+            "发短句再走",
+            "借新约离开",
+            "不回直接上车"
+          ],
+          "updates": {
+            "old_message_sent": "branch_dependent",
+            "old_dorm_distance": 1,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-R5X-CHOICE-03",
+        "after_page": "ACT6-R5X-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-R5X-C03-A",
+            "label": "旧人同场短句",
+            "variable_delta": {
+              "soft_passing": 2,
+              "5x_regret": 1,
+              "message_cut": -1
+            },
+            "next_block": "ACT6-R5X-B04"
+          },
+          {
+            "direction_id": "ACT6-R5X-C03-B",
+            "label": "借新约离开",
+            "variable_delta": {
+              "old_dorm_distance": 1,
+              "new_circle_trust": 1,
+              "message_cut": 1
+            },
+            "next_block": "ACT6-R5X-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-R5X-B04",
+      "block_name": "许澈边界",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act6_variant_id": "ACT6-R5X",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_block": "ACT6-R5X-B03",
+      "next_block": "ACT6-R5X-B05",
+      "scene_range": [
+        "ACT6-R5X-S13",
+        "ACT6-R5X-S16"
+      ],
+      "mother_lockpoints": [
+        "便利店后门",
+        "论文 / C407 预备",
+        "新圈散局",
+        "许澈个人去向"
+      ],
+      "scene_function": "把许澈写回有限但真实的位置：他可以给一张不用解释的桌子，但不是新的终点。",
+      "required_completion_flags": [
+        "xuche_boundary_seen",
+        "new_circle_truth_checked",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "xuche_boundary_seen",
+        "new_circle_truth",
+        "thin_relation",
+        "identity_drift",
+        "message_cut",
+        "5x_regret"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-R5X-S13",
+          "location": "便利店后门",
+          "text_brief": "许澈下班后摘掉工牌，动作很快，像把一段关系也顺手收进兜里。林亦舟突然不知道该从哪句旧事说起。",
+          "choice_hook": [
+            "讲旧宿舍",
+            "只说最近累",
+            "问他之后去哪"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "identity_drift": 1,
+            "xuche_boundary_seen": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S14",
+          "location": "冷柜旁 / 私聊",
+          "text_brief": "林亦舟试着说 4XX，许澈听完没有评价谁对谁错，只说那是你们的事，我不好判。好意和不承担同时存在。",
+          "choice_hook": [
+            "接受他不评判",
+            "继续追问",
+            "岔开话题"
+          ],
+          "updates": {
+            "xuche_boundary_seen": true,
+            "new_circle_truth": 1,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S15",
+          "location": "C407 共享文档",
+          "text_brief": "论文或演示预备临时提前，新圈群说今天可能散得早。许澈也有自己的排班，不会因为林亦舟留下。",
+          "choice_hook": [
+            "先完成本人任务",
+            "去追新圈散局",
+            "让许澈等一下"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "thin_relation": 1,
+            "identity_drift": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S16",
+          "location": "校外小馆",
+          "text_brief": "许澈说毕业后也不一定在这边。他不是拒绝，只是在说事实。林亦舟听见这句时，旧群置顶还在手机顶端。",
+          "choice_hook": [
+            "对许澈说清",
+            "继续不谈深事",
+            "把旧群下移"
+          ],
+          "updates": {
+            "xuche_boundary_seen": true,
+            "new_circle_truth": 1,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-R5X-CHOICE-04",
+        "after_page": "ACT6-R5X-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-R5X-C04-A",
+            "label": "对许澈说清",
+            "variable_delta": {
+              "xuche_boundary_seen": true,
+              "new_circle_truth": 2,
+              "5x_regret": 1,
+              "identity_drift": -1
+            },
+            "next_block": "ACT6-R5X-B05"
+          },
+          {
+            "direction_id": "ACT6-R5X-C04-B",
+            "label": "继续不谈深事",
+            "variable_delta": {
+              "thin_relation": 1,
+              "identity_drift": 1,
+              "message_cut": 1
+            },
+            "next_block": "ACT6-R5X-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-R5X-B05",
+      "block_name": "旧消息与删除置顶预结算",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act6_variant_id": "ACT6-R5X",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md",
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_block": "ACT6-R5X-B04",
+      "next_block": "ACT6-END",
+      "scene_range": [
+        "ACT6-R5X-S17",
+        "ACT6-R5X-S20"
+      ],
+      "mother_lockpoints": [
+        "毕业去向预热",
+        "答辩预备",
+        "旧群置顶",
+        "武生院站预回声"
+      ],
+      "scene_function": "把旧消息、删除置顶、许澈边界、新圈薄关系和毕业温度交给第七卷。",
+      "required_completion_flags": [
+        "act6_closed",
+        "act6_route_pool_locked",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "old_message_sent",
+        "deleted_pin",
+        "message_cut",
+        "soft_passing",
+        "5x_regret",
+        "graduation_temperature"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-R5X-S17",
+          "location": "教务系统 / 新圈群",
+          "text_brief": "毕业去向预登记快开始，新圈问要不要最后再约几次。旧群置顶也亮着，像另一张没有消失的表格。",
+          "choice_hook": [
+            "先填本人去向",
+            "先回新圈",
+            "看旧群不回"
+          ],
+          "updates": {
+            "graduation_direction_status": "pending",
+            "new_circle_trust": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S18",
+          "location": "答辩预备 / 台球厅门口",
+          "text_brief": "答辩顺序、论文终版和新圈散局撞在一起。韩野说改天，蒋沐说随便，许澈也有自己的班。",
+          "choice_hook": [
+            "保最低答辩预备",
+            "去追散局",
+            "问许澈能不能等"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "thin_relation": 1,
+            "xuche_boundary_seen": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S19",
+          "location": "旧群置顶 / 草稿框",
+          "text_brief": "他写下一句到时候都顺利，又删掉。发出去不会回线，不发也不等于轻松。",
+          "choice_hook": [
+            "发短消息",
+            "存草稿",
+            "删除置顶"
+          ],
+          "updates": {
+            "old_message_sent": "branch_dependent",
+            "deleted_pin": "branch_dependent",
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT6-R5X-S20",
+          "location": "武生院站预回声 / 夜路",
+          "text_brief": "站台还没到，但第七卷的影子已经出现：毕业照、清寝、最后饭局和离校手续都会问同一个问题，他要不要承认自己已经离开。",
+          "choice_hook": [
+            "发旧消息但不回线",
+            "删除置顶并离开",
+            "什么都先不做"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent",
+            "route_lock": "5x",
+            "hard_outflow": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-R5X-CHOICE-05",
+        "after_page": "ACT6-R5X-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-R5X-C05-A",
+            "label": "发旧消息但不回线",
+            "variable_delta": {
+              "old_message_sent": true,
+              "soft_passing": 1,
+              "5x_regret": -1,
+              "graduation_temperature": "old_message_no_return"
+            },
+            "next_block": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-R5X-C05-B",
+            "label": "删除置顶并离开",
+            "variable_delta": {
+              "deleted_pin": true,
+              "message_cut": 2,
+              "5x_regret": 1,
+              "graduation_temperature": "deleted_pin_shadow"
+            },
+            "next_block": "ACT6-END"
+          }
+        ]
+      }
+    }
+  ],
+  "act6_to_act7_handoff": {
+    "act6_closed": true,
+    "act6_route_pool_locked": true,
+    "route_switch_allowed": false,
+    "soft_echo_routes_only": true,
+    "next_event": "ACT7-E01-PRE-REGISTER",
+    "must_carry": [
+      "route_lock",
+      "hard_outflow",
+      "new_circle_truth",
+      "thin_relation",
+      "old_dorm_distance",
+      "message_cut",
+      "soft_passing",
+      "xuche_boundary_seen",
+      "old_message_sent",
+      "deleted_pin",
+      "5x_regret",
+      "graduation_temperature"
+    ]
+  },
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "B204 / 教务系统 / 新圈群与旧群置顶",
+      "scene_function": "旧群预登记只是软消息，新圈问毕业后去哪像随口问天气。",
+      "required_completion_flags": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "route_lock"
+      ],
+      "must_record": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "route_lock",
+        "new_circle_truth",
+        "message_cut",
+        "old_dorm_distance",
+        "identity_drift"
+      ],
+      "participants_hint": "Old group notification is not a route-return button; new circle should feel light, not rescuing.",
+      "pages": [
+        {
+          "page_id": "ACT7-E01-R5X-P01",
+          "beat": "表格仍来",
+          "text_brief": "B204 仍发毕业去向预登记，旧群也有人转发通知，但没人再点名等他确认。",
+          "choice_hook": [
+            "先填本人去向",
+            "先看新圈约饭消息"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "new_circle_trust": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-R5X-P02",
+          "beat": "像天气",
+          "text_brief": "许澈问毕业后去哪，语气像问今晚吃什么，不像要替他接住什么。",
+          "choice_hook": [
+            "按自己去向填，不借旧人",
+            "只跟新圈随口说"
+          ],
+          "updates": {
+            "graduation_direction_status": "submitted",
+            "new_circle_truth": 1,
+            "identity_drift": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-R5X-P03",
+          "beat": "旧联系人",
+          "text_brief": "旧联系人栏能填，旧群置顶也还在，但它们已经不是回线按钮。",
+          "choice_hook": [
+            "保留正式联系人，不重开私线",
+            "把旧联系人都留空"
+          ],
+          "updates": {
+            "soft_passing": 1,
+            "message_cut": 1,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-R5X-P04",
+          "beat": "提交后",
+          "text_brief": "表格提交成功，新圈问他要不要去后街吃点东西，旧群消息沉到第二屏。",
+          "choice_hook": [
+            "报备最低流程后赴约",
+            "直接赴约"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "old_dorm_distance": 1,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-R5X-CHOICE-01",
+        "after_page": "ACT7-E01-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-R5X-C01-A",
+            "label": "按自己去向填，不借旧人",
+            "variable_delta": {
+              "pre_register_boundary_checked": true,
+              "graduation_direction_status": "submitted",
+              "new_circle_truth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E01-R5X-C01-B",
+            "label": "只跟新圈随口说",
+            "variable_delta": {
+              "identity_drift": 1,
+              "message_cut": 1,
+              "graduation_temperature": "5x_regret"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "班级材料群 / 新圈随手照 / 旧授权回执",
+      "scene_function": "公开范围只保最低本人流程，旧线授权和新圈照片都不能回旧线。",
+      "required_completion_flags": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "hard_outflow"
+      ],
+      "must_record": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "hard_outflow",
+        "message_cut",
+        "old_dorm_distance",
+        "new_circle_truth",
+        "thin_relation"
+      ],
+      "participants_hint": "Public consent must not reopen old-route intimacy.",
+      "pages": [
+        {
+          "page_id": "ACT7-E02-R5X-P01",
+          "beat": "材料提醒",
+          "text_brief": "班级材料群提醒公开范围确认，新圈群里有人随手发了后街合照。",
+          "choice_hook": [
+            "先确认本人公开材料",
+            "先看新圈照片"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "new_circle_trust": 1,
+            "identity_drift": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-R5X-P02",
+          "beat": "旧授权",
+          "text_brief": "旧线照片、采访或项目材料仍要最低授权，但这不再打开旧关系解释。",
+          "choice_hook": [
+            "只确认最低公开材料",
+            "切掉旧授权回声"
+          ],
+          "updates": {
+            "public_consent_checked": true,
+            "soft_passing": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-R5X-P03",
+          "beat": "新圈照片",
+          "text_brief": "韩野说随便发，蒋沐问要不要打码。许澈只说不想发就不发。",
+          "choice_hook": [
+            "说清新圈照片边界",
+            "随他们发"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "thin_relation": 1,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-R5X-P04",
+          "beat": "回执以后",
+          "text_brief": "公开回执保存好，旧群没有追问，新圈也没有继续讨论。事情轻得像没有发生。",
+          "choice_hook": [
+            "保存回执",
+            "不再看旧群"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-R5X-CHOICE-01",
+        "after_page": "ACT7-E02-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-R5X-C01-A",
+            "label": "只确认最低公开材料",
+            "variable_delta": {
+              "public_scope_boundary_checked": true,
+              "public_consent_checked": true,
+              "soft_passing": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E02-R5X-C01-B",
+            "label": "切掉旧授权回声",
+            "variable_delta": {
+              "message_cut": 1,
+              "old_dorm_distance": 1,
+              "graduation_temperature": "deleted_pin_shadow"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "青枫居远处 / 后街小馆 / 旧共享盘目录",
+      "scene_function": "旧线的最后一个新年在远处成形，新圈没有义务替他记住开学。",
+      "required_completion_flags": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "new_circle_truth"
+      ],
+      "must_record": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "new_circle_truth",
+        "identity_drift",
+        "thin_relation",
+        "5x_regret",
+        "message_cut"
+      ],
+      "participants_hint": "The new table may be real and still unable to remember old New Year.",
+      "pages": [
+        {
+          "page_id": "ACT7-E03-R5X-P01",
+          "beat": "远处目录",
+          "text_brief": "旧共享盘里出现最后一个新年目录，林亦舟只在消息预览里看见标题。",
+          "choice_hook": [
+            "打开看一眼",
+            "直接划掉"
+          ],
+          "updates": {
+            "opening_contrast_seen": true,
+            "soft_passing": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-R5X-P02",
+          "beat": "新桌子",
+          "text_brief": "后街小馆的桌子很吵，没人问他第一卷怎么开始，也没人记得 4XX 那张桌。",
+          "choice_hook": [
+            "承认旧新年在远处发生",
+            "用新局覆盖"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "5x_regret": 1,
+            "identity_drift": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-R5X-P03",
+          "beat": "旧物提示",
+          "text_brief": "一张旧传单或外卖小票从包里掉出来，许澈看见了，但没有追问。",
+          "choice_hook": [
+            "自己收起",
+            "扔掉"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "old_dorm_distance": 1,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-R5X-P04",
+          "beat": "散场很快",
+          "text_brief": "新局散得比吵架快，大家说下次约，谁也没问下次是哪天。",
+          "choice_hook": [
+            "问一句下次",
+            "装作不在意"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "thin_relation": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-R5X-CHOICE-01",
+        "after_page": "ACT7-E03-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-R5X-C01-A",
+            "label": "承认旧新年在远处发生",
+            "variable_delta": {
+              "opening_contrast_seen": true,
+              "new_circle_truth": 1,
+              "5x_regret": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E03-R5X-C01-B",
+            "label": "用新局覆盖",
+            "variable_delta": {
+              "identity_drift": 1,
+              "thin_relation": 1,
+              "graduation_temperature": "thin_circle"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "毕业设计方向与开题",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 / 后街便利店 / 教务系统",
+      "scene_function": "开题只交自己的最低责任，新圈不理解旧项目，旧人只看见结果。",
+      "required_completion_flags": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "project_stability"
+      ],
+      "must_record": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "project_stability",
+        "soft_passing",
+        "identity_drift",
+        "new_circle_truth",
+        "message_cut"
+      ],
+      "participants_hint": "R5X can submit the topic; it cannot recover the project route.",
+      "pages": [
+        {
+          "page_id": "ACT7-E04-R5X-P01",
+          "beat": "开题页",
+          "text_brief": "开题表仍要填，C407 仍要最低材料，只是旧项目组不再等他完整解释。",
+          "choice_hook": [
+            "先交自己的题目",
+            "先去新圈约好的局"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "new_circle_trust": 1,
+            "project_stability": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-R5X-P02",
+          "beat": "旧项目",
+          "text_brief": "唐骁或同学在同场流程里看见他交表，没有要求他回到旧线。",
+          "choice_hook": [
+            "只交自己的题目与最低责任",
+            "用新圈时间遮旧项目"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "soft_passing": 1,
+            "identity_drift": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-R5X-P03",
+          "beat": "许澈不懂",
+          "text_brief": "许澈问他题目是什么，听完只说挺麻烦，没有假装懂。",
+          "choice_hook": [
+            "接受他不懂",
+            "说没什么"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-R5X-P04",
+          "beat": "签字以后",
+          "text_brief": "签字完成，旧群没有追问，安静得像一种确认。",
+          "choice_hook": [
+            "保存签字页",
+            "不看旧群"
+          ],
+          "updates": {
+            "topic_self_signed": true,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-R5X-CHOICE-01",
+        "after_page": "ACT7-E04-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-R5X-C01-A",
+            "label": "只交自己的题目与最低责任",
+            "variable_delta": {
+              "topic_boundary_checked": true,
+              "project_stability": 1,
+              "soft_passing": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E04-R5X-C01-B",
+            "label": "用新圈时间遮旧项目",
+            "variable_delta": {
+              "identity_drift": 1,
+              "project_stability": -1,
+              "graduation_temperature": "5x_regret"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月事项排队",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "明德楼窗口 / 台球厅消息 / 旧群短句",
+      "scene_function": "三四月窗口仍发生，但旧群消息更短，新圈约局更快散。",
+      "required_completion_flags": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "message_cut"
+      ],
+      "must_record": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "message_cut",
+        "money_cost",
+        "thin_relation",
+        "new_circle_truth",
+        "project_stability"
+      ],
+      "participants_hint": "March queue should show both administrative continuity and old-message shortening.",
+      "pages": [
+        {
+          "page_id": "ACT7-E05-R5X-P01",
+          "beat": "窗口排队",
+          "text_brief": "实习预收、证书核验和材料窗口仍排队，新圈群问晚上台球还来不来。",
+          "choice_hook": [
+            "先办本人事项",
+            "先回新圈消息"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "new_circle_trust": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-R5X-P02",
+          "beat": "旧群短句",
+          "text_brief": "旧群只发窗口在三楼，没有人问他要不要一起去。",
+          "choice_hook": [
+            "完成本人事项不回旧线",
+            "让消息继续断"
+          ],
+          "updates": {
+            "queue_item_submitted": true,
+            "soft_passing": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-R5X-P03",
+          "beat": "钱和票",
+          "text_brief": "台球费、夜宵钱和打印费挤在一起，新圈的钱账也不是自动清楚。",
+          "choice_hook": [
+            "当场 AA 说清",
+            "先垫钱"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "money_cost": 1,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-R5X-P04",
+          "beat": "窗口之后",
+          "text_brief": "事项办完，他没有地方需要回去解释，轻松和空都是真的。",
+          "choice_hook": [
+            "去新圈但保留流程截图",
+            "直接去新圈"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "identity_drift": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-R5X-CHOICE-01",
+        "after_page": "ACT7-E05-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-R5X-C01-A",
+            "label": "完成本人事项不回旧线",
+            "variable_delta": {
+              "march_boundary_checked": true,
+              "queue_item_submitted": true,
+              "soft_passing": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E05-R5X-C01-B",
+            "label": "让消息继续断",
+            "variable_delta": {
+              "message_cut": 1,
+              "old_dorm_distance": 1,
+              "graduation_temperature": "deleted_pin_shadow"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "改论文 / 毕业设计",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 便利店后门 / 新圈夜宵桌",
+      "scene_function": "新圈可以陪他熬夜，但不理解旧项目；旧人只看见他交了终版。",
+      "required_completion_flags": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline",
+        "project_stability",
+        "identity_drift",
+        "thin_relation",
+        "5x_regret"
+      ],
+      "participants_hint": "New circle can keep him company without understanding the old project.",
+      "pages": [
+        {
+          "page_id": "ACT7-E06-R5X-P01",
+          "beat": "红批到来",
+          "text_brief": "导师红批发来，许澈在便利店后门说你先弄，弄完来坐会。",
+          "choice_hook": [
+            "先改自己的版本",
+            "先去坐一会"
+          ],
+          "updates": {
+            "thesis_boundary_checked": true,
+            "new_circle_trust": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-R5X-P02",
+          "beat": "不理解旧项目",
+          "text_brief": "新圈可以陪他熬夜，却不理解 C407 旧项目为什么这么重。",
+          "choice_hook": [
+            "自己改完不找旧人",
+            "熬夜跟新圈混过"
+          ],
+          "updates": {
+            "thesis_revision_version": "self_revised_5x",
+            "project_stability": 1,
+            "identity_drift": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-R5X-P03",
+          "beat": "旧人结果",
+          "text_brief": "旧人只在系统里看见他提交了终版，不再问他为什么没来讨论。",
+          "choice_hook": [
+            "接受只剩结果",
+            "私聊一句但不解释"
+          ],
+          "updates": {
+            "old_dorm_distance": 1,
+            "soft_passing": 1,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-R5X-P04",
+          "beat": "提交成功",
+          "text_brief": "终版提交成功，新圈夜宵已经散了一半，旧群也没有新消息。",
+          "choice_hook": [
+            "保存提交回执",
+            "去追散局"
+          ],
+          "updates": {
+            "revision_submitted_before_deadline": true,
+            "thin_relation": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-R5X-CHOICE-01",
+        "after_page": "ACT7-E06-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-R5X-C01-A",
+            "label": "自己改完不找旧人",
+            "variable_delta": {
+              "thesis_boundary_checked": true,
+              "thesis_revision_version": "self_revised_5x",
+              "project_stability": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E06-R5X-C01-B",
+            "label": "熬夜跟新圈混过",
+            "variable_delta": {
+              "identity_drift": 1,
+              "project_stability": -1,
+              "graduation_temperature": "thin_circle"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩日",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "C407 答辩门口 / 走廊擦肩 / 新圈群",
+      "scene_function": "许澈或新圈问一句“过了没”，旧人只在同场流程里擦肩。",
+      "required_completion_flags": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "soft_passing"
+      ],
+      "must_record": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "soft_passing",
+        "defense_order_seen",
+        "new_circle_truth",
+        "message_cut",
+        "old_dorm_distance"
+      ],
+      "participants_hint": "Defense day gives soft passing, not route recovery.",
+      "pages": [
+        {
+          "page_id": "ACT7-E07-R5X-P01",
+          "beat": "门口排队",
+          "text_brief": "答辩门口排队，周屿或唐骁从另一边走过，谁都没有停太久。",
+          "choice_hook": [
+            "点头就走",
+            "发一句短消息"
+          ],
+          "updates": {
+            "defense_order_seen": true,
+            "soft_passing": 1,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-R5X-P02",
+          "beat": "过了没",
+          "text_brief": "许澈在群里问过了没，像问一局游戏赢没赢。",
+          "choice_hook": [
+            "简单说过了并补交",
+            "只跟新圈发"
+          ],
+          "updates": {
+            "defense_boundary_checked": true,
+            "defense_post_submit_done": true,
+            "new_circle_trust": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-R5X-P03",
+          "beat": "旧人同场",
+          "text_brief": "陆沉在补交窗口外看见他，只点了一下头，没替他说旧事。",
+          "choice_hook": [
+            "点头回应",
+            "假装没看见"
+          ],
+          "updates": {
+            "soft_passing": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-R5X-P04",
+          "beat": "答辩以后",
+          "text_brief": "新圈说今晚吃点好的，旧群只有一条都过了吧。",
+          "choice_hook": [
+            "回最低流程",
+            "直接赴约"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "new_circle_trust": 1,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-R5X-CHOICE-01",
+        "after_page": "ACT7-E07-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-R5X-C01-A",
+            "label": "简单说过了并补交",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "defense_post_submit_done": true,
+              "new_circle_truth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E07-R5X-C01-B",
+            "label": "只跟新圈发",
+            "variable_delta": {
+              "new_circle_trust": 1,
+              "message_cut": 1,
+              "graduation_temperature": "5x_regret"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场 / 台球厅门口 / 新圈随手照",
+      "scene_function": "毕业照外侧和新圈随手照并置，旧同框不能重新修补。",
+      "required_completion_flags": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "new_circle_truth"
+      ],
+      "must_record": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "new_circle_truth",
+        "soft_passing",
+        "old_dorm_distance",
+        "identity_drift",
+        "deleted_pin"
+      ],
+      "participants_hint": "The heavy old photo and light new photo must coexist.",
+      "pages": [
+        {
+          "page_id": "ACT7-E08-R5X-P01",
+          "beat": "队形外侧",
+          "text_brief": "晨光体育场排队，4XX 那边有自己的站位，林亦舟站在外侧也能完成流程。",
+          "choice_hook": [
+            "站外侧完成合照",
+            "避开旧队形"
+          ],
+          "updates": {
+            "grad_photo_result_recorded": true,
+            "soft_passing": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-R5X-P02",
+          "beat": "授权表",
+          "text_brief": "毕业照授权仍要签，签完也不会把旧同框修回来。",
+          "choice_hook": [
+            "签清公开授权",
+            "让别人代看用途"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-R5X-P03",
+          "beat": "新圈随手照",
+          "text_brief": "新圈在台球厅门口随手拍了一张，画面轻，像随时会被刷过去。",
+          "choice_hook": [
+            "去拍新圈随手照",
+            "留在旧照外侧多站一会"
+          ],
+          "updates": {
+            "new_circle_trust": 1,
+            "identity_drift": 1,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-R5X-P04",
+          "beat": "预览以后",
+          "text_brief": "两张照片都在手机里，一张太重，一张太轻。",
+          "choice_hook": [
+            "分开保存",
+            "删除旧照预览"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "deleted_pin": 1,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-R5X-CHOICE-01",
+        "after_page": "ACT7-E08-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-R5X-C01-A",
+            "label": "站外侧完成合照",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "grad_photo_result_recorded": true,
+              "soft_passing": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E08-R5X-C01-B",
+            "label": "去拍新圈随手照",
+            "variable_delta": {
+              "new_circle_trust": 1,
+              "identity_drift": 1,
+              "graduation_temperature": "thin_circle"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝与旧物",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居走廊 / 宿管窗口 / 旧物袋",
+      "scene_function": "清寝旧物能碰到，但不再由林亦舟主导旧宿舍修补。",
+      "required_completion_flags": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned"
+      ],
+      "must_record": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned",
+        "soft_passing",
+        "old_message_sent",
+        "old_dorm_distance",
+        "5x_regret"
+      ],
+      "participants_hint": "Old objects can be handled without re-entering the old room.",
+      "pages": [
+        {
+          "page_id": "ACT7-E09-R5X-P01",
+          "beat": "走廊旧物",
+          "text_brief": "清寝时，旧物袋摆在走廊边，里面有他曾经用过的便签和公共物品标签。",
+          "choice_hook": [
+            "处理旧物但不进门",
+            "避开清寝现场"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "soft_passing": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-R5X-P02",
+          "beat": "公共物品",
+          "text_brief": "宿管窗口仍要本人确认，旧宿舍却已经各自把东西分完。",
+          "choice_hook": [
+            "只确认本人部分",
+            "留一句辛苦了"
+          ],
+          "updates": {
+            "shared_item_owner_checked": true,
+            "old_message_sent": true,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-R5X-P03",
+          "beat": "交钥匙",
+          "text_brief": "钥匙交出去时，旧门还在身后。他已经没有回去重写关系的按钮。",
+          "choice_hook": [
+            "交钥匙离开",
+            "回头看一眼"
+          ],
+          "updates": {
+            "dorm_key_returned": true,
+            "soft_passing": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-R5X-P04",
+          "beat": "新圈消息",
+          "text_brief": "新圈问今晚还来不来，像清寝只是另一个普通下午。",
+          "choice_hook": [
+            "先完成清寝回执",
+            "直接回新圈"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "identity_drift": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-R5X-CHOICE-01",
+        "after_page": "ACT7-E09-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-R5X-C01-A",
+            "label": "处理旧物但不进门",
+            "variable_delta": {
+              "old_object_scope_checked": true,
+              "shared_item_owner_checked": true,
+              "soft_passing": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E09-R5X-C01-B",
+            "label": "避开清寝现场",
+            "variable_delta": {
+              "old_dorm_distance": 1,
+              "5x_regret": 1,
+              "graduation_temperature": "5x_regret"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东北饺子馆远处 / 后街小馆 / 新圈群",
+      "scene_function": "旧饭局和新圈饭局同时降频，最后一顿饭不能回旧线。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "old_message_sent"
+      ],
+      "must_record": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "old_message_sent",
+        "thin_relation",
+        "new_circle_truth",
+        "deleted_pin",
+        "soft_passing"
+      ],
+      "participants_hint": "A blessing can be sent; it cannot reopen the old table.",
+      "pages": [
+        {
+          "page_id": "ACT7-E10-R5X-P01",
+          "beat": "两张桌",
+          "text_brief": "4XX 最后一顿饭订在东北饺子馆，新圈说后街也能随便吃点。",
+          "choice_hook": [
+            "看一眼旧饭局消息",
+            "直接回新圈"
+          ],
+          "updates": {
+            "soft_passing": 1,
+            "new_circle_trust": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-R5X-P02",
+          "beat": "不能回线",
+          "text_brief": "他可以发祝福，也可以坐到新桌，但不能把这一顿饭当作回旧线按钮。",
+          "choice_hook": [
+            "发一句祝福但不回线",
+            "去新圈饭局"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "old_message_sent": true,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-R5X-P03",
+          "beat": "新饭局",
+          "text_brief": "新圈饭局没有旧账，也没有人非要坐到最后。轻松是真的，散得快也是真的。",
+          "choice_hook": [
+            "问清 AA",
+            "装作都行"
+          ],
+          "updates": {
+            "new_circle_truth": 1,
+            "money_cost": 1,
+            "thin_relation": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-R5X-P04",
+          "beat": "饭后",
+          "text_brief": "旧群没有再追问，新圈也各自回去了。街口风一吹，两边都轻了。",
+          "choice_hook": [
+            "保存旧群回复",
+            "把旧群下移"
+          ],
+          "updates": {
+            "meal_attendance_locked": true,
+            "5x_regret": 1,
+            "deleted_pin": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-R5X-CHOICE-01",
+        "after_page": "ACT7-E10-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-R5X-C01-A",
+            "label": "发一句祝福但不回线",
+            "variable_delta": {
+              "meal_boundary_checked": true,
+              "old_message_sent": true,
+              "soft_passing": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E10-R5X-C01-B",
+            "label": "去新圈饭局",
+            "variable_delta": {
+              "thin_relation": 1,
+              "new_circle_trust": 1,
+              "graduation_temperature": "thin_circle"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "明德楼离校窗口 / 便利店门口 / 旧群置顶",
+      "scene_function": "离校手续把旧群置顶、新圈去向和许澈边界压到一起。",
+      "required_completion_flags": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "xuche_boundary_seen"
+      ],
+      "must_record": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "xuche_boundary_seen",
+        "new_circle_truth",
+        "message_cut",
+        "deleted_pin",
+        "old_message_sent"
+      ],
+      "participants_hint": "Xu Che boundary must be seen without turning him into a rescue route.",
+      "pages": [
+        {
+          "page_id": "ACT7-E11-R5X-P01",
+          "beat": "离校清单",
+          "text_brief": "离校系统一项项变绿，旧群置顶还在，许澈问他哪天走。",
+          "choice_hook": [
+            "先办离校手续",
+            "先回许澈"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "new_circle_trust": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-R5X-P02",
+          "beat": "许澈边界",
+          "text_brief": "许澈说自己也不一定留在这边，他没有义务成为新的终点。",
+          "choice_hook": [
+            "说清新圈有限和旧线不可回",
+            "保持切断"
+          ],
+          "updates": {
+            "xuche_boundary_seen": true,
+            "new_circle_truth": 1,
+            "message_cut": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-R5X-P03",
+          "beat": "证书档案",
+          "text_brief": "证书和档案只认本人，不认他在哪个圈子里。流程冷静地把他往外送。",
+          "choice_hook": [
+            "完成本人签收",
+            "只拍照留存"
+          ],
+          "updates": {
+            "certificate_or_archive_seen": true,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-R5X-P04",
+          "beat": "站前消息",
+          "text_brief": "旧群问到了说一声，新圈问要不要最后打台球。两个问题都不像答案。",
+          "choice_hook": [
+            "给旧群发最低消息",
+            "删除旧群置顶"
+          ],
+          "updates": {
+            "old_message_sent": true,
+            "deleted_pin": true,
+            "message_cut": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-R5X-CHOICE-01",
+        "after_page": "ACT7-E11-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-R5X-C01-A",
+            "label": "说清新圈有限和旧线不可回",
+            "variable_delta": {
+              "xuche_boundary_seen": true,
+              "new_circle_truth": 1,
+              "5x_regret": -1
+            }
+          },
+          {
+            "direction_id": "ACT7-E11-R5X-C01-B",
+            "label": "保持切断",
+            "variable_delta": {
+              "message_cut": 1,
+              "identity_drift": 1,
+              "graduation_temperature": "deleted_pin_shadow"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站后",
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "act7_variant_id": "ACT7-R5X",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "hard_outflow": true,
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "R5X-ENDING",
+      "main_location": "武生院站 / 地铁车厢 / 旧群与许澈私聊",
+      "scene_function": "武生院站另一边输出清醒离开、薄圈散场、旧消息、删除置顶或站台空白。",
+      "required_completion_flags": [
+        "graduation_temperature",
+        "station_after_echo_seen",
+        "route_lock"
+      ],
+      "must_record": [
+        "graduation_temperature",
+        "station_after_echo_seen",
+        "route_lock",
+        "xuche_boundary_seen",
+        "new_circle_truth",
+        "old_message_sent",
+        "deleted_pin",
+        "5x_regret"
+      ],
+      "participants_hint": "Final station decides how he names the irreversible departure, not who wins.",
+      "pages": [
+        {
+          "page_id": "ACT7-E12-R5X-P01",
+          "beat": "另一边",
+          "text_brief": "武生院站口人很多，旧人可能在另一边，新圈也未必有人来送。",
+          "choice_hook": [
+            "先报站",
+            "先看许澈消息"
+          ],
+          "updates": {
+            "station_after_echo_seen": true,
+            "new_circle_trust": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-R5X-P02",
+          "beat": "不是答案",
+          "text_brief": "许澈有自己的去向。他给过一张不用解释的桌子，但不是林亦舟的答案。",
+          "choice_hook": [
+            "对许澈说清不是你欠我",
+            "删除置顶或什么都不做"
+          ],
+          "updates": {
+            "xuche_boundary_seen": true,
+            "new_circle_truth": 1,
+            "deleted_pin": true
+          }
+        },
+        {
+          "page_id": "ACT7-E12-R5X-P03",
+          "beat": "旧消息",
+          "text_brief": "旧群最后一次亮起。发完整消息不会倒回，不发也不会显得轻松。",
+          "choice_hook": [
+            "给旧群发一条完整消息",
+            "只给一个旧人私聊"
+          ],
+          "updates": {
+            "old_message_sent": true,
+            "soft_passing": 1,
+            "5x_regret": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-R5X-P04",
+          "beat": "站后温度",
+          "text_brief": "车开出去，旧群和新圈都安静。不是谁赢了，是他终于看见两边都没有完全留下。",
+          "choice_hook": [
+            "清醒离开",
+            "什么都不做，上车"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent",
+            "5x_regret": 2
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-R5X-CHOICE-01",
+        "after_page": "ACT7-E12-R5X-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-R5X-C01-A",
+            "label": "对许澈说清，给旧群完整消息",
+            "variable_delta": {
+              "new_circle_truth": 1,
+              "old_message_sent": true,
+              "graduation_temperature": "clear_leave"
+            }
+          },
+          {
+            "direction_id": "ACT7-E12-R5X-C01-B",
+            "label": "删除置顶或什么都不做",
+            "variable_delta": {
+              "deleted_pin": true,
+              "5x_regret": 2,
+              "graduation_temperature": "station_nothing"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "ending_candidates": [
+    {
+      "ending_id": "R5X-END-CLEAR-LEAVE",
+      "condition_hint": "new_circle_truth >= 4, 5x_regret <= 3",
+      "text_landing": "林亦舟承认离开旧线，也承认新圈有限；低温但清楚。"
+    },
+    {
+      "ending_id": "R5X-END-THIN-CIRCLE",
+      "condition_hint": "thin_relation >= 5, new_circle_trust < 4",
+      "text_landing": "新圈散得轻，旧人远得重。"
+    },
+    {
+      "ending_id": "R5X-END-XUCHE-BOUNDARY",
+      "condition_hint": "xuche_boundary_seen = true, new_circle_truth >= 5",
+      "text_landing": "许澈不是答案，但他曾经给过一张不用解释的桌子。"
+    },
+    {
+      "ending_id": "R5X-END-OLD-MESSAGE",
+      "condition_hint": "soft_passing >= 4, old_message_sent = true",
+      "text_landing": "旧人有回应，但只是回应，不是回去。"
+    },
+    {
+      "ending_id": "R5X-END-DELETED-PIN",
+      "condition_hint": "message_cut >= 6, deleted_pin = true",
+      "text_landing": "旧群沉下去，新圈也各自散开。"
+    },
+    {
+      "ending_id": "R5X-END-STATION-NOTHING",
+      "condition_hint": "5x_regret >= 6, old_message_sent = false",
+      "text_landing": "不是谁赢了，是林亦舟终于意识到自己两边都没真正留下。"
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "route_id": "R5X-HARD",
+    "route_pool_id": "POOL-R5X-HARD",
+    "p0e_source_detail_doc": "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
+    "p0e_entry_node_count": 5,
+    "p0e_entry_page_count": 20,
+    "p0e_entry_choice_window_count": 5,
+    "p0e_entry_direction_count": 20,
+    "p0e_required_entry_nodes": [
+      "P0E_5X_LAST_DOOR",
+      "P0E_5X_NEW_TABLE",
+      "P0E_5X_THIN_RELATION",
+      "P0E_5X_SOFT_PASSING",
+      "P0E_5X_GRAD_REGRET"
+    ],
+    "p0e_hard_lock_required": true,
+    "act6_variant_id": "ACT6-R5X",
+    "act6_block_count": 5,
+    "act6_scene_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_each_block_page_count": 4,
+    "act6_each_choice_direction_count": 2,
+    "act6_route_switch_allowed": false,
+    "act6_hard_outflow": true,
+    "act6_required_completion_flags": [
+      "route_lock",
+      "hard_outflow",
+      "act6_choice_window_count",
+      "thin_relation_seen",
+      "new_circle_truth_checked",
+      "route_pool_locked",
+      "soft_passing_recorded",
+      "closed_route_ids_kept_closed",
+      "xuche_boundary_seen",
+      "act6_closed",
+      "act6_route_pool_locked",
+      "act6_to_act7_handoff_ready"
+    ],
+    "act6_source_detail_doc": "开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md",
+    "act7_variant_id": "ACT7-R5X",
+    "act7_core_event_count": 12,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_required_completion_flags": [
+      "pre_register_boundary_checked",
+      "graduation_direction_status",
+      "route_lock",
+      "public_scope_boundary_checked",
+      "public_consent_checked",
+      "hard_outflow",
+      "opening_contrast_seen",
+      "old_object_scope_checked",
+      "new_circle_truth",
+      "topic_boundary_checked",
+      "topic_self_signed",
+      "project_stability",
+      "march_boundary_checked",
+      "queue_item_submitted",
+      "message_cut",
+      "thesis_boundary_checked",
+      "thesis_revision_version",
+      "revision_submitted_before_deadline",
+      "defense_boundary_checked",
+      "defense_post_submit_done",
+      "soft_passing",
+      "photo_boundary_checked",
+      "grad_photo_result_recorded",
+      "shared_item_owner_checked",
+      "dorm_key_returned",
+      "meal_boundary_checked",
+      "meal_attendance_locked",
+      "old_message_sent",
+      "leaving_boundary_checked",
+      "certificate_or_archive_seen",
+      "xuche_boundary_seen",
+      "graduation_temperature",
+      "station_after_echo_seen"
+    ],
+    "act7_each_event_page_count": 4,
+    "act7_each_event_direction_count": 2,
+    "act7_source_detail_doc": "开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md",
+    "p0e_full_page_json_status": "full_page_json_ready",
+    "act5_full_page_json_status": "p0e_hard_lock_entry_full_page_json_ready",
+    "act6_full_page_json_status": "full_page_json_ready"
+  }
+}

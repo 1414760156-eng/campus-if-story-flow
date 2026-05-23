@@ -397,6 +397,7 @@
 - 创建文件化计划管理：`task_plan.md`、`findings.md`、`progress.md`。
 - 记录用户流程要求：每次跑剧情必须使用 `superpower-brainstorming` 与 `superpower-writing-plans`，并用 `planning-with-files` 管理。
 - 追加用户流程要求：每次剧情工作都按 `Superpower skills` 技能包流程执行，核心包括 brainstorming、writing-plans、planning-with-files、verification。
+- 追加任务收尾规则：每次任务结束后必须说明当前整体进度、本次改动内容和后续建议；校园 IF / H5 剧情工作需按路线级完成度说明哪些线已完成、哪些线仍缺口、下一条最建议推进什么。
 - 记录第五幕结构纠偏：从“晚风核心/持续混乱”改为“混乱多线拆成清晰单线”。
 
 ## 当前状态
@@ -2916,7 +2917,8 @@
 - [x] 配置 8 个内回流点：公共桌外卖、楼下不进门、凌空栈道软照面、快递站旧包裹、事项群短句、最后一顿饭预热、晨光体育馆短场、毕业照预览。
 - [x] 本线可拆选择量超过 42 次，且选择主要改变心态、关系、资源、公开边界和毕业温度，不取消母版主线事件。
 - [x] 验证完成：关键节点 / 变量搜索命中，TODO 类占位无命中，`git diff --check` 无空白错误；`docs/superpowers/scripts/count_v4.py` 输出 BODY_TOTAL 1,113,362，MD_TOTAL 1,597,461，CHAPTERS 238。
-- [ ] 下一步：按同一结构扩展 `R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 四条第五幕站队组长线。
+- [x] 后续状态更新：`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 四条第五幕站队组长线第一版均已完成。
+- [x] 后续状态更新：`R5-LIEFLAT` Act6 正式剧情页 / 完整 JSON 已接入。
 
 ## 2026-05-20 IF 主轴外流白名单纠偏记录
 
@@ -2976,7 +2978,7 @@
 - 已把周屿线纳入 `POOL-R5-ZHOU` 命运池模型：Act 1-2 共享，第五幕站队后进入本路线池，其它线只作软回声，不再交叉造成分支爆炸。
 - 已完成 8 章、6 个内回流点、核心变量、对话逻辑、毕业温度和 JSON 拆分建议。
 - 已同步更新 `docs/剧情小说母版_v4.0/开发索引_IF分支P0文本总索引.md`、`docs/剧情小说母版_v4.0/开发规划_IF可玩支线长篇扩展总表.md` 与母版 progress。
-- 待验证：关键字段扫描、TODO / 占位扫描、`git diff --check`、提交本地 Git。
+- 后续验证完成：关键字段扫描、TODO / 占位扫描、`git diff --check` 与统计脚本均已在下一条验证记录中通过；未在当前流程要求下提交 Git。
 ## 2026-05-19 IF R5-ZHOU 验证记录
 
 - 关键字段扫描完成：`R5-ZHOU`、`POOL-R5-ZHOU`、`P0D_STAND_WITH_ZHOU`、`RET-ZHOU-01`、`RET-ZHOU-06`、`zhou_trust`、`activity_link`、`tang_misread`、`luchen_distance` 等均已命中。
@@ -2985,3 +2987,402 @@
 - `git diff --check` 未发现空白错误；仅提示若 Git 触碰文件，LF 会按当前配置转换为 CRLF。
 - `count_v4.py` 已用工作区 Python 成功运行：`BODY_TOTAL 1113362`，`MD_TOTAL 1665495`，`CHAPTERS 238`。
 - 下一步：暂存本轮文档并提交 Git。
+
+## 2026-05-21 IF ACT7-R5X 唯一硬外流 12 事件变体细稿记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第七卷ACT7-R5X唯一硬外流事件变体剧情页.md`。
+- [x] 本轮按“继续收完先”要求，优先补齐第七卷横向结算最后缺口，不处理 H5。
+- [x] 路线限定为 `route_id = R5X-HARD`、`route_pool_id = POOL-R5X-HARD`、`act7_variant_id = ACT7-R5X`、`route_lock = 5x`、`hard_outflow = true`，全程 `route_switch_allowed = false`。
+- [x] 已覆盖 `ACT7-E01-PRE-REGISTER` 至 `ACT7-E12-STATION-AFTER` 全 12 个毕业结算母事件，每个事件 4 个剧情页、1 个二方向选择窗口和完成条件。
+- [x] R5X 锚点包括旧群预登记软消息、新圈随口问去向、公开范围最低本人流程、最后一个新年远处发生、开题最低责任、三四月旧群变短、改稿新圈陪但不懂旧项目、答辩只问“过了没”、毕业照外侧与新圈随手照、清寝旧物不进门、最后饭局不回线、离校许澈边界、站台旧消息 / 删除置顶 / 空白。
+- [x] 已明确 R5X 不是惩罚线、奖励线或许澈救援线；新圈子只能写轻、薄、快、散，旧线只能作为软回声。
+- [x] 已接入 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5X-HARD_v1.json`，下一步做 ACT7 横向 JSON 总校验。
+
+## 2026-05-21 IF R5X-HARD 第七卷正式 JSON 接入记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5X-HARD_v1.json`。
+- [x] 本文件只接唯一硬外流第七卷毕业结算，不伪造第五卷 / 第六卷完整剧情页；第五卷只保留硬外流入口条件，第六卷只保留 `ACT6-R5X-B01` 至 `ACT6-R5X-B05` 的 20 段占位映射。
+- [x] `act7_settlement_events` 已覆盖 12 个母事件，每个事件 4 个剧情页、1 个二方向选择窗口。
+- [x] 路由锁定为 `R5X-HARD` / `POOL-R5X-HARD` / `ACT7-R5X`，`route_lock = 5x`，`hard_outflow = true`，全程 `route_switch_allowed = false`。
+- [x] 单文件校验完成：JSON 可解析，`events=12`、`pages=48`、`directions=24`、事件前后链无缺口，`source_docs` 无缺口。
+- [x] 已运行第七卷所有已接路线 JSON 横向一致性校验。
+
+## 2026-05-21 IF 第七卷 ACT7 横向 JSON 收口审计记录
+
+- [x] 已审计 11 条正式 JSON：`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT`、`R5-WANFENG`、`R5-ROMANCE`、`R4-WORK`、`A3-ACTIVITY-PUBLIC`、`R3-PERFECT`、`R5X-HARD`。
+- [x] 已统一边界链口径：`ACT7-E01-PRE-REGISTER.previous_event = ACT6-END`，`ACT7-E12-STATION-AFTER.next_event = 路线ENDING`。
+- [x] 审计结果：11/11 JSON 可解析，均为 12 个事件、48 个剧情页、24 个方向，`route_switch_allowed = false`，事件前后链无缺口，`source_docs` 无缺口。
+- [x] `git diff --check` 已运行，无空白错误；仅有 Git 的 LF/CRLF 换行提示。
+- [ ] 下一步：第七卷横向结算已可视为收口，后续回到第五卷 / 第六卷未完整拆页路线。
+
+## 2026-05-21 IF 第五六七幕路线连通总表记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发规划_IF第五六七幕路线连通总表.md`。
+- [x] 本轮按用户确认“先接了再补”，先建立 `Act5 锁池 -> Act6 当前池 20 段 -> ACT6-END -> Act7 12 事件 -> 路线ENDING` 的统一链路，不扩写第六幕正文。
+- [x] 总表覆盖 11 条路线：`DEFAULT-4XX`、`A3-ACTIVITY-PUBLIC`、`R3-PERFECT`、`R4-WORK`、`R5-WANFENG`、`R5-ROMANCE`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT`、`R5X-HARD`。
+- [x] 已把每条线的 Act5 / 早期入口、Act6 五个四段组、Act6 -> Act7 必带变量、Act7 JSON 和当前缺口列成矩阵。
+- [x] 后续状态更新：第七幕正式 JSON 已收口；第六幕 11 条路线均已补成正式剧情页并转完整页级 JSON。
+- [x] 后续状态更新：`R5-WANFENG` 与 `R5X-HARD` 第六幕正式剧情页已完成，当前阶段已进入 Act7 收口质量审读。
+
+## 2026-05-22 IF ACT6-WANFENG 晚风线第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-WANFENG晚风线正式剧情页.md`。
+- [x] 本轮按上一轮优先级，先补主轴唯一亲密外流 `R5-WANFENG` 的第六幕，不处理 H5。
+- [x] 文件覆盖 `ACT6-WANFENG-S01` 至 `ACT6-WANFENG-S20` 共 20 个剧情段，拆成 `ACT6-WANFENG-B01` 至 `B05` 五个四段组。
+- [x] 每个四段组保留 1 个双方向选择窗口：见面安排 / 事项群最低事实，公开边界 / 私人入口，尊重晚风生活圈 / 要求优先权，两边解释 / 继续拖延，毕业后现实联系 / 保留当下不承诺。
+- [x] 已明确 Act6 -> Act7 交接字段：`wanfeng_private_entry`、`wanfeng_boundary`、`wanfeng_future_frequency`、`wanfeng_final_contact_scope`、`dorm_warmth`、`old_debt`、`public_boundary`、`wanfeng_misread`、`future_talk`。
+- [x] 已更新 `开发数据_IF剧情页级JSON_R5-WANFENG_v1.json` 的 `source_docs`；后续记录已将 Act6 转成完整页级 JSON。
+- [ ] 下一步建议：继续补 `R5X-HARD` 第六幕正式剧情页，或补其它第六幕正式剧情页。
+
+## 2026-05-22 IF ACT6-R5X 唯一硬外流第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md`。
+- [x] 本轮继续按 5/6/7 连通表优先级，补唯一硬外流 `R5X-HARD` 的第六幕正式剧情页，不处理 H5。
+- [x] 文件覆盖 `ACT6-R5X-S01` 至 `ACT6-R5X-S20` 共 20 个剧情段，拆成 `ACT6-R5X-B01` 至 `B05` 五个四段组。
+- [x] 每个四段组保留 1 个双方向选择窗口：继续留新圈 / 保最低公共责任，接受薄关系 / 用轻松遮旧账，旧人短句 / 借新约离开，对许澈说清 / 不谈深事，发旧消息 / 删除置顶。
+- [x] 已明确 Act6 -> Act7 交接字段：`route_lock`、`hard_outflow`、`new_circle_truth`、`thin_relation`、`message_cut`、`soft_passing`、`xuche_boundary_seen`、`old_message_sent`、`deleted_pin`、`5x_regret`、`graduation_temperature`。
+- [x] 已更新 `开发数据_IF剧情页级JSON_R5X-HARD_v1.json` 的 `source_docs`；后续记录已将 Act6 转成完整页级 JSON。
+- [ ] 下一步建议：继续补 `A3-ACTIVITY-PUBLIC` / `R3-PERFECT` 第六幕正式剧情页。
+
+## 2026-05-22 IF R5X-HARD 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5X-HARD_v1.json`。
+- [x] 本轮把 `ACT6-R5X` 从细稿接入正式 JSON，新增 `act6_detail_blocks`。
+- [x] `act6_detail_blocks` 覆盖 `ACT6-R5X-B01` 至 `B05`，每组 4 个剧情页，共 `ACT6-R5X-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`、`hard_outflow = true`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：`R5-WANFENG`、`A3-ACTIVITY-PUBLIC`、`R3-PERFECT` 的 Act6 后续均已补到完整页级 JSON；下一步建议转向 P0-A 入口 JSON 或 Act7 终局审计。
+
+## 2026-05-22 IF R5-WANFENG 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-WANFENG_v1.json`。
+- [x] 本轮把 `ACT6-WANFENG` 从细稿接入正式 JSON，新增 `act6_detail_blocks`。
+- [x] `act6_detail_blocks` 覆盖 `ACT6-WANFENG-B01` 至 `B05`，每组 4 个剧情页，共 `ACT6-WANFENG-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：`A3-ACTIVITY-PUBLIC` / `R3-PERFECT` 第六幕后续已接入完整页级 JSON；P0-E 5X 硬锁入口也已接入页级 JSON。
+
+## 2026-05-22 IF ACT6-A3 活动父池第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-A3活动父池正式剧情页.md`。
+- [x] 本轮按 5/6/7 连通表优先级，先补 `A3-ACTIVITY-PUBLIC` 父池第六幕，不处理 H5。
+- [x] 文件覆盖 `ACT6-A3-S01` 至 `ACT6-A3-S20` 共 20 个剧情段，拆成 `ACT6-A3-B01` 至 `B05` 五个四段组。
+- [x] 每个四段组保留 1 个双方向选择窗口：公开边界 / 回 4XX 解释，单一活动方向 / 降低密度，公开署名 / 幕后归档，候选来源说明 / 软照面，公开材料完整 / 私人低频联系。
+- [x] 已明确 A3 不是 `R3-PERFECT`、不是 `R5-ROMANCE`、不是 5X，也不在第六幕重新开放所有社团。
+- [x] 已更新 `开发数据_IF剧情页级JSON_A3-ACTIVITY-PUBLIC_v1.json` 的 `source_docs`；后续记录已将 Act6 转成完整页级 JSON。
+- [x] 后续状态更新：`R3-PERFECT` 第六幕后续已接入完整页级 JSON；A3 / R3 的 P0-A 入口也已接入页级 JSON。
+
+## 2026-05-22 IF A3-ACTIVITY-PUBLIC 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_A3-ACTIVITY-PUBLIC_v1.json`。
+- [x] 本轮把 `ACT6-A3` 从细稿接入正式 JSON，新增 `act6_detail_blocks`。
+- [x] `act6_detail_blocks` 覆盖 `ACT6-A3-B01` 至 `B05`，每组 4 个剧情页，共 `ACT6-A3-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：`R3-PERFECT` 第六幕后续已接入完整页级 JSON；A3 / R3 的 P0-A 入口也已接入页级 JSON。
+
+## 2026-05-22 IF ACT6-PERFECT 完美子外流第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-PERFECT完美子外流正式剧情页.md`。
+- [x] 本轮按 5/6/7 连通表优先级，补 `R3-PERFECT` 完美子外流第六幕，不处理 H5。
+- [x] 文件覆盖 `ACT6-PERFECT-S01` 至 `ACT6-PERFECT-S20` 共 20 个剧情段，拆成 `ACT6-PERFECT-B01` 至 `B05` 五个四段组。
+- [x] 每个四段组保留 1 个双方向选择窗口：职责边界 / 私人解释，公开材料完整 / 降低默认兜底，损失控制 / 承认延后，体面低温 / 当面饭局，完整交接 / 停止默认兜底。
+- [x] 已明确完美线不是奖状线、正确线、唐骁线、A3 父池本体或感情线；公开信用越高，越要写工具化风险、私人延迟和低温边界。
+- [x] 已更新 `开发数据_IF剧情页级JSON_R3-PERFECT_v1.json` 的 `source_docs`；后续记录已将 Act6 转成完整页级 JSON。
+- [x] 后续状态更新：A3 / R3 的 P0-A 入口、P0-C 晚风 / 专注感情入口、P0-E 5X 硬锁入口与 `R5-ROMANCE` 第六幕完整页级 JSON 均已接入。
+
+## 2026-05-22 IF R3-PERFECT 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R3-PERFECT_v1.json`。
+- [x] 本轮把 `ACT6-PERFECT` 从细稿接入正式 JSON，新增 `act6_detail_blocks`。
+- [x] `act6_detail_blocks` 覆盖 `ACT6-PERFECT-B01` 至 `B05`，每组 4 个剧情页，共 `ACT6-PERFECT-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：A3 / R3 的 P0-A 入口、P0-B 工作入口、P0-C 晚风 / 专注感情入口、P0-D 站队入口、P0-E 5X 硬锁入口与 `R5-ROMANCE`、`R4-WORK` 第六幕完整页级 JSON 均已接入；下一步建议继续收剩余 Act6。
+
+## 2026-05-22 IF A3 / R3 P0-A 入口完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_A3-ACTIVITY-PUBLIC_v1.json`。
+- [x] A3 父池新增 `p0a_entry_nodes`，覆盖 `P0A_ACT3_RECRUIT_FORM`、`P0A_ACT3_ARCHIVE`、`P0A_ACT3_PUBLIC_LOW_RISK`、`P0A_ACT3_DORM_HEAT_MANAGE`、`P0A_ACT3_ROUTE_CONFIRM` 5 个入口节点。
+- [x] A3 P0-A 入口合计 20 页、5 个选择窗、20 个方向，用于记录三次活动选择、女生候选来源、父池结算和 `R3-PERFECT` 派生条件。
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R3-PERFECT_v1.json`。
+- [x] R3 新增 `p0a_perfect_derivation_nodes`，覆盖 `P0A_ACT3_ROUTE_CONFIRM` 的 4 页确认节点和 4 个方向，用于把 `mode_perfect` 从 A3 父池派生到 `POOL-R3-PERFECT`。
+- [x] 已同步 `task_plan.md`、`开发规划_IF第五六七幕路线连通总表.md`、`开发规划_IF可玩支线长篇扩展总表.md` 和 `开发索引_IF分支P0文本总索引.md`。
+- [x] 后续状态更新：P0-E 5X 硬锁入口完整页级 JSON 已接入。
+
+## 2026-05-22 IF P0-E 5X 硬锁入口完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5X-HARD_v1.json`。
+- [x] 新增 `p0e_entry_nodes`，覆盖 `P0E_5X_LAST_DOOR`、`P0E_5X_NEW_TABLE`、`P0E_5X_THIN_RELATION`、`P0E_5X_SOFT_PASSING`、`P0E_5X_GRAD_REGRET` 5 个节点。
+- [x] P0-E 合计 20 页、5 个选择窗、20 个方向，记录最后一扇门、许澈新桌、薄关系显形、旧人软擦肩和新圈散场。
+- [x] 已把 `validation_targets.p0e_full_page_json_status` 标记为 `full_page_json_ready`，`act5_full_page_json_status` 标记为 `p0e_hard_lock_entry_full_page_json_ready`。
+- [x] 已同步 `task_plan.md`、`开发规划_IF第五六七幕路线连通总表.md`、`开发规划_IF可玩支线长篇扩展总表.md` 和 `开发索引_IF分支P0文本总索引.md`。
+- [x] 后续状态更新：P0-C 晚风 / 专注感情入口完整页级 JSON 已接入。
+
+## 2026-05-22 IF P0-C 晚风 / 专注感情入口完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-WANFENG_v1.json`，新增 `p0c_entry_nodes`。
+- [x] 晚风主轴入口覆盖 `P0C_ACT5_WANFENG_BOUNDARY`、`P0C_ACT5_WANFENG_REAL_MEET`、`P0C_ACT5_WANFENG_GIFT_COST`、`P0C_ACT5_WANFENG_PUBLIC_BOUNDARY`、`P0C_ACT5_WANFENG_ROUTE_LOCK` 5 个节点。
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json`，新增 `p0c_entry_nodes`。
+- [x] 专注感情派生入口覆盖 `P0C_ACT5_CANDIDATE_CONFIRM`、`P0C_ACT5_COMPANION_FREQ`、`P0C_ACT5_GIFT_FESTIVAL`、`P0C_ACT5_PUBLIC_BOUNDARY`、`P0C_ACT5_ROMANCE_ROUTE_LOCK` 5 个节点。
+- [x] 两个入口各 20 页、5 个选择窗、20 个方向；`R5-WANFENG` 只允许主轴直进晚风，`R5-ROMANCE` 必须先满足 A3 女生候选来源。
+- [x] 已把两个 JSON 的 `validation_targets.act5_full_page_json_status` 分别标记为 `p0c_wanfeng_entry_full_page_json_ready` 与 `p0c_romance_entry_full_page_json_ready`。
+- [x] 后续状态更新：`R5-ROMANCE` 第六幕正式剧情页与完整页级 JSON 已接入。
+
+## 2026-05-22 IF ACT6-ROMANCE 专注感情线第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-ROMANCE专注感情线正式剧情页.md`。
+- [x] 本轮把 `R5-ROMANCE` 第六幕扩成 20 个正式剧情段、5 个四段组和 5 个双方向选择窗口。
+- [x] 五个四段组分别处理：候选来源与协作外壳、公开边界与私人入口、对方任务时间与亲密索取、4XX 最低事实与旧账延迟、毕业前联系频率预结算。
+- [x] 所有选择均锁在 `POOL-R5-ROMANCE` 内，不重新开放晚风线、宿舍站队线、工作线、5X 或另一个候选对象完整线。
+- [x] 已更新 `开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json` 的 `source_docs`；后续记录已将 Act6 转成完整页级 JSON。
+
+## 2026-05-22 IF R5-ROMANCE 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json`。
+- [x] 新增 `act6_detail_blocks`，覆盖 `ACT6-ROMANCE-B01` 至 `B05`。
+- [x] `act6_detail_blocks` 每组 4 页，共 `ACT6-ROMANCE-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：`R4-WORK` 第六幕正式剧情页与完整页级 JSON 已接入。
+
+## 2026-05-22 IF ACT6-WORK 工作线第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md`。
+- [x] 本轮把 `R4-WORK` 第六幕扩成 20 个正式剧情段、5 个四段组和 5 个双方向选择窗口。
+- [x] 五个四段组分别处理：排班边界与宿舍最低事实、工时证明与 C407 协作、钱账透明与沉默成本、请假修补与加班收益、毕业前现实安排预结算。
+- [x] 所有选择均锁在 `POOL-R4-WORK` 内，不重新开放陆沉线、晚风线、站队线、专注感情线、摆烂线或 5X。
+
+## 2026-05-22 IF R4-WORK 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R4-WORK_v1.json`。
+- [x] 新增 `act6_detail_blocks`，覆盖 `ACT6-WORK-B01` 至 `B05`。
+- [x] `act6_detail_blocks` 每组 4 页，共 `ACT6-WORK-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 已确认 P0-B 工作入口完整页级 JSON 已接入 `R4-WORK`。
+- [x] 已补 P0-D 入口完整页级 JSON，作为 DEFAULT / 三室友 / 摆烂线共用站队入口层。
+- [x] 后续状态更新：`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG` 与 `R5-LUCHEN` 第六幕正式剧情页和完整页级 JSON 已接入。
+- [x] 后续状态更新：`R5-LIEFLAT` Act6 已接入完整页级 JSON。
+
+## 2026-05-22 IF P0-B 工作入口完整页级 JSON 接入记录
+
+- [x] 已复核 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R4-WORK_v1.json`。
+- [x] `p0b_entry_nodes` 覆盖 5 个节点：生活费延迟、快递站排班、打印材料、错过照面、兼职线确认。
+- [x] P0-B 入口合计 20 页、5 个选择窗、20 个方向。
+- [x] `source_docs` 已包含 `开发文本_IF分支P0-B第四幕暑假兼职线.md`。
+- [x] 已同步任务计划、5/6/7 连通总表、长篇扩展总表、P0 文本总索引与母版进度。
+- [x] 后续状态更新：P0-D 站队入口完整页级 JSON 已接入 `DEFAULT-4XX` 数据源。
+- [x] 后续状态更新：`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG` 与 `R5-LUCHEN` 第六幕正式剧情页和完整页级 JSON 已接入。
+- [x] 后续状态更新：`R5-LIEFLAT` Act6 已接入完整页级 JSON。
+
+## 2026-05-22 IF P0-D 站队入口完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json`，新增 `p0d_entry_nodes`。
+- [x] P0-D 共用入口覆盖 `P0D_ACT5_SHORT_GROUP`、`P0D_ACT5_REPAIR_TABLE`、`P0D_ACT5_ZHOU_JOKE`、`P0D_ACT5_TANG_TIMELINE`、`P0D_ACT5_LUCHEN_NO_PROXY`、`P0D_ACT5_LIE_NO_REPLY` 6 个节点。
+- [x] P0-D 入口合计 24 页、6 个选择窗、20 个方向；首个选择窗负责分发到 DEFAULT、周屿、唐骁、陆沉、摆烂五个方向。
+- [x] `source_docs` 已包含 `开发文本_IF分支P0-D第五幕站队分歧事件版.md`。
+- [x] 已同步任务计划、5/6/7 连通总表、长篇扩展总表、P0 文本总索引与母版进度。
+- [x] 后续状态更新：`DEFAULT-4XX` 第六幕正式剧情页与完整页级 JSON 已接入。
+- [x] 后续状态更新：`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN` 与 `R5-LIEFLAT` 第六幕正式剧情页和完整页级 JSON 已接入。
+
+## 2026-05-22 IF ACT6-DEFAULT 宿舍修补线第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-DEFAULT宿舍修补线正式剧情页.md`。
+- [x] 本轮把 `DEFAULT-4XX` 第六幕扩成 20 个正式剧情段、5 个四段组和 5 个双方向选择窗口。
+- [x] 五个四段组分别处理：当面修补与体面距离、公共桌补话与 C407 事项优先、集体饭局与一对一短谈、旧账说明与现实任务、最后一句与空白毕业预结算。
+- [x] 所有选择均锁在 `POOL-DEFAULT-4XX` 内，不重新开放周屿线、唐骁线、陆沉线、摆烂线、晚风线、专注感情线、工作线或 5X。
+- [x] 已明确第六幕只提高当面处理机会，不保证四人大团圆、毕业照公开、饭局坐满或离校后频繁联系。
+
+## 2026-05-22 IF DEFAULT-4XX 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json`。
+- [x] 新增 `act6_detail_blocks`，覆盖 `ACT6-DEFAULT-B01` 至 `B05`。
+- [x] `act6_detail_blocks` 每组 4 页，共 `ACT6-DEFAULT-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：`R5-ZHOU` 第六幕正式剧情页与完整页级 JSON 已接入。
+- [x] 后续状态更新：`R5-TANG` 第六幕正式剧情页与完整页级 JSON 已接入。
+
+## 2026-05-22 IF ACT6-TANG 唐骁线第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-TANG唐骁线正式剧情页.md`。
+- [x] 本轮把 `R5-TANG` 第六幕扩成 20 个正式剧情段、5 个四段组和 5 个双方向选择窗口。
+- [x] 五个四段组分别处理：流程稳定与情绪解释、代填权限与当面边界、项目截止与宿舍补话、周屿误读与提交进度、低频协作与体面断开预结算。
+- [x] 所有选择均锁在 `POOL-R5-TANG` 内，不重新开放 DEFAULT、周屿线、陆沉线、摆烂线、晚风线、专注感情线、工作线或 5X。
+- [x] 已明确本线不是唐骁正确线；靠近唐骁会增加项目稳定和责任清晰，也会增加规则压迫、情绪延后、周屿误读和宿舍低温回声。
+
+## 2026-05-22 IF R5-TANG 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-TANG_v1.json`。
+- [x] 新增 `act6_detail_blocks`，覆盖 `ACT6-TANG-B01` 至 `B05`。
+- [x] `act6_detail_blocks` 每组 4 页，共 `ACT6-TANG-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：`R5-LUCHEN` 第六幕正式剧情页和完整页级 JSON 已接入。
+- [x] 后续状态更新：`R5-LIEFLAT` 第六幕正式剧情页和完整页级 JSON 已接入。
+
+## 2026-05-22 IF ACT6-ZHOU 周屿线第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-ZHOU周屿线正式剧情页.md`。
+- [x] 本轮把 `R5-ZHOU` 第六幕扩成 20 个正式剧情段、5 个四段组和 5 个双方向选择窗口。
+- [x] 五个四段组分别处理：活动现场陪跑与宿舍边界留白、替周屿收场与不替圆场、公开材料热闹与授权口径、唐骁误读解释与活动进度、低频联系与体面淡化预结算。
+- [x] 所有选择均锁在 `POOL-R5-ZHOU` 内，不重新开放 DEFAULT、唐骁线、陆沉线、摆烂线、晚风线、专注感情线、工作线或 5X。
+- [x] 已明确本线不是周屿奖励线，靠近周屿会同时增加活动圈人情、公开误读、宿舍缺席和唐骁 / 陆沉低温回声。
+
+## 2026-05-22 IF R5-ZHOU 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-ZHOU_v1.json`。
+- [x] 新增 `act6_detail_blocks`，覆盖 `ACT6-ZHOU-B01` 至 `B05`。
+- [x] `act6_detail_blocks` 每组 4 页，共 `ACT6-ZHOU-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：`R5-TANG`、`R5-LUCHEN` 与 `R5-LIEFLAT` 第六幕正式剧情页和完整页级 JSON 已接入。
+
+## 2026-05-22 IF ACT6-LUCHEN 陆沉线第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-LUCHEN陆沉线正式剧情页.md`。
+- [x] 本轮把 `R5-LUCHEN` 第六幕扩成 20 个正式剧情段、5 个四段组和 5 个双方向选择窗口。
+- [x] 五个四段组分别处理：等他说与排班事实、不公开内容与最低事实、现实任务与 4XX 误读、一句真话与追问边界、低频联系与体面淡化。
+- [x] 所有选择均锁在 `POOL-R5-LUCHEN` 内，不重新开放 DEFAULT、周屿线、唐骁线、摆烂线、晚风线、专注感情线、工作线或 5X。
+- [x] 已明确本线不是救赎陆沉线，也不是沉默正确线；靠近陆沉会增加信任和现实理解，同时推高宿舍误读、唐骁边界压力与周屿距离。
+
+## 2026-05-22 IF R5-LUCHEN 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-LUCHEN_v1.json`。
+- [x] 新增 `act6_detail_blocks`，覆盖 `ACT6-LUCHEN-B01` 至 `B05`。
+- [x] `act6_detail_blocks` 每组 4 页，共 `ACT6-LUCHEN-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：`R5-LIEFLAT` 第六幕正式剧情页和完整页级 JSON 已接入。
+
+## 2026-05-22 IF ACT6-LIEFLAT 摆烂线第六幕正式剧情页记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第六卷ACT6-LIEFLAT摆烂线正式剧情页.md`。
+- [x] 本轮把 `R5-LIEFLAT` 第六幕扩成 20 个正式剧情段、5 个四段组和 5 个双方向选择窗口。
+- [x] 五个四段组分别处理：静音与最低事实、短逃与公共桌动作、旁观与具体任务、入口过期与无事发生、低存在感与空白毕业。
+- [x] 所有选择均锁在 `POOL-R5-LIEFLAT` 内，不重新开放 DEFAULT、周屿线、唐骁线、陆沉线、晚风线、专注感情线、工作线或 5X。
+- [x] 已明确本线不是省内容线，也不是中立保全线；回避会换来短期安静，同时造成入口过期、低存在感和毕业空栏。
+
+## 2026-05-22 IF R5-LIEFLAT 第六幕完整页级 JSON 接入记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-LIEFLAT_v1.json`。
+- [x] 新增 `act6_detail_blocks`，覆盖 `ACT6-LIEFLAT-B01` 至 `B05`。
+- [x] `act6_detail_blocks` 每组 4 页，共 `ACT6-LIEFLAT-S01` 至 `S20` 20 页。
+- [x] 每组保留 1 个 `choice_window`，每窗 2 个方向，共 5 个选择窗、10 个方向，全部 `route_switch_allowed = false`。
+- [x] 已把 `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 改为 `full_page_json_ready`。
+- [x] 后续状态更新：Act6 11 条路线已完成横向一致性修补，旧路线 `local_variables` 缺口已补齐。
+- [x] 后续状态更新：5/6/7 全路线一致性复核已完成，Act5 入口、Act6 链、Act7 12 事件、source_docs、变量缺口和旧状态残留均已通过。
+- [x] 后续状态更新：已转入 Act7 收口质量审读，站队组 `R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 已完成；剩余非站队组 7 条待审读。
+
+## 2026-05-22 IF Act6 全路线变量池一致性修补记录
+
+- [x] 已完成 11 条 Act6 完整页级 JSON 横向复核：每条路线均为 5 个四段组、20 页、5 个双方向选择窗、10 个方向。
+- [x] 已确认所有 Act6 detail blocks 均锁在本路线池内，`route_switch_allowed = false`，不重新打开其它完整命运线。
+- [x] 已补齐早前 7 条旧 JSON 的 `local_variables` 缺口：`A3-ACTIVITY-PUBLIC`、`DEFAULT-4XX`、`R3-PERFECT`、`R4-WORK`、`R5-ROMANCE`、`R5-WANFENG`、`R5X-HARD`。
+- [x] 修补后 Act6 横向变量缺口为 0；后续复核应继续查 Act5 入口层、Act7 12 事件链、`source_docs` 和旧状态残留。
+
+## 2026-05-22 IF 5/6/7 全路线一致性复核记录
+
+- [x] 已审计 11 个路线 JSON：Act5 入口层、Act6 detail blocks、Act7 12 settlement events、source_docs、前后事件链、完成条件、变量缺口和旧状态残留。
+- [x] 已机械修补 `R5-ZHOU` Act7 变量表达式键，把 `zhou_trust +1`、`pre_register_boundary_checked = true` 这类表达式归一为标准变量键和值。
+- [x] 已补齐 `DEFAULT-4XX`、`R4-WORK`、`R5-ZHOU` 的 Act6 最后一组 `next_block = ACT6-END`。
+- [x] 已补齐 7 条路线的入口 / 完成条件变量登记：`A3-ACTIVITY-PUBLIC`、`DEFAULT-4XX`、`R3-PERFECT`、`R4-WORK`、`R5-ROMANCE`、`R5-WANFENG`、`R5X-HARD`。
+- [x] 复核后 11 条路线均通过：Act6 为 5/20/5/10；Act7 为 12/48/12/24；source_docs 无缺失；变量缺口、变量表达式键和旧占位状态均为 0。旧 Act5 完整口径已废止，P0-A / P0-B 仍需补 Act4 / Act5 池内层。
+
+## 2026-05-22 IF Act7 站队组收口质量审读记录
+
+- [x] 已审读 `R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 四条站队组路线的 Act7 12 个毕业事件、选择文案、结局钩子和路线间重复表达。
+- [x] `R5-ZHOU` 与 `R5-TANG` 的毕业温度差异成立：周屿线偏活动热闹退潮、公开边界和半句道歉；唐骁线偏流程压迫、低频协作和非功能性私聊入口。
+- [x] `R5-LIEFLAT` 的摆烂代价成立：入口过期、无人私催、低存在感和空白毕业均已落在 Act7 事件里。
+- [x] 已机械补齐 `R5-LIEFLAT` 的 `source_docs` 通用来源登记：第五六卷玩法节奏规则、第七卷毕业结算规则和 JSON 拆分样板。
+- [x] P1 润色状态：`R5-LUCHEN` Act7 里“替他 / 帮他”类反向选择标签已改成更具体的现场动作，保留 `proxy_risk` 代价但降低显性说教感。
+- [x] 后续状态更新：非站队组 7 条 Act7 已完成收口质量审读，见下一节。
+
+## 2026-05-22 IF Act7 非站队组收口质量审读记录
+
+- [x] 已审读 `DEFAULT-4XX`、`R5-WANFENG`、`R5-ROMANCE`、`R4-WORK`、`A3-ACTIVITY-PUBLIC`、`R3-PERFECT`、`R5X-HARD` 七条非站队组路线的 Act7 12 个毕业事件、选择文案、结局钩子和路线间重复表达。
+- [x] 七条线的毕业温度差异成立：`DEFAULT-4XX` 是未圆满但仍可联系，`R5-WANFENG` 是私人入口和报平安，`R5-ROMANCE` 是候选对象现实任务与亲密边界，`R4-WORK` 是工时 / 钱 / 第一周生活安排，`A3-ACTIVITY-PUBLIC` 是公开信用和活动压力，`R3-PERFECT` 是公开清楚但私人空格仍在，`R5X-HARD` 是清醒离开和薄圈散场。
+- [x] 已机械补齐 `DEFAULT-4XX` 的 12 个 Act7 `event_name` 和 `act7_temperature_candidates`。
+- [x] 已机械补齐非站队组旧 JSON 的通用来源登记：`R5-WANFENG`、`R5-ROMANCE`、`R4-WORK`、`A3-ACTIVITY-PUBLIC`、`R3-PERFECT`、`R5X-HARD` 补入第五六卷玩法节奏规则和 JSON 拆分样板；`DEFAULT-4XX` 与 `R4-WORK` 补入 Schema 来源。
+- [x] P1 润色状态：`R5-WANFENG` 与 `R5-ROMANCE` 在 E07、E10、E11 的重复选择标签已改成路线特异动作；`R5-ROMANCE` 斜杠式标签已改成明确双选动作。
+- [x] 下一步建议完成：Act7 全路线最终扫尾复核已完成，11 条路线的标签重复、路线温度、source_docs、变量缺口、旧状态残留和最终文档记录一致性均已通过。
+
+## 2026-05-23 IF Act7 P1 标签润色第一轮记录
+
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-LUCHEN_v1.json`、`docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-WANFENG_v1.json`、`docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json`。
+- [x] `R5-LUCHEN`：Act7 选择标签已从高密度“替他 / 帮他”改为留空、待本人确认、递截图、拿号、签收、追问未说完的话等现场动作。
+- [x] `R5-WANFENG`：E07、E10、E11 标签已改向语音实话、饭后语音时间、离校行程、到站后第一周和报平安。
+- [x] `R5-ROMANCE`：E07、E10、E11 标签已改向补交项、候选对象可用行程、饭后确认、授权署名和第一周现实安排；斜杠式标签已清理为明确动作。
+- [x] 本轮不新增结构、不改事件链、不改变量池；后续建议做 Act7 全路线最终扫尾复核。
+
+## 2026-05-23 IF Act7 全路线最终扫尾复核记录
+
+- [x] 已复核 11 条路线 JSON：Act6 均为 20 页 / 5 窗 / 10 方向，Act7 均为 48 页 / 12 窗 / 24 方向。
+- [x] 事件链均为 `ACT6-END -> ACT7-E01...E12 -> *-ENDING`，所有 Act7 事件均保持 `route_switch_allowed = false`。
+- [x] `source_docs` 与每个 Act7 `source_detail_doc` 均存在；变量缺口、旧状态字段残留和斜杠标签均为 0。
+- [x] 已补齐 `DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 的顶层 `ending_candidates`，保证 11 条路线都有机器可读的结局温度候选。
+- [x] 已把三条以上跨线共用的短标签改成路线特异表达；最终复核中三条以上跨线重复标签为 0。
+- [ ] 后续建议：暂停自动推进，等待是否进入正文级 P2 局部润色；不建议新增 Act7 结构层。
+
+## 2026-05-23 IF 第五六七幕纵向连读审计记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发审计_IF第五六七幕纵向连读表.md`。
+- [x] 本轮按 11 条路线逐条整理“第五幕入口 -> 第六幕定形 -> 第七幕兑现”的纵向关系。
+- [x] 已确认 P0-C / P0-D / P0-E 第五幕入口已接入完整页级 JSON；P0-A 中 `A3-ACTIVITY-PUBLIC` / `R3-PERFECT` 已补 Act4 / Act5 池内层；P0-B 早期入口已接入但仍需复核 / 补 Act5 池内层；`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN`、`R5-LIEFLAT` 共用 P0-D 站队入口，不需要重复入口层。
+- [x] 已确认当前结构结论：第五幕负责锁池，第六幕负责定形，第七幕负责毕业结算；后续不建议新增第七幕结构。
+- [x] 下一步建议已修正：先补早期外流线 Act4 / Act5 桥接，再做 P2 正文级局部审读或 11 条路线玩家侧摘要；不新增 Act7 结构层。
+
+## 2026-05-23 IF 第三四五六七幕全链路审计记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发审计_IF第三四五六七幕全链路总表.md`。
+- [x] 已把 11 条路线按 `早期入口 -> 当前命运池 -> Act6 -> Act7 -> Ending` 重新整理。
+- [x] 已确认第三幕 P0-A、第四幕 P0-B、第五幕 P0-C / P0-D / P0-E 均已接入正式页级 JSON，并能承接到各自 Act6 与 Act7。
+- [x] 已修正旧判断：P0-C / P0-D / P0-E 第五幕入口已完成，且第五幕正文 P2 润色未做；P0-A 中 `A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` 已补 Act4 / Act5，P0-B / `R4-WORK` 仍有待补 / 复核结构缺口。
+- [x] 下一步建议：不再补接结构，改做 P2 正文审读、旧口径残留清理或玩家侧路线摘要。
+
+## 2026-05-23 IF 早期外流第五幕桥接缺口修正记录
+
+- [x] 根据用户追问复核 `A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` JSON，曾确认早期外流线不能只靠 P0-A 第三幕入口、Act6 与 Act7 就视为完整；后续已补齐 A3 与 R3 的显式 Act4 / Act5 桥接层。
+- [x] 已修正 `开发审计_IF第三四五六七幕全链路总表.md`：3/4/5/6/7 不能冻结，早期外流线不能从第三 / 四幕直接跳到第六幕。
+- [x] 当前结构缺口已更新：`A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` 已补第五幕承接事件 / 变量 / 选择窗口，剩余 `R4-WORK` 需要复核 / 补第五幕承接。
+- [x] 下一步建议改为先补早期外流到第五幕的桥接层，再进入旧口径残留清理和 P2 正文审读。
+
+## 2026-05-23 IF 第四幕生活半径分化规则修正记录
+
+- [x] 根据用户纠偏，已确认第四幕不是只属于工作线，而是所有路线的生活半径分化层。
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发规则_IF命运线池化架构.md`：写入“所有完整路线必经第五幕”“第三 / 四幕外流后仍要池内经历第四幕生活半径和第五幕承接”“除许澈线外复用母版事件逻辑”的硬规则。
+- [x] 已更新 `开发审计_IF第三四五六七幕全链路总表.md`：链路口径改为 `早期入口 -> 第四幕生活半径 -> 第五幕池内承接/锁池 -> Act6 -> Act7 -> Ending`。
+- [x] 已更新 `开发规划_IF第五六七幕路线连通总表.md`、`开发审计_IF第五六七幕纵向连读表.md` 和 `开发索引_IF分支P0文本总索引.md`，收回“P0-A / P0-B 已等同第五幕完成”的旧口径。
+- [x] 当前结构缺口修正为：`A3-ACTIVITY-PUBLIC` 与 `R3-PERFECT` 均已补第四幕生活半径 + 第五幕承接；`R4-WORK` 第四幕入口已是主场，但第五幕承接仍需复核 / 待补。
+- [ ] 下一步建议：复核 / 补 `R4-WORK` 第五幕承接。
+
+## 2026-05-23 IF 第四幕选择剧情点硬约束记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发规则_IF第四幕生活半径与池内流硬约束.md`。
+- [x] 已明确第四幕最低选择剧情点：普通生活半径层每条线最低 4 个，第四幕主场线最低 5 个；当前 `R4-WORK` 属于第四幕主场线。
+- [x] 已补充第四幕正式推荐密度，避免把最低线误用成目标：普通生活半径层 10-12 个剧情段，A3 / 完美早期外流池内层 12-14 个剧情段，工作线 14-16 个剧情段。
+- [x] 已明确 `A3-ACTIVITY-PUBLIC` / `R3-PERFECT` 正式开发建议为 12-14 个剧情段、5 个选择剧情点；`R4-WORK` 建议为 14-16 个剧情段、6-7 个选择剧情点。
+- [x] 已定义选择剧情点必须包含：选择前铺垫、选择窗、选择后反馈、变量变化和 `act5_echo_hook`，不能用按钮数凑数。
+- [x] 已明确第四幕不能套第六幕双选口径；每个第四幕选择窗至少 3 项：1 个当前支线主轴推进 + 2 个池内微内流点。
+- [x] 已明确一旦写入 `route_pool_id`，三项选择都必须留在当前池内；未锁池时只记录候选倾向和第五幕入口偏置，不得第四幕直接跳 Act6。
+- [x] 已补充支线保持母版规格规则：进入支线后仍要保留母版公共锁点、人物对话、选择铺垫、反馈、现实代价和其它人物回声，不能因外流降低剧情与玩法密度。
+- [x] 已把该规范挂入 `开发规则_IF命运线池化架构.md`、`开发索引_IF分支P0文本总索引.md` 和 `开发审计_IF第三四五六七幕全链路总表.md`。
+- [ ] 后续补 Act4 / Act5 桥接时，必须按该规范校验每条线的第四幕选择剧情点数量、每窗三项内流结构和微内流剧情密度。
+
+## 2026-05-23 IF A3-ACTIVITY-PUBLIC Act4 / Act5 桥接接入记录
+
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md`。
+- [x] 已新增 `docs/剧情小说母版_v4.0/开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md`。
+- [x] 已更新 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_A3-ACTIVITY-PUBLIC_v1.json`：补入 `act4_detail_blocks` 5 组、14 页、5 个三项选择窗、15 个方向。
+- [x] 已补入 `act5_bridge_nodes` 5 组、20 页、5 个选择窗、15 个方向，覆盖第五幕五类窗口：宿舍站队、亲密 / 晚风、项目 / 规则、活动 / 兴趣、回避 / 外流。
+- [x] A3 当前链路已改为 `P0A_ACT3_ROUTE_CONFIRM -> ACT4-A3-B01...B05 -> ACT5-A3-B01...B05 -> ACT6-A3-B01 -> ACT7-A3`。
+- [x] 已同步 `task_plan.md`、`findings.md`、`开发规划_IF第五六七幕路线连通总表.md`、`开发审计_IF第五六七幕纵向连读表.md`、`开发审计_IF第三四五六七幕全链路总表.md` 与 `开发索引_IF分支P0文本总索引.md`，收窄缺口为 `R4-WORK` 第五幕承接。
+- [ ] 下一步建议：复核 / 补 `R4-WORK` 第五幕承接。
+
+## 2026-05-23 IF R3-PERFECT Act4 / Act5 桥接断点复核记录
+
+- [x] 断链恢复后复核 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R3-PERFECT_v1.json`，确认 `R3-PERFECT` 已有 `act4_detail_blocks` 5 组、14 页、5 个三项选择窗、15 个方向。
+- [x] 已确认 `R3-PERFECT` 已有 `act5_bridge_nodes` 5 组、20 页、5 个选择窗、15 个方向，覆盖宿舍站队、亲密 / 晚风、项目 / 规则、活动 / 兴趣、回避 / 外流五类第五幕窗口。
+- [x] 当前链路为 `P0A_ACT3_ROUTE_CONFIRM -> ACT4-PERFECT-B01...B05 -> ACT5-PERFECT-B01...B05 -> ACT6-PERFECT-B01 -> ACT7-PERFECT`。
+- [x] 本轮只同步状态口径，不重复改写 R3 剧情；剩余结构任务收窄为 `R4-WORK` 第五幕承接复核 / 补写。

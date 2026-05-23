@@ -1,0 +1,4457 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-22",
+  "route_id": "A3-ACTIVITY-PUBLIC",
+  "route_name": "活动父池",
+  "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+  "route_level": "B",
+  "purpose": "Act3 P0-A entry, Act4 life-radius layer, Act5 bridge, Act6, and Act7 page-level JSON for A3-ACTIVITY-PUBLIC. P0-A covers the 5 parent-pool entry events and 20 entry pages; Act4 covers 14 A3 life-radius pages and 5 three-direction pool-internal choice windows; Act5 covers 20 bridge pages and 5 current-pool choice windows; Act6 covers 20 ACT6-A3 formal scenes and 5 two-direction choice windows, and Act7 covers 12 ACT7-A3 same-mother-event variants.",
+  "source_docs": [
+    "开发文本_IF分支P0-A第三幕社团完美线.md",
+    "开发规格_IF路线Schema与P0节点池.md",
+    "开发长线_IF可玩支线A3-ACTIVITY-PUBLIC社团活动父池.md",
+    "开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md",
+    "开发规则_IF第四幕生活半径与池内流硬约束.md",
+    "开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md",
+    "开发细稿_IF第六卷ACT6-A3活动父池正式剧情页.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json",
+    "开发数据_IF剧情页级JSON_R4-WORK_v1.json",
+    "开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_parent_pool",
+    "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+    "route_focus": "activity_public_parent_pool",
+    "outflow_stage": "act3_activity",
+    "entry_node": "P0A_ACT3_RECRUIT_FORM",
+    "pool_entry_choice": "P0A_ACT3_RECRUIT_FORM",
+    "active_route_id": "A3-ACTIVITY-PUBLIC",
+    "primary_bond": "public_activity_scope",
+    "romance_origin": "candidate_source_only",
+    "route_lock": "A3-ACTIVITY-PUBLIC",
+    "route_switch_allowed": false,
+    "hard_outflow": false,
+    "p0a_entry_json_status": "full_page_json_ready",
+    "p0a_entry_node_count": 5,
+    "p0a_entry_page_count": 20,
+    "p0a_entry_choice_window_count": 5,
+    "p0a_entry_direction_count": 20,
+    "p0a_source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+    "p0a_required_entry_nodes": [
+      "P0A_ACT3_RECRUIT_FORM",
+      "P0A_ACT3_ARCHIVE",
+      "P0A_ACT3_PUBLIC_LOW_RISK",
+      "P0A_ACT3_DORM_HEAT_MANAGE",
+      "P0A_ACT3_ROUTE_CONFIRM"
+    ],
+    "act4_variant_id": "ACT4-A3",
+    "act4_source_detail_doc": "开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md",
+    "act4_scene_count": 14,
+    "act4_block_count": 5,
+    "act4_choice_window_count": 5,
+    "act4_directions_per_window_min": 3,
+    "act4_direction_count": 15,
+    "act4_route_pool_locked": true,
+    "act4_next_node": "ACT5-A3-B01",
+    "act4_required_nodes": [
+      "ACT4-A3-B01",
+      "ACT4-A3-B02",
+      "ACT4-A3-B03",
+      "ACT4-A3-B04",
+      "ACT4-A3-B05"
+    ],
+    "act5_bridge_variant_id": "ACT5-A3",
+    "act5_source_detail_doc": "开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md",
+    "act5_bridge_node_count": 5,
+    "act5_bridge_page_count": 20,
+    "act5_bridge_choice_window_count": 5,
+    "act5_bridge_direction_count": 15,
+    "act5_choice_floor_met": true,
+    "act5_required_windows_seen": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_next_node": "ACT6-A3-B01",
+    "act6_variant_id": "ACT6-A3",
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "act6_full_page_json_started": true,
+    "act6_core_scenes_in_json": [
+      "ACT6-A3-S01",
+      "ACT6-A3-S02",
+      "ACT6-A3-S03",
+      "ACT6-A3-S04",
+      "ACT6-A3-S05",
+      "ACT6-A3-S06",
+      "ACT6-A3-S07",
+      "ACT6-A3-S08",
+      "ACT6-A3-S09",
+      "ACT6-A3-S10",
+      "ACT6-A3-S11",
+      "ACT6-A3-S12",
+      "ACT6-A3-S13",
+      "ACT6-A3-S14",
+      "ACT6-A3-S15",
+      "ACT6-A3-S16",
+      "ACT6-A3-S17",
+      "ACT6-A3-S18",
+      "ACT6-A3-S19",
+      "ACT6-A3-S20"
+    ],
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-WANFENG",
+      "R5-ROMANCE",
+      "R4-WORK",
+      "R3-PERFECT",
+      "R5X-HARD"
+    ],
+    "soft_echo_routes": [
+      "DEFAULT-4XX",
+      "R5-ROMANCE",
+      "R3-PERFECT",
+      "R5-ZHOU",
+      "R5-LIEFLAT"
+    ],
+    "act7_variant_id": "ACT7-A3",
+    "act7_required_event_count": 12,
+    "act7_core_events_json_started": true,
+    "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_temperature_candidates": [
+      "A3-END-PUBLIC-CREDIT",
+      "A3-END-CANDIDATE-OPEN",
+      "A3-END-PRESSURE-SPREAD",
+      "A3-END-DORM-RETURN",
+      "A3-END-LOW-VISIBILITY",
+      "A3-END-PERFECT-SEED"
+    ]
+  },
+  "local_variables": [
+    "a3_activity_choice_count",
+    "a3_contact_scope_checked",
+    "a3_final_choice",
+    "a3_final_contact_scope",
+    "a3_first_focus",
+    "a3_focus_status_checked",
+    "a3_focus_votes",
+    "a3_join_result",
+    "a3_mode_votes",
+    "a3_public_scope",
+    "a3_second_focus",
+    "act4_a3_choice_window_count",
+    "act4_a3_direction_count",
+    "act4_a3_handoff_ready",
+    "act4_daily_radius",
+    "act4_micro_inflow_count",
+    "act5_a3_bridge_ready",
+    "act5_a3_choice_window_count",
+    "act5_a3_direction_count",
+    "act5_choice_floor_met",
+    "act5_entry_bias",
+    "act5_echo_hook",
+    "act5_required_windows_seen",
+    "act6_choice_window_count",
+    "act6_closed",
+    "act6_echo_hook",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready",
+    "activity_archive_boundary_checked",
+    "activity_certificate_status",
+    "activity_image_scope_checked",
+    "activity_link",
+    "activity_public_credit_recorded",
+    "activity_reply_after_meal",
+    "allowed_next_routes",
+    "candidate_source_checked",
+    "candidate_source_seen",
+    "candidate_source_tag",
+    "certificate_or_archive_seen",
+    "child_outflow_id",
+    "closed_route_ids_kept_closed",
+    "defense_boundary_checked",
+    "defense_order_seen",
+    "defense_post_submit_done",
+    "dorm_absence",
+    "dorm_heat_recorded",
+    "dorm_key_returned",
+    "dorm_order",
+    "dorm_warmth",
+    "drift_guard_triggered",
+    "emotional_delay",
+    "female_candidate_present",
+    "grad_photo_result_recorded",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "hard_outflow",
+    "leaving_boundary_checked",
+    "march_boundary_checked",
+    "meal_attendance_locked",
+    "meal_boundary_checked",
+    "missed_chance",
+    "old_debt",
+    "old_debt_visible",
+    "old_object_scope_checked",
+    "opening_contrast_seen",
+    "outflow_permission_class",
+    "photo_boundary_checked",
+    "pre_register_boundary_checked",
+    "project_stability",
+    "public_boundary",
+    "public_boundary_checked",
+    "public_consent_checked",
+    "public_credit",
+    "public_credit_recorded",
+    "public_misread",
+    "public_scope_boundary_checked",
+    "queue_item_submitted",
+    "revision_submitted_before_deadline",
+    "romance_outflow_allowed",
+    "romance_permission_checked",
+    "route_confidence",
+    "route_focus_tag",
+    "route_mode_tag",
+    "route_pool_locked",
+    "route_pool_result_checked",
+    "scope_clarity",
+    "self_control",
+    "shared_item_owner_checked",
+    "shen_jiahe_link",
+    "station_after_echo_seen",
+    "thesis_boundary_checked",
+    "thesis_revision_version",
+    "time_debt",
+    "tooling_risk",
+    "topic_boundary_checked",
+    "topic_self_signed",
+    "xia_zhiwei_link",
+    "zhou_trust"
+  ],
+  "entry_node": {
+    "node_id": "P0A_ACT3_RECRUIT_FORM",
+    "entry_choice": "P0A_ACT3_RECRUIT_FORM",
+    "route_lock_after_entry": "POOL-A3-ACTIVITY-PUBLIC",
+    "route_switch_allowed_after_entry": false
+  },
+  "p0a_entry_nodes": [
+    {
+      "node_id": "P0A_ACT3_RECRUIT_FORM",
+      "node_name": "主持招新协助表",
+      "module": "P0-A",
+      "act": "ACT3",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+      "route_switch_allowed": true,
+      "previous_node": "ACT2_SHARED_END",
+      "next_node": "P0A_ACT3_ARCHIVE",
+      "location": "教学楼门口咨询点 / 晨光大道 / 主持队临时物资桌",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "秦越",
+        "唐骁"
+      ],
+      "scene_function": "把玩家带入第三幕活动父池，第一次全开放选择活动方向，同时记录流程、宿舍和公开投入的初始偏向。",
+      "required_completion_flags": [
+        "a3_activity_choice_count",
+        "a3_first_focus"
+      ],
+      "must_record": [
+        "a3_first_focus",
+        "a3_focus_votes",
+        "a3_mode_votes",
+        "self_control",
+        "public_credit",
+        "activity_link",
+        "dorm_warmth",
+        "time_debt"
+      ],
+      "pages": [
+        {
+          "page_id": "P0A-A3-S01",
+          "location": "教学楼门口咨询点",
+          "text_brief": "主持招新现场临时缺人，秦越把签到表、物资表和候场顺序推到林亦舟面前。周屿在台侧补串词。",
+          "choice_hook": [
+            "接签到表",
+            "只帮周屿撑场",
+            "回 4XX"
+          ],
+          "updates": {
+            "a3_activity_choice_count": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S02",
+          "location": "晨光大道",
+          "text_brief": "晨光大道人流挤着摊位走，唐骁在群里发作业分工，问他今晚还核不核。",
+          "choice_hook": [
+            "先保现场流程",
+            "先回作业分工",
+            "两边短句回应"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "dorm_warmth": -1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S03",
+          "location": "主持队临时物资桌",
+          "text_brief": "物资表和候场顺序都能补齐，但补齐以后，秦越会默认他下次也能接住。",
+          "choice_hook": [
+            "补流程漏洞",
+            "只做一次性协助",
+            "不接长期责任"
+          ],
+          "updates": {
+            "public_credit": 1,
+            "self_control": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S04",
+          "location": "青枫居 4XX 群",
+          "text_brief": "群里安静了一会儿，唐骁发来一句我先按没人补的版本排了。林亦舟第一次感觉到活动表格占走了寝室现场。",
+          "choice_hook": [
+            "确认活动方向",
+            "解释缺席",
+            "暂不解释"
+          ],
+          "updates": {
+            "emotional_delay": 1,
+            "old_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0A-A3-CHOICE-01",
+        "after_page": "P0A-A3-S04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0A-A3-C01-A",
+            "label": "接签到和物资表，先保证招新现场不乱",
+            "variable_delta": {
+              "a3_first_focus": "focus_hosting",
+              "a3_focus_votes": {
+                "focus_hosting": 1
+              },
+              "a3_mode_votes": {
+                "mode_normal": 1
+              },
+              "self_control": 1,
+              "public_credit": 1,
+              "time_debt": 1
+            },
+            "route_effect": {
+              "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_focus_tag": "focus_hosting",
+              "route_confidence": 1
+            },
+            "next_node": "P0A_ACT3_ARCHIVE"
+          },
+          {
+            "direction_id": "P0A-A3-C01-B",
+            "label": "只帮周屿撑到咨询结束，不接长期流程",
+            "variable_delta": {
+              "a3_first_focus": "focus_hosting",
+              "a3_focus_votes": {
+                "focus_hosting": 1
+              },
+              "a3_mode_votes": {
+                "mode_dorm": 1
+              },
+              "activity_link": 1,
+              "dorm_warmth": 1
+            },
+            "route_effect": {
+              "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_focus_tag": "focus_hosting"
+            },
+            "next_node": "P0A_ACT3_ARCHIVE"
+          },
+          {
+            "direction_id": "P0A-A3-C01-C",
+            "label": "拒绝临时加活，回 4XX 处理作业确认",
+            "variable_delta": {
+              "a3_first_focus": "focus_dorm_return",
+              "a3_focus_votes": {
+                "focus_dorm_return": 1
+              },
+              "a3_mode_votes": {
+                "mode_dorm": 1
+              },
+              "dorm_warmth": 1
+            },
+            "route_effect": {
+              "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_focus_tag": "focus_dorm_return",
+              "route_confidence": -1
+            },
+            "next_node": "P0A_ACT3_ARCHIVE"
+          },
+          {
+            "direction_id": "P0A-A3-C01-D",
+            "label": "主动补秦越流程漏洞，重新整理签到和候场顺序",
+            "variable_delta": {
+              "a3_first_focus": "focus_hosting",
+              "a3_focus_votes": {
+                "focus_hosting": 1
+              },
+              "a3_mode_votes": {
+                "mode_perfect": 1
+              },
+              "public_credit": 2,
+              "self_control": 1,
+              "dorm_warmth": -1
+            },
+            "route_effect": {
+              "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_focus_tag": "focus_hosting",
+              "route_mode_tag": "mode_perfect",
+              "route_confidence": 2
+            },
+            "next_node": "P0A_ACT3_ARCHIVE"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0A_ACT3_ARCHIVE",
+      "node_name": "班会材料归档",
+      "module": "P0-A",
+      "act": "ACT3",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0A_ACT3_RECRUIT_FORM",
+      "next_node": "P0A_ACT3_PUBLIC_LOW_RISK",
+      "location": "教学楼 B204 / B206 / 打印店 / 明德楼材料窗口",
+      "participants": [
+        "林亦舟",
+        "辅导员",
+        "沈嘉禾",
+        "唐骁"
+      ],
+      "scene_function": "第二次活动机会允许维持第一次方向或试新，同时把公开授权、女生候选来源和宿舍时间成本写进父池。",
+      "required_completion_flags": [
+        "a3_activity_choice_count",
+        "a3_second_focus",
+        "public_boundary_checked"
+      ],
+      "must_record": [
+        "a3_second_focus",
+        "a3_focus_votes",
+        "a3_mode_votes",
+        "public_boundary",
+        "shen_jiahe_link",
+        "project_stability",
+        "dorm_warmth"
+      ],
+      "pages": [
+        {
+          "page_id": "P0A-A3-S05",
+          "location": "教学楼 B204",
+          "text_brief": "班会结束后，签到、照片授权、主题材料和主持记录都要归档。辅导员只说今晚能交最好。",
+          "choice_hook": [
+            "先整理授权",
+            "先找格式帮助",
+            "先回寝室"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S06",
+          "location": "打印店",
+          "text_brief": "沈嘉禾只看文件名、页边距和附件顺序，不替他写内容，也不替他承担责任。",
+          "choice_hook": [
+            "只让她看格式",
+            "请求更多协作",
+            "保留距离"
+          ],
+          "updates": {
+            "shen_jiahe_link": 1,
+            "self_control": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S07",
+          "location": "明德楼材料窗口",
+          "text_brief": "窗口第二天上午排队，今晚交掉最稳。唐骁发来作业拆分表，默认他会按时补上。",
+          "choice_hook": [
+            "先交归档",
+            "先拆作业时间",
+            "只交最低要求"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S08",
+          "location": "青枫居走廊",
+          "text_brief": "他能把材料交得没有错，却不能让今晚错过的当面话自动补回来。",
+          "choice_hook": [
+            "延后回寝解释",
+            "保留晚上时间",
+            "只发结果"
+          ],
+          "updates": {
+            "emotional_delay": 1,
+            "dorm_warmth": -1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0A-A3-CHOICE-02",
+        "after_page": "P0A-A3-S08",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0A-A3-C02-A",
+            "label": "整理签到和照片授权，优先规避公开风险",
+            "variable_delta": {
+              "a3_second_focus": "focus_backstage",
+              "a3_focus_votes": {
+                "focus_backstage": 1
+              },
+              "a3_mode_votes": {
+                "mode_perfect": 1
+              },
+              "public_boundary": 1,
+              "public_credit": 1
+            },
+            "route_effect": {
+              "route_focus_tag": "focus_backstage",
+              "route_mode_tag": "mode_perfect",
+              "route_confidence": 1
+            },
+            "next_node": "P0A_ACT3_PUBLIC_LOW_RISK"
+          },
+          {
+            "direction_id": "P0A-A3-C02-B",
+            "label": "找沈嘉禾核对材料格式，只让她看格式",
+            "variable_delta": {
+              "a3_second_focus": "focus_backstage",
+              "a3_focus_votes": {
+                "focus_backstage": 1
+              },
+              "a3_mode_votes": {
+                "mode_normal": 1
+              },
+              "shen_jiahe_link": 1,
+              "female_candidate_present": true,
+              "candidate_source_tag": "shen_jiahe_format_boundary"
+            },
+            "route_effect": {
+              "outflow_permission_class": "club_with_female_candidate",
+              "romance_outflow_allowed": true
+            },
+            "next_node": "P0A_ACT3_PUBLIC_LOW_RISK"
+          },
+          {
+            "direction_id": "P0A-A3-C02-C",
+            "label": "找唐骁拆分作业和班会材料时间",
+            "variable_delta": {
+              "a3_second_focus": "focus_dorm_return",
+              "a3_focus_votes": {
+                "focus_dorm_return": 1
+              },
+              "a3_mode_votes": {
+                "mode_dorm": 1
+              },
+              "project_stability": 1,
+              "dorm_warmth": 1
+            },
+            "route_effect": {
+              "route_focus_tag": "focus_dorm_return"
+            },
+            "next_node": "P0A_ACT3_PUBLIC_LOW_RISK"
+          },
+          {
+            "direction_id": "P0A-A3-C02-D",
+            "label": "只交最低要求，保留晚上回寝室时间",
+            "variable_delta": {
+              "a3_second_focus": "focus_dorm_return",
+              "a3_focus_votes": {
+                "focus_dorm_return": 1
+              },
+              "a3_mode_votes": {
+                "mode_dorm": 1
+              },
+              "dorm_warmth": 1,
+              "public_credit": 0
+            },
+            "route_effect": {
+              "route_focus_tag": "focus_dorm_return",
+              "route_confidence": -1
+            },
+            "next_node": "P0A_ACT3_PUBLIC_LOW_RISK"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0A_ACT3_PUBLIC_LOW_RISK",
+      "node_name": "公开表达低风险化",
+      "module": "P0-A",
+      "act": "ACT3",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0A_ACT3_ARCHIVE",
+      "next_node": "P0A_ACT3_DORM_HEAT_MANAGE",
+      "location": "汇演复盘会 / 主持队旁听区 / 课堂展示现场 / 东区商业街小舞台边缘",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "秦越",
+        "许棠",
+        "夏知微"
+      ],
+      "scene_function": "第三次活动选择落定前，展示公开表达、镜头授权和采访边界，决定父池方向是否坚持、加压或退出。",
+      "required_completion_flags": [
+        "a3_final_choice",
+        "a3_join_result",
+        "public_scope_boundary_checked"
+      ],
+      "must_record": [
+        "a3_final_choice",
+        "a3_join_result",
+        "public_credit",
+        "public_boundary",
+        "activity_link",
+        "xia_zhiwei_link",
+        "female_candidate_present"
+      ],
+      "pages": [
+        {
+          "page_id": "P0A-A3-S09",
+          "location": "汇演复盘会",
+          "text_brief": "复盘稿、照片素材和口播样稿同时摆上桌。林亦舟可以被看见，也可以继续只做幕后。",
+          "choice_hook": [
+            "做幕后串场稿",
+            "上台说明",
+            "拒绝露脸"
+          ],
+          "updates": {
+            "activity_link": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S10",
+          "location": "主持队旁听区",
+          "text_brief": "周屿半真半假地说你别把我也写进流程里，秦越只问今晚能不能出一版。",
+          "choice_hook": [
+            "继续保流程",
+            "听周屿那句玩笑",
+            "只接一版"
+          ],
+          "updates": {
+            "emotional_delay": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S11",
+          "location": "课堂展示现场",
+          "text_brief": "许棠问能不能公开，夏知微提醒不露脸也能被人看见。公开边界不再只是技术问题。",
+          "choice_hook": [
+            "删私人细节",
+            "只留背影",
+            "接受公开采访"
+          ],
+          "updates": {
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S12",
+          "location": "东区商业街小舞台边缘",
+          "text_brief": "第三次选择不能再无限试探：坚持一个方向、两个都要，或者两个都不要。",
+          "choice_hook": [
+            "坚持第一方向",
+            "坚持第二方向",
+            "两个都要",
+            "两个都不要"
+          ],
+          "updates": {
+            "a3_activity_choice_count": 3
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0A-A3-CHOICE-03",
+        "after_page": "P0A-A3-S12",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0A-A3-C03-A",
+            "label": "坚持第一次社团 / 活动方向",
+            "variable_delta": {
+              "a3_final_choice": "keep_first",
+              "a3_join_result": "branch_from_first_focus",
+              "a3_mode_votes": {
+                "mode_perfect": 1
+              },
+              "self_control": 1
+            },
+            "route_effect": {
+              "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_confidence": 1
+            },
+            "next_node": "P0A_ACT3_DORM_HEAT_MANAGE"
+          },
+          {
+            "direction_id": "P0A-A3-C03-B",
+            "label": "坚持第二次社团 / 活动方向",
+            "variable_delta": {
+              "a3_final_choice": "keep_second",
+              "a3_join_result": "branch_from_second_focus",
+              "a3_mode_votes": {
+                "mode_perfect": 1
+              },
+              "public_boundary": 1
+            },
+            "route_effect": {
+              "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_confidence": 1
+            },
+            "next_node": "P0A_ACT3_DORM_HEAT_MANAGE"
+          },
+          {
+            "direction_id": "P0A-A3-C03-C",
+            "label": "两个方向都要，先把所有公开任务接住",
+            "variable_delta": {
+              "a3_final_choice": "take_both",
+              "a3_join_result": "join_pressure",
+              "a3_mode_votes": {
+                "mode_pressure": 2
+              },
+              "time_debt": 2,
+              "public_credit": 1
+            },
+            "route_effect": {
+              "route_parent_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_mode_tag": "mode_pressure"
+            },
+            "next_node": "P0A_ACT3_DORM_HEAT_MANAGE"
+          },
+          {
+            "direction_id": "P0A-A3-C03-D",
+            "label": "两个方向都不要，回到 4XX 当面处理",
+            "variable_delta": {
+              "a3_final_choice": "take_neither",
+              "a3_join_result": "join_none",
+              "a3_mode_votes": {
+                "mode_dorm": 2
+              },
+              "dorm_warmth": 2,
+              "public_credit": -1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_focus_tag": "focus_dorm_return"
+            },
+            "next_node": "P0A_ACT3_DORM_HEAT_MANAGE"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0A_ACT3_DORM_HEAT_MANAGE",
+      "node_name": "宿舍热度被管理",
+      "module": "P0-A",
+      "act": "ACT3",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0A_ACT3_PUBLIC_LOW_RISK",
+      "next_node": "P0A_ACT3_ROUTE_CONFIRM",
+      "location": "青枫居 4XX / 公共桌 / 外卖架 / 阳台洗衣区",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉",
+        "宿管阿姨"
+      ],
+      "scene_function": "把父池选择造成的宿舍低温显性化，防止活动父池只给奖励不给代价。",
+      "required_completion_flags": [
+        "dorm_heat_recorded",
+        "old_debt_visible"
+      ],
+      "must_record": [
+        "dorm_order",
+        "dorm_warmth",
+        "old_debt",
+        "time_debt",
+        "activity_link",
+        "project_stability"
+      ],
+      "pages": [
+        {
+          "page_id": "P0A-A3-S13",
+          "location": "青枫居 4XX 公共桌",
+          "text_brief": "公共桌上堆着未签字表、外卖小票、洗衣卡和课程分工。谁的东西谁确认，效率很高，也很冷。",
+          "choice_hook": [
+            "列公共桌清单",
+            "只提醒截止",
+            "不管公共桌"
+          ],
+          "updates": {
+            "dorm_order": 1,
+            "dorm_warmth": -1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S14",
+          "location": "外卖架",
+          "text_brief": "宿管阿姨只认取件码和物品归属，不替他们判断谁对谁错。",
+          "choice_hook": [
+            "按归属确认",
+            "替大家错峰取",
+            "让本人来拿"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S15",
+          "location": "阳台洗衣区",
+          "text_brief": "陆沉把自己的东西移出公共区，唐骁说这样省事，周屿说你们真把寝室过成办公室了。",
+          "choice_hook": [
+            "解释清单不是疏远",
+            "继续只管事项",
+            "回到活动任务"
+          ],
+          "updates": {
+            "dorm_warmth": -1,
+            "public_misread": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S16",
+          "location": "4XX 门口",
+          "text_brief": "林亦舟发现自己没有吵架，也没有修补，只是把寝室热度调到一个不出错的位置。",
+          "choice_hook": [
+            "承认低温代价",
+            "继续控损",
+            "回头补话"
+          ],
+          "updates": {
+            "emotional_delay": 1,
+            "self_control": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0A-A3-CHOICE-04",
+        "after_page": "P0A-A3-S16",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0A-A3-C04-A",
+            "label": "把公共桌事项列成清单，谁的东西谁确认",
+            "variable_delta": {
+              "dorm_order": 1,
+              "dorm_warmth": -1,
+              "self_control": 1,
+              "old_debt": 1
+            },
+            "route_effect": {
+              "route_mode_tag": "mode_perfect",
+              "route_confidence": 1
+            },
+            "next_node": "P0A_ACT3_ROUTE_CONFIRM"
+          },
+          {
+            "direction_id": "P0A-A3-C04-B",
+            "label": "只提醒截止，不追问原因",
+            "variable_delta": {
+              "self_control": 1,
+              "old_debt": 1,
+              "emotional_delay": 1
+            },
+            "route_effect": {
+              "route_mode_tag": "mode_perfect"
+            },
+            "next_node": "P0A_ACT3_ROUTE_CONFIRM"
+          },
+          {
+            "direction_id": "P0A-A3-C04-C",
+            "label": "替大家错峰安排洗衣、取外卖、签字",
+            "variable_delta": {
+              "dorm_order": 1,
+              "time_debt": 1,
+              "tooling_risk": 1
+            },
+            "route_effect": {
+              "route_mode_tag": "mode_pressure"
+            },
+            "next_node": "P0A_ACT3_ROUTE_CONFIRM"
+          },
+          {
+            "direction_id": "P0A-A3-C04-D",
+            "label": "不管公共桌，转去活动或学习任务",
+            "variable_delta": {
+              "activity_link": 1,
+              "project_stability": 1,
+              "dorm_warmth": -1
+            },
+            "route_effect": {
+              "route_focus_tag": "activity_public",
+              "route_confidence": 1
+            },
+            "next_node": "P0A_ACT3_ROUTE_CONFIRM"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0A_ACT3_ROUTE_CONFIRM",
+      "node_name": "活动父池结算与子外流确认",
+      "module": "P0-A",
+      "act": "ACT3",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0A_ACT3_DORM_HEAT_MANAGE",
+      "next_node": "ACT4-A3-B01",
+      "location": "教学楼课后 / 明德楼材料窗口 / 主持队复盘桌 / C407 机房外",
+      "participants": [
+        "林亦舟",
+        "秦越",
+        "周屿",
+        "唐骁",
+        "沈嘉禾"
+      ],
+      "scene_function": "结算 A3 父池：确认继续活动父池、回宿舍、转入周屿前置，或派生 R3-PERFECT 完美子外流。",
+      "required_completion_flags": [
+        "a3_final_choice",
+        "a3_join_result",
+        "route_pool_result_checked"
+      ],
+      "must_record": [
+        "route_focus_tag",
+        "route_mode_tag",
+        "child_outflow_id",
+        "allowed_next_routes",
+        "outflow_permission_class",
+        "female_candidate_present",
+        "romance_outflow_allowed"
+      ],
+      "pages": [
+        {
+          "page_id": "P0A-A3-S17",
+          "location": "教学楼课后",
+          "text_brief": "秦越问他能不能固定接活动流程，不是客气，也不是邀请，只是在问责任边界。",
+          "choice_hook": [
+            "固定接职责内事项",
+            "拒绝长期协助",
+            "接下但继续兜情绪"
+          ],
+          "updates": {
+            "activity_link": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S18",
+          "location": "明德楼材料窗口",
+          "text_brief": "沈嘉禾提醒他要写清停止条件。材料窗口只看表格，关系不会因为表格清楚就变热。",
+          "choice_hook": [
+            "写清停止条件",
+            "保持活动低频",
+            "请她核边界"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "shen_jiahe_link": 1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S19",
+          "location": "主持队复盘桌",
+          "text_brief": "周屿在旁边说你别真把自己招进去。语气轻，但林亦舟听见了被甩开的那一点。",
+          "choice_hook": [
+            "继续活动父池",
+            "回 4XX 当面处理",
+            "替周屿兜情绪"
+          ],
+          "updates": {
+            "old_debt": 1,
+            "dorm_warmth": -1
+          }
+        },
+        {
+          "page_id": "P0A-A3-S20",
+          "location": "C407 机房外",
+          "text_brief": "P0-A 入口在这里结算：活动父池继续存在，完美子外流只是其中一种更冷、更清楚的走法。",
+          "choice_hook": [
+            "保留 A3 父池",
+            "派生 R3-PERFECT",
+            "回默认宿舍主轴",
+            "转周屿前置"
+          ],
+          "updates": {
+            "a3_focus_status_checked": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0A-A3-CHOICE-05",
+        "after_page": "P0A-A3-S20",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0A-A3-C05-A",
+            "label": "接长期协助，但只做职责内事项",
+            "variable_delta": {
+              "child_outflow_id": "R3-PERFECT",
+              "route_mode_tag": "mode_perfect",
+              "self_control": 1,
+              "public_credit": 1,
+              "scope_clarity": 1
+            },
+            "route_effect": {
+              "active_route_id": "R3-PERFECT",
+              "route_pool_id": "POOL-R3-PERFECT",
+              "route_lock": "R3-PERFECT"
+            },
+            "next_node": "P0A_PERFECT_ACCEPT_SCOPE"
+          },
+          {
+            "direction_id": "P0A-A3-C05-B",
+            "label": "拒绝长期协助，回 4XX 处理当面关系",
+            "variable_delta": {
+              "child_outflow_id": "none",
+              "route_mode_tag": "mode_dorm",
+              "dorm_warmth": 2,
+              "activity_link": -1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_pool_id": "POOL-DEFAULT-4XX"
+            },
+            "next_node": "DEFAULT-4XX-ACT5-ENTRY"
+          },
+          {
+            "direction_id": "P0A-A3-C05-C",
+            "label": "接下协助，同时继续替周屿兜情绪",
+            "variable_delta": {
+              "child_outflow_id": "none",
+              "zhou_trust": 1,
+              "activity_link": 1,
+              "time_debt": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-ZHOU-PRE",
+              "route_focus_tag": "focus_hosting"
+            },
+            "next_node": "P0D_ZHOU_PRECHECK"
+          },
+          {
+            "direction_id": "P0A-A3-C05-D",
+            "label": "保留 A3 父池，只建立协作边界",
+            "variable_delta": {
+              "child_outflow_id": "none",
+              "route_mode_tag": "mode_normal",
+              "public_boundary": 1,
+              "outflow_permission_class": "club_with_female_candidate"
+            },
+            "route_effect": {
+              "active_route_id": "A3-ACTIVITY-PUBLIC",
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC"
+            },
+            "next_node": "ACT4-A3-B01"
+          }
+        ]
+      }
+    }
+  ],
+  "act4_detail_blocks": [
+    {
+      "block_id": "ACT4-A3-B01",
+      "block_name": "暑假活动群留名",
+      "act": "ACT4",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "P0A_ACT3_ROUTE_CONFIRM",
+      "next_block": "ACT4-A3-B02",
+      "scene_range": [
+        "ACT4-A3-S01",
+        "ACT4-A3-S03"
+      ],
+      "scene_function": "确认第三幕后林亦舟已被活动群默认可调用，同时让 4XX 和公开授权成为第一轮微内流压力。",
+      "required_completion_flags": [
+        "act4_daily_radius",
+        "act4_micro_inflow_count"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-A3-S01",
+          "location": "活动群 / 青枫居走廊",
+          "text_brief": "秦越把暑假志愿名单和主持队物资表发给他，周屿在群里只回了个表情。",
+          "updates": {
+            "act4_daily_radius": "activity_public",
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S02",
+          "location": "明德楼材料窗口",
+          "text_brief": "许棠提醒公开材料要留授权版本，沈嘉禾只问附件是否按顺序放。",
+          "updates": {
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S03",
+          "location": "4XX 事项群",
+          "text_brief": "唐骁问课程项目谁补，陆沉只发收到，宿舍开始用短句处理他缺席。",
+          "updates": {
+            "old_debt_visible": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-A3-CHOICE-01",
+        "after_page": "ACT4-A3-S03",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-A3-C01-A",
+            "direction_type": "main_axis",
+            "label": "继续接活动暑假登记",
+            "micro_scene_chain": [
+              "秦越给名单",
+              "林亦舟确认截止",
+              "活动群默认他能接",
+              "返校后继续找他"
+            ],
+            "variable_delta": {
+              "activity_link": 1,
+              "public_credit": 1,
+              "time_debt": 1,
+              "act5_echo_hook": "a3_summer_group_default_contact"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B02"
+          },
+          {
+            "direction_id": "ACT4-A3-C01-B",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "DEFAULT-4XX",
+            "label": "回 4XX 留一句缺席解释",
+            "micro_scene_chain": [
+              "唐骁发项目表",
+              "林亦舟回最低事实",
+              "周屿没有接玩笑",
+              "公共桌留出空位"
+            ],
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "old_debt_visible": 1,
+              "act5_echo_hook": "a3_dorm_absence_visible"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B02"
+          },
+          {
+            "direction_id": "ACT4-A3-C01-C",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "A3-CANDIDATE",
+            "label": "先问照片和授权边界",
+            "micro_scene_chain": [
+              "夏知微发背影参考",
+              "许棠问能否公开",
+              "林亦舟要求删寝室号",
+              "候选来源只记任务痕迹"
+            ],
+            "variable_delta": {
+              "public_boundary": 1,
+              "candidate_source_seen": 1,
+              "act5_echo_hook": "a3_public_material_scope"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-A3-B02",
+      "block_name": "公开材料和照片授权",
+      "act": "ACT4",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-A3-B01",
+      "next_block": "ACT4-A3-B03",
+      "scene_range": [
+        "ACT4-A3-S04",
+        "ACT4-A3-S06"
+      ],
+      "scene_function": "把公开署名、课程项目和照片授权放进同一个生活半径，证明 A3 的微内流不是消息过场。",
+      "required_completion_flags": [
+        "activity_archive_boundary_checked",
+        "activity_image_scope_checked"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-A3-S04",
+          "location": "打印店",
+          "text_brief": "活动证明、照片授权和课程材料挤在同一台打印机前。",
+          "updates": {
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S05",
+          "location": "阳光书屋外桌",
+          "text_brief": "沈嘉禾只帮他看格式，明确说责任还是你自己签。",
+          "updates": {
+            "shen_jiahe_link": 1
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S06",
+          "location": "摄影社群 / 晨光湖边",
+          "text_brief": "夏知微把几张活动照退回来，标出能公开和不能公开的边界。",
+          "updates": {
+            "xia_zhiwei_link": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-A3-CHOICE-02",
+        "after_page": "ACT4-A3-S06",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-A3-C02-A",
+            "direction_type": "main_axis",
+            "label": "把公开署名和附件顺序写清楚",
+            "micro_scene_chain": [
+              "林亦舟重排附件",
+              "窗口老师只收清楚版本",
+              "秦越沿用模板",
+              "公开信用上升"
+            ],
+            "variable_delta": {
+              "public_boundary": 1,
+              "activity_archive_boundary_checked": true,
+              "act5_echo_hook": "a3_public_archive_template"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B03"
+          },
+          {
+            "direction_id": "ACT4-A3-C02-B",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "C407-PROJECT",
+            "label": "先补 C407 项目时间线",
+            "micro_scene_chain": [
+              "唐骁切项目表",
+              "林亦舟承认活动占时",
+              "项目不再等口头解释",
+              "规则压力交给第五幕"
+            ],
+            "variable_delta": {
+              "project_stability": 1,
+              "time_debt": 1,
+              "act5_echo_hook": "a3_project_timeline_debt"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B03"
+          },
+          {
+            "direction_id": "ACT4-A3-C02-C",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "XIA-ZHIWEI",
+            "label": "请夏知微确认不露脸版本",
+            "micro_scene_chain": [
+              "夏知微指出背影也能被认出",
+              "林亦舟删位置标记",
+              "照片仍留作活动记录",
+              "候选来源继续但不锁线"
+            ],
+            "variable_delta": {
+              "xia_zhiwei_link": 1,
+              "activity_image_scope_checked": true,
+              "act5_echo_hook": "a3_photo_boundary_checked"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-A3-B03",
+      "block_name": "宿舍缺席回声",
+      "act": "ACT4",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-A3-B02",
+      "next_block": "ACT4-A3-B04",
+      "scene_range": [
+        "ACT4-A3-S07",
+        "ACT4-A3-S09"
+      ],
+      "scene_function": "把活动父池造成的缺席和误读落到宿舍动作里，让未选择人物按母版继续推进。",
+      "required_completion_flags": [
+        "dorm_absence",
+        "old_debt_visible"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-A3-S07",
+          "location": "青枫居 4XX 公共桌",
+          "text_brief": "公共桌上多了取件码、洗衣卡和项目便签，没人特意等他回来。",
+          "updates": {
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S08",
+          "location": "西园餐桌",
+          "text_brief": "周屿说活动群里现在叫你比叫我还顺，语气轻，但话落得重。",
+          "updates": {
+            "zhou_trust": -1
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S09",
+          "location": "C407 机房外",
+          "text_brief": "陆沉把自己的材料单独收走，唐骁说这样省事。",
+          "updates": {
+            "project_stability": 1,
+            "dorm_warmth": -1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-A3-CHOICE-03",
+        "after_page": "ACT4-A3-S09",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-A3-C03-A",
+            "direction_type": "main_axis",
+            "label": "保持活动通知由自己接",
+            "micro_scene_chain": [
+              "秦越继续确认流程",
+              "林亦舟回得很快",
+              "宿舍事项往后排",
+              "活动牵引加深"
+            ],
+            "variable_delta": {
+              "activity_link": 1,
+              "dorm_absence": 1,
+              "act5_echo_hook": "a3_activity_notice_default"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B04"
+          },
+          {
+            "direction_id": "ACT4-A3-C03-B",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "DEFAULT-4XX",
+            "label": "回公共桌当面解释一次",
+            "micro_scene_chain": [
+              "林亦舟摊开取件码和活动表",
+              "唐骁问下次是否提前说",
+              "周屿没有接话",
+              "宿舍解释入口保留"
+            ],
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "public_misread": -1,
+              "act5_echo_hook": "a3_public_table_explained"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B04"
+          },
+          {
+            "direction_id": "ACT4-A3-C03-C",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "R5-ZHOU",
+            "label": "不替周屿兜活动情绪",
+            "micro_scene_chain": [
+              "周屿要他补一句场面话",
+              "林亦舟只说流程",
+              "玩笑没有落地",
+              "周屿线只留下软回声"
+            ],
+            "variable_delta": {
+              "zhou_trust": -1,
+              "public_boundary": 1,
+              "act5_echo_hook": "a3_zhou_soft_echo_only"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-A3-B04",
+      "block_name": "候选来源核验",
+      "act": "ACT4",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-A3-B03",
+      "next_block": "ACT4-A3-B05",
+      "scene_range": [
+        "ACT4-A3-S10",
+        "ACT4-A3-S12"
+      ],
+      "scene_function": "核验沈嘉禾和夏知微是否只是软照面还是连续任务来源，但不在第四幕锁感情线。",
+      "required_completion_flags": [
+        "candidate_source_checked",
+        "romance_permission_checked"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-A3-S10",
+          "location": "明德楼材料窗口",
+          "text_brief": "沈嘉禾第二次出现，任务是材料核验，不是暧昧救场。",
+          "updates": {
+            "shen_jiahe_link": 1
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S11",
+          "location": "摄影社修片桌",
+          "text_brief": "夏知微第二次出现，任务是照片授权和观看边界。",
+          "updates": {
+            "xia_zhiwei_link": 1
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S12",
+          "location": "活动复盘共享文档",
+          "text_brief": "系统核验谁连续承担现实任务，谁只是软照面。",
+          "updates": {
+            "candidate_source_seen": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-A3-CHOICE-04",
+        "after_page": "ACT4-A3-S12",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-A3-C04-A",
+            "direction_type": "main_axis",
+            "label": "只登记候选来源，不锁感情线",
+            "micro_scene_chain": [
+              "共享文档标出任务来源",
+              "林亦舟不写恋爱承诺",
+              "A3 父池继续存在",
+              "第五幕再决定候选权限"
+            ],
+            "variable_delta": {
+              "candidate_source_checked": true,
+              "romance_permission_checked": true,
+              "act5_echo_hook": "a3_candidate_source_checked"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B05"
+          },
+          {
+            "direction_id": "ACT4-A3-C04-B",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "SHEN-JIAHE",
+            "label": "让沈嘉禾只核材料边界",
+            "micro_scene_chain": [
+              "沈嘉禾指出停止条件",
+              "林亦舟自己签名",
+              "材料关系变清楚",
+              "关系不升温过快"
+            ],
+            "variable_delta": {
+              "shen_jiahe_link": 1,
+              "scope_clarity": 1,
+              "act5_echo_hook": "a3_shen_material_boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B05"
+          },
+          {
+            "direction_id": "ACT4-A3-C04-C",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "XIA-ZHIWEI",
+            "label": "让夏知微只核公开照片",
+            "micro_scene_chain": [
+              "夏知微退回能认出人的照片",
+              "林亦舟删位置",
+              "公开压力下降",
+              "照片线只留候选来源"
+            ],
+            "variable_delta": {
+              "xia_zhiwei_link": 1,
+              "photo_boundary_checked": true,
+              "act5_echo_hook": "a3_xia_photo_boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT4-A3-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-A3-B05",
+      "block_name": "返校前交接",
+      "act": "ACT4",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-A3-B04",
+      "next_block": "ACT5-A3-B01",
+      "scene_range": [
+        "ACT4-A3-S13",
+        "ACT4-A3-S14"
+      ],
+      "scene_function": "把第四幕公开信用、宿舍低温和候选边界交给第五幕，不直接跳第六幕。",
+      "required_completion_flags": [
+        "act4_a3_handoff_ready",
+        "act5_entry_bias"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-A3-S13",
+          "location": "明德楼一楼大厅",
+          "text_brief": "活动证明、候选来源、宿舍旧账和项目时间线同时等返校后处理。",
+          "updates": {
+            "act5_entry_bias": "activity_public"
+          }
+        },
+        {
+          "page_id": "ACT4-A3-S14",
+          "location": "青枫居楼下",
+          "text_brief": "林亦舟拿着活动袋回寝，袋子比行李轻，但比一句解释重。",
+          "updates": {
+            "act4_a3_handoff_ready": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-A3-CHOICE-05",
+        "after_page": "ACT4-A3-S14",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-A3-C05-A",
+            "direction_type": "main_axis",
+            "label": "带着公开信用进入第五幕",
+            "micro_scene_chain": [
+              "秦越确认返校名单",
+              "林亦舟接下最低责任",
+              "活动圈默认他在",
+              "第五幕从公开信用进入"
+            ],
+            "variable_delta": {
+              "public_credit": 1,
+              "act4_a3_handoff_ready": true,
+              "act5_echo_hook": "a3_act5_public_credit"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B01"
+          },
+          {
+            "direction_id": "ACT4-A3-C05-B",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "DEFAULT-4XX",
+            "label": "带着宿舍低温进入第五幕",
+            "micro_scene_chain": [
+              "周屿看见活动袋没多问",
+              "唐骁重发项目表",
+              "陆沉移开椅子",
+              "宿舍旧账进入第五幕"
+            ],
+            "variable_delta": {
+              "old_debt": 1,
+              "dorm_warmth": -1,
+              "act5_echo_hook": "a3_act5_dorm_low_temperature"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B01"
+          },
+          {
+            "direction_id": "ACT4-A3-C05-C",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "A3-CANDIDATE",
+            "label": "带着候选边界进入第五幕",
+            "micro_scene_chain": [
+              "沈嘉禾留下材料痕迹",
+              "夏知微留下照片痕迹",
+              "两者都不是锁定对象",
+              "第五幕只读取候选来源"
+            ],
+            "variable_delta": {
+              "candidate_source_seen": 1,
+              "romance_outflow_allowed": true,
+              "act5_echo_hook": "a3_act5_candidate_boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B01"
+          }
+        ]
+      }
+    }
+  ],
+  "act5_bridge_nodes": [
+    {
+      "node_id": "ACT5-A3-B01",
+      "node_name": "宿舍站队从活动缺席开始",
+      "module": "ACT5-A3",
+      "act": "ACT5",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT4-A3-B05",
+      "next_node": "ACT5-A3-B02",
+      "act5_window_tag": "dorm_stand",
+      "pages": [
+        {
+          "page_id": "ACT5-A3-S01",
+          "location": "青枫居 4XX",
+          "text_brief": "强冲突前，公共桌已经默认林亦舟在活动那边。",
+          "updates": {
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S02",
+          "location": "事项群",
+          "text_brief": "唐骁只发任务表，陆沉只回最低事实，周屿把玩笑留在群外。",
+          "updates": {
+            "old_debt_visible": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S03",
+          "location": "教学楼走廊",
+          "text_brief": "秦越催活动补场，时间撞上 4XX 当面处理。",
+          "updates": {
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S04",
+          "location": "4XX 门口",
+          "text_brief": "林亦舟必须决定先以什么身份进入宿舍冲突。",
+          "updates": {
+            "act5_required_windows_seen": "dorm_stand"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-A3-CHOICE-01",
+        "after_page": "ACT5-A3-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-A3-C01-A",
+            "label": "先保活动责任，再回宿舍说明",
+            "variable_delta": {
+              "activity_link": 1,
+              "dorm_absence": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-A3-B01-activity-default-contact"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B02"
+          },
+          {
+            "direction_id": "ACT5-A3-C01-B",
+            "label": "先回公共桌，把缺席说清",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "old_debt_visible": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-A3-B01-dorm-explain-entry"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B02"
+          },
+          {
+            "direction_id": "ACT5-A3-C01-C",
+            "label": "只给最低事实，不替任何人总结",
+            "variable_delta": {
+              "public_boundary": 1,
+              "old_debt": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-A3-B01-low-temperature-fact"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B02"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-A3-B02",
+      "node_name": "亲密和候选边界",
+      "module": "ACT5-A3",
+      "act": "ACT5",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-A3-B01",
+      "next_node": "ACT5-A3-B03",
+      "act5_window_tag": "intimacy_or_wanfeng",
+      "pages": [
+        {
+          "page_id": "ACT5-A3-S05",
+          "location": "微信 / 游戏消息",
+          "text_brief": "晚风还在，但本线的主要生活半径已经被活动和公开材料占住。",
+          "updates": {
+            "emotional_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S06",
+          "location": "明德楼材料窗口",
+          "text_brief": "沈嘉禾的任务痕迹持续存在，但仍是材料边界。",
+          "updates": {
+            "shen_jiahe_link": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S07",
+          "location": "摄影社修片桌",
+          "text_brief": "夏知微的任务痕迹持续存在，但仍是照片授权。",
+          "updates": {
+            "xia_zhiwei_link": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S08",
+          "location": "西园餐桌",
+          "text_brief": "林亦舟不能把亲密关系、候选来源和宿舍旧账混成一个答案。",
+          "updates": {
+            "candidate_source_checked": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-A3-CHOICE-02",
+        "after_page": "ACT5-A3-S08",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-A3-C02-A",
+            "label": "向晚风说明活动占用，不推进亲密线",
+            "variable_delta": {
+              "public_boundary": 1,
+              "emotional_delay": 1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-A3-B02-wanfeng-soft-echo"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B03"
+          },
+          {
+            "direction_id": "ACT5-A3-C02-B",
+            "label": "确认沈嘉禾只是材料候选来源",
+            "variable_delta": {
+              "shen_jiahe_link": 1,
+              "candidate_source_checked": true,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-A3-B02-shen-material-source"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B03"
+          },
+          {
+            "direction_id": "ACT5-A3-C02-C",
+            "label": "确认夏知微只是影像候选来源",
+            "variable_delta": {
+              "xia_zhiwei_link": 1,
+              "candidate_source_checked": true,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-A3-B02-xia-photo-source"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B03"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-A3-B03",
+      "node_name": "项目规则材料压力",
+      "module": "ACT5-A3",
+      "act": "ACT5",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-A3-B02",
+      "next_node": "ACT5-A3-B04",
+      "act5_window_tag": "project_or_rule",
+      "pages": [
+        {
+          "page_id": "ACT5-A3-S09",
+          "location": "C407 机房",
+          "text_brief": "唐骁把课程项目表改成不等林亦舟的版本。",
+          "updates": {
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S10",
+          "location": "明德楼材料窗口",
+          "text_brief": "公开材料补件和课程项目截止撞在一起。",
+          "updates": {
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S11",
+          "location": "打印店",
+          "text_brief": "署名、附件、照片授权和项目分工都需要清楚版本。",
+          "updates": {
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S12",
+          "location": "教学楼楼梯口",
+          "text_brief": "林亦舟发现流程清楚不等于关系清楚。",
+          "updates": {
+            "old_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-A3-CHOICE-03",
+        "after_page": "ACT5-A3-S12",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-A3-C03-A",
+            "label": "先把活动公开材料归档",
+            "variable_delta": {
+              "public_credit": 1,
+              "activity_archive_boundary_checked": true,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-A3-B03-public-archive"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B04"
+          },
+          {
+            "direction_id": "ACT5-A3-C03-B",
+            "label": "先补 C407 项目分工",
+            "variable_delta": {
+              "project_stability": 1,
+              "time_debt": 1,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-A3-B03-c407-low-temperature"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B04"
+          },
+          {
+            "direction_id": "ACT5-A3-C03-C",
+            "label": "先核照片和署名授权",
+            "variable_delta": {
+              "public_boundary": 1,
+              "activity_image_scope_checked": true,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-A3-B03-image-scope"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B04"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-A3-B04",
+      "node_name": "活动兴趣主轴确认",
+      "module": "ACT5-A3",
+      "act": "ACT5",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-A3-B03",
+      "next_node": "ACT5-A3-B05",
+      "act5_window_tag": "activity_or_interest",
+      "pages": [
+        {
+          "page_id": "ACT5-A3-S13",
+          "location": "主持队复盘桌",
+          "text_brief": "秦越问他是否继续接活动流程，不像请求，更像默认。",
+          "updates": {
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S14",
+          "location": "九龙壁舞台边",
+          "text_brief": "周屿在台侧说你现在比我还像活动那边的人。",
+          "updates": {
+            "zhou_trust": -1
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S15",
+          "location": "活动共享文档",
+          "text_brief": "林亦舟要决定 A3 父池是继续主轴，还是降成低频回声。",
+          "updates": {
+            "route_pool_locked": true
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S16",
+          "location": "青枫居楼下",
+          "text_brief": "活动袋和宿舍门同时在他手里。",
+          "updates": {
+            "act5_required_windows_seen": "activity_or_interest"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-A3-CHOICE-04",
+        "after_page": "ACT5-A3-S16",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-A3-C04-A",
+            "label": "保持活动父池为主生活半径",
+            "variable_delta": {
+              "route_pool_locked": true,
+              "activity_link": 1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-A3-B04-public-activity-radius"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B05"
+          },
+          {
+            "direction_id": "ACT5-A3-C04-B",
+            "label": "降低活动密度，只保公开边界",
+            "variable_delta": {
+              "activity_link": -1,
+              "public_boundary": 1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-A3-B04-low-density-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B05"
+          },
+          {
+            "direction_id": "ACT5-A3-C04-C",
+            "label": "把任务拆给秦越和许棠，不再独自兜底",
+            "variable_delta": {
+              "scope_clarity": 1,
+              "time_debt": -1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-A3-B04-scope-clarity"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT5-A3-B05"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "ACT5-A3-B05",
+      "node_name": "回避外流门槛关闭",
+      "module": "ACT5-A3",
+      "act": "ACT5",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_node": "ACT5-A3-B04",
+      "next_node": "ACT6-A3-B01",
+      "act5_window_tag": "avoidance_or_outflow",
+      "pages": [
+        {
+          "page_id": "ACT5-A3-S17",
+          "location": "青枫居楼下",
+          "text_brief": "许澈或新圈消息只作为外部诱因出现，不能直接把 A3 改成 5X。",
+          "updates": {
+            "drift_guard_triggered": true
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S18",
+          "location": "活动群 / 事项群",
+          "text_brief": "两个群都在等他，但都不是完整新路线入口。",
+          "updates": {
+            "closed_route_ids_kept_closed": true
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S19",
+          "location": "明德楼门口",
+          "text_brief": "林亦舟确认本线继续用公开活动生活半径承接第六幕。",
+          "updates": {
+            "route_pool_locked": true
+          }
+        },
+        {
+          "page_id": "ACT5-A3-S20",
+          "location": "C407 机房外",
+          "text_brief": "A3 第五幕桥接完成，变量交给 ACT6-A3-B01。",
+          "updates": {
+            "act5_a3_bridge_ready": true,
+            "act5_choice_floor_met": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-A3-CHOICE-05",
+        "after_page": "ACT5-A3-S20",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-A3-C05-A",
+            "label": "留在活动父池，写清停止条件",
+            "variable_delta": {
+              "act5_a3_bridge_ready": true,
+              "route_pool_locked": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-A3-B01-public-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-A3-B01"
+          },
+          {
+            "direction_id": "ACT5-A3-C05-B",
+            "label": "保留宿舍回声，但不回默认线",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "closed_route_ids_kept_closed": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-A3-B01-dorm-soft-echo"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-A3-B01"
+          },
+          {
+            "direction_id": "ACT5-A3-C05-C",
+            "label": "拒绝 5X 硬外流诱因",
+            "variable_delta": {
+              "hard_outflow": false,
+              "drift_guard_triggered": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-A3-B01-no-hard-outflow"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+              "route_switch_allowed": false
+            },
+            "next_node": "ACT6-A3-B01"
+          }
+        ]
+      }
+    }
+  ],
+  "return_points": [
+    "RET-A3-01",
+    "RET-A3-02",
+    "RET-A3-03",
+    "RET-A3-04",
+    "RET-A3-05",
+    "RET-A3-06"
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-A3-B01",
+      "scene_range": [
+        "ACT6-A3-S01",
+        "ACT6-A3-S04"
+      ],
+      "choice_window_id": "ACT6-A3-CHOICE-01",
+      "allowed_directions": [
+        "保活动公开边界",
+        "先回 4XX 解释缺席"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-A3-B02",
+      "scene_range": [
+        "ACT6-A3-S05",
+        "ACT6-A3-S08"
+      ],
+      "choice_window_id": "ACT6-A3-CHOICE-02",
+      "allowed_directions": [
+        "维持单一活动方向",
+        "降低活动密度"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-A3-B03",
+      "scene_range": [
+        "ACT6-A3-S09",
+        "ACT6-A3-S12"
+      ],
+      "choice_window_id": "ACT6-A3-CHOICE-03",
+      "allowed_directions": [
+        "公开署名清楚",
+        "幕后归档低调"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-A3-B04",
+      "scene_range": [
+        "ACT6-A3-S13",
+        "ACT6-A3-S16"
+      ],
+      "choice_window_id": "ACT6-A3-CHOICE-04",
+      "allowed_directions": [
+        "说明女生候选来源",
+        "只保软照面"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-A3-B05",
+      "scene_range": [
+        "ACT6-A3-S17",
+        "ACT6-A3-S20"
+      ],
+      "choice_window_id": "ACT6-A3-CHOICE-05",
+      "allowed_directions": [
+        "毕业公开材料完整",
+        "私人关系低频保留"
+      ],
+      "conversion_status": "full_page_json_ready"
+    }
+  ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-A3-B01",
+      "block_name": "公开边界与宿舍缺席",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-A3",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-A3活动父池正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT5-A3-B05",
+      "next_block": "ACT6-A3-B02",
+      "scene_range": [
+        "ACT6-A3-S01",
+        "ACT6-A3-S04"
+      ],
+      "mother_lockpoints": [
+        "活动联系人",
+        "毕业材料",
+        "C407 分工",
+        "4XX 缺席回声"
+      ],
+      "scene_function": "把第三幕活动父池拖到毕业前的公开联系人、活动图包和宿舍缺席压力里，确认 A3 不是新路线选择，只是当前池内的公开边界结算。",
+      "required_completion_flags": [
+        "public_boundary_checked",
+        "a3_contact_scope_checked",
+        "act6_choice_window_count"
+      ],
+      "must_record": [
+        "a3_contact_scope_checked",
+        "activity_link",
+        "time_debt",
+        "public_boundary",
+        "a3_public_scope",
+        "project_stability",
+        "dorm_warmth",
+        "old_debt",
+        "dorm_absence",
+        "activity_image_scope_checked"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-A3-S01",
+          "location": "B204 / 活动联系人群",
+          "text_brief": "活动负责人问毕业材料能不能继续用他的联系方式，学院群同时发 C407 分工确认；林亦舟发现公开联系人和毕业联系人已经混在一起。",
+          "choice_hook": [
+            "先看学校表格",
+            "先回活动联系人",
+            "都先截图"
+          ],
+          "updates": {
+            "a3_contact_scope_checked": 1,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S02",
+          "location": "融媒体共享文档 / 4XX 群",
+          "text_brief": "许棠问采访稿署名和活动照片是否还能挂他，4XX 群里则追问 C407 分工；公开材料和宿舍任务第一次同屏出现。",
+          "choice_hook": [
+            "确认公开范围",
+            "先回宿舍群",
+            "把两个窗口都暂缓"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "a3_public_scope": "branch_dependent",
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S03",
+          "location": "青枫居走廊",
+          "text_brief": "周屿问他最近怎么老在活动群里消失又出现；玩笑背后是 4XX 已经习惯他把活动事项排到宿舍说明前面。",
+          "choice_hook": [
+            "解释活动材料",
+            "说只是顺手",
+            "问 4XX 这边缺什么"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "old_debt": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S04",
+          "location": "活动归档页 / 公共桌回声",
+          "text_brief": "活动照片扫到 4XX 公共桌和寝室物品，林亦舟意识到公开图包并不只属于活动组，也会带出宿舍生活边界。",
+          "choice_hook": [
+            "删掉宿舍痕迹",
+            "保留但标注范围",
+            "先问 4XX"
+          ],
+          "updates": {
+            "activity_image_scope_checked": 1,
+            "dorm_warmth": 1,
+            "time_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-A3-CHOICE-01",
+        "after_page": "ACT6-A3-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-A3-C01-A",
+            "label": "保活动公开边界",
+            "variable_delta": {
+              "public_boundary": 2,
+              "a3_public_scope": "limited_public",
+              "activity_link": 1,
+              "dorm_warmth": -1
+            },
+            "next_block": "ACT6-A3-B02"
+          },
+          {
+            "direction_id": "ACT6-A3-C01-B",
+            "label": "先回 4XX 解释缺席",
+            "variable_delta": {
+              "dorm_warmth": 2,
+              "old_debt": -1,
+              "public_credit": -1,
+              "activity_link": -1
+            },
+            "next_block": "ACT6-A3-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-A3-B02",
+      "block_name": "单一方向与活动密度",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-A3",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-A3活动父池正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-A3-B01",
+      "next_block": "ACT6-A3-B03",
+      "scene_range": [
+        "ACT6-A3-S05",
+        "ACT6-A3-S08"
+      ],
+      "mother_lockpoints": [
+        "活动复盘",
+        "单一方向",
+        "演示预备",
+        "4XX 时间债"
+      ],
+      "scene_function": "确认 A3 父池第六幕不重新开放所有社团选择，只结算第三幕留下的单一活动方向或活动密度。",
+      "required_completion_flags": [
+        "a3_focus_status_checked",
+        "route_pool_locked",
+        "public_credit_recorded"
+      ],
+      "must_record": [
+        "a3_focus_status_checked",
+        "activity_link",
+        "public_credit",
+        "time_debt",
+        "dorm_warmth",
+        "project_stability",
+        "public_boundary"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-A3-S05",
+          "location": "活动复盘会",
+          "text_brief": "负责人默认他继续负责原方向，没有再问他要不要换社团；第三幕的选择在第六幕变成别人对他的默认。",
+          "choice_hook": [
+            "接受原方向",
+            "降低参与频率",
+            "问能不能换人"
+          ],
+          "updates": {
+            "a3_focus_status_checked": true,
+            "activity_link": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S06",
+          "location": "摄影 / 文案 / 后台群",
+          "text_brief": "摄影、文案、后台只按既有来源找他，不提供新社团菜单；A3 的自由度从选择方向变成承担边界。",
+          "choice_hook": [
+            "只回既有方向",
+            "每个群都回一句",
+            "先做归档"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "time_debt": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S07",
+          "location": "C407 / 活动群",
+          "text_brief": "演示预备和补签冲突，唐骁只问他能不能按时交，活动群则默认他能兜最后一版。",
+          "choice_hook": [
+            "优先演示",
+            "优先活动",
+            "把冲突说清"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "time_debt": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S08",
+          "location": "4XX 公共桌",
+          "text_brief": "周屿开玩笑问活动那边是不是给他发工资，玩笑让林亦舟看见自己用公共信用换掉了宿舍在场感。",
+          "choice_hook": [
+            "解释不是工作",
+            "承认最近太满",
+            "让他们别管活动"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "dorm_absence": 1,
+            "public_credit": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-A3-CHOICE-02",
+        "after_page": "ACT6-A3-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-A3-C02-A",
+            "label": "维持单一活动方向",
+            "variable_delta": {
+              "a3_focus_status_checked": true,
+              "activity_link": 1,
+              "public_credit": 1,
+              "time_debt": 1
+            },
+            "next_block": "ACT6-A3-B03"
+          },
+          {
+            "direction_id": "ACT6-A3-C02-B",
+            "label": "降低活动密度",
+            "variable_delta": {
+              "time_debt": -1,
+              "dorm_warmth": 1,
+              "activity_link": -1,
+              "public_credit": -1
+            },
+            "next_block": "ACT6-A3-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-A3-B03",
+      "block_name": "署名、证明与归档边界",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-A3",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-A3活动父池正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-A3-B02",
+      "next_block": "ACT6-A3-B04",
+      "scene_range": [
+        "ACT6-A3-S09",
+        "ACT6-A3-S12"
+      ],
+      "mother_lockpoints": [
+        "活动证明",
+        "采访稿署名",
+        "照片授权",
+        "后台归档"
+      ],
+      "scene_function": "把公开信用具体化成署名、证明、照片和后台归档四类可验证材料，并把边界问题推到候选来源前。",
+      "required_completion_flags": [
+        "activity_certificate_status",
+        "activity_archive_boundary_checked",
+        "activity_image_scope_checked"
+      ],
+      "must_record": [
+        "activity_certificate_status",
+        "activity_archive_boundary_checked",
+        "activity_image_scope_checked",
+        "public_credit",
+        "public_boundary",
+        "a3_public_scope",
+        "shen_jiahe_link",
+        "xia_zhiwei_link",
+        "dorm_warmth"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-A3-S09",
+          "location": "活动证明申请页",
+          "text_brief": "证明申请页要求本人确认服务时长和联系人，林亦舟不能再用口头默认替代签字。",
+          "choice_hook": [
+            "本人确认",
+            "先让负责人代填",
+            "暂缓申请"
+          ],
+          "updates": {
+            "activity_certificate_status": "checking",
+            "public_credit": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S10",
+          "location": "共享文档 / 采访稿",
+          "text_brief": "采访稿的署名和沈嘉禾修订记录同时出现，材料协作不能被写成私人暧昧，也不能被抹成无名劳动。",
+          "choice_hook": [
+            "署名写清",
+            "只留团队名",
+            "询问沈嘉禾意见"
+          ],
+          "updates": {
+            "shen_jiahe_link": 1,
+            "public_boundary": 1,
+            "activity_archive_boundary_checked": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S11",
+          "location": "图包预览 / 摄影社群",
+          "text_brief": "夏知微问正脸和背影能不能用于毕业图包；照片授权第一次成为 A3 父池能否通向候选来源的前置条件。",
+          "choice_hook": [
+            "确认照片用途",
+            "只保背影",
+            "不使用这组照片"
+          ],
+          "updates": {
+            "xia_zhiwei_link": 1,
+            "activity_image_scope_checked": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S12",
+          "location": "后台库房 / 归档箱",
+          "text_brief": "节目单、胸牌、签到表和 4XX 便签被放进同一只归档箱，公开材料和私人生活被迫共享边界。",
+          "choice_hook": [
+            "按材料类型分盒",
+            "统一封存",
+            "先拿走 4XX 便签"
+          ],
+          "updates": {
+            "activity_archive_boundary_checked": 1,
+            "dorm_warmth": 1,
+            "old_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-A3-CHOICE-03",
+        "after_page": "ACT6-A3-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-A3-C03-A",
+            "label": "公开署名清楚",
+            "variable_delta": {
+              "public_boundary": 2,
+              "activity_certificate_status": "public_confirmed",
+              "public_credit": 1
+            },
+            "next_block": "ACT6-A3-B04"
+          },
+          {
+            "direction_id": "ACT6-A3-C03-B",
+            "label": "幕后归档低调",
+            "variable_delta": {
+              "activity_archive_boundary_checked": true,
+              "a3_public_scope": "limited_public",
+              "dorm_warmth": 1
+            },
+            "next_block": "ACT6-A3-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-A3-B04",
+      "block_name": "候选来源核验",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-A3",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-A3活动父池正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-A3-B03",
+      "next_block": "ACT6-A3-B05",
+      "scene_range": [
+        "ACT6-A3-S13",
+        "ACT6-A3-S16"
+      ],
+      "mother_lockpoints": [
+        "沈嘉禾材料来源",
+        "夏知微照片来源",
+        "许棠非候选",
+        "白名单核验"
+      ],
+      "scene_function": "只核验女生候选是否有合法来源，不在第六幕重开感情线；候选权限必须由公开材料、父池方向和本人边界共同决定。",
+      "required_completion_flags": [
+        "candidate_source_checked",
+        "romance_permission_checked",
+        "closed_route_ids_kept_closed"
+      ],
+      "must_record": [
+        "candidate_source_tag",
+        "female_candidate_present",
+        "romance_outflow_allowed",
+        "public_boundary",
+        "shen_jiahe_link",
+        "xia_zhiwei_link",
+        "a3_focus_status_checked",
+        "dorm_warmth",
+        "drift_guard_triggered"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-A3-S13",
+          "location": "打印店 / 共享文档",
+          "text_brief": "沈嘉禾的材料协作需要同时满足公开任务来源和本人边界，不能被自动升级成感情入口。",
+          "choice_hook": [
+            "说明材料来源",
+            "只写团队协作",
+            "暂不提姓名"
+          ],
+          "updates": {
+            "shen_jiahe_link": 1,
+            "candidate_source_tag": "branch_dependent",
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S14",
+          "location": "晨光湖 / 摄影社群",
+          "text_brief": "夏知微的照片来源需要授权和使用范围，不是见过面就能变成候选；照片越漂亮，边界越要写清。",
+          "choice_hook": [
+            "确认授权",
+            "只保软照面",
+            "删掉正脸"
+          ],
+          "updates": {
+            "xia_zhiwei_link": 1,
+            "activity_image_scope_checked": 1,
+            "candidate_source_tag": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S15",
+          "location": "融媒体采访台",
+          "text_brief": "许棠继续作为公开材料协作者出现，但不被标记为 romance 候选；A3 父池必须把工作接触和感情权限分开。",
+          "choice_hook": [
+            "维持协作边界",
+            "解释给 4XX",
+            "略过不说明"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "romance_outflow_allowed": false,
+            "drift_guard_triggered": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S16",
+          "location": "活动白名单页 / 4XX 群",
+          "text_brief": "白名单页要求来源、完美模式、宿舍温度都有证据；没有证据的熟人照面只保留为软回声。",
+          "choice_hook": [
+            "按证据填白名单",
+            "只保软回声",
+            "全部关闭"
+          ],
+          "updates": {
+            "a3_focus_status_checked": true,
+            "female_candidate_present": "branch_dependent",
+            "dorm_warmth": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-A3-CHOICE-04",
+        "after_page": "ACT6-A3-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-A3-C04-A",
+            "label": "说明女生候选来源",
+            "variable_delta": {
+              "candidate_source_tag": "branch_dependent",
+              "female_candidate_present": "branch_dependent",
+              "romance_outflow_allowed": "branch_dependent",
+              "public_boundary": 1
+            },
+            "next_block": "ACT6-A3-B05"
+          },
+          {
+            "direction_id": "ACT6-A3-C04-B",
+            "label": "只保软照面",
+            "variable_delta": {
+              "candidate_source_tag": "none_or_soft_echo",
+              "romance_outflow_allowed": false,
+              "dorm_warmth": 1
+            },
+            "next_block": "ACT6-A3-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-A3-B05",
+      "block_name": "毕业公开材料与最终联系范围",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act6_variant_id": "ACT6-A3",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-A3活动父池正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-A3-B04",
+      "next_block": "ACT6-END",
+      "scene_range": [
+        "ACT6-A3-S17",
+        "ACT6-A3-S20"
+      ],
+      "mother_lockpoints": [
+        "毕业去向预热",
+        "毕业照预告",
+        "最后一餐预热",
+        "武生院站预回声"
+      ],
+      "scene_function": "把 A3 第六幕收束成第七幕可读取的公开材料完整度、私人低频联系范围、候选权限和宿舍温度。",
+      "required_completion_flags": [
+        "act6_closed",
+        "act6_route_pool_locked",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "activity_certificate_status",
+        "activity_image_scope_checked",
+        "activity_archive_boundary_checked",
+        "a3_final_contact_scope",
+        "public_credit",
+        "activity_link",
+        "dorm_warmth",
+        "graduation_temperature",
+        "candidate_source_tag",
+        "female_candidate_present",
+        "romance_outflow_allowed"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-A3-S17",
+          "location": "教务系统 / 活动证明页",
+          "text_brief": "毕业去向预登记和活动证明同时弹出，公开材料终于变成离校前必须处理的正式事项。",
+          "choice_hook": [
+            "先补证明材料",
+            "先填去向",
+            "两边都暂存"
+          ],
+          "updates": {
+            "activity_certificate_status": "ready_checking",
+            "public_credit": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S18",
+          "location": "图包 / 毕业照预告",
+          "text_brief": "活动图包和毕业照预告开始重叠，哪些照片能用、谁能看见、是否带出 4XX 生活痕迹都要提前确认。",
+          "choice_hook": [
+            "标注可用照片",
+            "只留公共场景",
+            "交给摄影社判断"
+          ],
+          "updates": {
+            "activity_image_scope_checked": 1,
+            "public_boundary": 1,
+            "dorm_warmth": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S19",
+          "location": "4XX 公共桌 / 活动群",
+          "text_brief": "最后一餐预热和活动群毕业后联系口同晚出现，林亦舟必须决定自己的低频联系先对谁说清。",
+          "choice_hook": [
+            "先跟 4XX 说",
+            "先回活动群",
+            "两边都写低频"
+          ],
+          "updates": {
+            "a3_final_contact_scope": "branch_dependent",
+            "dorm_warmth": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT6-A3-S20",
+          "location": "武生院站预回声 / 归档箱",
+          "text_brief": "站台还没到，归档箱已经决定第七幕会怎样问他：公开信用完整，还是私人关系低频保留。",
+          "choice_hook": [
+            "公开材料完整",
+            "私人关系低频保留",
+            "只保当前最低联系"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent",
+            "activity_archive_boundary_checked": 1,
+            "public_credit": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-A3-CHOICE-05",
+        "after_page": "ACT6-A3-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-A3-C05-A",
+            "label": "毕业公开材料完整",
+            "variable_delta": {
+              "activity_certificate_status": "ready",
+              "a3_final_contact_scope": "public_credit_low_frequency",
+              "public_credit": 2,
+              "graduation_temperature": "public_credit"
+            },
+            "next_block": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-A3-C05-B",
+            "label": "私人关系低频保留",
+            "variable_delta": {
+              "a3_final_contact_scope": "private_low_frequency",
+              "dorm_warmth": 1,
+              "activity_link": -1,
+              "graduation_temperature": "dorm_return_or_low_visibility"
+            },
+            "next_block": "ACT6-END"
+          }
+        ]
+      }
+    }
+  ],
+  "act6_to_act7_handoff": {
+    "act6_closed": true,
+    "act6_route_pool_locked": true,
+    "route_switch_allowed": false,
+    "soft_echo_routes_only": true,
+    "next_event": "ACT7-E01-PRE-REGISTER",
+    "must_carry": [
+      "a3_public_scope",
+      "activity_link",
+      "public_credit",
+      "public_boundary",
+      "activity_certificate_status",
+      "activity_image_scope_checked",
+      "activity_archive_boundary_checked",
+      "a3_focus_status_checked",
+      "candidate_source_tag",
+      "female_candidate_present",
+      "romance_outflow_allowed",
+      "a3_final_contact_scope",
+      "dorm_warmth",
+      "time_debt",
+      "graduation_temperature"
+    ]
+  },
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "B204 / 教务系统 / 活动联系人群",
+      "scene_function": "预登记把毕业方向、活动联系人、公开材料联系人和候选来源压到同一张表上。",
+      "required_completion_flags": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "a3_contact_scope_checked"
+      ],
+      "must_record": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "a3_contact_scope_checked",
+        "activity_link",
+        "time_debt",
+        "public_boundary",
+        "candidate_source_tag",
+        "dorm_warmth"
+      ],
+      "participants_hint": "Separate graduation contact from activity contact; A3 is not a new route choice in Act7.",
+      "pages": [
+        {
+          "page_id": "ACT7-E01-A3-P01",
+          "beat": "表格弹出",
+          "text_brief": "B204 发毕业去向预登记，活动负责人也在群里问毕业后谁还能确认材料。",
+          "choice_hook": [
+            "先看学校表格",
+            "先回活动联系人"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-A3-P02",
+          "beat": "联系口",
+          "text_brief": "同一个手机号既能被学院找到，也能被活动群继续拉去确认图包、采访稿和证明。",
+          "choice_hook": [
+            "把毕业联系人和活动联系人分开",
+            "继续用活动群当默认联系口"
+          ],
+          "updates": {
+            "a3_contact_scope_checked": true,
+            "public_boundary": 1,
+            "activity_link": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-A3-P03",
+          "beat": "来源栏",
+          "text_brief": "表格没有沈嘉禾材料协作或夏知微照片授权这种栏，只有去向和备注。",
+          "choice_hook": [
+            "只写合法公开来源",
+            "把熟人名字写进备注"
+          ],
+          "updates": {
+            "candidate_source_tag": "legal_public_source",
+            "public_boundary": -1,
+            "emotional_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-A3-P04",
+          "beat": "提交后",
+          "text_brief": "提交成功后，4XX 群问谁一起办离校，活动群问谁能保留毕业后联系方式。",
+          "choice_hook": [
+            "两边都回清楚边界",
+            "先保活动联系不中断"
+          ],
+          "updates": {
+            "graduation_direction_status": "submitted",
+            "dorm_warmth": 1,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-A3-CHOICE-01",
+        "after_page": "ACT7-E01-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-A3-C01-A",
+            "label": "把活动联系人和毕业联系人分开",
+            "variable_delta": {
+              "pre_register_boundary_checked": true,
+              "a3_contact_scope_checked": true,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E01-A3-C01-B",
+            "label": "继续用活动群当默认联系口",
+            "variable_delta": {
+              "activity_link": 1,
+              "time_debt": 1,
+              "graduation_temperature": "public_credit_pressure"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "班级材料群 / 融媒体共享文档 / 活动图包",
+      "scene_function": "确认活动材料、采访、署名和照片授权的公开范围，避免把私事写进公开场。",
+      "required_completion_flags": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "a3_public_scope"
+      ],
+      "must_record": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "a3_public_scope",
+        "public_boundary",
+        "public_credit",
+        "candidate_source_tag",
+        "dorm_warmth"
+      ],
+      "participants_hint": "Xu Tang handles public narration and authorization pressure only; she is not a romance candidate.",
+      "pages": [
+        {
+          "page_id": "ACT7-E02-A3-P01",
+          "beat": "材料通知",
+          "text_brief": "班级材料群要毕业公开素材，活动共享盘里有主持照、采访稿、后台签收和摄影社图包。",
+          "choice_hook": [
+            "先看授权要求",
+            "先把素材拖进目录"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-A3-P02",
+          "beat": "署名范围",
+          "text_brief": "许棠问采访稿署名，夏知微图包问能不能发正脸，沈嘉禾共享文档仍显示修订记录。",
+          "choice_hook": [
+            "写清公开范围和署名",
+            "按活动习惯默认可用"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "a3_public_scope": "limited_public",
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-A3-P03",
+          "beat": "私人边界",
+          "text_brief": "有些材料能代表活动信用，有些只是四年里某个晚上，没有义务被公开解释。",
+          "choice_hook": [
+            "删掉寝室私物和非授权背影",
+            "只要不露脸就保留"
+          ],
+          "updates": {
+            "public_consent_checked": true,
+            "dorm_warmth": 1,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-A3-P04",
+          "beat": "回执生成",
+          "text_brief": "回执写着本人确认。它不问谁帮过忙，只问谁允许公开。",
+          "choice_hook": [
+            "保存回执并同步群内范围",
+            "只在自己手机留一份"
+          ],
+          "updates": {
+            "public_consent_checked": true,
+            "public_credit": 1,
+            "candidate_source_tag": "pending"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-A3-CHOICE-01",
+        "after_page": "ACT7-E02-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-A3-C01-A",
+            "label": "写清公开范围和署名",
+            "variable_delta": {
+              "public_scope_boundary_checked": true,
+              "a3_public_scope": "limited_public",
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E02-A3-C01-B",
+            "label": "按活动习惯默认可用",
+            "variable_delta": {
+              "a3_public_scope": "activity_default",
+              "public_boundary": -1,
+              "old_debt": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "青枫居 4XX / 活动材料会 / 共享盘旧目录",
+      "scene_function": "最后一个新年被活动材料会吸走，但可选择只留下可公开材料，不把私人热闹塞进主题。",
+      "required_completion_flags": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "activity_archive_boundary_checked"
+      ],
+      "must_record": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "activity_archive_boundary_checked",
+        "public_boundary",
+        "activity_link",
+        "dorm_warmth",
+        "old_debt"
+      ],
+      "participants_hint": "Public archive cannot swallow 4XX private objects.",
+      "pages": [
+        {
+          "page_id": "ACT7-E03-A3-P01",
+          "beat": "旧目录",
+          "text_brief": "最后一个新年目录旁边，是活动复盘、主持串词、摄影社图包和志愿名单。",
+          "choice_hook": [
+            "打开旧目录",
+            "先去活动材料会"
+          ],
+          "updates": {
+            "opening_contrast_seen": true,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-A3-P02",
+          "beat": "材料会上",
+          "text_brief": "大家想找一段热闹视频做毕业主题，但那段视频里有 4XX 桌角和没授权的背影。",
+          "choice_hook": [
+            "只留活动可公开材料",
+            "把热闹素材都塞进主题"
+          ],
+          "updates": {
+            "activity_archive_boundary_checked": true,
+            "a3_public_scope": "limited_public",
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-A3-P03",
+          "beat": "私人碎片",
+          "text_brief": "旧传单、挂绳、节目单和一张 4XX 外卖小票让他分不清哪张算活动材料。",
+          "choice_hook": [
+            "标注来源和用途",
+            "先一起扫进归档"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "activity_link": 1,
+            "emotional_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-A3-P04",
+          "beat": "不公开项",
+          "text_brief": "周屿问要不要把那段笑声留下，许棠只问一句授权齐吗。",
+          "choice_hook": [
+            "明确哪些不公开",
+            "让活动组自行剪"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "dorm_warmth": 1,
+            "public_credit": 1,
+            "old_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-A3-CHOICE-01",
+        "after_page": "ACT7-E03-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-A3-C01-A",
+            "label": "只留活动可公开材料",
+            "variable_delta": {
+              "activity_archive_boundary_checked": true,
+              "public_boundary": 1,
+              "dorm_warmth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E03-A3-C01-B",
+            "label": "把热闹素材都塞进主题",
+            "variable_delta": {
+              "public_credit": 1,
+              "public_boundary": -1,
+              "old_debt": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "毕业设计方向与开题",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 / B204 开题复核 / 活动履历表",
+      "scene_function": "开题方向和活动履历并排出现，确认活动信用不能替毕业设计依据背书。",
+      "required_completion_flags": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "a3_focus_status_checked"
+      ],
+      "must_record": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "a3_focus_status_checked",
+        "project_stability",
+        "public_boundary",
+        "candidate_source_tag",
+        "romance_outflow_allowed"
+      ],
+      "participants_hint": "Activity experience may be background, not thesis proof or Act7 romance switching.",
+      "pages": [
+        {
+          "page_id": "ACT7-E04-A3-P01",
+          "beat": "题目页",
+          "text_brief": "开题表要求写选题依据，活动履历表又弹出是否关联校园实践材料。",
+          "choice_hook": [
+            "先写题目依据",
+            "先补活动履历"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "public_credit": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-A3-P02",
+          "beat": "依据边界",
+          "text_brief": "主持、摄影或材料协作可以成为观察来源，却不能自动替代论文论证。",
+          "choice_hook": [
+            "区分活动经历和题目依据",
+            "用公开信用替题目说服"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "a3_focus_status_checked": true,
+            "self_control": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-A3-P03",
+          "beat": "候选回声",
+          "text_brief": "沈嘉禾或夏知微只能作为来源核验，不能写成第七卷新选择。",
+          "choice_hook": [
+            "只保合法来源标签",
+            "把熟人关系写成亮点"
+          ],
+          "updates": {
+            "candidate_source_tag": "legal_if_prequalified",
+            "romance_outflow_allowed": false,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-A3-P04",
+          "beat": "题目落定",
+          "text_brief": "导师签字后，活动群催毕业专栏简介，C407 群只催终版题目。",
+          "choice_hook": [
+            "先完成开题签字",
+            "先写活动简介"
+          ],
+          "updates": {
+            "topic_self_signed": true,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-A3-CHOICE-01",
+        "after_page": "ACT7-E04-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-A3-C01-A",
+            "label": "区分活动经历和题目依据",
+            "variable_delta": {
+              "topic_boundary_checked": true,
+              "a3_focus_status_checked": true,
+              "project_stability": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E04-A3-C01-B",
+            "label": "用公开信用替题目说服",
+            "variable_delta": {
+              "project_stability": -1,
+              "self_control": -1,
+              "thesis_revision_version": "risk_later"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月事项排队",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "明德楼窗口 / 活动办公室 / 摄影社图包提交页",
+      "scene_function": "三四月窗口里活动证明、志愿时长、照片提交和毕业材料互相挤压。",
+      "required_completion_flags": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "activity_certificate_status"
+      ],
+      "must_record": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "activity_certificate_status",
+        "public_boundary",
+        "project_stability",
+        "time_debt",
+        "dorm_warmth"
+      ],
+      "participants_hint": "Activity certificates cannot replace graduation windows.",
+      "pages": [
+        {
+          "page_id": "ACT7-E05-A3-P01",
+          "beat": "窗口并排",
+          "text_brief": "实习预收、证书核验、活动证明和志愿时长盖章排在同一天。",
+          "choice_hook": [
+            "先看活动材料毕业窗口",
+            "先补活动证明"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "activity_certificate_status": "pending",
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-A3-P02",
+          "beat": "证明缺口",
+          "text_brief": "活动负责人说证明能开，但需要本人确认活动名称、署名和时长。",
+          "choice_hook": [
+            "按毕业窗口先确认材料",
+            "先补活动端证明"
+          ],
+          "updates": {
+            "queue_item_submitted": true,
+            "public_boundary": 1,
+            "activity_certificate_status": "submitted"
+          }
+        },
+        {
+          "page_id": "ACT7-E05-A3-P03",
+          "beat": "图包提交",
+          "text_brief": "摄影社图包、采访稿附件和后台签收单都能证明他参与过，但不能替他办毕业流程。",
+          "choice_hook": [
+            "分开提交材料",
+            "一起打包省时间"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "project_stability": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-A3-P04",
+          "beat": "回寝空档",
+          "text_brief": "4XX 公共桌正好能说话，活动群又提醒他去拿证明。",
+          "choice_hook": [
+            "先回 4XX 说清窗口",
+            "先去拿证明"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "old_debt": -1,
+            "activity_certificate_status": "submitted"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-A3-CHOICE-01",
+        "after_page": "ACT7-E05-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-A3-C01-A",
+            "label": "按毕业窗口先确认材料",
+            "variable_delta": {
+              "march_boundary_checked": true,
+              "queue_item_submitted": true,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E05-A3-C01-B",
+            "label": "先补活动端证明",
+            "variable_delta": {
+              "activity_certificate_status": "submitted",
+              "activity_link": 1,
+              "time_debt": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "改论文 / 毕业设计",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 共享文档 / 活动材料终稿群",
+      "scene_function": "改稿和活动材料并行，公开署名、候选回声和论文终版边界同时到场。",
+      "required_completion_flags": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline",
+        "project_stability",
+        "public_boundary",
+        "romance_outflow_allowed",
+        "time_debt"
+      ],
+      "participants_hint": "Shen may check format and Xia may confirm image authorization only when prequalified; neither writes thesis for him.",
+      "pages": [
+        {
+          "page_id": "ACT7-E06-A3-P01",
+          "beat": "红批与终稿",
+          "text_brief": "导师红批刚到，活动材料终稿群也催他确认个人简介、照片和署名。",
+          "choice_hook": [
+            "先读论文红批",
+            "先回活动材料"
+          ],
+          "updates": {
+            "thesis_boundary_checked": true,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-A3-P02",
+          "beat": "署名挤压",
+          "text_brief": "论文作者、活动材料署名和候选来源不是一回事，偏偏都在同一晚确认。",
+          "choice_hook": [
+            "先锁论文边界再处理活动材料",
+            "让活动材料继续挤进终版"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "project_stability": 1,
+            "emotional_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-A3-P03",
+          "beat": "帮看边界",
+          "text_brief": "沈嘉禾能看格式，夏知微能问图片授权，但谁都不能替他改论文论点。",
+          "choice_hook": [
+            "只请求边界内确认",
+            "把未改完的部分丢给熟人"
+          ],
+          "updates": {
+            "thesis_revision_version": "self_revised_with_boundary",
+            "romance_outflow_allowed": false,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-A3-P04",
+          "beat": "提交前",
+          "text_brief": "论文系统和活动终稿群都亮着请确认。林亦舟必须先选顺序。",
+          "choice_hook": [
+            "提交论文后再回活动群",
+            "两边同时压线确认"
+          ],
+          "updates": {
+            "revision_submitted_before_deadline": true,
+            "time_debt": 1,
+            "self_control": -1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-A3-CHOICE-01",
+        "after_page": "ACT7-E06-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-A3-C01-A",
+            "label": "先锁论文边界再处理活动材料",
+            "variable_delta": {
+              "thesis_boundary_checked": true,
+              "project_stability": 1,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E06-A3-C01-B",
+            "label": "让活动材料继续挤进终版",
+            "variable_delta": {
+              "project_stability": -1,
+              "time_debt": 1,
+              "graduation_temperature": "pressure_spread"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩日",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "C407 答辩门口 / 明德楼窗口 / 活动履历页",
+      "scene_function": "答辩结果和活动履历进入毕业叙事，确认公开信用不能遮住真实结果。",
+      "required_completion_flags": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "activity_public_credit_recorded"
+      ],
+      "must_record": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "activity_public_credit_recorded",
+        "a3_focus_status_checked",
+        "public_credit",
+        "old_debt",
+        "dorm_warmth"
+      ],
+      "participants_hint": "Defense result must stay more concrete than an activity-style pass screenshot.",
+      "pages": [
+        {
+          "page_id": "ACT7-E07-A3-P01",
+          "beat": "门口排队",
+          "text_brief": "答辩门口排队，活动群已经把毕业专栏通过稿发到他面前。",
+          "choice_hook": [
+            "先核答辩顺序",
+            "先看活动稿"
+          ],
+          "updates": {
+            "defense_order_seen": true,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-A3-P02",
+          "beat": "结果说法",
+          "text_brief": "答辩通过不是海报上的顺利毕业，还包括补章、补交和本人确认。",
+          "choice_hook": [
+            "认真说答辩结果和公开材料状态",
+            "只发一张活动式通过截图"
+          ],
+          "updates": {
+            "defense_boundary_checked": true,
+            "activity_public_credit_recorded": true,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-A3-P03",
+          "beat": "履历确认",
+          "text_brief": "活动履历页列着主持、新闻、摄影或后台，但这些只是经历，不是新的路线入口。",
+          "choice_hook": [
+            "标注已结算活动经历",
+            "保持模糊好看一点"
+          ],
+          "updates": {
+            "a3_focus_status_checked": true,
+            "emotional_delay": 1,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-A3-P04",
+          "beat": "恭喜以后",
+          "text_brief": "4XX 群里有人说恭喜，活动群里有人说专栏也可以发了。",
+          "choice_hook": [
+            "两边都回完整",
+            "只回活动群"
+          ],
+          "updates": {
+            "defense_post_submit_done": true,
+            "dorm_warmth": 1,
+            "activity_link": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-A3-CHOICE-01",
+        "after_page": "ACT7-E07-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-A3-C01-A",
+            "label": "认真说答辩结果和公开材料状态",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "activity_public_credit_recorded": true,
+              "dorm_warmth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E07-A3-C01-B",
+            "label": "只发一张活动式通过截图",
+            "variable_delta": {
+              "public_credit": 1,
+              "old_debt": 1,
+              "graduation_temperature": "low_visibility"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场 / 摄影社图包 / 毕业影像授权页",
+      "scene_function": "毕业照与活动图包、授权用途和候选来源一起结算。",
+      "required_completion_flags": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "activity_image_scope_checked"
+      ],
+      "must_record": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "activity_image_scope_checked",
+        "public_boundary",
+        "candidate_source_tag",
+        "romance_outflow_allowed",
+        "dorm_warmth"
+      ],
+      "participants_hint": "Graduation photos and activity images cannot be mixed into a late candidate switch.",
+      "pages": [
+        {
+          "page_id": "ACT7-E08-A3-P01",
+          "beat": "队形集合",
+          "text_brief": "晨光体育场排毕业照，摄影社图包也在征集校园活动回顾。",
+          "choice_hook": [
+            "先站班级队形",
+            "先确认活动图包"
+          ],
+          "updates": {
+            "grad_photo_result_recorded": true,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-A3-P02",
+          "beat": "授权用途",
+          "text_brief": "毕业照、活动图和候选来源照片不能混用；正脸、背影、空镜都要用途清楚。",
+          "choice_hook": [
+            "先确认影像授权和活动用途",
+            "默认活动图可用"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "activity_image_scope_checked": true,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-A3-P03",
+          "beat": "同框边界",
+          "text_brief": "夏知微在场也只是确认图包；沈嘉禾发来文件名也只是材料回声。",
+          "choice_hook": [
+            "保持候选来源合法",
+            "借毕业照重新摇摆候选"
+          ],
+          "updates": {
+            "candidate_source_tag": "legal_if_prequalified",
+            "romance_outflow_allowed": false,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-A3-P04",
+          "beat": "预览留存",
+          "text_brief": "4XX 合照和活动图包都能留下，但不能互相代替。",
+          "choice_hook": [
+            "分开保存班级照和活动照",
+            "都放进活动目录"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "public_boundary": 1,
+            "public_credit": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-A3-CHOICE-01",
+        "after_page": "ACT7-E08-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-A3-C01-A",
+            "label": "先确认影像授权和活动用途",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "activity_image_scope_checked": true,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E08-A3-C01-B",
+            "label": "默认活动图可用",
+            "variable_delta": {
+              "public_boundary": -1,
+              "activity_link": 1,
+              "graduation_temperature": "public_credit_pressure"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝与旧物",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居 4XX / 公共桌 / 活动物料袋",
+      "scene_function": "清寝时把活动胸牌、挂绳、节目单、签到表和 4XX 旧物分开处理。",
+      "required_completion_flags": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned"
+      ],
+      "must_record": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned",
+        "public_boundary",
+        "activity_link",
+        "dorm_warmth",
+        "old_debt"
+      ],
+      "participants_hint": "Activity materials and dorm old objects must be separated before graduation archive.",
+      "pages": [
+        {
+          "page_id": "ACT7-E09-A3-P01",
+          "beat": "旧物翻出",
+          "text_brief": "林亦舟清出活动胸牌、挂绳、节目单、志愿时长表和旧签到表。",
+          "choice_hook": [
+            "按活动材料分类留存",
+            "直接装进同一袋"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "activity_link": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-A3-P02",
+          "beat": "公私分袋",
+          "text_brief": "活动物料可以交回，4XX 的旧外卖单、便签和桌角照片不该跟着归档。",
+          "choice_hook": [
+            "先分开活动物料和宿舍旧物",
+            "按文件袋一起收走"
+          ],
+          "updates": {
+            "shared_item_owner_checked": true,
+            "public_boundary": 1,
+            "dorm_warmth": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-A3-P03",
+          "beat": "本人签收",
+          "text_brief": "后台物资签收表上有他的名字，但公共插排和钥匙仍要按寝室确认。",
+          "choice_hook": [
+            "先确认公共物品归属",
+            "请活动负责人一起代交"
+          ],
+          "updates": {
+            "dorm_key_returned": true,
+            "public_boundary": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-A3-P04",
+          "beat": "空桌以后",
+          "text_brief": "挂绳和旧小票被放进不同袋子，像把热闹和日常终于分开。",
+          "choice_hook": [
+            "留一句当面说明",
+            "只发一张收拾完的照片"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "old_debt": -1,
+            "public_credit": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-A3-CHOICE-01",
+        "after_page": "ACT7-E09-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-A3-C01-A",
+            "label": "先分开活动物料和宿舍旧物",
+            "variable_delta": {
+              "old_object_scope_checked": true,
+              "shared_item_owner_checked": true,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E09-A3-C01-B",
+            "label": "按文件袋一起收走",
+            "variable_delta": {
+              "activity_link": 1,
+              "old_debt": 1,
+              "dorm_warmth": -1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东北饺子馆 / 活动总结会 / 校门口",
+      "scene_function": "最后一顿饭和活动总结会撞期，检验公开信用能不能让位给当面关系。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "activity_reply_after_meal"
+      ],
+      "must_record": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "activity_reply_after_meal",
+        "activity_link",
+        "public_credit",
+        "missed_chance",
+        "dorm_warmth",
+        "old_debt"
+      ],
+      "participants_hint": "Public credit is not a reason to skip the last meal without explanation.",
+      "pages": [
+        {
+          "page_id": "ACT7-E10-A3-P01",
+          "beat": "撞期消息",
+          "text_brief": "4XX 最后一顿饭订好，活动群也说今晚做毕业总结和材料交接。",
+          "choice_hook": [
+            "先说明活动总结和饭局安排",
+            "先问总结会几点结束"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-A3-P02",
+          "beat": "优先级",
+          "text_brief": "活动负责人说他不到也能交接，但你来会更稳。4XX 那边只问他来不来。",
+          "choice_hook": [
+            "明确最后饭局优先",
+            "先去活动总结再赶饭局"
+          ],
+          "updates": {
+            "meal_attendance_locked": true,
+            "dorm_warmth": 1,
+            "public_credit": 1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-A3-P03",
+          "beat": "饭桌话",
+          "text_brief": "饭桌上聊起谁被哪个活动记住，周屿笑他现在到哪都有群。",
+          "choice_hook": [
+            "承认自己被活动分走过",
+            "说只是顺手帮忙"
+          ],
+          "updates": {
+            "old_debt": -1,
+            "dorm_warmth": 1,
+            "emotional_delay": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-A3-P04",
+          "beat": "饭后回执",
+          "text_brief": "散场后，活动群问交接表是否确认，4XX 问明天几点走。",
+          "choice_hook": [
+            "饭后再回活动交接",
+            "直接去总结会补签"
+          ],
+          "updates": {
+            "activity_reply_after_meal": true,
+            "dorm_warmth": 1,
+            "activity_certificate_status": "submitted"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-A3-CHOICE-01",
+        "after_page": "ACT7-E10-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-A3-C01-A",
+            "label": "明确最后饭局优先",
+            "variable_delta": {
+              "meal_boundary_checked": true,
+              "meal_attendance_locked": true,
+              "dorm_warmth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E10-A3-C01-B",
+            "label": "先去活动总结再赶饭局",
+            "variable_delta": {
+              "public_credit": 1,
+              "missed_chance": 1,
+              "graduation_temperature": "pressure_spread"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "明德楼离校窗口 / 活动办公室 / 档案领取处",
+      "scene_function": "离校手续、活动证明、归档交接和联系人范围都要求本人确认。",
+      "required_completion_flags": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "a3_final_contact_scope"
+      ],
+      "must_record": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "a3_final_contact_scope",
+        "activity_certificate_status",
+        "activity_link",
+        "public_boundary",
+        "dorm_warmth"
+      ],
+      "participants_hint": "Activity proof and archive transfer require personal sign-off; public credit cannot sign for him.",
+      "pages": [
+        {
+          "page_id": "ACT7-E11-A3-P01",
+          "beat": "离校清单",
+          "text_brief": "离校系统一项项变绿，活动办公室还差一份证明签收和归档交接。",
+          "choice_hook": [
+            "先核离校清单",
+            "先去活动办公室"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "activity_certificate_status": "submitted",
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-A3-P02",
+          "beat": "本人签收",
+          "text_brief": "证书、档案和活动证明都写着本人确认，公开信用再高也不能代签。",
+          "choice_hook": [
+            "把档案和活动证明都按本人签收",
+            "只保活动端继续找得到"
+          ],
+          "updates": {
+            "certificate_or_archive_seen": true,
+            "public_boundary": 1,
+            "activity_link": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-A3-P03",
+          "beat": "联系范围",
+          "text_brief": "秦越、许棠、摄影社或志愿负责人都可能以后找他，但毕业后不能默认随叫随到。",
+          "choice_hook": [
+            "写清低频联系范围",
+            "保持所有群不退"
+          ],
+          "updates": {
+            "a3_final_contact_scope": "low_contact_with_boundary",
+            "time_debt": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-A3-P04",
+          "beat": "站前确认",
+          "text_brief": "去武生院站前，4XX 群和活动群同时问到了说一声。",
+          "choice_hook": [
+            "分别约定联系范围",
+            "只回活动群的流程确认"
+          ],
+          "updates": {
+            "a3_final_contact_scope": "low_contact_with_boundary",
+            "dorm_warmth": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-A3-CHOICE-01",
+        "after_page": "ACT7-E11-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-A3-C01-A",
+            "label": "把档案和活动证明都按本人签收",
+            "variable_delta": {
+              "leaving_boundary_checked": true,
+              "certificate_or_archive_seen": true,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E11-A3-C01-B",
+            "label": "只保活动端继续找得到",
+            "variable_delta": {
+              "activity_link": 1,
+              "a3_final_contact_scope": "activity_default",
+              "graduation_temperature": "public_credit_pressure"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站后",
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "act7_variant_id": "ACT7-A3",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "A3-ENDING",
+      "main_location": "武生院站 / 地铁车厢 / 活动群与 4XX 群",
+      "scene_function": "输出活动父池最终温度：公开信用、候选开放、压力扩散、回寝、低可见或完美种子。",
+      "required_completion_flags": [
+        "a3_final_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen"
+      ],
+      "must_record": [
+        "a3_final_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen",
+        "activity_link",
+        "public_credit",
+        "dorm_warmth",
+        "romance_outflow_allowed"
+      ],
+      "participants_hint": "The final beat records public credit and contact scope, not a new Act7 club choice.",
+      "pages": [
+        {
+          "page_id": "ACT7-E12-A3-P01",
+          "beat": "进站前",
+          "text_brief": "武生院站口人很多，手机里同时亮着活动群、4XX 群和毕业材料回执。",
+          "choice_hook": [
+            "先向活动群报到站",
+            "先回活动材料确认"
+          ],
+          "updates": {
+            "station_after_echo_seen": true,
+            "activity_link": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-A3-P02",
+          "beat": "到站以后",
+          "text_brief": "地铁开出校园站，最后的选择不是再加入哪个社团，而是以后还把谁放进真实联系里。",
+          "choice_hook": [
+            "保留低频真实联系和清楚边界",
+            "只保公开材料里的名字"
+          ],
+          "updates": {
+            "a3_final_contact_scope": "low_contact_with_boundary",
+            "dorm_warmth": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-A3-P03",
+          "beat": "候选余温",
+          "text_brief": "若沈嘉禾或夏知微来源达标，她们只是保留现实入口；若没有达标，名字只留在材料或图包里。",
+          "choice_hook": [
+            "只输出合法候选开放",
+            "把软照面写成未竟感情"
+          ],
+          "updates": {
+            "romance_outflow_allowed": "precondition_dependent",
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-A3-P04",
+          "beat": "站后温度",
+          "text_brief": "活动群终于安静一点，4XX 群也只剩到了。他可以被记住，也可以只留下一个清楚的名字。",
+          "choice_hook": [
+            "回到真实低频联系",
+            "只留公开记录"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-A3-CHOICE-01",
+        "after_page": "ACT7-E12-A3-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-A3-C01-A",
+            "label": "保留低频真实联系和清楚边界",
+            "variable_delta": {
+              "a3_final_contact_scope": "low_contact_with_boundary",
+              "dorm_warmth": 1,
+              "graduation_temperature": "public_credit_with_low_contact"
+            }
+          },
+          {
+            "direction_id": "ACT7-E12-A3-C01-B",
+            "label": "只保公开材料里的名字",
+            "variable_delta": {
+              "a3_final_contact_scope": "public_name_only",
+              "public_credit": 1,
+              "graduation_temperature": "low_visibility_or_public_record"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "ending_candidates": [
+    {
+      "ending_id": "A3-END-PUBLIC-CREDIT",
+      "condition_hint": "public_credit >= 4, public_boundary >= 4, dorm_warmth >= 2",
+      "text_landing": "林亦舟的公开材料、活动履历和署名清楚，活动圈仍会低频找他确认少量事项。"
+    },
+    {
+      "ending_id": "A3-END-CANDIDATE-OPEN",
+      "condition_hint": "female_candidate_present = true, romance_outflow_allowed = true, candidate_source_tag is legal",
+      "text_landing": "沈嘉禾或夏知微保留现实入口，但第七卷不重新选择、不双候选摇摆。"
+    },
+    {
+      "ending_id": "A3-END-PRESSURE-SPREAD",
+      "condition_hint": "a3_final_choice = take_both or time_debt >= 5",
+      "text_landing": "他做过很多公开事务，却很难说自己属于哪边；活动群还在响，私人消息变少。"
+    },
+    {
+      "ending_id": "A3-END-DORM-RETURN",
+      "condition_hint": "mode_dorm high, dorm_warmth >= 4, a3_final_contact_scope = low_contact_with_boundary",
+      "text_landing": "活动成为软回声，4XX 当面解释和毕业后低频联系保住。"
+    },
+    {
+      "ending_id": "A3-END-LOW-VISIBILITY",
+      "condition_hint": "mode_avoid high or public_credit <= 1, dorm_warmth <= 1",
+      "text_landing": "他既没有被活动圈真正记住，也没有及时回到宿舍现场，只留下低可见记录。"
+    },
+    {
+      "ending_id": "A3-END-PERFECT-SEED",
+      "condition_hint": "mode_perfect high, self_control >= 4, public_boundary >= 4",
+      "text_landing": "可作为 R3-PERFECT 的毕业种子；若未转入，文本温度清楚、体面但偏冷。"
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "route_id": "A3-ACTIVITY-PUBLIC",
+    "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+    "p0a_source_detail_doc": "开发文本_IF分支P0-A第三幕社团完美线.md",
+    "p0a_entry_node_count": 5,
+    "p0a_entry_page_count": 20,
+    "p0a_entry_choice_window_count": 5,
+    "p0a_entry_direction_count": 20,
+    "p0a_required_entry_nodes": [
+      "P0A_ACT3_RECRUIT_FORM",
+      "P0A_ACT3_ARCHIVE",
+      "P0A_ACT3_PUBLIC_LOW_RISK",
+      "P0A_ACT3_DORM_HEAT_MANAGE",
+      "P0A_ACT3_ROUTE_CONFIRM"
+    ],
+    "p0a_entry_route_switch_allowed": true,
+    "act4_variant_id": "ACT4-A3",
+    "act4_source_detail_doc": "开发细稿_IF第四幕ACT4-A3活动父池生活半径剧情页.md",
+    "act4_block_count": 5,
+    "act4_scene_count": 14,
+    "act4_choice_window_count": 5,
+    "act4_each_choice_direction_count_min": 3,
+    "act4_direction_count": 15,
+    "act4_route_switch_allowed": false,
+    "act4_required_blocks": [
+      "ACT4-A3-B01",
+      "ACT4-A3-B02",
+      "ACT4-A3-B03",
+      "ACT4-A3-B04",
+      "ACT4-A3-B05"
+    ],
+    "act5_bridge_variant_id": "ACT5-A3",
+    "act5_source_detail_doc": "开发细稿_IF第五幕ACT5-A3活动父池桥接剧情页.md",
+    "act5_bridge_node_count": 5,
+    "act5_bridge_page_count": 20,
+    "act5_bridge_choice_window_count": 5,
+    "act5_bridge_direction_count": 15,
+    "act5_choice_floor_met": true,
+    "act5_required_windows_seen": [
+      "dorm_stand",
+      "intimacy_or_wanfeng",
+      "project_or_rule",
+      "activity_or_interest",
+      "avoidance_or_outflow"
+    ],
+    "act5_bridge_next_node": "ACT6-A3-B01",
+    "act6_variant_id": "ACT6-A3",
+    "act6_block_count": 5,
+    "act6_scene_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_each_block_page_count": 4,
+    "act6_each_choice_direction_count": 2,
+    "act6_route_switch_allowed": false,
+    "act6_required_completion_flags": [
+      "public_boundary_checked",
+      "a3_contact_scope_checked",
+      "act6_choice_window_count",
+      "a3_focus_status_checked",
+      "route_pool_locked",
+      "new_full_route_unlock_allowed",
+      "activity_certificate_status",
+      "activity_image_scope_checked",
+      "activity_archive_boundary_checked",
+      "candidate_source_checked",
+      "romance_permission_checked",
+      "closed_route_ids_kept_closed",
+      "act6_closed",
+      "act6_route_pool_locked",
+      "act6_to_act7_handoff_ready"
+    ],
+    "act6_source_detail_doc": "开发细稿_IF第六卷ACT6-A3活动父池正式剧情页.md",
+    "act7_variant_id": "ACT7-A3",
+    "act7_core_event_count": 12,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_required_completion_flags": [
+      "pre_register_boundary_checked",
+      "graduation_direction_status",
+      "a3_contact_scope_checked",
+      "public_scope_boundary_checked",
+      "public_consent_checked",
+      "a3_public_scope",
+      "opening_contrast_seen",
+      "old_object_scope_checked",
+      "activity_archive_boundary_checked",
+      "topic_boundary_checked",
+      "topic_self_signed",
+      "a3_focus_status_checked",
+      "march_boundary_checked",
+      "queue_item_submitted",
+      "activity_certificate_status",
+      "thesis_boundary_checked",
+      "thesis_revision_version",
+      "revision_submitted_before_deadline",
+      "defense_boundary_checked",
+      "defense_post_submit_done",
+      "activity_public_credit_recorded",
+      "photo_boundary_checked",
+      "grad_photo_result_recorded",
+      "activity_image_scope_checked",
+      "shared_item_owner_checked",
+      "dorm_key_returned",
+      "meal_boundary_checked",
+      "meal_attendance_locked",
+      "activity_reply_after_meal",
+      "leaving_boundary_checked",
+      "certificate_or_archive_seen",
+      "a3_final_contact_scope",
+      "graduation_temperature",
+      "station_after_echo_seen"
+    ],
+    "act7_each_event_page_count": 4,
+    "act7_each_event_direction_count": 2,
+    "act7_source_detail_doc": "开发细稿_IF第七卷ACT7-A3活动父池事件变体剧情页.md",
+    "p0a_full_page_json_status": "full_page_json_ready",
+    "act4_full_page_json_status": "full_page_json_ready",
+    "act5_full_page_json_status": "a3_act5_bridge_full_page_json_ready",
+    "act6_full_page_json_status": "full_page_json_ready"
+  }
+}

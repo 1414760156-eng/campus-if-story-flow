@@ -1,0 +1,3320 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-22",
+  "route_id": "R4-WORK",
+  "route_name": "工作线",
+  "route_pool_id": "POOL-R4-WORK",
+  "route_level": "B",
+  "purpose": "Act4 P0-B entry plus Act6 and Act7 page-level JSON for R4-WORK. P0-B now covers 5 work-entry events, 20 entry pages, and 5 four-direction choice windows; Act6 covers 20 ACT6-WORK formal scenes and 5 two-direction choice windows; Act7 covers 12 ACT7-WORK same-mother-event variants.",
+  "source_docs": [
+    "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+    "开发长线_IF可玩支线R4-WORK暑假兼职线.md",
+    "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发规格_IF路线Schema与P0节点池.md",
+    "开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json",
+    "开发数据_IF剧情页级JSON_R5-WANFENG_v1.json",
+    "开发数据_IF剧情页级JSON_R5-LIEFLAT_v1.json",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_outflow",
+    "route_pool_id": "POOL-R4-WORK",
+    "route_focus": "work",
+    "outflow_stage": "act4_summer",
+    "entry_node": "P0B_SUMMER_WORK_SHIFT",
+    "pool_entry_choice": "P0B_WORK_TAKE_SHIFT",
+    "active_route_id": "R4-WORK",
+    "primary_bond": "work_reality",
+    "romance_origin": "none",
+    "route_lock": "R4-WORK",
+    "route_switch_allowed": false,
+    "hard_outflow": false,
+    "p0b_entry_json_status": "full_page_json_ready",
+    "p0b_entry_source_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+    "p0b_entry_node_count": 5,
+    "p0b_entry_page_count": 20,
+    "p0b_entry_choice_window_count": 5,
+    "p0b_entry_direction_count": 20,
+    "p0b_required_entry_nodes": [
+      "P0B_ACT4_LIVING_FEE_DELAY",
+      "P0B_ACT4_EXPRESS_SHIFT",
+      "P0B_ACT4_PRINT_MATERIALS",
+      "P0B_ACT4_MISSED_MEET",
+      "P0B_ACT4_ROUTE_CONFIRM"
+    ],
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-TANG",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-WANFENG",
+      "R5-ROMANCE",
+      "R3-PERFECT",
+      "A3-ACTIVITY-PUBLIC",
+      "R5X-HARD"
+    ],
+    "soft_echo_routes": [
+      "DEFAULT-4XX",
+      "R5-LUCHEN",
+      "R5-WANFENG",
+      "R5-TANG"
+    ],
+    "act6_variant_id": "ACT6-WORK",
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "act6_full_page_json_started": true,
+    "act6_core_scenes_in_json": [
+      "ACT6-WORK-S01",
+      "ACT6-WORK-S02",
+      "ACT6-WORK-S03",
+      "ACT6-WORK-S04",
+      "ACT6-WORK-S05",
+      "ACT6-WORK-S06",
+      "ACT6-WORK-S07",
+      "ACT6-WORK-S08",
+      "ACT6-WORK-S09",
+      "ACT6-WORK-S10",
+      "ACT6-WORK-S11",
+      "ACT6-WORK-S12",
+      "ACT6-WORK-S13",
+      "ACT6-WORK-S14",
+      "ACT6-WORK-S15",
+      "ACT6-WORK-S16",
+      "ACT6-WORK-S17",
+      "ACT6-WORK-S18",
+      "ACT6-WORK-S19",
+      "ACT6-WORK-S20"
+    ],
+    "act7_variant_id": "ACT7-WORK",
+    "act7_required_event_count": 12,
+    "act7_core_events_json_started": true,
+    "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_temperature_candidates": [
+      "WORK-END-INDEPENDENT",
+      "WORK-END-POLITE-DISTANCE",
+      "WORK-END-MISSED-MEAL",
+      "WORK-END-FAMILY-OPEN",
+      "WORK-END-LOW-CONTACT"
+    ]
+  },
+  "local_variables": [
+    "act6_closed",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready",
+    "activity_link",
+    "avoidance",
+    "certificate_or_archive_seen",
+    "defense_boundary_checked",
+    "defense_order_seen",
+    "defense_post_submit_done",
+    "dorm_absence",
+    "dorm_key_returned",
+    "dorm_misread",
+    "dorm_trust",
+    "dorm_warmth",
+    "energy_low",
+    "energy_low_recorded",
+    "express_shift_seen",
+    "family_signal",
+    "family_signal_recorded",
+    "favor_debt",
+    "fixed_shift_confirmed",
+    "grad_photo_result_recorded",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "intimacy_link",
+    "leaving_boundary_checked",
+    "lieflat_score",
+    "living_fee_delay_seen",
+    "luchen_reality_link",
+    "march_boundary_checked",
+    "meal_attendance_locked",
+    "meal_boundary_checked",
+    "missed_chance",
+    "missed_meet_seen",
+    "money_pressure",
+    "money_pressure_recorded",
+    "old_debt",
+    "old_object_scope_checked",
+    "opening_contrast_seen",
+    "p0b_entry_json_status",
+    "p0b_entry_locked",
+    "p0b_route_confirm_seen",
+    "photo_boundary_checked",
+    "polite_distance",
+    "pre_register_boundary_checked",
+    "print_materials_seen",
+    "project_stability",
+    "project_stability_checked",
+    "project_stability_risk",
+    "proxy_risk",
+    "public_boundary",
+    "public_boundary_risk",
+    "public_consent_checked",
+    "public_credit",
+    "public_scope_boundary_checked",
+    "queue_item_submitted",
+    "reality_bond",
+    "relationship_truth",
+    "repair_depth",
+    "repair_or_shift_tradeoff_recorded",
+    "revision_submitted_before_deadline",
+    "route_lock",
+    "route_pool_id",
+    "route_pool_locked",
+    "self_control",
+    "shared_item_owner_checked",
+    "shen_jiahe_link",
+    "shift_boundary_checked",
+    "small_income",
+    "station_after_echo_seen",
+    "tang_trust",
+    "thesis_boundary_checked",
+    "thesis_revision_version",
+    "time_debt",
+    "topic_boundary_checked",
+    "topic_self_signed",
+    "wage_confirmed",
+    "wanfeng_distance",
+    "wanfeng_misread",
+    "work_certificate_status",
+    "work_final_contact_scope",
+    "work_material_boundary_checked",
+    "work_private_entry",
+    "work_public_scope",
+    "work_reliability",
+    "work_reply_after_meal",
+    "work_route",
+    "work_schedule_checked",
+    "work_shift",
+    "work_shift_recorded",
+    "work_vs_relationship_tradeoff_checked"
+  ],
+  "entry_node": {
+    "node_id": "P0B_SUMMER_WORK_SHIFT",
+    "entry_choice": "P0B-WORK-B05-A",
+    "route_lock_after_entry": "POOL-R4-WORK",
+    "route_switch_allowed_after_entry": false,
+    "entry_status": "full_page_json_ready"
+  },
+  "p0b_entry_nodes": [
+    {
+      "node_id": "P0B_ACT4_LIVING_FEE_DELAY",
+      "node_name": "生活费没有准时到账",
+      "module": "P0-B",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+      "route_switch_allowed": true,
+      "previous_node": "ACT3_SHARED_END",
+      "next_node": "P0B_ACT4_EXPRESS_SHIFT",
+      "location": "青枫居 4XX / 校园快递站 / 便利店 / 食堂二楼",
+      "participants": [
+        "林亦舟",
+        "母亲",
+        "父亲",
+        "陆沉",
+        "宿管阿姨"
+      ],
+      "scene_function": "用生活费延迟、饭卡余额、快递代取和打印费把玩家带入第四幕工作入口，确认钱压、家庭信号和第一层缺席。",
+      "entry_conditions": {
+        "money_pressure_min": 1,
+        "family_signal_min": 0,
+        "shared_until": "act2_end"
+      },
+      "required_completion_flags": [
+        "p0b_entry_json_status",
+        "living_fee_delay_seen"
+      ],
+      "must_record": [
+        "money_pressure",
+        "family_signal",
+        "self_control",
+        "dorm_absence",
+        "work_route",
+        "luchen_reality_link",
+        "work_shift",
+        "time_debt"
+      ],
+      "pages": [
+        {
+          "page_id": "P0B-WORK-B01-P01",
+          "beat": "到账空格",
+          "location": "青枫居 4XX",
+          "text_brief": "月初转账没有像之前一样准时出现。饭卡充值、打印费和一次晚风约见路费挤在同一个账单页里。",
+          "choice_hook": [
+            "问父母",
+            "先不问",
+            "找陆沉",
+            "接跑腿"
+          ],
+          "updates": {
+            "money_pressure": 1,
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B01-P02",
+          "beat": "母亲的等两天",
+          "location": "微信 / 便利店门口",
+          "text_brief": "母亲回得很快，只说这两天忙、先别乱花。语气不是责怪，却把生活用品和饭卡余额都推到林亦舟自己手里。",
+          "choice_hook": [
+            "继续追问",
+            "只回知道了",
+            "压缩饭卡充值"
+          ],
+          "updates": {
+            "family_signal": 1,
+            "money_pressure": 1,
+            "self_control": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B01-P03",
+          "beat": "陆沉的流程",
+          "location": "食堂二楼",
+          "text_brief": "陆沉没有安慰，只说勤工要带身份证复印件，迟到就别去。流程比安慰更冷，也更能落地。",
+          "choice_hook": [
+            "问岗位怎么排",
+            "只问材料",
+            "把话题岔开"
+          ],
+          "updates": {
+            "luchen_reality_link": 1,
+            "work_route": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B01-P04",
+          "beat": "第一单代取",
+          "location": "校园快递站 / 宿管窗口",
+          "text_brief": "宿管阿姨提醒代取要本人同意。几块钱跑腿费不多，却足够让 4XX 的一次当面聊天错过去。",
+          "choice_hook": [
+            "接代取",
+            "先回宿舍",
+            "问清授权"
+          ],
+          "updates": {
+            "work_shift": 1,
+            "time_debt": 1,
+            "dorm_absence": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0B-WORK-B01-CHOICE-01",
+        "after_page": "P0B-WORK-B01-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0B-WORK-B01-A",
+            "label": "直接问父母是不是忘了转账",
+            "variable_delta": {
+              "family_signal": 1,
+              "money_pressure": -1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_confidence": 0
+            },
+            "next_node": "P0B_ACT4_EXPRESS_SHIFT"
+          },
+          {
+            "direction_id": "P0B-WORK-B01-B",
+            "label": "不问家里，先压缩支出和饭卡充值",
+            "variable_delta": {
+              "money_pressure": 1,
+              "self_control": 1,
+              "dorm_absence": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_confidence": 1
+            },
+            "next_node": "P0B_ACT4_EXPRESS_SHIFT"
+          },
+          {
+            "direction_id": "P0B-WORK-B01-C",
+            "label": "找陆沉问勤工岗位怎么排",
+            "variable_delta": {
+              "work_route": 1,
+              "luchen_reality_link": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "soft_echo_routes": [
+                "R5-LUCHEN"
+              ]
+            },
+            "next_node": "P0B_ACT4_EXPRESS_SHIFT"
+          },
+          {
+            "direction_id": "P0B-WORK-B01-D",
+            "label": "接一个临时代取快递 / 打印跑腿",
+            "variable_delta": {
+              "work_shift": 1,
+              "money_pressure": -1,
+              "time_debt": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_confidence": 1
+            },
+            "next_node": "P0B_ACT4_EXPRESS_SHIFT"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0B_ACT4_EXPRESS_SHIFT",
+      "node_name": "快递站排班",
+      "module": "P0-B",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0B_ACT4_LIVING_FEE_DELAY",
+      "next_node": "P0B_ACT4_PRINT_MATERIALS",
+      "location": "校园快递站 / 青枫居楼下外卖架 / 宿管窗口",
+      "participants": [
+        "林亦舟",
+        "陆沉",
+        "快递站工作人员",
+        "周屿",
+        "唐骁"
+      ],
+      "scene_function": "让工作入口第一次和 4XX 饭局正面冲突，记录排班、缺席、规则误读和陆沉现实照面。",
+      "required_completion_flags": [
+        "express_shift_seen",
+        "work_shift_recorded"
+      ],
+      "must_record": [
+        "work_shift",
+        "money_pressure",
+        "dorm_absence",
+        "dorm_warmth",
+        "time_debt",
+        "luchen_reality_link",
+        "favor_debt",
+        "dorm_misread"
+      ],
+      "pages": [
+        {
+          "page_id": "P0B-WORK-B02-P01",
+          "beat": "半天班",
+          "location": "校园快递站",
+          "text_brief": "暑假留校人少，快递站临时缺人。工作人员只问能不能站满四小时，不问他今晚有没有饭局。",
+          "choice_hook": [
+            "接半天班",
+            "问能否只站两小时",
+            "拒绝"
+          ],
+          "updates": {
+            "work_shift": 1,
+            "money_pressure": -1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B02-P02",
+          "beat": "饭局店名",
+          "location": "4XX 群 / 东区商业街",
+          "text_brief": "周屿在群里发了店名和定位，说暑假人少正好坐外面。定位离快递站不远，但四小时不能切开。",
+          "choice_hook": [
+            "说自己有班",
+            "说会迟到",
+            "不回复"
+          ],
+          "updates": {
+            "dorm_absence": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B02-P03",
+          "beat": "唐骁的排班判断",
+          "location": "青枫居楼下外卖架",
+          "text_brief": "唐骁提醒接了就要做完，不然下次没人敢给他排。规则不是攻击，却把饭局挤成了后果。",
+          "choice_hook": [
+            "接受规则",
+            "解释自己想去饭局",
+            "请他别替自己判断"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B02-P04",
+          "beat": "换晚班",
+          "location": "宿管窗口 / 快递站后门",
+          "text_brief": "陆沉可以帮他问晚班，但不会替他向 4XX 解释。现实压力能互相照见，不能互相代言。",
+          "choice_hook": [
+            "请陆沉问晚班",
+            "自己接班",
+            "回饭局"
+          ],
+          "updates": {
+            "luchen_reality_link": 1,
+            "favor_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0B-WORK-B02-CHOICE-01",
+        "after_page": "P0B-WORK-B02-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0B-WORK-B02-A",
+            "label": "接快递站半天班，放弃饭局",
+            "variable_delta": {
+              "work_shift": 2,
+              "money_pressure": -1,
+              "dorm_absence": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_confidence": 2
+            },
+            "next_node": "P0B_ACT4_PRINT_MATERIALS"
+          },
+          {
+            "direction_id": "P0B-WORK-B02-B",
+            "label": "只接前两个小时，饭局迟到",
+            "variable_delta": {
+              "work_shift": 1,
+              "time_debt": 1,
+              "dorm_misread": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_confidence": 1
+            },
+            "next_node": "P0B_ACT4_PRINT_MATERIALS"
+          },
+          {
+            "direction_id": "P0B-WORK-B02-C",
+            "label": "拒绝排班，去 4XX 饭局",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "money_pressure": 1,
+              "work_shift": -1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_confidence": -1
+            },
+            "next_node": "P0B_ACT4_PRINT_MATERIALS"
+          },
+          {
+            "direction_id": "P0B-WORK-B02-D",
+            "label": "让陆沉帮忙问能不能换晚班",
+            "variable_delta": {
+              "luchen_reality_link": 1,
+              "work_shift": 1,
+              "favor_debt": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "soft_echo_routes": [
+                "R5-LUCHEN"
+              ]
+            },
+            "next_node": "P0B_ACT4_PRINT_MATERIALS"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0B_ACT4_PRINT_MATERIALS",
+      "node_name": "打印店和证明材料",
+      "module": "P0-B",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0B_ACT4_EXPRESS_SHIFT",
+      "next_node": "P0B_ACT4_MISSED_MEET",
+      "location": "打印店 / 明德楼材料窗口 / 教学楼走廊",
+      "participants": [
+        "林亦舟",
+        "沈嘉禾",
+        "打印店老板",
+        "唐骁",
+        "许棠"
+      ],
+      "scene_function": "把勤工申请、家庭说明、课程补交和活动证明压到同一排队窗口，检查现实材料如何牵动宿舍、感情和公开边界。",
+      "required_completion_flags": [
+        "print_materials_seen",
+        "work_material_boundary_checked"
+      ],
+      "must_record": [
+        "work_route",
+        "family_signal",
+        "project_stability",
+        "time_debt",
+        "shen_jiahe_link",
+        "public_boundary",
+        "small_income",
+        "public_boundary_risk",
+        "public_credit"
+      ],
+      "pages": [
+        {
+          "page_id": "P0B-WORK-B03-P01",
+          "beat": "文件袋",
+          "location": "打印店",
+          "text_brief": "勤工申请、家庭情况说明、课程补交材料和活动证明夹在同一个文件袋里。打印店老板问他是不是又要打身份证复印件。",
+          "choice_hook": [
+            "先打印勤工材料",
+            "先扫课程材料",
+            "少打一份"
+          ],
+          "updates": {
+            "work_route": 1,
+            "family_signal": 1,
+            "money_pressure": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B03-P02",
+          "beat": "扫描版命名",
+          "location": "教学楼走廊 / 手机",
+          "text_brief": "唐骁在群里催课程材料扫描版，连文件名都写好了。工作入口不是逃开专业协作，而是多出一层时间债。",
+          "choice_hook": [
+            "先帮唐骁扫",
+            "先排勤工窗口",
+            "让他等十分钟"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "time_debt": 1,
+            "tang_trust": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B03-P03",
+          "beat": "沈嘉禾的格式提醒",
+          "location": "明德楼材料窗口",
+          "text_brief": "沈嘉禾来打印普通话报名材料，只提醒家庭说明别让别人替写。她尊重边界，也让这条线保留现实协作的温度。",
+          "choice_hook": [
+            "请她看格式",
+            "不让她替填",
+            "避开细节"
+          ],
+          "updates": {
+            "shen_jiahe_link": 1,
+            "public_boundary": 1,
+            "relationship_truth": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B03-P04",
+          "beat": "活动材料跑腿",
+          "location": "打印店门口",
+          "text_brief": "许棠顺手问他能不能帮忙带一份活动材料。可靠会被记住，公开材料也会把授权风险带进来。",
+          "choice_hook": [
+            "接跑腿",
+            "只提醒授权",
+            "拒绝"
+          ],
+          "updates": {
+            "small_income": 1,
+            "public_boundary_risk": 1,
+            "public_credit": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0B-WORK-B03-CHOICE-01",
+        "after_page": "P0B-WORK-B03-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0B-WORK-B03-A",
+            "label": "先打印勤工和家庭相关材料",
+            "variable_delta": {
+              "work_route": 1,
+              "family_signal": 1,
+              "public_boundary": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_confidence": 1
+            },
+            "next_node": "P0B_ACT4_MISSED_MEET"
+          },
+          {
+            "direction_id": "P0B-WORK-B03-B",
+            "label": "先帮唐骁扫课程材料",
+            "variable_delta": {
+              "tang_trust": 1,
+              "project_stability": 1,
+              "time_debt": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-TANG-PRE",
+              "route_confidence": 0
+            },
+            "next_node": "P0B_ACT4_MISSED_MEET"
+          },
+          {
+            "direction_id": "P0B-WORK-B03-C",
+            "label": "请沈嘉禾帮忙看格式，但不让她替填说明",
+            "variable_delta": {
+              "shen_jiahe_link": 1,
+              "public_boundary": 1,
+              "relationship_truth": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "soft_echo_routes": [
+                "R5-ROMANCE"
+              ]
+            },
+            "next_node": "P0B_ACT4_MISSED_MEET"
+          },
+          {
+            "direction_id": "P0B-WORK-B03-D",
+            "label": "顺手接许棠的活动材料打印跑腿",
+            "variable_delta": {
+              "small_income": 1,
+              "public_boundary_risk": 1,
+              "public_credit": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "soft_echo_routes": [
+                "A3-ACTIVITY-PUBLIC"
+              ]
+            },
+            "next_node": "P0B_ACT4_MISSED_MEET"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0B_ACT4_MISSED_MEET",
+      "node_name": "错过晚风或活动圈",
+      "module": "P0-B",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0B_ACT4_PRINT_MATERIALS",
+      "next_node": "P0B_ACT4_ROUTE_CONFIRM",
+      "location": "地铁站口 / 光谷附近 / 东区商业街小舞台 / 快递站后门",
+      "participants": [
+        "林亦舟",
+        "晚风",
+        "秦越",
+        "周屿",
+        "程小满"
+      ],
+      "scene_function": "把工作线和亲密、活动两类外部入口放在同一晚，确认兼职线不是纯赚钱，而是一次次错过和解释成本。",
+      "required_completion_flags": [
+        "missed_meet_seen",
+        "work_vs_relationship_tradeoff_checked"
+      ],
+      "must_record": [
+        "work_shift",
+        "wanfeng_misread",
+        "money_pressure",
+        "intimacy_link",
+        "favor_debt",
+        "work_reliability",
+        "activity_link",
+        "wanfeng_distance",
+        "public_boundary",
+        "relationship_truth"
+      ],
+      "pages": [
+        {
+          "page_id": "P0B-WORK-B04-P01",
+          "beat": "晚班延长",
+          "location": "快递站后门",
+          "text_brief": "晚风原本约他吃一碗面，秦越也问能不能帮活动收尾。快递站晚班突然延长，所有人都只要一个明确答复。",
+          "choice_hook": [
+            "先完成晚班",
+            "找人代十分钟",
+            "去活动收尾"
+          ],
+          "updates": {
+            "work_shift": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B04-P02",
+          "beat": "晚风的等待",
+          "location": "地铁站口 / 微信",
+          "text_brief": "晚风没有立刻吵，只问他是不是每次都先把自己排到最后。温柔在这里不是豁免，而是另一种压力。",
+          "choice_hook": [
+            "解释排班",
+            "让她再等",
+            "说今晚算了"
+          ],
+          "updates": {
+            "wanfeng_misread": 1,
+            "wanfeng_distance": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B04-P03",
+          "beat": "活动收尾",
+          "location": "东区商业街小舞台",
+          "text_brief": "秦越只是按流程找人帮忙，不是抢人。活动圈的可靠和快递站的可靠一样，都会占掉同一晚。",
+          "choice_hook": [
+            "去帮活动",
+            "只给流程建议",
+            "拒绝收尾"
+          ],
+          "updates": {
+            "activity_link": 1,
+            "public_credit": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B04-P04",
+          "beat": "哪边都去不了",
+          "location": "快递站后门 / 手机",
+          "text_brief": "他说今晚哪边都去不了，只把钱和时间说清。少一次甜，也少一次误读。",
+          "choice_hook": [
+            "说清钱和时间",
+            "先不解释",
+            "赶去见晚风",
+            "赶去活动"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "relationship_truth": 1,
+            "money_pressure": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0B-WORK-B04-CHOICE-01",
+        "after_page": "P0B-WORK-B04-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0B-WORK-B04-A",
+            "label": "先完成晚班，再给晚风解释",
+            "variable_delta": {
+              "work_shift": 1,
+              "wanfeng_misread": 1,
+              "money_pressure": -1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_confidence": 2
+            },
+            "next_node": "P0B_ACT4_ROUTE_CONFIRM"
+          },
+          {
+            "direction_id": "P0B-WORK-B04-B",
+            "label": "请同事帮十分钟，赶去见晚风",
+            "variable_delta": {
+              "intimacy_link": 1,
+              "favor_debt": 1,
+              "work_reliability": -1
+            },
+            "route_effect": {
+              "active_route_id": "R5-WANFENG-PRE",
+              "route_confidence": -1
+            },
+            "next_node": "P0B_ACT4_ROUTE_CONFIRM"
+          },
+          {
+            "direction_id": "P0B-WORK-B04-C",
+            "label": "去帮秦越活动收尾，放弃晚风见面",
+            "variable_delta": {
+              "activity_link": 1,
+              "wanfeng_distance": 1,
+              "work_shift": 0
+            },
+            "route_effect": {
+              "active_route_id": "A3-ACTIVITY-PUBLIC-PRE",
+              "route_confidence": 0
+            },
+            "next_node": "P0B_ACT4_ROUTE_CONFIRM"
+          },
+          {
+            "direction_id": "P0B-WORK-B04-D",
+            "label": "明说自己今晚哪边都去不了，只把钱和时间说清",
+            "variable_delta": {
+              "public_boundary": 1,
+              "money_pressure": 1,
+              "relationship_truth": 1
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_confidence": 1
+            },
+            "next_node": "P0B_ACT4_ROUTE_CONFIRM"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0B_ACT4_ROUTE_CONFIRM",
+      "node_name": "兼职线确认节点",
+      "module": "P0-B",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+      "route_switch_allowed": true,
+      "previous_node": "P0B_ACT4_MISSED_MEET",
+      "next_node": "ACT6-WORK-B01",
+      "location": "快递站 / 青枫居 4XX / 食堂二楼 / 星辰书屋",
+      "participants": [
+        "林亦舟",
+        "陆沉",
+        "唐骁",
+        "周屿",
+        "宿管阿姨"
+      ],
+      "scene_function": "结算第四幕工作入口：继续固定排班则锁入 R4-WORK；暂停兼职回 DEFAULT-4XX；低限度参与则滑向摆烂；临时兼职保留为半锁状态。",
+      "entry_conditions": {
+        "money_pressure_min": 3,
+        "work_shift_min": 3,
+        "family_signal_min": 2,
+        "dorm_absence_min": 2
+      },
+      "required_completion_flags": [
+        "p0b_route_confirm_seen",
+        "p0b_entry_locked"
+      ],
+      "must_record": [
+        "p0b_entry_locked",
+        "fixed_shift_confirmed",
+        "work_shift",
+        "money_pressure",
+        "dorm_absence",
+        "dorm_warmth",
+        "avoidance",
+        "lieflat_score",
+        "route_lock"
+      ],
+      "pages": [
+        {
+          "page_id": "P0B-WORK-B05-P01",
+          "beat": "固定班确认",
+          "location": "快递站",
+          "text_brief": "暑假结束前，站长问他返校后还接不接固定班。固定班不是轻松，是少变数。",
+          "choice_hook": [
+            "继续固定排班",
+            "只接临时单",
+            "暂停"
+          ],
+          "updates": {
+            "work_shift": 1,
+            "fixed_shift_confirmed": true
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B05-P02",
+          "beat": "返校通知",
+          "location": "4XX 群 / 青枫居",
+          "text_brief": "4XX 群里同时出现课程安排、宿舍清理、班会通知和聚餐投票。返校不是回到原点，而是带着暑假的缺席回去。",
+          "choice_hook": [
+            "先回排班",
+            "先回 4XX",
+            "都晚点说"
+          ],
+          "updates": {
+            "dorm_absence": 1,
+            "time_debt": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B05-P03",
+          "beat": "食堂二楼短谈",
+          "location": "食堂二楼",
+          "text_brief": "陆沉说固定班不是鼓励，是你自己知道哪天不能乱答应。唐骁把他的缺席写进排期，周屿只说你现在比我还难约。",
+          "choice_hook": [
+            "承认继续现实优先",
+            "说会补回来",
+            "只笑一下"
+          ],
+          "updates": {
+            "luchen_reality_link": 1,
+            "work_schedule_checked": true,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "P0B-WORK-B05-P04",
+          "beat": "路线锁池",
+          "location": "星辰书屋 / 快递站排班表",
+          "text_brief": "如果继续用排班、工时和现实行动处理压力，后续第六卷不再重新开放所有命运线，只把公共锁点嫁接到工作池里。",
+          "choice_hook": [
+            "锁定工作线",
+            "回 4XX 修补",
+            "只保留临时兼职",
+            "低限度参与"
+          ],
+          "updates": {
+            "p0b_entry_locked": true,
+            "route_pool_id": "POOL-R4-WORK"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0B-WORK-B05-CHOICE-01",
+        "after_page": "P0B-WORK-B05-P04",
+        "direction_count": 4,
+        "directions": [
+          {
+            "direction_id": "P0B-WORK-B05-A",
+            "label": "继续固定排班，锁定 R4-WORK",
+            "variable_delta": {
+              "p0b_entry_locked": true,
+              "fixed_shift_confirmed": true,
+              "work_shift": 2,
+              "route_lock": "R4-WORK"
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK",
+              "route_pool_id": "POOL-R4-WORK",
+              "route_lock": "R4-WORK",
+              "route_switch_allowed": false
+            },
+            "next_block": "ACT6-WORK-B01",
+            "next_route": "R4-WORK"
+          },
+          {
+            "direction_id": "P0B-WORK-B05-B",
+            "label": "暂停兼职，回 4XX 修补关系",
+            "variable_delta": {
+              "p0b_entry_locked": false,
+              "dorm_warmth": 2,
+              "money_pressure": 1,
+              "work_shift": -1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_pool_id": "POOL-DEFAULT-4XX",
+              "route_lock": false
+            },
+            "next_node": "DEFAULT-4XX-ACT5-ENTRY",
+            "next_route": "DEFAULT-4XX"
+          },
+          {
+            "direction_id": "P0B-WORK-B05-C",
+            "label": "保留临时兼职，不绑定固定班",
+            "variable_delta": {
+              "p0b_entry_locked": false,
+              "work_shift": 1,
+              "money_pressure": 1,
+              "route_lock": false
+            },
+            "route_effect": {
+              "active_route_id": "R4-WORK-PRE",
+              "route_pool_id": "POOL-R4-WORK-PRE",
+              "route_switch_allowed": true
+            },
+            "next_node": "ACT5-PRE-ROUTE-RECHECK"
+          },
+          {
+            "direction_id": "P0B-WORK-B05-D",
+            "label": "把排班和饭局都交给别人安排，自己只低限度参与",
+            "variable_delta": {
+              "avoidance": 1,
+              "lieflat_score": 1,
+              "work_reliability": -1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LIEFLAT-PRE",
+              "route_lock": false
+            },
+            "next_node": "R5-LIEFLAT-ACT5-PRECHECK",
+            "next_route": "R5-LIEFLAT"
+          }
+        ]
+      }
+    }
+  ],
+  "return_points": [
+    "RET-WORK-01",
+    "RET-WORK-02",
+    "RET-WORK-03",
+    "RET-WORK-04",
+    "RET-WORK-05",
+    "RET-WORK-06"
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-WORK-B01",
+      "scene_range": [
+        "ACT6-WORK-S01",
+        "ACT6-WORK-S04"
+      ],
+      "choice_window_id": "ACT6-WORK-CHOICE-01",
+      "allowed_directions": [
+        "把排班说清",
+        "先把宿舍消息补上"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-WORK-B02",
+      "scene_range": [
+        "ACT6-WORK-S05",
+        "ACT6-WORK-S08"
+      ],
+      "choice_window_id": "ACT6-WORK-CHOICE-02",
+      "allowed_directions": [
+        "先保工时",
+        "先保 C407 协作"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-WORK-B03",
+      "scene_range": [
+        "ACT6-WORK-S09",
+        "ACT6-WORK-S12"
+      ],
+      "choice_window_id": "ACT6-WORK-CHOICE-03",
+      "allowed_directions": [
+        "钱账透明",
+        "用沉默省解释"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-WORK-B04",
+      "scene_range": [
+        "ACT6-WORK-S13",
+        "ACT6-WORK-S16"
+      ],
+      "choice_window_id": "ACT6-WORK-CHOICE-04",
+      "allowed_directions": [
+        "请假修补关系",
+        "接加班保收入"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-WORK-B05",
+      "scene_range": [
+        "ACT6-WORK-S17",
+        "ACT6-WORK-S20"
+      ],
+      "choice_window_id": "ACT6-WORK-CHOICE-05",
+      "allowed_directions": [
+        "毕业后先处理现实安排",
+        "留关系口但不承诺"
+      ],
+      "conversion_status": "full_page_json_ready"
+    }
+  ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-WORK-B01",
+      "block_name": "排班边界与宿舍最低事实",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act6_variant_id": "ACT6-WORK",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-WORK-B02",
+      "scene_range": [
+        "ACT6-WORK-S01",
+        "ACT6-WORK-S04"
+      ],
+      "main_location": "快递站排班表 / 青枫居楼下 / B204 / 4XX 公共桌",
+      "scene_function": "确认林亦舟进入工作线后，能否把固定班、请假边界和 4XX 最低事实说清。",
+      "required_completion_flags": [
+        "shift_boundary_checked",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "work_shift",
+        "shift_boundary_checked",
+        "work_schedule_checked",
+        "public_boundary",
+        "dorm_absence",
+        "dorm_misread",
+        "repair_depth",
+        "old_debt",
+        "time_debt",
+        "project_stability"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WORK-S01",
+          "location": "快递站排班表 / 4XX 群",
+          "text_brief": "第六卷开场，快递站固定班和 4XX 事项群同时弹出。林亦舟看到自己的名字在晚班格子里，也看到唐骁催 C407 分工确认。",
+          "choice_hook": [
+            "先看排班",
+            "先回 4XX",
+            "两边都标未读"
+          ],
+          "updates": {
+            "work_shift": 1,
+            "time_debt": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S02",
+          "location": "青枫居楼下 / 宿管窗口",
+          "text_brief": "宿管阿姨提醒晚归登记要写清；周屿在群里问他今晚到不到。缺席不再只是迟到，而是会被记录。",
+          "choice_hook": [
+            "写清晚归原因",
+            "只说有班",
+            "先不回群"
+          ],
+          "updates": {
+            "shift_boundary_checked": true,
+            "public_boundary": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S03",
+          "location": "B204 走廊 / 手机",
+          "text_brief": "学习委员发来材料确认，勤工负责人也问能不能临时顶半小时。两个流程都要求本人答复。",
+          "choice_hook": [
+            "说明排班冲突",
+            "先答应顶班",
+            "请对方给十分钟"
+          ],
+          "updates": {
+            "work_schedule_checked": true,
+            "time_debt": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S04",
+          "location": "4XX 公共桌回声",
+          "text_brief": "林亦舟回寝时，公共桌上只剩一张写了分工的纸。唐骁没有发火，只把他的名字写在后补说明栏。",
+          "choice_hook": [
+            "把排班说清",
+            "先补宿舍消息",
+            "用一句我忙带过"
+          ],
+          "updates": {
+            "repair_depth": 1,
+            "dorm_misread": 1,
+            "old_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WORK-CHOICE-01",
+        "after_page": "ACT6-WORK-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WORK-C01-A",
+            "label": "把排班说清",
+            "variable_delta": {
+              "shift_boundary_checked": true,
+              "public_boundary": 1,
+              "work_shift": 1
+            },
+            "next_block": "ACT6-WORK-B02"
+          },
+          {
+            "direction_id": "ACT6-WORK-C01-B",
+            "label": "先把宿舍消息补上",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "repair_depth": 1,
+              "time_debt": 1
+            },
+            "next_block": "ACT6-WORK-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-WORK-B02",
+      "block_name": "工时、证明与 C407 协作",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act6_variant_id": "ACT6-WORK",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-WORK-B01",
+      "next_block": "ACT6-WORK-B03",
+      "scene_range": [
+        "ACT6-WORK-S05",
+        "ACT6-WORK-S08"
+      ],
+      "main_location": "打印店 / C407 / B204 / 快递站后门",
+      "scene_function": "把工作线和公共任务绑定，检查工时、证明与 C407 协作如何互相挤压。",
+      "required_completion_flags": [
+        "work_certificate_status",
+        "project_stability_checked",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "work_certificate_status",
+        "money_pressure",
+        "public_boundary",
+        "project_stability",
+        "time_debt",
+        "proxy_risk",
+        "work_public_scope",
+        "dorm_misread",
+        "work_shift"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WORK-S05",
+          "location": "打印店 / 勤工证明",
+          "text_brief": "打印店老板认得他要打的表。勤工证明、课程材料和家庭说明夹在同一个文件袋里。",
+          "choice_hook": [
+            "先打勤工证明",
+            "先打 C407 材料",
+            "少打一份省钱"
+          ],
+          "updates": {
+            "work_certificate_status": "pending",
+            "money_pressure": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S06",
+          "location": "C407 / 共享盘",
+          "text_brief": "唐骁把命名规范发来，问他能不能按时交扫描件。工作线不是逃课，也不是把项目甩给别人。",
+          "choice_hook": [
+            "先稳 C407 协作",
+            "说自己要去盖章",
+            "让别人先顶"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "time_debt": 1,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S07",
+          "location": "B204 / 辅导员办公室",
+          "text_brief": "盖章窗口只开到下午四点。辅导员提醒不要让室友代签，也不要把家庭说明交给别人转述。",
+          "choice_hook": [
+            "本人补签",
+            "请同学带话",
+            "放弃这次盖章"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "work_public_scope": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S08",
+          "location": "快递站后门 / 事项群",
+          "text_brief": "加班通知压过来，C407 也要最后确认。林亦舟必须决定先保工时，还是先保协作。",
+          "choice_hook": [
+            "先保工时",
+            "先保 C407",
+            "两边都写请假说明"
+          ],
+          "updates": {
+            "work_shift": 1,
+            "project_stability": 1,
+            "time_debt": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WORK-CHOICE-02",
+        "after_page": "ACT6-WORK-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WORK-C02-A",
+            "label": "先保工时",
+            "variable_delta": {
+              "work_shift": 2,
+              "money_pressure": -1,
+              "project_stability": -1
+            },
+            "next_block": "ACT6-WORK-B03"
+          },
+          {
+            "direction_id": "ACT6-WORK-C02-B",
+            "label": "先保 C407 协作",
+            "variable_delta": {
+              "project_stability": 2,
+              "dorm_warmth": 1,
+              "money_pressure": 1
+            },
+            "next_block": "ACT6-WORK-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-WORK-B03",
+      "block_name": "钱账透明与沉默成本",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act6_variant_id": "ACT6-WORK",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-WORK-B02",
+      "next_block": "ACT6-WORK-B04",
+      "scene_range": [
+        "ACT6-WORK-S09",
+        "ACT6-WORK-S12"
+      ],
+      "main_location": "食堂二楼 / 小饭馆 / 楼道 / 工资确认群",
+      "scene_function": "处理钱进入关系后的误读，决定林亦舟是说清预算还是继续用沉默省解释。",
+      "required_completion_flags": [
+        "money_pressure_recorded",
+        "family_signal_recorded",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "money_pressure",
+        "dorm_misread",
+        "dorm_warmth",
+        "public_boundary",
+        "repair_depth",
+        "family_signal",
+        "old_debt",
+        "time_debt",
+        "wage_confirmed",
+        "polite_distance",
+        "missed_chance"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WORK-S09",
+          "location": "食堂二楼 / 饭卡余额",
+          "text_brief": "饭卡余额提示跳出来，周屿问要不要去东区商业街吃饭。三块钱不是大事，但每次都差一点。",
+          "choice_hook": [
+            "说清预算",
+            "只说不去了",
+            "去但点最便宜"
+          ],
+          "updates": {
+            "money_pressure": 1,
+            "dorm_misread": 1,
+            "dorm_warmth": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S10",
+          "location": "小饭馆 / AA 收款码",
+          "text_brief": "唐骁按人头算 AA，周屿说他可以少转点。好意和尴尬挤在同一个收款码里。",
+          "choice_hook": [
+            "AA 到最后一分",
+            "接受少转",
+            "提前说自己预算"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "dorm_misread": 1,
+            "repair_depth": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S11",
+          "location": "家庭电话 / 楼道",
+          "text_brief": "母亲问要不要转一点，父亲只说这周再等等。林亦舟不能把所有变化都藏成一句够用。",
+          "choice_hook": [
+            "说具体缺口",
+            "只回够用",
+            "挂掉先去上班"
+          ],
+          "updates": {
+            "family_signal": 1,
+            "old_debt": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S12",
+          "location": "工资确认群 / 4XX 群",
+          "text_brief": "工资确认表还没发，4XX 群里饭局投票快截止。他如果沉默，别人会替他默认不来。",
+          "choice_hook": [
+            "钱账透明",
+            "用沉默省解释",
+            "只选最低消费"
+          ],
+          "updates": {
+            "wage_confirmed": false,
+            "polite_distance": 1,
+            "missed_chance": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WORK-CHOICE-03",
+        "after_page": "ACT6-WORK-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WORK-C03-A",
+            "label": "钱账透明",
+            "variable_delta": {
+              "repair_depth": 1,
+              "public_boundary": 1,
+              "dorm_misread": -1
+            },
+            "next_block": "ACT6-WORK-B04"
+          },
+          {
+            "direction_id": "ACT6-WORK-C03-B",
+            "label": "用沉默省解释",
+            "variable_delta": {
+              "polite_distance": 1,
+              "missed_chance": 1,
+              "dorm_absence": 1
+            },
+            "next_block": "ACT6-WORK-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-WORK-B04",
+      "block_name": "请假修补与加班收益",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act6_variant_id": "ACT6-WORK",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-WORK-B03",
+      "next_block": "ACT6-WORK-B05",
+      "scene_range": [
+        "ACT6-WORK-S13",
+        "ACT6-WORK-S16"
+      ],
+      "main_location": "快递站窗口 / 校医院 / 青枫居楼下 / 公共桌",
+      "scene_function": "让请假修补关系和接加班保收入形成工作线第六幕核心取舍。",
+      "required_completion_flags": [
+        "energy_low_recorded",
+        "repair_or_shift_tradeoff_recorded",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "work_shift",
+        "dorm_absence",
+        "repair_depth",
+        "energy_low",
+        "time_debt",
+        "public_boundary",
+        "reality_bond",
+        "dorm_misread",
+        "polite_distance",
+        "dorm_warmth",
+        "money_pressure",
+        "missed_chance"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WORK-S13",
+          "location": "快递站窗口 / 4XX 事项群",
+          "text_brief": "站长问他能不能接晚班，4XX 群里有人提到当面把旧账说完。两个请求都很具体。",
+          "choice_hook": [
+            "问能否请假",
+            "接晚班",
+            "先回群说明"
+          ],
+          "updates": {
+            "work_shift": 1,
+            "dorm_absence": 1,
+            "repair_depth": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S14",
+          "location": "校医院 / 宿管窗口",
+          "text_brief": "连续排班后低烧，护士让他写登记。身体成本终于变成纸面记录，不再是忍一下。",
+          "choice_hook": [
+            "去校医院",
+            "硬撑上班",
+            "给 4XX 发请假理由"
+          ],
+          "updates": {
+            "energy_low": 1,
+            "time_debt": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S15",
+          "location": "青枫居楼下 / 夜风",
+          "text_brief": "陆沉路过，只问他有没有吃饭。这个照面不能打开陆沉线，只提醒他现实压力不是只有自己一个人有。",
+          "choice_hook": [
+            "接住一句现实提醒",
+            "转开话题",
+            "让陆沉别管"
+          ],
+          "updates": {
+            "reality_bond": 1,
+            "dorm_misread": -1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S16",
+          "location": "公共桌 / 快递站后门",
+          "text_brief": "周屿不再每次都叫他，唐骁把他排进能来再确认。他必须决定请假修补，还是接加班保收入。",
+          "choice_hook": [
+            "请假修补关系",
+            "接加班保收入",
+            "只发后补说明"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "money_pressure": 1,
+            "work_shift": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WORK-CHOICE-04",
+        "after_page": "ACT6-WORK-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WORK-C04-A",
+            "label": "请假修补关系",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "repair_depth": 1,
+              "money_pressure": 1
+            },
+            "next_block": "ACT6-WORK-B05"
+          },
+          {
+            "direction_id": "ACT6-WORK-C04-B",
+            "label": "接加班保收入",
+            "variable_delta": {
+              "work_shift": 2,
+              "money_pressure": -1,
+              "missed_chance": 1
+            },
+            "next_block": "ACT6-WORK-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-WORK-B05",
+      "block_name": "毕业前现实安排预结算",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act6_variant_id": "ACT6-WORK",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-WORK-B04",
+      "next_event": "ACT6-END",
+      "scene_range": [
+        "ACT6-WORK-S17",
+        "ACT6-WORK-S20"
+      ],
+      "main_location": "教务系统 / B204 / 青枫居 4XX / 校门口",
+      "scene_function": "输出第七卷读取的工时、工资、证明、联系人、家庭暗线、4XX 温度和最终联系范围。",
+      "required_completion_flags": [
+        "act6_closed",
+        "act6_route_pool_locked",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "work_schedule_checked",
+        "wage_confirmed",
+        "public_boundary",
+        "family_signal",
+        "repair_depth",
+        "old_debt",
+        "dorm_trust",
+        "work_shift",
+        "polite_distance",
+        "work_final_contact_scope",
+        "graduation_temperature"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-WORK-S17",
+          "location": "教务系统 / 工资确认群",
+          "text_brief": "毕业去向预登记快开始，工资确认群也要求核对手机号。林亦舟发现两个联系方式都不能乱填。",
+          "choice_hook": [
+            "先核对工资群",
+            "先填毕业去向",
+            "两边都写真实号码"
+          ],
+          "updates": {
+            "work_schedule_checked": true,
+            "wage_confirmed": true,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S18",
+          "location": "B204 / 家庭备注栏",
+          "text_brief": "家庭备注栏很短，短到放不下生活费延迟、兼职、请假和第一周住处。",
+          "choice_hook": [
+            "写最低真实说明",
+            "只写无特殊情况",
+            "先问父母"
+          ],
+          "updates": {
+            "family_signal": 1,
+            "repair_depth": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S19",
+          "location": "青枫居 4XX / 最后饭局预热",
+          "text_brief": "4XX 讨论最后饭局时间，快递站也问毕业前能不能多顶一班。林亦舟不能再把所有关系都放进等我忙完。",
+          "choice_hook": [
+            "为饭局请假",
+            "接毕业前加班",
+            "提前说明只能低频联系"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "work_shift": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-WORK-S20",
+          "location": "校门口 / 武生院站预回声",
+          "text_brief": "站台还没到，但第七卷已经靠近。工资确认、离校手续、到了说一声都在等同一个答复。",
+          "choice_hook": [
+            "先处理现实安排",
+            "留关系口但不承诺",
+            "约定低频现实联系"
+          ],
+          "updates": {
+            "work_final_contact_scope": "branch_dependent",
+            "graduation_temperature": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-WORK-CHOICE-05",
+        "after_page": "ACT6-WORK-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-WORK-C05-A",
+            "label": "毕业后先处理现实安排",
+            "variable_delta": {
+              "work_schedule_checked": true,
+              "work_final_contact_scope": "polite_distance",
+              "graduation_temperature": "work_independent"
+            },
+            "next_event": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-WORK-C05-B",
+            "label": "留关系口但不承诺",
+            "variable_delta": {
+              "dorm_trust": 1,
+              "work_final_contact_scope": "low_contact",
+              "graduation_temperature": "low_contact"
+            },
+            "next_event": "ACT6-END"
+          }
+        ]
+      },
+      "next_block": "ACT6-END"
+    }
+  ],
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "B204 / 教务系统 / 快递站排班表",
+      "scene_function": "预登记把工时、联系方式、毕业去向和家庭备注绑定，确认林亦舟毕业后还能不能被找到。",
+      "required_completion_flags": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "shift_boundary_checked"
+      ],
+      "must_record": [
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "shift_boundary_checked",
+        "public_boundary",
+        "family_signal",
+        "repair_depth",
+        "old_debt",
+        "work_shift",
+        "time_debt",
+        "dorm_absence",
+        "dorm_trust"
+      ],
+      "participants_hint": "Work line uses shifts, wage confirmation, family notes, and contact fields; do not turn it into Luchen route.",
+      "pages": [
+        {
+          "page_id": "ACT7-E01-WORK-P01",
+          "beat": "表格与排班",
+          "text_brief": "B204 发下毕业去向预登记，林亦舟手机里同时亮着快递站排班表和工资确认群。",
+          "choice_hook": [
+            "先填学校要求",
+            "先看排班能不能请假"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "work_shift": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-WORK-P02",
+          "beat": "联系方式",
+          "text_brief": "手机号、邮箱、紧急联系人都要核准。勤工负责人说毕业后工资确认也要用这个号码。",
+          "choice_hook": [
+            "把联系方式和工时说明写清",
+            "先填待定，等工资确认"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "shift_boundary_checked": true,
+            "time_debt": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-WORK-P03",
+          "beat": "家庭备注",
+          "text_brief": "家庭情况备注栏很短，短到放不下这周晚点、生活费、兼职和第一周住宿。",
+          "choice_hook": [
+            "写最低真实说明",
+            "只写无特殊情况"
+          ],
+          "updates": {
+            "family_signal": 1,
+            "repair_depth": 1,
+            "old_debt": 1,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-WORK-P04",
+          "beat": "提交以后",
+          "text_brief": "表格提交成功后，4XX 群问谁到时候一起办离校，快递站群问谁能顶周五晚班。",
+          "choice_hook": [
+            "先回 4XX 最低事实",
+            "先接晚班"
+          ],
+          "updates": {
+            "graduation_direction_status": "submitted",
+            "dorm_trust": 1,
+            "work_shift": 1,
+            "dorm_absence": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-WORK-CHOICE-01",
+        "after_page": "ACT7-E01-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-WORK-C01-A",
+            "label": "把联系方式和工时说明写清",
+            "variable_delta": {
+              "pre_register_boundary_checked": true,
+              "shift_boundary_checked": true,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E01-WORK-C01-B",
+            "label": "先填待定，等工资确认",
+            "variable_delta": {
+              "time_debt": 1,
+              "dorm_misread": 1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "班级材料群 / 工资截图 / 请假说明页",
+      "scene_function": "工资截图、请假说明和证明材料的公开范围决定现实压力能不能被说清，而不是被误读成冷淡。",
+      "required_completion_flags": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "work_public_scope"
+      ],
+      "must_record": [
+        "public_scope_boundary_checked",
+        "public_consent_checked",
+        "work_public_scope",
+        "public_boundary",
+        "money_pressure",
+        "family_signal",
+        "dorm_misread",
+        "repair_depth",
+        "dorm_trust",
+        "old_debt",
+        "reality_bond",
+        "work_private_entry"
+      ],
+      "participants_hint": "Public scope is proof visibility, not public suffering.",
+      "pages": [
+        {
+          "page_id": "ACT7-E02-WORK-P01",
+          "beat": "材料公告",
+          "text_brief": "班级材料群要求确认毕业材料公开范围，林亦舟手里有工资截图和请假说明。",
+          "choice_hook": [
+            "先读工作证明授权要求",
+            "先裁掉截图里的金额"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "money_pressure": 1,
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-WORK-P02",
+          "beat": "现实可见",
+          "text_brief": "公开不是把家里摊开，也不是继续沉默。他需要说明哪些能给学院看，哪些只留给自己。",
+          "choice_hook": [
+            "写清证明用途和可见范围",
+            "只说兼职，不写细节"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "work_public_scope": "limited_proof",
+            "dorm_misread": 1,
+            "public_boundary": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-WORK-P03",
+          "beat": "4XX 误读",
+          "text_brief": "周屿问他怎么又不去材料会，唐骁只问请假条有没有按格式，陆沉提醒别让别人代交。",
+          "choice_hook": [
+            "说最低事实",
+            "用我有事带过"
+          ],
+          "updates": {
+            "repair_depth": 1,
+            "dorm_trust": 1,
+            "dorm_misread": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-WORK-P04",
+          "beat": "回执留存",
+          "text_brief": "回执生成，截图里金额被遮住，只留下用途、时间和本人确认。",
+          "choice_hook": [
+            "保存回执并发给负责人",
+            "只存自己手机里"
+          ],
+          "updates": {
+            "public_consent_checked": true,
+            "reality_bond": 1,
+            "work_private_entry": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-WORK-CHOICE-01",
+        "after_page": "ACT7-E02-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-WORK-C01-A",
+            "label": "写清证明用途和可见范围",
+            "variable_delta": {
+              "public_scope_boundary_checked": true,
+              "public_boundary": 1,
+              "repair_depth": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E02-WORK-C01-B",
+            "label": "只说兼职，不写细节",
+            "variable_delta": {
+              "dorm_misread": 1,
+              "public_boundary": -1,
+              "old_debt": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "青枫居 4XX / 快递站后门 / 共享盘目录",
+      "scene_function": "最后一个新年可能因班次缺席，只留下工时表、旧饭卡、打印小票和班后回声。",
+      "required_completion_flags": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "work_private_entry"
+      ],
+      "must_record": [
+        "opening_contrast_seen",
+        "old_object_scope_checked",
+        "work_private_entry",
+        "work_shift",
+        "dorm_absence",
+        "repair_depth",
+        "dorm_misread",
+        "missed_chance",
+        "dorm_trust",
+        "public_boundary",
+        "reality_bond"
+      ],
+      "participants_hint": "Old objects should stay concrete: shift table, meal card, print receipt, wage table.",
+      "pages": [
+        {
+          "page_id": "ACT7-E03-WORK-P01",
+          "beat": "目录已开",
+          "text_brief": "共享盘里出现最后一个新年目录，林亦舟打开时，自己的素材旁边夹着一张夜班排班截图。",
+          "choice_hook": [
+            "打开工作票据和旧物目录",
+            "先看快递站群"
+          ],
+          "updates": {
+            "opening_contrast_seen": true,
+            "work_shift": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-WORK-P02",
+          "beat": "班后回声",
+          "text_brief": "他没赶上最热闹的一段，只在快递站后门听见手机里传来 4XX 的笑声尾巴。",
+          "choice_hook": [
+            "班后补一句现实说明",
+            "只发你们继续"
+          ],
+          "updates": {
+            "repair_depth": 1,
+            "dorm_misread": -1,
+            "missed_chance": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-WORK-P03",
+          "beat": "旧物对照",
+          "text_brief": "公共桌上有旧饭卡、打印小票和一张被压弯的工时表，像把四年切成了很薄的时段。",
+          "choice_hook": [
+            "标注来源和用途",
+            "直接扔掉"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "work_private_entry": 1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E03-WORK-P04",
+          "beat": "低频留存",
+          "text_brief": "4XX 问素材交不交，勤工负责人问他工资表有没有核对。两个群同时亮着。",
+          "choice_hook": [
+            "两边都回最低事实",
+            "先回工资表"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "public_boundary": 1,
+            "reality_bond": 1,
+            "dorm_absence": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-WORK-CHOICE-01",
+        "after_page": "ACT7-E03-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-WORK-C01-A",
+            "label": "班后补一句现实说明",
+            "variable_delta": {
+              "opening_contrast_seen": true,
+              "repair_depth": 1,
+              "dorm_misread": -1
+            }
+          },
+          {
+            "direction_id": "ACT7-E03-WORK-C01-B",
+            "label": "只发你们继续",
+            "variable_delta": {
+              "missed_chance": 1,
+              "dorm_absence": 1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "毕业设计方向与开题",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 / B204 开题复核 / 打印店",
+      "scene_function": "开题方向和排班半径撞在一起，工作经历不能替毕业设计背书。",
+      "required_completion_flags": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "work_schedule_checked"
+      ],
+      "must_record": [
+        "topic_boundary_checked",
+        "topic_self_signed",
+        "work_schedule_checked",
+        "time_debt",
+        "work_shift",
+        "public_boundary",
+        "project_stability",
+        "proxy_risk",
+        "shift_boundary_checked",
+        "dorm_misread",
+        "thesis_revision_version",
+        "energy_low"
+      ],
+      "participants_hint": "Work experience may be observation, not thesis proof or a shortcut.",
+      "pages": [
+        {
+          "page_id": "ACT7-E04-WORK-P01",
+          "beat": "开题表",
+          "text_brief": "林亦舟填毕业设计方向，题目旁边压着快递站请假条和打印店收据。",
+          "choice_hook": [
+            "先把题目说清",
+            "先算请假时间"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "time_debt": 1,
+            "work_shift": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-WORK-P02",
+          "beat": "经历边界",
+          "text_brief": "他可以写现实场景需求，但不能把兼职经历当成论文结论。",
+          "choice_hook": [
+            "区分观察和题目依据",
+            "用工作经历替方向背书"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "project_stability": 1,
+            "proxy_risk": 1,
+            "project_stability_risk": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-WORK-P03",
+          "beat": "导师签字",
+          "text_brief": "导师签字前，排班群催他确认晚班。唐骁只提醒签字页别折。",
+          "choice_hook": [
+            "先签字再回排班",
+            "先接班再补签"
+          ],
+          "updates": {
+            "topic_self_signed": true,
+            "shift_boundary_checked": true,
+            "time_debt": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-WORK-P04",
+          "beat": "题目落定",
+          "text_brief": "开题通过后，打印店老板问他还打不打工时表，C407 群问他是否上传终版。",
+          "choice_hook": [
+            "记下两个截止时间",
+            "先回能赶上"
+          ],
+          "updates": {
+            "work_schedule_checked": true,
+            "time_debt": 1,
+            "energy_low": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-WORK-CHOICE-01",
+        "after_page": "ACT7-E04-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-WORK-C01-A",
+            "label": "区分观察和题目依据",
+            "variable_delta": {
+              "topic_boundary_checked": true,
+              "project_stability": 1,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E04-WORK-C01-B",
+            "label": "用工作经历替方向背书",
+            "variable_delta": {
+              "proxy_risk": 1,
+              "project_stability": -1,
+              "thesis_revision_version": "risk_later"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月事项排队",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "明德楼窗口 / 快递站 / 打印店",
+      "scene_function": "三四月事项与实习证明、工资确认、打印窗口和班次互相挤压。",
+      "required_completion_flags": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "work_certificate_status"
+      ],
+      "must_record": [
+        "march_boundary_checked",
+        "queue_item_submitted",
+        "work_certificate_status",
+        "wage_confirmed",
+        "work_shift",
+        "time_debt",
+        "money_pressure",
+        "public_boundary",
+        "repair_depth",
+        "dorm_misread",
+        "old_debt",
+        "dorm_trust",
+        "dorm_absence",
+        "missed_chance"
+      ],
+      "participants_hint": "Use proof gaps and wage confirmation as concrete pressure; avoid abstract busyness.",
+      "pages": [
+        {
+          "page_id": "ACT7-E05-WORK-P01",
+          "beat": "窗口并排",
+          "text_brief": "实习证明预收、证书核验和毕业照信息采集同时排队，快递站群又在问谁能补晚班。",
+          "choice_hook": [
+            "先看手续和排班窗口",
+            "先回补班消息"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "work_shift": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-WORK-P02",
+          "beat": "证明缺口",
+          "text_brief": "勤工证明缺一枚章，工资确认少一条本人回复。流程不问他难不难，只问材料齐不齐。",
+          "choice_hook": [
+            "先补证明和工资确认",
+            "先把窗口排上号"
+          ],
+          "updates": {
+            "work_certificate_status": "submitted",
+            "wage_confirmed": true,
+            "queue_item_submitted": true,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-WORK-P03",
+          "beat": "现实成本",
+          "text_brief": "打印费、地铁费、饭卡余额和 AA 都挤在同一张账单里。",
+          "choice_hook": [
+            "说清花费边界",
+            "用沉默省解释"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "repair_depth": 1,
+            "dorm_misread": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-WORK-P04",
+          "beat": "缺席回声",
+          "text_brief": "事项赶上了，但 4XX 公共桌那段最适合解释的时间已经过去。",
+          "choice_hook": [
+            "回群补工作冲突事实",
+            "晚点再说"
+          ],
+          "updates": {
+            "queue_item_submitted": true,
+            "dorm_trust": 1,
+            "dorm_absence": 1,
+            "missed_chance": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-WORK-CHOICE-01",
+        "after_page": "ACT7-E05-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-WORK-C01-A",
+            "label": "先补证明和工资确认",
+            "variable_delta": {
+              "work_certificate_status": "submitted",
+              "wage_confirmed": true,
+              "money_pressure": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E05-WORK-C01-B",
+            "label": "先把毕业窗口排上号",
+            "variable_delta": {
+              "march_boundary_checked": true,
+              "queue_item_submitted": true,
+              "time_debt": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "论文与毕设修改",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 打印店 / 快递站后门",
+      "scene_function": "改稿在夜班后、打印店和快递站间隙完成，独立但疲惫。",
+      "required_completion_flags": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_boundary_checked",
+        "thesis_revision_version",
+        "revision_submitted_before_deadline",
+        "energy_low",
+        "time_debt",
+        "public_boundary",
+        "project_stability",
+        "money_pressure",
+        "proxy_risk",
+        "dorm_misread",
+        "shift_boundary_checked"
+      ],
+      "participants_hint": "Fatigue is a cost, not a melodramatic reward.",
+      "pages": [
+        {
+          "page_id": "ACT7-E06-WORK-P01",
+          "beat": "红批出现",
+          "text_brief": "导师红批标出摘要、图表和格式问题。林亦舟刚下夜班，手机还停在工资确认群。",
+          "choice_hook": [
+            "先读红批再看工时",
+            "先睡二十分钟"
+          ],
+          "updates": {
+            "thesis_boundary_checked": true,
+            "energy_low": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-WORK-P02",
+          "beat": "打印成本",
+          "text_brief": "打印店说双面便宜一点，但导师要求单面签字页。他不能再用省钱毁格式。",
+          "choice_hook": [
+            "按要求打印",
+            "先省一版试试"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "project_stability": 1,
+            "money_pressure": -1,
+            "project_stability_risk": -1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-WORK-P03",
+          "beat": "版本命名",
+          "text_brief": "文件名从终版改成夜班后修改版。不是卖惨，只是他终于把时间写进版本里。",
+          "choice_hook": [
+            "自己改完剩余部分",
+            "发群里请别人兜底"
+          ],
+          "updates": {
+            "thesis_revision_version": "self_revised_after_shift",
+            "proxy_risk": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E06-WORK-P04",
+          "beat": "提交回声",
+          "text_brief": "提交成功后，快递站群弹出晚班确认。C407 群里唐骁只回收到。",
+          "choice_hook": [
+            "先确认提交，再回班次",
+            "直接去上班"
+          ],
+          "updates": {
+            "revision_submitted_before_deadline": true,
+            "shift_boundary_checked": true,
+            "time_debt": 1,
+            "energy_low": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-WORK-CHOICE-01",
+        "after_page": "ACT7-E06-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-WORK-C01-A",
+            "label": "按要求打印并自己改完",
+            "variable_delta": {
+              "thesis_boundary_checked": true,
+              "thesis_revision_version": "self_revised_after_shift",
+              "project_stability": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E06-WORK-C01-B",
+            "label": "先省一版，问题后补",
+            "variable_delta": {
+              "money_pressure": -1,
+              "project_stability": -1,
+              "time_debt": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩日",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "C407 答辩门口 / 明德楼窗口 / 快递站群",
+      "scene_function": "答辩后还要补交、赶班或领工资确认，情绪被现实压短。",
+      "required_completion_flags": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "wage_confirmed"
+      ],
+      "must_record": [
+        "defense_boundary_checked",
+        "defense_post_submit_done",
+        "wage_confirmed",
+        "defense_order_seen",
+        "money_pressure",
+        "time_debt",
+        "repair_depth",
+        "dorm_misread",
+        "polite_distance",
+        "project_stability",
+        "work_shift",
+        "dorm_absence",
+        "dorm_trust",
+        "graduation_temperature"
+      ],
+      "participants_hint": "Keep defense result specific, then compress it through wage and shift reality.",
+      "pages": [
+        {
+          "page_id": "ACT7-E07-WORK-P01",
+          "beat": "门口排队",
+          "text_brief": "答辩门口排队，林亦舟的包里有论文、请假条和没签完的工资确认单。",
+          "choice_hook": [
+            "核对答辩顺序",
+            "先看工资群"
+          ],
+          "updates": {
+            "defense_order_seen": true,
+            "money_pressure": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-WORK-P02",
+          "beat": "结果说法",
+          "text_brief": "答辩结束，别人问过了吗。他想说过了，又想说还要补章、补扫、补班。",
+          "choice_hook": [
+            "认真说结果和补交项",
+            "只说过了"
+          ],
+          "updates": {
+            "defense_boundary_checked": true,
+            "repair_depth": 1,
+            "dorm_misread": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-WORK-P03",
+          "beat": "补交窗口",
+          "text_brief": "签字和小章还没办完，快递站负责人问他还能不能赶晚班。",
+          "choice_hook": [
+            "先补交再回班次",
+            "先赶班，补交晚点"
+          ],
+          "updates": {
+            "defense_post_submit_done": true,
+            "project_stability": 1,
+            "work_shift": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E07-WORK-P04",
+          "beat": "答辩后沉默",
+          "text_brief": "4XX 群里有人发恭喜，勤工群里有人发工资确认表。他第一次觉得两个确认都是真的。",
+          "choice_hook": [
+            "两边都回完整",
+            "只回工资确认"
+          ],
+          "updates": {
+            "wage_confirmed": true,
+            "dorm_trust": 1,
+            "dorm_absence": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-WORK-CHOICE-01",
+        "after_page": "ACT7-E07-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-WORK-C01-A",
+            "label": "认真说结果和补交项",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "repair_depth": 1,
+              "dorm_misread": -1
+            }
+          },
+          {
+            "direction_id": "ACT7-E07-WORK-C01-B",
+            "label": "只说过了，先处理工资确认",
+            "variable_delta": {
+              "wage_confirmed": true,
+              "dorm_absence": 1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场 / 快递站请假页 / 影像授权表",
+      "scene_function": "毕业照和排班撞期，检验能不能提前请假、说明授权和到场边界。",
+      "required_completion_flags": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "shift_boundary_checked"
+      ],
+      "must_record": [
+        "photo_boundary_checked",
+        "grad_photo_result_recorded",
+        "shift_boundary_checked",
+        "work_shift",
+        "time_debt",
+        "public_boundary",
+        "missed_chance",
+        "dorm_warmth",
+        "repair_depth",
+        "dorm_absence",
+        "dorm_misread",
+        "dorm_trust",
+        "work_private_entry",
+        "graduation_temperature"
+      ],
+      "participants_hint": "Graduation photo tests whether he can ask for leave before the moment expires.",
+      "pages": [
+        {
+          "page_id": "ACT7-E08-WORK-P01",
+          "beat": "队形集合",
+          "text_brief": "晨光体育场排毕业照，林亦舟手里还攥着请假审批截图。",
+          "choice_hook": [
+            "先完成班级合照再赶排班",
+            "先确认班次有没有人顶"
+          ],
+          "updates": {
+            "grad_photo_result_recorded": true,
+            "work_shift": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-WORK-P02",
+          "beat": "授权选择",
+          "text_brief": "影像授权表问公开范围，快递站群问请假是否确认。他必须把两件事都说清。",
+          "choice_hook": [
+            "先说清授权和请假边界",
+            "只默认授权，赶去上班"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "shift_boundary_checked": true,
+            "public_boundary": -1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-WORK-P03",
+          "beat": "4XX 同框",
+          "text_brief": "周屿说站近点，唐骁问他是不是还赶班，陆沉没多问，只把位置让出一点。",
+          "choice_hook": [
+            "承认赶班但留到拍完",
+            "拍完立刻走"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "repair_depth": 1,
+            "dorm_absence": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E08-WORK-P04",
+          "beat": "预览留存",
+          "text_brief": "预览图里他站得很正，手机另一边是未读的班次确认。",
+          "choice_hook": [
+            "保存照片并回 4XX",
+            "只保存请假截图"
+          ],
+          "updates": {
+            "dorm_trust": 1,
+            "work_private_entry": 1,
+            "graduation_temperature": "polite_distance"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-WORK-CHOICE-01",
+        "after_page": "ACT7-E08-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-WORK-C01-A",
+            "label": "说清授权和请假边界",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "shift_boundary_checked": true,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E08-WORK-C01-B",
+            "label": "默认授权，赶去上班",
+            "variable_delta": {
+              "public_boundary": -1,
+              "missed_chance": 1,
+              "dorm_absence": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝与旧物",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居 4XX / 公共桌 / 宿管窗口",
+      "scene_function": "清寝旧物里出现工时表、饭卡、打印小票和未报销单，公共物品仍要确认。",
+      "required_completion_flags": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned"
+      ],
+      "must_record": [
+        "old_object_scope_checked",
+        "shared_item_owner_checked",
+        "dorm_key_returned",
+        "work_private_entry",
+        "missed_chance",
+        "public_boundary",
+        "proxy_risk",
+        "dorm_misread",
+        "wage_confirmed",
+        "time_debt",
+        "energy_low",
+        "repair_depth",
+        "dorm_trust",
+        "polite_distance"
+      ],
+      "participants_hint": "Public items still require personal confirmation; no proxy convenience.",
+      "pages": [
+        {
+          "page_id": "ACT7-E09-WORK-P01",
+          "beat": "旧物翻出",
+          "text_brief": "林亦舟清出旧饭卡、打印小票、工时表和一张没报销的交通票。",
+          "choice_hook": [
+            "按工作材料分类留存",
+            "直接扔掉"
+          ],
+          "updates": {
+            "old_object_scope_checked": true,
+            "work_private_entry": 1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-WORK-P02",
+          "beat": "公共物品",
+          "text_brief": "公共 U 盘、遥控器和旧插排还要确认归属。他不能因为赶班让别人代签。",
+          "choice_hook": [
+            "先确认公共物品和押金",
+            "请室友代说一声"
+          ],
+          "updates": {
+            "shared_item_owner_checked": true,
+            "public_boundary": 1,
+            "proxy_risk": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-WORK-P03",
+          "beat": "工资消息",
+          "text_brief": "工资确认表弹出来，宿管窗口也在排队，两个队伍都只认本人。",
+          "choice_hook": [
+            "先交钥匙再确认工资",
+            "一边排队一边处理工资"
+          ],
+          "updates": {
+            "dorm_key_returned": true,
+            "wage_confirmed": true,
+            "time_debt": 1,
+            "energy_low": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E09-WORK-P04",
+          "beat": "空桌回声",
+          "text_brief": "公共桌空下来的时候，他把旧饭卡和小票夹进同一个文件袋。",
+          "choice_hook": [
+            "留下最后一句说明",
+            "只收走文件袋"
+          ],
+          "updates": {
+            "repair_depth": 1,
+            "dorm_trust": 1,
+            "work_private_entry": 1,
+            "polite_distance": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-WORK-CHOICE-01",
+        "after_page": "ACT7-E09-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-WORK-C01-A",
+            "label": "先确认公共物品和押金",
+            "variable_delta": {
+              "shared_item_owner_checked": true,
+              "public_boundary": 1,
+              "dorm_trust": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E09-WORK-C01-B",
+            "label": "请室友代说一声",
+            "variable_delta": {
+              "proxy_risk": 1,
+              "dorm_misread": 1,
+              "missed_chance": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东北饺子馆 / 快递站群 / 校门口",
+      "scene_function": "最后一顿饭和班次 / 工资确认撞期，检验他能不能为一顿饭请一次假。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "work_reply_after_meal"
+      ],
+      "must_record": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "work_reply_after_meal",
+        "repair_depth",
+        "money_pressure",
+        "dorm_misread",
+        "dorm_warmth",
+        "work_shift",
+        "missed_chance",
+        "family_signal",
+        "old_debt",
+        "polite_distance",
+        "wage_confirmed",
+        "dorm_absence",
+        "graduation_temperature"
+      ],
+      "participants_hint": "Last meal tests whether one shift can be refused or clearly explained.",
+      "pages": [
+        {
+          "page_id": "ACT7-E10-WORK-P01",
+          "beat": "饭局撞班",
+          "text_brief": "4XX 最后一顿饭订好，快递站群刚好问他能不能补一个晚班。",
+          "choice_hook": [
+            "先说明饭局和排班时间",
+            "先问晚班工资"
+          ],
+          "updates": {
+            "repair_depth": 1,
+            "money_pressure": 1,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-WORK-P02",
+          "beat": "请假边界",
+          "text_brief": "负责人说可以请，但这晚班没人顶就会少一笔钱。",
+          "choice_hook": [
+            "为最后饭局请一次假",
+            "接班，让他们先吃"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "dorm_warmth": 1,
+            "work_shift": 1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-WORK-P03",
+          "beat": "饭桌现实",
+          "text_brief": "饭桌上说起实习、租房和第一份工资，林亦舟第一次没有把钱压全吞回去。",
+          "choice_hook": [
+            "说一件具体事实",
+            "只说还行"
+          ],
+          "updates": {
+            "family_signal": 1,
+            "repair_depth": 1,
+            "old_debt": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E10-WORK-P04",
+          "beat": "饭后确认",
+          "text_brief": "散场后，负责人问他工资确认收到没，4XX 问他明天几点走。",
+          "choice_hook": [
+            "两边都回清楚",
+            "只回工资确认"
+          ],
+          "updates": {
+            "meal_attendance_locked": true,
+            "work_reply_after_meal": true,
+            "wage_confirmed": true,
+            "dorm_trust": 1,
+            "dorm_absence": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-WORK-CHOICE-01",
+        "after_page": "ACT7-E10-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-WORK-C01-A",
+            "label": "为最后饭局请一次假",
+            "variable_delta": {
+              "meal_boundary_checked": true,
+              "dorm_warmth": 1,
+              "money_pressure": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E10-WORK-C01-B",
+            "label": "接班，让他们先吃",
+            "variable_delta": {
+              "work_shift": 1,
+              "missed_chance": 1,
+              "graduation_temperature": "missed_meal"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "明德楼离校窗口 / 证书领取处 / 勤工办公室",
+      "scene_function": "离校手续把工资、档案、联系人、退余额和第一周生活安排压成具体流程。",
+      "required_completion_flags": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "work_final_contact_scope"
+      ],
+      "must_record": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "work_final_contact_scope",
+        "dorm_misread",
+        "wage_confirmed",
+        "time_debt",
+        "work_certificate_status",
+        "family_signal",
+        "repair_depth",
+        "old_debt",
+        "polite_distance",
+        "public_boundary",
+        "graduation_temperature"
+      ],
+      "participants_hint": "Leaving papers are also wage signature and first-week life arrangement.",
+      "pages": [
+        {
+          "page_id": "ACT7-E11-WORK-P01",
+          "beat": "离校清单",
+          "text_brief": "离校系统一项项变绿，勤工办公室还差一项工资确认签收。",
+          "choice_hook": [
+            "发完整行程",
+            "只说今天离校"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "dorm_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-WORK-P02",
+          "beat": "证书档案",
+          "text_brief": "证书领取处只核身份证，勤工办公室只看本人签字。现实流程都很清楚。",
+          "choice_hook": [
+            "先完成证书和工资签收",
+            "先赶去档案窗口"
+          ],
+          "updates": {
+            "certificate_or_archive_seen": true,
+            "wage_confirmed": true,
+            "time_debt": 1,
+            "work_certificate_status": "pending"
+          }
+        },
+        {
+          "page_id": "ACT7-E11-WORK-P03",
+          "beat": "第一周生活",
+          "text_brief": "校园卡退余额只剩几块钱，足够买一瓶水，不够回答毕业后第一周怎么过。",
+          "choice_hook": [
+            "对父母和 4XX 各说一件具体事",
+            "只回安排好了"
+          ],
+          "updates": {
+            "family_signal": 1,
+            "repair_depth": 1,
+            "old_debt": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E11-WORK-P04",
+          "beat": "站前确认",
+          "text_brief": "去武生院站路上，勤工负责人说工资表下周发，4XX 群问他到了说一声。",
+          "choice_hook": [
+            "约定低频现实联系",
+            "只保留流程确认"
+          ],
+          "updates": {
+            "work_final_contact_scope": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-WORK-CHOICE-01",
+        "after_page": "ACT7-E11-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-WORK-C01-A",
+            "label": "先完成证书和工资签收",
+            "variable_delta": {
+              "certificate_or_archive_seen": true,
+              "wage_confirmed": true,
+              "public_boundary": 1
+            }
+          },
+          {
+            "direction_id": "ACT7-E11-WORK-C01-B",
+            "label": "先赶档案窗口，工资后补",
+            "variable_delta": {
+              "time_debt": 1,
+              "work_certificate_status": "pending",
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站后",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "act7_variant_id": "ACT7-WORK",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "WORK-ENDING",
+      "main_location": "武生院站 / 地铁车厢 / 工资确认群与 4XX 群",
+      "scene_function": "输出工作线最终温度：独立处理、体面距离、错过饭局、家庭说开或低频联系。",
+      "required_completion_flags": [
+        "work_final_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen"
+      ],
+      "must_record": [
+        "work_final_contact_scope",
+        "graduation_temperature",
+        "station_after_echo_seen",
+        "wage_confirmed",
+        "time_debt",
+        "dorm_trust",
+        "polite_distance",
+        "family_signal",
+        "repair_depth",
+        "old_debt"
+      ],
+      "participants_hint": "Final contact can be low-frequency and real; do not promise a sudden full repair.",
+      "pages": [
+        {
+          "page_id": "ACT7-E12-WORK-P01",
+          "beat": "进站前",
+          "text_brief": "武生院站口人很多，林亦舟一手拉行李，一手看工资确认群和 4XX 群。",
+          "choice_hook": [
+            "先报到站和上班安排",
+            "先核对工资表"
+          ],
+          "updates": {
+            "station_after_echo_seen": true,
+            "wage_confirmed": true,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-WORK-P02",
+          "beat": "到站以后",
+          "text_brief": "地铁开出校园站，最后的选择不再是去不去兼职，而是现实生活以后还怎么联系。",
+          "choice_hook": [
+            "约定低频现实联系",
+            "只保留流程确认"
+          ],
+          "updates": {
+            "work_final_contact_scope": "branch_dependent",
+            "dorm_trust": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-WORK-P03",
+          "beat": "家庭消息",
+          "text_brief": "父亲问工资到了没，母亲问有没有吃饭。两个问题都很普通，也都不能再只回嗯。",
+          "choice_hook": [
+            "说一件具体安排",
+            "只回到了"
+          ],
+          "updates": {
+            "family_signal": 1,
+            "repair_depth": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E12-WORK-P04",
+          "beat": "站后温度",
+          "text_brief": "出站后手机震了一下。工资确认和到了说一声都在等他回。",
+          "choice_hook": [
+            "两边都回完整",
+            "只回一个确认"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-WORK-CHOICE-01",
+        "after_page": "ACT7-E12-WORK-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-WORK-C01-A",
+            "label": "约定低频现实联系",
+            "variable_delta": {
+              "work_final_contact_scope": "low_contact",
+              "dorm_trust": 1,
+              "graduation_temperature": "low_contact"
+            }
+          },
+          {
+            "direction_id": "ACT7-E12-WORK-C01-B",
+            "label": "只保留流程确认",
+            "variable_delta": {
+              "work_final_contact_scope": "polite_distance",
+              "polite_distance": 1,
+              "graduation_temperature": "polite_distance"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "ending_candidates": [
+    {
+      "ending_id": "WORK-END-INDEPENDENT",
+      "condition_hint": "work_shift >= 6, public_boundary >= 4, dorm_misread <= 3",
+      "text_landing": "林亦舟能独自办完离校、工资确认和材料归档；4XX 仍有低频联系，但不再默认同行。"
+    },
+    {
+      "ending_id": "WORK-END-POLITE-DISTANCE",
+      "condition_hint": "work_shift >= 6, dorm_absence >= 5, repair_depth <= 2",
+      "text_landing": "他处理流程很稳，关系却体面淡化，群里只剩到站和确认。"
+    },
+    {
+      "ending_id": "WORK-END-MISSED-MEAL",
+      "condition_hint": "missed_chance >= 4 or meal_boundary_checked = false",
+      "text_landing": "最后一顿饭有人给他留位置或没有留，他都没赶上最适合说话的那一刻。"
+    },
+    {
+      "ending_id": "WORK-END-FAMILY-OPEN",
+      "condition_hint": "family_signal >= 4, public_boundary >= 3, repair_depth >= 3",
+      "text_landing": "他终于把家里的压力说出一部分，但不要求别人立刻理解。"
+    },
+    {
+      "ending_id": "WORK-END-LOW-CONTACT",
+      "condition_hint": "reality_bond >= 3, dorm_trust >= 2, work_final_contact_scope = low_contact",
+      "text_landing": "毕业后仍会因为工作、快递、材料或城市生活偶尔联系，关系低频但真实。"
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "route_id": "R4-WORK",
+    "route_pool_id": "POOL-R4-WORK",
+    "act7_variant_id": "ACT7-WORK",
+    "act7_core_event_count": 12,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_required_completion_flags": [
+      "pre_register_boundary_checked",
+      "graduation_direction_status",
+      "shift_boundary_checked",
+      "public_scope_boundary_checked",
+      "public_consent_checked",
+      "work_public_scope",
+      "opening_contrast_seen",
+      "old_object_scope_checked",
+      "work_private_entry",
+      "topic_boundary_checked",
+      "topic_self_signed",
+      "work_schedule_checked",
+      "march_boundary_checked",
+      "queue_item_submitted",
+      "work_certificate_status",
+      "thesis_boundary_checked",
+      "thesis_revision_version",
+      "revision_submitted_before_deadline",
+      "defense_boundary_checked",
+      "defense_post_submit_done",
+      "wage_confirmed",
+      "photo_boundary_checked",
+      "grad_photo_result_recorded",
+      "shared_item_owner_checked",
+      "dorm_key_returned",
+      "meal_boundary_checked",
+      "meal_attendance_locked",
+      "work_reply_after_meal",
+      "leaving_boundary_checked",
+      "certificate_or_archive_seen",
+      "work_final_contact_scope",
+      "graduation_temperature",
+      "station_after_echo_seen"
+    ],
+    "act7_each_event_page_count": 4,
+    "act7_each_event_direction_count": 2,
+    "act7_source_detail_doc": "开发细稿_IF第七卷ACT7-WORK工作线事件变体剧情页.md",
+    "p0b_full_page_json_status": "full_page_json_ready",
+    "p0b_entry_node_count": 5,
+    "p0b_entry_page_count": 20,
+    "p0b_entry_choice_window_count": 5,
+    "p0b_entry_direction_count": 20,
+    "p0b_required_entry_nodes": [
+      "P0B_ACT4_LIVING_FEE_DELAY",
+      "P0B_ACT4_EXPRESS_SHIFT",
+      "P0B_ACT4_PRINT_MATERIALS",
+      "P0B_ACT4_MISSED_MEET",
+      "P0B_ACT4_ROUTE_CONFIRM"
+    ],
+    "p0b_required_completion_flags": [
+      "living_fee_delay_seen",
+      "express_shift_seen",
+      "print_materials_seen",
+      "missed_meet_seen",
+      "p0b_entry_locked"
+    ],
+    "p0b_source_detail_doc": "开发文本_IF分支P0-B第四幕暑假兼职线.md",
+    "act6_variant_id": "ACT6-WORK",
+    "act6_block_count": 5,
+    "act6_scene_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_each_block_page_count": 4,
+    "act6_each_choice_direction_count": 2,
+    "act6_route_switch_allowed": false,
+    "act6_required_completion_flags": [
+      "shift_boundary_checked",
+      "work_certificate_status",
+      "work_schedule_checked",
+      "work_final_contact_scope",
+      "graduation_temperature"
+    ],
+    "act6_source_detail_doc": "开发细稿_IF第六卷ACT6-WORK工作线正式剧情页.md",
+    "act6_full_page_json_status": "full_page_json_ready"
+  }
+}

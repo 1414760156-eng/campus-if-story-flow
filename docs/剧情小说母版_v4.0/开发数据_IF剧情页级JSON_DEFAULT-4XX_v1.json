@@ -5,17 +5,21 @@
   "route_name": "宿舍修补线",
   "route_pool_id": "POOL-DEFAULT-4XX",
   "route_level": "S",
-  "purpose": "把 DEFAULT-4XX 从长线开发稿推进为第一条正式剧情页级 JSON 数据源，覆盖入口、8 个内回流点和第六卷 20/4/2 承接。",
+  "purpose": "把 DEFAULT-4XX 从长线开发稿推进为第一条正式剧情页级 JSON 数据源，覆盖入口、8 个内回流点、第六卷 20/4/2 承接和第七卷 12 个毕业结算事件。",
   "source_docs": [
     "开发长线_IF可玩支线DEFAULT-4XX宿舍修补线.md",
+    "开发细稿_IF第六卷ACT6-DEFAULT宿舍修补线正式剧情页.md",
     "开发细稿_IF可玩支线DEFAULT-4XX内回流剧情页.md",
     "开发样板_IF剧情页级JSON拆分样板_v1.json",
+    "开发规格_IF路线Schema与P0节点池.md",
     "开发规则_IF第五第六卷玩法节奏硬约束.md",
     "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
     "开发细稿_IF第七卷ACT7-E03最后一个新年剧情页.md",
     "开发细稿_IF第七卷ACT7-E06改论文毕业设计剧情页.md",
     "开发细稿_IF第七卷ACT7-E07答辩剧情页.md",
-    "开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md"
+    "开发细稿_IF第七卷ACT7-E08至E12毕业收束剧情页.md",
+    "开发细稿_IF第七卷ACT7-E01E02E04E05早段事件剧情页.md"
   ],
   "route_state": {
     "canon_line": "MOTHER-V4",
@@ -64,16 +68,35 @@
       "avoidance_or_outflow"
     ],
     "act5_choice_floor_met": true,
+    "p0d_entry_json_status": "full_page_json_ready",
+    "p0d_entry_source_doc": "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
+    "p0d_entry_node_count": 6,
+    "p0d_entry_page_count": 24,
+    "p0d_entry_choice_window_count": 6,
+    "p0d_entry_direction_count": 20,
+    "p0d_required_entry_nodes": [
+      "P0D_ACT5_SHORT_GROUP",
+      "P0D_ACT5_REPAIR_TABLE",
+      "P0D_ACT5_ZHOU_JOKE",
+      "P0D_ACT5_TANG_TIMELINE",
+      "P0D_ACT5_LUCHEN_NO_PROXY",
+      "P0D_ACT5_LIE_NO_REPLY"
+    ],
     "act6_scene_count": 20,
     "act6_block_count": 5,
     "act6_scenes_per_block": 4,
     "act6_choice_window_count": 5,
     "act6_directions_per_window": 2,
     "act6_route_pool_locked": true,
+    "act6_full_page_json_status": "full_page_json_ready",
     "act7_variant_id": "ACT7-DEFAULT",
     "act7_required_event_count": 12,
     "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
       "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
       "ACT7-E06-THESIS-REVISION",
       "ACT7-E07-DEFENSE",
       "ACT7-E08-GRAD-PHOTO",
@@ -84,68 +107,139 @@
     ],
     "act7_core_events_json_started": true,
     "act7_route_switch_allowed": false,
+    "act7_temperature_candidates": [
+      "DEFAULT-END-NOT-DISBAND",
+      "DEFAULT-END-LOWFREQ-REAL",
+      "DEFAULT-END-POLITE-DISTANCE",
+      "DEFAULT-END-UNRESOLVED-PRESENT",
+      "DEFAULT-END-MISSED-CHANCE"
+    ],
     "graduation_temperature": "unresolved_but_present"
   },
   "local_variables": [
-    "dorm_trust",
-    "dorm_warmth",
+    "absence_no_makeup_seen",
+    "act6_closed",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready",
+    "activity_link",
+    "advisor_group_checked",
+    "archive_transfer_checked",
     "avoidance",
-    "old_debt",
-    "repair_depth",
-    "proxy_risk",
-    "public_boundary",
-    "project_stability",
-    "graduation_temperature",
-    "old_object_weight",
-    "dorm_visibility",
-    "new_year_material_status",
-    "public_scope",
-    "story_consent",
-    "opening_contrast_seen",
-    "thesis_revision_comments_seen",
-    "thesis_revision_version",
-    "thesis_revision_helper",
-    "thesis_boundary_checked",
-    "revision_submitted_before_deadline",
-    "data_source_clear",
-    "public_scope_risk",
-    "defense_order_seen",
-    "defense_waiting_state",
-    "defense_revision_after_seen",
-    "defense_post_submit_done",
-    "defense_message_echo",
-    "defense_boundary_checked",
-    "defense_stability",
-    "route_trust",
-    "time_debt",
-    "grad_photo_batch_seen",
-    "grad_photo_scope",
-    "photo_cache_checked",
-    "photo_boundary_checked",
-    "photo_submit_decision",
-    "dorm_clear_list_seen",
-    "shared_item_owner_checked",
-    "old_items_resolved",
-    "clearance_boundary_checked",
-    "responsibility_clarity",
-    "dorm_key_ready",
-    "last_meal_vote_seen",
-    "last_meal_seat_confirmed",
-    "meal_arrival_state",
-    "meal_boundary_checked",
-    "meal_bill_settled",
-    "leaving_papers_seen",
-    "dorm_key_returned",
     "campus_card_closed",
     "certificate_received",
-    "archive_transfer_checked",
-    "leaving_boundary_checked",
-    "station_arrival_seen",
-    "station_items_kept",
-    "final_group_state",
+    "clearance_boundary_checked",
+    "conflict_heat",
+    "contact_info_checked",
+    "data_source_clear",
+    "defense_boundary_checked",
+    "defense_message_echo",
+    "defense_order_seen",
+    "defense_post_submit_done",
+    "defense_revision_after_seen",
+    "defense_stability",
+    "defense_waiting_state",
+    "dorm_absence",
+    "dorm_clear_list_seen",
+    "dorm_key_ready",
+    "dorm_key_returned",
+    "dorm_pressure",
+    "dorm_repair",
+    "dorm_trust",
+    "dorm_visibility",
+    "dorm_warmth",
+    "emotion_delay",
     "ending_temperature_locked",
+    "exam_or_certificate_checked",
+    "face_debt",
+    "final_group_state",
+    "grad_photo_batch_seen",
+    "grad_photo_info_seen",
+    "grad_photo_scope",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "internship_proof_checked",
+    "joke_defense",
+    "last_meal_seat_confirmed",
+    "last_meal_vote_seen",
+    "leaving_boundary_checked",
+    "leaving_papers_seen",
+    "lieflat_score",
+    "lost_chance",
+    "low_conflict",
+    "luchen_alignment",
+    "luchen_misread",
+    "luchen_trust",
+    "luchen_voice",
+    "march_boundary_checked",
+    "march_queue_seen",
+    "material_contact_scope",
+    "material_source_confirmed",
+    "meal_arrival_state",
+    "meal_bill_settled",
+    "meal_boundary_checked",
+    "mind_clarity",
+    "misread",
+    "missed_chance",
+    "money_pressure",
+    "new_year_material_status",
+    "not_reconciled",
+    "old_debt",
+    "old_debt_visible",
+    "old_dorm_distance",
+    "old_items_resolved",
+    "old_object_weight",
+    "opening_contrast_seen",
+    "photo_boundary_checked",
+    "photo_cache_checked",
+    "photo_submit_decision",
+    "polite_distance",
+    "pool_entry_choice",
+    "pre_register_boundary_checked",
+    "pre_register_seen",
+    "project_stability",
+    "project_stability_checked",
+    "proxy_risk",
+    "public_boundary",
+    "public_consent_checked",
+    "public_scope",
+    "public_scope_boundary_checked",
+    "public_scope_risk",
+    "public_scope_template_seen",
+    "public_smooth",
+    "quiet_bond",
+    "quiet_care",
+    "relationship_truth",
+    "repair_depth",
+    "responsibility_clarity",
+    "revision_submitted_before_deadline",
+    "route_lock",
+    "route_pool_id",
+    "route_pool_locked",
+    "route_trust",
+    "rule_pressure",
+    "say_clear",
+    "selected_private",
+    "shared_item_owner_checked",
+    "stand_conflict",
+    "station_arrival_seen",
     "station_boundary_checked",
-    "relationship_truth"
+    "station_items_kept",
+    "story_consent",
+    "tang_alignment",
+    "tang_misread",
+    "theme_material_first_batch_submitted",
+    "thesis_boundary_checked",
+    "thesis_revision_comments_seen",
+    "thesis_revision_helper",
+    "thesis_revision_version",
+    "thesis_topic_form_seen",
+    "time_debt",
+    "topic_boundary_checked",
+    "topic_review_time",
+    "topic_self_signed",
+    "topic_status",
+    "zhou_alignment",
+    "zhou_misread"
   ],
   "entry_node": {
     "id": "D_00_SHORT_GROUP",
@@ -251,6 +345,848 @@
     ],
     "drift_guard": "DEFAULT-4XX 不是完美线，也不是真结局；修补只增加当面处理机会，不取消裂痕。"
   },
+  "p0d_entry_nodes": [
+    {
+      "node_id": "P0D_ACT5_SHORT_GROUP",
+      "node_name": "事项群变短",
+      "module": "P0-D",
+      "act": "ACT5",
+      "route_id": "R5-STAND",
+      "route_pool_id": "POOL-R5-STAND",
+      "source_detail_doc": "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
+      "route_switch_allowed": true,
+      "previous_node": "ACT5_DORM_CONFLICT_LOCK",
+      "next_node": "branch_by_choice",
+      "location": "青枫居 4XX / 事项群 / 公共桌",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "scene_function": "把第五幕宿舍强冲突压缩成第一次站队选择：当面修补、靠近周屿、靠近唐骁、保护陆沉边界，或继续静音摆烂。",
+      "entry_conditions": {
+        "stand_conflict_min": 2,
+        "old_debt_visible_min": 2,
+        "dorm_pressure_min": 3,
+        "route_lock_not": "5x"
+      },
+      "pages": [
+        {
+          "page_id": "P0D-STAND-S01",
+          "location": "4XX 事项群",
+          "text_brief": "第五幕冲突后，群里只剩表格、外卖、今晚回不回和一个没有人接的问号。林亦舟第一次发现，不说话也会被当成一种态度。",
+          "choice_hook": [
+            "回群",
+            "私聊",
+            "静音"
+          ],
+          "updates": {
+            "stand_conflict": 1,
+            "old_debt_visible": 1
+          }
+        },
+        {
+          "page_id": "P0D-STAND-S02",
+          "location": "4XX 公共桌",
+          "text_brief": "公共桌上压着唐骁整理的时间线、周屿没拆的外卖袋、陆沉留下的空水杯。每样东西都不是证据，却都能被解释成证据。",
+          "choice_hook": [
+            "先看时间线",
+            "先看外卖袋",
+            "先看空水杯"
+          ],
+          "updates": {
+            "dorm_pressure": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "P0D-STAND-S03",
+          "location": "青枫居走廊",
+          "text_brief": "林亦舟站在门外，听见屋里没有争吵。没有争吵比争吵更难处理，因为每个人都已经开始用短句保护自己。",
+          "choice_hook": [
+            "推门",
+            "先打字",
+            "转身下楼"
+          ],
+          "updates": {
+            "avoidance": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "P0D-STAND-S04",
+          "location": "4XX 门口 / 手机",
+          "text_brief": "手机屏幕停在输入框。林亦舟要决定第一句话给群里，给周屿，给唐骁，给陆沉，还是不给任何人。",
+          "choice_hook": [
+            "当面说",
+            "私聊某个人",
+            "不回"
+          ],
+          "updates": {
+            "pool_entry_choice": "pending",
+            "route_pool_id": "POOL-R5-STAND"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0D-STAND-CHOICE-01",
+        "after_page": "P0D-STAND-S04",
+        "direction_count": 5,
+        "directions": [
+          {
+            "direction_id": "P0D-STAND-C01-A",
+            "label": "回群说等我回去，当面说",
+            "variable_delta": {
+              "dorm_repair": 1,
+              "avoidance": -1,
+              "dorm_trust": 1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_pool_id": "POOL-DEFAULT-4XX",
+              "pool_entry_choice": "DEFAULT-ENTRY-01",
+              "route_switch_allowed": false
+            },
+            "next_node": "P0D_ACT5_REPAIR_TABLE"
+          },
+          {
+            "direction_id": "P0D-STAND-C01-B",
+            "label": "私聊周屿，问他是不是又拿玩笑挡住",
+            "variable_delta": {
+              "zhou_alignment": 1,
+              "tang_misread": 1,
+              "activity_link": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-ZHOU",
+              "route_pool_id": "POOL-R5-ZHOU",
+              "pool_entry_choice": "P0D_STAND_WITH_ZHOU",
+              "route_switch_allowed": false
+            },
+            "next_node": "P0D_ACT5_ZHOU_JOKE"
+          },
+          {
+            "direction_id": "P0D-STAND-C01-C",
+            "label": "私聊唐骁，先别发第二版时间线",
+            "variable_delta": {
+              "tang_alignment": 1,
+              "zhou_misread": 1,
+              "project_stability": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-TANG",
+              "route_pool_id": "POOL-R5-TANG",
+              "pool_entry_choice": "P0D_STAND_WITH_TANG",
+              "route_switch_allowed": false
+            },
+            "next_node": "P0D_ACT5_TANG_TIMELINE"
+          },
+          {
+            "direction_id": "P0D-STAND-C01-D",
+            "label": "私聊陆沉，问他要不要先别进群",
+            "variable_delta": {
+              "luchen_alignment": 1,
+              "proxy_risk": 1,
+              "luchen_trust": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LUCHEN",
+              "route_pool_id": "POOL-R5-LUCHEN",
+              "pool_entry_choice": "P0D_STAND_WITH_LUCHEN",
+              "route_switch_allowed": false
+            },
+            "next_node": "P0D_ACT5_LUCHEN_NO_PROXY"
+          },
+          {
+            "direction_id": "P0D-STAND-C01-E",
+            "label": "不回，把群静音",
+            "variable_delta": {
+              "avoidance": 1,
+              "lost_chance": 1,
+              "lieflat_score": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LIEFLAT",
+              "route_pool_id": "POOL-R5-LIEFLAT",
+              "pool_entry_choice": "P0D_STAND_NO_REPLY",
+              "route_switch_allowed": false
+            },
+            "next_node": "P0D_ACT5_LIE_NO_REPLY"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0D_ACT5_REPAIR_TABLE",
+      "node_name": "公共桌事实表",
+      "module": "P0-D",
+      "act": "ACT5",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "source_detail_doc": "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
+      "route_switch_allowed": false,
+      "previous_node": "P0D_ACT5_SHORT_GROUP",
+      "next_node": "ACT6-DEFAULT-B01",
+      "location": "青枫居 4XX 公共桌",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "scene_function": "确认 DEFAULT-4XX 的入口不是和解奖励，而是把事实、旧账和当晚必须做的事摆回公共桌。",
+      "entry_conditions": {
+        "dorm_repair_min": 1,
+        "avoidance_max": 2
+      },
+      "pages": [
+        {
+          "page_id": "P0D-DEFAULT-S01",
+          "location": "4XX 公共桌",
+          "text_brief": "林亦舟推门进来，唐骁没有抬头，只把时间线往桌边推了一点。周屿坐在椅背上晃腿，陆沉的手机扣着。",
+          "choice_hook": [
+            "坐下",
+            "先道歉",
+            "先看表"
+          ],
+          "updates": {
+            "dorm_repair": 1,
+            "avoidance": -1
+          }
+        },
+        {
+          "page_id": "P0D-DEFAULT-S02",
+          "location": "公共桌 / 时间线纸",
+          "text_brief": "时间线能说明谁什么时候不在，却不能说明谁为什么不说话。林亦舟意识到这张纸如果直接发出去，会变成判决书。",
+          "choice_hook": [
+            "只列事实",
+            "删定罪措辞",
+            "先问授权"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "P0D-DEFAULT-S03",
+          "location": "水房门口",
+          "text_brief": "周屿把话说成玩笑，唐骁把话压成流程，陆沉只说没事。林亦舟如果想修补，就不能只挑最好回答的那个人。",
+          "choice_hook": [
+            "承认自己想逃",
+            "问今晚必须赶什么",
+            "逐个补话"
+          ],
+          "updates": {
+            "repair_depth": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "P0D-DEFAULT-S04",
+          "location": "4XX 公共桌",
+          "text_brief": "四个人没有变好，只是终于坐在同一张桌子前。林亦舟要决定这次先保事实、先保情绪，还是先保当晚能不能继续运转。",
+          "choice_hook": [
+            "列事实",
+            "承认想逃",
+            "先问时间"
+          ],
+          "updates": {
+            "route_lock": "DEFAULT-4XX",
+            "route_pool_id": "POOL-DEFAULT-4XX"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0D-DEFAULT-CHOICE-01",
+        "after_page": "P0D-DEFAULT-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "P0D-DEFAULT-C01-A",
+            "label": "先列事实，不评价谁对谁错",
+            "variable_delta": {
+              "dorm_repair": 1,
+              "project_stability": 1,
+              "public_boundary": 1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_pool_id": "POOL-DEFAULT-4XX",
+              "route_lock": false
+            },
+            "next_node": "ACT6-DEFAULT-B01"
+          },
+          {
+            "direction_id": "P0D-DEFAULT-C01-B",
+            "label": "先承认自己也想逃",
+            "variable_delta": {
+              "avoidance": -1,
+              "repair_depth": 1,
+              "old_debt": 1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_pool_id": "POOL-DEFAULT-4XX",
+              "route_lock": false
+            },
+            "next_node": "ACT6-DEFAULT-B01"
+          },
+          {
+            "direction_id": "P0D-DEFAULT-C01-C",
+            "label": "先问今晚每个人还必须赶什么",
+            "variable_delta": {
+              "time_debt": 1,
+              "dorm_warmth": 1,
+              "relationship_truth": 1
+            },
+            "route_effect": {
+              "active_route_id": "DEFAULT-4XX",
+              "route_pool_id": "POOL-DEFAULT-4XX",
+              "route_lock": false
+            },
+            "next_node": "ACT6-DEFAULT-B01"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0D_ACT5_ZHOU_JOKE",
+      "node_name": "玩笑挡不住",
+      "module": "P0-D",
+      "act": "ACT5",
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "source_detail_doc": "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
+      "route_switch_allowed": false,
+      "previous_node": "P0D_ACT5_SHORT_GROUP",
+      "next_node": "ACT6-ZHOU-B01",
+      "location": "青枫居楼梯间 / 主持队排练区",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉",
+        "秦越"
+      ],
+      "scene_function": "把周屿线入口落到玩笑、面子和活动圈压力上，同时留下唐骁和陆沉的误读。",
+      "entry_conditions": {
+        "zhou_alignment_min": 1
+      },
+      "pages": [
+        {
+          "page_id": "P0D-ZHOU-S01",
+          "location": "青枫居楼梯间",
+          "text_brief": "周屿先把话说成玩笑，说自己这张嘴不值钱。林亦舟听出他在等人接，也在等人别当众拆他。",
+          "choice_hook": [
+            "接玩笑",
+            "截住",
+            "私下说"
+          ],
+          "updates": {
+            "zhou_alignment": 1,
+            "joke_defense": 1
+          }
+        },
+        {
+          "page_id": "P0D-ZHOU-S02",
+          "location": "主持队排练区门口",
+          "text_brief": "秦越发来补场消息，周屿像抓到出口一样立刻站起来。4XX 的事还在桌上，热闹也是真实压力。",
+          "choice_hook": [
+            "去补场",
+            "让他先回寝",
+            "找流程替代"
+          ],
+          "updates": {
+            "activity_link": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "P0D-ZHOU-S03",
+          "location": "东区商业街小舞台边",
+          "text_brief": "周屿在人群边缘笑得很顺，但转身时表情落下去。林亦舟站在他旁边，知道自己已经被另外两个人看成偏向周屿。",
+          "choice_hook": [
+            "帮他圆场",
+            "提醒他别逃",
+            "只陪到流程结束"
+          ],
+          "updates": {
+            "tang_misread": 1,
+            "luchen_misread": 1
+          }
+        },
+        {
+          "page_id": "P0D-ZHOU-S04",
+          "location": "青枫居门口",
+          "text_brief": "周屿问林亦舟是不是也觉得他烦。这个问题不能用玩笑接回去，否则周屿线只会变成一起逃避。",
+          "choice_hook": [
+            "圆场",
+            "截住",
+            "私下提醒"
+          ],
+          "updates": {
+            "route_lock": "R5-ZHOU",
+            "route_pool_id": "POOL-R5-ZHOU"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0D-ZHOU-CHOICE-01",
+        "after_page": "P0D-ZHOU-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "P0D-ZHOU-C01-A",
+            "label": "帮周屿把场面圆过去",
+            "variable_delta": {
+              "zhou_alignment": 1,
+              "public_smooth": 1,
+              "tang_misread": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-ZHOU",
+              "route_pool_id": "POOL-R5-ZHOU",
+              "route_lock": "R5-ZHOU"
+            },
+            "next_node": "ACT6-ZHOU-B01"
+          },
+          {
+            "direction_id": "P0D-ZHOU-C01-B",
+            "label": "当场轻轻截住玩笑",
+            "variable_delta": {
+              "joke_defense": 1,
+              "repair_depth": 1,
+              "conflict_heat": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-ZHOU",
+              "route_pool_id": "POOL-R5-ZHOU",
+              "route_lock": "R5-ZHOU"
+            },
+            "next_node": "ACT6-ZHOU-B01"
+          },
+          {
+            "direction_id": "P0D-ZHOU-C01-C",
+            "label": "私下提醒，不当众拆他",
+            "variable_delta": {
+              "zhou_alignment": 1,
+              "public_boundary": 1,
+              "face_debt": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-ZHOU",
+              "route_pool_id": "POOL-R5-ZHOU",
+              "route_lock": "R5-ZHOU"
+            },
+            "next_node": "ACT6-ZHOU-B01"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0D_ACT5_TANG_TIMELINE",
+      "node_name": "时间线不是判决书",
+      "module": "P0-D",
+      "act": "ACT5",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "source_detail_doc": "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
+      "route_switch_allowed": false,
+      "previous_node": "P0D_ACT5_SHORT_GROUP",
+      "next_node": "ACT6-TANG-B01",
+      "location": "4XX 公共桌 / C407 / 共享文档",
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "沈嘉禾"
+      ],
+      "scene_function": "把唐骁线入口落到流程、事实、授权和项目稳定上，不把唐骁写成唯一正确方。",
+      "entry_conditions": {
+        "tang_alignment_min": 1
+      },
+      "pages": [
+        {
+          "page_id": "P0D-TANG-S01",
+          "location": "4XX 公共桌",
+          "text_brief": "唐骁把时间线分成三列：谁在场、谁缺席、谁没有回复。林亦舟看见表格里有事实，也有会伤人的空格。",
+          "choice_hook": [
+            "核事实",
+            "删措辞",
+            "问授权"
+          ],
+          "updates": {
+            "tang_alignment": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "P0D-TANG-S02",
+          "location": "C407",
+          "text_brief": "项目提交时间压在同一周。唐骁说先把能交的交了，关系以后再说。林亦舟知道这句话既务实，也会继续拖情绪。",
+          "choice_hook": [
+            "项目优先",
+            "拉回宿舍谈",
+            "只处理公开部分"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "emotion_delay": 1
+          }
+        },
+        {
+          "page_id": "P0D-TANG-S03",
+          "location": "共享文档",
+          "text_brief": "沈嘉禾提醒公开记录要有边界。唐骁沉默片刻，把一行'未回应'删成'待本人确认'。",
+          "choice_hook": [
+            "支持删改",
+            "按原表",
+            "让本人确认"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "rule_pressure": 1
+          }
+        },
+        {
+          "page_id": "P0D-TANG-S04",
+          "location": "食堂侧门",
+          "text_brief": "唐骁问林亦舟是不是觉得他太硬。这个问题不能只用'你没错'回答，否则唐骁线会变成流程避难所。",
+          "choice_hook": [
+            "核事实但删定罪",
+            "按原表发",
+            "先问授权"
+          ],
+          "updates": {
+            "route_lock": "R5-TANG",
+            "route_pool_id": "POOL-R5-TANG"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0D-TANG-CHOICE-01",
+        "after_page": "P0D-TANG-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "P0D-TANG-C01-A",
+            "label": "核事实，但删掉定罪感措辞",
+            "variable_delta": {
+              "tang_alignment": 1,
+              "public_boundary": 1,
+              "project_stability": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-TANG",
+              "route_pool_id": "POOL-R5-TANG",
+              "route_lock": "R5-TANG"
+            },
+            "next_node": "ACT6-TANG-B01"
+          },
+          {
+            "direction_id": "P0D-TANG-C01-B",
+            "label": "支持唐骁按原表发群里",
+            "variable_delta": {
+              "tang_alignment": 1,
+              "conflict_heat": 1,
+              "zhou_misread": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-TANG",
+              "route_pool_id": "POOL-R5-TANG",
+              "route_lock": "R5-TANG"
+            },
+            "next_node": "ACT6-TANG-B01"
+          },
+          {
+            "direction_id": "P0D-TANG-C01-C",
+            "label": "要求先问每个人能不能被写进表",
+            "variable_delta": {
+              "public_boundary": 1,
+              "rule_pressure": 1,
+              "repair_depth": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-TANG",
+              "route_pool_id": "POOL-R5-TANG",
+              "route_lock": "R5-TANG"
+            },
+            "next_node": "ACT6-TANG-B01"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0D_ACT5_LUCHEN_NO_PROXY",
+      "node_name": "不替他说",
+      "module": "P0-D",
+      "act": "ACT5",
+      "route_id": "R5-LUCHEN",
+      "route_pool_id": "POOL-R5-LUCHEN",
+      "source_detail_doc": "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
+      "route_switch_allowed": false,
+      "previous_node": "P0D_ACT5_SHORT_GROUP",
+      "next_node": "ACT6-LUCHEN-B01",
+      "location": "图书馆排班处 / 4XX 门口 / 水房",
+      "participants": [
+        "林亦舟",
+        "陆沉",
+        "周屿",
+        "唐骁"
+      ],
+      "scene_function": "把陆沉线入口落到不代言、勤工现实和最低公开事实上。",
+      "entry_conditions": {
+        "luchen_alignment_min": 1
+      },
+      "pages": [
+        {
+          "page_id": "P0D-LUCHEN-S01",
+          "location": "图书馆排班处",
+          "text_brief": "陆沉把排班表折起来，说没事。林亦舟知道这两个字不能替他转述，也不能当成真的没有事。",
+          "choice_hook": [
+            "只说事实",
+            "替他说委屈",
+            "让他决定"
+          ],
+          "updates": {
+            "luchen_alignment": 1,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "P0D-LUCHEN-S02",
+          "location": "4XX 门口",
+          "text_brief": "周屿和唐骁都想知道陆沉到底怎么想。林亦舟知道一部分，但知道不等于有权替他说。",
+          "choice_hook": [
+            "只说可公开事实",
+            "把问题交回陆沉",
+            "挡掉追问"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "luchen_trust": 1
+          }
+        },
+        {
+          "page_id": "P0D-LUCHEN-S03",
+          "location": "打印店 / 水房",
+          "text_brief": "陆沉还有材料、排班和家里的电话。宿舍规则不是不重要，但它不能把现实压力全部挤掉。",
+          "choice_hook": [
+            "先处理排班",
+            "先回宿舍",
+            "短句说明"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "P0D-LUCHEN-S04",
+          "location": "晨光湖边",
+          "text_brief": "陆沉问林亦舟：'你能不能别替我解释。' 这不是拒绝靠近，而是这条线的边界。",
+          "choice_hook": [
+            "只说事实",
+            "替他说完整结论",
+            "让他决定说多少"
+          ],
+          "updates": {
+            "route_lock": "R5-LUCHEN",
+            "route_pool_id": "POOL-R5-LUCHEN"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0D-LUCHEN-CHOICE-01",
+        "after_page": "P0D-LUCHEN-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "P0D-LUCHEN-C01-A",
+            "label": "只说事实，不说陆沉的情绪判断",
+            "variable_delta": {
+              "proxy_risk": -1,
+              "luchen_trust": 1,
+              "public_boundary": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LUCHEN",
+              "route_pool_id": "POOL-R5-LUCHEN",
+              "route_lock": "R5-LUCHEN"
+            },
+            "next_node": "ACT6-LUCHEN-B01"
+          },
+          {
+            "direction_id": "P0D-LUCHEN-C01-B",
+            "label": "替陆沉把委屈说出来",
+            "variable_delta": {
+              "proxy_risk": 1,
+              "conflict_heat": 1,
+              "luchen_misread": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LUCHEN",
+              "route_pool_id": "POOL-R5-LUCHEN",
+              "route_lock": "R5-LUCHEN"
+            },
+            "next_node": "ACT6-LUCHEN-B01"
+          },
+          {
+            "direction_id": "P0D-LUCHEN-C01-C",
+            "label": "让陆沉自己决定今晚说多少",
+            "variable_delta": {
+              "luchen_voice": 1,
+              "quiet_bond": 1,
+              "time_debt": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LUCHEN",
+              "route_pool_id": "POOL-R5-LUCHEN",
+              "route_lock": "R5-LUCHEN"
+            },
+            "next_node": "ACT6-LUCHEN-B01"
+          }
+        ]
+      }
+    },
+    {
+      "node_id": "P0D_ACT5_LIE_NO_REPLY",
+      "node_name": "不回群",
+      "module": "P0-D",
+      "act": "ACT5",
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "source_detail_doc": "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
+      "route_switch_allowed": false,
+      "previous_node": "P0D_ACT5_SHORT_GROUP",
+      "next_node": "ACT6-LIEFLAT-B01",
+      "location": "青枫居床位 / 楼下外卖架 / 便利店",
+      "participants": [
+        "林亦舟",
+        "周屿",
+        "唐骁",
+        "陆沉"
+      ],
+      "scene_function": "把摆烂线入口写成低投入和入口过期，不把不站队误写成中立保全。",
+      "entry_conditions": {
+        "avoidance_min": 1,
+        "route_lock_not": "5x"
+      },
+      "pages": [
+        {
+          "page_id": "P0D-LIE-S01",
+          "location": "青枫居床位",
+          "text_brief": "林亦舟看见群消息跳了三次。他没有生气，也没有决定离开，只是把手机翻过去，先让这一晚少一点难堪。",
+          "choice_hook": [
+            "短句",
+            "表情",
+            "不回"
+          ],
+          "updates": {
+            "avoidance": 1,
+            "lieflat_score": 1
+          }
+        },
+        {
+          "page_id": "P0D-LIE-S02",
+          "location": "楼下外卖架",
+          "text_brief": "他下楼拿外卖，发现周屿那份已经被别人拿走，唐骁的饭盒贴了名字，陆沉没有点。小事开始不再默认等他。",
+          "choice_hook": [
+            "当作大家都忙",
+            "补一句",
+            "临时帮忙"
+          ],
+          "updates": {
+            "lost_chance": 1,
+            "old_dorm_distance": 1
+          }
+        },
+        {
+          "page_id": "P0D-LIE-S03",
+          "location": "便利店",
+          "text_brief": "便利店灯很亮，群里却安静下来。没有人催他，也没有人问他为什么没回。",
+          "choice_hook": [
+            "买水拖时间",
+            "回一个表情",
+            "继续静音"
+          ],
+          "updates": {
+            "low_conflict": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "P0D-LIE-S04",
+          "location": "青枫居楼下",
+          "text_brief": "林亦舟回到楼下时，窗口还亮着。摆烂不是没代价，只是代价不会当晚敲门。",
+          "choice_hook": [
+            "短句回应",
+            "表情回应",
+            "不回"
+          ],
+          "updates": {
+            "route_lock": "R5-LIEFLAT",
+            "route_pool_id": "POOL-R5-LIEFLAT"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "P0D-LIE-CHOICE-01",
+        "after_page": "P0D-LIE-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "P0D-LIE-C01-A",
+            "label": "只回你们先说",
+            "variable_delta": {
+              "avoidance": 1,
+              "dorm_trust": -1,
+              "lieflat_score": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LIEFLAT",
+              "route_pool_id": "POOL-R5-LIEFLAT",
+              "route_lock": "R5-LIEFLAT"
+            },
+            "next_node": "ACT6-LIEFLAT-B01"
+          },
+          {
+            "direction_id": "P0D-LIE-C01-B",
+            "label": "发一个中立表情",
+            "variable_delta": {
+              "lieflat_score": 1,
+              "low_conflict": 1,
+              "lost_chance": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LIEFLAT",
+              "route_pool_id": "POOL-R5-LIEFLAT",
+              "route_lock": "R5-LIEFLAT"
+            },
+            "next_node": "ACT6-LIEFLAT-B01"
+          },
+          {
+            "direction_id": "P0D-LIE-C01-C",
+            "label": "直接不回，去做别的",
+            "variable_delta": {
+              "lost_chance": 1,
+              "missed_chance": 1,
+              "old_dorm_distance": 1
+            },
+            "route_effect": {
+              "active_route_id": "R5-LIEFLAT",
+              "route_pool_id": "POOL-R5-LIEFLAT",
+              "route_lock": "R5-LIEFLAT"
+            },
+            "next_node": "ACT6-LIEFLAT-B01"
+          }
+        ]
+      }
+    }
+  ],
   "act5_floor_coverage": {
     "required_count": 5,
     "required_windows": [
@@ -1245,6 +2181,7 @@
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "block_order": 1,
+      "conversion_status": "full_page_json_ready",
       "scene_ids": [
         "ACT6-DEFAULT-S01",
         "ACT6-DEFAULT-S02",
@@ -1302,6 +2239,7 @@
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "block_order": 2,
+      "conversion_status": "full_page_json_ready",
       "scene_ids": [
         "ACT6-DEFAULT-S05",
         "ACT6-DEFAULT-S06",
@@ -1357,6 +2295,7 @@
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "block_order": 3,
+      "conversion_status": "full_page_json_ready",
       "scene_ids": [
         "ACT6-DEFAULT-S09",
         "ACT6-DEFAULT-S10",
@@ -1412,6 +2351,7 @@
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "block_order": 4,
+      "conversion_status": "full_page_json_ready",
       "scene_ids": [
         "ACT6-DEFAULT-S13",
         "ACT6-DEFAULT-S14",
@@ -1466,6 +2406,7 @@
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "block_order": 5,
+      "conversion_status": "full_page_json_ready",
       "scene_ids": [
         "ACT6-DEFAULT-S17",
         "ACT6-DEFAULT-S18",
@@ -1516,9 +2457,907 @@
       ]
     }
   ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-DEFAULT-B01",
+      "block_name": "当面修补与体面距离",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act6_variant_id": "ACT6-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-DEFAULT宿舍修补线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-DEFAULT-B02",
+      "scene_range": [
+        "ACT6-DEFAULT-S01",
+        "ACT6-DEFAULT-S04"
+      ],
+      "main_location": "4XX 事项群 / 青枫居楼下 / 4XX 公共桌 / 阳台门口",
+      "scene_function": "确认林亦舟选择回到 4XX 后，能否把事项群短句带回公共桌而不是继续静音。",
+      "required_completion_flags": [
+        "repair_depth",
+        "public_boundary",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "dorm_trust",
+        "dorm_warmth",
+        "avoidance",
+        "old_debt",
+        "repair_depth",
+        "proxy_risk",
+        "public_boundary",
+        "time_debt",
+        "dorm_pressure"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-DEFAULT-S01",
+          "location": "4XX 事项群 / 青枫居楼下",
+          "text_brief": "第六卷开场，群里只剩 C407 表谁交和今晚回不回。林亦舟站在楼下，知道自己再回一个收到就会让公共桌继续空着。",
+          "choice_hook": [
+            "回群说当面说",
+            "先不进门",
+            "直接上楼"
+          ],
+          "updates": {
+            "old_debt": 1,
+            "avoidance": 1,
+            "dorm_pressure": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S02",
+          "location": "4XX 门口 / 宿管窗口",
+          "text_brief": "宿管阿姨催夜归登记，唐骁从门里问他还进不进来。这不是温柔入口，而是一次现实催回。",
+          "choice_hook": [
+            "写清马上回",
+            "让唐骁先别关门",
+            "只点头进门"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "dorm_trust": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S03",
+          "location": "4XX 公共桌",
+          "text_brief": "公共桌上压着事实表、外卖小票和 C407 分工。周屿说这么正式啊，陆沉只把椅子往外挪一点。",
+          "choice_hook": [
+            "先说事实表",
+            "先问谁没吃饭",
+            "先承认自己想逃"
+          ],
+          "updates": {
+            "repair_depth": 1,
+            "dorm_warmth": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S04",
+          "location": "公共桌 / 阳台门口",
+          "text_brief": "第一轮话没有说完。唐骁要求先定截止，周屿不想被写进表格，陆沉提醒别替我说。",
+          "choice_hook": [
+            "当面修补",
+            "保持体面距离",
+            "把话停在边界内"
+          ],
+          "updates": {
+            "proxy_risk": 1,
+            "public_boundary": 1,
+            "repair_depth": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-01",
+        "after_page": "ACT6-DEFAULT-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C01-A",
+            "label": "当面修补",
+            "variable_delta": {
+              "repair_depth": 1,
+              "dorm_trust": 1,
+              "old_debt": 1
+            },
+            "next_block": "ACT6-DEFAULT-B02"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C01-B",
+            "label": "保持体面距离",
+            "variable_delta": {
+              "polite_distance": 1,
+              "avoidance": 1,
+              "dorm_warmth": -1
+            },
+            "next_block": "ACT6-DEFAULT-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-DEFAULT-B02",
+      "block_name": "公共桌补话与 C407 事项优先",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act6_variant_id": "ACT6-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-DEFAULT宿舍修补线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-DEFAULT-B01",
+      "next_block": "ACT6-DEFAULT-B03",
+      "scene_range": [
+        "ACT6-DEFAULT-S05",
+        "ACT6-DEFAULT-S08"
+      ],
+      "main_location": "C407 / 打印店 / 青枫居公共桌 / B204",
+      "scene_function": "把宿舍修补和专业协作绑在一起，检查关系补话与 C407 稳定如何互相挤压。",
+      "required_completion_flags": [
+        "project_stability_checked",
+        "public_boundary",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "project_stability",
+        "public_boundary",
+        "zhou_misread",
+        "luchen_misread",
+        "dorm_warmth",
+        "repair_depth",
+        "time_debt",
+        "dorm_trust",
+        "old_debt"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-DEFAULT-S05",
+          "location": "C407 / 共享盘",
+          "text_brief": "唐骁把命名规范发来，周屿问自己是不是又只负责热闹的部分。共享盘权限变成旧账回声。",
+          "choice_hook": [
+            "按接口分工",
+            "让每人只改本人部分",
+            "先回公共桌"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "public_boundary": 1,
+            "zhou_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S06",
+          "location": "打印店 / 课程材料",
+          "text_brief": "打印店窗口要本人确认，陆沉的排班截图夹在材料里，不能被林亦舟拿去替他说。",
+          "choice_hook": [
+            "本人确认",
+            "请陆沉自己补一行",
+            "先打草稿"
+          ],
+          "updates": {
+            "proxy_risk": 1,
+            "luchen_misread": 1,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S07",
+          "location": "青枫居公共桌",
+          "text_brief": "外卖袋还在，事实表也还在。周屿不接开会这个词，唐骁只看截止时间。",
+          "choice_hook": [
+            "补一句难听话",
+            "先问今晚谁有事",
+            "把表格收起来"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "repair_depth": 1,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S08",
+          "location": "B204 / 事项群",
+          "text_brief": "学习委员催 C407 材料，4XX 群里也有人问今晚还说不说。林亦舟必须选择先补关系，还是先保事项。",
+          "choice_hook": [
+            "公共桌补话",
+            "C407 事项优先",
+            "两边都写明截止"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "old_debt": 1,
+            "dorm_trust": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-02",
+        "after_page": "ACT6-DEFAULT-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C02-A",
+            "label": "公共桌补话",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "repair_depth": 1,
+              "project_stability": -1
+            },
+            "next_block": "ACT6-DEFAULT-B03"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C02-B",
+            "label": "C407 事项优先",
+            "variable_delta": {
+              "project_stability": 1,
+              "public_boundary": 1,
+              "dorm_warmth": -1
+            },
+            "next_block": "ACT6-DEFAULT-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-DEFAULT-B03",
+      "block_name": "集体饭局与一对一短谈",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act6_variant_id": "ACT6-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-DEFAULT宿舍修补线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-DEFAULT-B02",
+      "next_block": "ACT6-DEFAULT-B04",
+      "scene_range": [
+        "ACT6-DEFAULT-S09",
+        "ACT6-DEFAULT-S12"
+      ],
+      "main_location": "食堂二楼 / 凌空栈道 / 东区商业街 / 4XX 门口",
+      "scene_function": "让饭局和短谈都保留代价，避免把坐下或单独聊两句写成自动和解。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "repair_depth",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "dorm_warmth",
+        "money_pressure",
+        "missed_chance",
+        "public_boundary",
+        "avoidance",
+        "proxy_risk",
+        "polite_distance",
+        "selected_private",
+        "time_debt",
+        "misread"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-DEFAULT-S09",
+          "location": "食堂二楼 / 饭卡余额",
+          "text_brief": "周屿提东区商业街，唐骁问能不能准点，陆沉看了一眼价格。饭局从一开始就不是简单热闹。",
+          "choice_hook": [
+            "提食堂二楼",
+            "提东北饺子馆",
+            "不组织"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "money_pressure": 1,
+            "missed_chance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S10",
+          "location": "凌空栈道 / 事项群",
+          "text_brief": "林亦舟出去透气，夏知微或许棠只提醒材料本人确认了吗。外部照面只能把边界提醒带回 4XX。",
+          "choice_hook": [
+            "先回 4XX 群",
+            "先回外部消息",
+            "不解释先走"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "avoidance": 1,
+            "repair_depth": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S11",
+          "location": "东区商业街 / 饭局投票",
+          "text_brief": "饭局投票快截止，有人没回，有人迟到。留不留座变成照顾和越界的分界线。",
+          "choice_hook": [
+            "留可取消位",
+            "不替人填",
+            "私聊最后问一次"
+          ],
+          "updates": {
+            "proxy_risk": 1,
+            "dorm_warmth": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S12",
+          "location": "4XX 门口 / 水房",
+          "text_brief": "饭局前后，某个人终于愿意单独说两句，但另一个人的消息还停在未读。",
+          "choice_hook": [
+            "集体饭局推进",
+            "一对一短谈推进",
+            "先回未读消息"
+          ],
+          "updates": {
+            "selected_private": 1,
+            "time_debt": 1,
+            "misread": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-03",
+        "after_page": "ACT6-DEFAULT-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C03-A",
+            "label": "集体饭局推进",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "time_debt": 1,
+              "proxy_risk": 1
+            },
+            "next_block": "ACT6-DEFAULT-B04"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C03-B",
+            "label": "一对一短谈推进",
+            "variable_delta": {
+              "selected_private": 1,
+              "repair_depth": 1,
+              "misread": 1
+            },
+            "next_block": "ACT6-DEFAULT-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-DEFAULT-B04",
+      "block_name": "旧账说明与现实任务",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act6_variant_id": "ACT6-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-DEFAULT宿舍修补线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-DEFAULT-B03",
+      "next_block": "ACT6-DEFAULT-B05",
+      "scene_range": [
+        "ACT6-DEFAULT-S13",
+        "ACT6-DEFAULT-S16"
+      ],
+      "main_location": "快递站 / 青枫居 / B204 / 公共桌",
+      "scene_function": "用旧包裹、清寝、毕业照缓存和共享盘，把旧账从情绪拉回本人确认和现实任务。",
+      "required_completion_flags": [
+        "clearance_boundary_checked",
+        "relationship_truth",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "proxy_risk",
+        "public_boundary",
+        "old_debt",
+        "old_object_weight",
+        "dorm_warmth",
+        "photo_boundary_checked",
+        "graduation_temperature",
+        "conflict_heat",
+        "relationship_truth",
+        "project_stability",
+        "polite_distance"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-DEFAULT-S13",
+          "location": "快递站 / 旧包裹",
+          "text_brief": "取件码像室友的，但不完全确定。快递站只认本人手机号，陆沉只回等我自己来。",
+          "choice_hook": [
+            "等本人来",
+            "代取不拆",
+            "拿回公共桌确认"
+          ],
+          "updates": {
+            "proxy_risk": 1,
+            "public_boundary": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S14",
+          "location": "青枫居清寝预检查",
+          "text_brief": "宿管让提前清公共物，桌上有谁都用过的线、杯子、旧打印页。归属不是靠记忆能决定。",
+          "choice_hook": [
+            "列归属清单",
+            "问本人",
+            "先装公共袋"
+          ],
+          "updates": {
+            "old_object_weight": 1,
+            "dorm_warmth": 1,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S15",
+          "location": "B204 / 毕业照预览",
+          "text_brief": "预览图里四人同框，但公开用途还没确认。许棠提醒缓存不是授权，周屿问会不会写得太好看。",
+          "choice_hook": [
+            "只留存不公开",
+            "发群确认",
+            "暂缓提交"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "public_boundary": 1,
+            "graduation_temperature": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S16",
+          "location": "公共桌 / 共享盘",
+          "text_brief": "旧账终于被带到具体物件上：那天谁替谁说了话，谁没有被问过，谁后来也懒得解释。",
+          "choice_hook": [
+            "说旧账",
+            "只处理现实任务",
+            "把话停在本人确认"
+          ],
+          "updates": {
+            "conflict_heat": 1,
+            "relationship_truth": 1,
+            "project_stability": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-04",
+        "after_page": "ACT6-DEFAULT-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C04-A",
+            "label": "说旧账",
+            "variable_delta": {
+              "old_debt": 1,
+              "repair_depth": 1,
+              "conflict_heat": 1
+            },
+            "next_block": "ACT6-DEFAULT-B05"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C04-B",
+            "label": "只处理现实任务",
+            "variable_delta": {
+              "project_stability": 1,
+              "polite_distance": 1,
+              "dorm_warmth": -1
+            },
+            "next_block": "ACT6-DEFAULT-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-DEFAULT-B05",
+      "block_name": "最后一句与空白毕业预结算",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act6_variant_id": "ACT6-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-DEFAULT宿舍修补线正式剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT6-DEFAULT-B04",
+      "next_event": "ACT6-END",
+      "scene_range": [
+        "ACT6-DEFAULT-S17",
+        "ACT6-DEFAULT-S20"
+      ],
+      "main_location": "教务系统 / 东北饺子馆 / 4XX 公共桌 / 校门口",
+      "scene_function": "输出第七卷读取的公共桌温度、群状态、最后饭局、联系方式、旧账和是否允许空白。",
+      "required_completion_flags": [
+        "act6_closed",
+        "act6_route_pool_locked",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "pre_register_boundary_checked",
+        "contact_info_checked",
+        "dorm_trust",
+        "last_meal_seat_confirmed",
+        "meal_boundary_checked",
+        "polite_distance",
+        "relationship_truth",
+        "repair_depth",
+        "final_group_state",
+        "graduation_temperature",
+        "material_contact_scope",
+        "ending_temperature_locked",
+        "missed_chance"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-DEFAULT-S17",
+          "location": "教务系统 / 4XX 群",
+          "text_brief": "毕业去向预登记快开始，联系方式和紧急联系人都不能由别人代填。4XX 群问到时候谁一起办。",
+          "choice_hook": [
+            "先填本人信息",
+            "先回 4XX 最低事实",
+            "两边都写真实范围"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "contact_info_checked": true,
+            "dorm_trust": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S18",
+          "location": "东北饺子馆预热 / 饭局投票",
+          "text_brief": "最后饭局投票出来，有人能到，有人迟到，有人不确定。饭局不是和解证明，只是最后一张可能坐下的桌。",
+          "choice_hook": [
+            "不替人填",
+            "留可取消位",
+            "只确认自己到场"
+          ],
+          "updates": {
+            "last_meal_seat_confirmed": true,
+            "meal_boundary_checked": true,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S19",
+          "location": "4XX 公共桌 / 清单夹",
+          "text_brief": "清寝、毕业照、C407 归档和离校手续都压到同一只夹子里。每一项都能办完，但不代表话说完。",
+          "choice_hook": [
+            "补一句具体旧事",
+            "只核对清单",
+            "把话留到群里"
+          ],
+          "updates": {
+            "relationship_truth": 1,
+            "repair_depth": 1,
+            "final_group_state": "branch_dependent"
+          }
+        },
+        {
+          "page_id": "ACT6-DEFAULT-S20",
+          "location": "校门口 / 武生院站预回声",
+          "text_brief": "站台还没到，第七卷已经靠近。四人都知道到了说一声可能有人回，也可能没人回。",
+          "choice_hook": [
+            "留下最后一句",
+            "允许空白毕业",
+            "只约定低频真实联系"
+          ],
+          "updates": {
+            "graduation_temperature": "branch_dependent",
+            "material_contact_scope": "branch_dependent",
+            "ending_temperature_locked": "branch_dependent"
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-DEFAULT-CHOICE-05",
+        "after_page": "ACT6-DEFAULT-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-DEFAULT-C05-A",
+            "label": "留下最后一句",
+            "variable_delta": {
+              "graduation_temperature": "unresolved_but_present",
+              "repair_depth": 1,
+              "dorm_trust": 1
+            },
+            "next_event": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-DEFAULT-C05-B",
+            "label": "允许空白毕业",
+            "variable_delta": {
+              "graduation_temperature": "polite_distance",
+              "polite_distance": 1,
+              "missed_chance": 1
+            },
+            "next_event": "ACT6-END"
+          }
+        ]
+      },
+      "next_block": "ACT6-END"
+    }
+  ],
   "act7_settlement_events": [
     {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E01E02E04E05早段事件剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第一章《预登记》",
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "教学楼 B204 / 4XX 群 / 公共盘",
+      "scene_function": "确认毕业后还能不能被找到，并建立可空不可代填的第七卷总边界",
+      "reads_from": [
+        "active_route_id",
+        "route_pool_id",
+        "graduation_temperature"
+      ],
+      "required_completion_flags": [
+        "pre_register_seen",
+        "contact_info_checked",
+        "pre_register_boundary_checked"
+      ],
+      "must_record": [
+        "graduation_direction_status",
+        "material_contact_scope",
+        "public_scope_template_seen"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "辅导员"
+      ],
+      "core_objects": [
+        "毕业去向预登记表",
+        "手机号",
+        "邮箱",
+        "紧急联系人",
+        "材料联系人栏",
+        "最后一个新年素材目录模板"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E01-DEFAULT-P01",
+          "beat": "B204 入场",
+          "text_brief": "B204 签到表压在讲台边，周屿手机号空着，唐骁核表，陆沉看排班，林亦舟没有被留位置。",
+          "choice_hook": [
+            "先核自己的联系方式",
+            "先问 4XX 是否一起核"
+          ],
+          "updates": {
+            "pre_register_seen": true,
+            "dorm_visibility": 1,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-DEFAULT-P02",
+          "beat": "预登记说明",
+          "text_brief": "辅导员说明手机号、邮箱、紧急联系人必须核准，去向不确定可写待定但不能空。",
+          "choice_hook": [
+            "先写待定等本人复核",
+            "先填能负责的方向"
+          ],
+          "updates": {
+            "contact_info_checked": true,
+            "graduation_direction_status": "pending_with_review",
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-DEFAULT-P03",
+          "beat": "材料联系人",
+          "text_brief": "辅导员提醒毕业材料不能靠一个人兜底，本人确认必须本人完成。",
+          "choice_hook": [
+            "写个人材料本人确认，可协助目录",
+            "材料联系人先留空"
+          ],
+          "updates": {
+            "material_contact_scope": "assist_catalog_only",
+            "pre_register_boundary_checked": true,
+            "public_boundary": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E01-DEFAULT-P04",
+          "beat": "模板钩子",
+          "text_brief": "班级群发最后一个新年素材目录模板，底部列出班级内部、学院活动、仅留存、不公开。",
+          "choice_hook": [
+            "只建目录不写故事",
+            "暂不建公共盘"
+          ],
+          "updates": {
+            "public_scope_template_seen": true,
+            "pre_register_boundary_checked": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E01-DEFAULT-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-DEFAULT-C01-A",
+            "label": "只协助目录，不代填",
+            "variable_delta": {
+              "contact_info_checked": true,
+              "pre_register_boundary_checked": true,
+              "public_boundary": 1
+            },
+            "next_hint": "后续素材目录可以协助格式，但每项仍需本人确认。"
+          },
+          {
+            "direction_id": "ACT7-E01-DEFAULT-C01-B",
+            "label": "材料联系人留空",
+            "variable_delta": {
+              "contact_info_checked": true,
+              "pre_register_boundary_checked": true,
+              "graduation_temperature": "polite_distance"
+            },
+            "next_hint": "边界更清楚，但 4XX 公共协作温度更低。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得让林亦舟继续默认做全寝材料联系人。",
+        "不得替周屿、唐骁、陆沉填写去向或联系方式。",
+        "不得把最后一个新年素材目录提前写成煽情故事。"
+      ],
+      "ending_hooks": [
+        "present_but_not_close",
+        "polite_distance",
+        "not_reconciled"
+      ]
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E01E02E04E05早段事件剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第二章《不公开》",
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "西园餐厅 / 青枫居 4XX / 公共盘 / 快递站",
+      "scene_function": "检验公开边界和材料授权，确认不公开是有效选项",
+      "reads_from": [
+        "ACT7-E01-PRE-REGISTER.public_scope_template_seen",
+        "material_contact_scope",
+        "public_boundary"
+      ],
+      "required_completion_flags": [
+        "public_scope_template_seen",
+        "public_consent_checked",
+        "public_scope_boundary_checked"
+      ],
+      "must_record": [
+        "public_scope",
+        "material_source_confirmed",
+        "theme_material_first_batch_submitted"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "许棠",
+        "晚风"
+      ],
+      "core_objects": [
+        "素材目录第一批预收版",
+        "C407 回执",
+        "润喉糖",
+        "打印店小票",
+        "过期校报",
+        "线路图书签"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E02-DEFAULT-P01",
+          "beat": "模板更新",
+          "text_brief": "第一批预收改到九点前，只收目录格式，不收正文和故事。",
+          "choice_hook": [
+            "放空模板",
+            "先放一件样例"
+          ],
+          "updates": {
+            "public_scope_template_seen": true,
+            "material_source_confirmed": true
+          }
+        },
+        {
+          "page_id": "ACT7-E02-DEFAULT-P02",
+          "beat": "占位不写名",
+          "text_brief": "林亦舟把唐骁、周屿、陆沉的名字删掉，改成个人材料一至四，避免催每个人交东西。",
+          "choice_hook": [
+            "保留灰色占位",
+            "按名字分行"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E02-DEFAULT-P03",
+          "beat": "本人确认",
+          "text_brief": "唐骁提交 C407 回执，周屿提交润喉糖，陆沉提交打印店小票，林亦舟自己的线路图书签不归班级材料管。",
+          "choice_hook": [
+            "每人自己写公开范围",
+            "林亦舟统一整理"
+          ],
+          "updates": {
+            "public_consent_checked": true,
+            "material_source_confirmed": true,
+            "public_scope": "not_public"
+          }
+        },
+        {
+          "page_id": "ACT7-E02-DEFAULT-P04",
+          "beat": "不公开有效",
+          "text_brief": "辅导员确认不公开是有效选项，不影响毕业活动参与；公共桌上四件物都不够漂亮，却像 4XX。",
+          "choice_hook": [
+            "提交4XX不公开目录",
+            "只提交空模板"
+          ],
+          "updates": {
+            "theme_material_first_batch_submitted": true,
+            "public_scope_boundary_checked": true,
+            "public_boundary": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E02-DEFAULT-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-DEFAULT-C01-A",
+            "label": "每人自己确认不公开",
+            "variable_delta": {
+              "material_source_confirmed": true,
+              "public_consent_checked": true,
+              "public_scope_boundary_checked": true
+            },
+            "next_hint": "最后一个新年可承接不公开目录和旧物核验。"
+          },
+          {
+            "direction_id": "ACT7-E02-DEFAULT-C01-B",
+            "label": "先交空模板",
+            "variable_delta": {
+              "theme_material_first_batch_submitted": true,
+              "public_boundary": 1,
+              "graduation_temperature": "polite_distance"
+            },
+            "next_hint": "公开风险降低，但开题前的空白压力更重。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把不公开写成拒绝配合或心虚。",
+        "不得把线路图书签、晚风私人物件或其它私域内容塞进班级材料。",
+        "不得默认沉默等于同意公开。"
+      ],
+      "ending_hooks": [
+        "present_but_not_close",
+        "polite_distance",
+        "not_reconciled"
+      ]
+    },
+    {
       "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "act7_variant_id": "ACT7-DEFAULT",
@@ -1654,7 +3493,294 @@
       ]
     },
     {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "开题 / 毕业设计方向",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E01E02E04E05早段事件剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第四章《开题》",
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 门口 / B204 第二轮复核会 / 打印店",
+      "scene_function": "确认毕业设计方向、导师组意向和本人签字边界",
+      "reads_from": [
+        "ACT7-E03-LAST-NEW-YEAR.public_scope",
+        "ACT7-E03-LAST-NEW-YEAR.opening_contrast_seen",
+        "graduation_direction_status",
+        "project_stability",
+        "proxy_risk"
+      ],
+      "required_completion_flags": [
+        "thesis_topic_form_seen",
+        "topic_self_signed",
+        "topic_boundary_checked"
+      ],
+      "must_record": [
+        "advisor_group_checked",
+        "topic_status",
+        "topic_review_time"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "陈老师",
+        "辅导员"
+      ],
+      "core_objects": [
+        "导师组名单",
+        "去向预登记表",
+        "毕业设计方向初表",
+        "导师组意向确认表",
+        "打印店回执",
+        "陈老师邮件回执"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E04-DEFAULT-P01",
+          "beat": "导师组名单",
+          "text_brief": "C407 门口贴出导师组名单，唐骁顺便问了陈老师组名额，林亦舟要求下次先问自己。",
+          "choice_hook": [
+            "自己问导师组留4XX边界",
+            "接受唐骁顺便问到的信息"
+          ],
+          "updates": {
+            "advisor_group_checked": true,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-DEFAULT-P02",
+          "beat": "三张表",
+          "text_brief": "B204 复核会发下去向预登记、毕业设计方向初表、导师组意向确认三张表。",
+          "choice_hook": [
+            "填待定并签名",
+            "先选陈老师组"
+          ],
+          "updates": {
+            "thesis_topic_form_seen": true,
+            "topic_status": "pending_with_reason",
+            "topic_self_signed": true
+          }
+        },
+        {
+          "page_id": "ACT7-E04-DEFAULT-P03",
+          "beat": "四人分流",
+          "text_brief": "唐骁填算法应用，周屿填校园活动信息展示与素材管理，陆沉划掉图书馆勤工，林亦舟填待定。",
+          "choice_hook": [
+            "只签自己的表不代签",
+            "帮别人看方向"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E04-DEFAULT-P04",
+          "beat": "邮件回执",
+          "text_brief": "林亦舟给陈老师发申请本周二次确认邮件，陈老师回复周三 C407，先说自己的方向。",
+          "choice_hook": [
+            "保存自己的邮件回执",
+            "发进 4XX 群请大家看"
+          ],
+          "updates": {
+            "topic_review_time": "周三 C407",
+            "topic_self_signed": true,
+            "dorm_visibility": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E04-DEFAULT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-DEFAULT-C01-A",
+            "label": "填待定并本人签字",
+            "variable_delta": {
+              "thesis_topic_form_seen": true,
+              "topic_self_signed": true,
+              "topic_boundary_checked": true,
+              "topic_status": "pending_with_reason"
+            },
+            "next_hint": "三四月的窗口压力会继续压向复核和本人确认。"
+          },
+          {
+            "direction_id": "ACT7-E04-DEFAULT-C01-B",
+            "label": "先选陈老师组再复核",
+            "variable_delta": {
+              "thesis_topic_form_seen": true,
+              "topic_self_signed": true,
+              "advisor_group_checked": true,
+              "project_stability": 1
+            },
+            "next_hint": "方向先稳住，但代理风险仍要在后续窗口被清掉。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不允许唐骁替林亦舟选方向。",
+        "不允许把陆沉勤工、周屿主持或 4XX 旧事直接写成毕业设计本身。",
+        "不允许把开题写成同寝团建；该同框时同框，该分开签时分开签。"
+      ],
+      "ending_hooks": [
+        "project_stability",
+        "proxy_risk",
+        "polite_distance"
+      ]
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月毕业事项排队",
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "act7_variant_id": "ACT7-DEFAULT",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-E01E02E04E05早段事件剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "mother_chapter": "第五章《三四月》",
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "B204 / 明德楼学工窗口 / C407 / 西园餐厅 / 图书馆",
+      "scene_function": "把方向分流推进成时间分流，并为毕业照、改稿和答辩建立现实压力",
+      "reads_from": [
+        "ACT7-E04-THESIS-TOPIC.topic_status",
+        "ACT7-E04-THESIS-TOPIC.topic_boundary_checked",
+        "project_stability",
+        "proxy_risk",
+        "time_debt"
+      ],
+      "required_completion_flags": [
+        "march_queue_seen",
+        "grad_photo_info_seen",
+        "march_boundary_checked"
+      ],
+      "must_record": [
+        "internship_proof_checked",
+        "exam_or_certificate_checked",
+        "absence_no_makeup_seen"
+      ],
+      "participants": [
+        "林亦舟",
+        "唐骁",
+        "周屿",
+        "陆沉",
+        "沈嘉禾",
+        "陈老师"
+      ],
+      "core_objects": [
+        "三四月毕业事项预排",
+        "实习证明复印件",
+        "复试材料",
+        "证书核验单",
+        "开题红批",
+        "毕业照信息采集表"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT7-E05-DEFAULT-P01",
+          "beat": "事项预排",
+          "text_brief": "B204 门口贴出三四月毕业事项预排，实习证明、复试、证书核验和毕业照信息采集同时压来。",
+          "choice_hook": [
+            "先处理自己的待复核",
+            "帮唐骁拿实习证明复印件"
+          ],
+          "updates": {
+            "march_queue_seen": true,
+            "internship_proof_checked": true,
+            "time_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-DEFAULT-P02",
+          "beat": "窗口挤压",
+          "text_brief": "明德楼窗口排队，唐骁企业章发灰，沈嘉禾复试可能错过第一批，陆沉和周屿证书核验撞时间。",
+          "choice_hook": [
+            "只转达4XX窗口规则",
+            "帮忙跑现场问补扫"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "exam_or_certificate_checked": true,
+            "proxy_risk": 1
+          }
+        },
+        {
+          "page_id": "ACT7-E05-DEFAULT-P03",
+          "beat": "开题红批前置",
+          "text_brief": "陈老师在 C407 点出后续补充问题，要求十点前发修改版，不能让室友替写说明。",
+          "choice_hook": [
+            "自己改数据来源",
+            "先问 4XX 是否能看"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "thesis_revision_helper": "self_first"
+          }
+        },
+        {
+          "page_id": "ACT7-E05-DEFAULT-P04",
+          "beat": "缺席不补拍",
+          "text_brief": "毕业照信息采集周五截止，寝室合照自愿提交，缺席不补拍，陆沉最后五分钟赶到。",
+          "choice_hook": [
+            "寝室合照待本人确认",
+            "先空着不交"
+          ],
+          "updates": {
+            "grad_photo_info_seen": true,
+            "absence_no_makeup_seen": true,
+            "public_boundary": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-DEFAULT-CHOICE-01",
+        "after_page": "ACT7-E05-DEFAULT-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-DEFAULT-C01-A",
+            "label": "只转达规则，不代办",
+            "variable_delta": {
+              "march_queue_seen": true,
+              "march_boundary_checked": true,
+              "project_stability": 1
+            },
+            "next_hint": "改稿压力保留在本人手里，E06 可直接承接版本责任。"
+          },
+          {
+            "direction_id": "ACT7-E05-DEFAULT-C01-B",
+            "label": "现场协助但要求本人确认",
+            "variable_delta": {
+              "march_queue_seen": true,
+              "march_boundary_checked": true,
+              "dorm_trust": 1,
+              "time_debt": 1
+            },
+            "next_hint": "信任上升，但时间债会在十点前改稿里继续回收。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不允许用“正好在”把林亦舟写回代办点。",
+        "不允许把毕业照信息采集提前写成和解照片。",
+        "不允许跳过“三四月半小时很贵”的时间债。"
+      ],
+      "ending_hooks": [
+        "time_debt",
+        "project_stability",
+        "thesis_revision_helper"
+      ]
+    },
+    {
       "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "改论文 / 改毕业设计",
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "act7_variant_id": "ACT7-DEFAULT",
@@ -1796,6 +3922,7 @@
     },
     {
       "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩 / 答辩以后",
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "act7_variant_id": "ACT7-DEFAULT",
@@ -1938,6 +4065,7 @@
     },
     {
       "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照 / 影像授权",
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "act7_variant_id": "ACT7-DEFAULT",
@@ -2001,7 +4129,7 @@
           "beat": "错过第三组",
           "text_brief": "唐骁线上面试延迟，周屿主持彩排点名，陆沉图书馆交接，林亦舟 C407 二次确认，第三组缺一人。",
           "choice_hook": [
-            "接受缺席不补",
+            "接受4XX缺席不补",
             "等最后一张补拍"
           ],
           "updates": {
@@ -2083,6 +4211,7 @@
     },
     {
       "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝 / 旧物处理",
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "act7_variant_id": "ACT7-DEFAULT",
@@ -2221,6 +4350,7 @@
     },
     {
       "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "act7_variant_id": "ACT7-DEFAULT",
@@ -2360,6 +4490,7 @@
     },
     {
       "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续 / 证书 / 档案",
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "act7_variant_id": "ACT7-DEFAULT",
@@ -2500,6 +4631,7 @@
     },
     {
       "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站 / 毕业后消息",
       "route_id": "DEFAULT-4XX",
       "route_pool_id": "POOL-DEFAULT-4XX",
       "act7_variant_id": "ACT7-DEFAULT",
@@ -2644,19 +4776,60 @@
       ]
     }
   ],
+  "ending_candidates": [
+    {
+      "ending_id": "DEFAULT-END-SAY-CLEAR",
+      "condition_hint": "say_clear >= 4, repair_depth >= 4, dorm_warmth >= 3",
+      "text_landing": "旧账没有被抹平，但该说的几件事都落到本人确认；4XX 保留低频真实联系。"
+    },
+    {
+      "ending_id": "DEFAULT-END-PRESENT-NOT-CLOSE",
+      "condition_hint": "final_group_state = not_disbanded, dorm_warmth >= 2, old_debt_visible = true",
+      "text_landing": "群没有解散，人仍在场，但关系不再默认亲近；毕业温度停在可联系但不圆满。"
+    },
+    {
+      "ending_id": "DEFAULT-END-POLITE-DISTANCE",
+      "condition_hint": "polite_distance >= 4, repair_depth <= 2",
+      "text_landing": "流程、饭局和站口都体面完成，旧账却没有真正进入下一句。"
+    },
+    {
+      "ending_id": "DEFAULT-END-NOT-RECONCILED",
+      "condition_hint": "not_reconciled = true or old_debt >= 5",
+      "text_landing": "他们没有翻脸，也没有和解；毕业把关系推成礼貌空白。"
+    },
+    {
+      "ending_id": "DEFAULT-END-LOW-FREQUENCY",
+      "condition_hint": "final_group_state = low_frequency, station_boundary_checked = true",
+      "text_landing": "4XX 以后还会偶尔在群里确认事项，但不再共享每天的生活。"
+    }
+  ],
   "validation_targets": {
     "json_must_parse": true,
+    "p0d_full_page_json_status": "full_page_json_ready",
+    "p0d_entry_node_count": 6,
+    "p0d_entry_page_count": 24,
+    "p0d_entry_choice_window_count": 6,
+    "p0d_entry_direction_count": 20,
     "return_point_count": 8,
+    "act6_full_page_json_status": "full_page_json_ready",
     "act6_block_count": 5,
+    "act6_detail_block_count": 5,
+    "act6_page_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_direction_count": 10,
     "act6_scene_total": 20,
     "act6_directions_per_window": 2,
     "minimum_directions_per_return_point": 3,
     "required_entry_choice_echo_hook": true,
-    "act7_core_event_count": 8,
+    "act7_core_event_count": 12,
     "act7_required_event_count": 12,
     "act7_route_switch_allowed": false,
     "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
       "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
       "ACT7-E06-THESIS-REVISION",
       "ACT7-E07-DEFENSE",
       "ACT7-E08-GRAD-PHOTO",
@@ -2666,7 +4839,19 @@
       "ACT7-E12-STATION-AFTER"
     ],
     "act7_required_completion_flags": [
+      "pre_register_seen",
+      "contact_info_checked",
+      "pre_register_boundary_checked",
+      "public_scope_template_seen",
+      "public_consent_checked",
+      "public_scope_boundary_checked",
       "opening_contrast_seen",
+      "thesis_topic_form_seen",
+      "topic_self_signed",
+      "topic_boundary_checked",
+      "march_queue_seen",
+      "grad_photo_info_seen",
+      "march_boundary_checked",
       "thesis_boundary_checked",
       "defense_boundary_checked",
       "photo_boundary_checked",

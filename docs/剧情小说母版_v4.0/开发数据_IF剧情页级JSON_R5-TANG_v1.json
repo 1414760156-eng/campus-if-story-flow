@@ -1,0 +1,2430 @@
+{
+  "schema_version": "if_route_json_v1",
+  "generated_at": "2026-05-21",
+  "route_id": "R5-TANG",
+  "route_name": "唐骁线",
+  "route_pool_id": "POOL-R5-TANG",
+  "route_level": "A",
+  "purpose": "把 R5-TANG 唐骁线的第六卷定形层与第七卷毕业结算接入正式剧情页级 JSON，覆盖 ACT6-TANG 20 个剧情页和 ACT7-TANG 12 个同母事件变体；P0-D 入口继续共用 DEFAULT-4XX 数据源。",
+  "source_docs": [
+    "开发长线_IF可玩支线R5-TANG唐骁线.md",
+    "开发细稿_IF第六卷ACT6-TANG唐骁线正式剧情页.md",
+    "开发规则_IF第五第六卷玩法节奏硬约束.md",
+    "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
+    "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+    "开发数据_IF剧情页级JSON_R5-ZHOU_v1.json",
+    "开发样板_IF剧情页级JSON拆分样板_v1.json"
+  ],
+  "route_state": {
+    "canon_line": "MOTHER-V4",
+    "shared_until": "act2_end",
+    "branch_mode": "butterfly_outflow",
+    "route_pool_id": "POOL-R5-TANG",
+    "route_focus": "tang",
+    "outflow_permission_class": "main_axis",
+    "pool_entry_choice": "P0D_STAND_WITH_TANG",
+    "active_route_id": "R5-TANG",
+    "primary_bond": "tang",
+    "route_lock": "R5-TANG",
+    "route_switch_allowed": false,
+    "closed_route_ids": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-LUCHEN",
+      "R5-LIEFLAT",
+      "R5-ROMANCE",
+      "R5-WANFENG",
+      "R4-WORK",
+      "R3-PERFECT",
+      "A3-ACTIVITY-PUBLIC",
+      "R5X-HARD"
+    ],
+    "soft_echo_routes": [
+      "DEFAULT-4XX",
+      "R5-ZHOU",
+      "R5-LUCHEN",
+      "R5-LIEFLAT"
+    ],
+    "act7_variant_id": "ACT7-TANG",
+    "act7_required_event_count": 12,
+    "act7_core_events_json_started": true,
+    "act7_core_events_in_json": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_temperature_candidates": [
+      "TANG-END-COLLAB",
+      "TANG-END-NONFUNCTIONAL",
+      "TANG-END-POLITE",
+      "TANG-END-LOWTEMP",
+      "TANG-END-NOCHAT"
+    ],
+    "act6_scene_count": 20,
+    "act6_block_count": 5,
+    "act6_scenes_per_block": 4,
+    "act6_choice_window_count": 5,
+    "act6_directions_per_window": 2,
+    "act6_route_pool_locked": true,
+    "act6_full_page_json_status": "full_page_json_ready"
+  },
+  "local_variables": [
+    "advisor_group_checked",
+    "certificate_or_archive_seen",
+    "clearance_boundary_checked",
+    "continue_contact",
+    "defense_boundary_checked",
+    "defense_message_echo",
+    "defense_order_seen",
+    "dorm_item_confirmed_by_self",
+    "dorm_warmth",
+    "emotion_delay",
+    "ending_temperature_locked",
+    "fairness_cost",
+    "final_group_state",
+    "grad_photo_info_seen",
+    "graduation_direction_status",
+    "graduation_temperature",
+    "leaving_boundary_checked",
+    "luchen_proxy_risk",
+    "march_boundary_checked",
+    "march_queue_seen",
+    "meal_attendance_locked",
+    "meal_boundary_checked",
+    "old_debt",
+    "opening_contrast_seen",
+    "photo_boundary_checked",
+    "photo_self_confirmed",
+    "polite_distance",
+    "pre_register_boundary_checked",
+    "project_stability",
+    "proxy_risk",
+    "public_boundary",
+    "public_consent_checked",
+    "public_scope",
+    "public_scope_boundary_checked",
+    "public_smooth",
+    "repair_depth",
+    "responsibility_clarity",
+    "revision_submitted_before_deadline",
+    "rule_pressure",
+    "say_clear",
+    "shared_item_owner_checked",
+    "station_boundary_checked",
+    "story_consent",
+    "tang_archive_scope",
+    "tang_contact_scope_checked",
+    "tang_final_contact_scope",
+    "tang_nonfunctional_line_seen",
+    "tang_trust",
+    "thesis_boundary_checked",
+    "thesis_revision_version",
+    "thesis_topic_form_seen",
+    "time_debt",
+    "topic_boundary_checked",
+    "topic_review_time",
+    "topic_self_signed",
+    "topic_status",
+    "zhou_misread",
+    "money_pressure",
+    "route_pool_locked",
+    "act6_closed",
+    "act6_route_pool_locked",
+    "act6_to_act7_handoff_ready"
+  ],
+  "entry_node": {
+    "node_id": "D_00_SHORT_GROUP",
+    "entry_choice": "P0D_STAND_WITH_TANG",
+    "route_lock_after_entry": "POOL-R5-TANG",
+    "route_switch_allowed_after_entry": false
+  },
+  "return_points": [
+    "RET-TANG-01",
+    "RET-TANG-02",
+    "RET-TANG-03",
+    "RET-TANG-04",
+    "RET-TANG-05",
+    "RET-TANG-06"
+  ],
+  "act6_blocks": [
+    {
+      "block_id": "ACT6-TANG-B01",
+      "scene_range": [
+        "ACT6-TANG-S01",
+        "ACT6-TANG-S04"
+      ],
+      "choice_window_id": "ACT6-TANG-CHOICE-01",
+      "allowed_directions": [
+        "流程稳定优先",
+        "情绪解释优先"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-TANG-B02",
+      "scene_range": [
+        "ACT6-TANG-S05",
+        "ACT6-TANG-S08"
+      ],
+      "choice_window_id": "ACT6-TANG-CHOICE-02",
+      "allowed_directions": [
+        "收紧代填权限",
+        "当面说明边界"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-TANG-B03",
+      "scene_range": [
+        "ACT6-TANG-S09",
+        "ACT6-TANG-S12"
+      ],
+      "choice_window_id": "ACT6-TANG-CHOICE-03",
+      "allowed_directions": [
+        "项目截止优先",
+        "宿舍补话优先"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-TANG-B04",
+      "scene_range": [
+        "ACT6-TANG-S13",
+        "ACT6-TANG-S16"
+      ],
+      "choice_window_id": "ACT6-TANG-CHOICE-04",
+      "allowed_directions": [
+        "解释周屿误读",
+        "暂缓解释保提交进度"
+      ],
+      "conversion_status": "full_page_json_ready"
+    },
+    {
+      "block_id": "ACT6-TANG-B05",
+      "scene_range": [
+        "ACT6-TANG-S17",
+        "ACT6-TANG-S20"
+      ],
+      "choice_window_id": "ACT6-TANG-CHOICE-05",
+      "allowed_directions": [
+        "毕业后低频协作",
+        "体面断开"
+      ],
+      "conversion_status": "full_page_json_ready"
+    }
+  ],
+  "act6_detail_blocks": [
+    {
+      "block_id": "ACT6-TANG-B01",
+      "block_name": "流程稳定与情绪解释",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act6_variant_id": "ACT6-TANG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-TANG唐骁线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-TANG-B02",
+      "scene_range": [
+        "ACT6-TANG-S01",
+        "ACT6-TANG-S04"
+      ],
+      "main_location": "4XX 事项群 / C407 / 共享文档 / 公共桌",
+      "scene_function": "建立项目更稳、关系更低温的唐骁线第六幕代价。",
+      "required_completion_flags": [
+        "route_pool_locked",
+        "project_stability",
+        "responsibility_clarity"
+      ],
+      "must_record": [
+        "responsibility_clarity",
+        "rule_pressure",
+        "zhou_misread",
+        "project_stability",
+        "public_boundary",
+        "luchen_proxy_risk",
+        "emotion_delay",
+        "dorm_warmth",
+        "tang_trust",
+        "repair_depth"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-TANG-S01",
+          "location": "4XX 事项群 / 公共桌",
+          "text_brief": "唐骁把第五幕后遗留事项整理成时间线，只写事实、缺口和本人确认栏。周屿回了一个玩笑表情，陆沉只回看到了。",
+          "choice_hook": [
+            "先核事实",
+            "先删定罪感",
+            "先问每人能否写入"
+          ],
+          "updates": {
+            "responsibility_clarity": 1,
+            "rule_pressure": 1,
+            "zhou_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S02",
+          "location": "C407 / 共享文档",
+          "text_brief": "C407 初版有两个版本号。唐骁把林亦舟拉进权限列表，提醒他先别补情绪判断。",
+          "choice_hook": [
+            "锁版本",
+            "保留编辑记录",
+            "给每人只看自己部分"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "public_boundary": 1,
+            "luchen_proxy_risk": -1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S03",
+          "location": "青枫居楼道 / 事项群",
+          "text_brief": "周屿说你俩又开会，唐骁没接。林亦舟看见这句话不是玩笑，是站队后的第一层误读。",
+          "choice_hook": [
+            "私聊周屿一句",
+            "先稳清单",
+            "约晚点当面说"
+          ],
+          "updates": {
+            "zhou_misread": 1,
+            "emotion_delay": 1,
+            "dorm_warmth": -1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S04",
+          "location": "C407 门口 / 公共桌回声",
+          "text_brief": "清单能让事情继续推进，但公共桌更安静。林亦舟必须决定第六幕开局先保流程稳定，还是先把情绪解释拉回现场。",
+          "choice_hook": [
+            "流程稳定优先",
+            "情绪解释优先",
+            "只写最低事实"
+          ],
+          "updates": {
+            "tang_trust": 1,
+            "project_stability": 1,
+            "repair_depth": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-TANG-CHOICE-01",
+        "after_page": "ACT6-TANG-S04",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-TANG-C01-A",
+            "label": "流程稳定优先",
+            "variable_delta": {
+              "project_stability": 2,
+              "tang_trust": 1,
+              "emotion_delay": 1
+            },
+            "next_block": "ACT6-TANG-B02"
+          },
+          {
+            "direction_id": "ACT6-TANG-C01-B",
+            "label": "情绪解释优先",
+            "variable_delta": {
+              "repair_depth": 1,
+              "rule_pressure": -1,
+              "project_stability": -1
+            },
+            "next_block": "ACT6-TANG-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-TANG-B02",
+      "block_name": "代填权限与当面边界",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act6_variant_id": "ACT6-TANG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-TANG唐骁线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-TANG-B03",
+      "scene_range": [
+        "ACT6-TANG-S05",
+        "ACT6-TANG-S08"
+      ],
+      "main_location": "共享文档 / 图书馆西侧回声 / 打印店 / 4XX 公共桌",
+      "scene_function": "让流程稳定转成代填权限和当面说明边界的压力。",
+      "required_completion_flags": [
+        "public_boundary",
+        "luchen_proxy_risk",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "responsibility_clarity",
+        "luchen_proxy_risk",
+        "rule_pressure",
+        "public_boundary",
+        "time_debt",
+        "project_stability",
+        "money_pressure",
+        "fairness_cost",
+        "repair_depth",
+        "dorm_warmth"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-TANG-S05",
+          "location": "共享文档 / 贡献说明",
+          "text_brief": "贡献说明表要求每人补一句原因。唐骁不许任何人替写，连语气都不想帮别人润。",
+          "choice_hook": [
+            "每人自填",
+            "只写事实",
+            "唐骁统一格式"
+          ],
+          "updates": {
+            "responsibility_clarity": 1,
+            "luchen_proxy_risk": -1,
+            "rule_pressure": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S06",
+          "location": "图书馆西侧回声 / 事项群",
+          "text_brief": "陆沉发来一行我那栏不要补原因。唐骁想直接留空，林亦舟知道留空也会被解读。",
+          "choice_hook": [
+            "留空并注明本人确认",
+            "私聊陆沉再问",
+            "先交后补"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "time_debt": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S07",
+          "location": "打印店 / 食堂侧门",
+          "text_brief": "纸质版要签字。唐骁多打了一份空白确认页，嘴上说防错，实际是不想有人临时被代签。",
+          "choice_hook": [
+            "多打备份",
+            "只打必需页",
+            "电子留痕"
+          ],
+          "updates": {
+            "money_pressure": 1,
+            "project_stability": 1,
+            "fairness_cost": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S08",
+          "location": "青枫居 4XX / 公共桌",
+          "text_brief": "周屿看见不得代填笑说像处分，唐骁脸色变硬。林亦舟必须决定继续收紧代填权限，还是让唐骁当面说明边界。",
+          "choice_hook": [
+            "收紧代填权限",
+            "当面说明边界",
+            "只改措辞"
+          ],
+          "updates": {
+            "rule_pressure": 1,
+            "repair_depth": 1,
+            "zhou_misread": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-TANG-CHOICE-02",
+        "after_page": "ACT6-TANG-S08",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-TANG-C02-A",
+            "label": "收紧代填权限",
+            "variable_delta": {
+              "public_boundary": 2,
+              "luchen_proxy_risk": -1,
+              "rule_pressure": 1
+            },
+            "next_block": "ACT6-TANG-B03"
+          },
+          {
+            "direction_id": "ACT6-TANG-C02-B",
+            "label": "当面说明边界",
+            "variable_delta": {
+              "repair_depth": 1,
+              "dorm_warmth": 1,
+              "time_debt": 1
+            },
+            "next_block": "ACT6-TANG-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-TANG-B03",
+      "block_name": "项目截止与宿舍补话",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act6_variant_id": "ACT6-TANG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-TANG唐骁线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-TANG-B04",
+      "scene_range": [
+        "ACT6-TANG-S09",
+        "ACT6-TANG-S12"
+      ],
+      "main_location": "C407 / 阳光书屋 / 4XX 公共桌 / 打印店外",
+      "scene_function": "让 C407 截止和 4XX 旧账相撞，结算流程优先的情绪代价。",
+      "required_completion_flags": [
+        "project_stability",
+        "repair_depth",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "responsibility_clarity",
+        "rule_pressure",
+        "project_stability",
+        "public_boundary",
+        "old_debt",
+        "dorm_warmth",
+        "emotion_delay",
+        "time_debt",
+        "fairness_cost",
+        "repair_depth"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-TANG-S09",
+          "location": "C407 / 评分细则",
+          "text_brief": "评分细则新增贡献说明，唐骁想按最低责任列。林亦舟知道这比排名温和，但仍会留下谁做得少的影子。",
+          "choice_hook": [
+            "按最低责任列",
+            "每人自填",
+            "暂不发群"
+          ],
+          "updates": {
+            "responsibility_clarity": 1,
+            "rule_pressure": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S10",
+          "location": "阳光书屋 / 格式照面",
+          "text_brief": "沈嘉禾只帮看引用格式，提醒别把我写成审核人。唐骁点头，把外部协助单独标注。",
+          "choice_hook": [
+            "只留格式批注",
+            "群里感谢来源",
+            "删除外部痕迹"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "responsibility_clarity": 1,
+            "old_debt": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S11",
+          "location": "4XX 公共桌",
+          "text_brief": "周屿和陆沉都在，但没人主动开口。唐骁把文件夹放在桌上，说十点半前得定。",
+          "choice_hook": [
+            "先谈旧账",
+            "先核文件",
+            "发约时间"
+          ],
+          "updates": {
+            "dorm_warmth": 1,
+            "emotion_delay": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S12",
+          "location": "打印店外 / C407 提醒",
+          "text_brief": "老师催最终版，周屿在群里回你们定吧。林亦舟必须决定项目截止优先，还是宿舍补话优先。",
+          "choice_hook": [
+            "项目截止优先",
+            "宿舍补话优先",
+            "拆成十分钟"
+          ],
+          "updates": {
+            "time_debt": 1,
+            "fairness_cost": 1,
+            "repair_depth": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-TANG-CHOICE-03",
+        "after_page": "ACT6-TANG-S12",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-TANG-C03-A",
+            "label": "项目截止优先",
+            "variable_delta": {
+              "project_stability": 2,
+              "emotion_delay": 1,
+              "dorm_warmth": -1
+            },
+            "next_block": "ACT6-TANG-B04"
+          },
+          {
+            "direction_id": "ACT6-TANG-C03-B",
+            "label": "宿舍补话优先",
+            "variable_delta": {
+              "repair_depth": 1,
+              "dorm_warmth": 1,
+              "project_stability": -1
+            },
+            "next_block": "ACT6-TANG-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-TANG-B04",
+      "block_name": "周屿误读与提交进度",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act6_variant_id": "ACT6-TANG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-TANG唐骁线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-TANG-B05",
+      "scene_range": [
+        "ACT6-TANG-S13",
+        "ACT6-TANG-S16"
+      ],
+      "main_location": "B206 门口 / C407 / 楼道 / 提交按钮前",
+      "scene_function": "处理未选择者误读，决定是否用提交进度继续延后解释。",
+      "required_completion_flags": [
+        "zhou_misread",
+        "project_stability",
+        "route_pool_locked"
+      ],
+      "must_record": [
+        "zhou_misread",
+        "public_boundary",
+        "project_stability",
+        "luchen_proxy_risk",
+        "rule_pressure",
+        "repair_depth",
+        "time_debt",
+        "emotion_delay"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-TANG-S13",
+          "location": "B206 门口 / 活动群",
+          "text_brief": "周屿活动设备撞期，秦越找人帮忙。唐骁只问最终版谁核，周屿说你们表里写清楚不就行。",
+          "choice_hook": [
+            "回周屿一句",
+            "让秦越走正式流程",
+            "先核最终版"
+          ],
+          "updates": {
+            "zhou_misread": 1,
+            "public_boundary": 1,
+            "project_stability": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S14",
+          "location": "C407 / 只读权限页",
+          "text_brief": "唐骁建议锁只读权限，每个人保留自己的提交记录。陆沉接受，周屿沉默。",
+          "choice_hook": [
+            "锁只读",
+            "独立编辑留痕",
+            "先问老师范围"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "luchen_proxy_risk": -1,
+            "rule_pressure": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S15",
+          "location": "楼道 / 公共桌外",
+          "text_brief": "周屿堵在门口，问林亦舟是不是以后都按他那张表算。这句话难听，但具体。",
+          "choice_hook": [
+            "当面解释",
+            "说提交后再聊",
+            "不解释先走"
+          ],
+          "updates": {
+            "repair_depth": 1,
+            "time_debt": 1,
+            "zhou_misread": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S16",
+          "location": "C407 / 提交按钮前",
+          "text_brief": "提交倒计时只剩几分钟。林亦舟必须决定解释周屿误读，还是暂缓解释保提交进度。",
+          "choice_hook": [
+            "解释周屿误读",
+            "暂缓解释保提交进度",
+            "只写最低说明"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "emotion_delay": 1,
+            "public_boundary": 1
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-TANG-CHOICE-04",
+        "after_page": "ACT6-TANG-S16",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-TANG-C04-A",
+            "label": "解释周屿误读",
+            "variable_delta": {
+              "zhou_misread": -1,
+              "repair_depth": 1,
+              "project_stability": -1
+            },
+            "next_block": "ACT6-TANG-B05"
+          },
+          {
+            "direction_id": "ACT6-TANG-C04-B",
+            "label": "暂缓解释保提交进度",
+            "variable_delta": {
+              "project_stability": 2,
+              "emotion_delay": 1,
+              "zhou_misread": 1
+            },
+            "next_block": "ACT6-TANG-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT6-TANG-B05",
+      "block_name": "低频协作与体面断开预结算",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act6_variant_id": "ACT6-TANG",
+      "source_detail_doc": "开发细稿_IF第六卷ACT6-TANG唐骁线正式剧情页.md",
+      "route_switch_allowed": false,
+      "next_block": "ACT6-END",
+      "scene_range": [
+        "ACT6-TANG-S17",
+        "ACT6-TANG-S20"
+      ],
+      "main_location": "C407 / 东区商业街 / 打印店 / 武生院站预回声",
+      "scene_function": "输出第七卷读取的流程合作、非功利表达、饭局边界和唐骁最终联系范围。",
+      "required_completion_flags": [
+        "act6_closed",
+        "act6_route_pool_locked",
+        "act6_to_act7_handoff_ready"
+      ],
+      "must_record": [
+        "project_stability",
+        "public_boundary",
+        "responsibility_clarity",
+        "meal_boundary_checked",
+        "fairness_cost",
+        "dorm_warmth",
+        "tang_nonfunctional_line_seen",
+        "tang_trust",
+        "polite_distance",
+        "tang_final_contact_scope",
+        "graduation_temperature",
+        "ending_temperature_locked"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT6-TANG-S17",
+          "location": "C407 / 归档文件夹",
+          "text_brief": "归档接收人、只读范围和停止条件要最后确认。唐骁把不要代管私人材料写进备注。",
+          "choice_hook": [
+            "锁只读权限",
+            "每人独立留痕",
+            "问老师公开范围"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "public_boundary": 1,
+            "responsibility_clarity": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S18",
+          "location": "东区商业街 / 最后饭局预热",
+          "text_brief": "饭局人数截止，唐骁按人数锁座，不替迟到的人占确定位置。林亦舟看见这和第五幕一样硬，却少了定罪感。",
+          "choice_hook": [
+            "按人数锁座",
+            "留可取消空位",
+            "只确认自己到场"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "fairness_cost": 1,
+            "dorm_warmth": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S19",
+          "location": "打印店 / 离校手续清单",
+          "text_brief": "唐骁顺手多打了一张离校流程表，递给林亦舟时说别漏证书复印件。这句话不是流程必须。",
+          "choice_hook": [
+            "只说谢谢",
+            "问为什么多打一张",
+            "收下但不让他代管"
+          ],
+          "updates": {
+            "tang_nonfunctional_line_seen": true,
+            "tang_trust": 1,
+            "polite_distance": 1
+          }
+        },
+        {
+          "page_id": "ACT6-TANG-S20",
+          "location": "武生院站预回声 / 4XX 群",
+          "text_brief": "第七卷还没开始，4XX 群已经像最后的事项群。唐骁说以后材料问题可以发他，停了一下，又补不是材料也行。",
+          "choice_hook": [
+            "毕业后低频协作",
+            "体面断开",
+            "只说有事再发"
+          ],
+          "updates": {
+            "tang_final_contact_scope": "branch_dependent",
+            "graduation_temperature": "branch_dependent",
+            "ending_temperature_locked": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT6-TANG-CHOICE-05",
+        "after_page": "ACT6-TANG-S20",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT6-TANG-C05-A",
+            "label": "毕业后低频协作",
+            "variable_delta": {
+              "tang_final_contact_scope": "low_frequency_collab",
+              "graduation_temperature": "tang_low_frequency",
+              "continue_contact": true
+            },
+            "next_block": "ACT6-END"
+          },
+          {
+            "direction_id": "ACT6-TANG-C05-B",
+            "label": "体面断开",
+            "variable_delta": {
+              "tang_final_contact_scope": "polite_distance",
+              "graduation_temperature": "polite_distance",
+              "polite_distance": 1
+            },
+            "next_block": "ACT6-END"
+          }
+        ]
+      }
+    }
+  ],
+  "act7_settlement_events": [
+    {
+      "event_id": "ACT7-E01-PRE-REGISTER",
+      "event_name": "毕业去向预登记",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT6-END",
+      "next_event": "ACT7-E02-PUBLIC-SCOPE",
+      "main_location": "B204 / C407 共享文档 / 青枫居 4XX",
+      "scene_function": "确认毕业后能否被找到，同时把个人联系和项目联系人拆开。",
+      "required_completion_flags": [
+        "tang_contact_scope_checked",
+        "pre_register_boundary_checked",
+        "graduation_direction_status"
+      ],
+      "must_record": [
+        "tang_contact_scope_checked",
+        "pre_register_boundary_checked",
+        "graduation_direction_status",
+        "project_stability",
+        "emotion_delay",
+        "public_boundary",
+        "responsibility_clarity",
+        "tang_trust",
+        "proxy_risk"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E01-TANG-P01",
+          "beat": "入场",
+          "text_brief": "B204 发下预登记表，唐骁先看格式，发现“毕业后联系人”一栏不能用项目群替代。",
+          "choice_hook": [
+            "先核个人手机号",
+            "先看项目联系人备注。"
+          ],
+          "updates": {
+            "tang_contact_scope_checked": true,
+            "project_stability": 1,
+            "emotion_delay": 1
+          },
+          "updates_text": "A：`tang_contact_scope_checked = true`；B：`project_stability +1`, `emotion_delay +1`。"
+        },
+        {
+          "page_id": "ACT7-E01-TANG-P02",
+          "beat": "联系范围",
+          "text_brief": "唐骁想把共享文档接收人写清，林亦舟提醒那不是私人联系方式。",
+          "choice_hook": [
+            "联系方式只写本人",
+            "项目接收人另表。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "responsibility_clarity": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`responsibility_clarity +1`。"
+        },
+        {
+          "page_id": "ACT7-E01-TANG-P03",
+          "beat": "去向复核",
+          "text_brief": "去向栏可写待定但要复核，唐骁把待定旁边标了版本号。",
+          "choice_hook": [
+            "写待定等唐骁复核",
+            "写方向但注明未确认。"
+          ],
+          "updates": {
+            "graduation_direction_status": "pending_with_review",
+            "project_stability": 1
+          },
+          "updates_text": "A：`graduation_direction_status = pending_with_review`；B：`project_stability +1`。"
+        },
+        {
+          "page_id": "ACT7-E01-TANG-P04",
+          "beat": "本人签字",
+          "text_brief": "林亦舟没有让唐骁替他核最后一遍，唐骁把笔推回来，说“你自己签”。",
+          "choice_hook": [
+            "各自签字",
+            "让唐骁只看格式。"
+          ],
+          "updates": {
+            "pre_register_boundary_checked": true,
+            "tang_trust": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`pre_register_boundary_checked = true`；B：`tang_trust +1`, `proxy_risk +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E01-TANG-CHOICE-01",
+        "after_page": "ACT7-E01-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E01-TANG-C01-A",
+            "label": "私人联系方式独立填写",
+            "variable_delta": {
+              "tang_contact_scope_checked": true,
+              "pre_register_boundary_checked": true,
+              "public_boundary": 1
+            },
+            "variable_delta_text": "tang_contact_scope_checked = true`、`pre_register_boundary_checked = true`、`public_boundary +1`。"
+          },
+          {
+            "direction_id": "ACT7-E01-TANG-C01-B",
+            "label": "项目接收人另表",
+            "variable_delta": {
+              "responsibility_clarity": 1,
+              "project_stability": 1,
+              "emotion_delay": 1
+            },
+            "variable_delta_text": "responsibility_clarity +1`、`project_stability +1`、`emotion_delay +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E02-PUBLIC-SCOPE",
+      "event_name": "公开范围确认",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E01-PRE-REGISTER",
+      "next_event": "ACT7-E03-LAST-NEW-YEAR",
+      "main_location": "西园餐厅 / 主题材料群 / 共享盘权限页",
+      "scene_function": "把不公开写成清楚规则，同时承受“看起来冷”的误读。",
+      "required_completion_flags": [
+        "public_consent_checked",
+        "public_scope_boundary_checked",
+        "tang_archive_scope"
+      ],
+      "must_record": [
+        "public_consent_checked",
+        "public_scope_boundary_checked",
+        "tang_archive_scope",
+        "responsibility_clarity",
+        "public_boundary",
+        "rule_pressure",
+        "zhou_misread",
+        "project_stability",
+        "proxy_risk",
+        "public_smooth"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E02-TANG-P01",
+          "beat": "模板更新",
+          "text_brief": "主题材料模板新增公开范围，唐骁把“班级内部、学院活动、仅留存、不公开”四类排好。",
+          "choice_hook": [
+            "先按类核范围",
+            "先提交空模板。"
+          ],
+          "updates": {
+            "responsibility_clarity": 1,
+            "public_boundary": 1
+          },
+          "updates_text": "A：`responsibility_clarity +1`；B：`public_boundary +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-TANG-P02",
+          "beat": "准确伤人",
+          "text_brief": "唐骁把“未经本人确认不得公开”写得很准，周屿看见后说这像处分格式。",
+          "choice_hook": [
+            "保留规则但删定罪感",
+            "原句不动。"
+          ],
+          "updates": {
+            "rule_pressure": 1,
+            "public_boundary": 1,
+            "zhou_misread": 1
+          },
+          "updates_text": "A：`rule_pressure -1`, `public_boundary +1`；B：`rule_pressure +1`, `zhou_misread +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-TANG-P03",
+          "beat": "本人确认",
+          "text_brief": "林亦舟让每个人自己写范围，唐骁不再把确认表一次性收齐。",
+          "choice_hook": [
+            "各自确认",
+            "唐骁统一汇总。"
+          ],
+          "updates": {
+            "public_scope_boundary_checked": true,
+            "project_stability": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`public_scope_boundary_checked = true`；B：`project_stability +1`, `proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E02-TANG-P04",
+          "beat": "不公开有效",
+          "text_brief": "辅导员确认“不公开”有效，唐骁在表格边上补了一句“不影响活动参与”。",
+          "choice_hook": [
+            "提交流程版不公开目录",
+            "只留班级内部。"
+          ],
+          "updates": {
+            "public_consent_checked": true,
+            "public_smooth": 1
+          },
+          "updates_text": "A：`public_consent_checked = true`；B：`public_smooth +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E02-TANG-CHOICE-01",
+        "after_page": "ACT7-E02-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E02-TANG-C01-A",
+            "label": "保留规则但删定罪感",
+            "variable_delta": {
+              "public_scope_boundary_checked": true,
+              "responsibility_clarity": 1,
+              "rule_pressure": -1
+            },
+            "variable_delta_text": "public_scope_boundary_checked = true`、`responsibility_clarity +1`、`rule_pressure -1`。"
+          },
+          {
+            "direction_id": "ACT7-E02-TANG-C01-B",
+            "label": "原句不动，先保证风险最低",
+            "variable_delta": {
+              "public_boundary": 1,
+              "rule_pressure": 1,
+              "zhou_misread": 1
+            },
+            "variable_delta_text": "public_boundary +1`、`rule_pressure +1`、`zhou_misread +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E03-LAST-NEW-YEAR",
+      "event_name": "最后一个新年",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E02-PUBLIC-SCOPE",
+      "next_event": "ACT7-E04-THESIS-TOPIC",
+      "main_location": "B204 主题材料会 / 4XX 公共桌 / 共享盘目录",
+      "scene_function": "把最后一个新年写成空白目录、版本表和旧物权限的对照。",
+      "required_completion_flags": [
+        "opening_contrast_seen",
+        "public_scope",
+        "story_consent"
+      ],
+      "must_record": [
+        "opening_contrast_seen",
+        "public_scope",
+        "story_consent",
+        "responsibility_clarity",
+        "rule_pressure",
+        "public_boundary",
+        "emotion_delay",
+        "public_smooth",
+        "old_debt",
+        "tang_trust",
+        "polite_distance"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E03-TANG-P01",
+          "beat": "入场",
+          "text_brief": "唐骁带来主题材料目录版本表，空白目录旁边多了“确认人”一列。",
+          "choice_hook": [
+            "保留确认人列",
+            "删除确认人列。"
+          ],
+          "updates": {
+            "responsibility_clarity": 1,
+            "rule_pressure": -1
+          },
+          "updates_text": "A：`responsibility_clarity +1`；B：`rule_pressure -1`。"
+        },
+        {
+          "page_id": "ACT7-E03-TANG-P02",
+          "beat": "核验",
+          "text_brief": "后排问为什么 4XX 没有故事，唐骁准备按公开范围解释。",
+          "choice_hook": [
+            "让他说范围",
+            "只提交空白确认。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "emotion_delay": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`emotion_delay +1`。"
+        },
+        {
+          "page_id": "ACT7-E03-TANG-P03",
+          "beat": "旧物",
+          "text_brief": "军训手机袋和旧电子确认表并排出现，唐骁第一反应是确认谁能看。",
+          "choice_hook": [
+            "只留存不公开",
+            "写进班级内部。"
+          ],
+          "updates": {
+            "public_scope": "archive_only",
+            "public_smooth": 1,
+            "old_debt": 1
+          },
+          "updates_text": "A：`public_scope = archive_only`；B：`public_smooth +1`, `old_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E03-TANG-P04",
+          "beat": "回声",
+          "text_brief": "唐骁把 PDF 归档，又把“无需说明原因”补进备注，像流程也像照看。",
+          "choice_hook": [
+            "留下备注",
+            "删掉私人照看痕迹。"
+          ],
+          "updates": {
+            "tang_trust": 1,
+            "polite_distance": 1
+          },
+          "updates_text": "A：`tang_trust +1`；B：`polite_distance +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E03-TANG-CHOICE-01",
+        "after_page": "ACT7-E03-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E03-TANG-C01-A",
+            "label": "按范围说清，不解释私人原因",
+            "variable_delta": {
+              "opening_contrast_seen": true,
+              "public_boundary": 1,
+              "responsibility_clarity": 1
+            },
+            "variable_delta_text": "opening_contrast_seen = true`、`public_boundary +1`、`responsibility_clarity +1`。"
+          },
+          {
+            "direction_id": "ACT7-E03-TANG-C01-B",
+            "label": "只交空白确认",
+            "variable_delta": {
+              "opening_contrast_seen": true,
+              "emotion_delay": 1,
+              "polite_distance": 1
+            },
+            "variable_delta_text": "opening_contrast_seen = true`、`emotion_delay +1`、`polite_distance +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E04-THESIS-TOPIC",
+      "event_name": "开题 / 毕业设计方向",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E03-LAST-NEW-YEAR",
+      "next_event": "ACT7-E05-MARCH-QUEUE",
+      "main_location": "C407 门口 / B204 第二轮复核会 / 打印店",
+      "scene_function": "确认毕业设计方向、导师意向和本人签字，避免唐骁替林亦舟定方向。",
+      "required_completion_flags": [
+        "thesis_topic_form_seen",
+        "topic_self_signed",
+        "topic_boundary_checked"
+      ],
+      "must_record": [
+        "thesis_topic_form_seen",
+        "topic_self_signed",
+        "topic_boundary_checked",
+        "advisor_group_checked",
+        "project_stability",
+        "topic_status",
+        "emotion_delay",
+        "responsibility_clarity",
+        "proxy_risk",
+        "topic_review_time",
+        "tang_trust"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E04-TANG-P01",
+          "beat": "导师组名单",
+          "text_brief": "C407 门口贴出导师组名单，唐骁先看截止时间和表格格式。",
+          "choice_hook": [
+            "让唐骁自己问导师组",
+            "先听唐骁建议。"
+          ],
+          "updates": {
+            "advisor_group_checked": true,
+            "project_stability": 1
+          },
+          "updates_text": "A：`advisor_group_checked = true`；B：`project_stability +1`。"
+        },
+        {
+          "page_id": "ACT7-E04-TANG-P02",
+          "beat": "三张表",
+          "text_brief": "去向预登记、毕业设计方向初表、导师组意向确认叠在一起，唐骁把三张表按提交顺序排开。",
+          "choice_hook": [
+            "方向待定并签名",
+            "按唐骁建议先选稳定方向。"
+          ],
+          "updates": {
+            "topic_status": "pending_with_reason",
+            "project_stability": 1,
+            "emotion_delay": 1
+          },
+          "updates_text": "A：`topic_status = pending_with_reason`；B：`project_stability +1`, `emotion_delay +1`。"
+        },
+        {
+          "page_id": "ACT7-E04-TANG-P03",
+          "beat": "四人分流",
+          "text_brief": "唐骁填项目归档和流程稳定方向，周屿看着表格冷笑，陆沉只确认自己的来源。",
+          "choice_hook": [
+            "只签自己的流程表",
+            "帮唐骁核格式。"
+          ],
+          "updates": {
+            "topic_boundary_checked": true,
+            "responsibility_clarity": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`topic_boundary_checked = true`；B：`responsibility_clarity +1`, `proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E04-TANG-P04",
+          "beat": "邮件回执",
+          "text_brief": "陈老师回复周三 C407 二次确认，唐骁把回执转成待办，林亦舟没有让他替自己解释。",
+          "choice_hook": [
+            "保存项目邮件回执",
+            "只让唐骁看格式。"
+          ],
+          "updates": {
+            "topic_review_time": "周三 C407",
+            "tang_trust": 1
+          },
+          "updates_text": "A：`topic_review_time = \"周三 C407\"`；B：`tang_trust +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E04-TANG-CHOICE-01",
+        "after_page": "ACT7-E04-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E04-TANG-C01-A",
+            "label": "待定并本人签字",
+            "variable_delta": {
+              "thesis_topic_form_seen": true,
+              "topic_self_signed": true,
+              "topic_boundary_checked": true
+            },
+            "variable_delta_text": "thesis_topic_form_seen = true`、`topic_self_signed = true`、`topic_boundary_checked = true`。"
+          },
+          {
+            "direction_id": "ACT7-E04-TANG-C01-B",
+            "label": "先选稳定方向再复核",
+            "variable_delta": {
+              "thesis_topic_form_seen": true,
+              "project_stability": 1,
+              "emotion_delay": 1,
+              "topic_self_signed": true
+            },
+            "variable_delta_text": "thesis_topic_form_seen = true`、`project_stability +1`、`emotion_delay +1`、`topic_self_signed = true`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E05-MARCH-QUEUE",
+      "event_name": "三四月毕业事项排队",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E04-THESIS-TOPIC",
+      "next_event": "ACT7-E06-THESIS-REVISION",
+      "main_location": "B204 / 明德楼窗口 / C407 / 打印店",
+      "scene_function": "用三四月事项清单制造窗口挤压，检验流程稳定和宿舍低温代价。",
+      "required_completion_flags": [
+        "march_queue_seen",
+        "grad_photo_info_seen",
+        "march_boundary_checked"
+      ],
+      "must_record": [
+        "march_queue_seen",
+        "grad_photo_info_seen",
+        "march_boundary_checked",
+        "project_stability",
+        "emotion_delay",
+        "rule_pressure",
+        "zhou_misread",
+        "responsibility_clarity",
+        "tang_trust",
+        "proxy_risk",
+        "fairness_cost",
+        "public_boundary"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E05-TANG-P01",
+          "beat": "事项预排",
+          "text_brief": "三四月毕业事项预排贴出来，唐骁把实习证明、证书核验、毕业照信息采集排成清单。",
+          "choice_hook": [
+            "先处理自己的待复核",
+            "跟唐骁一起拆截止。"
+          ],
+          "updates": {
+            "march_queue_seen": true,
+            "project_stability": 1,
+            "emotion_delay": 1
+          },
+          "updates_text": "A：`march_queue_seen = true`；B：`project_stability +1`, `emotion_delay +1`。"
+        },
+        {
+          "page_id": "ACT7-E05-TANG-P02",
+          "beat": "窗口挤压",
+          "text_brief": "明德楼窗口排队，周屿活动撞期，陆沉证书核验延后，唐骁想按表催。",
+          "choice_hook": [
+            "只转达流程窗口规则",
+            "逐项催确认。"
+          ],
+          "updates": {
+            "march_boundary_checked": true,
+            "rule_pressure": 1,
+            "zhou_misread": 1
+          },
+          "updates_text": "A：`march_boundary_checked = true`；B：`rule_pressure +1`, `zhou_misread +1`。"
+        },
+        {
+          "page_id": "ACT7-E05-TANG-P03",
+          "beat": "开题红批前置",
+          "text_brief": "陈老师要求十点前改数据来源，唐骁已经把补正格式列好。",
+          "choice_hook": [
+            "自己改来源",
+            "让唐骁只看格式。"
+          ],
+          "updates": {
+            "responsibility_clarity": 1,
+            "tang_trust": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`responsibility_clarity +1`；B：`tang_trust +1`, `proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E05-TANG-P04",
+          "beat": "缺席不补拍",
+          "text_brief": "毕业照信息采集写着缺席不补拍，唐骁说“这个不能靠补说明”。",
+          "choice_hook": [
+            "本人确认批次",
+            "先替别人做提醒表。"
+          ],
+          "updates": {
+            "grad_photo_info_seen": true,
+            "fairness_cost": 1
+          },
+          "updates_text": "A：`grad_photo_info_seen = true`；B：`fairness_cost +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E05-TANG-CHOICE-01",
+        "after_page": "ACT7-E05-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E05-TANG-C01-A",
+            "label": "只转达规则，不代催",
+            "variable_delta": {
+              "march_queue_seen": true,
+              "march_boundary_checked": true,
+              "public_boundary": 1
+            },
+            "variable_delta_text": "march_queue_seen = true`、`march_boundary_checked = true`、`public_boundary +1`。"
+          },
+          {
+            "direction_id": "ACT7-E05-TANG-C01-B",
+            "label": "拆成待办并逐项确认",
+            "variable_delta": {
+              "project_stability": 1,
+              "rule_pressure": 1,
+              "fairness_cost": 1
+            },
+            "variable_delta_text": "project_stability +1`、`rule_pressure +1`、`fairness_cost +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E06-THESIS-REVISION",
+      "event_name": "改论文 / 改毕业设计",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E05-MARCH-QUEUE",
+      "next_event": "ACT7-E07-DEFENSE",
+      "main_location": "C407 / 共享盘 / 打印店",
+      "scene_function": "检验唐骁的版本和格式能力是否压过私人话。",
+      "required_completion_flags": [
+        "thesis_revision_version",
+        "thesis_boundary_checked",
+        "revision_submitted_before_deadline"
+      ],
+      "must_record": [
+        "thesis_revision_version",
+        "thesis_boundary_checked",
+        "revision_submitted_before_deadline",
+        "project_stability",
+        "tang_trust",
+        "proxy_risk",
+        "responsibility_clarity",
+        "emotion_delay",
+        "polite_distance",
+        "tang_nonfunctional_line_seen",
+        "time_debt"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E06-TANG-P01",
+          "beat": "红批",
+          "text_brief": "陈老师红批落下，唐骁第一眼看见版本名错了，第二眼才看见林亦舟熬到凌晨。",
+          "choice_hook": [
+            "先改版本名",
+            "先问红批意思。"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "tang_trust": 1
+          },
+          "updates_text": "A：`project_stability +1`；B：`tang_trust +1`。"
+        },
+        {
+          "page_id": "ACT7-E06-TANG-P02",
+          "beat": "给谁看",
+          "text_brief": "唐骁可以看格式、页码和提交口径，但不能替林亦舟写解释。",
+          "choice_hook": [
+            "只发格式问题",
+            "发整段说明。"
+          ],
+          "updates": {
+            "thesis_boundary_checked": true,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`thesis_boundary_checked = true`；B：`proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E06-TANG-P03",
+          "beat": "改稿",
+          "text_brief": "共享盘里 `thesis_revision_v2_final` 后面又多了一个 `final2`，唐骁没笑，只说别交错。",
+          "choice_hook": [
+            "自己改内容",
+            "请唐骁核最终版。"
+          ],
+          "updates": {
+            "responsibility_clarity": 1,
+            "project_stability": 1,
+            "emotion_delay": 1
+          },
+          "updates_text": "A：`responsibility_clarity +1`；B：`project_stability +1`, `emotion_delay +1`。"
+        },
+        {
+          "page_id": "ACT7-E06-TANG-P04",
+          "beat": "提交",
+          "text_brief": "十点前提交成功，唐骁把打印店小票压在键盘边，说“这个别丢”。",
+          "choice_hook": [
+            "只说谢谢",
+            "问他是不是一直等着。"
+          ],
+          "updates": {
+            "polite_distance": 1,
+            "tang_nonfunctional_line_seen": true
+          },
+          "updates_text": "A：`polite_distance +1`；B：`tang_nonfunctional_line_seen` 倾向。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E06-TANG-CHOICE-01",
+        "after_page": "ACT7-E06-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E06-TANG-C01-A",
+            "label": "只让唐骁核格式",
+            "variable_delta": {
+              "thesis_boundary_checked": true,
+              "responsibility_clarity": 1,
+              "project_stability": 1
+            },
+            "variable_delta_text": "thesis_boundary_checked = true`、`responsibility_clarity +1`、`project_stability +1`。"
+          },
+          {
+            "direction_id": "ACT7-E06-TANG-C01-B",
+            "label": "追问他为什么等版本",
+            "variable_delta": {
+              "tang_trust": 1,
+              "emotion_delay": -1,
+              "time_debt": 1
+            },
+            "variable_delta_text": "tang_trust +1`、`emotion_delay -1`、`time_debt +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E07-DEFENSE",
+      "event_name": "答辩 / 答辩以后",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E06-THESIS-REVISION",
+      "next_event": "ACT7-E08-GRAD-PHOTO",
+      "main_location": "C407 答辩门口 / 补交窗口 / 共享盘归档页",
+      "scene_function": "检验唐骁是否只盯补交清单，还是能在答辩后说一句流程外的话。",
+      "required_completion_flags": [
+        "defense_order_seen",
+        "defense_boundary_checked",
+        "defense_message_echo"
+      ],
+      "must_record": [
+        "defense_order_seen",
+        "defense_boundary_checked",
+        "defense_message_echo",
+        "project_stability",
+        "tang_trust",
+        "tang_nonfunctional_line_seen",
+        "responsibility_clarity",
+        "proxy_risk",
+        "emotion_delay",
+        "polite_distance",
+        "repair_depth"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E07-TANG-P01",
+          "beat": "顺序表",
+          "text_brief": "答辩顺序表贴出来，唐骁先帮林亦舟确认补交项，没问紧不紧张。",
+          "choice_hook": [
+            "让他继续核清单",
+            "说清单先放一会儿。"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "tang_trust": 1
+          },
+          "updates_text": "A：`project_stability +1`；B：`tang_trust +1`。"
+        },
+        {
+          "page_id": "ACT7-E07-TANG-P02",
+          "beat": "门口",
+          "text_brief": "林亦舟从 C407 出来，唐骁递来小章位置说明，手里还有多打的一份封面。",
+          "choice_hook": [
+            "接过封面",
+            "问他等了多久。"
+          ],
+          "updates": {
+            "defense_boundary_checked": true,
+            "tang_nonfunctional_line_seen": true
+          },
+          "updates_text": "A：`defense_boundary_checked = true`；B：`tang_nonfunctional_line_seen` 倾向。"
+        },
+        {
+          "page_id": "ACT7-E07-TANG-P03",
+          "beat": "补交",
+          "text_brief": "答辩后要补签版本说明，唐骁能看出缺口，但不能替他写。",
+          "choice_hook": [
+            "自己补说明",
+            "请唐骁核是否漏项。"
+          ],
+          "updates": {
+            "responsibility_clarity": 1,
+            "project_stability": 1,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`responsibility_clarity +1`；B：`project_stability +1`, `proxy_risk +1`。"
+        },
+        {
+          "page_id": "ACT7-E07-TANG-P04",
+          "beat": "回声",
+          "text_brief": "唐骁发“过了就行”，隔了三分钟又补“你刚才脸色很差”。",
+          "choice_hook": [
+            "回他真实状态",
+            "只回收到。"
+          ],
+          "updates": {
+            "tang_nonfunctional_line_seen": true,
+            "emotion_delay": 1
+          },
+          "updates_text": "A：`tang_nonfunctional_line_seen = true`；B：`emotion_delay +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E07-TANG-CHOICE-01",
+        "after_page": "ACT7-E07-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E07-TANG-C01-A",
+            "label": "接受实用照看",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "project_stability": 1,
+              "polite_distance": 1
+            },
+            "variable_delta_text": "defense_boundary_checked = true`、`project_stability +1`、`polite_distance +1`。"
+          },
+          {
+            "direction_id": "ACT7-E07-TANG-C01-B",
+            "label": "追问流程外那句",
+            "variable_delta": {
+              "defense_boundary_checked": true,
+              "tang_nonfunctional_line_seen": true,
+              "repair_depth": 1
+            },
+            "variable_delta_text": "defense_boundary_checked = true`、`tang_nonfunctional_line_seen = true`、`repair_depth +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E08-GRAD-PHOTO",
+      "event_name": "毕业照 / 影像授权",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E07-DEFENSE",
+      "next_event": "ACT7-E09-DORM-CLEAR",
+      "main_location": "晨光体育场北侧看台 / 影像授权表 / 4XX 群",
+      "scene_function": "检验同框和公开照片是否按规则处理，同时承认规则不等于亲密恢复。",
+      "required_completion_flags": [
+        "grad_photo_info_seen",
+        "photo_boundary_checked",
+        "photo_self_confirmed"
+      ],
+      "must_record": [
+        "grad_photo_info_seen",
+        "photo_boundary_checked",
+        "photo_self_confirmed",
+        "dorm_warmth",
+        "time_debt",
+        "polite_distance",
+        "public_boundary",
+        "public_smooth",
+        "proxy_risk",
+        "emotion_delay",
+        "responsibility_clarity"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E08-TANG-P01",
+          "beat": "批次表",
+          "text_brief": "毕业照批次表发出，唐骁先确认个人照、班级照、寝室合照顺序。",
+          "choice_hook": [
+            "按批次走",
+            "问是否等齐。"
+          ],
+          "updates": {
+            "photo_boundary_checked": true,
+            "dorm_warmth": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`photo_boundary_checked = true`；B：`dorm_warmth +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-TANG-P02",
+          "beat": "错过第三组",
+          "text_brief": "周屿彩排迟到，陆沉交接晚到，唐骁说缺席不补不是威胁，是规则。",
+          "choice_hook": [
+            "接受流程缺席不补",
+            "留最后一张补拍。"
+          ],
+          "updates": {
+            "polite_distance": 1,
+            "dorm_warmth": 1
+          },
+          "updates_text": "A：`polite_distance +1`；B：`dorm_warmth +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-TANG-P03",
+          "beat": "预览缩略图",
+          "text_brief": "缩略图里四个人站得齐，唐骁却先看授权范围，没说照片好不好看。",
+          "choice_hook": [
+            "只留存寝室照",
+            "允许班级内部使用。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "public_smooth": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`public_smooth +1`。"
+        },
+        {
+          "page_id": "ACT7-E08-TANG-P04",
+          "beat": "授权确认",
+          "text_brief": "唐骁自己勾完范围，把表推回来：“你自己勾，别让我替你判断。”",
+          "choice_hook": [
+            "各自确认",
+            "请他核一遍。"
+          ],
+          "updates": {
+            "photo_self_confirmed": true,
+            "proxy_risk": 1
+          },
+          "updates_text": "A：`photo_self_confirmed = true`；B：`proxy_risk +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E08-TANG-CHOICE-01",
+        "after_page": "ACT7-E08-TANG-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E08-TANG-C01-A",
+            "label": "照片只留存",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "public_boundary": 1,
+              "emotion_delay": 1
+            },
+            "variable_delta_text": "photo_boundary_checked = true`、`public_boundary +1`、`emotion_delay +1`。"
+          },
+          {
+            "direction_id": "ACT7-E08-TANG-C01-B",
+            "label": "班级内部使用",
+            "variable_delta": {
+              "photo_boundary_checked": true,
+              "public_smooth": 1,
+              "responsibility_clarity": 1
+            },
+            "variable_delta_text": "photo_boundary_checked = true`、`public_smooth +1`、`responsibility_clarity +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E09-DORM-CLEAR",
+      "event_name": "清寝 / 旧物处理",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E08-GRAD-PHOTO",
+      "next_event": "ACT7-E10-LAST-MEAL",
+      "main_location": "青枫居 4XX / 宿管窗口 / 公共桌",
+      "scene_function": "用清寝清单、标签和旧物归属检验谁能确认、谁不能被表格代替。",
+      "required_completion_flags": [
+        "clearance_boundary_checked",
+        "shared_item_owner_checked",
+        "dorm_item_confirmed_by_self"
+      ],
+      "must_record": [
+        "clearance_boundary_checked",
+        "shared_item_owner_checked",
+        "dorm_item_confirmed_by_self",
+        "responsibility_clarity",
+        "rule_pressure",
+        "fairness_cost",
+        "public_boundary",
+        "project_stability",
+        "emotion_delay",
+        "polite_distance",
+        "tang_nonfunctional_line_seen"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E09-TANG-P01",
+          "beat": "清单入场",
+          "text_brief": "唐骁把清寝共享清单拆成个人物品、公共物品、待确认物三栏。",
+          "choice_hook": [
+            "先列自己的物品",
+            "先处理公共桌。"
+          ],
+          "updates": {
+            "clearance_boundary_checked": true,
+            "responsibility_clarity": 1
+          },
+          "updates_text": "A：`clearance_boundary_checked = true`；B：`responsibility_clarity +1`。"
+        },
+        {
+          "page_id": "ACT7-E09-TANG-P02",
+          "beat": "旧物归属",
+          "text_brief": "未知快递袋、公共 U 盘和旧打印小票都不能靠“没人要”丢掉。",
+          "choice_hook": [
+            "各自确认",
+            "唐骁统一贴标签。"
+          ],
+          "updates": {
+            "shared_item_owner_checked": true,
+            "rule_pressure": 1,
+            "fairness_cost": 1
+          },
+          "updates_text": "A：`shared_item_owner_checked = true`；B：`rule_pressure +1`, `fairness_cost +1`。"
+        },
+        {
+          "page_id": "ACT7-E09-TANG-P03",
+          "beat": "宿管窗口",
+          "text_brief": "宿管阿姨只看清单和钥匙，不问谁对谁错，唐骁把“未确认”留到最后。",
+          "choice_hook": [
+            "留未确认栏",
+            "清空所有栏位。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "project_stability": 1,
+            "emotion_delay": 1
+          },
+          "updates_text": "A：`public_boundary +1`；B：`project_stability +1`, `emotion_delay +1`。"
+        },
+        {
+          "page_id": "ACT7-E09-TANG-P04",
+          "beat": "公共桌空位",
+          "text_brief": "公共桌空出来，唐骁把多打的封面纸放进自己箱子，没有再给别人备份。",
+          "choice_hook": [
+            "不追问",
+            "问他为什么多打一份。"
+          ],
+          "updates": {
+            "polite_distance": 1,
+            "tang_nonfunctional_line_seen": true
+          },
+          "updates_text": "A：`polite_distance +1`；B：`tang_nonfunctional_line_seen` 倾向。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E09-TANG-CHOICE-01",
+        "after_page": "ACT7-E09-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E09-TANG-C01-A",
+            "label": "各自确认旧物",
+            "variable_delta": {
+              "clearance_boundary_checked": true,
+              "shared_item_owner_checked": true,
+              "responsibility_clarity": 1
+            },
+            "variable_delta_text": "clearance_boundary_checked = true`、`shared_item_owner_checked = true`、`responsibility_clarity +1`。"
+          },
+          {
+            "direction_id": "ACT7-E09-TANG-C01-B",
+            "label": "统一贴标签但不代丢",
+            "variable_delta": {
+              "project_stability": 1,
+              "rule_pressure": 1,
+              "fairness_cost": 1
+            },
+            "variable_delta_text": "project_stability +1`、`rule_pressure +1`、`fairness_cost +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E10-LAST-MEAL",
+      "event_name": "最后一顿饭",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E09-DORM-CLEAR",
+      "next_event": "ACT7-E11-LEAVING-PAPERS",
+      "main_location": "东北饺子馆 / 班级群 / 4XX 小群",
+      "scene_function": "检验分账、留座和实用照看能不能多出一点私人温度。",
+      "required_completion_flags": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "tang_nonfunctional_line_seen",
+        "polite_distance"
+      ],
+      "must_record": [
+        "meal_boundary_checked",
+        "meal_attendance_locked",
+        "tang_nonfunctional_line_seen",
+        "polite_distance",
+        "dorm_warmth",
+        "time_debt",
+        "project_stability",
+        "emotion_delay",
+        "public_smooth",
+        "tang_trust",
+        "repair_depth"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E10-TANG-P01",
+          "beat": "人数确认",
+          "text_brief": "最后一顿饭投票截止，唐骁按人数锁座，不替迟到的人占确定位置。",
+          "choice_hook": [
+            "按人数锁定",
+            "留一个可取消空位。"
+          ],
+          "updates": {
+            "meal_attendance_locked": true,
+            "dorm_warmth": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`meal_attendance_locked = true`；B：`dorm_warmth +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E10-TANG-P02",
+          "beat": "到场顺序",
+          "text_brief": "唐骁先到，菜单旁边压着分账二维码和一张离校手续提醒。",
+          "choice_hook": [
+            "先点菜",
+            "先收起手续提醒。"
+          ],
+          "updates": {
+            "project_stability": 1,
+            "emotion_delay": -1
+          },
+          "updates_text": "A：`project_stability +1`；B：`emotion_delay -1`。"
+        },
+        {
+          "page_id": "ACT7-E10-TANG-P03",
+          "beat": "半句旧账",
+          "text_brief": "饭到一半，唐骁说“有些表我写得太像结论了”，声音不高。",
+          "choice_hook": [
+            "接住这句",
+            "让饭桌保持体面。"
+          ],
+          "updates": {
+            "tang_nonfunctional_line_seen": true,
+            "public_smooth": 1
+          },
+          "updates_text": "A：`tang_nonfunctional_line_seen = true`；B：`public_smooth +1`。"
+        },
+        {
+          "page_id": "ACT7-E10-TANG-P04",
+          "beat": "结账",
+          "text_brief": "账单 AA，唐骁没有抢着付，只把林亦舟落下的校园卡推过来。",
+          "choice_hook": [
+            "说谢谢并收下",
+            "问他怎么发现的。"
+          ],
+          "updates": {
+            "meal_boundary_checked": true,
+            "tang_trust": 1
+          },
+          "updates_text": "A：`meal_boundary_checked = true`；B：`tang_trust +1`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E10-TANG-CHOICE-01",
+        "after_page": "ACT7-E10-TANG-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E10-TANG-C01-A",
+            "label": "接住流程外一句",
+            "variable_delta": {
+              "tang_nonfunctional_line_seen": true,
+              "repair_depth": 1,
+              "emotion_delay": -1
+            },
+            "variable_delta_text": "tang_nonfunctional_line_seen = true`、`repair_depth +1`、`emotion_delay -1`。"
+          },
+          {
+            "direction_id": "ACT7-E10-TANG-C01-B",
+            "label": "饭桌保持体面",
+            "variable_delta": {
+              "meal_boundary_checked": true,
+              "polite_distance": 1,
+              "emotion_delay": 1
+            },
+            "variable_delta_text": "meal_boundary_checked = true`、`polite_distance +1`、`emotion_delay +1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E11-LEAVING-PAPERS",
+      "event_name": "离校手续 / 证书 / 档案",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E10-LAST-MEAL",
+      "next_event": "ACT7-E12-STATION-AFTER",
+      "main_location": "明德楼离校窗口 / 证书领取处 / 档案转递窗口",
+      "scene_function": "收束离校手续、证书、档案和项目归档，确认流程结束不等于关系自动结束。",
+      "required_completion_flags": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "tang_archive_scope"
+      ],
+      "must_record": [
+        "leaving_boundary_checked",
+        "certificate_or_archive_seen",
+        "tang_archive_scope",
+        "project_stability",
+        "responsibility_clarity",
+        "dorm_warmth",
+        "say_clear",
+        "polite_distance",
+        "tang_nonfunctional_line_seen",
+        "public_boundary",
+        "rule_pressure"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E11-TANG-P01",
+          "beat": "离校单",
+          "text_brief": "离校单、证书、档案和寝室钥匙排成四个窗口，唐骁把路线图发给林亦舟。",
+          "choice_hook": [
+            "先办自己的离校单",
+            "跟唐骁一起核流程。"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "project_stability": 1
+          },
+          "updates_text": "A：`leaving_boundary_checked = true`；B：`project_stability +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-TANG-P02",
+          "beat": "归档复核",
+          "text_brief": "项目归档接收人、共享盘只读权限和主题材料留存范围需要最后确认。",
+          "choice_hook": [
+            "锁只读权限",
+            "每人保留独立编辑记录。"
+          ],
+          "updates": {
+            "tang_archive_scope": "read_only_archive",
+            "responsibility_clarity": 1,
+            "dorm_warmth": 1
+          },
+          "updates_text": "A：`tang_archive_scope = read_only_archive`；B：`responsibility_clarity +1`, `dorm_warmth +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-TANG-P03",
+          "beat": "档案封口",
+          "text_brief": "档案袋封口，唐骁说“这个封了就不能补说明了”。",
+          "choice_hook": [
+            "补最后一条说明",
+            "不再补私人话。"
+          ],
+          "updates": {
+            "say_clear": 1,
+            "polite_distance": 1
+          },
+          "updates_text": "A：`say_clear +1`；B：`polite_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E11-TANG-P04",
+          "beat": "证书离场",
+          "text_brief": "唐骁把毕业证和多余复印件分开放，递给林亦舟一张备用复印件。",
+          "choice_hook": [
+            "收下但不让他代管",
+            "问他为什么多备。"
+          ],
+          "updates": {
+            "leaving_boundary_checked": true,
+            "tang_nonfunctional_line_seen": true
+          },
+          "updates_text": "A：`leaving_boundary_checked = true`；B：`tang_nonfunctional_line_seen` 倾向。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E11-TANG-CHOICE-01",
+        "after_page": "ACT7-E11-TANG-P02",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E11-TANG-C01-A",
+            "label": "锁只读归档",
+            "variable_delta": {
+              "tang_archive_scope": "read_only_archive",
+              "project_stability": 1,
+              "public_boundary": 1
+            },
+            "variable_delta_text": "tang_archive_scope = read_only_archive`、`project_stability +1`、`public_boundary +1`。"
+          },
+          {
+            "direction_id": "ACT7-E11-TANG-C01-B",
+            "label": "独立编辑并保留记录",
+            "variable_delta": {
+              "responsibility_clarity": 1,
+              "dorm_warmth": 1,
+              "rule_pressure": -1
+            },
+            "variable_delta_text": "responsibility_clarity +1`、`dorm_warmth +1`、`rule_pressure -1`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    },
+    {
+      "event_id": "ACT7-E12-STATION-AFTER",
+      "event_name": "武生院站 / 毕业后消息",
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "act7_variant_id": "ACT7-TANG",
+      "source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+      "same_mother_event": true,
+      "route_switch_allowed": false,
+      "previous_event": "ACT7-E11-LEAVING-PAPERS",
+      "next_event": "TANG-ENDING",
+      "main_location": "武生院站 / 地铁口 / 4XX 群 / 唐骁私聊",
+      "scene_function": "输出唐骁线最终温度：低频协作、非功利表达、体面距离或不再私聊。",
+      "required_completion_flags": [
+        "station_boundary_checked",
+        "ending_temperature_locked",
+        "tang_final_contact_scope",
+        "polite_distance"
+      ],
+      "must_record": [
+        "station_boundary_checked",
+        "ending_temperature_locked",
+        "tang_final_contact_scope",
+        "polite_distance",
+        "tang_trust",
+        "time_debt",
+        "public_boundary",
+        "tang_nonfunctional_line_seen",
+        "continue_contact",
+        "final_group_state",
+        "emotion_delay"
+      ],
+      "participants_hint": "按唐骁线细稿和母版事件现场取用，禁止新增路线切换角色功能。",
+      "pages": [
+        {
+          "page_id": "ACT7-E12-TANG-P01",
+          "beat": "站口短停",
+          "text_brief": "武生院站口人很多，唐骁看了眼时间，说“五分钟够你进站”。",
+          "choice_hook": [
+            "按他的时间走",
+            "多停一分钟。"
+          ],
+          "updates": {
+            "polite_distance": 1,
+            "tang_trust": 1,
+            "time_debt": 1
+          },
+          "updates_text": "A：`polite_distance +1`；B：`tang_trust +1`, `time_debt +1`。"
+        },
+        {
+          "page_id": "ACT7-E12-TANG-P02",
+          "beat": "备用纸袋",
+          "text_brief": "唐骁递来一只纸袋，里面是证书复印件、打印店小票和一张没写完的提醒。",
+          "choice_hook": [
+            "收下仅留存",
+            "问提醒为什么没写完。"
+          ],
+          "updates": {
+            "public_boundary": 1,
+            "tang_nonfunctional_line_seen": true
+          },
+          "updates_text": "A：`public_boundary +1`；B：`tang_nonfunctional_line_seen` 倾向。"
+        },
+        {
+          "page_id": "ACT7-E12-TANG-P03",
+          "beat": "私聊频率",
+          "text_brief": "唐骁说“以后材料问题可以发我”，停了一下，又补“不是材料也行”。",
+          "choice_hook": [
+            "说低频也可以",
+            "只说有事再发。"
+          ],
+          "updates": {
+            "tang_final_contact_scope": "low_frequency_collab",
+            "polite_distance": 1
+          },
+          "updates_text": "A：`tang_final_contact_scope = low_frequency_collab`；B：`polite_distance +1`。"
+        },
+        {
+          "page_id": "ACT7-E12-TANG-P04",
+          "beat": "群消息",
+          "text_brief": "4XX 群里有人报到站，唐骁发“以后有事群里说”，私聊却多出一句“到站回一下”。",
+          "choice_hook": [
+            "私聊回到站",
+            "只在群里回复。"
+          ],
+          "updates": {
+            "continue_contact": true,
+            "final_group_state": "not_disbanded"
+          },
+          "updates_text": "A：`continue_contact` 倾向；B：`final_group_state = not_disbanded`。"
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT7-E12-TANG-CHOICE-01",
+        "after_page": "ACT7-E12-TANG-P03",
+        "direction_count": 2,
+        "directions": [
+          {
+            "direction_id": "ACT7-E12-TANG-C01-A",
+            "label": "低频协作也保留私人入口",
+            "variable_delta": {
+              "tang_final_contact_scope": "low_frequency_collab",
+              "continue_contact": true,
+              "ending_temperature_locked": true
+            },
+            "variable_delta_text": "tang_final_contact_scope = low_frequency_collab`、`continue_contact`、`ending_temperature_locked = true`。"
+          },
+          {
+            "direction_id": "ACT7-E12-TANG-C01-B",
+            "label": "体面断开，不再私聊",
+            "variable_delta": {
+              "polite_distance": 1,
+              "emotion_delay": 1,
+              "ending_temperature_locked": true
+            },
+            "variable_delta_text": "polite_distance +1`、`emotion_delay +1`、`ending_temperature_locked = true`。"
+          }
+        ]
+      },
+      "forbidden_effects": [
+        "不得把唐骁线写成唐骁正确线。",
+        "不得让林亦舟成为唐骁的流程执行器或替别人确认责任。",
+        "不得用材料齐全、答辩通过或离校手续完成覆盖关系低温。"
+      ]
+    }
+  ],
+  "ending_candidates": [
+    {
+      "ending_id": "TANG-END-LOW-FREQUENCY-COLLAB",
+      "condition_hint": "tang_final_contact_scope = low_frequency_collab, project_stability >= 5",
+      "text_landing": "唐骁线保留低频协作入口，流程稳定，但私人话不再被流程代替。"
+    },
+    {
+      "ending_id": "TANG-END-NONFUNCTIONAL-LINE",
+      "condition_hint": "tang_nonfunctional_line_seen = true, responsibility_clarity >= 4",
+      "text_landing": "他们终于留下一个不完全服务于材料和截止时间的私聊入口。"
+    },
+    {
+      "ending_id": "TANG-END-POLITE-DISCONNECT",
+      "condition_hint": "polite_distance >= 4, emotion_delay >= 3",
+      "text_landing": "流程清楚、材料齐全，关系却在毕业后体面断开。"
+    },
+    {
+      "ending_id": "TANG-END-FLOW-PRESSURE",
+      "condition_hint": "rule_pressure >= 5 or fairness_cost >= 4",
+      "text_landing": "靠近唐骁带来稳定和清晰，也把规则压迫和情绪延后一起结算。"
+    },
+    {
+      "ending_id": "TANG-END-MISREAD",
+      "condition_hint": "zhou_misread >= 4 or luchen_proxy_risk >= 4",
+      "text_landing": "未被选择的人只留下短句和低温边界，站队成本没有消失。"
+    }
+  ],
+  "validation_targets": {
+    "json_must_parse": true,
+    "route_id": "R5-TANG",
+    "route_pool_id": "POOL-R5-TANG",
+    "act7_variant_id": "ACT7-TANG",
+    "act7_core_event_count": 12,
+    "act7_required_event_count": 12,
+    "act7_route_switch_allowed": false,
+    "act7_required_core_events": [
+      "ACT7-E01-PRE-REGISTER",
+      "ACT7-E02-PUBLIC-SCOPE",
+      "ACT7-E03-LAST-NEW-YEAR",
+      "ACT7-E04-THESIS-TOPIC",
+      "ACT7-E05-MARCH-QUEUE",
+      "ACT7-E06-THESIS-REVISION",
+      "ACT7-E07-DEFENSE",
+      "ACT7-E08-GRAD-PHOTO",
+      "ACT7-E09-DORM-CLEAR",
+      "ACT7-E10-LAST-MEAL",
+      "ACT7-E11-LEAVING-PAPERS",
+      "ACT7-E12-STATION-AFTER"
+    ],
+    "act7_required_completion_flags": [
+      "tang_contact_scope_checked",
+      "pre_register_boundary_checked",
+      "graduation_direction_status",
+      "public_consent_checked",
+      "public_scope_boundary_checked",
+      "tang_archive_scope",
+      "opening_contrast_seen",
+      "public_scope",
+      "story_consent",
+      "thesis_topic_form_seen",
+      "topic_self_signed",
+      "topic_boundary_checked",
+      "march_queue_seen",
+      "grad_photo_info_seen",
+      "march_boundary_checked",
+      "thesis_revision_version",
+      "thesis_boundary_checked",
+      "revision_submitted_before_deadline",
+      "defense_order_seen",
+      "defense_boundary_checked",
+      "defense_message_echo",
+      "photo_boundary_checked",
+      "photo_self_confirmed",
+      "clearance_boundary_checked",
+      "shared_item_owner_checked",
+      "dorm_item_confirmed_by_self",
+      "meal_boundary_checked",
+      "meal_attendance_locked",
+      "tang_nonfunctional_line_seen",
+      "polite_distance",
+      "leaving_boundary_checked",
+      "certificate_or_archive_seen",
+      "station_boundary_checked",
+      "ending_temperature_locked",
+      "tang_final_contact_scope"
+    ],
+    "act7_each_event_page_count": 4,
+    "act7_each_event_direction_count": 2,
+    "act7_source_detail_doc": "开发细稿_IF第七卷ACT7-TANG唐骁线事件变体剧情页.md",
+    "act5_full_page_json_status": "not_converted_in_this_file",
+    "act6_full_page_json_status": "full_page_json_ready",
+    "act6_detail_block_count": 5,
+    "act6_page_count": 20,
+    "act6_choice_window_count": 5,
+    "act6_direction_count": 10
+  }
+}
