@@ -58,6 +58,34 @@ assert.ok(
   preview.formatMicroChoiceBody(compactShiftOption, {}).includes("窗口时间落地"),
   "compact micro options should get a story-facing description"
 );
+const keepShortMeeting = preview.splitMicroLabel("A1 保短见：`我见完他去光谷，但只能很短。`");
+assert.ok(
+  preview.formatMicroChoiceBody(keepShortMeeting, {}).includes("不临时失约"),
+  "short body micro options should still be enriched when the label is too thin"
+);
+
+const microChoiceRows = [];
+data.locks.forEach((lock) => {
+  Object.values(lock.choice.chains).forEach((chain) => {
+    chain.microGroups.forEach((group) => {
+      assert.ok(preview.formatMicroGuide(group).length >= 20, `${lock.id} ${group.id} should have story guide text`);
+      group.options.forEach((option) => {
+        const parts = preview.splitMicroLabel(option.label);
+        const title = preview.formatMicroChoiceTitle(parts);
+        const body = preview.formatMicroChoiceBody(parts, group);
+        microChoiceRows.push({ lock: lock.id, group: group.id, title, rawTitle: parts.title, body });
+      });
+    });
+  });
+});
+assert.strictEqual(data.metrics.microChoiceGroups, 28);
+assert.strictEqual(microChoiceRows.length, 84);
+microChoiceRows.forEach((row) => {
+  assert.ok(row.title.trim().length > 0, `${row.lock} ${row.group} should not render empty micro choice title`);
+  assert.ok(!/^(收住|保短见|保改期|保报平安|问材料|问父亲|问母亲|只写留校)$/.test(row.title), `${row.lock} ${row.group} ${row.rawTitle} should not render terse debug-like micro title`);
+  assert.ok(row.body.length >= 30, `${row.lock} ${row.group} ${row.title} should not render thin micro choice body`);
+  assert.ok(!/剧情承接|后面的剧情|变量|family_|route_|act5_/.test(row.body), `${row.lock} ${row.group} ${row.title} should stay player-facing`);
+});
 
 class FakeElement {
   constructor(tagName) {
@@ -179,9 +207,10 @@ async function runDomSmoke() {
 
   const choiceBeat = elements["micro-panel"].children[0];
   assert.strictEqual(choiceBeat.children[0].textContent, "先怎么回母亲？");
+  assert.ok(choiceBeat.children[1].textContent.includes("母亲在电话那头等一句能落地的话"));
   const firstMicroChoice = choiceBeat.children.find((child) => String(child.className).includes("micro-option-row")).children[0];
-  assert.strictEqual(firstMicroChoice.children[0].textContent, "只给最低事实");
-  assert.strictEqual(firstMicroChoice.children[1].textContent, "我看票，明天去站外见他。");
+  assert.strictEqual(firstMicroChoice.children[0].textContent, "先给母亲最低事实");
+  assert.ok(firstMicroChoice.children[1].textContent.includes("站外见面发给母亲"));
   assert.ok(!firstMicroChoice.children.some((child) => /family_|old_debt/.test(child.textContent)), "player-facing micro choices should hide variable effects");
   firstMicroChoice.click();
 

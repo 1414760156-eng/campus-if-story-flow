@@ -234,6 +234,14 @@ h3 {
   color: var(--accent);
 }
 
+.micro-guide {
+  max-width: 760px;
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
 .micro-option-row {
   margin-top: 12px;
 }
