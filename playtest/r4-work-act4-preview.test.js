@@ -52,6 +52,13 @@ const effects = preview.parseNumericEffects("A2 `family_responsibility +1`、`wa
 assert.deepStrictEqual(effects, { family_responsibility: 1, wanfeng_delay: 1 });
 assert.ok(/\[hidden\]\s*\{[^}]*display:\s*none\s*!important/.test(css), "hidden panels must not be overridden by panel display styles");
 
+const compactShiftOption = preview.splitMicroLabel("B1 直接回“周四下午可以”");
+assert.strictEqual(compactShiftOption.title, "直接回“周四下午可以”");
+assert.ok(
+  preview.formatMicroChoiceBody(compactShiftOption, {}).includes("窗口时间落地"),
+  "compact micro options should get a story-facing description"
+);
+
 class FakeElement {
   constructor(tagName) {
     this.tagName = tagName;

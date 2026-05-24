@@ -450,7 +450,7 @@
   }
 
   function splitMicroLabel(label) {
-    const text = stripInlineMarkdown(label);
+    const text = stripInlineMarkdown(label).replace(/^[ABC]\d+\s+/, "");
     const colonIndex = text.indexOf("：");
     if (colonIndex < 0) {
       return { title: text.replace(/\s*\/\s*$/, ""), body: "" };
@@ -459,6 +459,72 @@
       title: text.slice(0, colonIndex).replace(/\s*\/\s*$/, "").trim(),
       body: text.slice(colonIndex + 1).replace(/\s*\/\s*$/, "").trim(),
     };
+  }
+
+  function formatMicroChoiceBody(labelParts, group) {
+    const title = stripInlineMarkdown(labelParts && labelParts.title ? labelParts.title : "");
+    const body = stripInlineMarkdown(labelParts && labelParts.body ? labelParts.body : "");
+    if (body) return body;
+
+    const quoted = title.match(/[“"]([^”"]+)[”"]/);
+    const quotedText = quoted ? `“${quoted[1]}”` : "";
+    const mappings = [
+      [/直接回/, quotedText ? `先把${quotedText}发出去，让窗口时间落地，再承担别的安排被挤压的风险。` : "先给出一个可执行答复，让事情从犹豫变成明确时间。"],
+      [/先问材料清单/, "先把学生证、复印件和窗口要求问清，避免答应之后才发现自己缺东西。"],
+      [/先说明补考时间避免撞车/, "把补考卡点先摊开，宁可推进慢一点，也不要让两件事撞在同一格。"],
+      [/先算车票和饭卡/, "先把最眼前的支出写清，看看今天还能不能稳住。"],
+      [/把勤工可换钱时间也写进去/, "把能换钱的时间也列进表里，承认这一天不只被关系占着。"],
+      [/先问陆沉窗口能不能排上/, "先确认窗口还有没有位置，再决定光谷和回家的时间怎么挪。"],
+      [/先充饭卡/, "先让接下来几顿饭有着落，把别的解释暂时压进包里。"],
+      [/先留打印和车费/, "先保住补考资料和路上的钱，日常开销只能再算。"],
+      [/先夹进补考资料袋/, "把这笔钱和补考绑在一起，提醒自己它不是凭空多出来的。"],
+      [/不补，保持最低事实/, "只让别人知道他见到了父亲，不把信封和没问完的话拿出来。"],
+      [/对陆沉说/, "把下一步勤工安排先递给陆沉，借他的流程感压住混乱。"],
+      [/对母亲补一句/, "把现金这件事补给母亲，承认家里压力已经进了自己的账本。"],
+      [/问材料/, "先问清材料要求，别让一次接班变成新的补交。"],
+      [/问最近缺不缺班/, "直接看有没有能顶上的窗口，让缺口先有一个收入入口。"],
+      [/问会不会撞补考/, "先把补考风险摆出来，不让工作把学业吞掉。"],
+      [/写死短见时段/, "把见面时间卡进备忘录里，换来明确，也换来更高的卡点风险。"],
+      [/给两个可行备选/, "给对方两个真的能执行的时间，让等待不再只靠猜。"],
+      [/只承诺到站后报平安/, "先保最低边界，不把自己现在还做不到的安排说满。"],
+      [/只说时间/, "先把时间冲突说出来，把钱压和勤工暂时藏在后面。"],
+      [/说车票和路费/, "把钱压说成事实，让对方知道这不是一句不想去。"],
+      [/连勤工窗口也说出来/, "把白天会被什么切开说清，但也要承担别人担心更多。"],
+      [/先向母亲/, "先把最基本的事实递给母亲，让家里不再只靠猜。"],
+      [/先向父亲/, "先确认站口那半小时，把这次见面落成具体时间。"],
+      [/先向晚风/, "先告诉晚风光谷会受影响，不让她到最后才知道。"],
+      [/坐回第三排靠边/, "坐回能被看见的位置，但不把自己完全放到人群中央。"],
+      [/坐到 4XX 看得见/, "让 4XX 知道自己没躲开，同时保留一点边界。"],
+      [/先去后排/, "先把自己挪到更好离开的位置，承担别人看不懂的误读。"],
+      [/只说“还行”|只说还行/, "用最轻的一句话盖过去，让饭桌暂时不继续追问。"],
+      [/说“链表写完|链表写完/, "把难处说具体，让关心变成能接住的事实。"],
+      [/别问分/, "把焦点从分数挪开，不让这顿饭只剩成绩审问。"],
+      [/不说，直接去打印/, "先冲去处理材料，留下别人只能从结果倒推的空白。"],
+      [/在群里发/, "把去向丢进群里，至少让别人知道自己不是失踪。"],
+      [/只告诉唐骁/, "只把材料压力交给最懂流程的人，也让信息变窄。"],
+      [/直接放公共桌/, "把回执放到所有人都看得见的位置，省掉一轮解释。"],
+      [/先发群说明/, "先说明自己去排队，让结果回来前也有一条线索。"],
+      [/只告诉陆沉/, "只对最接近现实流程的人说，换来稳，也留下偏窄的信息。"],
+      [/写校内窗口/, "先把未定部分写成后补材料，给表格一个能过的事实。"],
+      [/写预计留校天数/, "把留校时间和可联系时段写清，让别人真的找得到自己。"],
+      [/写兼职、留校和第一联系人/, "把所有事实一次写下去，换来清楚，也让家庭压力跟着进表。"],
+      [/母亲第一、父亲第二/, "按实际能接电话的人保存，不再为了体面把顺序写糊。"],
+      [/保存后发家庭群/, "把截图发回家里，让联系人顺序从私下判断变成共同确认。"],
+      [/先给父亲私发/, "先照顾父亲的体面，再把学校要求说清楚。"],
+    ];
+    const mapped = mappings.find(([pattern]) => pattern.test(title));
+    if (mapped) return mapped[1];
+
+    if (/^先问/.test(title)) {
+      return `先把“${title.replace(/^先问/, "")}”问清，再决定下一步怎么走。`;
+    }
+    if (/^先/.test(title)) {
+      return `先选择“${title.replace(/^先/, "")}”，让眼前的压力落到一个具体动作上。`;
+    }
+    if (/^只/.test(title)) {
+      return `只做到“${title.replace(/^只/, "")}”，保留最低边界，也留下后续解释成本。`;
+    }
+    return `把“${title}”作为这一刻的处理方式，让后面的剧情承接这个选择。`;
   }
 
   function boot() {
@@ -663,10 +729,11 @@
           const label = document.createElement("strong");
           label.textContent = labelParts.title;
           button.append(label);
-          if (labelParts.body) {
+          const choiceBody = formatMicroChoiceBody(labelParts, group);
+          if (choiceBody) {
             const body = document.createElement("p");
             body.className = "micro-choice-text";
-            body.textContent = labelParts.body;
+            body.textContent = choiceBody;
             button.append(body);
           }
           row.appendChild(button);
@@ -1028,6 +1095,8 @@
     SOURCE_PATH,
     parseMarkdown,
     parseNumericEffects,
+    splitMicroLabel,
+    formatMicroChoiceBody,
     stripInlineMarkdown,
     boot,
   };
