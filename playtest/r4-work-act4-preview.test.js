@@ -157,21 +157,22 @@ async function runDomSmoke() {
   assert.strictEqual(elements["choice-panel"].children.length, 3);
 
   elements["choice-panel"].children[0].click();
-  assert.strictEqual(elements["page-title"].textContent, "A. 先接住家里的那通电话");
-  assert.strictEqual(elements["page-body"].children[0].textContent, "周屿和唐骁离开后，空床位、暑假表和母亲电话同时压到公共桌前；母亲提到父亲明天要走。");
+  assert.strictEqual(elements["page-title"].textContent, "接住家里电话 / 现场行动");
+  assert.strictEqual(elements["page-body"].children[0].textContent, "林亦舟把母亲电话接完，没有马上去点晚风的截图，也没有问陆沉勤工表。");
   assert.strictEqual(elements["choice-panel"].hidden, true, "main ABC choices should be hidden after choosing a direction");
-  assert.strictEqual(elements["micro-panel"].children.length, 1, "micro mode should show one beat at a time");
-  assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 0, "first beat is narrative, not a choice");
-
-  elements["next-button"].click();
-  elements["next-button"].click();
-  assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 3, "micro choice beat should render 3 options");
+  assert.strictEqual(elements["micro-panel"].children.length, 1, "micro mode should show one direction page at a time");
+  assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 3, "first direction page should render 3 micro choices");
   assert.strictEqual(elements["next-button"].disabled, true, "micro choice requires a selection");
 
   const choiceBeat = elements["micro-panel"].children[0];
   const firstMicroChoice = choiceBeat.children.find((child) => String(child.className).includes("micro-option-row")).children[0];
   firstMicroChoice.click();
   assert.strictEqual(elements["next-button"].disabled, false, "selected micro choice should enable continuation");
+  elements["next-button"].click();
+
+  assert.strictEqual(elements["page-title"].textContent, "接住家里电话 / 承接回声");
+  assert.strictEqual(elements["page-body"].children[0].textContent, "晚上十点，林亦舟终于把明天行程排出来。");
+  assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 3, "second direction page should render the second micro choice group");
 }
 
 runDomSmoke()

@@ -371,6 +371,11 @@
     return map;
   }
 
+  function resolveFeedbackPages(lock, option) {
+    const feedbackMap = getFeedbackMap(lock);
+    return (option.feedbackIds || []).map((id) => feedbackMap[id]).filter(Boolean);
+  }
+
   function boot() {
     const els = {
       routeChip: document.getElementById("route-chip"),
@@ -546,26 +551,26 @@
 
       const chain = lock.choice.chains[runtime.chosenOption.direction];
       if (!chain) return;
-      const beat = chain.beats[runtime.microBeatIndex];
-      if (!beat) return;
+      const pageCount = Math.max(runtime.feedbackPages.length, 1);
+      const group = chain.microGroups[runtime.microBeatIndex] || null;
 
       const block = document.createElement("div");
-      block.className = `micro-beat${beat.microOptions.length === 0 ? " muted" : ""}`;
+      block.className = `micro-beat${group ? "" : " muted"}`;
 
       const counter = document.createElement("div");
       counter.className = "micro-step-counter";
-      counter.textContent = `内流链 ${runtime.microBeatIndex + 1} / ${chain.beats.length}`;
+      counter.textContent = `方向剧情 ${runtime.microBeatIndex + 1} / ${pageCount}`;
 
       const heading = document.createElement("h3");
-      heading.textContent = `${beat.beat}. ${beat.role}`;
+      heading.textContent = group ? group.role : "承接回声";
 
       const action = document.createElement("p");
       action.className = "micro-action";
-      action.textContent = beat.microOptions.length > 0 ? "这里进入玩家微心态选择。" : "当前剧情拍不需要选择，继续推进。";
+      action.textContent = group ? "选择林亦舟此刻的微心态。" : "当前方向剧情不需要选择，继续推进。";
 
       block.append(counter, heading, action);
 
-      if (beat.microOptions.length > 0) {
+      if (group) {
         const prompt = document.createElement("p");
         prompt.className = "micro-prompt";
         prompt.textContent = "选择林亦舟此刻的微心态。";
@@ -573,13 +578,13 @@
 
         const row = document.createElement("div");
         row.className = "micro-option-row";
-        beat.microOptions.forEach((option) => {
+        group.options.forEach((option) => {
           const button = document.createElement("button");
           button.type = "button";
           button.className = "micro-choice";
-          button.classList.toggle("selected", runtime.microSelections[beat.beat] === option.code);
+          button.classList.toggle("selected", runtime.microSelections[group.beat] === option.code);
           button.addEventListener("click", () => {
-            runtime.microSelections[beat.beat] = option.code;
+            runtime.microSelections[group.beat] = option.code;
             render();
           });
 
@@ -593,11 +598,6 @@
           row.appendChild(button);
         });
         block.appendChild(row);
-      } else if (beat.effectText) {
-        const effect = document.createElement("p");
-        effect.className = "micro-effect";
-        effect.textContent = beat.effectText;
-        block.appendChild(effect);
       }
 
       els.microPanel.appendChild(block);
@@ -614,17 +614,14 @@
       if (!runtime.chosenOption) return false;
       const chain = lock.choice.chains[runtime.chosenOption.direction];
       if (!chain) return true;
-      const beat = chain.beats[runtime.microBeatIndex];
-      if (!beat) return microComplete(lock);
-      if (beat.microOptions.length === 0) return true;
-      return Boolean(runtime.microSelections[beat.beat]);
+      const group = chain.microGroups[runtime.microBeatIndex];
+      if (!group) return true;
+      return Boolean(runtime.microSelections[group.beat]);
     }
 
     function isLastMicroBeat(lock) {
       if (!runtime.chosenOption) return true;
-      const chain = lock.choice.chains[runtime.chosenOption.direction];
-      if (!chain) return true;
-      return runtime.microBeatIndex >= chain.beats.length - 1;
+      return runtime.microBeatIndex >= Math.max(runtime.feedbackPages.length, 1) - 1;
     }
 
     function selectedMicroChoices(lock) {
@@ -651,7 +648,6 @@
       const option = runtime.chosenOption;
       const chain = lock.choice.chains[option.direction];
       const microChoices = selectedMicroChoices(lock);
-      const feedbackMap = getFeedbackMap(lock);
 
       addVars(parseNumericEffects(option.effectSummary));
       if (/主轴/.test(option.type)) addVars({ ui_work_axis_choice: 1 });
@@ -661,7 +657,9 @@
         if (!runtime.hooks.includes(hook)) runtime.hooks.push(hook);
       });
 
-      runtime.feedbackPages = option.feedbackIds.map((id) => feedbackMap[id]).filter(Boolean);
+      if (runtime.feedbackPages.length === 0) {
+        runtime.feedbackPages = resolveFeedbackPages(lock, option);
+      }
       runtime.feedbackIndex = 0;
       runtime.history.push({
         lockId: lock.id,
@@ -673,11 +671,13 @@
     }
 
     function chooseOption(option) {
+      const lock = currentLock();
       runtime.chosenOption = option;
       runtime.microBeatIndex = 0;
       runtime.microSelections = {};
       runtime.choiceCommitted = false;
-      const lock = currentLock();
+      runtime.feedbackPages = resolveFeedbackPages(lock, option);
+      runtime.feedbackIndex = 0;
       const chain = lock.choice.chains[option.direction];
       if (chain && chain.microGroups.length > 0) {
         runtime.mode = "micro";
@@ -715,13 +715,20 @@
         els.next.disabled = true;
       } else if (runtime.mode === "micro") {
         const chain = lock.choice.chains[runtime.chosenOption.direction];
-        const beat = chain && chain.beats[runtime.microBeatIndex];
+        const page = runtime.feedbackPages[runtime.microBeatIndex];
+        const group = chain && chain.microGroups[runtime.microBeatIndex];
         els.title.textContent = `${runtime.chosenOption.direction}. ${runtime.chosenOption.label}`;
-        els.location.textContent = chain ? chain.title : lock.choice.id;
-        els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · 内流链 ${runtime.microBeatIndex + 1} / ${chain ? chain.beats.length : 1}`;
-        setBody(beat ? [beat.action] : []);
+        if (page) {
+          els.title.textContent = page.title;
+          els.location.textContent = page.id;
+          setBody(page.paragraphs);
+        } else {
+          els.location.textContent = chain ? chain.title : lock.choice.id;
+          setBody(["当前方向缺少正式剧情页，请回到 Markdown 检查反馈页 ID。"]);
+        }
+        els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · 方向剧情 ${runtime.microBeatIndex + 1} / ${Math.max(runtime.feedbackPages.length, 1)}`;
         renderMicroPanel(lock);
-        els.next.textContent = isLastMicroBeat(lock) ? "进入反馈页" : beat && beat.microOptions.length > 0 ? "确认并继续" : "继续内流";
+        els.next.textContent = isLastMicroBeat(lock) ? (runtime.lockIndex < runtime.data.locks.length - 1 ? "进入下一锁点" : "完成预览") : group ? "确认并继续" : "继续剧情";
         els.next.disabled = !currentMicroBeatComplete(lock);
       } else if (runtime.mode === "feedback") {
         if (!runtime.choiceCommitted) commitChoice(lock);
@@ -770,7 +777,19 @@
         if (isLastMicroBeat(lock)) {
           if (!microComplete(lock)) return;
           commitChoice(lock);
-          runtime.mode = "feedback";
+          if (runtime.lockIndex < runtime.data.locks.length - 1) {
+            runtime.lockIndex += 1;
+            runtime.mode = "scene";
+            runtime.pageIndex = 0;
+            runtime.chosenOption = null;
+            runtime.microBeatIndex = 0;
+            runtime.microSelections = {};
+            runtime.choiceCommitted = false;
+            runtime.feedbackPages = [];
+            runtime.feedbackIndex = 0;
+          } else {
+            runtime.mode = "complete";
+          }
         } else {
           runtime.microBeatIndex += 1;
         }
