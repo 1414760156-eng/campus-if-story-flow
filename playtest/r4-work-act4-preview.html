@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>R4-WORK 第四幕 P2 操作预览</title>
+    <link rel="stylesheet" href="r4-work-act4-preview.css">
+  </head>
+  <body>
+    <main class="layout">
+      <section class="reader" aria-labelledby="page-title">
+        <div class="topline">
+          <span id="route-chip" class="chip">R4-WORK</span>
+          <span id="lock-chip" class="chip chip-soft"></span>
+          <span id="stage-chip" class="chip chip-soft"></span>
+          <span id="page-progress" class="progress"></span>
+        </div>
+
+        <h1 id="page-title"></h1>
+        <p id="page-location" class="location"></p>
+        <div id="page-body" class="body-copy"></div>
+
+        <div id="choice-panel" class="choice-panel" hidden></div>
+        <div id="micro-panel" class="micro-panel" hidden></div>
+
+        <div class="nav-row">
+          <button id="back-button" type="button" class="ghost-button">上一页</button>
+          <button id="next-button" type="button" class="primary-button">下一页</button>
+        </div>
+      </section>
+
+      <aside class="inspector">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>结构校验</h2>
+            <button id="reload-button" type="button" class="small-button">重载</button>
+          </div>
+          <dl id="metrics-list" class="metrics-list"></dl>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>锁点跳转</h2>
+            <button id="reset-button" type="button" class="small-button">重置</button>
+          </div>
+          <div id="lock-list" class="lock-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>变量 / 回声</h2>
+            <button id="export-button" type="button" class="small-button">导出</button>
+          </div>
+          <div id="state-list" class="state-list"></div>
+          <div id="hook-list" class="hook-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>选择记录</h2>
+          <ol id="history-list" class="history-list"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <script src="r4-work-act4-preview.js"></script>
+  </body>
+</html>
