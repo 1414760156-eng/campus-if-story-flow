@@ -226,8 +226,21 @@ h3 {
   margin-bottom: 6px;
 }
 
+.micro-step-counter {
+  margin-bottom: 6px;
+  color: var(--accent-2);
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .micro-action {
   color: var(--ink);
+}
+
+.micro-prompt {
+  margin-top: 12px;
+  color: var(--accent);
+  font-weight: 800;
 }
 
 .micro-option-row {
@@ -238,6 +251,10 @@ h3 {
   min-height: 44px;
   padding: 8px 10px;
   flex: 1 1 210px;
+}
+
+.micro-choice strong {
+  display: block;
 }
 
 .micro-choice.selected,

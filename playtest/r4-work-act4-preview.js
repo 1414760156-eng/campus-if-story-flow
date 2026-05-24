@@ -402,6 +402,7 @@
       feedbackIndex: 0,
       chosenOption: null,
       choiceCommitted: false,
+      microBeatIndex: 0,
       microSelections: {},
       feedbackPages: [],
       vars: {},
@@ -545,52 +546,61 @@
 
       const chain = lock.choice.chains[runtime.chosenOption.direction];
       if (!chain) return;
+      const beat = chain.beats[runtime.microBeatIndex];
+      if (!beat) return;
 
-      chain.beats.forEach((beat) => {
-        const block = document.createElement("div");
-        block.className = `micro-beat${beat.microOptions.length === 0 ? " muted" : ""}`;
+      const block = document.createElement("div");
+      block.className = `micro-beat${beat.microOptions.length === 0 ? " muted" : ""}`;
 
-        const heading = document.createElement("h3");
-        heading.textContent = `${beat.beat}. ${beat.role}`;
+      const counter = document.createElement("div");
+      counter.className = "micro-step-counter";
+      counter.textContent = `内流链 ${runtime.microBeatIndex + 1} / ${chain.beats.length}`;
 
-        const action = document.createElement("p");
-        action.className = "micro-action";
-        action.textContent = beat.action;
+      const heading = document.createElement("h3");
+      heading.textContent = `${beat.beat}. ${beat.role}`;
 
-        block.append(heading, action);
+      const action = document.createElement("p");
+      action.className = "micro-action";
+      action.textContent = beat.action;
 
-        if (beat.microOptions.length > 0) {
-          const row = document.createElement("div");
-          row.className = "micro-option-row";
-          beat.microOptions.forEach((option) => {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.className = "micro-choice";
-            button.classList.toggle("selected", runtime.microSelections[beat.beat] === option.code);
-            button.addEventListener("click", () => {
-              runtime.microSelections[beat.beat] = option.code;
-              render();
-            });
+      block.append(counter, heading, action);
 
-            const label = document.createElement("strong");
-            const effect = document.createElement("span");
-            effect.className = "micro-effect";
-            label.textContent = `${option.code} ${option.label}`;
-            effect.textContent = option.effectText;
-            button.append(label);
-            if (effect.textContent) button.append(document.createElement("br"), effect);
-            row.appendChild(button);
+      if (beat.microOptions.length > 0) {
+        const prompt = document.createElement("p");
+        prompt.className = "micro-prompt";
+        prompt.textContent = "选择林亦舟此刻的微心态。";
+        block.appendChild(prompt);
+
+        const row = document.createElement("div");
+        row.className = "micro-option-row";
+        beat.microOptions.forEach((option) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "micro-choice";
+          button.classList.toggle("selected", runtime.microSelections[beat.beat] === option.code);
+          button.addEventListener("click", () => {
+            runtime.microSelections[beat.beat] = option.code;
+            render();
           });
-          block.appendChild(row);
-        } else if (beat.effectText) {
+
+          const label = document.createElement("strong");
           const effect = document.createElement("p");
           effect.className = "micro-effect";
-          effect.textContent = beat.effectText;
-          block.appendChild(effect);
-        }
+          label.textContent = `${option.code} ${option.label}`;
+          effect.textContent = option.effectText;
+          button.append(label);
+          if (effect.textContent) button.append(effect);
+          row.appendChild(button);
+        });
+        block.appendChild(row);
+      } else if (beat.effectText) {
+        const effect = document.createElement("p");
+        effect.className = "micro-effect";
+        effect.textContent = beat.effectText;
+        block.appendChild(effect);
+      }
 
-        els.microPanel.appendChild(block);
-      });
+      els.microPanel.appendChild(block);
     }
 
     function microComplete(lock) {
@@ -598,6 +608,23 @@
       const chain = lock.choice.chains[runtime.chosenOption.direction];
       if (!chain) return true;
       return chain.microGroups.every((group) => Boolean(runtime.microSelections[group.beat]));
+    }
+
+    function currentMicroBeatComplete(lock) {
+      if (!runtime.chosenOption) return false;
+      const chain = lock.choice.chains[runtime.chosenOption.direction];
+      if (!chain) return true;
+      const beat = chain.beats[runtime.microBeatIndex];
+      if (!beat) return microComplete(lock);
+      if (beat.microOptions.length === 0) return true;
+      return Boolean(runtime.microSelections[beat.beat]);
+    }
+
+    function isLastMicroBeat(lock) {
+      if (!runtime.chosenOption) return true;
+      const chain = lock.choice.chains[runtime.chosenOption.direction];
+      if (!chain) return true;
+      return runtime.microBeatIndex >= chain.beats.length - 1;
     }
 
     function selectedMicroChoices(lock) {
@@ -647,6 +674,7 @@
 
     function chooseOption(option) {
       runtime.chosenOption = option;
+      runtime.microBeatIndex = 0;
       runtime.microSelections = {};
       runtime.choiceCommitted = false;
       const lock = currentLock();
@@ -687,13 +715,14 @@
         els.next.disabled = true;
       } else if (runtime.mode === "micro") {
         const chain = lock.choice.chains[runtime.chosenOption.direction];
+        const beat = chain && chain.beats[runtime.microBeatIndex];
         els.title.textContent = `${runtime.chosenOption.direction}. ${runtime.chosenOption.label}`;
         els.location.textContent = chain ? chain.title : lock.choice.id;
-        els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · 内流链`;
+        els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · 内流链 ${runtime.microBeatIndex + 1} / ${chain ? chain.beats.length : 1}`;
         setBody([runtime.chosenOption.mindset, runtime.chosenOption.action, runtime.chosenOption.delayed].filter(Boolean));
         renderMicroPanel(lock);
-        els.next.textContent = "进入反馈页";
-        els.next.disabled = !microComplete(lock);
+        els.next.textContent = isLastMicroBeat(lock) ? "进入反馈页" : beat && beat.microOptions.length > 0 ? "确认并继续" : "继续内流";
+        els.next.disabled = !currentMicroBeatComplete(lock);
       } else if (runtime.mode === "feedback") {
         if (!runtime.choiceCommitted) commitChoice(lock);
         const page = runtime.feedbackPages[runtime.feedbackIndex];
@@ -737,9 +766,14 @@
           runtime.mode = "choice";
         }
       } else if (runtime.mode === "micro") {
-        if (!microComplete(lock)) return;
-        commitChoice(lock);
-        runtime.mode = "feedback";
+        if (!currentMicroBeatComplete(lock)) return;
+        if (isLastMicroBeat(lock)) {
+          if (!microComplete(lock)) return;
+          commitChoice(lock);
+          runtime.mode = "feedback";
+        } else {
+          runtime.microBeatIndex += 1;
+        }
       } else if (runtime.mode === "feedback") {
         if (runtime.feedbackIndex < runtime.feedbackPages.length - 1) {
           runtime.feedbackIndex += 1;
@@ -748,6 +782,7 @@
           runtime.mode = "scene";
           runtime.pageIndex = 0;
           runtime.chosenOption = null;
+          runtime.microBeatIndex = 0;
           runtime.microSelections = {};
           runtime.choiceCommitted = false;
           runtime.feedbackPages = [];
@@ -772,7 +807,11 @@
         runtime.mode = "scene";
         runtime.pageIndex = currentLock().pages.length - 1;
       } else if (runtime.mode === "micro") {
-        runtime.mode = "choice";
+        if (runtime.microBeatIndex > 0) {
+          runtime.microBeatIndex -= 1;
+        } else {
+          runtime.mode = "choice";
+        }
       } else if (runtime.mode === "feedback" && runtime.feedbackIndex > 0) {
         runtime.feedbackIndex -= 1;
       }
@@ -786,6 +825,7 @@
       runtime.feedbackIndex = 0;
       runtime.chosenOption = null;
       runtime.choiceCommitted = false;
+      runtime.microBeatIndex = 0;
       runtime.microSelections = {};
       runtime.feedbackPages = [];
       render();
@@ -798,6 +838,7 @@
       runtime.feedbackIndex = 0;
       runtime.chosenOption = null;
       runtime.choiceCommitted = false;
+      runtime.microBeatIndex = 0;
       runtime.microSelections = {};
       runtime.feedbackPages = [];
       runtime.vars = {};
