@@ -12,6 +12,28 @@
   const SOURCE_PATH = "../docs/剧情小说母版_v4.0/开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md";
   const ROUTE_ID = "R4-WORK";
   const POOL_ID = "POOL-R4-WORK";
+  const CHOICE_FALLBACKS = {
+    L02: {
+      title: "三个聊天框怎么回？",
+      guide: "父亲在站外，母亲催票，晚风也在等具体时间。退改规则已经不只是票页小字，而是你接下来要怎么安排这一天。",
+    },
+    L03: {
+      title: "这笔现金怎么接？",
+      guide: "父亲留下的现金、母亲的语音和成绩通知同时落在手边。钱能先补缺口，也会把没说清的事压进后面。",
+    },
+    L04: {
+      title: "先补哪一个缺口？",
+      guide: "补考资料、打印店、C201 和勤工窗口挤在同一个下午。哪件事先被接住，哪件事就会被推迟。",
+    },
+    L05: {
+      title: "返校后站到哪里？",
+      guide: "座位表、补考、窗口和 4XX 的视线都在场。你可以让自己被看见，也可以先保住材料和流程。",
+    },
+    L06: {
+      title: "这张表怎么签？",
+      guide: "兼职、留校、联系人和本人签字被放在同一页。写下去的不是答案，而是第五幕会继续追着你的事实。",
+    },
+  };
 
   function stripInlineMarkdown(value) {
     return String(value || "")
@@ -213,12 +235,18 @@
         choice.guide = stripInlineMarkdown(trimmed.replace("抉择引导文：", ""));
         return;
       }
-      if (!/^方向内流链样板|心态落点样板|反馈页写法样板/.test(trimmed)) {
+      if (!/^方向内流链样板|心态落点(?:样板)?[:：]?|反馈页写法样板/.test(trimmed)) {
         summaryLines.push(trimmed);
       }
     });
 
     choice.summary = linesToParagraphs(summaryLines);
+    if (!choice.title && CHOICE_FALLBACKS[lockId]) {
+      choice.title = CHOICE_FALLBACKS[lockId].title;
+    }
+    if (!choice.guide && CHOICE_FALLBACKS[lockId]) {
+      choice.guide = CHOICE_FALLBACKS[lockId].guide;
+    }
 
     lines.forEach((line) => {
       const cells = splitTableRow(line);

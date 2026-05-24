@@ -42,6 +42,12 @@ assert.strictEqual(first.choice.chains.B.microGroups.length, 1);
 assert.strictEqual(first.choice.chains.C.microGroups.length, 2);
 assert.ok(first.choice.chains.A.echoHooks.includes("r4_empty_dorm_family_call_first"));
 
+const second = data.locks[1];
+assert.strictEqual(second.choice.title, "三个聊天框怎么回？");
+assert.ok(second.choice.guide.includes("父亲在站外"));
+assert.ok(!second.choice.summary.join("\n").includes("心态落点"));
+assert.ok(!second.choice.summary.join("\n").includes("ACT4-WORK-L02-P2-CHOICE-01"));
+
 const effects = preview.parseNumericEffects("A2 `family_responsibility +1`、`wanfeng_delay +1`");
 assert.deepStrictEqual(effects, { family_responsibility: 1, wanfeng_delay: 1 });
 assert.ok(/\[hidden\]\s*\{[^}]*display:\s*none\s*!important/.test(css), "hidden panels must not be overridden by panel display styles");
@@ -181,6 +187,11 @@ async function runDomSmoke() {
   const secondMicroChoice = secondChoiceBeat.children.find((child) => String(child.className).includes("micro-option-row")).children[0];
   secondMicroChoice.click();
   assert.strictEqual(elements["page-title"].textContent, "4XX / 购票软件");
+
+  for (let i = 0; i < 4; i += 1) elements["next-button"].click();
+  assert.strictEqual(elements["page-title"].textContent, "三个聊天框怎么回？");
+  assert.ok(elements["page-body"].children[0].textContent.includes("父亲在站外"));
+  assert.ok(!elements["page-body"].children.some((child) => child.textContent.includes("心态落点")));
 }
 
 runDomSmoke()
