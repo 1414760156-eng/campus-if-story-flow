@@ -88,6 +88,8 @@
 }
 ```
 
+2026-05-23 schema 同步：`act5_route_candidate_scores` 是第五幕局部视图；正式路线状态统一使用 `route_candidate_scores`、`act5_entry_bias`、`entry_gate_status`、`entry_gate_conditions` 和 `entry_gate_audit`。第五幕锁池必须同时满足本文件的五类选择窗口下限，以及 `开发规则_IF第三四幕前置入口与第五幕外流条件矩阵.md` 中的“前置条件 + 最终选择”。
+
 ## 第六卷 20 剧情段规则
 
 ### 结构

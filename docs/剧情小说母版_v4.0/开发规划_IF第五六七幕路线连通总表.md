@@ -421,7 +421,7 @@ Act7 全路线最终扫尾复核已完成，不新增结构层；11 条路线的
 - 所有 Act6 方向都锁在 `POOL-R4-WORK` 内，保持 `route_switch_allowed = false`。
 - `act6_blocks.conversion_status` 与 `validation_targets.act6_full_page_json_status` 已更新为 `full_page_json_ready`。
 
-后续状态更新：`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG` 与 `R5-LUCHEN` Act6 正式剧情页均已接入；后续建议继续补 `R5-LIEFLAT` 的 Act6 正式剧情页。
+后续状态更新：`DEFAULT-4XX`、`R5-ZHOU`、`R5-TANG`、`R5-LUCHEN` 与 `R5-LIEFLAT` Act6 正式剧情页均已接入；后续转向 5/6/7 全链路扫尾与旧口径残留清理。
 
 ## 2026-05-22 接入记录：P0-B 工作入口完整页级 JSON
 
@@ -435,7 +435,7 @@ Act7 全路线最终扫尾复核已完成，不新增结构层；11 条路线的
 - `source_docs` 已包含 `开发文本_IF分支P0-B第四幕暑假兼职线.md`。
 - 后续状态更新：`DEFAULT-4XX`、`R5-ZHOU` 与 `R5-TANG` 第六幕正式剧情页和完整页级 JSON 均已接入。
 - 后续状态更新：`R5-LUCHEN` 第六幕正式剧情页与完整页级 JSON 已接入。
-- 后续建议继续收 `R5-LIEFLAT` Act6。
+- 后续状态更新：`R5-LIEFLAT` Act6 已接入完整页级 JSON；后续转向 5/6/7 全链路扫尾与旧口径残留清理。
 
 ## 2026-05-22 接入记录：ACT6-TANG 第六幕正式剧情页
 

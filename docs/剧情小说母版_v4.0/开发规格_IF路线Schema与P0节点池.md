@@ -17,6 +17,7 @@
 7. 第一卷、第二卷共享；第三幕以后，所有长支线都按关键抉择外流线处理。进入外流线后，只保留当前池完整主线。
 8. 第五卷进入长线结算前必须满足最低主线选择要求：至少 5 个主线选择窗口，覆盖宿舍站队、亲密 / 晚风、项目 / 规则、活动 / 兴趣、回避 / 外流，并为第六卷留下可见回响。
 9. 第六卷按 20 个剧情段承接当前命运池：每 4 段落 1 个选择窗口，共 5 个选择窗口；每个窗口只能保留 2 个当前池内方向，不得重新开放其它完整路线。详见 `开发规则_IF第五第六卷玩法节奏硬约束.md`。
+10. 第三 / 四幕前置入口和第五幕外流锁池按 `开发规则_IF第三四幕前置入口与第五幕外流条件矩阵.md` 执行：未锁池前只记录候选分数、入口偏置和软回声；第五幕必须由“前置条件 + 最终选择”共同锁池。
 
 ## 路线状态 Schema
 
@@ -54,6 +55,39 @@
   "route_lock": false,
   "hard_outflow": false,
   "route_confidence": 0,
+  "route_candidate_scores": {
+    "DEFAULT-4XX": 0,
+    "A3-ACTIVITY-PUBLIC": 0,
+    "R3-PERFECT": 0,
+    "R4-WORK": 0,
+    "R5-WANFENG": 0,
+    "R5-ROMANCE": 0,
+    "R5-ZHOU": 0,
+    "R5-TANG": 0,
+    "R5-LUCHEN": 0,
+    "R5-LIEFLAT": 0,
+    "R5X-HARD": 0
+  },
+  "act5_entry_bias": {},
+  "entry_gate_status": "candidate",
+  "entry_gate_conditions": {
+    "route_id": "DEFAULT-4XX",
+    "entry_stage": "P0-D",
+    "required_all": [],
+    "required_any_min": 0,
+    "required_any": [],
+    "score_threshold": {},
+    "lockout": [],
+    "final_choice_required": "none",
+    "seed_variables": []
+  },
+  "entry_gate_audit": {
+    "schema_doc": "开发规则_IF第三四幕前置入口与第五幕外流条件矩阵.md",
+    "prelock_fields_only": true,
+    "final_choice_required": true,
+    "no_active_route_before_lock": true,
+    "no_silent_auto_lock": true
+  },
   "act5_mainline_choice_count": 0,
   "act5_required_windows_seen": [],
   "act5_choice_floor_met": false,
@@ -99,6 +133,11 @@
 | `route_lock` | boolean/string | `false`、`5x` | 是否进入不可回退路线。现阶段只有 5X。 |
 | `hard_outflow` | boolean | `true`、`false` | 是否进入唯一硬外流。 |
 | `route_confidence` | number | 0-5 | 路线稳定度，避免一次选择立刻锁线。 |
+| `route_candidate_scores` | object | 11 条路线 ID 到数值 | 第三 / 四幕和第五幕锁池前累计的路线候选分数。它不等于锁池，不能单独写入 `active_route_id`。 |
+| `act5_entry_bias` | object | 路线 ID 到偏置说明或数值 | 第四幕交给第五幕的入口偏置，用于控制第五幕方向可见、候选或回落。 |
+| `entry_gate_status` | enum | `hidden`、`echo_only`、`candidate`、`locked`、`fallback` | 当前路线入口状态。只有 `locked` 才允许写入完整 `route_pool_id` / `active_route_id`。 |
+| `entry_gate_conditions` | object | 见条件矩阵字段 | 当前路线的前置条件、第五幕最终选择、互斥条件和锁池种子。 |
+| `entry_gate_audit` | object | 审计布尔值和来源文档 | 校验本路线是否遵守“前置条件 + 最终选择”锁池，以及未锁池前是否没有提前写死主路线。 |
 | `act5_mainline_choice_count` | number | `0`-`5+` | 第五卷已完成的主线选择窗口数量。少于 5 时不得锁定普通完整长线。 |
 | `act5_required_windows_seen` | array | `dorm_stand`、`intimacy_or_wanfeng`、`project_or_rule`、`activity_or_interest`、`avoidance_or_outflow` | 第五卷五类必经选择窗口完成情况。 |
 | `act5_choice_floor_met` | boolean | `true`、`false` | 是否满足第五卷最低主线选择要求。 |
@@ -129,6 +168,30 @@
 | `old_debt` | 0 到 8 | 宿舍旧账可见度。 |
 | `missed_chance` | 0 到 8 | 错过入口数量。 |
 | `5x_regret` | 0 到 8 | 5X 外流遗憾强度。 |
+
+### 前置入口与变量池审计字段
+
+以下字段用于审计第三 / 四幕是否只是留下候选，和第五幕是否正确锁池。它们属于路线判定字段，不是正文好感度。
+
+| 字段 | 类型 | 用途 |
+|---|---|---|
+| `route_candidate_scores` | object | 记录 11 条路线的候选分数。第三 / 四幕可以加分，但不得因为分数高就直接锁池。 |
+| `act5_entry_bias` | object | 记录第五幕入口偏置，例如 `wanfeng`、`romance`、`zhou`、`tang`、`luchen`、`lieflat`、`5x`。 |
+| `entry_gate_status` | enum | 表示当前方向是隐藏、只作回声、候选、已锁或回落。 |
+| `entry_gate_missing_requirements` | array | 记录尚未满足的 `required_all` / `required_any` 条件，方便后续审计为什么不能成线。 |
+| `entry_gate_lockout_reason` | array | 记录互斥原因，例如没有 A3 女生候选、已锁其它完整线、P0-E 硬锁覆盖。 |
+| `entry_gate_final_choice_confirmed` | boolean | 第五幕最终选择是否成立。普通路线必须为 true 才能锁池。 |
+| `entry_gate_seed_variables_written` | boolean | 锁池后是否把条件矩阵里的种子变量写入当前路线变量池。 |
+| `entry_gate_source_doc` | string | 固定指向 `开发规则_IF第三四幕前置入口与第五幕外流条件矩阵.md`。 |
+
+审计规则：
+
+- `entry_gate_status != "locked"` 时，不得写新的 `active_route_id`。
+- `entry_gate_final_choice_confirmed != true` 时，不得锁普通完整路线。
+- `R5-ROMANCE` 必须检查 `romance_origin != "none"` 和 `female_candidate_present = true`。
+- `R5-WANFENG` 可以从主轴直连，但仍必须检查第五幕明确选择。
+- P0-D 站队组共用入口，不为周屿 / 唐骁 / 陆沉 / 摆烂重复开入口。
+- `R5X-HARD` 只在 P0-E 硬锁，且锁定后 `route_switch_allowed = false`。
 
 ## 节点 Schema
 
@@ -209,6 +272,8 @@
 如果多个软路线同时达标，先检查 `allowed_next_routes` 白名单，再按“最近一次时期外流点 + route_confidence + route_focus 持续次数”判定，不要让早期一次选择永久锁死玩家。
 
 第五卷普通长线锁定前，还必须检查 `act5_choice_floor_met = true`。除 `R5X-HARD` 外，任何普通软路线都不得在五类主线选择窗口完成前直接锁完整后续。第五卷五类窗口和第六卷 20 段规则以 `开发规则_IF第五第六卷玩法节奏硬约束.md` 为准。
+
+2026-05-23 追加：第五幕外流还必须检查 `entry_gate_conditions`。锁池成立条件为 `entry_gate_status = "candidate"`、`entry_gate_final_choice_confirmed = true`、无 `entry_gate_lockout_reason`，并写入 `entry_gate_seed_variables_written = true`。条件不足时只能进入 `echo_only`、`fallback` 或保留候选，不得静默自动写 `active_route_id`。
 
 ## 第六卷 20 段承接规则
 

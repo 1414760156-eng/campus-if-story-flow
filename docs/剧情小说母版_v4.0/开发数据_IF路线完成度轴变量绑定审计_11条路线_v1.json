@@ -1,0 +1,1308 @@
+{
+  "schema_version": "if_route_completion_axis_binding_audit_v1",
+  "generated_at": "2026-05-23",
+  "purpose": "审计 11 条 IF 路线完成度轴能否绑定到已有正式路线 JSON 变量；只列候选变量和缺口，不写回正式剧情页级 JSON。",
+  "source_docs": [
+    "docs/剧情小说母版_v4.0/开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+    "docs/剧情小说母版_v4.0/开发矩阵_IF路线完成度轴与四档结局_11条路线.md"
+  ],
+  "route_count": 11,
+  "axis_count": 55,
+  "global_findings": [
+    "55 个路线内完成度轴均能在现有 local_variables 中找到至少 2 个候选变量。",
+    "当前没有任何轴可直接写成正式公式；全部仍缺少阈值、变量正负向和四档映射权重。",
+    "family_relationship 在部分路线只能用 money_pressure 等现实压力变量代理，需要后续确认是否补家庭专属变量。",
+    "ending_candidate_links 只能作为温度候选，不能作为玩家首屏成就公式。"
+  ],
+  "binding_status_counts": {
+    "candidate_variables_found_thresholds_missing": 53,
+    "proxy_variables_found_thresholds_missing": 2
+  },
+  "routes": [
+    {
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_json": "开发数据_IF剧情页级JSON_A3-ACTIVITY-PUBLIC_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 99,
+      "ending_candidate_count": 6,
+      "axes": [
+        {
+          "axis_id": "interest_activity",
+          "weight": "strong",
+          "candidate_variables": [
+            "activity_public_credit_recorded",
+            "activity_image_scope_checked",
+            "a3_public_scope",
+            "public_credit",
+            "public_credit_recorded"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "A3-END-PUBLIC-CREDIT",
+            "A3-END-CANDIDATE-OPEN",
+            "A3-END-PRESSURE-SPREAD",
+            "A3-END-DORM-RETURN",
+            "A3-END-LOW-VISIBILITY",
+            "A3-END-PERFECT-SEED"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_absence",
+            "dorm_key_returned",
+            "dorm_warmth",
+            "activity_reply_after_meal",
+            "a3_public_scope"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "A3-END-PUBLIC-CREDIT",
+            "A3-END-CANDIDATE-OPEN",
+            "A3-END-PRESSURE-SPREAD",
+            "A3-END-DORM-RETURN",
+            "A3-END-LOW-VISIBILITY",
+            "A3-END-PERFECT-SEED"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "candidate_variables": [
+            "certificate_or_archive_seen",
+            "thesis_revision_version",
+            "graduation_temperature",
+            "activity_archive_boundary_checked",
+            "activity_certificate_status"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "A3-END-PUBLIC-CREDIT",
+            "A3-END-CANDIDATE-OPEN",
+            "A3-END-PRESSURE-SPREAD",
+            "A3-END-DORM-RETURN",
+            "A3-END-LOW-VISIBILITY",
+            "A3-END-PERFECT-SEED"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "candidate_variables": [
+            "candidate_source_checked",
+            "candidate_source_seen",
+            "candidate_source_tag",
+            "female_candidate_present",
+            "a3_public_scope"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "A3-END-PUBLIC-CREDIT",
+            "A3-END-CANDIDATE-OPEN",
+            "A3-END-PRESSURE-SPREAD",
+            "A3-END-DORM-RETURN",
+            "A3-END-LOW-VISIBILITY",
+            "A3-END-PERFECT-SEED"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "candidate_variables": [
+            "self_control",
+            "public_scope_boundary_checked",
+            "activity_archive_boundary_checked",
+            "public_boundary",
+            "public_boundary_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "A3-END-PUBLIC-CREDIT",
+            "A3-END-CANDIDATE-OPEN",
+            "A3-END-PRESSURE-SPREAD",
+            "A3-END-DORM-RETURN",
+            "A3-END-LOW-VISIBILITY",
+            "A3-END-PERFECT-SEED"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "source_json": "开发数据_IF剧情页级JSON_R3-PERFECT_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 86,
+      "ending_candidate_count": 6,
+      "axes": [
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "candidate_variables": [
+            "self_control",
+            "public_scope_boundary_checked",
+            "scope_clarity",
+            "scope_clarity_checked",
+            "public_boundary"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "PERFECT-END-CLEAR-PUBLIC",
+            "PERFECT-END-TOOLING",
+            "PERFECT-END-POLITE-DISTANCE",
+            "PERFECT-END-LATE-PRIVATE",
+            "PERFECT-END-LOW-TEMPERATURE",
+            "PERFECT-END-QUIET-BOUNDARY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "strong",
+          "candidate_variables": [
+            "certificate_or_archive_seen",
+            "thesis_revision_version",
+            "graduation_temperature",
+            "defense_boundary_checked",
+            "defense_order_seen"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "PERFECT-END-CLEAR-PUBLIC",
+            "PERFECT-END-TOOLING",
+            "PERFECT-END-POLITE-DISTANCE",
+            "PERFECT-END-LATE-PRIVATE",
+            "PERFECT-END-LOW-TEMPERATURE",
+            "PERFECT-END-QUIET-BOUNDARY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_key_returned",
+            "dorm_warmth",
+            "dorm_warmth_risk",
+            "perfect_reply_after_meal",
+            "meal_attendance_locked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "PERFECT-END-CLEAR-PUBLIC",
+            "PERFECT-END-TOOLING",
+            "PERFECT-END-POLITE-DISTANCE",
+            "PERFECT-END-LATE-PRIVATE",
+            "PERFECT-END-LOW-TEMPERATURE",
+            "PERFECT-END-QUIET-BOUNDARY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "interest_activity",
+          "weight": "secondary",
+          "candidate_variables": [
+            "public_scope_boundary_checked",
+            "public_credit",
+            "perfect_contact_scope",
+            "scope_clarity",
+            "scope_clarity_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "PERFECT-END-CLEAR-PUBLIC",
+            "PERFECT-END-TOOLING",
+            "PERFECT-END-POLITE-DISTANCE",
+            "PERFECT-END-LATE-PRIVATE",
+            "PERFECT-END-LOW-TEMPERATURE",
+            "PERFECT-END-QUIET-BOUNDARY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "candidate_variables": [
+            "shen_jiahe_link",
+            "xia_zhiwei_link",
+            "graduation_temperature",
+            "perfect_contact_scope",
+            "public_scope_boundary_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "PERFECT-END-CLEAR-PUBLIC",
+            "PERFECT-END-TOOLING",
+            "PERFECT-END-POLITE-DISTANCE",
+            "PERFECT-END-LATE-PRIVATE",
+            "PERFECT-END-LOW-TEMPERATURE",
+            "PERFECT-END-QUIET-BOUNDARY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_json": "开发数据_IF剧情页级JSON_R4-WORK_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 97,
+      "ending_candidate_count": 5,
+      "axes": [
+        {
+          "axis_id": "study_or_work",
+          "weight": "strong",
+          "candidate_variables": [
+            "work_shift",
+            "work_shift_recorded",
+            "work_certificate_status",
+            "work_material_boundary_checked",
+            "certificate_or_archive_seen"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WORK-END-INDEPENDENT",
+            "WORK-END-POLITE-DISTANCE",
+            "WORK-END-MISSED-MEAL",
+            "WORK-END-FAMILY-OPEN",
+            "WORK-END-LOW-CONTACT"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "family_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "money_pressure",
+            "money_pressure_recorded",
+            "small_income",
+            "family_signal",
+            "family_signal_recorded"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WORK-END-INDEPENDENT",
+            "WORK-END-POLITE-DISTANCE",
+            "WORK-END-MISSED-MEAL",
+            "WORK-END-FAMILY-OPEN",
+            "WORK-END-LOW-CONTACT"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_absence",
+            "dorm_key_returned",
+            "dorm_trust",
+            "dorm_warmth",
+            "repair_or_shift_tradeoff_recorded"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WORK-END-INDEPENDENT",
+            "WORK-END-POLITE-DISTANCE",
+            "WORK-END-MISSED-MEAL",
+            "WORK-END-FAMILY-OPEN",
+            "WORK-END-LOW-CONTACT"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "candidate_variables": [
+            "work_private_entry",
+            "intimacy_link",
+            "missed_meet_seen",
+            "relationship_truth",
+            "shen_jiahe_link"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WORK-END-INDEPENDENT",
+            "WORK-END-POLITE-DISTANCE",
+            "WORK-END-MISSED-MEAL",
+            "WORK-END-FAMILY-OPEN",
+            "WORK-END-LOW-CONTACT"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "secondary",
+          "candidate_variables": [
+            "proxy_risk",
+            "public_boundary_risk",
+            "self_control",
+            "shift_boundary_checked",
+            "work_material_boundary_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WORK-END-INDEPENDENT",
+            "WORK-END-POLITE-DISTANCE",
+            "WORK-END-MISSED-MEAL",
+            "WORK-END-FAMILY-OPEN",
+            "WORK-END-LOW-CONTACT"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "source_json": "开发数据_IF剧情页级JSON_R5-WANFENG_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 75,
+      "ending_candidate_count": 5,
+      "axes": [
+        {
+          "axis_id": "romance_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "wanfeng_future_frequency",
+            "wanfeng_private_entry",
+            "wanfeng_private_entry_checked",
+            "wanfeng_voice_reply_seen",
+            "wanfeng_meeting_time_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WANFENG-END-CONTINUE",
+            "WANFENG-END-PRIVATE-ENTRY",
+            "WANFENG-END-POLITE-PARTING",
+            "WANFENG-END-MISSED",
+            "WANFENG-END-SWEET-BUT-COSTLY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_absence",
+            "dorm_key_returned",
+            "dorm_warmth",
+            "old_dorm_distance",
+            "dorm_visibility"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WANFENG-END-CONTINUE",
+            "WANFENG-END-PRIVATE-ENTRY",
+            "WANFENG-END-POLITE-PARTING",
+            "WANFENG-END-MISSED",
+            "WANFENG-END-SWEET-BUT-COSTLY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "candidate_variables": [
+            "certificate_or_archive_seen",
+            "thesis_revision_version",
+            "graduation_temperature",
+            "defense_boundary_checked",
+            "defense_message_echo"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WANFENG-END-CONTINUE",
+            "WANFENG-END-PRIVATE-ENTRY",
+            "WANFENG-END-POLITE-PARTING",
+            "WANFENG-END-MISSED",
+            "WANFENG-END-SWEET-BUT-COSTLY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "family_relationship",
+          "weight": "echo",
+          "candidate_variables": [
+            "money_pressure",
+            "priority_pressure_recorded",
+            "graduation_temperature",
+            "wanfeng_future_frequency",
+            "wanfeng_private_entry"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WANFENG-END-CONTINUE",
+            "WANFENG-END-PRIVATE-ENTRY",
+            "WANFENG-END-POLITE-PARTING",
+            "WANFENG-END-MISSED",
+            "WANFENG-END-SWEET-BUT-COSTLY"
+          ],
+          "binding_status": "proxy_variables_found_thresholds_missing",
+          "remaining_gap": "缺少家庭专属变量，当前主要依赖 money / pressure / work_reality 等现实压力代理变量。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "candidate_variables": [
+            "route_switch_allowed_false_after_lock",
+            "wanfeng_boundary",
+            "wanfeng_boundary_checked",
+            "act6_closed",
+            "act6_route_pool_locked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "WANFENG-END-CONTINUE",
+            "WANFENG-END-PRIVATE-ENTRY",
+            "WANFENG-END-POLITE-PARTING",
+            "WANFENG-END-MISSED",
+            "WANFENG-END-SWEET-BUT-COSTLY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R5-ROMANCE",
+      "route_pool_id": "POOL-R5-ROMANCE",
+      "source_json": "开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 82,
+      "ending_candidate_count": 6,
+      "axes": [
+        {
+          "axis_id": "romance_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "romance_candidate",
+            "romance_candidate_locked",
+            "candidate_private_entry",
+            "a3_candidate_source_checked",
+            "candidate_final_contact_scope"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ROMANCE-END-CONTINUE-SHEN",
+            "ROMANCE-END-CONTINUE-XIA",
+            "ROMANCE-END-PRIVATE-ENTRY",
+            "ROMANCE-END-POLITE-PARTING",
+            "ROMANCE-END-MISSED",
+            "ROMANCE-END-SWEET-BUT-DORM-COLD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_absence",
+            "dorm_key_returned",
+            "dorm_warmth",
+            "candidate_reply_after_meal",
+            "dorm_visibility"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ROMANCE-END-CONTINUE-SHEN",
+            "ROMANCE-END-CONTINUE-XIA",
+            "ROMANCE-END-PRIVATE-ENTRY",
+            "ROMANCE-END-POLITE-PARTING",
+            "ROMANCE-END-MISSED",
+            "ROMANCE-END-SWEET-BUT-DORM-COLD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "candidate_variables": [
+            "certificate_or_archive_seen",
+            "thesis_revision_version",
+            "graduation_temperature",
+            "defense_boundary_checked",
+            "defense_message_echo"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ROMANCE-END-CONTINUE-SHEN",
+            "ROMANCE-END-CONTINUE-XIA",
+            "ROMANCE-END-PRIVATE-ENTRY",
+            "ROMANCE-END-POLITE-PARTING",
+            "ROMANCE-END-MISSED",
+            "ROMANCE-END-SWEET-BUT-DORM-COLD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "side_character_affinity",
+          "weight": "echo",
+          "candidate_variables": [
+            "candidate_misread",
+            "wanfeng_misread",
+            "romance_candidate",
+            "romance_candidate_locked",
+            "a3_candidate_source_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ROMANCE-END-CONTINUE-SHEN",
+            "ROMANCE-END-CONTINUE-XIA",
+            "ROMANCE-END-PRIVATE-ENTRY",
+            "ROMANCE-END-POLITE-PARTING",
+            "ROMANCE-END-MISSED",
+            "ROMANCE-END-SWEET-BUT-DORM-COLD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "candidate_variables": [
+            "route_switch_allowed_false_after_lock",
+            "romance_candidate_locked",
+            "relationship_truth",
+            "act6_closed",
+            "act6_route_pool_locked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ROMANCE-END-CONTINUE-SHEN",
+            "ROMANCE-END-CONTINUE-XIA",
+            "ROMANCE-END-PRIVATE-ENTRY",
+            "ROMANCE-END-POLITE-PARTING",
+            "ROMANCE-END-MISSED",
+            "ROMANCE-END-SWEET-BUT-DORM-COLD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "source_json": "开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 123,
+      "ending_candidate_count": 5,
+      "axes": [
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "dorm_repair",
+            "dorm_absence",
+            "dorm_key_returned",
+            "dorm_trust",
+            "dorm_warmth"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "DEFAULT-END-SAY-CLEAR",
+            "DEFAULT-END-PRESENT-NOT-CLOSE",
+            "DEFAULT-END-POLITE-DISTANCE",
+            "DEFAULT-END-NOT-RECONCILED",
+            "DEFAULT-END-LOW-FREQUENCY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "candidate_variables": [
+            "defense_revision_after_seen",
+            "internship_proof_checked",
+            "thesis_revision_comments_seen",
+            "thesis_revision_helper",
+            "thesis_revision_version"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "DEFAULT-END-SAY-CLEAR",
+            "DEFAULT-END-PRESENT-NOT-CLOSE",
+            "DEFAULT-END-POLITE-DISTANCE",
+            "DEFAULT-END-NOT-RECONCILED",
+            "DEFAULT-END-LOW-FREQUENCY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "candidate_variables": [
+            "luchen_voice",
+            "relationship_truth",
+            "dorm_repair",
+            "ending_temperature_locked",
+            "graduation_temperature"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "DEFAULT-END-SAY-CLEAR",
+            "DEFAULT-END-PRESENT-NOT-CLOSE",
+            "DEFAULT-END-POLITE-DISTANCE",
+            "DEFAULT-END-NOT-RECONCILED",
+            "DEFAULT-END-LOW-FREQUENCY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "family_relationship",
+          "weight": "echo",
+          "candidate_variables": [
+            "money_pressure",
+            "dorm_pressure",
+            "rule_pressure",
+            "dorm_repair",
+            "ending_temperature_locked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "DEFAULT-END-SAY-CLEAR",
+            "DEFAULT-END-PRESENT-NOT-CLOSE",
+            "DEFAULT-END-POLITE-DISTANCE",
+            "DEFAULT-END-NOT-RECONCILED",
+            "DEFAULT-END-LOW-FREQUENCY"
+          ],
+          "binding_status": "proxy_variables_found_thresholds_missing",
+          "remaining_gap": "缺少家庭专属变量，当前主要依赖 money / pressure / work_reality 等现实压力代理变量。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "candidate_variables": [
+            "proxy_risk",
+            "ending_temperature_locked",
+            "act6_closed",
+            "act6_route_pool_locked",
+            "avoidance"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "DEFAULT-END-SAY-CLEAR",
+            "DEFAULT-END-PRESENT-NOT-CLOSE",
+            "DEFAULT-END-POLITE-DISTANCE",
+            "DEFAULT-END-NOT-RECONCILED",
+            "DEFAULT-END-LOW-FREQUENCY"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "source_json": "开发数据_IF剧情页级JSON_R5-ZHOU_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 67,
+      "ending_candidate_count": 5,
+      "axes": [
+        {
+          "axis_id": "primary_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "zhou_final_contact_scope",
+            "zhou_contact_scope_checked",
+            "zhou_half_apology_seen",
+            "zhou_trust",
+            "continue_contact"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ZHOU-END-LOW-FREQUENCY-REAL",
+            "ZHOU-END-HALF-APOLOGY",
+            "ZHOU-END-POLITE-DISTANCE",
+            "ZHOU-END-ACTIVITY-COST",
+            "ZHOU-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "interest_activity",
+          "weight": "strong",
+          "candidate_variables": [
+            "zhou_activity_signature_scope",
+            "public_smooth",
+            "public_scope",
+            "public_scope_boundary_checked",
+            "activity_link"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ZHOU-END-LOW-FREQUENCY-REAL",
+            "ZHOU-END-HALF-APOLOGY",
+            "ZHOU-END-POLITE-DISTANCE",
+            "ZHOU-END-ACTIVITY-COST",
+            "ZHOU-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_absence",
+            "dorm_warmth",
+            "dorm_item_confirmed_by_self",
+            "meal_attendance_locked",
+            "meal_boundary_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ZHOU-END-LOW-FREQUENCY-REAL",
+            "ZHOU-END-HALF-APOLOGY",
+            "ZHOU-END-POLITE-DISTANCE",
+            "ZHOU-END-ACTIVITY-COST",
+            "ZHOU-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "echo",
+          "candidate_variables": [
+            "certificate_or_archive_seen",
+            "thesis_revision_version",
+            "thesis_topic_form_seen",
+            "graduation_temperature",
+            "joke_defense"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ZHOU-END-LOW-FREQUENCY-REAL",
+            "ZHOU-END-HALF-APOLOGY",
+            "ZHOU-END-POLITE-DISTANCE",
+            "ZHOU-END-ACTIVITY-COST",
+            "ZHOU-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "secondary",
+          "candidate_variables": [
+            "proxy_risk",
+            "ending_temperature_locked",
+            "act6_closed",
+            "act6_route_pool_locked",
+            "clearance_boundary_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "ZHOU-END-LOW-FREQUENCY-REAL",
+            "ZHOU-END-HALF-APOLOGY",
+            "ZHOU-END-POLITE-DISTANCE",
+            "ZHOU-END-ACTIVITY-COST",
+            "ZHOU-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "source_json": "开发数据_IF剧情页级JSON_R5-TANG_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 62,
+      "ending_candidate_count": 5,
+      "axes": [
+        {
+          "axis_id": "primary_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "tang_final_contact_scope",
+            "tang_contact_scope_checked",
+            "tang_trust",
+            "continue_contact",
+            "repair_depth"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "TANG-END-LOW-FREQUENCY-COLLAB",
+            "TANG-END-NONFUNCTIONAL-LINE",
+            "TANG-END-POLITE-DISCONNECT",
+            "TANG-END-FLOW-PRESSURE",
+            "TANG-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "strong",
+          "candidate_variables": [
+            "certificate_or_archive_seen",
+            "thesis_revision_version",
+            "thesis_topic_form_seen",
+            "graduation_temperature",
+            "tang_archive_scope"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "TANG-END-LOW-FREQUENCY-COLLAB",
+            "TANG-END-NONFUNCTIONAL-LINE",
+            "TANG-END-POLITE-DISCONNECT",
+            "TANG-END-FLOW-PRESSURE",
+            "TANG-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_warmth",
+            "dorm_item_confirmed_by_self",
+            "meal_attendance_locked",
+            "meal_boundary_checked",
+            "old_debt"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "TANG-END-LOW-FREQUENCY-COLLAB",
+            "TANG-END-NONFUNCTIONAL-LINE",
+            "TANG-END-POLITE-DISCONNECT",
+            "TANG-END-FLOW-PRESSURE",
+            "TANG-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "side_character_affinity",
+          "weight": "echo",
+          "candidate_variables": [
+            "zhou_misread",
+            "tang_archive_scope",
+            "rule_pressure",
+            "tang_contact_scope_checked",
+            "tang_final_contact_scope"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "TANG-END-LOW-FREQUENCY-COLLAB",
+            "TANG-END-NONFUNCTIONAL-LINE",
+            "TANG-END-POLITE-DISCONNECT",
+            "TANG-END-FLOW-PRESSURE",
+            "TANG-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "secondary",
+          "candidate_variables": [
+            "luchen_proxy_risk",
+            "proxy_risk",
+            "ending_temperature_locked",
+            "responsibility_clarity",
+            "act6_closed"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "TANG-END-LOW-FREQUENCY-COLLAB",
+            "TANG-END-NONFUNCTIONAL-LINE",
+            "TANG-END-POLITE-DISCONNECT",
+            "TANG-END-FLOW-PRESSURE",
+            "TANG-END-MISREAD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R5-LUCHEN",
+      "route_pool_id": "POOL-R5-LUCHEN",
+      "source_json": "开发数据_IF剧情页级JSON_R5-LUCHEN_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 58,
+      "ending_candidate_count": 5,
+      "axes": [
+        {
+          "axis_id": "primary_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "luchen_final_contact_scope",
+            "luchen_contact_scope_checked",
+            "luchen_late_word_seen",
+            "luchen_trust",
+            "continue_contact"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LUCHEN-END-LOW-FREQUENCY",
+            "LUCHEN-END-LATE-WORD",
+            "LUCHEN-END-POLITE-BLANK",
+            "LUCHEN-END-PROXY-COST",
+            "LUCHEN-END-REALITY-UNDERSTOOD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_key_returned",
+            "dorm_trust",
+            "last_meal_boundary_checked",
+            "dorm_clear_boundary_checked",
+            "meal_boundary_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LUCHEN-END-LOW-FREQUENCY",
+            "LUCHEN-END-LATE-WORD",
+            "LUCHEN-END-POLITE-BLANK",
+            "LUCHEN-END-PROXY-COST",
+            "LUCHEN-END-REALITY-UNDERSTOOD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "candidate_variables": [
+            "thesis_revision_submitted",
+            "thesis_topic_submitted",
+            "graduation_temperature",
+            "work_reality",
+            "advisor_signature_done"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LUCHEN-END-LOW-FREQUENCY",
+            "LUCHEN-END-LATE-WORD",
+            "LUCHEN-END-POLITE-BLANK",
+            "LUCHEN-END-PROXY-COST",
+            "LUCHEN-END-REALITY-UNDERSTOOD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "family_relationship",
+          "weight": "echo",
+          "candidate_variables": [
+            "family_pressure",
+            "money_pressure",
+            "work_reality",
+            "ending_temperature_locked",
+            "graduation_temperature"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LUCHEN-END-LOW-FREQUENCY",
+            "LUCHEN-END-LATE-WORD",
+            "LUCHEN-END-POLITE-BLANK",
+            "LUCHEN-END-PROXY-COST",
+            "LUCHEN-END-REALITY-UNDERSTOOD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "candidate_variables": [
+            "proxy_risk",
+            "ending_temperature_locked",
+            "public_message_not_proxied",
+            "act6_closed",
+            "act6_route_pool_locked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LUCHEN-END-LOW-FREQUENCY",
+            "LUCHEN-END-LATE-WORD",
+            "LUCHEN-END-POLITE-BLANK",
+            "LUCHEN-END-PROXY-COST",
+            "LUCHEN-END-REALITY-UNDERSTOOD"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "source_json": "开发数据_IF剧情页级JSON_R5-LIEFLAT_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 53,
+      "ending_candidate_count": 5,
+      "axes": [
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "candidate_variables": [
+            "avoidance",
+            "hard_outflow_shadow",
+            "late_regret",
+            "lost_chance",
+            "act6_closed"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LIEFLAT-END-LATE-MESSAGE",
+            "LIEFLAT-END-BLANK-GRADUATION",
+            "LIEFLAT-END-LOW-PRESENCE",
+            "LIEFLAT-END-EXPIRED-ENTRY",
+            "LIEFLAT-END-HARD-SHADOW"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "dorm_key_returned",
+            "dorm_trust",
+            "old_dorm_distance",
+            "repair_attempt",
+            "meal_attendance_locked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LIEFLAT-END-LATE-MESSAGE",
+            "LIEFLAT-END-BLANK-GRADUATION",
+            "LIEFLAT-END-LOW-PRESENCE",
+            "LIEFLAT-END-EXPIRED-ENTRY",
+            "LIEFLAT-END-HARD-SHADOW"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "candidate_variables": [
+            "certificate_or_archive_seen",
+            "thesis_revision_version",
+            "thesis_topic_submitted",
+            "graduation_temperature",
+            "defense_boundary_checked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LIEFLAT-END-LATE-MESSAGE",
+            "LIEFLAT-END-BLANK-GRADUATION",
+            "LIEFLAT-END-LOW-PRESENCE",
+            "LIEFLAT-END-EXPIRED-ENTRY",
+            "LIEFLAT-END-HARD-SHADOW"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "candidate_variables": [
+            "wanfeng_low_echo",
+            "graduation_temperature",
+            "avoidance",
+            "expired_entry_checked",
+            "expired_form_seen"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LIEFLAT-END-LATE-MESSAGE",
+            "LIEFLAT-END-BLANK-GRADUATION",
+            "LIEFLAT-END-LOW-PRESENCE",
+            "LIEFLAT-END-EXPIRED-ENTRY",
+            "LIEFLAT-END-HARD-SHADOW"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "side_character_affinity",
+          "weight": "echo",
+          "candidate_variables": [
+            "wanfeng_low_echo",
+            "external_echo",
+            "money_pressure",
+            "graduation_temperature",
+            "avoidance"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "LIEFLAT-END-LATE-MESSAGE",
+            "LIEFLAT-END-BLANK-GRADUATION",
+            "LIEFLAT-END-LOW-PRESENCE",
+            "LIEFLAT-END-EXPIRED-ENTRY",
+            "LIEFLAT-END-HARD-SHADOW"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    },
+    {
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "source_json": "开发数据_IF剧情页级JSON_R5X-HARD_v1.json",
+      "source_completion_axes": "开发数据_IF路线完成度轴与四档结局_11条路线_v1.json",
+      "local_variable_count": 69,
+      "ending_candidate_count": 6,
+      "axes": [
+        {
+          "axis_id": "primary_relationship",
+          "weight": "strong",
+          "candidate_variables": [
+            "new_circle_trust",
+            "dorm_trust",
+            "luchen_trust",
+            "tang_trust",
+            "zhou_trust"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "R5X-END-CLEAR-LEAVE",
+            "R5X-END-THIN-CIRCLE",
+            "R5X-END-XUCHE-BOUNDARY",
+            "R5X-END-OLD-MESSAGE",
+            "R5X-END-DELETED-PIN",
+            "R5X-END-STATION-NOTHING"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "candidate_variables": [
+            "dorm_key_returned",
+            "dorm_repair",
+            "dorm_trust",
+            "old_dorm_distance",
+            "meal_attendance_locked"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "R5X-END-CLEAR-LEAVE",
+            "R5X-END-THIN-CIRCLE",
+            "R5X-END-XUCHE-BOUNDARY",
+            "R5X-END-OLD-MESSAGE",
+            "R5X-END-DELETED-PIN",
+            "R5X-END-STATION-NOTHING"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "candidate_variables": [
+            "certificate_or_archive_seen",
+            "thesis_revision_version",
+            "graduation_temperature",
+            "defense_boundary_checked",
+            "defense_order_seen"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "R5X-END-CLEAR-LEAVE",
+            "R5X-END-THIN-CIRCLE",
+            "R5X-END-XUCHE-BOUNDARY",
+            "R5X-END-OLD-MESSAGE",
+            "R5X-END-DELETED-PIN",
+            "R5X-END-STATION-NOTHING"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "side_character_affinity",
+          "weight": "echo",
+          "candidate_variables": [
+            "hard_outflow_candidate",
+            "new_circle_contact",
+            "new_circle_fit",
+            "new_circle_trust",
+            "new_circle_truth"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "R5X-END-CLEAR-LEAVE",
+            "R5X-END-THIN-CIRCLE",
+            "R5X-END-XUCHE-BOUNDARY",
+            "R5X-END-OLD-MESSAGE",
+            "R5X-END-DELETED-PIN",
+            "R5X-END-STATION-NOTHING"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "candidate_variables": [
+            "identity_drift",
+            "hard_outflow",
+            "hard_outflow_candidate",
+            "hard_outflow_gate_seen",
+            "new_circle_truth"
+          ],
+          "candidate_variable_count": 5,
+          "ending_candidate_links": [
+            "R5X-END-CLEAR-LEAVE",
+            "R5X-END-THIN-CIRCLE",
+            "R5X-END-XUCHE-BOUNDARY",
+            "R5X-END-OLD-MESSAGE",
+            "R5X-END-DELETED-PIN",
+            "R5X-END-STATION-NOTHING"
+          ],
+          "binding_status": "candidate_variables_found_thresholds_missing",
+          "remaining_gap": "缺少正式阈值、正负向权重和四档映射公式；候选变量需人工确认语义后再写回。"
+        }
+      ]
+    }
+  ]
+}

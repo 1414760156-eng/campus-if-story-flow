@@ -10,6 +10,7 @@
   "source_docs": [
     "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",
     "开发规格_IF路线Schema与P0节点池.md",
+    "开发规则_IF第三四幕前置入口与第五幕外流条件矩阵.md",
     "开发长线_IF可玩支线R5X-HARD唯一硬外流线.md",
     "开发细稿_IF第六卷ACT6-R5X唯一硬外流正式剧情页.md",
     "开发规则_IF第五第六卷玩法节奏硬约束.md",
@@ -3093,6 +3094,16 @@
   ],
   "validation_targets": {
     "json_must_parse": true,
+    "entry_gate_schema_doc": "开发规则_IF第三四幕前置入口与第五幕外流条件矩阵.md",
+    "entry_gate_schema_synced": true,
+    "entry_gate_prelock_fields_required": [
+      "route_candidate_scores",
+      "act5_entry_bias",
+      "soft_echo_routes"
+    ],
+    "entry_gate_final_choice_required": true,
+    "entry_gate_no_active_route_before_lock": true,
+    "entry_gate_no_silent_auto_lock": true,
     "route_id": "R5X-HARD",
     "route_pool_id": "POOL-R5X-HARD",
     "p0e_source_detail_doc": "开发文本_IF分支P0-E第五幕隐藏高难5X唯一硬外流线.md",

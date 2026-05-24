@@ -12,6 +12,7 @@
     "开发细稿_IF可玩支线DEFAULT-4XX内回流剧情页.md",
     "开发样板_IF剧情页级JSON拆分样板_v1.json",
     "开发规格_IF路线Schema与P0节点池.md",
+    "开发规则_IF第三四幕前置入口与第五幕外流条件矩阵.md",
     "开发规则_IF第五第六卷玩法节奏硬约束.md",
     "开发规则_IF第七卷毕业结算与共用事件变体矩阵.md",
     "开发文本_IF分支P0-D第五幕站队分歧事件版.md",
@@ -4805,6 +4806,16 @@
   ],
   "validation_targets": {
     "json_must_parse": true,
+    "entry_gate_schema_doc": "开发规则_IF第三四幕前置入口与第五幕外流条件矩阵.md",
+    "entry_gate_schema_synced": true,
+    "entry_gate_prelock_fields_required": [
+      "route_candidate_scores",
+      "act5_entry_bias",
+      "soft_echo_routes"
+    ],
+    "entry_gate_final_choice_required": true,
+    "entry_gate_no_active_route_before_lock": true,
+    "entry_gate_no_silent_auto_lock": true,
     "p0d_full_page_json_status": "full_page_json_ready",
     "p0d_entry_node_count": 6,
     "p0d_entry_page_count": 24,

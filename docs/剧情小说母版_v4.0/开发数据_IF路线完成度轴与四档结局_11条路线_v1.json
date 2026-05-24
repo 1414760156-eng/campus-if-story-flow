@@ -1,0 +1,1200 @@
+{
+  "schema_version": "if_route_completion_axes_v1",
+  "generated_at": "2026-05-23",
+  "purpose": "11 条 IF 路线完成度轴与四档结局机器数据；供后续 UI / 试玩器 / 结算器读取；只做剧情判定数据，不处理 H5，不写回正式剧情页级 JSON。",
+  "route_count": 11,
+  "source_docs": [
+    "docs/剧情小说母版_v4.0/开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+    "docs/剧情小说母版_v4.0/开发数据_IF玩家侧路线摘要_11条路线_v1.json"
+  ],
+  "global_rules": {
+    "after_route_lock": "进入 route_pool_id 后开始累计完成度；锁池前第三 / 四 / 五幕变量只作为入口偏置。",
+    "tier_policy": "每条路线按本线主题判定完美 / 良好 / 一般 / 遗憾，不追求全局大团圆。",
+    "ending_candidate_policy": "ending_candidate_links 只是结局温度候选，后续由多轴组合映射，不直接作为玩家成就公式。",
+    "ui_policy": "UI 首屏只展示路线目标和风险；结算页可展示各轴四档结果。",
+    "writeback_policy": "本文件独立存在；写回 11 个正式剧情页级 JSON 前，必须先完成变量绑定审计。"
+  },
+  "tier_labels": [
+    {
+      "tier_id": "perfect",
+      "label": "完美结局",
+      "meaning": "本线核心关系或核心生活目标被充分完成，且主要代价被正面处理。",
+      "writing_rule": "不是全局大团圆，而是符合本线主题的最好状态。"
+    },
+    {
+      "tier_id": "good",
+      "label": "良好结局",
+      "meaning": "本线核心目标基本完成，关系保留真实入口，但仍有现实代价。",
+      "writing_rule": "温度可持续，但不消除成本。"
+    },
+    {
+      "tier_id": "normal",
+      "label": "一般结局",
+      "meaning": "功能性完成，关系低频或体面，重要话题没有充分说开。",
+      "writing_rule": "不是失败，是低温通过。"
+    },
+    {
+      "tier_id": "regret",
+      "label": "遗憾结局",
+      "meaning": "关键选择错过、拖延、误读或空白化，关系只留下回声。",
+      "writing_rule": "不写成惩罚，而写成现实后果。"
+    }
+  ],
+  "axes": [
+    {
+      "axis_id": "primary_relationship",
+      "label": "主关系完成度",
+      "assessment_scope": "本路线最核心的人或生活方向是否被真正处理。"
+    },
+    {
+      "axis_id": "dorm_relationship",
+      "label": "室友关系完成度",
+      "assessment_scope": "4XX 是否保留真实联系、最低事实、旧账确认和最后温度。"
+    },
+    {
+      "axis_id": "romance_relationship",
+      "label": "恋人 / 候选关系完成度",
+      "assessment_scope": "晚风、沈嘉禾、夏知微等亲密或候选关系是否说清边界和现实频率。"
+    },
+    {
+      "axis_id": "family_relationship",
+      "label": "家庭关系完成度",
+      "assessment_scope": "父母、生活费、压力来源和现实说明是否被处理。"
+    },
+    {
+      "axis_id": "study_or_work",
+      "label": "学业 / 工作完成度",
+      "assessment_scope": "课程、项目、论文、答辩、工作、工资、证明等现实任务完成状态。"
+    },
+    {
+      "axis_id": "interest_activity",
+      "label": "兴趣活动完成度",
+      "assessment_scope": "活动、公开材料、主持、影像、社团、候选来源等兴趣和公开生活半径。"
+    },
+    {
+      "axis_id": "side_character_affinity",
+      "label": "边缘人物好感度",
+      "assessment_scope": "秦越、许棠、罗泽、候选活动同学、新圈人物等软回声人物的信任和误读。"
+    },
+    {
+      "axis_id": "self_boundary",
+      "label": "自我边界完成度",
+      "assessment_scope": "林亦舟是否知道自己不能替别人、不能逃避、不能靠正确答案或新人关系消除代价。"
+    }
+  ],
+  "routes": [
+    {
+      "route_id": "A3-ACTIVITY-PUBLIC",
+      "route_pool_id": "POOL-A3-ACTIVITY-PUBLIC",
+      "source_json": "开发数据_IF剧情页级JSON_A3-ACTIVITY-PUBLIC_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "early_outflow",
+      "ui_order": 10,
+      "route_name": "活动父池",
+      "core_judgment": "公开信用能不能被林亦舟自己承担，而不是变成逃离宿舍和私人解释的漂亮外壳。",
+      "weights": {
+        "strong_axes": [
+          "interest_activity",
+          "self_boundary"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "study_or_work"
+        ],
+        "echo_axes": [
+          "romance_relationship",
+          "side_character_affinity"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "interest_activity",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "活动材料、授权、署名、候选来源都清楚，公开信用真实成立。",
+            "good": "活动任务完成，公开范围基本清楚，但仍有压力扩散。",
+            "normal": "活动材料能交，部分授权或归档靠低风险处理。",
+            "regret": "活动热闹掩盖边界，公开误读或候选来源变成后续压力。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "缺席被当面说明，4XX 保留低频但真实回声。",
+            "good": "宿舍知道事实，但旧账只处理一部分。",
+            "normal": "宿舍只得到最低事实，关系停在礼貌距离。",
+            "regret": "活动成为离开公共桌的理由，宿舍只剩低温回声。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "活动、项目、毕业材料分开，公开信用不挤占学业边界。",
+            "good": "学业任务完成，活动材料偶尔挤压时间。",
+            "normal": "靠补交和归档通过，过程紧张。",
+            "regret": "活动证明和课程材料混用，引发边界风险。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "候选来源只作为合法来源，不误开多候选摇摆。",
+            "good": "候选对象边界基本清楚，保留软回声。",
+            "normal": "候选来源被记录但没有充分说明。",
+            "regret": "活动被误读成恋爱入口合集。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "知道公开信用有成本，主动写清停止条件。",
+            "good": "能承担主要公开责任，但仍习惯兜底。",
+            "normal": "事情做完，边界说得不够。",
+            "regret": "用活动正确性逃避宿舍和私人解释。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "A3-END-PUBLIC-CREDIT",
+        "A3-END-CANDIDATE-OPEN",
+        "A3-END-PRESSURE-SPREAD",
+        "A3-END-DORM-RETURN",
+        "A3-END-LOW-VISIBILITY",
+        "A3-END-PERFECT-SEED"
+      ],
+      "graduation_temperature_hint": "活动圈低频确认、压力扩散、宿舍回归、低可见或完美线种子。"
+    },
+    {
+      "route_id": "R3-PERFECT",
+      "route_pool_id": "POOL-R3-PERFECT",
+      "source_json": "开发数据_IF剧情页级JSON_R3-PERFECT_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "early_outflow",
+      "ui_order": 20,
+      "route_name": "完美子外流",
+      "core_judgment": "清楚、正确、低风险是否能停止工具化，而不是把林亦舟固定成公共工具。",
+      "weights": {
+        "strong_axes": [
+          "self_boundary",
+          "study_or_work"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "interest_activity"
+        ],
+        "echo_axes": [
+          "romance_relationship",
+          "side_character_affinity"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "公开清楚，同时明确停止默认兜底。",
+            "good": "大部分职责边界说清，仍留下少量可被找的入口。",
+            "normal": "做对了事，但私人边界没有完全说开。",
+            "regret": "越正确越被工具化，没人再问他真实感受。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "材料、论文、答辩、交接均完整，且交接人明确。",
+            "good": "学业材料完成，交接稍有余温。",
+            "normal": "学业功能性通过，私人空格留白。",
+            "regret": "流程完整但私人关系低温，毕业只剩事项。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "4XX 知道他不是默认负责人，饭局或当面话保留一次真实入口。",
+            "good": "宿舍关系体面，旧账说开一部分。",
+            "normal": "宿舍只承认他可靠，不触及私人解释。",
+            "regret": "宿舍把他继续当成能兜底的人。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "interest_activity",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "公开材料和活动回声保留，但不吞掉本人边界。",
+            "good": "活动信用成立，工具化风险可控。",
+            "normal": "活动材料完成但偏低温。",
+            "regret": "活动和公开材料继续把他推向工具人。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "候选或晚风回声被明确为边界，不误开亲密线。",
+            "good": "私人回声存在但不抢主线。",
+            "normal": "只剩礼貌联系。",
+            "regret": "私人话被正确流程彻底延迟。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "PERFECT-END-CLEAR-PUBLIC",
+        "PERFECT-END-TOOLING",
+        "PERFECT-END-POLITE-DISTANCE",
+        "PERFECT-END-LATE-PRIVATE",
+        "PERFECT-END-LOW-TEMPERATURE",
+        "PERFECT-END-QUIET-BOUNDARY"
+      ],
+      "graduation_temperature_hint": "公开清楚、工具化、礼貌距离、迟来的私人话、低温或安静边界。"
+    },
+    {
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_json": "开发数据_IF剧情页级JSON_R4-WORK_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "life_radius",
+      "ui_order": 30,
+      "route_name": "工作线",
+      "core_judgment": "生活费、排班、工资和家庭压力是否被真实处理，同时不让关系完全被现实时间切碎。",
+      "weights": {
+        "strong_axes": [
+          "study_or_work",
+          "family_relationship"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "self_boundary"
+        ],
+        "echo_axes": [
+          "romance_relationship",
+          "interest_activity"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "study_or_work",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "排班、工资、证明、请假、第一周安排都清楚，工作稳定但不吞掉人。",
+            "good": "工作任务稳定，偶尔牺牲照面。",
+            "normal": "工作和学业功能性完成，关系只能低频。",
+            "regret": "为保收入连续错过饭局、照面和解释窗口。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "family_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "生活费和家庭压力部分说开，联系人和钱账不再含混。",
+            "good": "家庭压力被记录，能低频说明。",
+            "normal": "只处理钱和手续，情绪不说。",
+            "regret": "家庭压力继续错位，工作成为沉默理由。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "4XX 知道他不是躲人，最低事实和关键饭局保留。",
+            "good": "宿舍理解一部分现实压力。",
+            "normal": "宿舍只收到排班结果。",
+            "regret": "宿舍把缺席理解为疏远或逃避。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "亲密关系知道现实安排和联系频率，低频但真实。",
+            "good": "能解释工作时间，亲密推进变慢。",
+            "normal": "只说有班，不说压力。",
+            "regret": "工作切断亲密入口，错过成为结局温度。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "能写清排班停止条件，不用沉默省解释。",
+            "good": "大多数现实安排能说明。",
+            "normal": "独立但封闭。",
+            "regret": "把独立写成不需要任何人。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "WORK-END-INDEPENDENT",
+        "WORK-END-POLITE-DISTANCE",
+        "WORK-END-MISSED-MEAL",
+        "WORK-END-FAMILY-OPEN",
+        "WORK-END-LOW-CONTACT"
+      ],
+      "graduation_temperature_hint": "独立离校、体面淡化、错过饭局、家庭压力部分说开或低频真实联系。"
+    },
+    {
+      "route_id": "R5-WANFENG",
+      "route_pool_id": "POOL-R5-WANFENG",
+      "source_json": "开发数据_IF剧情页级JSON_R5-WANFENG_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "intimacy",
+      "ui_order": 40,
+      "route_name": "晚风线",
+      "core_judgment": "晚风关系能不能从语音、见面、报平安走向现实频率，同时承认宿舍缺席成本。",
+      "weights": {
+        "strong_axes": [
+          "romance_relationship",
+          "self_boundary"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "study_or_work"
+        ],
+        "echo_axes": [
+          "family_relationship",
+          "side_character_affinity"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "romance_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "修成正果，联系频率、城市、公开边界和私人入口都说清。",
+            "good": "保留稳定私人入口，现实频率还需磨合。",
+            "normal": "体面分别或低频联系，仍有温柔回声。",
+            "regret": "差一点，语音和报平安停在错过。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "4XX 理解他靠近晚风的代价，最低事实不缺席。",
+            "good": "宿舍温度降低但不误读。",
+            "normal": "宿舍只知道结果，不知道过程。",
+            "regret": "晚风被看成替代宿舍，4XX 留下低温旧账。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "学业、答辩、离校手续稳定，不靠晚风陪改解决现实任务。",
+            "good": "学业完成，晚风承担一部分情绪陪伴。",
+            "normal": "功能性通过，现实压力延后。",
+            "regret": "亲密关系和现实任务互相拖累。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "family_relationship",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "家庭和城市安排不被亲密关系遮住。",
+            "good": "家庭压力被低频说明。",
+            "normal": "家庭只作为背景压力。",
+            "regret": "家庭压力继续沉默，亲密关系承压。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "甜但知道不是免费，能两边都解释。",
+            "good": "能解释主要优先级。",
+            "normal": "只解释一边。",
+            "regret": "用一边拖住另一边。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "WANFENG-END-CONTINUE",
+        "WANFENG-END-PRIVATE-ENTRY",
+        "WANFENG-END-POLITE-PARTING",
+        "WANFENG-END-MISSED",
+        "WANFENG-END-SWEET-BUT-COSTLY"
+      ],
+      "graduation_temperature_hint": "继续联系、私人入口、体面分别、差一点、甜但有缺席成本。"
+    },
+    {
+      "route_id": "R5-ROMANCE",
+      "route_pool_id": "POOL-R5-ROMANCE",
+      "source_json": "开发数据_IF剧情页级JSON_R5-ROMANCE_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "intimacy",
+      "ui_order": 50,
+      "route_name": "专注感情线",
+      "core_judgment": "候选对象关系能不能从合法来源进入现实亲密，而不是多候选摇摆或默认女主跳转。",
+      "weights": {
+        "strong_axes": [
+          "romance_relationship",
+          "self_boundary"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "study_or_work"
+        ],
+        "echo_axes": [
+          "side_character_affinity",
+          "family_relationship"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "romance_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "沈嘉禾或夏知微单一候选关系稳定，来源、授权、现实安排都说清。",
+            "good": "候选关系继续，公开边界仍需磨合。",
+            "normal": "保留私人入口，关系低频或体面。",
+            "regret": "候选误读、错过或甜但宿舍冷。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "4XX 得到最低事实，不被亲密关系完全排除。",
+            "good": "宿舍温度下降但知道原因。",
+            "normal": "宿舍只看到他缺席。",
+            "regret": "亲密推进造成旧账延迟和冷边界。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "对方任务、学业、实习 / 考研 / 城市压力都被尊重。",
+            "good": "能协调大部分现实任务。",
+            "normal": "只处理眼前任务。",
+            "regret": "用亲密索取挤压对方现实任务。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "side_character_affinity",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "候选来源和边缘人物边界清楚，不制造多线误读。",
+            "good": "软回声可控。",
+            "normal": "有轻微误读。",
+            "regret": "候选来源被读成摇摆。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "选择一个现实对象，也承认代价。",
+            "good": "关系较清楚，代价说明不足。",
+            "normal": "只保留私人入口。",
+            "regret": "把候选关系当作逃避宿舍的出口。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "ROMANCE-END-CONTINUE-SHEN",
+        "ROMANCE-END-CONTINUE-XIA",
+        "ROMANCE-END-PRIVATE-ENTRY",
+        "ROMANCE-END-POLITE-PARTING",
+        "ROMANCE-END-MISSED",
+        "ROMANCE-END-SWEET-BUT-DORM-COLD"
+      ],
+      "graduation_temperature_hint": "沈嘉禾继续、夏知微继续、私人入口、体面分别、错过、甜但宿舍冷。"
+    },
+    {
+      "route_id": "DEFAULT-4XX",
+      "route_pool_id": "POOL-DEFAULT-4XX",
+      "source_json": "开发数据_IF剧情页级JSON_DEFAULT-4XX_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "dorm_stand",
+      "ui_order": 60,
+      "route_name": "宿舍修补线",
+      "core_judgment": "公共桌是否真的承接旧账，而不是制造完美和解幻觉。",
+      "weights": {
+        "strong_axes": [
+          "dorm_relationship",
+          "self_boundary"
+        ],
+        "secondary_axes": [
+          "study_or_work"
+        ],
+        "echo_axes": [
+          "romance_relationship",
+          "family_relationship"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "旧账本人确认，最后关系不一定亲近但真实在场。",
+            "good": "说清一部分，低频真实联系保留。",
+            "normal": "人在但不亲近，礼貌距离。",
+            "regret": "不和解或低频到几乎断线。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "C407、毕业材料、离校流程稳定完成，不替人代办。",
+            "good": "功能性完成，偶有代理风险。",
+            "normal": "完成最低流程。",
+            "regret": "流程完成但关系只剩事项。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "晚风或候选回声被放在边界外，不抢公共桌。",
+            "good": "私人关系低频存在。",
+            "normal": "只保留背景回声。",
+            "regret": "私人关系和宿舍旧账互相拖延。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "family_relationship",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "家庭压力不转嫁给宿舍。",
+            "good": "有少量现实说明。",
+            "normal": "家庭只作为压力背景。",
+            "regret": "家庭沉默继续加重旧账。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "不替谁下结论，也不逃开公共桌。",
+            "good": "能做到主要本人确认。",
+            "normal": "只做最低事实。",
+            "regret": "又回到替人总结或沉默。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "DEFAULT-END-SAY-CLEAR",
+        "DEFAULT-END-PRESENT-NOT-CLOSE",
+        "DEFAULT-END-POLITE-DISTANCE",
+        "DEFAULT-END-NOT-RECONCILED",
+        "DEFAULT-END-LOW-FREQUENCY"
+      ],
+      "graduation_temperature_hint": "说清一点、人在但不亲近、礼貌距离、不和解、低频联系。"
+    },
+    {
+      "route_id": "R5-ZHOU",
+      "route_pool_id": "POOL-R5-ZHOU",
+      "source_json": "开发数据_IF剧情页级JSON_R5-ZHOU_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "dorm_stand",
+      "ui_order": 70,
+      "route_name": "周屿线",
+      "core_judgment": "热闹、面子和活动场面能不能被真实接住，而不是只替周屿圆场。",
+      "weights": {
+        "strong_axes": [
+          "primary_relationship",
+          "interest_activity"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "self_boundary"
+        ],
+        "echo_axes": [
+          "study_or_work",
+          "side_character_affinity"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "primary_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "周屿能留下半句真话，低频真实联系成立。",
+            "good": "周屿接受一部分帮助，也知道边界。",
+            "normal": "关系体面，玩笑盖住一部分真话。",
+            "regret": "只剩误读或活动式热闹。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "interest_activity",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "活动授权、公开材料和署名清楚，热闹不伤人。",
+            "good": "活动顺利但面子债仍在。",
+            "normal": "活动完成，边界低温。",
+            "regret": "活动成本和公开误读吞掉关系。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "4XX 知道林亦舟为何站向周屿，未被选择者低温可被承认。",
+            "good": "宿舍误读被解释一部分。",
+            "normal": "宿舍只看见他偏向周屿。",
+            "regret": "唐骁 / 陆沉误读加重。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "活动不挤压毕业手续和学业任务。",
+            "good": "能勉强平衡。",
+            "normal": "任务完成但节奏混乱。",
+            "regret": "活动进度优先导致现实任务延迟。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "能接住周屿，不替他表演。",
+            "good": "偶尔圆场但知道停。",
+            "normal": "多数靠场面过。",
+            "regret": "把帮忙写成替他维持面子。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "ZHOU-END-LOW-FREQUENCY-REAL",
+        "ZHOU-END-HALF-APOLOGY",
+        "ZHOU-END-POLITE-DISTANCE",
+        "ZHOU-END-ACTIVITY-COST",
+        "ZHOU-END-MISREAD"
+      ],
+      "graduation_temperature_hint": "低频真实联系、半句道歉、体面距离、活动成本、误读回响。"
+    },
+    {
+      "route_id": "R5-TANG",
+      "route_pool_id": "POOL-R5-TANG",
+      "source_json": "开发数据_IF剧情页级JSON_R5-TANG_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "dorm_stand",
+      "ui_order": 80,
+      "route_name": "唐骁线",
+      "core_judgment": "流程和边界能不能成为照看关系的方式，而不是把关系流程化。",
+      "weights": {
+        "strong_axes": [
+          "primary_relationship",
+          "study_or_work"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "self_boundary"
+        ],
+        "echo_axes": [
+          "side_character_affinity",
+          "family_relationship"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "primary_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "唐骁保留非功能性私聊入口，关系不只剩流程。",
+            "good": "低频协作真实存在。",
+            "normal": "体面断开但互相认可。",
+            "regret": "流程走完，不再私聊。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "项目、材料、答辩、归档稳定完成，权限边界清楚。",
+            "good": "流程稳定，情绪延后。",
+            "normal": "功能性完成，温度低。",
+            "regret": "规则定罪感加重，关系被流程化。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "周屿误读被解释，宿舍知道流程不是审判。",
+            "good": "宿舍误读减少。",
+            "normal": "宿舍只接受表面流程。",
+            "regret": "周屿误读和冷边界长期保留。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "side_character_affinity",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "相关同学知道规则边界，不把唐骁当审判者。",
+            "good": "边缘误读可控。",
+            "normal": "误读存在但不爆发。",
+            "regret": "规则压力外溢到更多人。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "能使用流程，也能说流程外的话。",
+            "good": "偶尔说私人话。",
+            "normal": "多数只说事项。",
+            "regret": "把正确流程当作全部关系。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "TANG-END-LOW-FREQUENCY-COLLAB",
+        "TANG-END-NONFUNCTIONAL-LINE",
+        "TANG-END-POLITE-DISCONNECT",
+        "TANG-END-FLOW-PRESSURE",
+        "TANG-END-MISREAD"
+      ],
+      "graduation_temperature_hint": "低频协作、非功能性私聊、体面断开、流程压力、误读成本。"
+    },
+    {
+      "route_id": "R5-LUCHEN",
+      "route_pool_id": "POOL-R5-LUCHEN",
+      "source_json": "开发数据_IF剧情页级JSON_R5-LUCHEN_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "dorm_stand",
+      "ui_order": 90,
+      "route_name": "陆沉线",
+      "core_judgment": "能否等陆沉本人开口，不代言、不拯救，同时看见现实压力。",
+      "weights": {
+        "strong_axes": [
+          "primary_relationship",
+          "self_boundary"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "study_or_work"
+        ],
+        "echo_axes": [
+          "family_relationship",
+          "side_character_affinity"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "primary_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "陆沉自己补出迟来的半句话，低频联系真实成立。",
+            "good": "能说出部分事实，保留礼貌温度。",
+            "normal": "礼貌空白，但现实压力被看见。",
+            "regret": "被代言或继续沉默，关系只剩空白。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "4XX 理解“不代言”的边界，误读被修正。",
+            "good": "宿舍知道最低事实。",
+            "normal": "宿舍只看到他更安静。",
+            "regret": "误读升高，林亦舟替他说反而伤关系。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "排班、旧书、毕业手续和现实任务被本人确认。",
+            "good": "现实任务基本完成。",
+            "normal": "最低流程通过。",
+            "regret": "现实任务被延迟或被他人代办。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "family_relationship",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "家庭 / 钱 / 工作现实作为压力被看见，不被浪漫化。",
+            "good": "有少量说明。",
+            "normal": "只保留背景。",
+            "regret": "现实压力继续不可说。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "追问有边界，等他说而不是替他说。",
+            "good": "能控制大部分代言冲动。",
+            "normal": "偶尔越界。",
+            "regret": "把理解写成拯救。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "LUCHEN-END-LOW-FREQUENCY",
+        "LUCHEN-END-LATE-WORD",
+        "LUCHEN-END-POLITE-BLANK",
+        "LUCHEN-END-PROXY-COST",
+        "LUCHEN-END-REALITY-UNDERSTOOD"
+      ],
+      "graduation_temperature_hint": "低频联系、迟来的半句话、礼貌空白、代言风险、现实压力被看见。"
+    },
+    {
+      "route_id": "R5-LIEFLAT",
+      "route_pool_id": "POOL-R5-LIEFLAT",
+      "source_json": "开发数据_IF剧情页级JSON_R5-LIEFLAT_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "dorm_stand",
+      "ui_order": 100,
+      "route_name": "摆烂线",
+      "core_judgment": "回避之后能不能承认错过并补最低真实连接，而不是把静音写成轻松奖励。",
+      "weights": {
+        "strong_axes": [
+          "self_boundary",
+          "dorm_relationship"
+        ],
+        "secondary_axes": [
+          "study_or_work"
+        ],
+        "echo_axes": [
+          "romance_relationship",
+          "side_character_affinity"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "承认自己错过，补最低真实一句，不再把沉默当保护。",
+            "good": "能补一个具体动作。",
+            "normal": "按流程通过，仍不多说。",
+            "regret": "什么都不做，空白离校。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "宿舍收到迟来的最低消息，低温但真实。",
+            "good": "宿舍知道他不是完全消失。",
+            "normal": "低存在感，关系淡化。",
+            "regret": "没人再追问，也没人再等。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "最低材料补齐，不让回避继续制造事故。",
+            "good": "功能性完成。",
+            "normal": "只补最急项。",
+            "regret": "入口过期，系统关闭或流程空白。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "romance_relationship",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "晚风或亲密回声被诚实降温。",
+            "good": "只保低频回声。",
+            "normal": "没有推进。",
+            "regret": "亲密入口过期。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "side_character_affinity",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "边缘人物不再替他兜空白。",
+            "good": "误读可控。",
+            "normal": "基本无存在感。",
+            "regret": "只留下 5X 远影或无人回应。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "LIEFLAT-END-LATE-MESSAGE",
+        "LIEFLAT-END-BLANK-GRADUATION",
+        "LIEFLAT-END-LOW-PRESENCE",
+        "LIEFLAT-END-EXPIRED-ENTRY",
+        "LIEFLAT-END-HARD-SHADOW"
+      ],
+      "graduation_temperature_hint": "迟来的最低消息、空白毕业、低存在感、错过已成事实、5X 远影。"
+    },
+    {
+      "route_id": "R5X-HARD",
+      "route_pool_id": "POOL-R5X-HARD",
+      "source_json": "开发数据_IF剧情页级JSON_R5X-HARD_v1.json",
+      "source_matrix": "开发矩阵_IF路线完成度轴与四档结局_11条路线.md",
+      "source_player_summary": "开发数据_IF玩家侧路线摘要_11条路线_v1.json",
+      "ui_group": "hard_outflow",
+      "ui_order": 110,
+      "route_name": "唯一硬外流线",
+      "core_judgment": "新圈和许澈能否让林亦舟看清“离开不是答案”，而不是把 5X 写成隐藏真结局。",
+      "weights": {
+        "strong_axes": [
+          "primary_relationship",
+          "self_boundary"
+        ],
+        "secondary_axes": [
+          "dorm_relationship",
+          "study_or_work"
+        ],
+        "echo_axes": [
+          "side_character_affinity",
+          "family_relationship"
+        ]
+      },
+      "axis_count": 5,
+      "axes": [
+        {
+          "axis_id": "primary_relationship",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "看清许澈边界和新圈薄关系，清醒离开旧线。",
+            "good": "新圈关系有限但真实，不误认成答案。",
+            "normal": "薄圈散场，留下少量联系。",
+            "regret": "站口空白，新圈也没有留下。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "dorm_relationship",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "旧 4XX 收到完整旧消息，但不回线。",
+            "good": "有礼貌回声。",
+            "normal": "点头擦肩。",
+            "regret": "删除置顶或彻底沉默。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "study_or_work",
+          "weight": "secondary",
+          "tiers": {
+            "perfect": "毕业事项自己完成，不把离开写成逃避现实任务。",
+            "good": "功能性完成。",
+            "normal": "最低通过。",
+            "regret": "新圈时间遮住旧项目和毕业责任。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "side_character_affinity",
+          "weight": "echo",
+          "tiers": {
+            "perfect": "新圈人物和旧人同场边界清楚。",
+            "good": "新圈误读可控。",
+            "normal": "新圈只保轻关系。",
+            "regret": "新圈也散，旧人也远。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        },
+        {
+          "axis_id": "self_boundary",
+          "weight": "strong",
+          "tiers": {
+            "perfect": "知道许澈不是答案，承认自己当时是逃出来的。",
+            "good": "能说清一部分。",
+            "normal": "保持切断但知道代价。",
+            "regret": "用新人关系覆盖旧线，最后只剩遗憾。"
+          },
+          "variable_binding_status": "pending_existing_variable_audit",
+          "candidate_variables": [],
+          "trigger_hint": "后续从本路线 Act4/Act5/Act6/Act7 已有选择变量和 completion flags 中绑定 2-5 个判定依据。"
+        }
+      ],
+      "ending_candidate_links": [
+        "R5X-END-CLEAR-LEAVE",
+        "R5X-END-THIN-CIRCLE",
+        "R5X-END-XUCHE-BOUNDARY",
+        "R5X-END-OLD-MESSAGE",
+        "R5X-END-DELETED-PIN",
+        "R5X-END-STATION-NOTHING"
+      ],
+      "graduation_temperature_hint": "清醒离开、薄圈散场、许澈边界、旧消息回应、删除置顶、站口空白。"
+    }
+  ]
+}
