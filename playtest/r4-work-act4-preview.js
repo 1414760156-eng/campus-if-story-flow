@@ -389,9 +389,36 @@
 
   function formatMicroPrompt(group) {
     const role = stripInlineMarkdown(group && group.role ? group.role : "");
+    const action = stripInlineMarkdown(group && group.action ? group.action : "");
     const topic = role.includes("：") ? role.split("：").pop() : role.replace(/^微心态抉择\s*\d*/, "");
-    if (!topic) return "此刻怎么处理？";
-    return `此刻${topic}？`.replace(/？？$/, "？");
+    const promptByTopic = [
+      [/怎么开口/, action.includes("母亲") ? "先怎么回母亲？" : "第一句话怎么说？"],
+      [/收住还是补一句|是否补一句/, "还要不要再补一句？"],
+      [/空白怎么解释/, "备注栏要怎么写？"],
+      [/先问什么/, "先问哪件事？"],
+      [/保哪一种见面/, "要先保住哪一种见面？"],
+      [/怎么把时间落地/, "时间要怎么落下来？"],
+      [/先向谁说清/, "先向谁说清楚？"],
+      [/预算说到几分/, "钱和时间要说到哪一步？"],
+      [/问谁/, "先问谁？"],
+      [/钱怎么处理/, "这笔钱先怎么放？"],
+      [/先补哪块窟窿/, "先补哪一块缺口？"],
+      [/先补哪份材料/, "先抽哪一份材料？"],
+      [/如何承认错过/, "错过窗口后怎么处理？"],
+      [/怎么接班/, "这班要怎么接？"],
+      [/先说哪件白天事/, "先把哪件白天事说清？"],
+      [/说到什么深度/, "这次要说到多具体？"],
+      [/坐到哪里/, "第二场答疑坐哪里？"],
+      [/回答到几分/, "饭桌上怎么回答？"],
+      [/离开前说不说/, "冲出去前留不留信息？"],
+      [/怎么把结果带回 4XX/, "回寝时怎么带回结果？"],
+      [/如实写到几分/, "表格要如实写到哪一步？"],
+      [/怎么保存顺序/, "联系人顺序怎么保存？"],
+    ];
+    const matched = promptByTopic.find(([pattern]) => pattern.test(topic));
+    if (matched) return matched[1];
+    if (!topic) return "这里怎么处理？";
+    return `${topic.replace(/[？?]$/, "")}？`;
   }
 
   function splitMicroLabel(label) {
@@ -602,8 +629,7 @@
           button.className = "micro-choice";
           button.classList.toggle("selected", runtime.microSelections[group.beat] === option.code);
           button.addEventListener("click", () => {
-            runtime.microSelections[group.beat] = option.code;
-            render();
+            chooseMicroOption(group, option);
           });
 
           const label = document.createElement("strong");
@@ -642,6 +668,39 @@
     function isLastMicroBeat(lock) {
       if (!runtime.chosenOption) return true;
       return runtime.microBeatIndex >= Math.max(runtime.feedbackPages.length, 1) - 1;
+    }
+
+    function moveToNextLockOrComplete() {
+      if (runtime.lockIndex < runtime.data.locks.length - 1) {
+        runtime.lockIndex += 1;
+        runtime.mode = "scene";
+        runtime.pageIndex = 0;
+        runtime.chosenOption = null;
+        runtime.microBeatIndex = 0;
+        runtime.microSelections = {};
+        runtime.choiceCommitted = false;
+        runtime.feedbackPages = [];
+        runtime.feedbackIndex = 0;
+      } else {
+        runtime.mode = "complete";
+      }
+    }
+
+    function advanceMicroFlow(lock) {
+      if (!currentMicroBeatComplete(lock)) return;
+      if (isLastMicroBeat(lock)) {
+        if (!microComplete(lock)) return;
+        commitChoice(lock);
+        moveToNextLockOrComplete();
+      } else {
+        runtime.microBeatIndex += 1;
+      }
+    }
+
+    function chooseMicroOption(group, option) {
+      runtime.microSelections[group.beat] = option.code;
+      advanceMicroFlow(currentLock());
+      render();
     }
 
     function selectedMicroChoices(lock) {
@@ -716,6 +775,7 @@
       els.stageChip.textContent = formatStageName(runtime.mode);
       els.choicePanel.hidden = true;
       els.microPanel.hidden = true;
+      els.next.hidden = false;
 
       if (runtime.mode === "scene") {
         const page = lock.pages[runtime.pageIndex];
@@ -748,8 +808,13 @@
         }
         els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · ${runtime.chosenOption.direction} 方向 ${runtime.microBeatIndex + 1} / ${Math.max(runtime.feedbackPages.length, 1)}`;
         renderMicroPanel(lock);
-        els.next.textContent = isLastMicroBeat(lock) ? (runtime.lockIndex < runtime.data.locks.length - 1 ? "进入下一锁点" : "完成预览") : group ? "确认并继续" : "继续剧情";
-        els.next.disabled = !currentMicroBeatComplete(lock);
+        if (group) {
+          els.next.hidden = true;
+          els.next.disabled = true;
+        } else {
+          els.next.textContent = isLastMicroBeat(lock) ? (runtime.lockIndex < runtime.data.locks.length - 1 ? "进入下一锁点" : "完成预览") : "继续剧情";
+          els.next.disabled = false;
+        }
       } else if (runtime.mode === "feedback") {
         if (!runtime.choiceCommitted) commitChoice(lock);
         const page = runtime.feedbackPages[runtime.feedbackIndex];
@@ -793,26 +858,7 @@
           runtime.mode = "choice";
         }
       } else if (runtime.mode === "micro") {
-        if (!currentMicroBeatComplete(lock)) return;
-        if (isLastMicroBeat(lock)) {
-          if (!microComplete(lock)) return;
-          commitChoice(lock);
-          if (runtime.lockIndex < runtime.data.locks.length - 1) {
-            runtime.lockIndex += 1;
-            runtime.mode = "scene";
-            runtime.pageIndex = 0;
-            runtime.chosenOption = null;
-            runtime.microBeatIndex = 0;
-            runtime.microSelections = {};
-            runtime.choiceCommitted = false;
-            runtime.feedbackPages = [];
-            runtime.feedbackIndex = 0;
-          } else {
-            runtime.mode = "complete";
-          }
-        } else {
-          runtime.microBeatIndex += 1;
-        }
+        advanceMicroFlow(lock);
       } else if (runtime.mode === "feedback") {
         if (runtime.feedbackIndex < runtime.feedbackPages.length - 1) {
           runtime.feedbackIndex += 1;

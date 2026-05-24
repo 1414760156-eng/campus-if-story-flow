@@ -162,21 +162,25 @@ async function runDomSmoke() {
   assert.strictEqual(elements["choice-panel"].hidden, true, "main ABC choices should be hidden after choosing a direction");
   assert.strictEqual(elements["micro-panel"].children.length, 1, "micro mode should show one direction page at a time");
   assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 3, "first direction page should render 3 micro choices");
-  assert.strictEqual(elements["next-button"].disabled, true, "micro choice requires a selection");
+  assert.strictEqual(elements["next-button"].hidden, true, "micro choice should advance directly without a confirm button");
 
   const choiceBeat = elements["micro-panel"].children[0];
-  assert.strictEqual(choiceBeat.children[0].textContent, "此刻怎么开口？");
+  assert.strictEqual(choiceBeat.children[0].textContent, "先怎么回母亲？");
   const firstMicroChoice = choiceBeat.children.find((child) => String(child.className).includes("micro-option-row")).children[0];
   assert.strictEqual(firstMicroChoice.children[0].textContent, "只给最低事实");
   assert.strictEqual(firstMicroChoice.children[1].textContent, "我看票，明天去站外见他。");
   assert.ok(!firstMicroChoice.children.some((child) => /family_|old_debt/.test(child.textContent)), "player-facing micro choices should hide variable effects");
   firstMicroChoice.click();
-  assert.strictEqual(elements["next-button"].disabled, false, "selected micro choice should enable continuation");
-  elements["next-button"].click();
 
   assert.strictEqual(elements["page-title"].textContent, "接住家里电话 / 承接回声");
   assert.strictEqual(elements["page-body"].children[0].textContent, "晚上十点，林亦舟终于把明天行程排出来。");
   assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 3, "second direction page should render the second micro choice group");
+  assert.strictEqual(elements["next-button"].hidden, true, "second micro choice should also advance directly");
+
+  const secondChoiceBeat = elements["micro-panel"].children[0];
+  const secondMicroChoice = secondChoiceBeat.children.find((child) => String(child.className).includes("micro-option-row")).children[0];
+  secondMicroChoice.click();
+  assert.strictEqual(elements["page-title"].textContent, "4XX / 购票软件");
 }
 
 runDomSmoke()
