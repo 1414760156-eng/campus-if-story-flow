@@ -12,6 +12,7 @@ const sourcePath = path.join(
 );
 const markdown = fs.readFileSync(sourcePath, "utf8");
 const data = preview.parseMarkdown(markdown);
+const css = fs.readFileSync(path.join(__dirname, "r4-work-act4-preview.css"), "utf8");
 
 assert.strictEqual(data.routeId, "R4-WORK");
 assert.strictEqual(data.poolId, "POOL-R4-WORK");
@@ -43,6 +44,7 @@ assert.ok(first.choice.chains.A.echoHooks.includes("r4_empty_dorm_family_call_fi
 
 const effects = preview.parseNumericEffects("A2 `family_responsibility +1`、`wanfeng_delay +1`");
 assert.deepStrictEqual(effects, { family_responsibility: 1, wanfeng_delay: 1 });
+assert.ok(/\[hidden\]\s*\{[^}]*display:\s*none\s*!important/.test(css), "hidden panels must not be overridden by panel display styles");
 
 class FakeElement {
   constructor(tagName) {
@@ -156,6 +158,8 @@ async function runDomSmoke() {
 
   elements["choice-panel"].children[0].click();
   assert.strictEqual(elements["page-title"].textContent, "A. 先接住家里的那通电话");
+  assert.strictEqual(elements["page-body"].children[0].textContent, "周屿和唐骁离开后，空床位、暑假表和母亲电话同时压到公共桌前；母亲提到父亲明天要走。");
+  assert.strictEqual(elements["choice-panel"].hidden, true, "main ABC choices should be hidden after choosing a direction");
   assert.strictEqual(elements["micro-panel"].children.length, 1, "micro mode should show one beat at a time");
   assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 0, "first beat is narrative, not a choice");
 

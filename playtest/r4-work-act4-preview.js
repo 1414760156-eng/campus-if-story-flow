@@ -561,7 +561,7 @@
 
       const action = document.createElement("p");
       action.className = "micro-action";
-      action.textContent = beat.action;
+      action.textContent = beat.microOptions.length > 0 ? "这里进入玩家微心态选择。" : "当前剧情拍不需要选择，继续推进。";
 
       block.append(counter, heading, action);
 
@@ -719,7 +719,7 @@
         els.title.textContent = `${runtime.chosenOption.direction}. ${runtime.chosenOption.label}`;
         els.location.textContent = chain ? chain.title : lock.choice.id;
         els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · 内流链 ${runtime.microBeatIndex + 1} / ${chain ? chain.beats.length : 1}`;
-        setBody([runtime.chosenOption.mindset, runtime.chosenOption.action, runtime.chosenOption.delayed].filter(Boolean));
+        setBody(beat ? [beat.action] : []);
         renderMicroPanel(lock);
         els.next.textContent = isLastMicroBeat(lock) ? "进入反馈页" : beat && beat.microOptions.length > 0 ? "确认并继续" : "继续内流";
         els.next.disabled = !currentMicroBeatComplete(lock);
