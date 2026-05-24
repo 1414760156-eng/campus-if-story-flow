@@ -376,6 +376,36 @@
     return (option.feedbackIds || []).map((id) => feedbackMap[id]).filter(Boolean);
   }
 
+  function formatStageName(mode) {
+    return {
+      loading: "加载中",
+      scene: "剧情",
+      choice: "抉择",
+      micro: "方向剧情",
+      feedback: "承接",
+      complete: "完成",
+    }[mode] || mode;
+  }
+
+  function formatMicroPrompt(group) {
+    const role = stripInlineMarkdown(group && group.role ? group.role : "");
+    const topic = role.includes("：") ? role.split("：").pop() : role.replace(/^微心态抉择\s*\d*/, "");
+    if (!topic) return "此刻怎么处理？";
+    return `此刻${topic}？`.replace(/？？$/, "？");
+  }
+
+  function splitMicroLabel(label) {
+    const text = stripInlineMarkdown(label);
+    const colonIndex = text.indexOf("：");
+    if (colonIndex < 0) {
+      return { title: text.replace(/\s*\/\s*$/, ""), body: "" };
+    }
+    return {
+      title: text.slice(0, colonIndex).replace(/\s*\/\s*$/, "").trim(),
+      body: text.slice(colonIndex + 1).replace(/\s*\/\s*$/, "").trim(),
+    };
+  }
+
   function boot() {
     const els = {
       routeChip: document.getElementById("route-chip"),
@@ -557,28 +587,16 @@
       const block = document.createElement("div");
       block.className = `micro-beat${group ? "" : " muted"}`;
 
-      const counter = document.createElement("div");
-      counter.className = "micro-step-counter";
-      counter.textContent = `方向剧情 ${runtime.microBeatIndex + 1} / ${pageCount}`;
-
       const heading = document.createElement("h3");
-      heading.textContent = group ? group.role : "承接回声";
+      heading.textContent = group ? formatMicroPrompt(group) : "继续往下";
 
-      const action = document.createElement("p");
-      action.className = "micro-action";
-      action.textContent = group ? "选择林亦舟此刻的微心态。" : "当前方向剧情不需要选择，继续推进。";
-
-      block.append(counter, heading, action);
+      block.append(heading);
 
       if (group) {
-        const prompt = document.createElement("p");
-        prompt.className = "micro-prompt";
-        prompt.textContent = "选择林亦舟此刻的微心态。";
-        block.appendChild(prompt);
-
         const row = document.createElement("div");
         row.className = "micro-option-row";
         group.options.forEach((option) => {
+          const labelParts = splitMicroLabel(option.label);
           const button = document.createElement("button");
           button.type = "button";
           button.className = "micro-choice";
@@ -589,12 +607,14 @@
           });
 
           const label = document.createElement("strong");
-          const effect = document.createElement("p");
-          effect.className = "micro-effect";
-          label.textContent = `${option.code} ${option.label}`;
-          effect.textContent = option.effectText;
+          label.textContent = labelParts.title;
           button.append(label);
-          if (effect.textContent) button.append(effect);
+          if (labelParts.body) {
+            const body = document.createElement("p");
+            body.className = "micro-choice-text";
+            body.textContent = labelParts.body;
+            button.append(body);
+          }
           row.appendChild(button);
         });
         block.appendChild(row);
@@ -693,7 +713,7 @@
       const lock = currentLock();
       els.routeChip.textContent = `${runtime.data.routeId} / ${runtime.data.poolId}`;
       els.lockChip.textContent = `${lock.id} ${lock.title}`;
-      els.stageChip.textContent = runtime.mode;
+      els.stageChip.textContent = formatStageName(runtime.mode);
       els.choicePanel.hidden = true;
       els.microPanel.hidden = true;
 
@@ -726,7 +746,7 @@
           els.location.textContent = chain ? chain.title : lock.choice.id;
           setBody(["当前方向缺少正式剧情页，请回到 Markdown 检查反馈页 ID。"]);
         }
-        els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · 方向剧情 ${runtime.microBeatIndex + 1} / ${Math.max(runtime.feedbackPages.length, 1)}`;
+        els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · ${runtime.chosenOption.direction} 方向 ${runtime.microBeatIndex + 1} / ${Math.max(runtime.feedbackPages.length, 1)}`;
         renderMicroPanel(lock);
         els.next.textContent = isLastMicroBeat(lock) ? (runtime.lockIndex < runtime.data.locks.length - 1 ? "进入下一锁点" : "完成预览") : group ? "确认并继续" : "继续剧情";
         els.next.disabled = !currentMicroBeatComplete(lock);

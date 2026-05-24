@@ -203,7 +203,7 @@ h3 {
 
 .option-subtitle,
 .option-detail,
-.micro-effect,
+.micro-choice-text,
 .history-detail,
 .metric-note {
   color: var(--muted);
@@ -218,8 +218,8 @@ h3 {
 .micro-beat {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fbfcfe;
-  padding: 14px;
+  background: #f7fbfa;
+  padding: 16px;
 }
 
 .micro-beat.muted {
@@ -230,35 +230,29 @@ h3 {
   margin-bottom: 6px;
 }
 
-.micro-step-counter {
-  margin-bottom: 6px;
-  color: var(--accent-2);
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.micro-action {
-  color: var(--ink);
-}
-
-.micro-prompt {
-  margin-top: 12px;
+.micro-beat h3 {
   color: var(--accent);
-  font-weight: 800;
 }
 
 .micro-option-row {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .micro-choice {
-  min-height: 44px;
-  padding: 8px 10px;
-  flex: 1 1 210px;
+  min-height: 82px;
+  padding: 12px 14px;
+  flex: 1 1 240px;
+  background: #ffffff;
 }
 
 .micro-choice strong {
   display: block;
+  font-size: 16px;
+}
+
+.micro-choice-text {
+  margin-top: 6px;
+  font-size: 15px;
 }
 
 .micro-choice.selected,

@@ -165,7 +165,11 @@ async function runDomSmoke() {
   assert.strictEqual(elements["next-button"].disabled, true, "micro choice requires a selection");
 
   const choiceBeat = elements["micro-panel"].children[0];
+  assert.strictEqual(choiceBeat.children[0].textContent, "此刻怎么开口？");
   const firstMicroChoice = choiceBeat.children.find((child) => String(child.className).includes("micro-option-row")).children[0];
+  assert.strictEqual(firstMicroChoice.children[0].textContent, "只给最低事实");
+  assert.strictEqual(firstMicroChoice.children[1].textContent, "我看票，明天去站外见他。");
+  assert.ok(!firstMicroChoice.children.some((child) => /family_|old_debt/.test(child.textContent)), "player-facing micro choices should hide variable effects");
   firstMicroChoice.click();
   assert.strictEqual(elements["next-button"].disabled, false, "selected micro choice should enable continuation");
   elements["next-button"].click();
