@@ -207,7 +207,7 @@ async function runDomSmoke() {
 
   const choiceBeat = elements["micro-panel"].children[0];
   assert.strictEqual(choiceBeat.children[0].textContent, "先怎么回母亲？");
-  assert.ok(choiceBeat.children[1].textContent.includes("母亲在电话那头等一句能落地的话"));
+  assert.ok(choiceBeat.children[1].textContent.includes("电话还没挂断，母亲没有催"));
   const firstMicroChoice = choiceBeat.children.find((child) => String(child.className).includes("micro-option-row")).children[0];
   assert.strictEqual(firstMicroChoice.children[0].textContent, "先给母亲最低事实");
   assert.ok(firstMicroChoice.children[1].textContent.includes("站外见面发给母亲"));
