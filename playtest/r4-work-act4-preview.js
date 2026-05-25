@@ -465,8 +465,10 @@
     };
   }
 
-  function formatMicroChoiceTitle(labelParts) {
+  function formatMicroChoiceTitle(labelParts, group) {
     const title = stripInlineMarkdown(labelParts && labelParts.title ? labelParts.title : "");
+    const concrete = formatConcreteMicroTitle(title, labelParts && labelParts.body ? labelParts.body : null, group);
+    if (concrete) return concrete;
     const mappings = [
       [/只给最低事实/, "先给母亲最低事实"],
       [/多问一句/, "多问一句父亲为什么这么急"],
@@ -508,34 +510,158 @@
     return /[。！？!?]$/.test(value) ? value : `${value}。`;
   }
 
+  function quoteValue(text) {
+    const value = punctuate(text).trim();
+    return value ? `“${value}”` : "";
+  }
+
+  function inferMicroTarget(title, body, group) {
+    const rawTitle = stripInlineMarkdown(title || "");
+    const rawBody = stripInlineMarkdown(body || "");
+    const action = stripInlineMarkdown(group && group.action ? group.action : "");
+    const all = `${rawTitle} ${rawBody} ${action}`;
+    if (/陆沉/.test(all)) return "陆沉";
+    if (/唐骁/.test(all)) return "唐骁";
+    if (/家庭群/.test(all)) return "家庭群";
+    if (/4XX|群里发|发群|公共桌/.test(all)) return "4XX 群";
+    if (/勤工|窗口|缺班|换班|材料清单|能不能排|班/.test(all) && !/晚风|光谷/.test(rawTitle)) return "勤工群";
+    if (/晚风|光谷/.test(all)) return "晚风";
+    if (/父亲/.test(all)) return "父亲";
+    if (/母亲|家里|车票/.test(all)) return "母亲";
+    return "";
+  }
+
+  function formatConcreteMicroTitle(title, body, group) {
+    const cleanTitle = stripInlineMarkdown(title || "").replace(/\s*\/\s*$/, "").trim();
+    const cleanBody = stripInlineMarkdown(body || "").replace(/\s*\/\s*$/, "").trim();
+    const quotedInTitle = cleanTitle.match(/[“"]([^”"]+)[”"]/);
+    const rows = [
+      [/^收住$/, "备忘录只记：明天车次。"],
+      [/说出压力来源|把家里、车票和勤工都说出来/, "发给晚风：“家里、车票、钱和勤工都挤在一起了。”"],
+      [/先问代价/, "在勤工群问：“会不会影响补考、回家、光谷？”"],
+      [/只承诺提前说|只承诺提前说明/, "发给晚风：“我提前说，不让你空等。”"],
+      [/给两个备选|给两个可行备选/, "发给晚风：“我赶得上就短见，赶不上改周三。”"],
+      [/说明先后顺序|说明站外、勤工和晚风的先后/, "发给晚风：“先去站外，再问勤工，晚上给你准话。”"],
+      [/保短见/, "发给晚风：“我见完父亲去光谷，但只能待一会儿。”"],
+      [/保改期/, "发给晚风：“这次不抢时间，我们改到周三。”"],
+      [/保报平安/, "发给晚风：“我不一定到，见完站口先报平安。”"],
+      [/写死短见时段/, "备忘录写：站口半小时，光谷二十分钟。"],
+      [/只承诺到站后报平安/, "发给晚风：“我到站先报平安，后面不说满。”"],
+      [/先算车票和饭卡/, "备忘录先写：车票、饭卡。"],
+      [/把勤工可换钱时间也写进去/, "备忘录补上：勤工可排的小时。"],
+      [/先问陆沉窗口能不能排上/, "问陆沉：“窗口班还能排上吗？”"],
+      [/^问材料$|先问材料清单|先问勤工材料要求/, "在勤工群问：“第一次值班要带哪些材料？”"],
+      [/问最近缺不缺班/, "在勤工群问：“最近还有缺人的班吗？”"],
+      [/问会不会撞补考/, "在勤工群问：“会不会撞补考？”"],
+      [/只说时间|只说时间冲突/, "发给晚风：“今天时间撞在一起了。”"],
+      [/说车票和路费/, "发给晚风：“车票和路费我还没算稳。”"],
+      [/连勤工窗口也说出来|连勤工窗口也一起说出来/, "发给晚风：“我还要问勤工窗口，今天可能排不开。”"],
+      [/^问母亲$/, "发给母亲：“他今天给了我一部分钱。”"],
+      [/两边都说最低事实/, "给父母各发一句：“钱我收到了，会用在补考和饭卡。”"],
+      [/继续问缺口/, "再问父亲：“家里还差多少？”"],
+      [/收住，只说会把钱用在补考和饭卡/, "只回一句：“钱我先用在补考和饭卡。”"],
+      [/补一句自己会问勤工/, "补给母亲：“我明天也会去问勤工。”"],
+      [/先充饭卡/, "先把饭卡充上。"],
+      [/先留打印和车费/, "把打印费和车费夹进资料袋。"],
+      [/先夹进补考资料袋/, "把钱夹进补考资料袋。"],
+      [/不补，保持最低事实/, "不再补消息，把手机扣在桌上。"],
+      [/先把勤工表压到后面/, "把勤工表压到资料袋后面，先写 C201。"],
+      [/写进错题表背面/, "错题表背面写：窗口已错过。"],
+      [/告诉陆沉窗口没了/, "对陆沉说：“窗口被别人接走了。”"],
+      [/不说，先把第一章看完/, "不解释，先把第一章看完。"],
+      [/先说明补考时间避免撞车/, "在勤工群补一句：“我有补考，时间别撞上。”"],
+      [/先抄数据结构目录/, "把数据结构目录抄到错题表第一行。"],
+      [/先拍 C201 门牌和路线/, "拍下 C201 门牌和走廊路线。"],
+      [/先向母亲说车票还没稳/, "发给母亲：“车票还没稳，我晚点再看。”"],
+      [/先向父亲说会去站口/, "发给父亲：“我会去站口见你。”"],
+      [/先向晚风说光谷会受钱和时间影响/, "发给晚风：“光谷会被车票和时间影响，我不想让你干等。”"],
+      [/先向 4XX 发 C201 和文件袋/, "发到 4XX 群：“我在 C201，文件袋要补。”"],
+      [/先向母亲说补考教室/, "发给母亲：“我在 C201 补课，晚点看票。”"],
+      [/先向晚风说今天不去光谷/, "发给晚风：“今天去不了光谷，我别让你空等。”"],
+      [/只报 C201/, "只发：“我在 C201。”"],
+      [/报 C201 加打印计划/, "发：“我在 C201，等会去打印。”"],
+      [/报 C201、打印和勤工窗口顺序/, "发：“C201、打印、窗口，我按这个顺序跑。”"],
+      [/坐回第三排靠边/, "坐到第三排靠边，把错题表摊开。"],
+      [/坐到 4XX 看得见/, "坐到 4XX 看得见的位置，不挤过去。"],
+      [/先去后排，开考前再回/, "先坐后排靠门，开考前再回座位。"],
+      [/不说，直接去打印/, "下课后不解释，直接去打印店。"],
+      [/直接回/, quotedInTitle ? `在勤工群回：“${quotedInTitle[1]}。”` : ""],
+      [/在群里发/, quotedInTitle ? `发到 4XX 群：“${quotedInTitle[1]}。”` : ""],
+      [/只告诉唐骁材料要补/, "低声告诉唐骁：“材料要补，我先去一趟。”"],
+      [/直接放公共桌/, "把窗口回执直接放到公共桌上。"],
+      [/先发群说明/, quotedInTitle ? `发到 4XX 群：“${quotedInTitle[1]}。”` : ""],
+      [/只告诉陆沉材料要求/, "把材料要求只递给陆沉看。"],
+      [/写校内窗口需后续补材料/, "说明栏写：校内窗口，后续补材料。"],
+      [/写预计留校天数和可联系时间/, "说明栏写下留校天数和可联系时间。"],
+      [/写兼职、留校和第一联系人全部事实/, "把兼职、留校和第一联系人都填上。"],
+      [/先只写留校和宿舍号|只写留校/, "表格先写：留校，青枫居 4XX。"],
+      [/写“校内窗口后补说明”/, "备注栏写：校内窗口后补说明。"],
+      [/写联系人和可联系时间但不写兼职细节/, "备注栏写联系人和可联系时间，兼职细节先空着。"],
+      [/先问父亲忙时能不能接/, "问父亲：“学校联系人电话，你忙时能接吗？”"],
+      [/先问母亲能不能放第一/, "问母亲：“联系人我能先写你吗？”"],
+      [/同时在家庭群说明学校要求真实有效/, "发到家庭群：“学校要求联系人真实有效。”"],
+      [/母亲第一、父亲第二/, "保存联系人：母亲第一，父亲第二。"],
+      [/保存后发家庭群/, "保存后把截图发到家庭群。"],
+      [/先给父亲私发/, quotedInTitle ? `先私发父亲：“${quotedInTitle[1]}。”` : ""],
+    ];
+    const mapped = rows.find(([pattern, value]) => value && pattern.test(cleanTitle));
+    if (mapped) return mapped[1];
+
+    if (/^对([^说]+)说/.test(cleanTitle) && quotedInTitle) return `对${cleanTitle.match(/^对([^说]+)说/)[1]}说：“${quotedInTitle[1]}。”`;
+    if (/^对([^补]+)补一句/.test(cleanTitle) && quotedInTitle) return `给${cleanTitle.match(/^对([^补]+)补一句/)[1]}补发：“${quotedInTitle[1]}。”`;
+    if (/^说/.test(cleanTitle) && quotedInTitle) return `说：“${quotedInTitle[1]}。”`;
+    if (/^只说/.test(cleanTitle) && quotedInTitle) return `只回：“${quotedInTitle[1]}。”`;
+
+    if (cleanBody) {
+      const value = quoteValue(cleanBody);
+      const target = inferMicroTarget(cleanTitle, cleanBody, group);
+      const isQuestion = /[？?]$/.test(cleanBody) || /^多问|^轻问|^先问|^直接问|^问/.test(cleanTitle);
+      if (isQuestion) {
+        if (target === "勤工群") return `在勤工群问：${value}`;
+        if (target) return `问${target}：${value}`;
+        return `问：${value}`;
+      }
+      if (/^对([^说]+)说/.test(cleanTitle) && quotedInTitle) return `对${cleanTitle.match(/^对([^说]+)说/)[1]}说：${value}`;
+      if (/^对([^补]+)补一句/.test(cleanTitle) && quotedInTitle) return `给${cleanTitle.match(/^对([^补]+)补一句/)[1]}补发：${value}`;
+      if (/直接回/.test(cleanTitle) && quotedInTitle) return `在勤工群回：${value}`;
+      if (target === "勤工群") return `在勤工群发：${value}`;
+      if (target === "4XX 群") return `发到 4XX 群：${value}`;
+      if (target) return `发给${target}：${value}`;
+      return `写下：${value}`;
+    }
+
+    return "";
+  }
+
   function formatMicroGuide(group) {
     const role = stripInlineMarkdown(group && group.role ? group.role : "");
     const action = stripInlineMarkdown(group && group.action ? group.action : "");
     const topic = role.includes("：") ? role.split("：").pop() : role.replace(/^微心态抉择\s*\d*/, "");
     const guides = [
-      [/怎么开口/, "电话还没挂断，母亲没有催，只等他把明天怎么走说清楚。晚风截图和勤工表都摊在旁边，哪一句先发出去，后面的顺序就会跟着变。"],
-      [/收住还是补一句|是否补一句/, "第一句已经发出去了，输入框还亮着。再补一句会让关系更清楚，也会让被压住的问题更难装作没看见。"],
-      [/先问什么/, "勤工表已经从消息变成入口。材料、缺班和补考风险都挤在同一行，先问哪一句，暑假就会先被哪一件事切开。"],
+      [/怎么开口/, "电话还没挂断。母亲在等一句能落地的话，晚风截图和勤工表还摊在旁边。"],
+      [/收住还是补一句|是否补一句/, "第一句发出去后，输入框还亮着。林亦舟看着那行字，手指停在发送键上。"],
+      [/先问什么/, "群公告下面没人替他问。材料、缺班、补考时间挤在同一行。"],
       [/保哪一种见面/, "见父亲和去光谷之间只隔着一个半小时。任何一边多说几句话，另一边都会被挤掉。"],
-      [/怎么把时间落地/, "备忘录里只有两行时间，站口、光谷和返校却都挤在里面。哪一行写实，哪一边就不用继续靠猜。"],
-      [/先算哪一项/, "车票、饭卡、打印费和可换钱时间都摆在同一页上。第一笔先落在哪里，后面的顺序就会跟着偏过去。"],
-      [/先向谁说清/, "三个聊天框都在等具体时间。同一个压力不能复制同一句话发出去。"],
-      [/说到什么程度/, "第一句话要让晚风知道光谷会被挤掉。说得越具体，她越不用猜，他也越不能继续含混。"],
-      [/预算说到几分/, "只说时间能保住体面，说到钱和勤工就会让压力显形。话递出去多少，关系里就多看见多少现实。"],
-      [/问谁/, "信封、小票和成绩通知压在一起。钱不是凭空来的，第一句问向谁，沉默就会先从谁那里落下来。"],
-      [/继续追还是收住/, "父亲和母亲的沉默都已经出现。继续追会让缺口变清楚，收住则能先保住当下运转。"],
+      [/怎么把时间落地/, "备忘录里只剩两行空白，站口、光谷和返校时间都要挤进去。"],
+      [/先算哪一项/, "车票、饭卡、打印费和勤工时间摊在同一页。林亦舟把计算器打开。"],
+      [/先向谁说清/, "三个聊天框都停在屏幕上。林亦舟把复制好的那句话删掉，重新点开输入框。"],
+      [/说到什么程度/, "晚风的聊天框还停在光谷截图下面。林亦舟删掉“到时候看”，重新看着输入框。"],
+      [/怎么收口/, "林亦舟把晚风聊天框重新打开。光谷截图还在上一条，他不能再只回一个“到时候看”。"],
+      [/预算说到几分/, "输入框里已经有了时间，车票和路费却还卡在备忘录下一行。"],
+      [/问谁/, "信封、小票和成绩通知压在一起。林亦舟把钱夹回去，又把手机拿起来。"],
+      [/继续追还是收住/, "父亲和母亲都沉默过一阵。屏幕暗下去前，输入框还停在那里。"],
       [/钱怎么处理/, "这笔钱能让饭卡和打印费稳一点，也会把没说完的话一起塞进包里。"],
-      [/先补哪块窟窿/, "父亲给的钱和勤工便签被夹在一起。缺口都在眼前，只是哪一个先被写成今天的行动。"],
-      [/先补哪份材料/, "C201 门牌、补考资料和勤工申请表都在文件袋里。纸张贴着纸张，先抽哪一份，下午就先往哪边倾斜。"],
-      [/如何承认错过/, "窗口已经被别人接走。错过不能被抹掉，只能被写到某个地方，或者交给某个人知道。"],
-      [/怎么接班/, "临时班第一次有了具体时间。答应得太快会压住复习，问得太慢又可能错过窗口。"],
-      [/先说哪件白天事/, "白天被补考、打印、教室和窗口切开。消息发给谁，谁就会先知道他为什么不能按原时间出现。"],
-      [/说到什么深度/, "只报位置能减少解释，说清顺序会增加约束。别人要等到什么程度，取决于他把哪一段行程摆出来。"],
-      [/坐到哪里/, "座位表把他放回别人能看见的位置。越靠近 4XX，帮助越具体，追问也越近。"],
+      [/先补哪块窟窿/, "父亲给的钱和勤工便签被夹在一起。林亦舟把两张纸摊在同一页上。"],
+      [/先补哪份材料/, "C201 门牌、补考资料和勤工申请表都在文件袋里，纸张贴着纸张。"],
+      [/如何承认错过/, "窗口已经被别人接走。错过这件事还没有落到任何一张纸上。"],
+      [/怎么接班/, "临时班第一次有了具体时间。群里还没人回复，补考资料也摊在桌上。"],
+      [/先说哪件白天事/, "白天被补考、打印、教室和窗口切开。几个聊天框还在等他的具体位置。"],
+      [/说到什么深度/, "C201、打印店和勤工窗口都在白天的表里。林亦舟看着聊天框，手指停在发送键上。"],
+      [/坐到哪里/, "座位表把他放回别人能看见的位置。第三排、4XX 旁边和后排靠门，都隔着几排桌椅。"],
       [/回答到几分/, "饭桌上的关心已经递过来。他可以用一句话挡掉，也可以说出具体卡住的题。"],
-      [/离开前说不说/, "后排靠门能让动作更快，也会让 4XX 只能从结果倒推他的去向。"],
+      [/离开前说不说/, "后排靠门离打印店和明德楼最近。下课铃一响，书包拉链已经被他拉到一半。"],
       [/怎么把结果带回 4XX/, "窗口已经跑完，回执在手里。它可以直接落到公共桌上，也可以只先交给一个人。"],
-      [/如实写到几分/, "去向页面没有给含混留太多空格。写得越清楚，后面的缺席和晚归越不能再退回没想好。"],
+      [/如实写到几分/, "去向页面没有给含混留太多空格。兼职、留校和联系人并排摆着，光标停在说明栏里。"],
       [/空白怎么解释/, "兼职栏可以先空着，但空白会跟着他回到 4XX。备注写成什么，后面就会被怎样追问。"],
       [/先问谁/, "联系人不是默认项。父亲要体面，母亲要真实，学校要能找到人。"],
       [/怎么保存顺序/, "号码顺序已经有了答案。保存之前，截图还停在屏幕上，发不发回家里都会留下痕迹。"],
@@ -559,9 +685,63 @@
     return `先按“${title}”处理：${value} 有了这一句，等待就不再只靠猜。`;
   }
 
+  function formatMicroChoiceActionOnly(title, body) {
+    const cleanTitle = stripInlineMarkdown(title || "").replace(/\s*\/\s*$/, "").trim();
+    const value = punctuate(body);
+
+    if (value) {
+      if (/[？?]$/.test(body)) return `把这个问题发出去：${body}`;
+      if (/材料|时间|能不能|有没有/.test(body) && !/[。！？!?]$/.test(body)) return `把问题缩成一行：${value}`;
+      return `把这句话打进聊天框：${value}`;
+    }
+
+    const quoted = cleanTitle.match(/[“"]([^”"]+)[”"]/);
+    if (/^直接回/.test(cleanTitle) && quoted) return `在勤工群里直接回：${quoted[1]}。`;
+    if (/^对([^说]+)说/.test(cleanTitle) && quoted) {
+      const target = cleanTitle.match(/^对([^说]+)说/)[1];
+      return `对${target}发一句：${quoted[1]}。`;
+    }
+    if (/^对([^补]+)补一句/.test(cleanTitle) && quoted) {
+      const target = cleanTitle.match(/^对([^补]+)补一句/)[1];
+      return `给${target}补发一句：${quoted[1]}。`;
+    }
+    if (/^先向\s*([^说]+)说(.+)$/.test(cleanTitle)) {
+      const match = cleanTitle.match(/^先向\s*([^说]+)说(.+)$/);
+      return `先打开${match[1]}的聊天框，把“${match[2]}”发出去。`;
+    }
+    if (cleanTitle === "问材料") return "把材料要求单独问出去：学生证、复印件、表格。";
+    if (/^先问/.test(cleanTitle)) return `把这个问题先问出去：${cleanTitle.replace(/^先问/, "")}。`;
+    if (/^直接问/.test(cleanTitle)) return `把这个问题直接问出去：${cleanTitle.replace(/^直接问/, "")}。`;
+    if (/^问/.test(cleanTitle)) return `把这个问题问出去：${cleanTitle.replace(/^问/, "")}。`;
+    if (/^先算/.test(cleanTitle)) return `在备忘录里先写下：${cleanTitle.replace(/^先算/, "")}。`;
+    if (/^把(.+)也写进去$/.test(cleanTitle)) return `在同一页里补上：${cleanTitle.replace(/^把/, "").replace(/也写进去$/, "")}。`;
+    if (/^先抄/.test(cleanTitle)) return `把${cleanTitle.replace(/^先抄/, "")}抄进错题空表第一行。`;
+    if (/^先拍/.test(cleanTitle)) return `先拍下：${cleanTitle.replace(/^先拍/, "")}。`;
+    if (/^先把勤工表压到后面/.test(cleanTitle)) return "把勤工表压到文件袋后面，在旁边记一笔窗口可能错过。";
+    if (/^先把/.test(cleanTitle)) return `先把这一步落到纸面上：${cleanTitle.replace(/^先把/, "")}。`;
+    if (/^写/.test(cleanTitle)) return `把这一项写进去：${cleanTitle.replace(/^写/, "")}。`;
+    if (/^报/.test(cleanTitle)) return `把这一项报出去：${cleanTitle.replace(/^报/, "")}。`;
+    if (/^保存后/.test(cleanTitle)) return `联系人顺序保存后，把截图发到家庭群。`;
+    if (/^母亲第一/.test(cleanTitle)) return `按这个顺序保存：母亲第一，父亲第二。`;
+    if (/^先给父亲私发/.test(cleanTitle) && quoted) return `先给父亲私发一句：${quoted[1]}。`;
+    if (/^坐/.test(cleanTitle)) return `按这个位置坐下：${cleanTitle}。`;
+    if (/^不说，/.test(cleanTitle)) return `不再解释，先做这一件事：${cleanTitle.replace(/^不说，/, "")}。`;
+    if (/^在群里发/.test(cleanTitle) && quoted) return `打开 4XX 群，在里面发一句：${quoted[1]}。`;
+    if (/^先发群说明/.test(cleanTitle) && quoted) return `先打开 4XX 群，在里面说明：${quoted[1]}。`;
+    if (/^只告诉/.test(cleanTitle)) return `只把这件事告诉一个人：${cleanTitle.replace(/^只告诉/, "")}。`;
+    if (/^只报/.test(cleanTitle)) return `只把位置报出去：${cleanTitle.replace(/^只报/, "").trim()}，其他顺序先不展开。`;
+    if (/^只说/.test(cleanTitle) && quoted) return `饭桌上只回一句：${quoted[1]}，筷子没有停太久。`;
+    if (/^说/.test(cleanTitle) && quoted) return `把这句说出来：${quoted[1]}。`;
+    if (/^只写/.test(cleanTitle)) return `表格里只先写清这一项：${cleanTitle.replace(/^只写/, "")}。`;
+    if (/^不补/.test(cleanTitle)) return `不再补充，只保留刚才那句回复。`;
+    return `把这一步先做出来：${cleanTitle}。`;
+  }
+
   function formatMicroChoiceBody(labelParts, group) {
     const title = stripInlineMarkdown(labelParts && labelParts.title ? labelParts.title : "");
     const body = stripInlineMarkdown(labelParts && labelParts.body ? labelParts.body : "");
+    const concreteBody = formatConcreteMicroBody(title, body, group);
+    if (concreteBody) return concreteBody;
 
     const quoted = title.match(/[“"]([^”"]+)[”"]/);
     const quotedText = quoted ? `“${quoted[1]}”` : "";
@@ -667,34 +847,76 @@
     return `先按“${title}”处理，让这一刻有一个落点。没有说完的压力，会在下一段现场里继续出现。`;
   }
 
-  function formatMainChoiceDetail(option) {
-    const action = stripInlineMarkdown(option && option.action ? option.action : "");
-    const delayed = stripInlineMarkdown(option && option.delayed ? option.delayed : "");
-    if (action || delayed) return [action, delayed].filter(Boolean).join(" ");
+  function formatConcreteMicroBody(title, body, group) {
+    const renderedTitle = formatConcreteMicroTitle(title, body, group);
+    if (!renderedTitle) return "";
+    if (/^在勤工群/.test(renderedTitle)) return "群公告停在屏幕上，这一条发出去后会有人接话。";
+    if (/^备忘录|^错题表|^说明栏|^备注栏|表格先写/.test(renderedTitle)) return "纸面上多出这一行，林亦舟把笔帽按回去。";
+    if (/发给晚风|晚风/.test(renderedTitle)) return "光谷截图还亮在上一条，林亦舟把这句留给晚风看见。";
+    if (/父亲|站口|站外/.test(renderedTitle)) return "站外的半小时被写进消息里，不再只卡在电话里。";
+    if (/母亲|家里/.test(renderedTitle)) return "母亲那边还没有挂断，车票页也在屏幕后台开着。";
+    if (/陆沉/.test(renderedTitle)) return "陆沉看完这句，能接上的只有流程，不是替他决定。";
+    if (/唐骁/.test(renderedTitle)) return "唐骁抬眼看他，材料这件事终于有了具体入口。";
+    if (/家庭群/.test(renderedTitle)) return "消息发出去，家庭群安静了几秒。";
+    if (/4XX 群|公共桌/.test(renderedTitle)) return "宿舍那边会看见这一步，不必只从空座位猜他的去向。";
+    if (/饭卡/.test(renderedTitle)) return "饭卡余额刷新出来，他把支付页关掉。";
+    if (/手机|消息/.test(renderedTitle)) return "屏幕暗下去，公共桌上的信封还压着。";
+    if (/拍下|门牌|路线/.test(renderedTitle)) return "照片存进相册，走廊尽头的门牌还在晃。";
+    if (/坐到|坐回|后排|座位/.test(renderedTitle)) return "椅脚擦过地面，错题表被他摊开。";
+    if (/打印店|第一章/.test(renderedTitle)) return "书包拉链一合，他已经走到教室门口。";
+    if (/填上|联系人|兼职|留校/.test(renderedTitle)) return "表格光标跳到下一栏，页面暂时保存下来。";
+    if (/^发|^问|^给父母|^再问/.test(renderedTitle)) return "消息发出去，对面开始输入，屏幕没有再暗下去。";
+    if (/^说|^只回|低声/.test(renderedTitle)) return "话说出口，周围的声音短短停了一下。";
+    if (/备忘录|错题表|表格|说明栏|备注栏|保存|写|夹/.test(renderedTitle)) return "纸面上多出这一行，林亦舟把笔帽按回去。";
+    if (/勤工群|窗口|班/.test(renderedTitle)) return "群公告停在屏幕上，这一条发出去后会有人接话。";
+    return "他把手里的东西放回桌面，新的沉默很快接上来。";
+  }
 
+  function mapMainChoiceByLabel(option, index) {
     const label = stripInlineMarkdown(option && option.label ? option.label : "");
-    const fallbackByLabel = [
-      [/保见面，把光谷时间留住/, "保住这次见面，但交通和花费都会更紧。"],
-      [/保排班和现实成本/, "先把能换钱的时间排清，光谷时间会往后挪。"],
-      [/明说预算和时间/, "把预算和时间说成事实，误读会少，体面压力会变重。"],
-      [/问家里缺口/, "把父亲现金背后的缺口问出来，家里的压力会更清楚，也更重。"],
-      [/收钱不问/, "先让饭卡、打印费和车票稳一点，没问完的旧账会往后移。"],
-      [/先问勤工流程/, "把被动收钱改成主动跑流程，陆沉能给规则，但不能替他报名。"],
-      [/先补学业材料/, "先保住补考资料和 C201 路线，代价是可能错过一次工作窗口。"],
-      [/先接临时班/, "先锁住一个收入窗口，补考复习会被排到稍后。"],
-      [/把白天能处理的事说清/, "把教室、打印和窗口说清楚，等待的人会少一点误读。"],
-      [/坐回 4XX 可见位置/, "让 4XX 看见他没有躲开，帮助会更具体，追问也会更近。"],
-      [/靠后处理资料/, "先减少被追问、抢回材料时间，别人也更容易只从结果倒推。"],
-      [/先去跑现实窗口/, "本人把窗口跑完，再把结果带回公共桌，时间债会增加。"],
-      [/如实填兼职 \/ 留校安排/, "把兼职、留校和联系人写成事实，第五幕不能再退回没想好。"],
-      [/只写留校/, "表格先能通过，但兼职空白会跟着他回到 4XX。"],
-      [/先问父母再填/, "联系人顺序更真实，家里的体面和实际也会被摆出来。"],
+    const rows = [
+      [/先接住家里的那通电话/, "先接住家里的那通电话", "先回母亲，记下父亲到站时间，再把明天车次排出来。"],
+      [/问清楚勤工值班能不能排上/, "先问清勤工值班怎么排", "问陆沉排班、报名材料和勤工群入口，把这张表真正放进自己的暑假。"],
+      [/给晚风一个明确答复/, "给晚风一个明确答复", "给晚风一个不会让她空等的回复，说明明天家里要先处理，晚上再确认具体改法。"],
+      [/保见面，把光谷时间留住/, "先把父亲那边定下来", "给父亲发到站时间，也写清自己能待多久。"],
+      [/保排班和现实成本/, "先把勤工和花费算清", "把车票、饭卡、打印费和勤工时间写进同一张备忘录。"],
+      [/明说预算和时间/, "先把预算和时间说成实话", "分别给母亲、父亲和晚风发不同的实话，不再复制同一句。"],
+      [/问家里缺口/, "问清这笔钱从哪里来", "把父亲给的钱和家里的缺口问清楚，不再只看信封厚度。"],
+      [/收钱不问/, "先把钱收进饭卡和车票", "先把饭卡、打印费和车票处理掉，剩下的话暂时压回包里。"],
+      [/先问勤工流程/, "先问勤工窗口还能不能接", "去问勤工窗口的材料、班次和报名方式，让缺口有一个能做的出口。"],
+      [/先补学业材料/, "先把补考资料补齐", "先把数据结构目录、C201 和打印材料补齐，再去看窗口消息。"],
+      [/先接临时班/, "先回勤工群接下临时班", "在勤工群里接下临时班，把周四下午先写进备忘录。"],
+      [/把白天能处理的事说清/, "先把今天白天会去哪儿说清", "把补考教室、打印和窗口顺序告诉该等的人。"],
+      [/坐回 4XX 可见位置/, "坐回 4XX 看得见的位置", "坐回能被 4XX 看见的位置，把错题表摊开。"],
+      [/靠后处理资料/, "坐到后排，先处理资料", "先坐到后排靠门的位置，下课后直接去打印店。"],
+      [/先去跑现实窗口/, "先去明德楼跑完窗口", "先去明德楼跑窗口，拿到回执后再回公共桌。"],
+      [/如实填兼职 \/ 留校安排/, "把兼职和留校都如实填上", "按真实情况填写兼职、留校和联系人，本人签字后再保存。"],
+      [/只写留校/, "先只填留校和宿舍号", "先填留校和宿舍号，兼职栏留到后面补说明。"],
+      [/先问父母再填/, "先问清联系人顺序再保存", "保存前问清父母谁能接电话，再把联系人顺序填上。"],
     ];
-    const mapped = fallbackByLabel.find(([pattern]) => pattern.test(label));
-    if (mapped) return mapped[1];
+    const mapped = rows.find(([pattern]) => pattern.test(label));
+    if (mapped) return mapped[index];
+    return "";
+  }
+
+  function formatMainChoiceTitle(option) {
+    return mapMainChoiceByLabel(option, 1) || stripInlineMarkdown(option && option.label ? option.label : "");
+  }
+
+  function formatMainChoiceDetail(option) {
+    const mapped = mapMainChoiceByLabel(option, 2);
+    if (mapped) return mapped;
+
+    const action = stripInlineMarkdown(option && option.action ? option.action : "");
+    if (action) return action;
 
     const summary = stripInlineMarkdown(option && option.effectSummary ? option.effectSummary : "");
-    return summary.replace(/低频信任/g, "等待里的信任").replace(/工作线入口|工作线倾向/g, "工作安排");
+    return summary
+      .replace(/微内流点|主轴推进|POOL-[A-Z0-9-]+|当前池/g, "")
+      .replace(/低频信任/g, "等待里的信任")
+      .replace(/工作线入口|工作线倾向/g, "工作安排")
+      .replace(/风险|代价|误读|压力/g, "")
+      .trim();
   }
 
   function boot() {
@@ -828,7 +1050,7 @@
         const title = document.createElement("strong");
         const detail = document.createElement("div");
         detail.className = "history-detail";
-        title.textContent = `${entry.lockId} ${entry.option.direction}：${entry.option.label}`;
+        title.textContent = `${entry.lockId} ${entry.option.direction}：${formatMainChoiceTitle(entry.option)}`;
         detail.textContent = entry.microChoices.length > 0 ? entry.microChoices.map((choice) => `${choice.code} ${choice.label}`).join(" / ") : "无微心态选择";
         item.append(title, detail);
         els.history.appendChild(item);
@@ -849,7 +1071,7 @@
 
         const title = document.createElement("span");
         title.className = "option-title";
-        title.textContent = `${option.direction}. ${option.label}`;
+        title.textContent = `${option.direction}. ${formatMainChoiceTitle(option)}`;
 
         const detail = document.createElement("span");
         detail.className = "option-detail";
@@ -901,7 +1123,7 @@
           });
 
           const label = document.createElement("strong");
-          label.textContent = formatMicroChoiceTitle(labelParts);
+          label.textContent = formatMicroChoiceTitle(labelParts, group);
           button.append(label);
           const choiceBody = formatMicroChoiceBody(labelParts, group);
           if (choiceBody) {
@@ -1058,7 +1280,7 @@
         els.title.textContent = lock.choice.title || lock.choice.id;
         els.location.textContent = lock.choice.id;
         els.progress.textContent = `${runtime.lockIndex + 1} / ${runtime.data.locks.length} 锁点 · 抉择窗`;
-        setBody([lock.choice.guide, ...lock.choice.summary].filter(Boolean));
+        setBody([lock.choice.guide, ...lock.choice.summary].filter(Boolean).filter(isPlayerFacingChoiceParagraph));
         renderChoicePanel(lock);
         els.next.textContent = "请选择方向";
         els.next.disabled = true;
@@ -1066,7 +1288,7 @@
         const chain = lock.choice.chains[runtime.chosenOption.direction];
         const page = runtime.feedbackPages[runtime.microBeatIndex];
         const group = chain && chain.microGroups[runtime.microBeatIndex];
-        els.title.textContent = `${runtime.chosenOption.direction}. ${runtime.chosenOption.label}`;
+        els.title.textContent = `${runtime.chosenOption.direction}. ${formatMainChoiceTitle(runtime.chosenOption)}`;
         if (page) {
           els.title.textContent = page.title;
           els.location.textContent = page.id;
@@ -1270,6 +1492,7 @@
     parseMarkdown,
     parseNumericEffects,
     splitMicroLabel,
+    formatMainChoiceTitle,
     formatMicroChoiceTitle,
     formatMicroChoiceBody,
     formatMicroGuide,

@@ -60,12 +60,12 @@ assert.ok(/\[hidden\]\s*\{[^}]*display:\s*none\s*!important/.test(css), "hidden 
 const compactShiftOption = preview.splitMicroLabel("B1 直接回“周四下午可以”");
 assert.strictEqual(compactShiftOption.title, "直接回“周四下午可以”");
 assert.ok(
-  preview.formatMicroChoiceBody(compactShiftOption, {}).includes("窗口时间落地"),
+  preview.formatMicroChoiceTitle(compactShiftOption).includes("在勤工群回"),
   "compact micro options should get a story-facing description"
 );
 const keepShortMeeting = preview.splitMicroLabel("A1 保短见：`我见完他去光谷，但只能很短。`");
 assert.ok(
-  preview.formatMicroChoiceBody(keepShortMeeting, {}).includes("不临时失约"),
+  preview.formatMicroChoiceTitle(keepShortMeeting).includes("发给晚风"),
   "short body micro options should still be enriched when the label is too thin"
 );
 
@@ -73,10 +73,12 @@ const microChoiceRows = [];
 data.locks.forEach((lock) => {
   Object.values(lock.choice.chains).forEach((chain) => {
     chain.microGroups.forEach((group) => {
-      assert.ok(preview.formatMicroGuide(group).length >= 20, `${lock.id} ${group.id} should have story guide text`);
+      const guide = preview.formatMicroGuide(group);
+      assert.ok(guide.length >= 20, `${lock.id} ${group.id} should have story guide text`);
+      assert.ok(!/风险|决定|取决|越.*越|推进|更快|更稳|更重|代价|收入入口|会慢|误读|低频信任|最低边界|保住体面|压力显形/.test(guide), `${lock.id} ${group.id} guide should not hint at best outcomes`);
       group.options.forEach((option) => {
         const parts = preview.splitMicroLabel(option.label);
-        const title = preview.formatMicroChoiceTitle(parts);
+        const title = preview.formatMicroChoiceTitle(parts, group);
         const body = preview.formatMicroChoiceBody(parts, group);
         microChoiceRows.push({ lock: lock.id, group: group.id, title, rawTitle: parts.title, body });
       });
@@ -88,8 +90,9 @@ assert.strictEqual(microChoiceRows.length, 84);
 microChoiceRows.forEach((row) => {
   assert.ok(row.title.trim().length > 0, `${row.lock} ${row.group} should not render empty micro choice title`);
   assert.ok(!/^(收住|保短见|保改期|保报平安|问材料|问父亲|问母亲|只写留校)$/.test(row.title), `${row.lock} ${row.group} ${row.rawTitle} should not render terse debug-like micro title`);
-  assert.ok(row.body.length >= 30, `${row.lock} ${row.group} ${row.title} should not render thin micro choice body`);
-  assert.ok(!/剧情承接|后面的剧情|变量|family_|route_|act5_/.test(row.body), `${row.lock} ${row.group} ${row.title} should stay player-facing`);
+  assert.ok(!/最低事实|具体改法|说出压力|把这句话打进聊天框|把这一步先做出来|问题缩成一行|保短见|保改期|保报平安|只说时间冲突|说清车票|连勤工窗口/.test(`${row.title}\n${row.body}`), `${row.lock} ${row.group} ${row.title} should render as concrete action copy`);
+  assert.ok(row.body.length >= 14, `${row.lock} ${row.group} ${row.title} should not render thin micro choice body`);
+  assert.ok(!/剧情承接|后面的剧情|变量|family_|route_|act5_|推进|更快|更稳|更重|风险|代价|收入入口|会慢|误读|压力|低频信任|场面继续/.test(row.body), `${row.lock} ${row.group} ${row.title} should stay player-facing and avoid choice hints`);
 });
 
 class FakeElement {
@@ -148,6 +151,10 @@ function countByClass(root, className) {
   return own + root.children.reduce((sum, child) => sum + countByClass(child, className), 0);
 }
 
+function textOf(root) {
+  return [root.textContent, ...root.children.map(textOf)].filter(Boolean).join("\n");
+}
+
 async function runDomSmoke() {
   const ids = [
     "route-chip",
@@ -202,8 +209,8 @@ async function runDomSmoke() {
   assert.strictEqual(elements["page-title"].textContent, "空宿舍里的三扇门");
   assert.strictEqual(elements["choice-panel"].children.length, 3);
   assert.ok(!elements["page-body"].children.some((child) => /本窗抉择|微内流点|主轴推进|POOL-|当前池/.test(child.textContent)));
-  assert.ok(!elements["choice-panel"].children[0].children.some((child) => /微内流点|主轴推进|POOL-|当前池|不打开/.test(child.textContent)));
-  assert.ok(elements["choice-panel"].children[0].children[1].textContent.includes("回母亲，记父亲到站时间"));
+  assert.ok(!/本窗抉择|微内流点|主轴推进|POOL-|当前池|不打开|风险|代价|收入入口|低频信任|误读/.test(textOf(elements["choice-panel"])));
+  assert.ok(elements["choice-panel"].children[0].children[1].textContent.includes("先回母亲，记下父亲到站时间"));
   assert.ok(!elements["choice-panel"].children[1].children.some((child) => child.textContent.includes("主轴推进")));
 
   elements["choice-panel"].children[0].click();
@@ -216,10 +223,10 @@ async function runDomSmoke() {
 
   const choiceBeat = elements["micro-panel"].children[0];
   assert.strictEqual(choiceBeat.children[0].textContent, "先怎么回母亲？");
-  assert.ok(choiceBeat.children[1].textContent.includes("电话还没挂断，母亲没有催"));
+  assert.ok(choiceBeat.children[1].textContent.includes("电话还没挂断。母亲在等一句"));
   const firstMicroChoice = choiceBeat.children.find((child) => String(child.className).includes("micro-option-row")).children[0];
-  assert.strictEqual(firstMicroChoice.children[0].textContent, "先给母亲最低事实");
-  assert.ok(firstMicroChoice.children[1].textContent.includes("站外见面发给母亲"));
+  assert.strictEqual(firstMicroChoice.children[0].textContent, "发给母亲：“我看票，明天去站外见他。”");
+  assert.ok(firstMicroChoice.children[1].textContent.includes("站外的半小时"));
   assert.ok(!firstMicroChoice.children.some((child) => /family_|old_debt/.test(child.textContent)), "player-facing micro choices should hide variable effects");
   firstMicroChoice.click();
 
@@ -237,6 +244,9 @@ async function runDomSmoke() {
   assert.strictEqual(elements["page-title"].textContent, "三个聊天框怎么回？");
   assert.ok(elements["page-body"].children[0].textContent.includes("父亲在站外"));
   assert.ok(!elements["page-body"].children.some((child) => child.textContent.includes("心态落点")));
+  assert.ok(!/本窗抉择|微内流点|主轴推进|POOL-|当前池|保见面|保排班|风险|代价|收入入口|低频信任|误读|工作线倾向/.test(textOf(elements["choice-panel"])));
+  assert.ok(textOf(elements["choice-panel"]).includes("A. 先把父亲那边定下来"));
+  assert.ok(textOf(elements["choice-panel"]).includes("给父亲发到站时间"));
 }
 
 runDomSmoke()
