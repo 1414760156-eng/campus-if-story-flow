@@ -48,6 +48,11 @@ assert.ok(second.choice.guide.includes("父亲在站外"));
 assert.ok(!second.choice.summary.join("\n").includes("心态落点"));
 assert.ok(!second.choice.summary.join("\n").includes("ACT4-WORK-L02-P2-CHOICE-01"));
 
+data.locks.forEach((lock) => {
+  const choiceText = [lock.choice.guide, ...lock.choice.summary].join("\n");
+  assert.ok(!/本窗抉择|微内流点|主轴推进|POOL-|当前池|打开.*线/.test(choiceText), `${lock.id} choice body should stay player-facing`);
+});
+
 const effects = preview.parseNumericEffects("A2 `family_responsibility +1`、`wanfeng_delay +1`");
 assert.deepStrictEqual(effects, { family_responsibility: 1, wanfeng_delay: 1 });
 assert.ok(/\[hidden\]\s*\{[^}]*display:\s*none\s*!important/.test(css), "hidden panels must not be overridden by panel display styles");
@@ -196,6 +201,10 @@ async function runDomSmoke() {
   for (let i = 0; i < 4; i += 1) elements["next-button"].click();
   assert.strictEqual(elements["page-title"].textContent, "空宿舍里的三扇门");
   assert.strictEqual(elements["choice-panel"].children.length, 3);
+  assert.ok(!elements["page-body"].children.some((child) => /本窗抉择|微内流点|主轴推进|POOL-|当前池/.test(child.textContent)));
+  assert.ok(!elements["choice-panel"].children[0].children.some((child) => /微内流点|主轴推进|POOL-|当前池|不打开/.test(child.textContent)));
+  assert.ok(elements["choice-panel"].children[0].children[1].textContent.includes("回母亲，记父亲到站时间"));
+  assert.ok(!elements["choice-panel"].children[1].children.some((child) => child.textContent.includes("主轴推进")));
 
   elements["choice-panel"].children[0].click();
   assert.strictEqual(elements["page-title"].textContent, "接住家里电话 / 现场行动");

@@ -240,7 +240,7 @@
       }
     });
 
-    choice.summary = linesToParagraphs(summaryLines);
+    choice.summary = linesToParagraphs(summaryLines).filter(isPlayerFacingChoiceParagraph);
     if (!choice.title && CHOICE_FALLBACKS[lockId]) {
       choice.title = CHOICE_FALLBACKS[lockId].title;
     }
@@ -268,6 +268,10 @@
     });
 
     return choice;
+  }
+
+  function isPlayerFacingChoiceParagraph(text) {
+    return !/本窗抉择|微内流点|主轴推进|POOL-|当前池|打开.*线|独立线|完整线|方向内流链|心态落点|反馈页写法/.test(text);
   }
 
   function parseH3Blocks(sectionLines, baseLineNumber) {
@@ -663,6 +667,36 @@
     return `先按“${title}”处理，让这一刻有一个落点。没有说完的压力，会在下一段现场里继续出现。`;
   }
 
+  function formatMainChoiceDetail(option) {
+    const action = stripInlineMarkdown(option && option.action ? option.action : "");
+    const delayed = stripInlineMarkdown(option && option.delayed ? option.delayed : "");
+    if (action || delayed) return [action, delayed].filter(Boolean).join(" ");
+
+    const label = stripInlineMarkdown(option && option.label ? option.label : "");
+    const fallbackByLabel = [
+      [/保见面，把光谷时间留住/, "保住这次见面，但交通和花费都会更紧。"],
+      [/保排班和现实成本/, "先把能换钱的时间排清，光谷时间会往后挪。"],
+      [/明说预算和时间/, "把预算和时间说成事实，误读会少，体面压力会变重。"],
+      [/问家里缺口/, "把父亲现金背后的缺口问出来，家里的压力会更清楚，也更重。"],
+      [/收钱不问/, "先让饭卡、打印费和车票稳一点，没问完的旧账会往后移。"],
+      [/先问勤工流程/, "把被动收钱改成主动跑流程，陆沉能给规则，但不能替他报名。"],
+      [/先补学业材料/, "先保住补考资料和 C201 路线，代价是可能错过一次工作窗口。"],
+      [/先接临时班/, "先锁住一个收入窗口，补考复习会被排到稍后。"],
+      [/把白天能处理的事说清/, "把教室、打印和窗口说清楚，等待的人会少一点误读。"],
+      [/坐回 4XX 可见位置/, "让 4XX 看见他没有躲开，帮助会更具体，追问也会更近。"],
+      [/靠后处理资料/, "先减少被追问、抢回材料时间，别人也更容易只从结果倒推。"],
+      [/先去跑现实窗口/, "本人把窗口跑完，再把结果带回公共桌，时间债会增加。"],
+      [/如实填兼职 \/ 留校安排/, "把兼职、留校和联系人写成事实，第五幕不能再退回没想好。"],
+      [/只写留校/, "表格先能通过，但兼职空白会跟着他回到 4XX。"],
+      [/先问父母再填/, "联系人顺序更真实，家里的体面和实际也会被摆出来。"],
+    ];
+    const mapped = fallbackByLabel.find(([pattern]) => pattern.test(label));
+    if (mapped) return mapped[1];
+
+    const summary = stripInlineMarkdown(option && option.effectSummary ? option.effectSummary : "");
+    return summary.replace(/低频信任/g, "等待里的信任").replace(/工作线入口|工作线倾向/g, "工作安排");
+  }
+
   function boot() {
     const els = {
       routeChip: document.getElementById("route-chip"),
@@ -817,15 +851,11 @@
         title.className = "option-title";
         title.textContent = `${option.direction}. ${option.label}`;
 
-        const meta = document.createElement("span");
-        meta.className = "option-subtitle";
-        meta.textContent = option.type;
-
         const detail = document.createElement("span");
         detail.className = "option-detail";
-        detail.textContent = [option.mindset, option.effectSummary].filter(Boolean).join(" / ");
+        detail.textContent = formatMainChoiceDetail(option);
 
-        button.append(title, meta);
+        button.append(title);
         if (detail.textContent) button.append(detail);
         els.choicePanel.appendChild(button);
       });
