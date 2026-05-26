@@ -1,5 +1,13 @@
 ﻿# 进度记录
 
+## 2026-05-26：R4-WORK 第四幕 L01-L02 正式 JSON 拆分
+
+- 已在 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R4-WORK_v1.json` 新增 `act4_detail_blocks`，先接入 `ACT4-WORK-L01`、`ACT4-WORK-L02` 两个正式 JSON 块。
+- 当前拆分覆盖 2 个锁点、8 个选择前剧情页、2 个三方向选择窗、12 个选择后反馈页、10 组微心态、30 个微选项；每个方向都保留 `act5_echo_hook`，且 `route_pool_id` 固定为 `POOL-R4-WORK`。
+- 已把 `开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md` 加入 `source_docs`，并把 L01-L02 新增变量补入 `local_variables`，避免变量池缺口。
+- 新增 `playtest/r4-work-act4-json.test.js`，专门校验 R4-WORK Act4 L01-L02 的字段结构、玩家侧禁词、source_docs 和目标总量。
+- 下一步建议：继续按同一字段形态拆 `ACT4-WORK-L03` 至 `ACT4-WORK-L06`，完成后把 `validation_targets.act4_p2_detail_blocks.current_split_blocks` 从 2 更新到 6。
+
 ## 2026-05-26：R4-WORK 第四幕 P2 试玩器样板确认
 
 - 已确认 `playtest/r4-work-act4-preview.html` 可作为 `R4-WORK` 第四幕 P2 样板试玩器；本轮覆盖 L01-L06、18 个主选项、28 组微心态、84 个微选项。
