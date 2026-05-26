@@ -1,5 +1,13 @@
 ﻿# 进度记录
 
+## 2026-05-26：R4-WORK 第四幕正式 JSON 质量审读
+
+- 已新增 `docs/剧情小说母版_v4.0/开发审读_IF第四幕ACT4-WORK正式JSON质量审读.md`，记录 `ACT4-WORK-L01` 至 `ACT4-WORK-L06` 的正式 JSON 审读结论。
+- 本轮发现并修正 L03-L06 方向 `description` 中的转换脚本式玩家侧残留，例如“这一步会把 L03 的现实压力落到可执行顺序里”，统一改成具体现场动作。
+- 已把审读文档加入 `开发数据_IF剧情页级JSON_R4-WORK_v1.json` 的 `source_docs`。
+- `playtest/r4-work-act4-json.test.js` 已增加玩家侧质量禁词与块编号残留校验，防止开发说明、转换脚本语和 `L03` / `C03` 等内部编号进入玩家侧文本。
+- 下一步建议：让 `playtest/r4-work-act4-preview.html` 增加正式 JSON 读取模式，用当前正式 JSON 直接试玩。
+
 ## 2026-05-26：R4-WORK 第四幕 L01-L06 正式 JSON 拆分完成
 
 - 已在 `docs/剧情小说母版_v4.0/开发数据_IF剧情页级JSON_R4-WORK_v1.json` 完成 `act4_detail_blocks` 全量接入，覆盖 `ACT4-WORK-L01` 至 `ACT4-WORK-L06`。

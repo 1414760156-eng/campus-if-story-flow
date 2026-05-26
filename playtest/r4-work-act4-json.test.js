@@ -25,6 +25,9 @@ const forbiddenPlayerText = [
   "微内流点",
   "主轴推进",
   "当前池",
+  "这一步会",
+  "现实压力落到可执行顺序",
+  "收钱不问",
   "最低事实",
   "具体改法",
   "收入入口",
@@ -37,6 +40,12 @@ const forbiddenPlayerText = [
   "family_",
   "route_",
   "act5_",
+];
+
+const forbiddenPlayerPatterns = [
+  /\bL0[1-6]\b/,
+  /\bC0[1-6]\b/,
+  /ACT4-WORK/,
 ];
 
 function playerFacingText(block) {
@@ -120,6 +129,9 @@ blocks.forEach((block, index) => {
   const visible = playerFacingText(block);
   forbiddenPlayerText.forEach((term) => {
     assert.ok(!visible.includes(term), `${block.block_id} player-facing text should not include ${term}`);
+  });
+  forbiddenPlayerPatterns.forEach((pattern) => {
+    assert.ok(!pattern.test(visible), `${block.block_id} player-facing text should not match ${pattern}`);
   });
 });
 

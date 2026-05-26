@@ -21,7 +21,8 @@
     "开发数据_IF剧情页级JSON_R5-WANFENG_v1.json",
     "开发数据_IF剧情页级JSON_R5-LIEFLAT_v1.json",
     "开发样板_IF剧情页级JSON拆分样板_v1.json",
-    "开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md"
+    "开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md",
+    "开发审读_IF第四幕ACT4-WORK正式JSON质量审读.md"
   ],
   "route_state": {
     "canon_line": "MOTHER-V4",
@@ -2227,7 +2228,7 @@
             "micro_influence_source": "family_pressure",
             "stays_in_pool": true,
             "label": "问清这笔钱从哪里来",
-            "description": "问家里缺口，把钱压说成事实 这一步会把 L03 的现实压力落到可执行顺序里。",
+            "description": "先问父亲和母亲这笔钱从哪里挤出来，不把五百块只当成普通生活费。",
             "variable_delta": {
               "family_signal": 1,
               "money_pressure": 1,
@@ -2361,7 +2362,7 @@
             "micro_influence_source": "soft_echo",
             "stays_in_pool": true,
             "label": "先把钱收进饭卡和车票",
-            "description": "收钱不问，先把缺口压下去 这一步会把 L03 的现实压力落到可执行顺序里。",
+            "description": "先把饭卡、车票和打印费稳住，家里没说清的部分暂时压进资料袋。",
             "variable_delta": {
               "money_pressure": -1,
               "old_debt": 2,
@@ -2494,7 +2495,7 @@
             "micro_influence_source": "work_reality",
             "stays_in_pool": true,
             "label": "先问勤工窗口还能不能接",
-            "description": "先问勤工流程，用自己的方式补窟窿 这一步会把 L03 的现实压力落到可执行顺序里。",
+            "description": "把勤工窗口问清楚，让父亲留下的钱不再是唯一能补缺口的办法。",
             "variable_delta": {
               "work_route": 1,
               "luchen_reality_link": 1,
@@ -2742,7 +2743,7 @@
             "micro_influence_source": "study_repair",
             "stays_in_pool": true,
             "label": "先把补考资料补齐",
-            "description": "先补学业材料，不让工作吞掉补考 这一步会把 L04 的现实压力落到可执行顺序里。",
+            "description": "先把 C201、资料包和错题表补齐，别让补考在勤工排班里被挤掉。",
             "variable_delta": {
               "study_pressure": 1,
               "work_certificate_seed": 1,
@@ -2875,7 +2876,7 @@
             "micro_influence_source": "work_reality",
             "stays_in_pool": true,
             "label": "先回勤工群接下临时班",
-            "description": "先接临时班，保收入和材料窗口 这一步会把 L04 的现实压力落到可执行顺序里。",
+            "description": "先接下周四窗口班，把能换成饭钱的时间从聊天记录里落到排班表上。",
             "variable_delta": {
               "work_shift_seed": 3,
               "public_boundary": 1,
@@ -2965,7 +2966,7 @@
             "micro_influence_source": "soft_echo",
             "stays_in_pool": true,
             "label": "先把今天白天会去哪儿说清",
-            "description": "把白天能处理的事说清 这一步会把 L04 的现实压力落到可执行顺序里。",
+            "description": "把 C201、打印店和窗口顺序分别说清，别让几个人只靠猜他的白天。",
             "variable_delta": {
               "relationship_truth_seed": 1,
               "public_boundary": 2,
@@ -3225,7 +3226,7 @@
             "micro_influence_source": "dorm_visibility",
             "stays_in_pool": true,
             "label": "坐回 4XX 看得见的位置",
-            "description": "坐回 4XX 可见位置 这一步会把 L05 的现实压力落到可执行顺序里。",
+            "description": "坐回 4XX 能看见的位置，让补考和窗口安排不再只藏在文件袋里。",
             "variable_delta": {
               "dorm_warmth_seed": 1,
               "public_boundary": 2,
@@ -3358,7 +3359,7 @@
             "micro_influence_source": "study_repair",
             "stays_in_pool": true,
             "label": "坐到后排，先处理资料",
-            "description": "靠后处理资料，减少被追问 这一步会把 L05 的现实压力落到可执行顺序里。",
+            "description": "先坐到后排靠门，把资料、打印和窗口时间处理完，再决定怎么面对 4XX。",
             "variable_delta": {
               "work_window_ready": 1,
               "dorm_misread": 2,
@@ -3449,7 +3450,7 @@
             "micro_influence_source": "work_reality",
             "stays_in_pool": true,
             "label": "先去明德楼跑完窗口",
-            "description": "先去跑现实窗口，把位置写进流程 这一步会把 L05 的现实压力落到可执行顺序里。",
+            "description": "下课先去明德楼窗口，把回执和补材料要求带回公共桌。",
             "variable_delta": {
               "work_route": 1,
               "work_certificate_seed": 1,
@@ -3665,7 +3666,7 @@
             "micro_influence_source": "work_reality",
             "stays_in_pool": true,
             "label": "把兼职和留校都如实填上",
-            "description": "如实填兼职 / 留校安排，本人签完 这一步会把 L06 的现实压力落到可执行顺序里。",
+            "description": "把兼职、留校和联系人都填上，由自己在 B204 签字确认。",
             "variable_delta": {
               "route_boundary": 1,
               "work_route": 1,
@@ -3755,7 +3756,7 @@
             "micro_influence_source": "work_reality",
             "stays_in_pool": true,
             "label": "先只填留校和宿舍号",
-            "description": "先写留校，不写兼职细节 这一步会把 L06 的现实压力落到可执行顺序里。",
+            "description": "先填留校和宿舍号，把未确定的窗口说明留到后面补。",
             "variable_delta": {
               "old_debt": 3,
               "work_window_pending": 2,
@@ -3847,7 +3848,7 @@
             "micro_influence_source": "family_pressure",
             "stays_in_pool": true,
             "label": "先问清联系人顺序再保存",
-            "description": "先问父母再填，联系人不糊弄 这一步会把 L06 的现实压力落到可执行顺序里。",
+            "description": "先问父母谁能接学校电话，再把联系人顺序保存下来。",
             "variable_delta": {
               "family_signal": 1,
               "relationship_truth_seed": 1,
