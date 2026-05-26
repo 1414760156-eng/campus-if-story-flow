@@ -69,6 +69,7 @@
 - [x] 已按用户确认的 L01 样板复刻 L02-L06：每个选择窗均补方向内流链、微心态抉择、回声变量和“不是 / 而是”心态落点；18 条方向链已与文件末尾写回字段备注中的 `act5_echo_hook` 对齐。
 - [x] 已完成 R4 第四幕 P2 全稿统一审读：新增 `开发审读_IF第四幕ACT4-WORK_P2全稿统一审读.md`，确认 6 锁点 / 24 页 / 6 窗 / 36 反馈页 / 18 方向链无 P0 结构断点，且能承接 `ACT5-WORK-B01`。
 - [x] 已做 L05 小修：修正两处“问”字漏写，并将“工作线要走下去”说明句改为现场动作，避免开发记录式表达进入正文。
+- [x] 已完成 `R4-WORK` 第四幕 P2 试玩器样板确认：`playtest/r4-work-act4-preview.html` 已可操作覆盖 L01-L06；玩家页口径固定为“抉择页承接现场压力、主选项写方向动作、微心态选项写林亦舟真实发出 / 说出 / 写下 / 做出的具体内容”，禁止开发说明、策略标签和变量后果进入玩家正文。
 - [ ] 下一步建议：开始 `R4-WORK` 第四幕正式 JSON 拆分草案，先拆 L01-L02 验证字段格式，再批量拆 L03-L06。
 - [x] 工具记录：本轮 `planning-with-files` 的 `session-catchup.py` 用系统 `python` 失败，已改用绑定 Python 成功跑过；后续优先用 `C:\Users\qingguang\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe`。
 
