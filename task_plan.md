@@ -70,7 +70,7 @@
 - [x] 已完成 R4 第四幕 P2 全稿统一审读：新增 `开发审读_IF第四幕ACT4-WORK_P2全稿统一审读.md`，确认 6 锁点 / 24 页 / 6 窗 / 36 反馈页 / 18 方向链无 P0 结构断点，且能承接 `ACT5-WORK-B01`。
 - [x] 已做 L05 小修：修正两处“问”字漏写，并将“工作线要走下去”说明句改为现场动作，避免开发记录式表达进入正文。
 - [x] 已完成 `R4-WORK` 第四幕 P2 试玩器样板确认：`playtest/r4-work-act4-preview.html` 已可操作覆盖 L01-L06；玩家页口径固定为“抉择页承接现场压力、主选项写方向动作、微心态选项写林亦舟真实发出 / 说出 / 写下 / 做出的具体内容”，禁止开发说明、策略标签和变量后果进入玩家正文。
-- [x] 已开始 `R4-WORK` 第四幕正式 JSON 拆分草案：`ACT4-WORK-L01`、`ACT4-WORK-L02` 已接入 `开发数据_IF剧情页级JSON_R4-WORK_v1.json` 的 `act4_detail_blocks`，并新增 `playtest/r4-work-act4-json.test.js` 校验字段格式、玩家侧禁词、source_docs、变量池和目标总量；下一步批量拆 L03-L06。
+- [x] 已完成 `R4-WORK` 第四幕正式 JSON 拆分：`ACT4-WORK-L01` 至 `ACT4-WORK-L06` 已全量接入 `开发数据_IF剧情页级JSON_R4-WORK_v1.json` 的 `act4_detail_blocks`，`playtest/r4-work-act4-json.test.js` 已升级为 6 锁点全量校验，覆盖字段格式、前后事件链、玩家侧禁词、source_docs、变量池和目标总量；下一步做正式 JSON 质量审读或让试玩器改读正式 JSON。
 - [x] 工具记录：本轮 `planning-with-files` 的 `session-catchup.py` 用系统 `python` 失败，已改用绑定 Python 成功跑过；后续优先用 `C:\Users\qingguang\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe`。
 
 ## 2026-05-19 当前执行重点：IF 命运线池化架构

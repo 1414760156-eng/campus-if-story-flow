@@ -1,19 +1,19 @@
 ﻿# 武生院沉浸版剧情小说母版 v4.0 进度记录
 
-## 2026-05-26：R4-WORK 第四幕 L01-L02 正式 JSON 拆分
+## 2026-05-26：R4-WORK 第四幕 L01-L06 正式 JSON 拆分完成
 
-- 已在 `开发数据_IF剧情页级JSON_R4-WORK_v1.json` 新增 `act4_detail_blocks`，先接入 `ACT4-WORK-L01`、`ACT4-WORK-L02` 两个正式 JSON 块。
-- 当前拆分覆盖 2 个锁点、8 个选择前剧情页、2 个三方向选择窗、12 个选择后反馈页、10 组微心态、30 个微选项；每个方向都保留 `act5_echo_hook`，且 `route_pool_id` 固定为 `POOL-R4-WORK`。
-- 已把 `开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md` 加入 `source_docs`，并把 L01-L02 新增变量补入 `local_variables`，避免变量池缺口。
-- 新增 `playtest/r4-work-act4-json.test.js`，专门校验 R4-WORK Act4 L01-L02 的字段结构、玩家侧禁词、source_docs 和目标总量。
-- 下一步建议：继续按同一字段形态拆 `ACT4-WORK-L03` 至 `ACT4-WORK-L06`，完成后把 `validation_targets.act4_p2_detail_blocks.current_split_blocks` 从 2 更新到 6。
+- 已在 `开发数据_IF剧情页级JSON_R4-WORK_v1.json` 完成 `act4_detail_blocks` 全量接入，覆盖 `ACT4-WORK-L01` 至 `ACT4-WORK-L06`。
+- 当前拆分覆盖 6 个锁点、24 个选择前剧情页、6 个三方向选择窗、36 个选择后反馈页、28 组微心态、84 个微选项；每个方向都保留 `act5_echo_hook`，且 `route_pool_id` 固定为 `POOL-R4-WORK`。
+- 已把 L03-L06 的新增变量补入 `local_variables`，并把 `validation_targets.act4_p2_detail_blocks.current_split_blocks` 更新为 6。
+- `playtest/r4-work-act4-json.test.js` 已升级为全量校验，覆盖字段结构、前后事件链、玩家侧禁词、source_docs、变量池和目标总量。
+- 下一步建议：做一次 R4-WORK Act4 正式 JSON 质量审读，重点核对 L03-L06 的玩家侧选项语感、微心态反馈是否继续符合已确认样板，再决定是否让试玩器直接读取正式 JSON。
 
 ## 2026-05-26：R4-WORK 第四幕 P2 试玩器样板确认
 
 - 已确认 `playtest/r4-work-act4-preview.html` 可作为 `R4-WORK` 第四幕 P2 样板试玩器；本轮覆盖 L01-L06、18 个主选项、28 组微心态、84 个微选项。
 - 已将玩家侧文案标准写回 `开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md`：抉择引导文只承接现场压力，主选项写方向动作，微心态选项写林亦舟会真实发出 / 说出 / 写下 / 做出的具体内容。
 - 已明确禁止开发说明、策略标签、变量后果进入玩家正文，例如“本窗抉择”“微内流点”“最低事实”“具体改法”“风险”“代价”“收入入口”等。
-- 下一步建议：以该样板开始 `R4-WORK` 第四幕正式 JSON 拆分草案，先拆 L01-L02 验证字段格式，再批量拆 L03-L06。
+- 后续状态：已基于该样板完成 `R4-WORK` 第四幕 L01-L06 正式 JSON 全量拆分。
 
 ## 2026-05-20：第三幕 A3 父池分发回改
 
@@ -3242,4 +3242,4 @@
 - 已确认 `ACT5-WORK-B01` 承接成立：L01-L06 已提供暑假分流、退改成本、父亲现金、补考 / 打印、窗口回执、本人签字和联系人顺序，足以支撑第五幕“晚班后补说明 / 固定班与 4XX 当面撞上”。
 - 已做正文小修：L05 两处“周屿问难不难”漏字已修正；L05 S03 的说明句已改成现场动作，避免开发记录式表达进入玩家正文。
 - 本轮仍不写回正式剧情页级 JSON；审读文档作为 JSON 拆分前置依据。
-- 下一步建议：开始 `R4-WORK` 第四幕正式 JSON 拆分草案，先拆 L01-L02 验证字段格式，再批量拆 L03-L06。
+- 后续状态：已完成 `R4-WORK` 第四幕 L01-L06 正式 JSON 全量拆分。

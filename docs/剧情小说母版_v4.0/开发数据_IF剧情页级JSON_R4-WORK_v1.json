@@ -141,8 +141,19 @@
   },
   "local_variables": [
     "act4_daily_radius",
+    "act4_l01_choice_resolved",
+    "act4_l02_choice_resolved",
+    "act4_resource_pressure",
     "act4_work_l01_seen",
     "act4_work_l02_seen",
+    "act4_work_l03_choice_resolved",
+    "act4_work_l03_seen",
+    "act4_work_l04_choice_resolved",
+    "act4_work_l04_seen",
+    "act4_work_l05_choice_resolved",
+    "act4_work_l05_seen",
+    "act4_work_l06_choice_resolved",
+    "act4_work_l06_seen",
     "act5_choice_floor_met",
     "act5_echo_hook",
     "act5_required_windows_seen",
@@ -154,21 +165,28 @@
     "activity_link",
     "avoidance",
     "basic_cost_clear",
+    "c201_route_confirmed",
     "certificate_or_archive_seen",
     "closed_route_ids_kept_closed",
+    "daily_stability",
     "defense_boundary_checked",
     "defense_order_seen",
     "defense_post_submit_done",
     "dorm_absence",
     "dorm_key_returned",
     "dorm_misread",
+    "dorm_repair",
     "dorm_trust",
     "dorm_warmth",
+    "dorm_warmth_seed",
     "drift_guard_triggered",
     "energy_low",
     "energy_low_recorded",
     "express_shift_seen",
+    "face_pressure",
     "family_basic_truth",
+    "family_debt_attached_to_study",
+    "family_face_repair",
     "family_pressure",
     "family_responsibility",
     "family_signal",
@@ -189,12 +207,15 @@
     "march_boundary_checked",
     "meal_attendance_locked",
     "meal_boundary_checked",
+    "minimum_support",
+    "minimum_truth",
     "missed_chance",
     "missed_meet_seen",
     "money_pressure",
     "money_pressure_recorded",
     "money_pressure_visible",
     "old_debt",
+    "old_debt_seen",
     "old_object_scope_checked",
     "opening_contrast_seen",
     "p0b_entry_json_status",
@@ -219,12 +240,13 @@
     "reality_bond",
     "reality_order_visible",
     "relationship_truth",
+    "relationship_truth_seed",
     "repair_depth",
     "repair_or_shift_tradeoff_recorded",
     "revision_submitted_before_deadline",
+    "route_boundary",
     "route_lock",
     "route_order_visible",
-    "route_pool_id",
     "route_pool_locked",
     "self_boundary",
     "self_control",
@@ -233,6 +255,11 @@
     "shift_boundary_checked",
     "small_income",
     "station_after_echo_seen",
+    "study_boundary",
+    "study_debt",
+    "study_pressure",
+    "study_repair",
+    "tang_material_support",
     "tang_trust",
     "thesis_boundary_checked",
     "thesis_revision_version",
@@ -246,7 +273,10 @@
     "wanfeng_soft_echo",
     "wanfeng_trust",
     "wanfeng_wait_reduced",
+    "work_certificate_seed",
     "work_certificate_status",
+    "work_debt_visible",
+    "work_efficiency",
     "work_final_contact_scope",
     "work_hint_to_family",
     "work_hint_to_others",
@@ -261,7 +291,10 @@
     "work_shift",
     "work_shift_recorded",
     "work_shift_seed",
-    "work_vs_relationship_tradeoff_checked"
+    "work_vs_relationship_tradeoff_checked",
+    "work_window_missed",
+    "work_window_pending",
+    "work_window_ready"
   ],
   "entry_node": {
     "node_id": "P0B_SUMMER_WORK_SHIFT",
@@ -1138,6 +1171,7 @@
       ],
       "must_record": [
         "act4_daily_radius",
+        "act4_l01_choice_resolved",
         "act4_work_l01_seen",
         "act5_echo_hook",
         "dorm_absence",
@@ -1621,6 +1655,9 @@
         "act4_l02_choice_resolved"
       ],
       "must_record": [
+        "act4_daily_radius",
+        "act4_l02_choice_resolved",
+        "act4_resource_pressure",
         "act4_work_l02_seen",
         "act5_echo_hook",
         "basic_cost_clear",
@@ -2055,6 +2092,1888 @@
               "r4_refund_rule_budget_explained"
             ],
             "next_node": "ACT4-WORK-L03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-WORK-L03",
+      "block_name": "站外半小时与家庭现金",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-WORK-L02",
+      "next_block": "ACT4-WORK-L04",
+      "scene_range": [
+        "ACT4-WORK-L03-P2-S01",
+        "ACT4-WORK-L03-P2-S02",
+        "ACT4-WORK-L03-P2-S03",
+        "ACT4-WORK-L03-P2-S04"
+      ],
+      "scene_function": "站外半小时与家庭现金：把第四幕生活半径压力拆成剧情页、三向抉择和可回收的微心态选择。",
+      "required_completion_flags": [
+        "act4_work_l03_seen",
+        "act4_daily_radius",
+        "act4_work_l03_choice_resolved"
+      ],
+      "must_record": [
+        "act4_daily_radius",
+        "act4_work_l03_choice_resolved",
+        "act4_work_l03_seen",
+        "act5_echo_hook",
+        "daily_stability",
+        "dorm_misread",
+        "face_pressure",
+        "family_basic_truth",
+        "family_debt_attached_to_study",
+        "family_pressure",
+        "family_responsibility",
+        "family_signal",
+        "family_truth_probe",
+        "luchen_reality_link",
+        "minimum_truth",
+        "money_pressure",
+        "old_debt",
+        "old_debt_seen",
+        "parent_worry",
+        "relationship_truth",
+        "study_boundary",
+        "study_repair",
+        "time_debt",
+        "wanfeng_soft_echo",
+        "work_certificate_seed",
+        "work_hint_to_family",
+        "work_route",
+        "work_rule_clarity",
+        "work_shift_seed"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-WORK-L03-P2-S01",
+          "page_title": "武生院站外 / 父亲",
+          "location": "武生院站外 / 父亲",
+          "text": [
+            "父亲站在武生院站外，背着旧双肩包，手里拎着装工作鞋的黑色塑料袋。",
+            "小摊用湿毛巾盖着矿泉水，列车从高架上过，风把广告纸推到父亲鞋边。父亲低头踩住那张纸，又像没事一样松开。",
+            "林亦舟买了两瓶水。父亲接过去，没有马上喝，只问他热不热、吃饭没有、票买得怎么样。那些问题都很普通，普通到像他们真的只是路过见一面。",
+            "可父亲的包太沉了，站外半小时也太短了。林亦舟看着那只黑色塑料袋，知道这次见面不是来报平安的。"
+          ],
+          "updates": {
+            "act4_daily_radius": "work_l03",
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L03-P2-S02",
+          "page_title": "站外小面馆 / 现金",
+          "location": "站外小面馆 / 现金",
+          "text": [
+            "他们在站外小面馆坐下。",
+            "父亲点了两碗小面，没问林亦舟要不要加蛋。面还没上来，他先把五百块现金推过来，又转了三百，备注写“路上买水”。",
+            "林亦舟说：“我不缺。”",
+            "父亲把筷子拆开，声音很轻：“缺不缺是一回事，我给不给是另一回事。”",
+            "这句话没有解释钱从哪里来，也没有说家里到底少了什么。它只是把钱放在桌上，让林亦舟不能再装作那些转账备注只是普通生活费。"
+          ],
+          "updates": {
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L03-P2-S03",
+          "page_title": "图书馆登记台 / 小票",
+          "location": "图书馆登记台 / 小票",
+          "text": [
+            "回校后，图书馆登记台的风扇转得很慢。",
+            "陆沉把早饭小票递给林亦舟：三块五。小票皱在一起，油点沾到边角。林亦舟把它夹进书里，书页旁边还有父亲给的信封和那条三百块转账。",
+            "三样东西原本不在一起，现在却像同一个账本的三页。",
+            "陆沉没有问站外见得怎么样，只说暑期勤工窗口这周还能交材料。林亦舟看着登记台上的黑色签字笔，第一次觉得自己不能一直等家里把缺口补过来。"
+          ],
+          "updates": {
+            "work_shift_seed": 1,
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L03-P2-S04",
+          "page_title": "食堂二楼 / 成绩通知",
+          "location": "食堂二楼 / 成绩通知",
+          "text": [
+            "食堂二楼人不多，空调声盖过勺子碰碗的声音。",
+            "学院群发出成绩查询通知。母亲的语音还压在聊天框顶端，晚风问“见完了吗”。陆沉没有立刻查成绩，只把手机扣下，继续吃粉。",
+            "林亦舟点开成绩系统，又退出来。他知道今晚要处理的不止分数，还有那笔被说成“买水”的钱。",
+            "父亲已经上车，母亲还不知道那五百块现金，晚风只知道他去见了一面。每个人都只拿到一部分事实，而他自己也还没有把事实拼完整。"
+          ],
+          "updates": {
+            "study_repair": 1,
+            "family_signal": 1,
+            "wanfeng_soft_echo": 1,
+            "act4_work_l03_seen": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-WORK-L03-P2-CHOICE-01",
+        "title": "这笔现金怎么接？",
+        "guide": "父亲留下的现金、母亲的语音和成绩通知同时落在手边。钱能先补缺口，也会把没说清的事压进后面。",
+        "after_page": "ACT4-WORK-L03-P2-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-WORK-L03-C03-A",
+            "direction": "A",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "family_pressure",
+            "stays_in_pool": true,
+            "label": "问清这笔钱从哪里来",
+            "description": "问家里缺口，把钱压说成事实 这一步会把 L03 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "family_signal": 1,
+              "money_pressure": 1,
+              "old_debt_seen": 1,
+              "family_truth_probe": 3,
+              "family_basic_truth": 1,
+              "relationship_truth": 1,
+              "family_pressure": 1,
+              "parent_worry": 1,
+              "family_responsibility": 1,
+              "work_hint_to_family": 1,
+              "act5_echo_hook": "r4_station_cash_family_gap_named"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L03-P2-A01",
+                "page_title": "问清家里缺口 / 现场行动",
+                "location": "问清家里缺口 / 现场行动",
+                "text": [
+                  "林亦舟没有先查成绩。",
+                  "他给父亲发：你们到底差多少？",
+                  "消息发出去后，他又给母亲回：我今天见到他了。他给了我一部分钱。",
+                  "两个聊天框都安静下来。父亲那边隔了很久只回“别乱想”，母亲那边显示正在输入，又停住。",
+                  "林亦舟把手机放在桌上。食堂二楼的灯照在屏幕上，正在输入那几个字消失以后，反而比任何回复都重。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L03-P2-A02",
+                "page_title": "问清家里缺口 / 承接回声",
+                "location": "问清家里缺口 / 承接回声",
+                "text": [
+                  "母亲最后打来电话。",
+                  "她没有在电话里把账摊开，只问父亲有没有吃东西，有没有急着走。林亦舟说吃了面，父亲让他别乱买资料包。母亲听完，只说：“他说的话你听一半，钱也别当没看见。”",
+                  "林亦舟握着手机，没有再说自己不缺。",
+                  "家庭变化从转账备注里浮出来，却还没有完全成形。后面他要填联系人、要请假、要解释留校和兼职，这些都不能再写成突然发生的事。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L03-A-A-3",
+                "beat": 3,
+                "prompt": "先问谁？",
+                "guide": "信封、小票和成绩通知压在一起。林亦舟把钱夹回去，又把手机拿起来。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L03-A-A-3-A1",
+                    "code": "A1",
+                    "label": "问父亲：“你们到底差多少？”",
+                    "body": "站外的半小时被写进消息里，不再只卡在电话里。",
+                    "variable_delta": {
+                      "family_truth_probe": 1
+                    },
+                    "raw_effect_text": "family_truth_probe +1、父亲回避"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-A-A-3-A2",
+                    "code": "A2",
+                    "label": "发给母亲：“他今天给了我一部分钱。”",
+                    "body": "母亲那边还没有挂断，车票页也在屏幕后台开着。",
+                    "variable_delta": {
+                      "family_basic_truth": 1
+                    },
+                    "raw_effect_text": "family_basic_truth +1、母亲压力上升"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-A-A-3-A3",
+                    "code": "A3",
+                    "label": "给父母各发一句：“钱我收到了，会用在补考和饭卡。”",
+                    "body": "饭卡余额刷新出来，他把支付页关掉。",
+                    "variable_delta": {
+                      "relationship_truth": 1
+                    },
+                    "raw_effect_text": "relationship_truth +1、两边沉默"
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT4-WORK-L03-A-A-5",
+                "beat": 5,
+                "prompt": "还要不要继续问下去？",
+                "guide": "父亲和母亲都沉默过一阵。屏幕暗下去前，输入框还停在那里。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L03-A-A-5-A1",
+                    "code": "A1",
+                    "label": "再问父亲：“家里还差多少？”",
+                    "body": "站外的半小时被写进消息里，不再只卡在电话里。",
+                    "variable_delta": {
+                      "family_truth_probe": 2,
+                      "parent_worry": 1
+                    },
+                    "raw_effect_text": "family_truth_probe +2、parent_worry +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-A-A-5-A2",
+                    "code": "A2",
+                    "label": "只回一句：“钱我先用在补考和饭卡。”",
+                    "body": "饭卡余额刷新出来，他把支付页关掉。",
+                    "variable_delta": {
+                      "family_responsibility": 1
+                    },
+                    "raw_effect_text": "family_responsibility +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-A-A-5-A3",
+                    "code": "A3",
+                    "label": "补给母亲：“我明天也会去问勤工。”",
+                    "body": "母亲那边还没有挂断，车票页也在屏幕后台开着。",
+                    "variable_delta": {
+                      "work_hint_to_family": 1
+                    },
+                    "raw_effect_text": "work_hint_to_family +1、route_confidence += work"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_station_cash_family_gap_named"
+            ],
+            "next_node": "ACT4-WORK-L04"
+          },
+          {
+            "direction_id": "ACT4-WORK-L03-C03-B",
+            "direction": "B",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "soft_echo",
+            "stays_in_pool": true,
+            "label": "先把钱收进饭卡和车票",
+            "description": "收钱不问，先把缺口压下去 这一步会把 L03 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "money_pressure": -1,
+              "old_debt": 2,
+              "minimum_truth": 1,
+              "daily_stability": 1,
+              "study_repair": 1,
+              "family_debt_attached_to_study": 1,
+              "dorm_misread": 1,
+              "work_shift_seed": 1,
+              "family_basic_truth": 1,
+              "face_pressure": 1,
+              "act5_echo_hook": "r4_station_cash_debt_deferred"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L03-P2-B01",
+                "page_title": "先把现金收好 / 现场行动",
+                "location": "先把现金收好 / 现场行动",
+                "text": [
+                  "林亦舟把转账收下，把信封塞进包内层。",
+                  "他给母亲回：见到了，他上地铁了。",
+                  "这句话是真的，却少掉了父亲让他别说的那半截。林亦舟打开饭卡页面，先充了一百，又把打印费和车费写进备忘录。",
+                  "钱进来以后，短期缺口被压下去。可那只黑色塑料袋、父亲踩住的广告纸、母亲还没听见的现金，都被他一并塞进了包里。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L03-P2-B02",
+                "page_title": "先把现金收好 / 承接回声",
+                "location": "先把现金收好 / 承接回声",
+                "text": [
+                  "晚上，林亦舟把包放到床边，信封没有拿出来。",
+                  "周屿在群里问他见到没有，唐骁发了证书报名提醒，陆沉问明天图书馆还去不去。林亦舟都回得很短。",
+                  "他没有撒谎，只是把每个问题都截在能过线的地方。饭卡余额变好看了一点，打印费有了着落，车票也不那么紧。",
+                  "可家里的缺口仍在包内层。它暂时不响，不代表消失。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L03-B-B-3",
+                "beat": 3,
+                "prompt": "这笔钱先放到哪里？",
+                "guide": "这笔钱能让饭卡和打印费稳一点，也会把没说完的话一起塞进包里。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L03-B-B-3-B1",
+                    "code": "B1",
+                    "label": "先把饭卡充上。，先把缺口补上",
+                    "body": "饭卡余额刷新出来，他把支付页关掉。",
+                    "variable_delta": {
+                      "daily_stability": 1
+                    },
+                    "raw_effect_text": "daily_stability +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-B-B-3-B2",
+                    "code": "B2",
+                    "label": "把打印费和车费夹进资料袋。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "study_repair": 1
+                    },
+                    "raw_effect_text": "study_repair +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-B-B-3-B3",
+                    "code": "B3",
+                    "label": "把钱夹进补考资料袋。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "family_debt_attached_to_study": 1
+                    },
+                    "raw_effect_text": "family_debt_attached_to_study +1"
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT4-WORK-L03-B-B-5",
+                "beat": 5,
+                "prompt": "第一句发出后还补什么？",
+                "guide": "第一句发出去后，输入框还亮着。林亦舟看着那行字，手指停在发送键上。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L03-B-B-5-B1",
+                    "code": "B1",
+                    "label": "不再补消息，把手机扣在桌上。",
+                    "body": "屏幕暗下去，公共桌上的信封还压着。",
+                    "variable_delta": {
+                      "old_debt": 1
+                    },
+                    "raw_effect_text": "old_debt +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-B-B-5-B2",
+                    "code": "B2",
+                    "label": "对陆沉说：“我明天再问窗口。”",
+                    "body": "陆沉看完这句，能接上的只有流程，不是替他决定。",
+                    "variable_delta": {
+                      "work_shift_seed": 1
+                    },
+                    "raw_effect_text": "work_shift_seed +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-B-B-5-B3",
+                    "code": "B3",
+                    "label": "给母亲补发：“他给了点路费。”",
+                    "body": "母亲那边还没有挂断，车票页也在屏幕后台开着。",
+                    "variable_delta": {
+                      "family_basic_truth": 1,
+                      "face_pressure": 1
+                    },
+                    "raw_effect_text": "family_basic_truth +1、face_pressure +1"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_station_cash_debt_deferred"
+            ],
+            "next_node": "ACT4-WORK-L04"
+          },
+          {
+            "direction_id": "ACT4-WORK-L03-C03-C",
+            "direction": "C",
+            "direction_type": "main_axis",
+            "micro_influence_source": "work_reality",
+            "stays_in_pool": true,
+            "label": "先问勤工窗口还能不能接",
+            "description": "先问勤工流程，用自己的方式补窟窿 这一步会把 L03 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "work_route": 1,
+              "luchen_reality_link": 1,
+              "work_rule_clarity": 1,
+              "work_certificate_seed": 1,
+              "work_shift_seed": 2,
+              "time_debt": 1,
+              "study_boundary": 1,
+              "act5_echo_hook": "r4_station_cash_to_work_route"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L03-P2-C01",
+                "page_title": "问勤工流程 / 现场行动",
+                "location": "问勤工流程 / 现场行动",
+                "text": [
+                  "林亦舟在图书馆登记台旁问陆沉：“勤工还能申请吗？”",
+                  "陆沉把窗口时间、材料和身份证复印件写在便签上，又补了一句：“固定班不是轻松，是少变数。”",
+                  "林亦舟点头，把便签夹到父亲信封外面。这个动作很小，却把两件事放到了一起：家里的钱不能一直靠别人往他手里塞，他也不能只用“我不缺”堵住每一次追问。",
+                  "陆沉没有替他报名，只把窗口地点圈出来。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L03-P2-C02",
+                "page_title": "问勤工流程 / 承接回声",
+                "location": "问勤工流程 / 承接回声",
+                "text": [
+                  "回到 4XX，林亦舟把材料清单抄到公共桌上的白纸上。",
+                  "学生证复印件、身份证复印件、银行卡号、可排班时间。每一项都很具体，具体到没有空间让人继续含混。",
+                  "晚风问他见完父亲没有，他回：见完了。我明天要问勤工窗口。",
+                  "晚风没有追问钱，只回：那你明天白天说。",
+                  "这句话把工作线往前推了一步。不是去打工就不用解释，而是从明天开始，他每一个白天都更需要说清楚。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L03-C-C-3",
+                "beat": 3,
+                "prompt": "先补哪一块缺口？",
+                "guide": "父亲给的钱和勤工便签被夹在一起。林亦舟把两张纸摊在同一页上。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L03-C-C-3-C1",
+                    "code": "C1",
+                    "label": "在勤工群问：“第一次值班要带哪些材料？”",
+                    "body": "群公告停在屏幕上，这一条发出去后会有人接话。",
+                    "variable_delta": {
+                      "work_certificate_seed": 1
+                    },
+                    "raw_effect_text": "work_certificate_seed +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-C-C-3-C2",
+                    "code": "C2",
+                    "label": "在勤工群问：“最近还有缺人的班吗？”",
+                    "body": "群公告停在屏幕上，这一条发出去后会有人接话。",
+                    "variable_delta": {
+                      "work_shift_seed": 2,
+                      "time_debt": 1
+                    },
+                    "raw_effect_text": "work_shift_seed +2、time_debt +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L03-C-C-3-C3",
+                    "code": "C3",
+                    "label": "在勤工群问：“会不会撞补考？”",
+                    "body": "群公告停在屏幕上，这一条发出去后会有人接话。",
+                    "variable_delta": {
+                      "study_boundary": 1
+                    },
+                    "raw_effect_text": "study_boundary +1"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_station_cash_to_work_route"
+            ],
+            "next_node": "ACT4-WORK-L04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-WORK-L04",
+      "block_name": "补考与打印店",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-WORK-L03",
+      "next_block": "ACT4-WORK-L05",
+      "scene_range": [
+        "ACT4-WORK-L04-P2-S01",
+        "ACT4-WORK-L04-P2-S02",
+        "ACT4-WORK-L04-P2-S03",
+        "ACT4-WORK-L04-P2-S04"
+      ],
+      "scene_function": "补考与打印店：把第四幕生活半径压力拆成剧情页、三向抉择和可回收的微心态选择。",
+      "required_completion_flags": [
+        "act4_work_l04_seen",
+        "act4_daily_radius",
+        "act4_work_l04_choice_resolved"
+      ],
+      "must_record": [
+        "act4_daily_radius",
+        "act4_work_l04_choice_resolved",
+        "act4_work_l04_seen",
+        "act5_echo_hook",
+        "c201_route_confirmed",
+        "dorm_absence",
+        "dorm_warmth",
+        "family_basic_truth",
+        "family_signal",
+        "luchen_reality_link",
+        "minimum_truth",
+        "old_debt",
+        "public_boundary",
+        "reality_order_visible",
+        "relationship_truth",
+        "relationship_truth_seed",
+        "repair_depth",
+        "self_boundary",
+        "study_boundary",
+        "study_debt",
+        "study_pressure",
+        "study_repair",
+        "tang_material_support",
+        "time_debt",
+        "wanfeng_soft_echo",
+        "work_certificate_seed",
+        "work_debt_visible",
+        "work_rule_clarity",
+        "work_shift_seed",
+        "work_window_missed"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-WORK-L04-P2-S01",
+          "page_title": "青枫居 4XX / 成绩页",
+          "location": "青枫居 4XX / 成绩页",
+          "text": [
+            "凌晨前，教务系统终于刷进去。",
+            "成绩表一格一格跳出来，白底黑字，像把这个暑假前欠下的账摊到了屏幕上。林亦舟那一行卡在“数据结构入门”后面，灰色小圈转了几次，页面往下一沉。",
+            "数据结构入门：59。",
+            "旁边没有红字，没有弹窗，只有一行安静的“待补考安排”。公共桌上，父亲给的信封还压在课本下面，旁边放着陆沉夹好的食堂小票、两瓶常温水和一支快没水的黑笔。",
+            "陆沉问：“出了？”",
+            "林亦舟盯着屏幕：“五十九。”",
+            "陆沉没有说“差一分而已”。他只是把自己的手机转过来一点，上面写着：数据结构入门，64。",
+            "“也不好看。”他说，“但能过。”",
+            "母亲的消息在这时弹出来：成绩查了吗？\n晚风也发来一张游戏截图，角色站在出生点没动。",
+            "林亦舟看着这些聊天框。补考忽然不再只是一门课，它会占掉白天，会要打印费，会让他解释为什么不回家、为什么不见面、为什么还要去问勤工窗口。",
+            "他给母亲回：有一门没过，数据结构入门，补考安排下周出。",
+            "很久以后，母亲只回了一句：先睡，明天再说。",
+            "陆沉把勤工表往自己那边收了收：“明早我去图书馆。你要来的话，二楼靠窗那排空。”",
+            "林亦舟点了点头。点完才发现，明天已经被切开了：成绩、母亲、晚风、唐骁的资料、陆沉的图书馆，还有不知道能不能接上的勤工窗口。"
+          ],
+          "updates": {
+            "act4_daily_radius": "work_l04",
+            "study_repair": 1,
+            "work_shift_seed": 1,
+            "family_signal": 1,
+            "wanfeng_soft_echo": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L04-P2-S02",
+          "page_title": "青枫居楼下外卖架 / 资料包",
+          "location": "青枫居楼下外卖架 / 资料包",
+          "text": [
+            "第二天中午，青枫居楼下的外卖架比前几天满。林亦舟拎起自己的两瓶水，旁边有人对着手机念：“补考资料包二十九块九，真的假的？”",
+            "年级群里也跳出相似链接，标题写得很满：往年题、老师重点、押题卷。链接很快被撤回，辅导员补了一句：补考以学院通知和课程教师安排为准。",
+            "宿舍群跟着亮起来。周屿先说自己差点点进去，唐骁追问他哪门课需要。周屿把玩笑绕回林亦舟，说只是替他先踩个雷。",
+            "林亦舟手里的水瓶被捏出一点响。",
+            "他在群里回：不用替我。",
+            "群里安静了一下。周屿很快解释自己没真买，林亦舟没有顺着玩笑往下接。外卖架旁刚才念资料包的男生把手机揣回兜里，拎着盖饭走了。",
+            "唐骁随后私聊发来一个文件夹截图：课件目录、实验题编号、错题空表。",
+            "唐骁：资料包别买。先保存成绩页。",
+            "林亦舟回：发目录就行。",
+            "水瓶外面的冷雾已经化掉。他把两瓶水带上楼，公共桌上那只信封还在原位。资料包没有买，补考也没有少一点；只是“谁能替他先试一试”这件事，被他先按住了。"
+          ],
+          "updates": {
+            "study_repair": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L04-P2-S03",
+          "page_title": "图书馆二楼 / 借阅单",
+          "location": "图书馆二楼 / 借阅单",
+          "text": [
+            "图书馆二楼靠窗的位置空着。陆沉把一张借阅单推到林亦舟书边，又把备用圆珠笔放过去：“列个表，从第一章开始。”",
+            "林亦舟翻开《数据结构入门》，在第一行写下“线性表”。唐骁的压缩包里没有“必过”和“押题”，只有课件目录、实验题编号和错题空表。电脑风扇转起来，盖过了空调声。",
+            "晚风在这时发来语音。她说室友处理票务骗局时也用了空表，聊天记录和付款记录按时间排开，白天排队虽然烦，但至少有柜台、复印机和人。",
+            "语音后面跟着一句文字：白天能排队。",
+            "林亦舟把手机扣到桌上。陆沉从登记台那边抬头：“窗口三点半前还有人。”",
+            "这句话把下午切成两段。前半段给数据结构，后半段给勤工窗口；中间还要打印、确认 C201，给母亲回车票，也给晚风一个不用等到深夜才知道的安排。"
+          ],
+          "updates": {
+            "study_repair": 1,
+            "work_shift_seed": 1,
+            "family_signal": 1,
+            "wanfeng_soft_echo": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L04-P2-S04",
+          "page_title": "打印店 / 教学楼 C201",
+          "location": "打印店 / 教学楼 C201",
+          "text": [
+            "打印店柜台旁贴着价目表，下面另有一张手写纸：不代买，不推荐任何包过资料。",
+            "林亦舟把唐骁给的第一、二章目录和实验题传过去，又单独打开勤工申请表。",
+            "老板听见旁边有人问补考资料包能不能打，只说：“我只打你发来的文件。包过两个字，听着就不便宜。”",
+            "打印机吐出第一页“线性表”。纸还热，边缘有一点弯。陆沉把订书机推过来，等林亦舟自己对齐纸角。",
+            "两份纸被夹进同一个文件袋：一边是补考前两章，一边是勤工申请表。它们都要学生证复印件、黑色笔和本人签字，谁也不能把谁完全挤掉。",
+            "C201 在教学楼二楼尽头。陆沉按了按门把，说从青枫居过来十五分钟，下雨二十。年级群又提醒补考不要卡点。",
+            "林亦舟拍下门牌。镜头里没有人，只有门牌、楼梯口和走廊尽头的饮水机。可他知道第一周那天会有人排队，会有人翻学生证，也会有人临到门口才发现黑笔没带。",
+            "文件袋边缘在走廊风里轻轻响。现在他得决定，下午剩下的时间先交给哪一边。"
+          ],
+          "updates": {
+            "study_repair": 1,
+            "work_shift_seed": 1,
+            "act4_work_l04_seen": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-WORK-L04-P2-CHOICE-01",
+        "title": "先补哪一个缺口？",
+        "guide": "补考资料、打印店、C201 和勤工窗口挤在同一个下午。哪件事先被接住，哪件事就会被推迟。",
+        "after_page": "ACT4-WORK-L04-P2-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-WORK-L04-C04-A",
+            "direction": "A",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "study_repair",
+            "stays_in_pool": true,
+            "label": "先把补考资料补齐",
+            "description": "先补学业材料，不让工作吞掉补考 这一步会把 L04 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "study_pressure": 1,
+              "work_certificate_seed": 1,
+              "tang_material_support": 1,
+              "luchen_reality_link": 2,
+              "study_repair": 2,
+              "c201_route_confirmed": 1,
+              "work_window_missed": 1,
+              "self_boundary": 1,
+              "time_debt": 1,
+              "work_debt_visible": 1,
+              "old_debt": 1,
+              "act5_echo_hook": "study_before_shift_once"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L04-P2-A01",
+                "page_title": "先补学业材料 / 现场行动",
+                "location": "先补学业材料 / 现场行动",
+                "text": [
+                  "林亦舟没有马上去勤工窗口。他在 C201 门口把文件袋打开，先抽出数据结构前两章，再把勤工申请表压到后面。纸张合上时响了一下，像他把下午排出先后，而不是把工作扔掉。",
+                  "唐骁在群里问打印范围。林亦舟只拍第一页标题和 C201 门牌，没有拍成绩。唐骁回：先看链表和队列，栈不用今天硬啃。",
+                  "他坐到阳光书屋靠窗的位置，把目录抄进错题空表。三点二十一，勤工群弹出明德楼材料窗口缺人的消息。他看了一眼时间，把手机扣在桌上，继续翻第一章。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L04-P2-A02",
+                "page_title": "先补学业材料 / 承接回声",
+                "location": "先补学业材料 / 承接回声",
+                "text": [
+                  "三点三十七，那条窗口消息被别人接走。林亦舟没有立刻解释，也没有把这件事说成“没关系”。他在错题空表背面写下：工作窗口错过一次，补考资料完成第一章。",
+                  "陆沉私聊问窗口是不是没了。林亦舟回“嗯”。陆沉只说：那今天把第一章看完。",
+                  "林亦舟把手机放到一边，继续往下抄第二章目录。窗外有人推着一车快递经过，胶带声贴着玻璃划过去。窗口少了一次，补考资料多了一页；这两个结果都留在下午，谁也没替谁消失。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L04-A-A-3",
+                "beat": 3,
+                "prompt": "先抽哪一份材料？",
+                "guide": "C201 门牌、补考资料和勤工申请表都在文件袋里，纸张贴着纸张。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L04-A-A-3-A1",
+                    "code": "A1",
+                    "label": "把数据结构目录抄到错题表第一行。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "study_repair": 1
+                    },
+                    "raw_effect_text": "study_repair +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-A-A-3-A2",
+                    "code": "A2",
+                    "label": "拍下 C201 门牌和走廊路线。",
+                    "body": "照片存进相册，走廊尽头的门牌还在晃。",
+                    "variable_delta": {
+                      "c201_route_confirmed": 1
+                    },
+                    "raw_effect_text": "c201_route_confirmed +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-A-A-3-A3",
+                    "code": "A3",
+                    "label": "把勤工表压到资料袋后面，先写 C201。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "work_window_missed": 1,
+                      "self_boundary": 1
+                    },
+                    "raw_effect_text": "work_window_missed +1、self_boundary +1"
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT4-WORK-L04-A-A-5",
+                "beat": 5,
+                "prompt": "错过窗口后怎么处理？",
+                "guide": "窗口已经被别人接走。错过这件事还没有落到任何一张纸上。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L04-A-A-5-A1",
+                    "code": "A1",
+                    "label": "错题表背面写：窗口已错过。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "study_repair": 1,
+                      "work_debt_visible": 1
+                    },
+                    "raw_effect_text": "study_repair +1、work_debt_visible +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-A-A-5-A2",
+                    "code": "A2",
+                    "label": "对陆沉说：“窗口被别人接走了。”",
+                    "body": "陆沉看完这句，能接上的只有流程，不是替他决定。",
+                    "variable_delta": {
+                      "luchen_reality_link": 1
+                    },
+                    "raw_effect_text": "luchen_reality_link +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-A-A-5-A3",
+                    "code": "A3",
+                    "label": "不解释，先把第一章看完。",
+                    "body": "书包拉链一合，他已经走到教室门口。",
+                    "variable_delta": {
+                      "old_debt": 1
+                    },
+                    "raw_effect_text": "old_debt +1"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "study_before_shift_once"
+            ],
+            "next_node": "ACT4-WORK-L05"
+          },
+          {
+            "direction_id": "ACT4-WORK-L04-C04-B",
+            "direction": "B",
+            "direction_type": "main_axis",
+            "micro_influence_source": "work_reality",
+            "stays_in_pool": true,
+            "label": "先回勤工群接下临时班",
+            "description": "先接临时班，保收入和材料窗口 这一步会把 L04 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "work_shift_seed": 3,
+              "public_boundary": 1,
+              "work_rule_clarity": 1,
+              "study_debt": 1,
+              "work_certificate_seed": 1,
+              "study_boundary": 1,
+              "act5_echo_hook": "shift_before_review"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L04-P2-B01",
+                "page_title": "先接临时班 / 现场行动",
+                "location": "先接临时班 / 现场行动",
+                "text": [
+                  "林亦舟站在教学楼一楼大厅，先回勤工群：周四下午我可以。",
+                  "消息发出去后，他才把数据结构资料塞进书包外层。第一页“线性表”露出一角，被拉链压住。它没有消失，只是被排到稍后。",
+                  "陆沉看见他的动作，没有说先看书，只问学生证带没带。林亦舟把证件袋摸出来给他看。陆沉点头：“别卡点。”",
+                  "勤工群很快回复：周四下午两点半，明德楼材料窗口，带学生证复印件。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L04-P2-B02",
+                "page_title": "先接临时班 / 承接回声",
+                "location": "先接临时班 / 承接回声",
+                "text": [
+                  "林亦舟把时间记进备忘录。备忘录里已经有 C201、周二返校、母亲要的车票截图，现在又多了一行明德楼材料窗口。每一行都像细线，拉住一点就会牵动别处。",
+                  "晚风问他是不是还要排光谷。他回：今天不排。晚风只回了一句：这句比“到时候看”好。",
+                  "回青枫居的路上，书包外层的纸被风轻轻拍着他的手臂。那是数据结构前两章，已经被他放到稍后。周四下午的窗口能换来饭钱和打印费，可拉链压住的那一角也在提醒他，补考不会因为接了班就自动通过。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L04-B-B-3",
+                "beat": 3,
+                "prompt": "这班要怎么接？",
+                "guide": "临时班第一次有了具体时间。群里还没人回复，补考资料也摊在桌上。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L04-B-B-3-B1",
+                    "code": "B1",
+                    "label": "在勤工群回：“周四下午可以。”",
+                    "body": "群公告停在屏幕上，这一条发出去后会有人接话。",
+                    "variable_delta": {
+                      "work_shift_seed": 2,
+                      "study_debt": 1
+                    },
+                    "raw_effect_text": "work_shift_seed +2、study_debt +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-B-B-3-B2",
+                    "code": "B2",
+                    "label": "在勤工群问：“第一次值班要带哪些材料？”",
+                    "body": "群公告停在屏幕上，这一条发出去后会有人接话。",
+                    "variable_delta": {
+                      "work_certificate_seed": 1
+                    },
+                    "raw_effect_text": "work_certificate_seed +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-B-B-3-B3",
+                    "code": "B3",
+                    "label": "在勤工群补一句：“我有补考，时间别撞上。”",
+                    "body": "群公告停在屏幕上，这一条发出去后会有人接话。",
+                    "variable_delta": {
+                      "study_boundary": 1
+                    },
+                    "raw_effect_text": "study_boundary +1、推进较慢"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "shift_before_review"
+            ],
+            "next_node": "ACT4-WORK-L05"
+          },
+          {
+            "direction_id": "ACT4-WORK-L04-C04-C",
+            "direction": "C",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "soft_echo",
+            "stays_in_pool": true,
+            "label": "先把今天白天会去哪儿说清",
+            "description": "把白天能处理的事说清 这一步会把 L04 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "relationship_truth_seed": 1,
+              "public_boundary": 2,
+              "family_basic_truth": 1,
+              "wanfeng_soft_echo": 1,
+              "dorm_warmth": 1,
+              "repair_depth": 1,
+              "minimum_truth": 1,
+              "relationship_truth": 1,
+              "reality_order_visible": 1,
+              "time_debt": -1,
+              "act5_echo_hook": "minimum_fact_given_before_absence"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L04-P2-C01",
+                "page_title": "把白天安排说清 / 现场行动",
+                "location": "把白天安排说清 / 现场行动",
+                "text": [
+                  "林亦舟没有把同一句话群发给所有人。",
+                  "他先给母亲发：补考暂定周三上午，C201。我今天打印前两章，周二返校。母亲回得慢，最后只要车票截图和学生证。",
+                  "他又给晚风发：今天先打印和确认教室，不去光谷。晚风回：收到。这个比晚上十一点突然说“我去不了”好多了。",
+                  "最后，他在 4XX 群里发了一张 C201 门牌和文件袋照片，没有成绩，也没有母亲的聊天框。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L04-P2-C02",
+                "page_title": "把白天安排说清 / 承接回声",
+                "location": "把白天安排说清 / 承接回声",
+                "text": [
+                  "群里这次没有冷成一块。周屿问明德楼窗口是什么新副本，唐骁纠正是勤工窗口；陆沉提醒周四上午别排别的；唐骁补一句第一章今天看完；周屿把玩笑收住，说自己周二到，可以带吃的，但不带资料包。",
+                  "林亦舟站在教学楼大厅，把手机屏幕熄灭。补考、钱、勤工和家里都还在，但它们不再全部躲在一句“到时候看”后面。",
+                  "大厅门外的风把暑期安全提醒吹得贴到玻璃上，纸角卷起。林亦舟把文件袋抱紧了一点，往外走。问题没有少，只是每个人终于知道自己要等的是什么。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L04-C-C-3",
+                "beat": 3,
+                "prompt": "先把哪件白天事说清？",
+                "guide": "白天被补考、打印、教室和窗口切开。几个聊天框还在等他的具体位置。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L04-C-C-3-C1",
+                    "code": "C1",
+                    "label": "发给母亲：“我在 C201 补课，晚点看票。”",
+                    "body": "母亲那边还没有挂断，车票页也在屏幕后台开着。",
+                    "variable_delta": {
+                      "family_basic_truth": 1
+                    },
+                    "raw_effect_text": "family_basic_truth +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-C-C-3-C2",
+                    "code": "C2",
+                    "label": "发给晚风：“今天去不了光谷，我别让你空等。”",
+                    "body": "光谷截图还亮在上一条，林亦舟把这句留给晚风看见。",
+                    "variable_delta": {
+                      "wanfeng_soft_echo": 1
+                    },
+                    "raw_effect_text": "wanfeng_soft_echo +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-C-C-3-C3",
+                    "code": "C3",
+                    "label": "发到 4XX 群：“我在 C201，文件袋要补。”",
+                    "body": "宿舍那边会看见这一步，不必只从空座位猜他的去向。",
+                    "variable_delta": {
+                      "dorm_warmth": 1,
+                      "public_boundary": 1
+                    },
+                    "raw_effect_text": "dorm_warmth +1、public_boundary +1"
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT4-WORK-L04-C-C-5",
+                "beat": 5,
+                "prompt": "这次要说到多具体？",
+                "guide": "C201、打印店和勤工窗口都在白天的表里。林亦舟看着聊天框，手指停在发送键上。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L04-C-C-5-C1",
+                    "code": "C1",
+                    "label": "只发：“我在 C201。”",
+                    "body": "他把手里的东西放回桌面，新的沉默很快接上来。",
+                    "variable_delta": {
+                      "minimum_truth": 1
+                    },
+                    "raw_effect_text": "minimum_truth +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-C-C-5-C2",
+                    "code": "C2",
+                    "label": "发：“我在 C201，等会去打印。”",
+                    "body": "消息发出去，对面开始输入，屏幕没有再暗下去。",
+                    "variable_delta": {
+                      "relationship_truth": 1
+                    },
+                    "raw_effect_text": "relationship_truth +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L04-C-C-5-C3",
+                    "code": "C3",
+                    "label": "发：“C201、打印、窗口，我按这个顺序跑。”",
+                    "body": "消息发出去，对面开始输入，屏幕没有再暗下去。",
+                    "variable_delta": {
+                      "reality_order_visible": 1,
+                      "time_debt": -1
+                    },
+                    "raw_effect_text": "reality_order_visible +1、time_debt -1"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "minimum_fact_given_before_absence"
+            ],
+            "next_node": "ACT4-WORK-L05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-WORK-L05",
+      "block_name": "返校前两间教室与座位表",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-WORK-L04",
+      "next_block": "ACT4-WORK-L06",
+      "scene_range": [
+        "ACT4-WORK-L05-P2-S01",
+        "ACT4-WORK-L05-P2-S02",
+        "ACT4-WORK-L05-P2-S03",
+        "ACT4-WORK-L05-P2-S04"
+      ],
+      "scene_function": "返校前两间教室与座位表：把第四幕生活半径压力拆成剧情页、三向抉择和可回收的微心态选择。",
+      "required_completion_flags": [
+        "act4_work_l05_seen",
+        "act4_daily_radius",
+        "act4_work_l05_choice_resolved"
+      ],
+      "must_record": [
+        "act4_daily_radius",
+        "act4_work_l05_choice_resolved",
+        "act4_work_l05_seen",
+        "act5_echo_hook",
+        "dorm_absence",
+        "dorm_misread",
+        "dorm_repair",
+        "dorm_warmth",
+        "dorm_warmth_seed",
+        "family_signal",
+        "luchen_reality_link",
+        "minimum_support",
+        "minimum_truth",
+        "public_boundary",
+        "relationship_truth",
+        "repair_depth",
+        "self_boundary",
+        "study_repair",
+        "tang_material_support",
+        "work_certificate_seed",
+        "work_efficiency",
+        "work_route",
+        "work_rule_clarity",
+        "work_shift_seed",
+        "work_window_ready"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-WORK-L05-P2-S01",
+          "page_title": "教学楼 C201 / 答疑",
+          "location": "教学楼 C201 / 答疑",
+          "text": [
+            "C201 的门开着，里面比走廊凉一点。",
+            "老师先讲链表、队列和栈，又提醒大家不要买资料包，补考范围按课堂和通知走。讲台下有人低头删群链接，有人把打印纸翻得很响。",
+            "林亦舟坐在第三排靠边。唐骁把一张便签压到他资料旁边，上面只写了三项易错点；周屿递来一颗糖，没有说“你完了”；陆沉把常温水放在椅脚边，瓶盖没拧开。",
+            "他能看见 4XX，也能看见门外通向楼梯的那条路。那条路往下走，是打印店和勤工窗口。"
+          ],
+          "updates": {
+            "act4_daily_radius": "work_l05",
+            "study_repair": 1,
+            "work_shift_seed": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L05-P2-S02",
+          "page_title": "教学楼 B204 / 班会",
+          "location": "教学楼 B204 / 班会",
+          "text": [
+            "B204 的投影布有一点卷边。",
+            "班会把返校签到、补考安排、证书报名和反诈提醒压到一张表里。陈老师说不要问别人考哪门，也别替别人转发求助截图；任何材料都要本人确认，本人签字。",
+            "周屿本来想问朋友被骗的事，最后只把糖纸攥成一团。唐骁把证书报名时间拍下来，陆沉在本子上写了窗口和复印。",
+            "林亦舟把“本人确认”四个字记进备忘录。它听起来像学校流程，落在他身上，却像在提醒他：补考、兼职、联系人、座位表，没有一样能让别人替他圆过去。"
+          ],
+          "updates": {
+            "study_repair": 1,
+            "work_shift_seed": 1,
+            "family_signal": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L05-P2-S03",
+          "page_title": "快递站 / 东区便利店",
+          "location": "快递站 / 东区便利店",
+          "text": [
+            "母亲寄来的小包到了。",
+            "快递面单把“青枫居”打错成“青枫局”，驿站阿姨念到一半自己笑了。林亦舟签字时，手机里又跳出便利店兼职表更新的照片。",
+            "东区便利店收银台旁的新排班纸压住旧胶带。许澈的名字没有出现在表上，只在一根旧工牌绳上一闪而过，被老板随手收进抽屉。",
+            "林亦舟没有跟过去问。他买了黑笔和常温水，把母亲寄来的小包压进书包，又把门禁卡摸出来确认了一遍。",
+            "那根旧工牌绳被抽屉收进去，便利店的新排班表还贴在收银台旁边。林亦舟把小包压实，往教学楼方向走。"
+          ],
+          "updates": {
+            "work_shift_seed": 1,
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L05-P2-S04",
+          "page_title": "座位表前 / 东北饺子馆",
+          "location": "座位表前 / 东北饺子馆",
+          "text": [
+            "座位表贴在门口，林亦舟在第三列第五排。",
+            "有人念出他的名字，唐骁立刻说：“别随口。”那人愣了一下，笑着把话题挪开。林亦舟没有抬头，只把准考证和学生证重新夹好。",
+            "补考后，四个人在东北饺子馆坐下。周屿问难不难，语气比平时低一点；陆沉没有追分数，只把水递过来；唐骁把便签收回去，说错题空表别丢。",
+            "位置被看见了，补考也被看见了。但这一顿饭没有把失败做成笑话，也没有把关心做成审问。林亦舟把筷子拆开，终于能说一句具体的：“链表写完了。”"
+          ],
+          "updates": {
+            "study_repair": 1,
+            "dorm_absence": 1,
+            "act4_work_l05_seen": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-WORK-L05-P2-CHOICE-01",
+        "title": "返校后站到哪里？",
+        "guide": "座位表、补考、窗口和 4XX 的视线都在场。你可以让自己被看见，也可以先保住材料和流程。",
+        "after_page": "ACT4-WORK-L05-P2-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-WORK-L05-C05-A",
+            "direction": "A",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "dorm_visibility",
+            "stays_in_pool": true,
+            "label": "坐回 4XX 看得见的位置",
+            "description": "坐回 4XX 可见位置 这一步会把 L05 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "dorm_warmth_seed": 1,
+              "public_boundary": 2,
+              "repair_depth": 2,
+              "dorm_warmth": 3,
+              "self_boundary": 1,
+              "dorm_misread": 0,
+              "minimum_truth": 1,
+              "dorm_repair": 1,
+              "act5_echo_hook": "r4_visible_seat_dorm_can_ask"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L05-P2-A01",
+                "page_title": "坐回可见位置 / 现场行动",
+                "location": "坐回可见位置 / 现场行动",
+                "text": [
+                  "第二场答疑开始前，林亦舟没有去最后一排。",
+                  "他坐回第三排靠边，唐骁能递便签，周屿能把糖放到他桌角，陆沉也能从走道另一侧看见他有没有带水。",
+                  "老师讲到队列时，林亦舟在错题空表上写了两行，旁边的糖一直没拆。被看见不舒服，但比彻底躲开要省下一些误读。",
+                  "下课后，周屿问：“够不够甜？”",
+                  "林亦舟把糖收进笔袋：“先留着。”"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L05-P2-A02",
+                "page_title": "坐回可见位置 / 承接回声",
+                "location": "坐回可见位置 / 承接回声",
+                "text": [
+                  "东北饺子馆里，周屿终于问难不难。",
+                  "林亦舟没有说还行，也没有把分数说出来。他只说：“链表写完了，队列差一点。”",
+                  "唐骁点点头，陆沉把水推近一点。没人替他过关，但也没人把这件事当成不能提。",
+                  "饭后回寝，公共桌上多了一张便签：错题空表放左边。林亦舟知道，这不是和好证明，只是他重新回到可见位置后，4XX 能递过来的一点东西。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L05-A-A-3",
+                "beat": 3,
+                "prompt": "第二场答疑坐哪里？",
+                "guide": "座位表把他放回别人能看见的位置。第三排、4XX 旁边和后排靠门，都隔着几排桌椅。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L05-A-A-3-A1",
+                    "code": "A1",
+                    "label": "坐到第三排靠边，把错题表摊开。",
+                    "body": "椅脚擦过地面，错题表被他摊开。",
+                    "variable_delta": {
+                      "dorm_warmth": 2
+                    },
+                    "raw_effect_text": "dorm_warmth +2、被问风险上升"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L05-A-A-3-A2",
+                    "code": "A2",
+                    "label": "坐到 4XX 看得见的位置，不挤过去。",
+                    "body": "椅脚擦过地面，错题表被他摊开。",
+                    "variable_delta": {
+                      "dorm_warmth": 1,
+                      "self_boundary": 1
+                    },
+                    "raw_effect_text": "dorm_warmth +1、self_boundary +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L05-A-A-3-A3",
+                    "code": "A3",
+                    "label": "先坐后排靠门，开考前再回座位。",
+                    "body": "椅脚擦过地面，错题表被他摊开。",
+                    "variable_delta": {
+                      "dorm_misread": 1
+                    },
+                    "raw_effect_text": "dorm_misread +1"
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT4-WORK-L05-A-A-5",
+                "beat": 5,
+                "prompt": "饭桌上怎么回答？",
+                "guide": "饭桌上的关心已经递过来。他可以用一句话挡掉，也可以说出具体卡住的题。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L05-A-A-5-A1",
+                    "code": "A1",
+                    "label": "只回：“还行。”",
+                    "body": "话说出口，周围的声音短短停了一下。",
+                    "variable_delta": {
+                      "minimum_truth": 1
+                    },
+                    "raw_effect_text": "minimum_truth +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L05-A-A-5-A2",
+                    "code": "A2",
+                    "label": "说：“链表写完，队列差一点。”",
+                    "body": "话说出口，周围的声音短短停了一下。",
+                    "variable_delta": {
+                      "dorm_repair": 1
+                    },
+                    "raw_effect_text": "dorm_repair +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L05-A-A-5-A3",
+                    "code": "A3",
+                    "label": "说：“别问分，问我写了哪题。”",
+                    "body": "话说出口，周围的声音短短停了一下。",
+                    "variable_delta": {
+                      "public_boundary": 1,
+                      "repair_depth": 1
+                    },
+                    "raw_effect_text": "public_boundary +1、repair_depth +1"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_visible_seat_dorm_can_ask"
+            ],
+            "next_node": "ACT4-WORK-L06"
+          },
+          {
+            "direction_id": "ACT4-WORK-L05-C05-B",
+            "direction": "B",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "study_repair",
+            "stays_in_pool": true,
+            "label": "坐到后排，先处理资料",
+            "description": "靠后处理资料，减少被追问 这一步会把 L05 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "work_window_ready": 1,
+              "dorm_misread": 2,
+              "minimum_support": 1,
+              "work_efficiency": 1,
+              "public_boundary": 1,
+              "tang_material_support": 1,
+              "act5_echo_hook": "r4_back_seat_window_first"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L05-P2-B01",
+                "page_title": "靠后处理资料 / 现场行动",
+                "location": "靠后处理资料 / 现场行动",
+                "text": [
+                  "林亦舟第二场坐到了后排靠门。",
+                  "资料夹压在腿上，学生证放在最外层。老师刚说下课，他就能去打印店补表，再赶明德楼窗口。",
+                  "唐骁看见了，没有喊他回来，只在群里发：考完别忘了学生证。周屿回了个糖的表情，像玩笑，也像找不到更合适的话。",
+                  "林亦舟把手机扣下。少解释一点，动作就能快一点。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L05-P2-B02",
+                "page_title": "靠后处理资料 / 承接回声",
+                "location": "靠后处理资料 / 承接回声",
+                "text": [
+                  "打印店排队比他想的短。",
+                  "他补了勤工申请表，又把错题空表多打一份。材料变稳了，时间也被他抢回来一点。",
+                  "回到 4XX 时，周屿问他刚刚去哪了。林亦舟说打印。周屿“哦”了一声，没有再追。唐骁看了一眼材料，提醒他下一次提前在群里说。",
+                  "靠后处理让他少被问了几句，也让别人只能从结果倒推他去了哪里。第五幕如果继续这样走，工作线会更稳，宿舍误读也会更容易积起来。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L05-B-B-3",
+                "beat": 3,
+                "prompt": "冲出去前留不留信息？",
+                "guide": "后排靠门离打印店和明德楼最近。下课铃一响，书包拉链已经被他拉到一半。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L05-B-B-3-B1",
+                    "code": "B1",
+                    "label": "下课后不解释，直接去打印店。",
+                    "body": "书包拉链一合，他已经走到教室门口。",
+                    "variable_delta": {
+                      "work_efficiency": 1,
+                      "dorm_misread": 1
+                    },
+                    "raw_effect_text": "work_efficiency +1、dorm_misread +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L05-B-B-3-B2",
+                    "code": "B2",
+                    "label": "发到 4XX 群：“去补表。”",
+                    "body": "宿舍那边会看见这一步，不必只从空座位猜他的去向。",
+                    "variable_delta": {
+                      "public_boundary": 1
+                    },
+                    "raw_effect_text": "public_boundary +1、误读下降"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L05-B-B-3-B3",
+                    "code": "B3",
+                    "label": "低声告诉唐骁：“材料要补，我先去一趟。”",
+                    "body": "唐骁抬眼看他，材料这件事终于有了具体入口。",
+                    "variable_delta": {
+                      "tang_material_support": 1
+                    },
+                    "raw_effect_text": "tang_material_support +1、信息偏窄"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_back_seat_window_first"
+            ],
+            "next_node": "ACT4-WORK-L06"
+          },
+          {
+            "direction_id": "ACT4-WORK-L05-C05-C",
+            "direction": "C",
+            "direction_type": "main_axis",
+            "micro_influence_source": "work_reality",
+            "stays_in_pool": true,
+            "label": "先去明德楼跑完窗口",
+            "description": "先去跑现实窗口，把位置写进流程 这一步会把 L05 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "work_route": 1,
+              "work_certificate_seed": 1,
+              "work_rule_clarity": 1,
+              "public_boundary": 1,
+              "dorm_misread": -1,
+              "relationship_truth": 1,
+              "luchen_reality_link": 1,
+              "act5_echo_hook": "r4_window_result_back_to_dorm"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L05-P2-C01",
+                "page_title": "跑现实窗口 / 现场行动",
+                "location": "跑现实窗口 / 现场行动",
+                "text": [
+                  "补考结束后，林亦舟没有先回寝。",
+                  "他把学生证、复印件和勤工申请表放进同一个文件袋，先去打印店补漏页，再到明德楼窗口确认材料。窗口老师看了一眼备注，说暑期班表没定死，后面要补一次说明。",
+                  "林亦舟把要求记下来，没有让陆沉替他问，也没有让唐骁帮他把话说得更顺。",
+                  "走出明德楼时，手机里已经有两条群消息问他到哪了。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L05-P2-C02",
+                "page_title": "跑现实窗口 / 承接回声",
+                "location": "跑现实窗口 / 承接回声",
+                "text": [
+                  "林亦舟回寝时，把窗口回执放到公共桌上。",
+                  "唐骁先看日期，陆沉看材料项，周屿看了半天，只问：“所以你刚刚不是消失，是去排队？”",
+                  "“嗯。”林亦舟说，“下次我提前发。”",
+                  "这句不是道歉，也不是解释全部。它只是把工作线的推进方式固定下来：不是靠失踪换收入，而是本人把现实窗口跑完，再把结果放回公共桌。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L05-C-C-3",
+                "beat": 3,
+                "prompt": "回寝时怎么带回结果？",
+                "guide": "窗口已经跑完，回执在手里。它可以直接落到公共桌上，也可以只先交给一个人。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L05-C-C-3-C1",
+                    "code": "C1",
+                    "label": "把窗口回执直接放到公共桌上。",
+                    "body": "宿舍那边会看见这一步，不必只从空座位猜他的去向。",
+                    "variable_delta": {
+                      "public_boundary": 1,
+                      "dorm_misread": -1
+                    },
+                    "raw_effect_text": "public_boundary +1、dorm_misread -1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L05-C-C-3-C2",
+                    "code": "C2",
+                    "label": "发到 4XX 群：“去排队了。”",
+                    "body": "宿舍那边会看见这一步，不必只从空座位猜他的去向。",
+                    "variable_delta": {
+                      "relationship_truth": 1
+                    },
+                    "raw_effect_text": "relationship_truth +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L05-C-C-3-C3",
+                    "code": "C3",
+                    "label": "把材料要求只递给陆沉看。",
+                    "body": "陆沉看完这句，能接上的只有流程，不是替他决定。",
+                    "variable_delta": {
+                      "luchen_reality_link": 1
+                    },
+                    "raw_effect_text": "luchen_reality_link +1、信息偏窄"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_window_result_back_to_dorm"
+            ],
+            "next_node": "ACT4-WORK-L06"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT4-WORK-L06",
+      "block_name": "联系人与签字",
+      "act": "ACT4",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-WORK-L05",
+      "next_block": "ACT5-WORK-B01",
+      "scene_range": [
+        "ACT4-WORK-L06-P2-S01",
+        "ACT4-WORK-L06-P2-S02",
+        "ACT4-WORK-L06-P2-S03",
+        "ACT4-WORK-L06-P2-S04"
+      ],
+      "scene_function": "联系人与签字：把第四幕生活半径压力拆成剧情页、三向抉择和可回收的微心态选择。",
+      "required_completion_flags": [
+        "act4_work_l06_seen",
+        "act4_daily_radius",
+        "act4_work_l06_choice_resolved"
+      ],
+      "must_record": [
+        "act4_daily_radius",
+        "act4_work_l06_choice_resolved",
+        "act4_work_l06_seen",
+        "act5_echo_hook",
+        "dorm_absence",
+        "face_pressure",
+        "family_basic_truth",
+        "family_face_repair",
+        "family_pressure",
+        "family_signal",
+        "family_truth_probe",
+        "old_debt",
+        "public_boundary",
+        "relationship_truth",
+        "relationship_truth_seed",
+        "route_boundary",
+        "study_repair",
+        "time_debt",
+        "work_certificate_seed",
+        "work_route",
+        "work_rule_clarity",
+        "work_shift_seed",
+        "work_window_pending"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT4-WORK-L06-P2-S01",
+          "page_title": "青枫居 4XX / 暑假去向页面",
+          "location": "青枫居 4XX / 暑假去向页面",
+          "text": [
+            "班群通知暑假去向登记开放。",
+            "页面把留校、返家、实习、兼职、校外住宿并排放着，每一项后面都有说明栏。林亦舟的光标停在“兼职 / 留校说明”和紧急联系人之间，迟迟没有往下填。",
+            "父亲发来：别写太死。",
+            "母亲紧跟着说：按实际写。",
+            "陆沉坐在旁边，删掉自己的留校原因，又重新敲。唐骁核对证书材料，周屿的小舞台回执夹在书里。每个人都有要交的东西，但只有林亦舟这张表把兼职、留校和家里压力同时摊开。"
+          ],
+          "updates": {
+            "act4_daily_radius": "work_l06",
+            "work_shift_seed": 1,
+            "family_signal": 1,
+            "dorm_absence": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L06-P2-S02",
+          "page_title": "阳台 / 两个号码",
+          "location": "阳台 / 两个号码",
+          "text": [
+            "父亲电话里有装车声。",
+            "他问联系人谁排第一，又说生活费周一先转一部分，别跟母亲说太细。林亦舟没答应，只看着页面上的两个号码。",
+            "母亲消息紧跟着进来：联系人写清楚，你爸忙起来经常接不到。",
+            "阳台外的风把晾衣杆吹得晃了一下。林亦舟第一次把“谁能被学校找到”当成需要本人承担的选择。父亲要体面，母亲要真实，学校要有效，而表格只给他两行。"
+          ],
+          "updates": {
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L06-P2-S03",
+          "page_title": "B204 / 本人签字",
+          "location": "B204 / 本人签字",
+          "text": [
+            "B204 门口贴着“本人签字，不代签”。",
+            "有人赶车，想让室友顺手签。辅导员把那一栏先空着，说越急越不能乱签，去向、联系人和留校说明都要本人确认。",
+            "林亦舟排在 22 组后面，手里拿着校园卡、去向截图和黑色笔。前面的人签完就走，纸页翻动的声音很快。",
+            "轮到他时，兼职 / 留校一栏不像成绩，不能由别人替他填过去；联系人也不像余额，不能只挑看起来体面的那个。"
+          ],
+          "updates": {
+            "study_repair": 1,
+            "work_shift_seed": 1,
+            "family_signal": 1
+          }
+        },
+        {
+          "page_id": "ACT4-WORK-L06-P2-S04",
+          "page_title": "4XX 公共桌 / 透明文件夹",
+          "location": "4XX 公共桌 / 透明文件夹",
+          "text": [
+            "签完后，四栏纸被放回透明文件夹。",
+            "唐骁的二级说明、周屿的小舞台回执、陆沉的留校申请、林亦舟的去向截图并排放着。便利贴上写着：已签完。",
+            "周屿说这几个字像通关，唐骁纠正他别乱比喻。陆沉只把文件夹扣好，确认林亦舟没有漏联系人。",
+            "工作线没有让林亦舟从宿舍消失。它只是把兼职、留校、联系人和本人签字压进同一只透明文件夹，交给第五幕继续读。"
+          ],
+          "updates": {
+            "work_shift_seed": 1,
+            "family_signal": 1,
+            "dorm_absence": 1,
+            "act4_work_l06_seen": true
+          }
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT4-WORK-L06-P2-CHOICE-01",
+        "title": "这张表怎么签？",
+        "guide": "兼职、留校、联系人和本人签字被放在同一页。写下去的不是答案，而是第五幕会继续追着你的事实。",
+        "after_page": "ACT4-WORK-L06-P2-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT4-WORK-L06-C06-A",
+            "direction": "A",
+            "direction_type": "main_axis",
+            "micro_influence_source": "work_reality",
+            "stays_in_pool": true,
+            "label": "把兼职和留校都如实填上",
+            "description": "如实填兼职 / 留校安排，本人签完 这一步会把 L06 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "route_boundary": 1,
+              "work_route": 1,
+              "public_boundary": 1,
+              "work_certificate_seed": 1,
+              "time_debt": -1,
+              "family_signal": 1,
+              "act5_echo_hook": "r4_contact_self_signed_to_work_entry"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L06-P2-A01",
+                "page_title": "如实填写 / 现场行动",
+                "location": "如实填写 / 现场行动",
+                "text": [
+                  "林亦舟把兼职和留校说明都填进去。",
+                  "校内窗口需后续确认、可联系时间、预计留校天数、第一联系人。他每写一项，纸上的空白就少一块，也少一点能含混过去的空间。",
+                  "唐骁看见他写兼职，提醒没定下来的内容要能补材料；陆沉把留校申请样式推过来；周屿没有替他说轻松，只说签字排队快到他了。",
+                  "林亦舟拿着黑笔进 B204，在本人签字栏写下自己的名字。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L06-P2-A02",
+                "page_title": "如实填写 / 承接回声",
+                "location": "如实填写 / 承接回声",
+                "text": [
+                  "签完那一笔后，表格没有变轻。",
+                  "它只是从“还没决定”变成“已经由本人确认”。辅导员看了一眼联系人，又提醒后续班表确定后补说明。",
+                  "林亦舟把表放进透明文件夹，回到 4XX。公共桌上四个人的材料并排，谁也不替谁签，谁也不替谁把理由说圆。",
+                  "第五幕会从这里接走：他已经把工作入口、留校说明和联系人写成事实，后面再缺席或晚归，就不能退回“还没想好”。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L06-A-A-3",
+                "beat": 3,
+                "prompt": "表格要如实写到哪一步？",
+                "guide": "去向页面没有给含混留太多空格。兼职、留校和联系人并排摆着，光标停在说明栏里。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L06-A-A-3-A1",
+                    "code": "A1",
+                    "label": "说明栏写：校内窗口，后续补材料。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "work_certificate_seed": 1
+                    },
+                    "raw_effect_text": "work_certificate_seed +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L06-A-A-3-A2",
+                    "code": "A2",
+                    "label": "说明栏写下留校天数和可联系时间。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "time_debt": -1
+                    },
+                    "raw_effect_text": "time_debt -1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L06-A-A-3-A3",
+                    "code": "A3",
+                    "label": "把兼职、留校和第一联系人都填上。",
+                    "body": "表格光标跳到下一栏，页面暂时保存下来。",
+                    "variable_delta": {
+                      "family_signal": 1
+                    },
+                    "raw_effect_text": "route_confidence += work、family_signal +1"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_contact_self_signed_to_work_entry"
+            ],
+            "next_node": "ACT5-WORK-B01"
+          },
+          {
+            "direction_id": "ACT4-WORK-L06-C06-B",
+            "direction": "B",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "work_reality",
+            "stays_in_pool": true,
+            "label": "先只填留校和宿舍号",
+            "description": "先写留校，不写兼职细节 这一步会把 L06 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "old_debt": 3,
+              "work_window_pending": 2,
+              "public_boundary": 1,
+              "work_rule_clarity": 1,
+              "family_signal": 1,
+              "act5_echo_hook": "r4_contact_stay_only_detail_debt"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L06-P2-B01",
+                "page_title": "先写留校 / 现场行动",
+                "location": "先写留校 / 现场行动",
+                "text": [
+                  "林亦舟没有把兼职细节写满。",
+                  "他先填留校和宿舍号，只在备注里写“暑期校内窗口后补说明”。兼职单位那一栏空着，像给自己留了一点余地，也像给后面留了一块欠账。",
+                  "唐骁提醒：“没定下来的内容要能补材料。”",
+                  "周屿说：“你至少写个人能找到。”",
+                  "陆沉没有替他编理由，只把留校申请样式推过去。林亦舟把页面保存，知道这张表能过，但过得不干净。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L06-P2-B02",
+                "page_title": "先写留校 / 承接回声",
+                "location": "先写留校 / 承接回声",
+                "text": [
+                  "B204 签字时，辅导员看了备注一眼。",
+                  "“后面窗口确定了，补一次说明。”",
+                  "林亦舟点头，把这句话记进备忘录。签字栏落下去，纸面上没有红字，也没有当场退回，但那块空白已经跟着他回到 4XX。",
+                  "晚上，周屿问他到底算留校还是兼职。林亦舟说：“现在算留校，后面补窗口。”",
+                  "这句话能让表格通过，却不能让误读消失。第五幕如果进入工作主轴，第一件事就要补这块说明。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L06-B-B-3",
+                "beat": 3,
+                "prompt": "备注栏要怎么写？",
+                "guide": "兼职栏可以先空着，但空白会跟着他回到 4XX。备注写成什么，后面就会被怎样追问。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L06-B-B-3-B1",
+                    "code": "B1",
+                    "label": "表格先写：留校，青枫居 4XX。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "old_debt": 2
+                    },
+                    "raw_effect_text": "old_debt +2、误读上升"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L06-B-B-3-B2",
+                    "code": "B2",
+                    "label": "备注栏写：校内窗口后补说明。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "work_rule_clarity": 1,
+                      "work_window_pending": 1
+                    },
+                    "raw_effect_text": "work_rule_clarity +1、work_window_pending +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L06-B-B-3-B3",
+                    "code": "B3",
+                    "label": "备注栏写联系人和可联系时间，兼职细节先空着。",
+                    "body": "纸面上多出这一行，林亦舟把笔帽按回去。",
+                    "variable_delta": {
+                      "family_signal": 1
+                    },
+                    "raw_effect_text": "family_signal +1、表格较稳"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_contact_stay_only_detail_debt"
+            ],
+            "next_node": "ACT5-WORK-B01"
+          },
+          {
+            "direction_id": "ACT4-WORK-L06-C06-C",
+            "direction": "C",
+            "direction_type": "micro_inflow",
+            "micro_influence_source": "family_pressure",
+            "stays_in_pool": true,
+            "label": "先问清联系人顺序再保存",
+            "description": "先问父母再填，联系人不糊弄 这一步会把 L06 的现实压力落到可执行顺序里。",
+            "variable_delta": {
+              "family_signal": 1,
+              "relationship_truth_seed": 1,
+              "family_truth_probe": 1,
+              "family_basic_truth": 2,
+              "relationship_truth": 2,
+              "face_pressure": 1,
+              "family_pressure": 1,
+              "time_debt": -1,
+              "family_face_repair": 1,
+              "act5_echo_hook": "r4_contact_parent_order_confirmed"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT4-WORK-L06-P2-C01",
+                "page_title": "先问父母 / 现场行动",
+                "location": "先问父母 / 现场行动",
+                "text": [
+                  "林亦舟没有按默认顺序保存联系人。",
+                  "他站到阳台，先给父亲发：学校要真实有效，忙的时候能接电话吗？",
+                  "父亲隔了几分钟回：你妈方便就写她。",
+                  "他又给母亲发：我把你放第一联系人。父亲放第二。",
+                  "母亲只回：可以。别怕他多想。",
+                  "林亦舟看着这句话，手指停了一会儿，才回到页面把两个号码重新排好。"
+                ]
+              },
+              {
+                "page_id": "ACT4-WORK-L06-P2-C02",
+                "page_title": "先问父母 / 承接回声",
+                "location": "先问父母 / 承接回声",
+                "text": [
+                  "联系人保存成功后，系统弹出确认页。",
+                  "母亲在第一栏，父亲在第二栏。这个顺序没有解决家里的钱，也没有让父亲的体面变轻，但它至少让学校真能找到人。",
+                  "林亦舟把截图发到家庭群，没有解释太多，只说：按学校要求填好了。",
+                  "父亲没有回，母亲回了一个“嗯”。阳台外面天已经暗下来，4XX 里有人催签字。林亦舟把手机收好，拿着黑笔往 B204 去。联系人不是系统默认，是他自己排出来的。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT4-WORK-L06-C-C-3",
+                "beat": 3,
+                "prompt": "先问谁？",
+                "guide": "信封、小票和成绩通知压在一起。林亦舟把钱夹回去，又把手机拿起来。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L06-C-C-3-C1",
+                    "code": "C1",
+                    "label": "问父亲：“学校联系人电话，你忙时能接吗？”",
+                    "body": "站外的半小时被写进消息里，不再只卡在电话里。",
+                    "variable_delta": {
+                      "family_truth_probe": 1
+                    },
+                    "raw_effect_text": "family_truth_probe +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L06-C-C-3-C2",
+                    "code": "C2",
+                    "label": "问母亲：“联系人我能先写你吗？”",
+                    "body": "母亲那边还没有挂断，车票页也在屏幕后台开着。",
+                    "variable_delta": {
+                      "family_basic_truth": 1
+                    },
+                    "raw_effect_text": "family_basic_truth +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L06-C-C-3-C3",
+                    "code": "C3",
+                    "label": "发到家庭群：“学校要求联系人真实有效。”",
+                    "body": "消息发出去，家庭群安静了几秒。",
+                    "variable_delta": {
+                      "relationship_truth": 1,
+                      "face_pressure": 1
+                    },
+                    "raw_effect_text": "relationship_truth +1、face_pressure +1"
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT4-WORK-L06-C-C-5",
+                "beat": 5,
+                "prompt": "联系人顺序怎么保存？",
+                "guide": "号码顺序已经有了答案。保存之前，截图还停在屏幕上，发不发回家里都会留下痕迹。",
+                "options": [
+                  {
+                    "option_id": "ACT4-WORK-L06-C-C-5-C1",
+                    "code": "C1",
+                    "label": "保存联系人：母亲第一，父亲第二。",
+                    "body": "站外的半小时被写进消息里，不再只卡在电话里。",
+                    "variable_delta": {
+                      "family_basic_truth": 1
+                    },
+                    "raw_effect_text": "family_basic_truth +1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L06-C-C-5-C2",
+                    "code": "C2",
+                    "label": "保存后把截图发到家庭群。",
+                    "body": "消息发出去，家庭群安静了几秒。",
+                    "variable_delta": {
+                      "relationship_truth": 1,
+                      "time_debt": -1
+                    },
+                    "raw_effect_text": "relationship_truth +1、time_debt -1"
+                  },
+                  {
+                    "option_id": "ACT4-WORK-L06-C-C-5-C3",
+                    "code": "C3",
+                    "label": "先私发父亲：“学校要能联系到。”",
+                    "body": "站外的半小时被写进消息里，不再只卡在电话里。",
+                    "variable_delta": {
+                      "family_face_repair": 1
+                    },
+                    "raw_effect_text": "family_face_repair +1"
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "r4_contact_parent_order_confirmed"
+            ],
+            "next_node": "ACT5-WORK-B01"
           }
         ]
       }
@@ -4847,10 +6766,14 @@
     "act6_full_page_json_status": "full_page_json_ready",
     "act4_p2_detail_blocks": {
       "source_detail_doc": "开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md",
-      "current_split_blocks": 2,
+      "current_split_blocks": 6,
       "current_split_block_ids": [
         "ACT4-WORK-L01",
-        "ACT4-WORK-L02"
+        "ACT4-WORK-L02",
+        "ACT4-WORK-L03",
+        "ACT4-WORK-L04",
+        "ACT4-WORK-L05",
+        "ACT4-WORK-L06"
       ],
       "target_total_blocks": 6,
       "target_scene_page_count": 24,
