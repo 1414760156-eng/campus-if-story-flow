@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>R4-WORK 第四幕到第五幕全链试玩</title>
+    <link rel="stylesheet" href="r4-work-act5-preview.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="reader" aria-labelledby="page-title">
+        <div class="topbar">
+          <span id="route-chip" class="chip">R4-WORK</span>
+          <span id="pool-chip" class="chip chip-soft">POOL-R4-WORK</span>
+          <span id="stage-chip" class="chip chip-soft"></span>
+          <a class="chip chip-link" href="r4-work-act5-preview.html">回 Act5 全幕</a>
+          <a class="chip chip-link" href="r4-work-act4-act5-sim-preview.html">看判定台</a>
+          <span id="page-progress" class="page-progress"></span>
+        </div>
+
+        <h1 id="page-title"></h1>
+        <p id="page-location" class="location"></p>
+        <div id="page-body" class="body-copy"></div>
+
+        <div id="choice-panel" class="choice-panel" hidden></div>
+        <div id="micro-panel" class="micro-panel" hidden></div>
+
+        <div class="nav-row">
+          <button id="back-button" type="button" class="ghost-button">上一页</button>
+          <button id="next-button" type="button" class="primary-button">下一页</button>
+        </div>
+      </section>
+
+      <aside class="inspector">
+        <section class="panel">
+          <div class="panel-head">
+            <h2>全链校验</h2>
+            <button id="reset-button" type="button" class="small-button">重置</button>
+          </div>
+          <dl id="metrics-list" class="metrics-list"></dl>
+        </section>
+
+        <section class="panel">
+          <h2>4->5 节点</h2>
+          <div id="section-list" class="section-list"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>试玩记录</h2>
+            <button id="export-button" type="button" class="small-button">导出</button>
+          </div>
+          <ol id="history-list" class="history-list"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <script src="r4-work-act4-act5-full-preview-data.js?v=20260528-full-json"></script>
+    <script src="r4-work-act5-preview.js?v=20260528-full-chain"></script>
+  </body>
+</html>

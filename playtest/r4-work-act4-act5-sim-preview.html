@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>R4-WORK Act4 -> Act5 判定模拟试玩</title>
+    <link rel="stylesheet" href="r4-work-act5-preview.css">
+    <link rel="stylesheet" href="r4-work-act4-act5-sim-preview.css">
+  </head>
+  <body>
+    <main class="shell sim-shell">
+      <section class="reader" aria-labelledby="sim-title">
+        <div class="topbar">
+          <span id="route-chip" class="chip">R4-WORK</span>
+          <span id="pool-chip" class="chip chip-soft">POOL-R4-WORK</span>
+          <span id="phase-chip" class="chip chip-soft"></span>
+          <a class="chip chip-link" href="r4-work-act4-act5-full-preview.html">跑 4->5 全链</a>
+          <a class="chip chip-link" href="r4-work-act5-preview.html">回 Act5 全幕</a>
+          <a class="chip chip-link" href="r4-work-act4-act5-bridge-preview.html">看 L06->B01</a>
+          <span id="sim-progress" class="page-progress"></span>
+        </div>
+
+        <h1 id="sim-title"></h1>
+        <p id="sim-location" class="location"></p>
+        <div id="sim-body" class="body-copy"></div>
+        <div id="carryover-panel" class="carryover-panel" hidden></div>
+        <div id="sim-options" class="choice-panel"></div>
+
+        <div class="nav-row">
+          <button id="back-button" type="button" class="ghost-button">上一判定</button>
+          <button id="reset-button" type="button" class="ghost-button">重置</button>
+          <button id="export-button" type="button" class="primary-button">导出记录</button>
+        </div>
+      </section>
+
+      <aside class="inspector">
+        <section class="panel">
+          <h2>联通状态</h2>
+          <dl id="metrics-list" class="metrics-list"></dl>
+        </section>
+
+        <section class="panel">
+          <h2>已记录变量</h2>
+          <div id="variable-list" class="token-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>回声钩子</h2>
+          <ol id="hook-list" class="history-list"></ol>
+        </section>
+
+        <section class="panel">
+          <h2>路线轨迹</h2>
+          <ol id="history-list" class="history-list"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <script src="r4-work-act4-act5-sim-preview-data.js?v=20260528-sim-json"></script>
+    <script src="r4-work-act4-act5-sim-preview.js?v=20260528-sim"></script>
+  </body>
+</html>

@@ -22,7 +22,9 @@
     "开发数据_IF剧情页级JSON_R5-LIEFLAT_v1.json",
     "开发样板_IF剧情页级JSON拆分样板_v1.json",
     "开发正文_IF第四幕ACT4-WORK_P2标准剧情页_L01-L06.md",
-    "开发审读_IF第四幕ACT4-WORK正式JSON质量审读.md"
+    "开发审读_IF第四幕ACT4-WORK正式JSON质量审读.md",
+    "开发审读_IF_R4-WORK_ACT5_B01-B05_chinese-novelist.md",
+    "开发审计_IF第三卷社团前置与第五卷校园生态补强.md"
   ],
   "route_state": {
     "canon_line": "MOTHER-V4",
@@ -2909,7 +2911,7 @@
                 "text": [
                   "林亦舟把时间记进备忘录。备忘录里已经有 C201、周二返校、母亲要的车票截图，现在又多了一行明德楼材料窗口。每一行都像细线，拉住一点就会牵动别处。",
                   "晚风问他是不是还要排光谷。他回：今天不排。晚风只回了一句：这句比“到时候看”好。",
-                  "回青枫居的路上，书包外层的纸被风轻轻拍着他的手臂。那是数据结构前两章，已经被他放到稍后。周四下午的窗口能换来饭钱和打印费，可拉链压住的那一角也在提醒他，补考不会因为接了班就自动通过。"
+                  "回青枫居的路上，书包外层的纸被风轻轻拍着他的手臂。那是数据结构前两章，已经被他放到稍后。周四下午的窗口能换来饭钱和打印费，拉链压住的那一角还在包里，等他回去摊开。"
                 ]
               }
             ],
@@ -3393,7 +3395,7 @@
                   "打印店排队比他想的短。",
                   "他补了勤工申请表，又把错题空表多打一份。材料变稳了，时间也被他抢回来一点。",
                   "回到 4XX 时，周屿问他刚刚去哪了。林亦舟说打印。周屿“哦”了一声，没有再追。唐骁看了一眼材料，提醒他下一次提前在群里说。",
-                  "靠后处理让他少被问了几句，也让别人只能从结果倒推他去了哪里。第五幕如果继续这样走，工作线会更稳，宿舍误读也会更容易积起来。"
+                  "靠后处理让他少被问了几句，也让别人只能从结果倒推他去了哪里。材料稳了一点，宿舍里的空白也多了一点。"
                 ]
               }
             ],
@@ -3642,7 +3644,7 @@
             "签完后，四栏纸被放回透明文件夹。",
             "唐骁的二级说明、周屿的小舞台回执、陆沉的留校申请、林亦舟的去向截图并排放着。便利贴上写着：已签完。",
             "周屿说这几个字像通关，唐骁纠正他别乱比喻。陆沉只把文件夹扣好，确认林亦舟没有漏联系人。",
-            "工作线没有让林亦舟从宿舍消失。它只是把兼职、留校、联系人和本人签字压进同一只透明文件夹，交给第五幕继续读。"
+            "工作没有让林亦舟从宿舍消失。它只是把兼职、留校、联系人和本人签字压进同一只透明文件夹，等开学后逐项翻出来。"
           ],
           "updates": {
             "work_shift_seed": 1,
@@ -3655,7 +3657,7 @@
       "choice_window": {
         "choice_window_id": "ACT4-WORK-L06-P2-CHOICE-01",
         "title": "这张表怎么签？",
-        "guide": "兼职、留校、联系人和本人签字被放在同一页。写下去的不是答案，而是第五幕会继续追着你的事实。",
+        "guide": "兼职、留校、联系人和本人签字被放在同一页。写下去的不是答案，而是明天还会被晚班、补说明和群消息逐项核对的事实。",
         "after_page": "ACT4-WORK-L06-P2-S04",
         "direction_count": 3,
         "directions": [
@@ -3697,10 +3699,10 @@
                 "page_title": "如实填写 / 承接回声",
                 "location": "如实填写 / 承接回声",
                 "text": [
-                  "签完那一笔后，表格没有变轻。",
-                  "它只是从“还没决定”变成“已经由本人确认”。辅导员看了一眼联系人，又提醒后续班表确定后补说明。",
+                  "签完那一笔后，表格被辅导员抽走，复印件压在透明夹最上面。",
+                  "刚才还能空着的栏位，现在盖着本人确认的痕迹。辅导员看了一眼联系人，又提醒后续班表确定后补说明。",
                   "林亦舟把表放进透明文件夹，回到 4XX。公共桌上四个人的材料并排，谁也不替谁签，谁也不替谁把理由说圆。",
-                  "第五幕会从这里接走：他已经把工作入口、留校说明和联系人写成事实，后面再缺席或晚归，就不能退回“还没想好”。"
+                  "从那天以后，晚归、缺席和补说明都要落到这只透明文件夹里，不能再退回“还没想好”。"
                 ]
               }
             ],
@@ -3791,7 +3793,7 @@
                   "“后面窗口确定了，补一次说明。”",
                   "林亦舟点头，把这句话记进备忘录。签字栏落下去，纸面上没有红字，也没有当场退回，但那块空白已经跟着他回到 4XX。",
                   "晚上，周屿问他到底算留校还是兼职。林亦舟说：“现在算留校，后面补窗口。”",
-                  "这句话能让表格通过，却不能让误读消失。第五幕如果进入工作主轴，第一件事就要补这块说明。"
+                  "这句话能让表格通过，却不能让误读消失。等窗口和班表确定，他还要把这块说明补回来。"
                 ]
               }
             ],
@@ -3885,7 +3887,7 @@
                 "location": "先问父母 / 承接回声",
                 "text": [
                   "联系人保存成功后，系统弹出确认页。",
-                  "母亲在第一栏，父亲在第二栏。这个顺序没有解决家里的钱，也没有让父亲的体面变轻，但它至少让学校真能找到人。",
+                  "母亲在第一栏，父亲在第二栏。这个顺序没有解决家里的钱，也没有替父亲接住那句体面话，但它至少让学校真能找到人。",
                   "林亦舟把截图发到家庭群，没有解释太多，只说：按学校要求填好了。",
                   "父亲没有回，母亲回了一个“嗯”。阳台外面天已经暗下来，4XX 里有人催签字。林亦舟把手机收好，拿着黑笔往 B204 去。联系人不是系统默认，是他自己排出来的。"
                 ]
@@ -6782,6 +6784,3295 @@
       "target_main_direction_count": 18,
       "target_micro_group_count": 28,
       "target_micro_choice_count": 84
+    },
+    "act5_detail_blocks": {
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "current_split_blocks": 5,
+      "current_split_block_ids": [
+        "ACT5-WORK-B01",
+        "ACT5-WORK-B02",
+        "ACT5-WORK-B03",
+        "ACT5-WORK-B04",
+        "ACT5-WORK-B05"
+      ],
+      "target_total_blocks": 5,
+      "target_scene_page_count": 20,
+      "target_choice_window_count": 5,
+      "target_main_direction_count": 15,
+      "target_feedback_page_count": 35,
+      "target_micro_group_count": 20,
+      "target_micro_choice_count": 60
+    },
+    "act4_to_act5_carryover_rules": {
+      "expected_rule_count": 18,
+      "expected_source_blocks": 6,
+      "expected_target_blocks": 5,
+      "require_every_act4_direction_hook_mapped": true,
+      "require_target_blocks_exist": true,
+      "require_route_pool_locked": true
+    },
+    "act4_to_act5_transition_block": {
+      "expected_blocks": 1,
+      "expected_pages": 3,
+      "previous_block": "ACT4-WORK-L06",
+      "next_block": "ACT5-WORK-B01",
+      "route_pool_id": "POOL-R4-WORK"
+    },
+    "act3_to_act5_campus_echo_rules": {
+      "expected_focus_rule_count": 8,
+      "expected_permission_layer_count": 4,
+      "expected_everyday_memory_role_count": 8,
+      "require_core_edge_and_micro_echo_separation": true,
+      "require_no_unearned_romance_candidate": true,
+      "require_everyday_roles_can_create_micro_consequence": true
+    },
+    "act5_core_expansion_blueprint": {
+      "expected_blueprint_slot_count": 15,
+      "expected_first_playable_candidate_count": 12,
+      "expected_reserved_expansion_candidate_count": 3,
+      "minimum_acceptable_main_windows": 12,
+      "ideal_main_windows_min": 12,
+      "ideal_main_windows_max": 15
     }
+  },
+  "act5_detail_blocks": [
+    {
+      "block_id": "ACT5-WORK-B01",
+      "block_name": "宿舍站队从排班缺席开始",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT4-WORK-L06",
+      "next_block": "ACT5-WORK-B02",
+      "scene_range": [
+        "ACT5-WORK-S01",
+        "ACT5-WORK-S04"
+      ],
+      "scene_function": "宿舍站队从排班缺席开始",
+      "act5_window_tag": "dorm_stand",
+      "required_completion_flags": [
+        "act5_work_b01_seen",
+        "act5_work_b01_choice_resolved",
+        "dorm_stand"
+      ],
+      "must_record": [
+        "dorm_stand",
+        "work_shift",
+        "dorm_absence",
+        "public_boundary",
+        "act5_required_windows_seen",
+        "act6_echo_hook",
+        "dorm_warmth",
+        "money_pressure",
+        "shift_boundary_checked",
+        "family_signal",
+        "dorm_misread"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S01",
+          "page_title": "青枫居 4XX / 晚班后补说明",
+          "location": "青枫居 4XX",
+          "text": [
+            "签完暑假去向登记以后，4XX 安静了几天。",
+            "透明文件夹被塞回书架，黑色签字笔滚到公共桌边角，没人再提 B204 那一笔本人签字。林亦舟也以为，兼职 / 留校说明暂时只是系统里多出来的一行字。",
+            "周五下午，这一行字先从快递站群里亮起来。",
+            "负责人发了晚班试岗名单，林亦舟的名字排在第三个，后面写着：19:20 前到岗，带身份证复印件。",
+            "他还没来得及回，唐骁推门进来，把 C407 分工表放到桌上：“今晚把现场分工过一遍。”",
+            "周屿拎着水杯从阳台回来，扫了一眼表格：“今晚？林亦舟不是也在吗？”",
+            "唐骁没有马上接。他看见林亦舟手机屏幕上的快递站名单，笔尖停在分工表最后一栏。",
+            "那一栏还空着。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S02",
+          "page_title": "快递站 / 排班表",
+          "location": "快递站",
+          "text": [
+            "林亦舟下楼去快递站确认。",
+            "负责人把纸质排班表夹进透明板，指了指他的名字：“你留校说明过了，今晚先试第一班。”",
+            "工资不高，但能按周结一部分，够补掉打印费和接下来几天饭钱。负责人说得很平，像在讲普通规则：“证件复印件带齐。真有事提前讲，别到了点才不来。”",
+            "林亦舟点头。",
+            "手机在这时亮了一下。",
+            "唐骁：今晚 C407 要把分工表定下来。",
+            "后面跟着一句：你那栏我先空着。",
+            "林亦舟握着笔，笔尖在排班表上停了两秒。",
+            "负责人把复印件要求写到他名字后面，又把排班表夹回透明板里。",
+            "林亦舟把学生证复印件收进包侧，手机又震了一下。唐骁没有催第二句，只发来一张照片：C407 分工表最后一栏空着，纸角被压在一只装线材的纸箱下面。",
+            "他站在快递站门口看完那张照片。楼梯间的风从上面灌下来，带着一点纸箱和旧设备的灰味。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S03",
+          "page_title": "C407 门口 / 不问理由",
+          "location": "C407 门口",
+          "text": [
+            "林亦舟没有先回 4XX。",
+            "他按唐骁发来的教室号走到 C407，门口果然堆着两只纸箱。照片里那只压住分工表纸角的箱子被挪开了一半，里面是演示要用的线材和旧设备。唐骁蹲在地上核对清单，周屿正把一卷线绕回原来的塑料圈。",
+            "唐骁没有问他为什么接晚班，也没有问他是不是家里又出了什么事。他只把分工表翻到最后一页：“你今晚到不到？”",
+            "林亦舟看着那一栏空白，想起快递站负责人刚在他名字后面写下的证件要求。第一班还没开始，C407 已经先空出一个位置。",
+            "周屿从教室里探头：“要不我们先把你那栏空着？”",
+            "唐骁没回头：“空着也要写原因。”",
+            "林亦舟低头看手机。快递站群里，负责人又发了一遍到岗名单；C407 群里，唐骁把新版分工表传了上去；4XX 群还没有人说话。",
+            "三条消息压在一起，没有一句像问题。",
+            "林亦舟把手机收回口袋，离开 C407 时，纸箱边角蹭到他的裤脚。楼道尽头能看见青枫居那边的灯，六点五十快到了。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S04",
+          "page_title": "4XX 门口 / 今晚先说哪一句",
+          "location": "4XX 门口",
+          "text": [
+            "傍晚六点五十，林亦舟回到 4XX 门口，门半开着。",
+            "周屿在收外卖袋，唐骁把分工表摊在膝盖上，陆沉正在给自己的文件袋贴姓名。没人催林亦舟进来，也没人替他把那一栏填上。",
+            "林亦舟站在门口，背包带勒在肩上。",
+            "他今晚确实有班。钱也确实紧。父亲的转账备注、补考后的打印费、母亲一直没接通的电话都在背后，可它们不可能在这几分钟里被讲完整。",
+            "六点五十三，唐骁手机震了一下；六点五十四，快递站群又刷出“新同学提前十分钟到”；六点五十五，母亲问他今天怎么没接电话。",
+            "林亦舟的手还搭在门把上，屋里的灯光落到他鞋尖。门里是 4XX，楼下是快递站，手机里还亮着 C407 那一栏空白。"
+          ],
+          "updates": {}
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-01",
+        "title": "六点五十五，先把哪一句送出去？",
+        "guide": "4XX 的门半开着，C407 的分工表还空着一栏，快递站七点半点名。林亦舟已经亲手把兼职 / 留校说明签进系统，今晚第一次要把这份签字带回真实的人面前。",
+        "after_page": "ACT5-WORK-S04",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C01-A",
+            "direction": "A",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "先在群里写清晚班时间和 C407 能交的部分",
+            "description": "人先去快递站，但今晚几点回来、C407 能交什么，先别让别人替你猜。",
+            "variable_delta": {
+              "work_shift": 1,
+              "dorm_absence": 1,
+              "public_boundary": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-WORK-B01-shift-fact"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C01-A-F01",
+                "page_title": "走廊 / 群消息",
+                "location": "走廊",
+                "text": [
+                  "林亦舟没有先进门。",
+                  "他站在走廊尽头，把背包换到另一边肩上，在 4XX 群里打字：今晚七点半到十点快递站固定班，我十点半前回。C407 我能交文档和说明页，现场线材今晚不一定到。",
+                  "发送前，他删掉了“抱歉”两个字。",
+                  "不是不该道歉，是这两个字太轻，轻得像能替他把签字后的第一场缺席盖过去。",
+                  "消息发出去后，群里安静了十几秒。",
+                  "周屿先回：收到。你别把自己寄出去就行。",
+                  "唐骁回得短：文档今晚十一点前要有。",
+                  "陆沉最后发了一句：门卡带了没。",
+                  "三句话都不热。可那一栏不再只是空着。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C01-A-F02",
+                "page_title": "快递站扫码台 / 第一次固定班",
+                "location": "快递站扫码台",
+                "text": [
+                  "七点半，负责人点名。",
+                  "林亦舟把学生证复印件递过去，负责人核对完，在他名字后面画了一个勾。扫码枪的提示音一下一下响，快件从传送带上滑过来，他得低头看编号，再按楼栋分进不同筐里。",
+                  "手机在口袋里震了几次，他没有马上看。",
+                  "到九点五十，周屿发来一句：你那栏没空着，等你回来签。",
+                  "林亦舟把手机扣回去，继续分最后一车件。",
+                  "扫码枪响了一下，他把下一件快递分进筐里。那条路是自己签下的，今晚终于有人知道它通向哪里。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C01-A-M01",
+                "source_page_id": "ACT5-WORK-C01-A-F01",
+                "prompt": "这条群消息怎么补完整？",
+                "guide": "这条群消息怎么补完整？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C01-A-M01-A1",
+                    "code": "A1",
+                    "label": "再补一句：我能交的文档今晚发，线材明早补。",
+                    "body": "唐骁把他那栏改成“文档先到”，没有再追问理由。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C01-A-M01-A2",
+                    "code": "A2",
+                    "label": "再补一句：十点半前回寝，回来补签说明。",
+                    "body": "陆沉回“别过点”，晚归和签字变成今晚的硬边界。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C01-A-M01-A3",
+                    "code": "A3",
+                    "label": "再补一句：别替我交，缺的部分我自己补。",
+                    "body": "周屿停了玩笑，回了一个“行”，责任没有再被别人顺手接走。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-shift-fact"
+            ],
+            "next_node": "ACT5-WORK-B02"
+          },
+          {
+            "direction_id": "ACT5-WORK-C01-B",
+            "direction": "B",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "先去问能不能请半小时，再回 4XX 当面说",
+            "description": "第一班就请假会留下成本，但至少这次把钱压和缺席当面落下。",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "money_pressure": 1,
+              "shift_boundary_checked": true,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-WORK-B01-repair-entry"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C01-B-F01",
+                "page_title": "快递站柜台 / 请半小时",
+                "location": "快递站柜台",
+                "text": [
+                  "林亦舟先去快递站。",
+                  "他没有绕开 4XX，只是知道自己如果要当面说，就得先问清这半小时从哪里来。",
+                  "负责人正在把晚班表夹进透明板，听他说完，只问了一句：“第一班就请？”",
+                  "这句话没有责备，但足够让后背僵一下。",
+                  "林亦舟把学生证复印件递过去：“我七点半能到岗，八点到八点半想回寝处理一张说明表。后面半小时我补到十点半。”",
+                  "负责人看了他一眼，把表推回来：“写清楚。临时换班提前说，补时也要签到。”",
+                  "林亦舟在备注栏写下：20:00-20:30 回寝补晚班说明，22:00-22:30 补时。",
+                  "笔画落下去，半小时不再是“回去解释一下”，而是被写进了工作规则里。要当面说清，他先付出了第一笔现实成本。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C01-B-F02",
+                "page_title": "青枫居 4XX / 当面说",
+                "location": "青枫居 4XX",
+                "text": [
+                  "八点零六，林亦舟推开 4XX 的门。",
+                  "屋里比他想的安静。外卖盒已经收走，公共桌上只剩分工表、晚班后补说明和一只黑色签字笔。周屿抬头看他，像想开玩笑，又把话咽回去。",
+                  "唐骁先问：“请到假了？”",
+                  "林亦舟点头：“半小时。十点以后补。”",
+                  "他把快递站备注拍给他们看，又把晚班后补说明拉到自己面前：“今晚我不在 C407，不是躲。固定班能按周结一部分，补考打印和接下来几天饭钱要先顶上。”",
+                  "说到“饭钱”时，他停了一下。",
+                  "这不是最体面的说法，却把第四幕那些没说完的压力接了起来：签字、联系人、补考、兼职，都不是独立事件。",
+                  "陆沉把黑笔递给他：“那就写清楚。别让我们猜。”"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C01-B-F03",
+                "page_title": "走廊 / 补回晚班",
+                "location": "走廊",
+                "text": [
+                  "林亦舟只坐了二十多分钟。",
+                  "分工表写完能交的部分，晚班后补说明也签了本人确认。他起身时，周屿把剩下半瓶水推到桌边：“别跑太急，水拿走。”",
+                  "林亦舟没有说谢谢。",
+                  "他说：“我十点半前回来。”",
+                  "楼道灯亮得很白，快递站的扫码声像已经从楼下传上来。请半小时没有让钱压消失，反而让它变得更具体：他今天多走了一趟，也多欠了半小时。",
+                  "但这一次，4XX 至少知道他往哪张表里去了。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C01-B-M01",
+                "source_page_id": "ACT5-WORK-C01-B-F01",
+                "prompt": "请假时先把哪句话说实？",
+                "guide": "请假时先把哪句话说实？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C01-B-M01-B1",
+                    "code": "B1",
+                    "label": "说清：我七点半先到岗，八点回寝半小时，十点后补回来。",
+                    "body": "负责人把补时写进备注，工作入口变稳，但今晚会拖到更晚。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C01-B-M01-B2",
+                    "code": "B2",
+                    "label": "说清：4XX 那边要我本人确认，不能让室友替我写。",
+                    "body": "“本人确认”被快递站也听见了，规则不再只属于学校表格。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C01-B-M01-B3",
+                    "code": "B3",
+                    "label": "说清：这次只请半小时，后面固定班照常。",
+                    "body": "负责人没有多问，只提醒他别把第一次例外变成习惯。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT5-WORK-C01-B-M02",
+                "source_page_id": "ACT5-WORK-C01-B-F02",
+                "prompt": "钱压说到哪一步？",
+                "guide": "钱压说到哪一步？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C01-B-M02-B1",
+                    "code": "B1",
+                    "label": "只说：生活费没完全到账，我先接固定班。",
+                    "body": "4XX 知道钱压存在，但不知道家里细节，关系修补留在低温位置。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C01-B-M02-B2",
+                    "code": "B2",
+                    "label": "说明：补考材料、打印和饭钱这周都要现金。",
+                    "body": "压力被说具体，周屿没再玩笑，唐骁把分工表往他那边推近一点。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C01-B-M02-B3",
+                    "code": "B3",
+                    "label": "补一句：我不想让你们替我解释。",
+                    "body": "陆沉看了他一眼，把“本人确认”四个字圈出来，没人再替他代签。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-repair-entry"
+            ],
+            "next_node": "ACT5-WORK-B02"
+          },
+          {
+            "direction_id": "ACT5-WORK-C01-C",
+            "direction": "C",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "先进门说今晚有晚班，家里的事先不展开",
+            "description": "先承认缺席，不把父亲、生活费和补考打印费全摊开。",
+            "variable_delta": {
+              "family_signal": 1,
+              "dorm_misread": 1,
+              "public_boundary": 1,
+              "act5_required_windows_seen": "dorm_stand",
+              "act6_echo_hook": "ACT6-WORK-B01-known-fact-unknown-reason"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C01-C-F01",
+                "page_title": "4XX 门口 / 只说今晚有班",
+                "location": "4XX 门口",
+                "text": [
+                  "林亦舟先进了门。",
+                  "他没有把父亲转账、母亲消息和补考打印费一起摊开，只把背包放到椅背上，说：“今晚我有快递站晚班，七点半走，十点多回。”",
+                  "屋里停了一下。",
+                  "周屿先反应过来：“那 C407 呢？”",
+                  "“我能交文档。”林亦舟说，“线材和现场调试今晚不一定到。”",
+                  "唐骁把分工表翻到他那栏，写下“文档先交”。笔尖划过纸面的时候很响，像把没有说完的部分也一并划开。",
+                  "陆沉问：“家里知道你接班了吗？”",
+                  "林亦舟没有马上答。",
+                  "他说：“还没说到那一步。”",
+                  "这句话把今晚能说的部分落下了，也把不能说的部分留在了屋里。它不够好，但比继续含混过去更具体。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C01-C-F02",
+                "page_title": "快递站后门 / 没说出的部分",
+                "location": "快递站后门",
+                "text": [
+                  "七点半后，林亦舟站在扫码台旁边，手机屏幕一直亮。",
+                  "母亲问：今天怎么没接电话？",
+                  "父亲的转账备注还停在上一条，只有“先用”。晚风也发来一句：你今晚是不是又很晚？",
+                  "他都没有点开。",
+                  "不是因为不重要。是因为刚才在 4XX 门口，他已经把今晚能承认的部分用完了。再多说一句，就会把钱、家里、补考、晚风和工作全都拉进同一条解释里，而他还没有办法把它们排好。",
+                  "十点过后，周屿在群里问：你是真有班，不是躲我们吧？",
+                  "林亦舟看着那句话，扫码枪在旁边响了一声。",
+                  "他回：不是躲。今晚先把班站完，回去签说明。",
+                  "这句回复不够完整。它让事实站住，却把原因留到后面。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C01-C-M01",
+                "source_page_id": "ACT5-WORK-C01-C-F01",
+                "prompt": "只说今晚有班时，怎么留下一点可见位置？",
+                "guide": "只说今晚有班时，怎么留下一点可见位置？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C01-C-M01-C1",
+                    "code": "C1",
+                    "label": "把 C407 文件袋放到公共桌上，说：我能交的都在这里。",
+                    "body": "唐骁接过文件袋，分工表不再全空，但缺席原因仍然没人知道。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C01-C-M01-C2",
+                    "code": "C2",
+                    "label": "给唐骁发两项今晚能交的文档，不解释钱。",
+                    "body": "项目部分有了交付，宿舍误读没有解除，只是被压到下一次。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C01-C-M01-C3",
+                    "code": "C3",
+                    "label": "对陆沉说：十点后我会回来签晚班说明。",
+                    "body": "陆沉点头，晚归和签字有了落点，家里的问题仍然没被打开。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-known-fact-unknown-reason"
+            ],
+            "next_node": "ACT5-WORK-B02"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT5-WORK-B02",
+      "block_name": "亲密 / 晚风只能短时照面",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT5-WORK-B01",
+      "next_block": "ACT5-WORK-B03",
+      "scene_range": [
+        "ACT5-WORK-S05",
+        "ACT5-WORK-S08"
+      ],
+      "scene_function": "亲密 / 晚风只能短时照面",
+      "act5_window_tag": "intimacy_or_wanfeng",
+      "required_completion_flags": [
+        "act5_work_b02_seen",
+        "act5_work_b02_choice_resolved",
+        "intimacy_or_wanfeng"
+      ],
+      "must_record": [
+        "intimacy_or_wanfeng",
+        "work_private_entry",
+        "wanfeng_distance",
+        "act5_required_windows_seen",
+        "act6_echo_hook",
+        "polite_distance",
+        "work_shift",
+        "dorm_warmth",
+        "time_debt"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S05",
+          "page_title": "快递站后门 / 下班后的消息",
+          "location": "快递站后门",
+          "text": [
+            "第二次晚班结束时，快递站后门只剩半卷胶带和一筐退回件。",
+            "负责人把卷帘门拉下一半，提醒新同学把扫码枪放回充电座。林亦舟最后核对了一遍筐号，才发现手背上蹭了一道黑色快递墨。他去水池边冲了两下，墨没完全掉，只淡成一条灰线。",
+            "手机在这时亮起来。",
+            "晚风：下班后还回吗？",
+            "消息下面还有一张截图。光谷那边的活动临时改到周日晚，页面底部写着“入场时间以现场为准”。她没有问他来不来，只把新的时间发给他看。",
+            "林亦舟看了很久。",
+            "上一条 4XX 群消息还停在十分钟前。周屿问他今晚几点回，唐骁把 C407 的材料截止时间往后顺了一格，陆沉只发了一个宿舍门禁截图。",
+            "快递站后门的灯很白，照得手机屏幕发亮。林亦舟把那张截图存下来，卷帘门在身后落到一半，他从侧门绕出去，东区商业街的灯已经亮了。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S06",
+          "page_title": "东区商业街 / 散场的人",
+          "location": "东区商业街",
+          "text": [
+            "林亦舟绕到东区商业街时，已经快十点。",
+            "路边的奶茶店还亮着，两个女生抱着活动立牌往外走，立牌边角被风吹得轻轻拍在纸袋上。有人在门口分剩下的荧光手环，手环没发完，堆在透明盒里，一闪一闪。",
+            "晚风又发来一句：如果你周日还要上班，我可以只在出口等一会儿。",
+            "这句话比“你来不来”更难回。",
+            "来不来还像一个选项。等一会儿就变成了时间：她会站在哪里、等多久、他是不是又要用“下班晚”把这段时间糊过去。",
+            "林亦舟把手机握在手里，屏幕自动暗下去，又被下一条消息点亮。",
+            "唐骁：C407 的说明页明早八点前给我。",
+            "周屿：你别又到楼下才说自己回来了。",
+            "晚风那张截图还在最上面。下一秒，4XX 群的新消息把截图顶下去半截；他往下滑，又看见唐骁那句说明页。屏幕亮着，像把几张纸叠在他掌心。",
+            "电量只剩 7%。他把手机攥紧，往便利店门口走。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S07",
+          "page_title": "便利店门口 / 充电线",
+          "location": "便利店门口",
+          "text": [
+            "便利店门口的长椅上坐着两个等车的人，玻璃门一开一合，冷气和关东煮的味道一起涌出来。",
+            "林亦舟进去买水，顺手问店员借了一根充电线。手机电量跳到 9% 时，晚风的聊天框还停在那里。",
+            "他本来想回“我尽量”。字打出来，又删掉。",
+            "这两个字太好用，好用到像能同时照顾所有人。林亦舟盯着它看了几秒，便利店的自动门又开了一次，冷气吹得屏幕一闪。",
+            "他喝了两口水，喉咙里还是干。",
+            "手机屏幕上，晚风的截图、4XX 群和排班群挤在同一页。充电线松了一下，电量从 9% 跳回 8%。林亦舟把线重新按紧，输入框里的“我尽量”还停在那里，像一个随时会黑掉的字。",
+            "电量跳到 12% 时，他拔下充电线，把水瓶塞进包侧，往青枫居走。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S08",
+          "page_title": "青枫居楼下 / 能给出的时间",
+          "location": "青枫居楼下",
+          "text": [
+            "青枫居楼下的灯灭了一盏，门口只剩门禁机亮着。",
+            "林亦舟刷卡进去，卡扣声在空楼道里响得很清楚。电梯停在十六楼，一时下不来。他站在一楼大厅，背包贴着肩胛骨，里面的复印件和快递站排班表硌出一道硬边。",
+            "晚风的聊天框还开着。",
+            "4XX 群里，周屿刚发来一句：楼下了没？",
+            "唐骁跟着补了一句：说明页别拖到明早才想。",
+            "林亦舟没有马上进电梯。他点开输入框，又退出去看了一眼排班表。晚风那句“还回吗”停在上面，4XX 群里的“楼下了没”停在下面。",
+            "电梯数字从十六跳到十五，他还没按上行键。"
+          ],
+          "updates": {}
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-02",
+        "title": "今晚这条消息，先怎么回？",
+        "guide": "晚风把光谷时间发来，4XX 还在问他几点回，快递站排班表也刚塞进包里。林亦舟现在能给出的不是承诺，而是今晚和周日各自能落在哪一格。",
+        "after_page": "ACT5-WORK-S08",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C02-A",
+            "direction": "A",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "把今晚回寝和周日可见时间都说清楚",
+            "description": "告诉晚风今晚几点回、周日如果能去光谷只能留多久，让她知道自己在等哪一段。",
+            "variable_delta": {
+              "work_private_entry": 1,
+              "wanfeng_distance": 1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-WORK-B04-wanfeng-low-frequency"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C02-A-F01",
+                "page_title": "青枫居一楼 / 两个时间",
+                "location": "青枫居一楼",
+                "text": [
+                  "林亦舟没有进电梯。",
+                  "他站在一楼大厅，把快递站排班表从包里抽出来，借着门禁机旁边的灯看了一遍。周日那一栏，他下午四点到七点有班，晚上八点以后才空。",
+                  "他给晚风打字：今晚十点四十左右回寝。周日如果排班不改，我八点后才能到光谷，最多留一个小时。你不用从下午等到晚上。",
+                  "发送前，他又补了一句：如果这个时间太晚，就别硬等。",
+                  "这次他没有写“我尽量”。",
+                  "晚风没有立刻回。电梯门开了又关，里面没人下来。林亦舟站在原地，看着那条消息从白底变成已送达。",
+                  "过了一会儿，晚风回：那我知道等哪一段了。你到寝室发我一下。",
+                  "林亦舟把那句“等哪一段”读了两遍。电梯门又开了一次，里面的人看了他一眼，他才把排班表折回包里。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C02-A-F02",
+                "page_title": "电梯口 / 到寝室再发",
+                "location": "电梯口",
+                "text": [
+                  "电梯终于下来。",
+                  "林亦舟进去时，手机又震了一下。4XX 群里，周屿催他别在楼下站成门神，唐骁问他说明页有没有底稿，陆沉发了一句：先上来，门没反锁。",
+                  "他把晚风的聊天框收起来，没有再多解释。",
+                  "上楼的十几秒里，电梯镜面照出他袖口的灰痕。快递墨没洗干净，水渍也没干，像把快递站的半个晚上一起带回了青枫居。",
+                  "电梯门开时，晚风又发：别赶光谷，先把你那边弄完。",
+                  "林亦舟看着这句话，才把手机扣进掌心。",
+                  "林亦舟盯着“你那边”三个字，手指在屏幕下方停了停。他没有再补一句“我会赶过去”，只把手机屏幕扣进掌心，走出电梯。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C02-A-F03",
+                "page_title": "4XX 门口 / 报平安",
+                "location": "4XX 门口",
+                "text": [
+                  "林亦舟回到 4XX 时，周屿已经把门留了一条缝。",
+                  "公共桌上摊着 C407 的说明页，唐骁用红笔圈了两个缺口。陆沉没问他刚才在楼下回谁，只把一杯水推到桌边。",
+                  "“十点四十。”周屿看了一眼手机，“你这次还挺准。”",
+                  "林亦舟坐下，把说明页拖到自己面前：“我先补这两段。”",
+                  "他给晚风发了三个字：到寝室了。",
+                  "晚风回得很短：收到。",
+                  "没有多余表情，也没有新的约定。林亦舟把那三个字发完，才低头去改说明页。手机搁在手边，没有再亮；晚风那条对话停在“收到”上。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C02-A-M01",
+                "source_page_id": "ACT5-WORK-C02-A-F01",
+                "prompt": "这条消息先落哪一个时间？",
+                "guide": "这条消息先落哪一个时间？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C02-A-M01-A1",
+                    "code": "A1",
+                    "label": "先写今晚十点四十回寝，到寝室会报平安。",
+                    "body": "晚风回“那我不一直看屏幕”，今晚的等待先有了边界。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C02-A-M01-A2",
+                    "code": "A2",
+                    "label": "先写周日八点后到光谷，最多留一个小时。",
+                    "body": "光谷不再像被随口答应的地方，晚风知道那一小时从哪里挤出来。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C02-A-M01-A3",
+                    "code": "A3",
+                    "label": "先写如果太晚就别硬等，不把她从下午留到晚上。",
+                    "body": "晚风停了很久才回“我自己会看”，关系没有升温，但被认真放在时间表里。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT5-WORK-C02-A-M02",
+                "source_page_id": "ACT5-WORK-C02-A-F02",
+                "prompt": "到寝室前，给晚风补哪一句？",
+                "guide": "到寝室前，给晚风补哪一句？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C02-A-M02-A1",
+                    "code": "A1",
+                    "label": "回：我先上楼交说明页，到寝室再发你。",
+                    "body": "晚风回“好”，消息停在可确认的位置，没有继续追问。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C02-A-M02-A2",
+                    "code": "A2",
+                    "label": "回：周日排班如果临时改，我第一时间告诉你。",
+                    "body": "临时变动被提前说出，后面不会全压到那天晚上。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C02-A-M02-A3",
+                    "code": "A3",
+                    "label": "回：我不是不想见，只是这周不能让你白等。",
+                    "body": "亲密感没有被拔高成告白，但这周的联系里多了一句明确的在意。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B04-wanfeng-low-frequency"
+            ],
+            "next_node": "ACT5-WORK-B03"
+          },
+          {
+            "direction_id": "ACT5-WORK-C02-B",
+            "direction": "B",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "先回一句还在晚班，周日等排班后再定",
+            "description": "不把话说满，也不让她以为自己已经排除这段关系。",
+            "variable_delta": {
+              "polite_distance": 1,
+              "work_shift": 1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-WORK-B04-private-entry-narrowed"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C02-B-F01",
+                "page_title": "青枫居楼下 / 一句不说满的话",
+                "location": "青枫居楼下",
+                "text": [
+                  "林亦舟把排班表塞回包里。",
+                  "他没有给周日写死时间，只给晚风回：刚下班，今晚还要回寝补说明页。周日我得等排班出来，别先按我这边安排。",
+                  "这句话发出去后，他盯着屏幕看了几秒。",
+                  "它比“不一定”具体一点，又比“八点后见”后退很多。像在便利店门口把一杯水拧开，只喝了一口，剩下的还放在手里。",
+                  "晚风回：那你排班出来再说。",
+                  "没有生气，也没有追问。可聊天框安静下来的速度很快，快得像门缝被轻轻合上。",
+                  "林亦舟看着那个“好”字停在屏幕上。便利店门又开了一次，冷气贴着他的手背擦过去，他把没喝完的水拧紧，塞回包侧。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C02-B-F02",
+                "page_title": "4XX 楼梯间 / 入口变窄",
+                "location": "4XX 楼梯间",
+                "text": [
+                  "林亦舟收起手机，上楼。",
+                  "楼梯间的感应灯慢半拍才亮。四楼拐角处，周屿正探头往下看：“你怎么不上电梯？”",
+                  "“刚才回消息。”林亦舟说。",
+                  "周屿没有问是谁。他把手里的说明页晃了晃：“唐骁说你明早八点前要交，别又熬到半夜。”",
+                  "林亦舟接过纸，指腹碰到边角，才发现自己刚才一直攥着手机，掌心有点发热。",
+                  "晚风那边没有再亮。",
+                  "他跟着周屿往 4XX 走，走廊里能听见唐骁翻纸的声音。手机在掌心安静下来，晚风的聊天框被他按到后台，只剩顶部一条很细的白线。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C02-B-M01",
+                "source_page_id": "ACT5-WORK-C02-B-F01",
+                "prompt": "这句不说满的话，怎么发才像林亦舟会说的？",
+                "guide": "这句不说满的话，怎么发才像林亦舟会说的？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C02-B-M01-B1",
+                    "code": "B1",
+                    "label": "发：刚下班，今晚还要补说明页，周日等排班再告诉你。",
+                    "body": "晚风回“好”，她知道原因，但不会继续替他预留整晚。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C02-B-M01-B2",
+                    "code": "B2",
+                    "label": "发：今天不敢答应光谷，怕临时改班让你白等。",
+                    "body": "这句话把不确定说清，晚风没有追问，只让他先处理那边。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C02-B-M01-B3",
+                    "code": "B3",
+                    "label": "发：别先按我安排，你自己的时间也别空着。",
+                    "body": "晚风回了一个“嗯”，礼貌距离被拉开一点，关系没有断。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B04-private-entry-narrowed"
+            ],
+            "next_node": "ACT5-WORK-B03"
+          },
+          {
+            "direction_id": "ACT5-WORK-C02-C",
+            "direction": "C",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "先回 4XX 报到楼下，再给晚风补具体时间",
+            "description": "让宿舍这边先落地，晚风那条消息不消失，但会晚一点。",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "time_debt": 1,
+              "act5_required_windows_seen": "intimacy_or_wanfeng",
+              "act6_echo_hook": "ACT6-WORK-B01-dorm-truth-before-shift"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C02-C-F01",
+                "page_title": "青枫居楼下 / 先让楼上知道",
+                "location": "青枫居楼下",
+                "text": [
+                  "林亦舟先退出晚风的聊天框。",
+                  "他在 4XX 群里回：到楼下了。十分钟后上来，说明页今晚补第一版。",
+                  "周屿秒回：别十分钟变半小时。",
+                  "唐骁回：第一版先给结构，细节明早补。",
+                  "陆沉没有在群里说话。几秒后，他私聊发来：上来前把门禁截图留一下，晚归说明别漏。",
+                  "林亦舟把门禁机旁边的时间拍下来，发给陆沉。做完这些，他才重新点开晚风的聊天框。",
+                  "晚风那条“我可以只在出口等一会儿”还停在屏幕中间。",
+                  "刚才回 4XX 的几分钟把她那条消息压到了屏幕下半截。林亦舟往上滑了一点，截图又露出来，出口处的时间被她用红笔圈着。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C02-C-F02",
+                "page_title": "4XX 公共桌 / 晚一点的回复",
+                "location": "4XX 公共桌",
+                "text": [
+                  "林亦舟上楼时，4XX 的门开着。",
+                  "唐骁把说明页推到公共桌中间，周屿把他的椅子从床边拖出来，陆沉看了一眼墙上的钟：“十分钟。”",
+                  "林亦舟坐下，先把 C407 结构补出来，又把晚归说明签在纸角。笔尖划过纸面的时候，他的手机亮了一次。",
+                  "晚风：你先弄。",
+                  "他没有马上回。等第一版说明页发给唐骁，已经十点五十七。",
+                  "林亦舟这才重新点开聊天框：周日排班还没最终定。如果能去，我只留晚上那一段；不让你从下午等到我下班。",
+                  "晚风回得慢了一点：那就等你排班。",
+                  "这句话发出去后，4XX 群里安静了一会儿。晚风那边也没有再催，只把周日的出口截图又发了一遍，红圈还停在出口时间旁边。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C02-C-M01",
+                "source_page_id": "ACT5-WORK-C02-C-F01",
+                "prompt": "回 4XX 后，先给晚风留哪一句？",
+                "guide": "回 4XX 后，先给晚风留哪一句？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C02-C-M01-C1",
+                    "code": "C1",
+                    "label": "发：我先上楼补说明页，十一点前给你周日时间。",
+                    "body": "晚风回“那我十一点前看一眼”，等待被推迟，但没有断。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C02-C-M01-C2",
+                    "code": "C2",
+                    "label": "发：刚到楼下，不是没回你，我先把寝室这边落下。",
+                    "body": "晚风没有追问，只回“你先弄”，她知道自己被放在后面，但没有被丢掉。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C02-C-M01-C3",
+                    "code": "C3",
+                    "label": "发：如果你困了先睡，明早我把排班截图发你。",
+                    "body": "这句话给她退出等待的位置，等待更稳，也更远。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-dorm-truth-before-shift"
+            ],
+            "next_node": "ACT5-WORK-B03"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT5-WORK-B03",
+      "block_name": "项目 / 规则 / 证明材料",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT5-WORK-B02",
+      "next_block": "ACT5-WORK-B04",
+      "scene_range": [
+        "ACT5-WORK-S09",
+        "ACT5-WORK-S12"
+      ],
+      "scene_function": "项目 / 规则 / 证明材料",
+      "act5_window_tag": "project_or_rule",
+      "required_completion_flags": [
+        "act5_work_b03_seen",
+        "act5_work_b03_choice_resolved",
+        "project_or_rule"
+      ],
+      "must_record": [
+        "project_or_rule",
+        "work_certificate_status",
+        "work_material_boundary_checked",
+        "money_pressure",
+        "act5_required_windows_seen",
+        "act6_echo_hook",
+        "project_stability",
+        "time_debt",
+        "public_boundary",
+        "work_schedule_checked"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S09",
+          "page_title": "打印店 / 同一个文件袋",
+          "location": "打印店",
+          "text": [
+            "周一上午，打印店的复印机卡了两次纸。",
+            "店主把机盖掀开，抽出皱掉的 A4 纸，问林亦舟：“你这个是证明还是申请？章的位置不一样。”",
+            "林亦舟低头看手里的文件袋。",
+            "勤工值班证明、收入说明模板、补考材料回执、C407 项目分工表，还有一张晚班后补说明，全被夹在同一个透明袋里。纸页边角互相顶着，像几件原本不该挤在一起的事，被他一路从快递站、青枫居和明德楼带到这里。",
+            "手机亮了一下。",
+            "唐骁：C407 今天要定最终交付范围。",
+            "陆沉隔了几秒也发来一条：勤工证明别让别人替你写理由，窗口只认本人说明。",
+            "打印机又响了一声，吐出第一张收入说明。纸面很白，空栏也很白。林亦舟把它拿起来，夹到文件袋最外层，往明德楼走时，纸角还从拉链口露着。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S10",
+          "page_title": "明德楼材料窗口 / 本人签字",
+          "location": "明德楼材料窗口",
+          "text": [
+            "明德楼一楼的材料窗口排着七八个人。",
+            "前面有人因为少了一处本人签字，被老师退回来重填。老师把表格推出来，说得很慢：“证明可以补，说明也可以补，但不能让同学代写你的实际情况。”",
+            "林亦舟听见“实际情况”四个字，手指在文件袋边缘停了一下。",
+            "他能写晚班时间，能写勤工地点，能写收入说明，也能写 C407 哪几项自己能交。可如果每一个空栏都写成“因个人原因”，纸面会很整齐，4XX 看到时仍然只会看见一排退开的空白。",
+            "队伍往前挪了一格。",
+            "唐骁又发来新版分工表截图。最后一列写着：可到场 / 可交付 / 需本人确认。",
+            "陆沉的消息还停在上面：别让别人替你写理由。",
+            "窗口里的老师抬头：“下一位。”",
+            "林亦舟往前走了一步，把收入说明和勤工证明一起递进去。老师先退回一处日期，又让他把用途写得更清楚。等他从窗口退出来时，纸面上多了两道铅笔圈。",
+            "唐骁的分工表截图还停在手机上。林亦舟把被圈出来的材料塞回文件袋，下午去 C407 时，透明袋的边角一路硌着掌心。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S11",
+          "page_title": "C407 机房 / 两列分工",
+          "location": "C407 机房",
+          "text": [
+            "下午，林亦舟带着窗口退回的修改痕迹到 C407。机房的空调声音很低。",
+            "唐骁把分工表投到屏幕上，表格被分成两列：能交付的内容，不能到场的节点。",
+            "“你不是不能做。”唐骁指着左边，“但别把不能到场写成到时候再看。”",
+            "周屿靠在后排椅背上，小声说：“这话听起来像唐骁，但也挺像老师。”",
+            "唐骁没有接玩笑。他把鼠标移到林亦舟那一行：“证明材料你自己补。项目这边，你能写接口说明、整理异常流，现场联调如果你晚班撞上，就不要写自己能到。”",
+            "林亦舟看着屏幕。",
+            "屏幕白得晃眼。林亦舟把窗口盖过章的证明压在键盘旁边，又看了一遍自己那一行：接口说明、异常流、现场联调、本人确认。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S12",
+          "page_title": "教学楼楼梯口 / 证明不能替关系",
+          "location": "教学楼楼梯口",
+          "text": [
+            "傍晚，林亦舟从 C407 出来，坐在教学楼楼梯口整理文件。",
+            "打印店的热纸已经凉了，明德楼窗口盖章的位置还带着一点凸起。勤工证明能说明他为什么缺席晚间一段时间，收入说明能解释钱压，C407 分工表能把可交付和不可到场拆开。",
+            "可是这些纸不会自动替他回 4XX 的消息。",
+            "周屿在群里发：你今天又带了一袋什么回来？",
+            "唐骁补了一句：最终分工今晚十点前确认。",
+            "陆沉只发：证明收了没。",
+            "三条消息不重，却把文件袋压得更实。林亦舟把盖章页塞回透明袋，袋口没拉严，C407 分工表从里面滑出来一角。"
+          ],
+          "updates": {}
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-03",
+        "title": "这袋材料，先把哪一格写实？",
+        "guide": "勤工证明、收入说明、补考回执和 C407 分工表都在同一个文件袋里。窗口只认本人签字，项目只认可交付边界，4XX 也不可能一直靠猜。林亦舟这次要先决定：证明解释到哪里，项目分工写到哪里，哪些内容不能让别人代签。",
+        "after_page": "ACT5-WORK-S12",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C03-A",
+            "direction": "A",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "先补勤工证明和收入说明，把缺席原因写到可提交",
+            "description": "让窗口先收材料，钱压和晚班不再只停在口头解释里。",
+            "variable_delta": {
+              "work_certificate_status": "prepared",
+              "work_material_boundary_checked": true,
+              "money_pressure": -1,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-WORK-B03-certificate-ready"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C03-A-F01",
+                "page_title": "明德楼材料窗口 / 收入说明",
+                "location": "明德楼材料窗口",
+                "text": [
+                  "林亦舟先把勤工证明和收入说明抽出来。",
+                  "窗口老师接过纸，先看章，再看日期，最后看本人说明那一栏：“你这里不能只写勤工。为什么需要这个证明，也要写清楚。”",
+                  "林亦舟拿回笔。",
+                  "他没有写“家庭原因”。那四个字太大，窗口收得下，4XX 却未必知道它到底指什么。",
+                  "他写：暑假留校期间参加快递站勤工，固定晚班；用于生活费、补考材料与打印支出说明。",
+                  "写到“生活费”时，后面排队的人往前挪了一步。林亦舟听见纸袋摩擦的声音，像有人在提醒他别停太久。",
+                  "老师看完，把表推回去：“本人签字。”",
+                  "林亦舟签下名字。章落下来的声音很轻，却把钱压从聊天里的半句话变成了一张能被窗口承认的纸。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C03-A-F02",
+                "page_title": "打印店门口 / 给 4XX 拍一张",
+                "location": "打印店门口",
+                "text": [
+                  "走出明德楼后，林亦舟回到打印店门口补印两份。",
+                  "热纸从机器里吐出来，他把其中一份夹进文件袋，另一份折好，拍给 4XX 群。",
+                  "林亦舟：证明收了。晚班和收入说明我自己交，C407 分工今晚十点前补。",
+                  "周屿先回：原来你那袋不是神秘档案。",
+                  "唐骁回：证明是证明，分工还要分工。",
+                  "陆沉最后回：拍照留一份，原件别丢。",
+                  "周屿的玩笑没有继续往下接。唐骁那句“分工还要分工”压在照片下面，陆沉提醒他留原件。林亦舟看着三条回复，把证明照片重新拍了一张，确认章没有被手指挡住。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C03-A-F03",
+                "page_title": "C407 门口 / 证明不是交付",
+                "location": "C407 门口",
+                "text": [
+                  "晚上九点四十，林亦舟到 C407 门口。",
+                  "唐骁还在改表。屏幕亮着，光落在他镜片上。他看见林亦舟手里的文件袋，只说：“证明收了？”",
+                  "“收了。”林亦舟把复印件放到桌边。",
+                  "唐骁点了一下表格：“那项目这边，你能交什么？”",
+                  "这句话没有否定证明，却把它放回正确位置。勤工证明能解释晚班，收入说明能解释钱压，但接口说明、异常流和联调记录仍然要有人交。证明不能替 C407 完成项目，也不能替 4XX 修补关系。",
+                  "林亦舟拉开椅子，坐下：“我先补接口说明，现场联调不写我到场。”"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C03-A-M01",
+                "source_page_id": "ACT5-WORK-C03-A-F01",
+                "prompt": "证明里的解释写到哪一步？",
+                "guide": "证明里的解释写到哪一步？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C03-A-M01-A1",
+                    "code": "A1",
+                    "label": "写清固定晚班时间，不展开家里细节。",
+                    "body": "窗口收了证明，4XX 后续能看到时间事实，但钱压仍然只露出边缘。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C03-A-M01-A2",
+                    "code": "A2",
+                    "label": "写清生活费、补考材料和打印支出。",
+                    "body": "钱压被写具体，证明更有力，也更难再装成普通忙碌。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C03-A-M01-A3",
+                    "code": "A3",
+                    "label": "写清所有说明均由本人提交，室友不代写。",
+                    "body": "老师在旁边画了勾，“本人确认”成为后续所有表格的硬边界。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B03-certificate-ready"
+            ],
+            "next_node": "ACT5-WORK-B04"
+          },
+          {
+            "direction_id": "ACT5-WORK-C03-B",
+            "direction": "B",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "先补 C407 项目分工，把能交和不能到场拆开",
+            "description": "不让唐骁替你兜现场，也不把工作线写成逃避项目。",
+            "variable_delta": {
+              "project_stability": 1,
+              "time_debt": 1,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-WORK-B02-c407-low-temperature"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C03-B-F01",
+                "page_title": "C407 机房 / 两列先定",
+                "location": "C407 机房",
+                "text": [
+                  "林亦舟先去了 C407。",
+                  "唐骁把分工表投到屏幕上，问得很直接：“你证明晚点补可以，项目今天必须定。”",
+                  "林亦舟把文件袋放在桌角，没有先拿收入说明。他把自己的那一行复制出来，分成两列：可交付，不能到场。",
+                  "可交付：接口说明、异常流整理、最终包目录。",
+                  "不能到场：周三晚间联调、周五快递站固定班时段。",
+                  "唐骁看了一遍，删掉了“尽量参加”四个字：“这个别写。”",
+                  "周屿靠在后面，低声说：“尽量参加听起来像尽量迟到。”",
+                  "林亦舟没有反驳。他把“尽量参加”改成“不能到场，提前提交材料”。这一行变得难看一点，也诚实一点。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C03-B-F02",
+                "page_title": "明德楼走廊 / 证明排到后面",
+                "location": "明德楼走廊",
+                "text": [
+                  "分工表定下来时，明德楼窗口已经快下班。",
+                  "林亦舟赶过去，队伍只剩三个人。老师看了一眼时间：“今天收材料到五点半。”",
+                  "他排到窗口时，五点二十八。",
+                  "老师检查勤工证明，指出收入说明少了一行用途。林亦舟低头补字，笔尖在“补考材料与打印支出”上停得很急。因为先补 C407，他现在没有时间慢慢解释，只能把证明压到最低可收标准。",
+                  "老师收下材料，提醒：“下次别压点。”",
+                  "林亦舟点头，手心有汗。项目分工稳了，可证明差点没收进去。每个先后顺序都会留下代价。",
+                  "晚上回到 4XX，公共桌上摆着两份表。一份是 C407 分工表，林亦舟那一行已经拆清楚；另一份是勤工证明复印件，边角被他赶时间折出一道白痕。",
+                  "唐骁把项目表收进文件夹：“这样可以走。”",
+                  "“听起来不像夸人。”周屿说。",
+                  "“本来就不是。”唐骁把文件夹扣上，“是能交。”",
+                  "唐骁把他那一栏改完，保存文件。周屿没再开玩笑，低头把线材编号贴回纸箱。林亦舟把文件袋扣好，纸扣合上的声音很轻。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C03-B-M01",
+                "source_page_id": "ACT5-WORK-C03-B-F01",
+                "prompt": "项目分工先写到哪里？",
+                "guide": "项目分工先写到哪里？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C03-B-M01-B1",
+                    "code": "B1",
+                    "label": "先写清能交的三项：接口说明、异常流、最终包目录。",
+                    "body": "唐骁把左列锁定，项目稳定上升，但现场缺席仍要解释。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C03-B-M01-B2",
+                    "code": "B2",
+                    "label": "先写清不能到场的两个晚班时段。",
+                    "body": "“缺席”被提前放进表格，后续不再靠临时消息补救。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C03-B-M01-B3",
+                    "code": "B3",
+                    "label": "删掉“尽量参加”，改成提前提交材料。",
+                    "body": "唐骁没有再改这行，规则变冷，但边界更清楚。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT5-WORK-C03-B-M02",
+                "source_page_id": "ACT5-WORK-C03-B-F02",
+                "prompt": "证明被压到最后时，先保哪一项？",
+                "guide": "证明被压到最后时，先保哪一项？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C03-B-M02-B1",
+                    "code": "B1",
+                    "label": "先补用途：生活费、补考材料、打印支出。",
+                    "body": "窗口收下材料，钱压被最低限度写清。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C03-B-M02-B2",
+                    "code": "B2",
+                    "label": "先补固定晚班时段，证明项目缺席不是临时消失。",
+                    "body": "证明和 C407 表格能互相对上，但收入说明仍然很薄。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C03-B-M02-B3",
+                    "code": "B3",
+                    "label": "先补本人签字和日期，避免被退回。",
+                    "body": "材料过线，解释很窄，唐骁只把它归进“格式合格”那一栏。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B02-c407-low-temperature"
+            ],
+            "next_node": "ACT5-WORK-B04"
+          },
+          {
+            "direction_id": "ACT5-WORK-C03-C",
+            "direction": "C",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "写清可交付、不可到场和不能代签的范围",
+            "description": "证明和项目一起收边界：哪些能帮，哪些必须本人确认。",
+            "variable_delta": {
+              "public_boundary": 1,
+              "work_schedule_checked": true,
+              "act5_required_windows_seen": "project_or_rule",
+              "act6_echo_hook": "ACT6-WORK-B01-schedule-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C03-C-F01",
+                "page_title": "教学楼楼梯口 / 三栏消息",
+                "location": "教学楼楼梯口",
+                "text": [
+                  "林亦舟没有立刻去窗口，也没有马上进 C407。",
+                  "他坐在教学楼楼梯口，把手机备忘录打开，先写了三栏。",
+                  "可交付：接口说明、异常流、最终包目录。",
+                  "不可到场：周三晚间联调、周五固定班、临时加班时段。",
+                  "不能代签：勤工证明、晚班后补说明、C407 最终确认。",
+                  "写到第三栏时，他停了一下。不能代签这几个字像把很多旧习惯都挡在外面：唐骁不能替他填最终确认，陆沉不能替他写原因，周屿不能替他把气氛圆过去。",
+                  "他把三栏截图发进 4XX 群。",
+                  "林亦舟：我先按这个写。能交的我交，不能到场的提前说，签字和说明都不让别人代。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C03-C-F02",
+                "page_title": "明德楼窗口 / 不让别人替",
+                "location": "明德楼窗口",
+                "text": [
+                  "窗口老师看了他的三栏说明，先问：“这个是你自己写的？”",
+                  "林亦舟点头。",
+                  "“那你这里别写‘室友确认’。”老师把笔帽点在表格边上，“室友可以证明你不在寝室，但不能替你确认勤工情况。”",
+                  "林亦舟把那四个字划掉，改成：本人提交排班证明。",
+                  "划掉的时候，他想起第四幕 L06 的本人签字，也想起第一次晚班后唐骁把那栏空着等他。很多事不是别人不愿帮，是帮到某一步就会越界。",
+                  "老师收下材料，在右上角盖章。",
+                  "章落下去的那一刻，不能代签不再只是他发在群里的一句边界，而是文件上真正少掉的一行“室友确认”。",
+                  "林亦舟拿着盖好章的材料回到 C407。",
+                  "唐骁站在门口等他，手里拿着最终分工表。林亦舟把三栏说明递过去：“这个按我刚才那版写。”",
+                  "唐骁看完，点头：“可交付的今晚交，不可到场的提前标，不能代签的我不碰。”",
+                  "周屿从里面探头：“那我能碰什么？”",
+                  "陆沉正好从走廊另一头过来，接了一句：“别碰签字。”",
+                  "周屿笑了一下，没再把话圆成玩笑。",
+                  "林亦舟把盖章材料放进文件袋。证明放在最外层，C407 分工表放在后面，晚归登记截图夹在手机相册里。三样东西谁也盖不过谁，只能一起被他带走。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C03-C-M01",
+                "source_page_id": "ACT5-WORK-C03-C-F01",
+                "prompt": "三栏里哪一栏先说实？",
+                "guide": "三栏里哪一栏先说实？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C03-C-M01-C1",
+                    "code": "C1",
+                    "label": "先说可交付：今晚能交接口说明和异常流。",
+                    "body": "唐骁回“先交这两项”，项目边界先落地。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C03-C-M01-C2",
+                    "code": "C2",
+                    "label": "先说不可到场：晚班时段不写自己能联调。",
+                    "body": "4XX 知道缺席是排班，不是临时躲人，但温度没有立刻回升。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C03-C-M01-C3",
+                    "code": "C3",
+                    "label": "先说不能代签：证明、说明、最终确认都本人来。",
+                    "body": "陆沉回“这个写清楚”，代签边界被重新钉住。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-schedule-boundary"
+            ],
+            "next_node": "ACT5-WORK-B04"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT5-WORK-B04",
+      "block_name": "工作生活半径确认",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT5-WORK-B03",
+      "next_block": "ACT5-WORK-B05",
+      "scene_range": [
+        "ACT5-WORK-S13",
+        "ACT5-WORK-S16"
+      ],
+      "scene_function": "工作生活半径确认",
+      "act5_window_tag": "activity_or_interest",
+      "required_completion_flags": [
+        "act5_work_b04_seen",
+        "act5_work_b04_choice_resolved",
+        "activity_or_interest"
+      ],
+      "must_record": [
+        "activity_or_interest",
+        "route_pool_locked",
+        "work_shift",
+        "work_reliability",
+        "act5_required_windows_seen",
+        "act6_echo_hook",
+        "dorm_warmth",
+        "money_pressure",
+        "self_control",
+        "public_boundary",
+        "time_debt"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S13",
+          "page_title": "快递站清点台 / 下周固定吗",
+          "location": "快递站清点台",
+          "text": [
+            "快递站清点台旁边贴了一张新的值班表。",
+            "负责人拿红笔圈出周二、周四和周日晚班，问林亦舟：“下周能不能固定来？固定班好排，临时班不好换。”",
+            "负责人把红笔帽拔开，笔尖悬在值班表旁边，等他接过去。",
+            "林亦舟看着那三格。",
+            "周二晚上，4XX 约好补 C407 演示分栏；周四有课程作业截止；周日活动群里正在问谁能去九龙壁舞台帮忙搬设备。三件事都不算大，可排班表一盖上去，它们就会一起往旁边挪。",
+            "手机在这时亮了。",
+            "周屿：周日舞台边缺两个人，来不来？",
+            "唐骁：周二晚 C407 分栏别空。",
+            "陆沉：周四作业截止，别忘。",
+            "负责人把红笔递给他：“能固定就签在这里。”",
+            "林亦舟没有马上落笔。他先把值班表拍下来，红圈在照片里比纸面上更醒目。下午去 C407 送文件时，他从九龙壁旁边绕了一段路。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S14",
+          "page_title": "九龙壁舞台边 / 半句玩笑",
+          "location": "九龙壁舞台边",
+          "text": [
+            "下午，林亦舟从九龙壁旁边经过，包里的值班表还没签。",
+            "舞台边正在拆背景板，周屿踩在台阶上，把一卷胶带扔给下面的人。看见林亦舟，他抬了抬下巴：“你现在比我还像有固定岗位的人。”",
+            "玩笑说到一半，停住了。",
+            "因为林亦舟胸前挂着快递站临时工作牌，手里还拿着 C407 的文件袋。那不是社团活动的志愿牌，也不是主持队的工牌，是把他从很多临时热闹里切出去的东西。",
+            "周屿从台阶上跳下来：“周日你真来不了？”",
+            "林亦舟没有马上答。值班表还在包里，周日那一格被红笔圈着。活动群里有人发了舞台布置清单，4XX 群里唐骁还在催周二分栏。",
+            "周屿看了他一眼，没继续催，只把胶带从手腕上取下来：“你要是来不了，早点说。别让我们按你会来排。”",
+            "这句话跟着他进了食堂。傍晚，手机一亮，活动群先把周日搬设备的名单顶了上来。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S15",
+          "page_title": "活动群 / 事项群",
+          "location": "活动群",
+          "text": [
+            "傍晚，林亦舟坐在食堂二楼靠窗的位置，把手机放在饭盘旁边。",
+            "活动群、C407 群、4XX 群、快递站排班群像几张叠在一起的表格。",
+            "活动群问周日搬设备谁到场；C407 群问周二晚谁能联调；4XX 群里周屿发了一张公共桌照片，说还留着一角给他写说明页；快递站群里负责人提醒固定班下周开始按签到算。",
+            "林亦舟把排班表摊在桌角，周二、周四、周日三格被负责人用红笔圈了出来。手机上的几条未读贴着表格边缘亮起，一条问活动，一条问作业，一条问他还回不回 4XX。",
+            "他夹起一筷子饭，又放下。红圈旁边还空着一小块地方，正好够他写下一句“不能到场”。",
+            "饭凉了一点。他把排班表折回去，回青枫居时，工作牌还挂在脖子上。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S16",
+          "page_title": "青枫居楼下 / 工作牌和宿舍门",
+          "location": "青枫居楼下",
+          "text": [
+            "晚上回青枫居时，林亦舟在楼下停了一会儿。",
+            "工作牌挂在他脖子上，文件袋夹在胳膊下面，宿舍门禁卡贴在手机壳后面。三样东西都不重，叠在一起却让他走得慢。",
+            "楼上，4XX 的灯亮着。",
+            "周屿在群里发：你要是周日不来，至少别周日当天说。",
+            "唐骁跟着发：周二分栏如果不到，今晚先写清替代交付。",
+            "陆沉发：周四作业，截止前别再补理由。",
+            "快递站群里，负责人又发了一遍固定班确认名单。",
+            "林亦舟站在门禁机前，手指停在屏幕上。他把工作牌塞进外套里，又把文件袋换到左手。排班确认名单还停在手机通知栏，最后一行空着，等他回“确认”。"
+          ],
+          "updates": {}
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-04",
+        "title": "下周这张表，先按哪种生活半径排？",
+        "guide": "固定班、C407、活动群、作业截止和 4XX 照面都在同一周里。林亦舟已经不能靠“到时候看”拖过去；他要么把固定班写成主生活半径，要么主动压低班次保一次照面，要么给每一件事写下停止条件。",
+        "after_page": "ACT5-WORK-S16",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C04-A",
+            "direction": "A",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "接下固定班，把周二周四周日都写进排班",
+            "description": "工作线成为默认生活半径，之后所有活动和宿舍照面都要绕开它。",
+            "variable_delta": {
+              "route_pool_locked": true,
+              "work_shift": 1,
+              "work_reliability": 1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-WORK-B01-fixed-shift-default"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C04-A-F01",
+                "page_title": "快递站清点台 / 固定班签名",
+                "location": "快递站清点台",
+                "text": [
+                  "林亦舟接过红笔。",
+                  "他在周二、周四和周日晚班后面签下名字。负责人看了一眼，把三格圈实：“固定班下周开始算，迟到提前说，换班自己找人确认。”",
+                  "这几句话很普通。普通到像把一条路铺平了。",
+                  "可林亦舟签完以后，手机里的三条消息同时变了重量。周二 C407 分栏要提前交；周四作业不能拖到晚班后；周日舞台边不能再按他会到场安排。",
+                  "他先给快递站群回：固定班确认。",
+                  "然后才点开 4XX 群。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C04-A-F02",
+                "page_title": "青枫居门口 / 默认事实",
+                "location": "青枫居门口",
+                "text": [
+                  "晚上，林亦舟回到 4XX 门口时，屋里有人在说周日活动。",
+                  "周屿看见他，先晃了晃手机：“你真固定了？”",
+                  "林亦舟点头：“周二、周四、周日。”",
+                  "唐骁把 C407 表格翻到下一页：“那你这周别写现场联调到场。”",
+                  "陆沉没有抬头，只把作业截止时间抄到便签上，推到公共桌边：“周四晚班前交。”",
+                  "周屿的语音停在半截笑里，唐骁发来一版改过的分栏，陆沉只把作业截止截图贴上来。三条消息都很短，短得不像要和他争什么。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C04-A-F03",
+                "page_title": "食堂二楼 / 新半径",
+                "location": "食堂二楼",
+                "text": [
+                  "第二天晚饭，林亦舟坐在食堂二楼靠窗的位置。",
+                  "周屿发来舞台布置照片，照片边角里没有他。唐骁发来 C407 分栏确认，备注写着“材料先到”。陆沉只发了一张作业提交截图，提醒他别过点。",
+                  "快递站群里，负责人发下周固定班注意事项。",
+                  "林亦舟把饭卡放在桌边，忽然发现自己这周的动线已经很清楚：食堂、快递站、C407、青枫居楼下、再回食堂。活动、宿舍和作业没有消失，只是都挤在这几处之间。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C04-A-M01",
+                "source_page_id": "ACT5-WORK-C04-A-F01",
+                "prompt": "固定班确认后，先把哪一格写出去？",
+                "guide": "固定班确认后，先把哪一格写出去？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C04-A-M01-A1",
+                    "code": "A1",
+                    "label": "给 4XX 发：下周二周四周日晚班固定，我能交的提前发。",
+                    "body": "4XX 知道排班成为默认事实，误读下降，温度没有明显回升。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C04-A-M01-A2",
+                    "code": "A2",
+                    "label": "给 C407 发：周二联调不到，今晚先交分栏替代。",
+                    "body": "唐骁把现场联调改成材料先到，项目能走，但林亦舟的位置更工具化。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C04-A-M01-A3",
+                    "code": "A3",
+                    "label": "给活动群发：周日不能到场，请别把我排进搬设备。",
+                    "body": "周屿回“收到”，玩笑少了一句，活动圈把他从默认名单里划掉。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT5-WORK-C04-A-M02",
+                "source_page_id": "ACT5-WORK-C04-A-F02",
+                "prompt": "固定班成为默认后，回 4XX 先补哪一句？",
+                "guide": "固定班成为默认后，回 4XX 先补哪一句？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C04-A-M02-A1",
+                    "code": "A1",
+                    "label": "说：固定班不是临时躲人，以后我提前写可交部分。",
+                    "body": "唐骁点头，流程更稳，关系温度仍然低。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C04-A-M02-A2",
+                    "code": "A2",
+                    "label": "说：周日活动别按我到场排，我不想临时占名额。",
+                    "body": "周屿把活动名单改掉，热闹位置从默认变成可缺席。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C04-A-M02-A3",
+                    "code": "A3",
+                    "label": "说：周四作业我晚班前交，不让你们补提醒。",
+                    "body": "陆沉把便签推回给他，截止时间成为他自己的边界。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-fixed-shift-default"
+            ],
+            "next_node": "ACT5-WORK-B05"
+          },
+          {
+            "direction_id": "ACT5-WORK-C04-B",
+            "direction": "B",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "少接一晚，保留一次 4XX / 活动照面",
+            "description": "收入会变不稳，但至少这周留下一次不是补说明的当面出现。",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "money_pressure": 1,
+              "work_reliability": -1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-WORK-B04-warm-but-unstable-income"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C04-B-F01",
+                "page_title": "快递站清点台 / 划掉一格",
+                "location": "快递站清点台",
+                "text": [
+                  "林亦舟没有把三格都签满。",
+                  "他指了指周日那一栏：“这晚我想先不固定。周二周四可以。”",
+                  "负责人抬头：“固定少一晚，收入也少一晚。后面临时加班不一定排得上。”",
+                  "林亦舟点头。他知道这句话不是吓他。快递站的班次就是这样，空出来的位置很快会被别人填上。",
+                  "他在周二、周四签名，周日那格空着。",
+                  "活动群里，周屿又发了一遍舞台布置名单。4XX 群里，唐骁问他周日能不能至少到场确认一次 C407 设备。陆沉发：别把少接班变成临时乱排。",
+                  "这一次，他确实给自己留出了一次照面，也给钱压留下了新的空格。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C04-B-F02",
+                "page_title": "九龙壁舞台边 / 一小时照面",
+                "location": "九龙壁舞台边",
+                "text": [
+                  "周日傍晚，林亦舟真的去了九龙壁舞台边。",
+                  "他只待了一个小时。帮周屿把背景板抬到仓库门口，又和唐骁确认 C407 设备箱贴纸。陆沉过来送作业打印件，见他在场，没多说，只把纸递给他。",
+                  "周屿看了眼时间：“你今天不用跑？”",
+                  "“少接了一晚。”林亦舟说。",
+                  "周屿的笑停了一下：“那挺贵的。”",
+                  "林亦舟站在舞台边，胸前没有挂工作牌。风从背景板后面钻过来，把他手机里的排班截图吹亮了一瞬；周日那一格空着，旁边还有负责人没回的消息。",
+                  "回青枫居时，4XX 三个人比平时多等了他十分钟。",
+                  "公共桌上留着一角，C407 设备箱贴纸已经贴好，作业打印件也夹在文件袋里。周屿把剩下的一杯豆浆推给他：“活动剩的，没毒。”",
+                  "唐骁说：“周日这次算到了，别每次靠少接班补。”",
+                  "陆沉补了一句：“收入少了你自己算。”",
+                  "林亦舟坐下，豆浆还有一点温。周屿把另一个包子推到桌中间，没说给谁；林亦舟伸手拿时，手机里快递站负责人刚好发来一句：周日那格我先空着，别忘了补。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C04-B-M01",
+                "source_page_id": "ACT5-WORK-C04-B-F01",
+                "prompt": "少接一晚，要先说明给谁？",
+                "guide": "少接一晚，要先说明给谁？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C04-B-M01-B1",
+                    "code": "B1",
+                    "label": "先给负责人写：周日暂不固定，后续有空再补临时班。",
+                    "body": "工作可靠度下降一点，但这晚被真正空出来。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C04-B-M01-B2",
+                    "code": "B2",
+                    "label": "先给 4XX 写：周日我能回一次公共桌，不只发说明页。",
+                    "body": "宿舍温度回升一点，唐骁提醒他别把项目拖到当天。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C04-B-M01-B3",
+                    "code": "B3",
+                    "label": "先给活动群写：周日能到一小时，但不占全程名额。",
+                    "body": "周屿把他排进短时协助，热闹入口被保留，但不是完整回线。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B04-warm-but-unstable-income"
+            ],
+            "next_node": "ACT5-WORK-B05"
+          },
+          {
+            "direction_id": "ACT5-WORK-C04-C",
+            "direction": "C",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "给排班、活动和作业都写停止条件",
+            "description": "不靠临时解释救场，先写清哪些到点必须停、哪些必须本人确认。",
+            "variable_delta": {
+              "self_control": 1,
+              "public_boundary": 1,
+              "time_debt": -1,
+              "act5_required_windows_seen": "activity_or_interest",
+              "act6_echo_hook": "ACT6-WORK-B01-boundary-cold"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C04-C-F01",
+                "page_title": "食堂二楼 / 三个停止条件",
+                "location": "食堂二楼",
+                "text": [
+                  "林亦舟没有立刻签表。",
+                  "他把饭盘推到一边，在手机备忘录里写了三行。",
+                  "排班：超过 22:30 不再接临时加班，第二天八点前有提交则提前说明。",
+                  "活动：只能短时协助，不占全程名额；到点离开，不让别人临时补洞。",
+                  "作业 / C407：截止前两小时停止接新任务，只交已确认部分。",
+                  "三行写完，他自己先看了一遍。",
+                  "他把“到时候再看”删掉，又把三个时间各自加粗。饭盘里的汤凉了一层油，手机屏幕上只剩这三行硬邦邦的字。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C04-C-F02",
+                "page_title": "青枫居楼下 / 冷一点的清楚",
+                "location": "青枫居楼下",
+                "text": [
+                  "晚上，林亦舟把三条停止条件发出去。",
+                  "消息一条一条落进不同群里。快递站负责人只回“收到”；活动群里有人问“那搬完背景板你就走吗”，周屿替他回了一句“他说短时就短时”；C407 群里，唐骁把截止时间写进分工表。",
+                  "4XX 群安静了一会儿。",
+                  "陆沉最后发：这样至少不会到点才说。",
+                  "林亦舟站在青枫居楼下，看着这句话。门禁机亮着，手机通知栏安静了一会儿；活动群的名单、C407 的分栏和快递站的排班都停在各自的位置，没有再往上顶。",
+                  "他刷卡进门。卡扣声响起，像一条线被拉直。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C04-C-M01",
+                "source_page_id": "ACT5-WORK-C04-C-F01",
+                "prompt": "三个停止条件先发给谁？",
+                "guide": "三个停止条件先发给谁？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C04-C-M01-C1",
+                    "code": "C1",
+                    "label": "先发给快递站负责人：临时加班到 22:30 为止。",
+                    "body": "负责人回“写清就行”，排班边界被提前看见。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C04-C-M01-C2",
+                    "code": "C2",
+                    "label": "先发给活动群：只短时协助，不占全程名额。",
+                    "body": "周屿回“那就按短时算”，活动不再默认他兜底。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C04-C-M01-C3",
+                    "code": "C3",
+                    "label": "先发给 4XX / C407：截止前两小时停止接新任务。",
+                    "body": "唐骁回“按这个排”，流程变清楚，温度也更低。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-boundary-cold"
+            ],
+            "next_node": "ACT5-WORK-B05"
+          }
+        ]
+      }
+    },
+    {
+      "block_id": "ACT5-WORK-B05",
+      "block_name": "回避 / 外流门槛关闭",
+      "act": "ACT5",
+      "route_id": "R4-WORK",
+      "route_pool_id": "POOL-R4-WORK",
+      "source_detail_doc": "开发细稿_IF第五幕ACT5-WORK工作线桥接剧情页.md",
+      "route_switch_allowed": false,
+      "previous_block": "ACT5-WORK-B04",
+      "next_block": "ACT6-WORK-B01",
+      "scene_range": [
+        "ACT5-WORK-S17",
+        "ACT5-WORK-S20"
+      ],
+      "scene_function": "回避 / 外流门槛关闭",
+      "act5_window_tag": "avoidance_or_outflow",
+      "required_completion_flags": [
+        "act5_work_b05_seen",
+        "act5_work_b05_choice_resolved",
+        "avoidance_or_outflow"
+      ],
+      "must_record": [
+        "avoidance_or_outflow",
+        "act5_work_bridge_ready",
+        "route_pool_locked",
+        "work_schedule_checked",
+        "act5_required_windows_seen",
+        "act6_echo_hook",
+        "dorm_warmth",
+        "closed_route_ids_kept_closed",
+        "hard_outflow",
+        "drift_guard_triggered",
+        "work_reliability"
+      ],
+      "pages": [
+        {
+          "page_id": "ACT5-WORK-S17",
+          "page_title": "青枫居楼下 / 新圈消息",
+          "location": "青枫居楼下",
+          "text": [
+            "青枫居楼下的长椅上，有人把一张兼职群二维码贴在宣传栏边角。",
+            "林亦舟刷门禁前，手机弹出一条陌生消息。许澈发来一张截图，说新圈子那边周末有临时工，结算快，不用解释太多。",
+            "截图底下还有一句：不想回去说的话，可以先来这边。",
+            "这句话太轻，轻得像能把 4XX、C407、快递站和明德楼窗口都暂时盖过去。",
+            "林亦舟没有立刻回。",
+            "楼上，4XX 群里周屿问他第一周清单写好了没；唐骁催 C407 替代交付；陆沉发了晚归登记截图。快递站群里，负责人正在确认下周固定班。",
+            "林亦舟把截图按灭，没有扫宣传栏上的二维码。门禁机亮了一下，催他重新刷卡。",
+            "那晚他照常去了快递站。临走前，宣传栏边角被风掀起来，二维码纸背面露出一条没撕干净的胶。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S18",
+          "page_title": "快递站后门 / 静音的诱惑",
+          "location": "快递站后门",
+          "text": [
+            "晚班结束后，快递站后门风很大。",
+            "林亦舟把扫码枪放回充电座，手机屏幕上排着四个未读：许澈、4XX、C407、快递站负责人。",
+            "他把手指放到静音键上。",
+            "静音能省掉很多解释。今晚不回 4XX，不回许澈，也不回唐骁，明天再说，手机就会安静下来。",
+            "可屏幕暗下去以后，工资确认表还压在扫码台旁边，证明材料露出没盖章的一角，晚归登记表上的到寝时间仍然空着。",
+            "负责人从后门探头：“第一周安排别忘了发。固定班不写清，后面不好排。”",
+            "林亦舟把手机屏幕按亮，静音开关停在灰色那边。他先点开备忘录，把“第一周安排”几个字打在最上面。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S19",
+          "page_title": "明德楼门口 / 第一周清单",
+          "location": "明德楼门口",
+          "text": [
+            "第二天中午，林亦舟站在明德楼门口，把第一周安排写进备忘录。",
+            "周二、周四、周日晚班；C407 的接口说明和异常流；补考材料回执复印；晚归登记；周日活动只保留短时协助；4XX 公共桌不再默认等他补口头解释。",
+            "写到最后一行时，他停了一下。",
+            "4XX 回声：周日晚十点后回寝，能当面说明则当面说明，不能到场则提前发可交付内容。",
+            "他盯着“当面说明”四个字看了几秒，又把“能”删掉，改成“周日晚十点二十前到楼下则当面说明”。",
+            "备忘录的光照在他指节上。明德楼门口人来人往，他把清单往下滑，确认门口、公共桌和本人签字都还在里面。"
+          ],
+          "updates": {}
+        },
+        {
+          "page_id": "ACT5-WORK-S20",
+          "page_title": "C407 机房外 / 第一周清单发出去",
+          "location": "C407 机房外",
+          "text": [
+            "周五晚上，C407 机房外的走廊灯坏了一盏。",
+            "林亦舟把第一周清单发进 4XX 群，又把可交付内容发给唐骁，最后给快递站负责人确认下周固定班。许澈那条截图还留在聊天列表里，没有被删除，也没有被点成新的方向。",
+            "周屿回：行，你别把自己排丢了。",
+            "唐骁回：按清单走。",
+            "陆沉回：晚归截图留好。",
+            "林亦舟把手机收进口袋，走廊里只剩机房风扇的声音。那张第一周清单留在三个群里，许澈的截图留在聊天列表更下面的位置，没有再亮起来。"
+          ],
+          "updates": {}
+        }
+      ],
+      "choice_window": {
+        "choice_window_id": "ACT5-WORK-CHOICE-05",
+        "title": "第一周清单，先把哪一道门关清？",
+        "guide": "许澈的新圈消息、静音开关、4XX 的短句和快递站固定班都停在手机里。林亦舟要把第一周安排发出去：哪边不接，哪边只留照面，哪边必须按清单交。",
+        "after_page": "ACT5-WORK-S20",
+        "direction_count": 3,
+        "directions": [
+          {
+            "direction_id": "ACT5-WORK-C05-A",
+            "direction": "A",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "留在工作线，把第一周安排发给所有相关群",
+            "description": "让排班、C407、晚归和材料都进入清单，第一周照这个走。",
+            "variable_delta": {
+              "act5_work_bridge_ready": true,
+              "route_pool_locked": true,
+              "work_schedule_checked": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-WORK-B01-shift-boundary"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C05-A-F01",
+                "page_title": "明德楼门口 / 清单发出去",
+                "location": "明德楼门口",
+                "text": [
+                  "林亦舟先把第一周安排整理成四行。",
+                  "快递站固定班：周二、周四、周日，晚归截图当天留存。",
+                  "C407：接口说明、异常流、最终包目录提前交，现场联调不写到场。",
+                  "材料：勤工证明、收入说明、补考回执都由本人提交。",
+                  "4XX：能当面说则当面说，不能到场则提前发可交付内容，不让别人代签。",
+                  "他没有把这四行写成“解释”。他把每一行都压到具体时间、地点和本人签字上，删掉了所有“看情况”。",
+                  "发送前，他删掉了“如果有问题我再调整”。这句话太像把清单重新变回商量。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C05-A-F02",
+                "page_title": "快递站后门 / 默认前提",
+                "location": "快递站后门",
+                "text": [
+                  "清单发出去以后，快递站负责人最先回。",
+                  "收到。周二按固定班算。",
+                  "这一句很短。林亦舟再点开排班群时，自己的名字已经被挪进固定班名单，后面多了一个签到提醒。",
+                  "4XX 群里，周屿隔了一会儿回：行吧，周日晚林亦舟。",
+                  "唐骁回：清单我按这个存。",
+                  "陆沉只发：别漏截图。",
+                  "林亦舟看着三条回复，把清单重新置顶。聊天列表往下一滑，许澈的截图已经被压到第二屏。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C05-A-F03",
+                "page_title": "C407 机房外 / 第一周照这个走",
+                "location": "C407 机房外",
+                "text": [
+                  "周五晚上，林亦舟把最终包目录发给唐骁。",
+                  "机房门口的灯坏了一盏，光一明一暗。唐骁看完清单，只说：“第一周先按这个走。”",
+                  "周屿从楼梯口经过，晃了晃手机：“周日晚的人也别失联。”",
+                  "陆沉把晚归截图模板发给他：“固定班第一天就用。”",
+                  "林亦舟点开许澈那张新圈截图，看了两秒，又退出。截图还在聊天列表里，位置往下沉了一格。最上面停着的是第一周清单、固定班确认和唐骁刚保存的目录。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C05-A-M01",
+                "source_page_id": "ACT5-WORK-C05-A-F01",
+                "prompt": "第一周清单先发给谁？",
+                "guide": "第一周清单先发给谁？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C05-A-M01-A1",
+                    "code": "A1",
+                    "label": "先发给 4XX：写清晚班、C407 和当面说明窗口。",
+                    "body": "4XX 收到清单，周屿先回“周日晚林亦舟”，唐骁把分工表另存。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C05-A-M01-A2",
+                    "code": "A2",
+                    "label": "先发给快递站负责人：确认固定班和晚归截图。",
+                    "body": "负责人把他排进固定班名单，提醒第一天别漏签到。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C05-A-M01-A3",
+                    "code": "A3",
+                    "label": "先发给 C407：列出可交付和不可到场。",
+                    "body": "唐骁按清单改分工，项目不再靠临时补救。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              },
+              {
+                "group_id": "ACT5-WORK-C05-A-M02",
+                "source_page_id": "ACT5-WORK-C05-A-F02",
+                "prompt": "清单发完后，再补哪一句锁住边界？",
+                "guide": "清单发完后，再补哪一句锁住边界？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C05-A-M02-A1",
+                    "code": "A1",
+                    "label": "补一句：这周按清单走，临时改动我提前说。",
+                    "body": "4XX 和快递站都收到同一规则，临时漂移下降。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C05-A-M02-A2",
+                    "code": "A2",
+                    "label": "补一句：不能到场的部分我不写自己到场。",
+                    "body": "唐骁把现场项从他名下移开，项目边界更稳。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C05-A-M02-A3",
+                    "code": "A3",
+                    "label": "补一句：签字和说明都我本人来。",
+                    "body": "陆沉回“记住这句”，代签风险继续被封住。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-shift-boundary"
+            ],
+            "next_node": "ACT6-WORK-B01"
+          },
+          {
+            "direction_id": "ACT5-WORK-C05-B",
+            "direction": "B",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "保留 4XX 照面，但不把晚班撤掉",
+            "description": "给宿舍留周日晚的当面说明，也承认固定班还照常排。",
+            "variable_delta": {
+              "dorm_warmth": 1,
+              "closed_route_ids_kept_closed": true,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-WORK-B04-dorm-soft-echo"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C05-B-F01",
+                "page_title": "青枫居门口 / 只留回声",
+                "location": "青枫居门口",
+                "text": [
+                  "林亦舟先回 4XX。",
+                  "他没有把清单发成一长串，也没有说自己想把关系修回去。他只站在门口，把工作牌摘下来，放进文件袋：“下周固定班照常。周日晚我十点后回，如果你们还在公共桌，我可以当面补说明。”",
+                  "周屿靠在椅背上：“那不在呢？”",
+                  "“不在就不补。”林亦舟说，“我提前发可交付内容，不让你们等我才开始。”",
+                  "唐骁看了他一眼，把 C407 表格收起来。陆沉问：“签字呢？”",
+                  "“我本人签。”",
+                  "周屿的玩笑挂在门口，唐骁的提醒贴着清单，陆沉那句“门不反锁”留在最后。林亦舟看了一会儿，把周日晚十点二十写进备忘录。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C05-B-F02",
+                "page_title": "公共桌 / 周日晚的照面",
+                "location": "公共桌",
+                "text": [
+                  "周日晚十点多，林亦舟回到 4XX。",
+                  "公共桌边只剩陆沉在看书，唐骁的电脑还开着，周屿留了一张便利贴：周日晚同学，水在阳台。",
+                  "林亦舟看着那张便利贴，笑了一下。",
+                  "他把晚归截图、C407 目录和勤工证明复印件放到桌角，没有叫醒谁，也没有等一场郑重谈话。第二天早上，唐骁会看见目录，陆沉会看见截图，周屿会发现水杯被洗过。",
+                  "林亦舟把便利贴压在水杯下面。纸角翘起来一点，上面那句“周日晚同学”被杯底遮住半个字。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C05-B-M01",
+                "source_page_id": "ACT5-WORK-C05-B-F01",
+                "prompt": "保留 4XX 回声时，先留哪一个位置？",
+                "guide": "保留 4XX 回声时，先留哪一个位置？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C05-B-M01-B1",
+                    "code": "B1",
+                    "label": "留周日晚十点后的公共桌照面。",
+                    "body": "周屿把水留在阳台，公共桌上仍有一个能当面说话的位置。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C05-B-M01-B2",
+                    "code": "B2",
+                    "label": "留 C407 可交付内容，不留现场到场承诺。",
+                    "body": "唐骁按材料接他，项目能走，关系温度仍低。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C05-B-M01-B3",
+                    "code": "B3",
+                    "label": "留本人签字，不让陆沉或唐骁代确认。",
+                    "body": "代签边界继续有效，4XX 只保留提醒功能。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B04-dorm-soft-echo"
+            ],
+            "next_node": "ACT6-WORK-B01"
+          },
+          {
+            "direction_id": "ACT5-WORK-C05-C",
+            "direction": "C",
+            "direction_type": "act5_bridge_direction",
+            "stays_in_pool": true,
+            "label": "拒绝许澈 / 静音诱因，按现实清单走",
+            "description": "不接新圈临时工，也不靠静音省解释，让钱、证明和排班继续摆在明面上。",
+            "variable_delta": {
+              "hard_outflow": false,
+              "drift_guard_triggered": true,
+              "work_reliability": 1,
+              "act5_required_windows_seen": "avoidance_or_outflow",
+              "act6_echo_hook": "ACT6-WORK-B01-no-hard-outflow"
+            },
+            "route_effect": {
+              "route_pool_id": "POOL-R4-WORK",
+              "route_switch_allowed": false
+            },
+            "feedback_pages": [
+              {
+                "page_id": "ACT5-WORK-C05-C-F01",
+                "page_title": "快递站后门 / 不接诱因",
+                "location": "快递站后门",
+                "text": [
+                  "林亦舟站在快递站后门，先点开许澈的截图。",
+                  "新圈子的临时工看起来确实轻一点。结算快，不用解释，甚至可以暂时避开 4XX 和 C407。旁边还有一条群消息，问有没有人这周末能直接来。",
+                  "他把截图存进相册，又退出聊天框。",
+                  "然后，他给许澈回：谢谢，我这周不接。已经在快递站排了固定班。",
+                  "消息发出去后，许澈那边很久没有回。林亦舟把聊天框退出去，快递站负责人刚好在群里点名确认，他回了一个“在”。"
+                ]
+              },
+              {
+                "page_id": "ACT5-WORK-C05-C-F02",
+                "page_title": "明德楼门口 / 清单比消失麻烦",
+                "location": "明德楼门口",
+                "text": [
+                  "第二天，林亦舟在明德楼门口把清单逐项发出去。",
+                  "拒绝许澈只用了一句话，取消静音只用了一秒。真正麻烦的是后面：给快递站确认固定班，给 C407 写可交付内容，给 4XX 留晚归说明，给自己标注补考材料复印时间。",
+                  "每一项都比消失麻烦。",
+                  "许澈回：行，有空再说。",
+                  "周屿回：你现在连拒绝都像排班表。",
+                  "唐骁回：现实清单比临时消失强。",
+                  "陆沉回：截图留好。",
+                  "林亦舟把这些消息都收进同一页。许澈的截图沉到下面，静音开关没有打开，最上面还停着快递站、C407 和 4XX 的清单。"
+                ]
+              }
+            ],
+            "micro_groups": [
+              {
+                "group_id": "ACT5-WORK-C05-C-M01",
+                "source_page_id": "ACT5-WORK-C05-C-F01",
+                "prompt": "哪些诱因先不接？",
+                "guide": "哪些诱因先不接？",
+                "options": [
+                  {
+                    "option_id": "ACT5-WORK-C05-C-M01-C1",
+                    "code": "C1",
+                    "label": "回许澈：这周不接新圈临时工，固定班已经排好。",
+                    "body": "5X 诱因不触发，许澈只保留擦肩回声。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C05-C-M01-C2",
+                    "code": "C2",
+                    "label": "取消一键静音，把 4XX / C407 / 快递站分组置顶。",
+                    "body": "摆烂静音不触发，现实事项继续压在屏幕上。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  },
+                  {
+                    "option_id": "ACT5-WORK-C05-C-M01-C3",
+                    "code": "C3",
+                    "label": "把第一周清单发给自己，再逐项发给对应群。",
+                    "body": "清单没有漏项，快递站、C407 和 4XX 都收到各自那一段。",
+                    "variable_delta": {},
+                    "raw_effect_text": ""
+                  }
+                ]
+              }
+            ],
+            "echo_hooks": [
+              "ACT6-WORK-B01-no-hard-outflow"
+            ],
+            "next_node": "ACT6-WORK-B01"
+          }
+        ]
+      }
+    }
+  ],
+  "act4_to_act5_carryover_rules": {
+    "status": "contract_ready",
+    "source": "formal_json_act4_detail_blocks_to_act5_detail_blocks",
+    "purpose": "Make Act4 choices, variables, and act5_echo_hook values auditable before Act6 writing starts.",
+    "source_blocks": [
+      "ACT4-WORK-L01",
+      "ACT4-WORK-L02",
+      "ACT4-WORK-L03",
+      "ACT4-WORK-L04",
+      "ACT4-WORK-L05",
+      "ACT4-WORK-L06"
+    ],
+    "target_blocks": [
+      "ACT5-WORK-B01",
+      "ACT5-WORK-B02",
+      "ACT5-WORK-B03",
+      "ACT5-WORK-B04",
+      "ACT5-WORK-B05"
+    ],
+    "runtime_note": "The preview currently proves the contract and data path. A later full engine pass should use these rules to select conditional echo text.",
+    "rules": [
+      {
+        "source_block": "ACT4-WORK-L01",
+        "source_direction": "A",
+        "act5_echo_hook": "r4_empty_dorm_family_call_first",
+        "carried_variables": [
+          "family_responsibility",
+          "time_debt",
+          "old_debt"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B05"
+        ],
+        "realization": "家庭电话先被接住，进入第五幕后只作为联系人、晚归解释和旧账压力，不打开家庭线。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L01",
+        "source_direction": "B",
+        "act5_echo_hook": "r4_empty_dorm_radius_split_work_first",
+        "carried_variables": [
+          "work_rule_clarity",
+          "work_shift_seed",
+          "reality_order_visible"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B04"
+        ],
+        "realization": "勤工值班先被问清，进入第五幕后优先兑现为晚班名单、固定班和工作生活半径。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L01",
+        "source_direction": "C",
+        "act5_echo_hook": "r4_empty_dorm_wanfeng_time_notice",
+        "carried_variables": [
+          "wanfeng_trust",
+          "wanfeng_delay",
+          "relationship_truth"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B02"
+        ],
+        "realization": "晚风收到明确答复，第五幕后只保留短时照面和具体时间，不打开晚风完整线。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L02",
+        "source_direction": "A",
+        "act5_echo_hook": "r4_refund_rule_keep_meeting_cost",
+        "carried_variables": [
+          "wanfeng_trust",
+          "intimacy_pressure",
+          "money_pressure"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B02",
+          "ACT5-WORK-B03"
+        ],
+        "realization": "退改成本被看见，第五幕后在私人联系和证明材料里兑现为钱压与时间压。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L02",
+        "source_direction": "B",
+        "act5_echo_hook": "r4_refund_rule_cost_to_work",
+        "carried_variables": [
+          "basic_cost_clear",
+          "work_shift_seed",
+          "route_order_visible"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B04"
+        ],
+        "realization": "花费被算清，第五幕后优先落到晚班和固定排班。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L02",
+        "source_direction": "C",
+        "act5_echo_hook": "r4_refund_rule_budget_explained",
+        "carried_variables": [
+          "relationship_truth",
+          "parent_pressure_visible",
+          "money_pressure_visible"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B02",
+          "ACT5-WORK-B03"
+        ],
+        "realization": "预算和时间被说成实话，第五幕后兑现为短时照面和材料说明。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L03",
+        "source_direction": "A",
+        "act5_echo_hook": "r4_station_cash_family_gap_named",
+        "carried_variables": [
+          "family_signal",
+          "money_pressure",
+          "old_debt_seen"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B03"
+        ],
+        "realization": "父亲现金的缺口被命名，第五幕后作为钱压和联系人顺序的低温回声。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L03",
+        "source_direction": "B",
+        "act5_echo_hook": "r4_station_cash_debt_deferred",
+        "carried_variables": [
+          "old_debt",
+          "daily_stability",
+          "study_repair"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B03",
+          "ACT5-WORK-B05"
+        ],
+        "realization": "钱被先放进饭卡车票，第五幕后兑现为证明材料和第一周清单里的旧账。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L03",
+        "source_direction": "C",
+        "act5_echo_hook": "r4_station_cash_to_work_route",
+        "carried_variables": [
+          "work_route",
+          "work_certificate_seed",
+          "work_shift_seed"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B03"
+        ],
+        "realization": "现金压力转向勤工窗口，第五幕后兑现为排班入口和勤工证明。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L04",
+        "source_direction": "A",
+        "act5_echo_hook": "study_before_shift_once",
+        "carried_variables": [
+          "study_pressure",
+          "work_certificate_seed",
+          "study_repair"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B03"
+        ],
+        "realization": "补考资料先被补齐，第五幕后兑现为材料窗口、证明和可提交边界。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L04",
+        "source_direction": "B",
+        "act5_echo_hook": "shift_before_review",
+        "carried_variables": [
+          "work_shift_seed",
+          "work_rule_clarity",
+          "study_debt"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B04"
+        ],
+        "realization": "临时班先被接下，第五幕后兑现为固定班倾向和学习债务。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L04",
+        "source_direction": "C",
+        "act5_echo_hook": "minimum_fact_given_before_absence",
+        "carried_variables": [
+          "relationship_truth_seed",
+          "public_boundary",
+          "wanfeng_soft_echo"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B02",
+          "ACT5-WORK-B05"
+        ],
+        "realization": "最低事实先被说明，第五幕后兑现为不失联、不回避的边界。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L05",
+        "source_direction": "A",
+        "act5_echo_hook": "r4_visible_seat_dorm_can_ask",
+        "carried_variables": [
+          "dorm_warmth",
+          "public_boundary",
+          "dorm_repair"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B05"
+        ],
+        "realization": "4XX 仍能问他，第五幕后兑现为宿舍低温照面，不回默认宿舍线。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L05",
+        "source_direction": "B",
+        "act5_echo_hook": "r4_back_seat_window_first",
+        "carried_variables": [
+          "work_window_ready",
+          "dorm_misread",
+          "tang_material_support"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B03",
+          "ACT5-WORK-B04"
+        ],
+        "realization": "后排和窗口优先，第五幕后兑现为材料/项目优先，但宿舍误读升高。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L05",
+        "source_direction": "C",
+        "act5_echo_hook": "r4_window_result_back_to_dorm",
+        "carried_variables": [
+          "work_route",
+          "work_certificate_seed",
+          "public_boundary"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B03"
+        ],
+        "realization": "明德楼窗口先跑完，第五幕后兑现为工作入口和证明材料。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L06",
+        "source_direction": "A",
+        "act5_echo_hook": "r4_contact_self_signed_to_work_entry",
+        "carried_variables": [
+          "route_boundary",
+          "work_route",
+          "work_certificate_seed"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01"
+        ],
+        "realization": "兼职和留校本人签字，第五幕 B01 必须从晚班后补说明和排班缺席进入。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L06",
+        "source_direction": "B",
+        "act5_echo_hook": "r4_contact_stay_only_detail_debt",
+        "carried_variables": [
+          "old_debt",
+          "work_window_pending",
+          "work_rule_clarity"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B03"
+        ],
+        "realization": "只填留校造成工作细节债，第五幕后兑现为补说明、证明材料和解释成本。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      },
+      {
+        "source_block": "ACT4-WORK-L06",
+        "source_direction": "C",
+        "act5_echo_hook": "r4_contact_parent_order_confirmed",
+        "carried_variables": [
+          "family_signal",
+          "family_basic_truth",
+          "face_pressure"
+        ],
+        "target_blocks": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B05"
+        ],
+        "realization": "联系人顺序已确认，第五幕后兑现为家庭低温回声和本人签字边界。",
+        "route_pool_id": "POOL-R4-WORK",
+        "route_switch_allowed": false,
+        "implementation_status": "mapped_for_act5_and_act6_audit"
+      }
+    ]
+  },
+  "act4_to_act5_transition_block": {
+    "block_id": "ACT4-WORK-L06-TO-ACT5-WORK-B01",
+    "block_name": "暑假去向后的第一周入口",
+    "act": "ACT4_TO_ACT5",
+    "route_id": "R4-WORK",
+    "route_pool_id": "POOL-R4-WORK",
+    "source_detail_doc": "开发数据_IF剧情页级JSON_R4-WORK_v1.json",
+    "route_switch_allowed": false,
+    "previous_block": "ACT4-WORK-L06",
+    "next_block": "ACT5-WORK-B01",
+    "scene_range": "幕间过渡",
+    "scene_function": "把第四幕暑假去向、联系人签字和勤工窗口，过渡到第五幕开学后第一周的晚班试岗。",
+    "pages": [
+      {
+        "page_id": "ACT4-WORK-L06-TO-ACT5-S01",
+        "page_title": "B204 后 / 透明文件夹",
+        "location": "B204 走廊",
+        "text": [
+          "B204 的门在身后合上时，走廊里还亮着白天的灯。",
+          "林亦舟把透明文件夹夹在手臂下，最上面那页是暑假去向登记，黑色签字压在本人确认栏里。兼职、留校、联系人顺序都在同一张纸上，字迹还没完全干。",
+          "周屿从楼梯口等他，手里拎着半袋没喝完的水。唐骁低头看群里的项目清单，陆沉把门禁提醒转到 4XX 群里。谁都没有再问他到底是不是想好了。",
+          "晚风的消息停在通知栏下方：到时候看吧，别把自己排没了。",
+          "林亦舟没有立刻回。他先把透明文件夹塞进书包，拉链拉到一半，纸角还是露出来一点。"
+        ],
+        "updates": {}
+      },
+      {
+        "page_id": "ACT4-WORK-L06-TO-ACT5-S02",
+        "page_title": "暑假末 / 回校清单",
+        "location": "青枫居 4XX",
+        "text": [
+          "暑假最后几天，4XX 的公共桌上陆续多出返校清单。",
+          "车票截图、补考资料、宿舍门禁、项目分工表，像几叠不同颜色的纸，被人随手压在同一张桌面上。林亦舟的透明文件夹也放在那里，边角被杯底压住，没人翻开。",
+          "勤工群在周三晚上发了试岗提醒，负责人让新同学返校后补证件复印件。唐骁把 C407 的演示清单又传了一遍，周屿问谁周五晚上在宿舍，陆沉只回了一个门禁时间。",
+          "林亦舟把这些消息一条条存进备忘录。暑假还没正式结束，开学第一周的空格已经先排出来。"
+        ],
+        "updates": {}
+      },
+      {
+        "page_id": "ACT4-WORK-L06-TO-ACT5-S03",
+        "page_title": "周五下午 / 晚班名单",
+        "location": "快递站群 / 青枫居楼下",
+        "text": [
+          "周五下午，雨停得很快，青枫居楼下的水还没干。",
+          "林亦舟下楼取复印件，手机在口袋里震了一下。快递站群发出第一周试岗名单，他的名字排在第三个，后面写着：19:20 前到岗，带身份证复印件。",
+          "他停在楼梯口，把那行字看完。",
+          "楼上 4XX 的门半开着，C407 的分工表还等着补栏，透明文件夹里的本人签字已经把这些事都推到他面前。再往下，就是今晚七点半。"
+        ],
+        "updates": {}
+      }
+    ]
+  },
+  "act3_to_act5_campus_echo_rules": {
+    "status": "contract_ready",
+    "source": "act3_activity_public_pool_and_campus_daily_memory_to_r4_work_act5",
+    "purpose": "Before expanding R4-WORK Act5, define which Act1-3 campus contacts can affect Act5 main choices, which can only appear as micro-mindset echoes, and which daily campus figures can create memory-level consequences.",
+    "target_route_id": "R4-WORK",
+    "target_route_pool_id": "POOL-R4-WORK",
+    "applies_before": [
+      "act5_core_expansion",
+      "act5_detail_blocks_rewrite",
+      "act4_act5_full_playtest_regen"
+    ],
+    "target_act5_window_policy": {
+      "minimum_acceptable_main_windows": 12,
+      "ideal_main_windows_min": 12,
+      "ideal_main_windows_max": 15,
+      "first_playable_pass_allowed_windows": 12,
+      "blueprint_slot_count": 15,
+      "note": "Act5 is the core playable volume. Fewer than 12 main windows is only a structure draft, not a target state."
+    },
+    "permission_layers": [
+      {
+        "layer_id": "core_edge_character",
+        "display_name": "核心边缘人物",
+        "trigger": "The player clearly chose the matching Act3 activity/social direction, or reached two task-level interactions with the character.",
+        "act5_permission": "May affect a main choice, change consequence weight, add a concrete action route, or make a standing-cost heavier.",
+        "limit": "Must not replace 4XX as the main axis, must not solve the conflict for the player, and must carry the character's own task."
+      },
+      {
+        "layer_id": "micro_mindset_echo",
+        "display_name": "微心态软回声",
+        "trigger": "The character had an Act1-3 brush, short collaboration, group-message trace, or public-scene contact, but no route-level commitment.",
+        "act5_permission": "May appear only inside micro choices, short feedback, hesitation, wording cost, shame, comparison, or being-seen pressure.",
+        "limit": "Must not add a main route, must not change main-choice count, and must not upgrade into romance or a full support role."
+      },
+      {
+        "layer_id": "everyday_campus_memory",
+        "display_name": "日常校园人物记忆",
+        "trigger": "The daily campus figure appears repeatedly or controls a concrete campus procedure: teacher, assistant, print-shop owner, station worker, dorm guard, shop clerk, bookstore owner, venue manager.",
+        "act5_permission": "May remember, misread, reject, let pass, return a form, ask one extra sentence, or give an uncomfortable convenience.",
+        "limit": "Must not become a replacement confidant unless a later route explicitly grows that relationship through repeated scenes."
+      },
+      {
+        "layer_id": "background_texture",
+        "display_name": "背景质感",
+        "trigger": "No clear previous interaction; the person only belongs naturally to the place.",
+        "act5_permission": "May provide location texture and small realism.",
+        "limit": "Must not deliver key advice, emotional judgment, or a decisive consequence."
+      }
+    ],
+    "focus_rules": [
+      {
+        "focus_id": "focus_hosting",
+        "source_window_hint": [
+          "A3-CHOICE-01",
+          "A3-CHOICE-02",
+          "A3-CHOICE-03"
+        ],
+        "core_edge_if": [
+          "a3_first_focus=focus_hosting",
+          "a3_second_focus=focus_hosting",
+          "a3_final_choice keeps hosting/activity"
+        ],
+        "soft_echo_if": [
+          "met_qin_yue_once",
+          "saw_hosting_recruit_table",
+          "zhou_activity_circle_seen"
+        ],
+        "core_characters": [
+          "秦越",
+          "周屿活动圈"
+        ],
+        "soft_characters": [
+          "许棠",
+          "主持队同学"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B03",
+          "ACT5-WORK-B05"
+        ],
+        "main_choice_permission": "秦越 can ask whether Lin Yizhou can be fixed into an activity flow, making work-shift choices cost an activity absence.",
+        "micro_echo_permission": "A group name, a waiting list, or a remembered hosting table may appear as a hesitation but cannot redirect the route.",
+        "prohibition": "Do not let hosting suddenly unlock Xia Zhiwei or Shen Jiahe unless their own source conditions are met."
+      },
+      {
+        "focus_id": "focus_newsroom",
+        "source_window_hint": [
+          "A3-CHOICE-01",
+          "A3-CHOICE-02",
+          "A3-CHOICE-03"
+        ],
+        "core_edge_if": [
+          "a3_first_focus=focus_newsroom",
+          "a3_second_focus=focus_newsroom",
+          "public_boundary>=2"
+        ],
+        "soft_echo_if": [
+          "met_xu_tang_once",
+          "public_draft_seen",
+          "class_material_archive_seen"
+        ],
+        "core_characters": [
+          "许棠"
+        ],
+        "soft_characters": [
+          "辅导员",
+          "融媒体同学",
+          "沈嘉禾"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B02",
+          "ACT5-WORK-B03",
+          "ACT5-WORK-B04"
+        ],
+        "main_choice_permission": "Xu Tang can affect public wording, private-room information, event material scope, or whether a conflict becomes a public narrative.",
+        "micro_echo_permission": "If only brushed, Xu Tang may trigger concern about how the matter will be retold, but cannot steer a main choice.",
+        "prohibition": "Xu Tang remains public-narrative pressure and is not a romance candidate in this contract."
+      },
+      {
+        "focus_id": "focus_photo",
+        "source_window_hint": [
+          "A3-CHOICE-01",
+          "A3-CHOICE-02",
+          "A3-CHOICE-03"
+        ],
+        "core_edge_if": [
+          "a3_first_focus=focus_photo",
+          "a3_second_focus=focus_photo",
+          "xia_zhiwei_link>=2"
+        ],
+        "soft_echo_if": [
+          "xia_zhiwei_link=1",
+          "photo_auth_seen",
+          "back_view_or_empty_chair_seen"
+        ],
+        "core_characters": [
+          "夏知微"
+        ],
+        "soft_characters": [
+          "摄影社成员",
+          "许棠"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B03",
+          "ACT5-WORK-B05"
+        ],
+        "main_choice_permission": "Xia Zhiwei can make absence, late return, image authorization, deletion, or being seen affect public consequences.",
+        "micro_echo_permission": "A photo edge, back view, or deleted image may become a micro-mindset echo without opening intimacy.",
+        "prohibition": "One photo brush is not enough to open romance or a full support route."
+      },
+      {
+        "focus_id": "focus_material_shared_docs",
+        "source_window_hint": [
+          "A3-SHEN-N01",
+          "A3-CHOICE-02",
+          "A3-CHOICE-03"
+        ],
+        "core_edge_if": [
+          "shen_jiahe_link>=2",
+          "candidate_source_checked=true"
+        ],
+        "soft_echo_if": [
+          "shen_jiahe_link=1",
+          "shared_doc_seen",
+          "format_help_once"
+        ],
+        "core_characters": [
+          "沈嘉禾"
+        ],
+        "soft_characters": [
+          "打印店老板",
+          "课程同学"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B02",
+          "ACT5-WORK-B04"
+        ],
+        "main_choice_permission": "Shen Jiahe can provide a format/library/print-shop entry that clarifies boundaries without writing for him.",
+        "micro_echo_permission": "If only brushed, she may remind him that format can be checked but content and signatures cannot be outsourced.",
+        "prohibition": "Do not use Shen Jiahe as a moral explainer or automatic comfort source."
+      },
+      {
+        "focus_id": "focus_backstage",
+        "source_window_hint": [
+          "A3-CHOICE-01",
+          "A3-CHOICE-02",
+          "A3-CHOICE-03"
+        ],
+        "core_edge_if": [
+          "a3_first_focus=focus_backstage",
+          "a3_second_focus=focus_backstage",
+          "public_credit>=2"
+        ],
+        "soft_echo_if": [
+          "backstage_material_seen",
+          "program_list_help_once"
+        ],
+        "core_characters": [
+          "秦越",
+          "许棠",
+          "活动老师"
+        ],
+        "soft_characters": [
+          "活动同学",
+          "场地管理员"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B04",
+          "ACT5-WORK-B05"
+        ],
+        "main_choice_permission": "Backstage reliability can become extra labor: someone expects him to verify material, venue, or proof while work and C407 are also waiting.",
+        "micro_echo_permission": "Backstage objects may become reminders of being useful without becoming a new route.",
+        "prohibition": "Do not make reliability pure reward; it must carry time debt."
+      },
+      {
+        "focus_id": "focus_volunteer",
+        "source_window_hint": [
+          "A3-CHOICE-01",
+          "A3-CHOICE-02",
+          "A3-CHOICE-03"
+        ],
+        "core_edge_if": [
+          "a3_first_focus=focus_volunteer",
+          "a3_second_focus=focus_volunteer",
+          "public_credit>=2"
+        ],
+        "soft_echo_if": [
+          "volunteer_once",
+          "service_order_seen"
+        ],
+        "core_characters": [
+          "志愿负责人",
+          "活动老师"
+        ],
+        "soft_characters": [
+          "普通同学",
+          "场地管理员"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B02",
+          "ACT5-WORK-B05"
+        ],
+        "main_choice_permission": "Volunteer credit can make teachers or staff expect clearer boundaries and earlier replies.",
+        "micro_echo_permission": "May appear as small guilt about not being able to help every public thing.",
+        "prohibition": "Volunteer focus does not unlock a romance candidate by itself."
+      },
+      {
+        "focus_id": "focus_dorm_return",
+        "source_window_hint": [
+          "A3-CHOICE-01",
+          "A3-CHOICE-02",
+          "A3-CHOICE-03"
+        ],
+        "core_edge_if": [
+          "a3_first_focus=focus_dorm_return",
+          "a3_final_choice keeps dorm return"
+        ],
+        "soft_echo_if": [
+          "returned_once_to_4xx",
+          "refused_long_group_once"
+        ],
+        "core_characters": [
+          "唐骁",
+          "陆沉",
+          "周屿"
+        ],
+        "soft_characters": [
+          "活动群",
+          "普通同学"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B05"
+        ],
+        "main_choice_permission": "Dorm-return focus keeps 4XX warmer, but Act5 work choices still test whether he can preserve face-to-face explanation.",
+        "micro_echo_permission": "Activity can remain low-frequency background pressure even if it was not chosen.",
+        "prohibition": "Do not erase all campus-side echoes just because he returned to the dorm."
+      },
+      {
+        "focus_id": "focus_public_avoid",
+        "source_window_hint": [
+          "A3-CHOICE-01",
+          "A3-CHOICE-02",
+          "A3-CHOICE-03"
+        ],
+        "core_edge_if": [
+          "a3_first_focus=focus_public_avoid",
+          "a3_final_choice avoids public life"
+        ],
+        "soft_echo_if": [
+          "avoided_group_once",
+          "did_not_explain_absence_once"
+        ],
+        "core_characters": [
+          "4XX",
+          "活动群"
+        ],
+        "soft_characters": [
+          "老师",
+          "同学",
+          "店员"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B03",
+          "ACT5-WORK-B05"
+        ],
+        "main_choice_permission": "Avoidance can strengthen Act5 outflow/low-temperature choices and make silence more believable.",
+        "micro_echo_permission": "May appear as not wanting to be seen, answer, or explain.",
+        "prohibition": "Avoidance should not make the campus disappear; it should make the campus feel harder to face."
+      }
+    ],
+    "everyday_campus_memory_rules": [
+      {
+        "role_id": "teacher_or_counselor",
+        "display_name": "陈老师 / 辅导员 / 任课老师",
+        "trigger": [
+          "class_meeting_seen",
+          "makeup_exam_notice_seen",
+          "material_window_returned"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B02",
+          "ACT5-WORK-B04"
+        ],
+        "memory_actions": [
+          "退回一栏说明",
+          "点出本人签字",
+          "提醒补考和材料不能互相代替"
+        ],
+        "micro_effects": [
+          "rule_cost",
+          "public_shame",
+          "study_pressure"
+        ]
+      },
+      {
+        "role_id": "assistant_or_course_peer",
+        "display_name": "助教 / 课程同学",
+        "trigger": [
+          "c407_project_seen",
+          "lab_deadline_seen",
+          "homework_split_seen"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B04"
+        ],
+        "memory_actions": [
+          "催一次补交",
+          "指出接口责任",
+          "让项目后果离开寝室群"
+        ],
+        "micro_effects": [
+          "project_stability",
+          "tang_pressure",
+          "rule_boundary"
+        ]
+      },
+      {
+        "role_id": "work_lead_or_station_staff",
+        "display_name": "勤工负责人 / 驿站工作人员",
+        "trigger": [
+          "work_shift_seed",
+          "station_cash_seen",
+          "first_evening_shift_seen"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B05"
+        ],
+        "memory_actions": [
+          "把名字写进晚班表",
+          "提醒扫码枪位置",
+          "默认他能补一个空班"
+        ],
+        "micro_effects": [
+          "work_route",
+          "time_debt",
+          "daily_radius_shift"
+        ]
+      },
+      {
+        "role_id": "print_shop_owner",
+        "display_name": "打印店老板 / 文印店员",
+        "trigger": [
+          "certificate_copy_seen",
+          "format_rework_seen",
+          "family_statement_seen"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B02"
+        ],
+        "memory_actions": [
+          "认出同一份证明又改一版",
+          "问身份证复印几份",
+          "把队伍时间压到他面前"
+        ],
+        "micro_effects": [
+          "material_embarrassment",
+          "money_pressure",
+          "self_signed_boundary"
+        ]
+      },
+      {
+        "role_id": "dorm_guard",
+        "display_name": "宿管阿姨 / 门禁值班",
+        "trigger": [
+          "late_return_seen",
+          "proxy_pickup_seen",
+          "dorm_message_gap_seen"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B01",
+          "ACT5-WORK-B05"
+        ],
+        "memory_actions": [
+          "提醒晚归登记",
+          "问是不是又让室友带话",
+          "把门禁记录变成外部见证"
+        ],
+        "micro_effects": [
+          "dorm_misread",
+          "route_boundary",
+          "face_pressure"
+        ]
+      },
+      {
+        "role_id": "food_or_shop_clerk",
+        "display_name": "食堂窗口 / 便利店店员 / 奶茶店员",
+        "trigger": [
+          "missed_meal_seen",
+          "borrowed_charger_seen",
+          "activity_afterparty_seen"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B03",
+          "ACT5-WORK-B05"
+        ],
+        "memory_actions": [
+          "借一根充电线",
+          "认出他总是压点吃饭",
+          "误以为他在等私人电话"
+        ],
+        "micro_effects": [
+          "wanfeng_delay",
+          "money_pressure",
+          "night_outside_pressure"
+        ]
+      },
+      {
+        "role_id": "bookstore_owner_or_regular",
+        "display_name": "书屋老板 / 店员 / 常客",
+        "trigger": [
+          "bookstore_rest_seen",
+          "quiet_study_seen",
+          "outside_relation_seen"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B03",
+          "ACT5-WORK-B05"
+        ],
+        "memory_actions": [
+          "留下一个安静座位",
+          "认出他不是第一次躲到这里",
+          "看见他和谁先后进门"
+        ],
+        "micro_effects": [
+          "avoidance_or_outflow",
+          "study_repair",
+          "intimacy_pressure"
+        ]
+      },
+      {
+        "role_id": "activity_teacher_or_venue_manager",
+        "display_name": "活动老师 / 场地管理员",
+        "trigger": [
+          "venue_key_seen",
+          "activity_certificate_seen",
+          "backstage_material_seen"
+        ],
+        "act5_targets": [
+          "ACT5-WORK-B04",
+          "ACT5-WORK-B05"
+        ],
+        "memory_actions": [
+          "要求场地钥匙归还",
+          "确认活动证明不能代签",
+          "把事故责任写进名单"
+        ],
+        "micro_effects": [
+          "public_credit",
+          "activity_boundary",
+          "time_debt"
+        ]
+      }
+    ]
+  },
+  "act5_core_expansion_blueprint": {
+    "status": "planning_contract_ready",
+    "source": "act3_to_act5_campus_echo_rules",
+    "purpose": "Reserve the Act5 core-volume structure before rewriting player-facing Act5 detail blocks. The first playable rewrite may implement 12 windows, but the plan keeps 15 slots.",
+    "window_policy": {
+      "minimum_acceptable_main_windows": 12,
+      "ideal_main_windows_min": 12,
+      "ideal_main_windows_max": 15,
+      "first_playable_pass_allowed_windows": 12,
+      "blueprint_slot_count": 15,
+      "note": "Act5 is the core playable volume. Fewer than 12 main windows is only a structure draft, not a target state."
+    },
+    "slots": [
+      {
+        "slot_id": "ACT5-WORK-C01",
+        "order": 1,
+        "title": "晚班名单压到本人签字",
+        "required_window": "dorm_stand",
+        "everyday_roles": [
+          "work_lead_or_station_staff",
+          "dorm_guard"
+        ],
+        "campus_focus_sources": [
+          "focus_hosting",
+          "focus_dorm_return"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C02",
+        "order": 2,
+        "title": "补考材料和说明用途",
+        "required_window": "project_or_rule",
+        "everyday_roles": [
+          "teacher_or_counselor",
+          "print_shop_owner"
+        ],
+        "campus_focus_sources": [
+          "focus_material_shared_docs",
+          "focus_newsroom"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C03",
+        "order": 3,
+        "title": "4XX 是否还能当面问",
+        "required_window": "dorm_stand",
+        "everyday_roles": [
+          "dorm_guard",
+          "assistant_or_course_peer"
+        ],
+        "campus_focus_sources": [
+          "focus_dorm_return",
+          "focus_public_avoid"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C04",
+        "order": 4,
+        "title": "晚风见面撞上活动散场",
+        "required_window": "intimacy_or_wanfeng",
+        "everyday_roles": [
+          "food_or_shop_clerk"
+        ],
+        "campus_focus_sources": [
+          "focus_photo",
+          "focus_newsroom",
+          "focus_hosting"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C05",
+        "order": 5,
+        "title": "C407 项目规则公开化",
+        "required_window": "project_or_rule",
+        "everyday_roles": [
+          "assistant_or_course_peer",
+          "activity_teacher_or_venue_manager"
+        ],
+        "campus_focus_sources": [
+          "focus_backstage",
+          "focus_hosting"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C06",
+        "order": 6,
+        "title": "家庭说明和勤工证明互相压住",
+        "required_window": "avoidance_or_outflow",
+        "everyday_roles": [
+          "teacher_or_counselor",
+          "print_shop_owner"
+        ],
+        "campus_focus_sources": [
+          "focus_material_shared_docs",
+          "focus_public_avoid"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C07",
+        "order": 7,
+        "title": "活动名单问他能不能固定",
+        "required_window": "activity_or_interest",
+        "everyday_roles": [
+          "activity_teacher_or_venue_manager"
+        ],
+        "campus_focus_sources": [
+          "focus_hosting",
+          "focus_backstage",
+          "focus_volunteer"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C08",
+        "order": 8,
+        "title": "寝室缺席被外人看见",
+        "required_window": "dorm_stand",
+        "everyday_roles": [
+          "dorm_guard",
+          "food_or_shop_clerk"
+        ],
+        "campus_focus_sources": [
+          "focus_photo",
+          "focus_newsroom"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C09",
+        "order": 9,
+        "title": "学习债和工作债同晚结算",
+        "required_window": "project_or_rule",
+        "everyday_roles": [
+          "assistant_or_course_peer",
+          "work_lead_or_station_staff"
+        ],
+        "campus_focus_sources": [
+          "focus_material_shared_docs",
+          "focus_dorm_return"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C10",
+        "order": 10,
+        "title": "公开叙事会把谁写进去",
+        "required_window": "activity_or_interest",
+        "everyday_roles": [
+          "teacher_or_counselor",
+          "activity_teacher_or_venue_manager"
+        ],
+        "campus_focus_sources": [
+          "focus_newsroom",
+          "focus_photo"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C11",
+        "order": 11,
+        "title": "书屋或安静处的低声出口",
+        "required_window": "intimacy_or_wanfeng",
+        "everyday_roles": [
+          "bookstore_owner_or_regular"
+        ],
+        "campus_focus_sources": [
+          "focus_material_shared_docs",
+          "focus_public_avoid"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C12",
+        "order": 12,
+        "title": "固定班是否成为新半径",
+        "required_window": "avoidance_or_outflow",
+        "everyday_roles": [
+          "work_lead_or_station_staff",
+          "dorm_guard",
+          "food_or_shop_clerk"
+        ],
+        "campus_focus_sources": [
+          "focus_hosting",
+          "focus_dorm_return"
+        ],
+        "implementation_status": "first_playable_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C13",
+        "order": 13,
+        "title": "外部轻松关系的第一次诱惑",
+        "required_window": "avoidance_or_outflow",
+        "everyday_roles": [
+          "bookstore_owner_or_regular",
+          "food_or_shop_clerk"
+        ],
+        "campus_focus_sources": [
+          "focus_public_avoid",
+          "focus_photo"
+        ],
+        "implementation_status": "reserved_expansion_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C14",
+        "order": 14,
+        "title": "当外人面护谁一句",
+        "required_window": "dorm_stand",
+        "everyday_roles": [
+          "teacher_or_counselor",
+          "activity_teacher_or_venue_manager"
+        ],
+        "campus_focus_sources": [
+          "focus_backstage",
+          "focus_newsroom"
+        ],
+        "implementation_status": "reserved_expansion_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      },
+      {
+        "slot_id": "ACT5-WORK-C15",
+        "order": 15,
+        "title": "站队后的第一张回执",
+        "required_window": "project_or_rule",
+        "everyday_roles": [
+          "print_shop_owner",
+          "work_lead_or_station_staff"
+        ],
+        "campus_focus_sources": [
+          "focus_material_shared_docs",
+          "focus_dorm_return"
+        ],
+        "implementation_status": "reserved_expansion_candidate",
+        "output_requirement": "Each slot must include a public pressure point, a dorm echo, at least one micro-mindset layer, and one visible consequence."
+      }
+    ]
   }
 }
