@@ -44,7 +44,7 @@ assert.ok(first.choice.chains.A.echoHooks.includes("r4_empty_dorm_family_call_fi
 
 const second = data.locks[1];
 assert.strictEqual(second.choice.title, "三个聊天框怎么回？");
-assert.ok(second.choice.guide.includes("父亲在站外"));
+assert.ok(second.choice.guide.includes("三个聊天框都开着"));
 assert.ok(!second.choice.summary.join("\n").includes("心态落点"));
 assert.ok(!second.choice.summary.join("\n").includes("ACT4-WORK-L02-P2-CHOICE-01"));
 
@@ -214,8 +214,8 @@ async function runDomSmoke() {
   assert.ok(!elements["choice-panel"].children[1].children.some((child) => child.textContent.includes("主轴推进")));
 
   elements["choice-panel"].children[0].click();
-  assert.strictEqual(elements["page-title"].textContent, "接住家里电话 / 现场行动");
-  assert.strictEqual(elements["page-body"].children[0].textContent, "林亦舟把母亲电话接完，没有马上去点晚风的截图，也没有问陆沉勤工表。");
+  assert.strictEqual(elements["page-title"].textContent, "接住家里电话");
+  assert.strictEqual(elements["page-body"].children[0].textContent, "林亦舟先把母亲的电话接住。");
   assert.strictEqual(elements["choice-panel"].hidden, true, "main ABC choices should be hidden after choosing a direction");
   assert.strictEqual(elements["micro-panel"].children.length, 1, "micro mode should show one direction page at a time");
   assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 3, "first direction page should render 3 micro choices");
@@ -230,8 +230,8 @@ async function runDomSmoke() {
   assert.ok(!firstMicroChoice.children.some((child) => /family_|old_debt/.test(child.textContent)), "player-facing micro choices should hide variable effects");
   firstMicroChoice.click();
 
-  assert.strictEqual(elements["page-title"].textContent, "接住家里电话 / 承接回声");
-  assert.strictEqual(elements["page-body"].children[0].textContent, "晚上十点，林亦舟终于把明天行程排出来。");
+  assert.strictEqual(elements["page-title"].textContent, "接住家里电话");
+  assert.strictEqual(elements["page-body"].children[0].textContent, "晚上十点，林亦舟把明天行程排出来。");
   assert.strictEqual(countByClass(elements["micro-panel"], "micro-choice"), 3, "second direction page should render the second micro choice group");
   assert.strictEqual(elements["next-button"].hidden, true, "second micro choice should also advance directly");
 
@@ -242,11 +242,11 @@ async function runDomSmoke() {
 
   for (let i = 0; i < 4; i += 1) elements["next-button"].click();
   assert.strictEqual(elements["page-title"].textContent, "三个聊天框怎么回？");
-  assert.ok(elements["page-body"].children[0].textContent.includes("父亲在站外"));
+  assert.ok(elements["page-body"].children[0].textContent.includes("三个聊天框都开着"));
   assert.ok(!elements["page-body"].children.some((child) => child.textContent.includes("心态落点")));
   assert.ok(!/本窗抉择|微内流点|主轴推进|POOL-|当前池|保见面|保排班|风险|代价|收入入口|低频信任|误读|工作线倾向/.test(textOf(elements["choice-panel"])));
   assert.ok(textOf(elements["choice-panel"]).includes("A. 先把父亲那边定下来"));
-  assert.ok(textOf(elements["choice-panel"]).includes("给父亲发到站时间"));
+  assert.ok(textOf(elements["choice-panel"]).includes("把到站时间和最晚返校车次发出去"));
 }
 
 runDomSmoke()

@@ -3,12 +3,30 @@
 ## 2026-05-29：R4-WORK Act3 -> Act5 校园生态规则 / 第五卷扩容蓝图
 
 - 已新增审计文档 `docs/剧情小说母版_v4.0/开发审计_IF第三卷社团前置与第五卷校园生态补强.md`，确认当前 4->5 试玩缺口不只是社团人物不足，也包括老师、助教、打印店老板、驿站人员、宿管、店员等日常校园人物只停在描述层。
+- 已新增审计文档 `docs/剧情小说母版_v4.0/开发审计_IF第四卷校园生态承接与第五卷入口.md`，明确第四卷必须先承接第三卷社团 / 校园日常记忆，再进入第五卷扩写。
 - 已新增写回脚本 `tools/apply-r4-work-act3-act5-campus-echo-rules.mjs`，向正式 JSON 写入 `act3_to_act5_campus_echo_rules` 和 `act5_core_expansion_blueprint`。
+- 已新增写回脚本 `tools/apply-r4-work-act4-campus-continuity-rules.mjs`，向正式 JSON 写入 `act3_to_act4_campus_continuity_rules` 和 `act4_campus_ecology_revision_blueprint`。
 - `act3_to_act5_campus_echo_rules` 已落地 4 层人物权限：核心边缘人物、微心态软回声、日常校园人物记忆、背景质感；明确社团选择过的人物可影响主选择，只照面过的人物只进入微心态层。
+- `act3_to_act4_campus_continuity_rules` 已落地 4 层第四卷承接权限：第三卷已选择方向的核心边缘人物承接、照面人物微心态承接、日常校园人物记忆承接、第五卷入口种子。
+- `act4_campus_ecology_revision_blueprint` 已覆盖 `ACT4-WORK-L01` 至 `L06`，要求后续修订保留方向数量和 `POOL-R4-WORK`，每块至少补 2 个校园回声、1 个日常人物动作、2 个第五卷入口种子、1 个微心态软回声。
 - 已落地 8 个 A3 / 校园前置方向：主持 / 活动、融媒体 / 公开叙事、摄影 / 观看边界、材料 / 共享文档、幕后、志愿、回宿舍、回避公开。
 - 已落地 8 类日常校园人物记忆：老师 / 辅导员、助教 / 课程同学、勤工负责人 / 驿站工作人员、打印店老板、宿管、食堂 / 便利店 / 奶茶店员、书屋老板 / 常客、活动老师 / 场地管理员。
 - 已新增 `act5_core_expansion_blueprint`：第五卷按 15 个主选择窗口槽位规划，其中 12 个为第一版试玩候选，13-15 为保留扩展位；目标线明确为 12-15 个主选择窗口。
 - 已新增审计脚本 `tools/audit-r4-work-act3-act5-campus-echo-rules.mjs`，校验通过：8 个前置规则、4 个权限层、8 类日常人物、15 个蓝图槽位、12 个第一版试玩候选、3 个保留扩展位。
+- 已新增审计脚本 `tools/audit-r4-work-act4-campus-continuity-rules.mjs`，校验通过：6 个第四卷块、4 个承接层、3 个修订 pass、7 个过渡 must-carry 种子、6 个目标块。
+- 已执行 `act4_pass_01_surface_continuity`：新增脚本 `tools/apply-r4-work-act4-surface-continuity-pass.mjs`，在 `ACT4-WORK-L01` 至 `L06` 及 4->5 过渡页补入第三卷人物软回声和日常校园人物记忆，包括秦越、许棠、夏知微、沈嘉禾、宿管阿姨、驿站阿姨、助教、陈老师、打印店小票等。
+- 已新增审计脚本 `tools/audit-r4-work-act4-surface-continuity-pass.mjs`，校验通过：6 个第四卷块仍各 4 页 / 3 方向，`POOL-R4-WORK` 未变，3 个过渡页已带入打印店小票、活动群、宿管阿姨。
+- 已重新导出 `playtest/r4-work-act4-act5-full-preview-data.js`，此前全链试玩结构保持 12 段、47 个选择前页、11 个选择窗、33 个方向、71 个反馈页、48 组微心态、144 个微选项。
+- 已执行 `act5_core_expansion_pass_01_first_12_windows`：新增脚本 `tools/apply-r4-work-act5-core-expansion-pass.mjs`，将 Act5 正式试玩细稿层从 5 个窗口扩为 12 个主选择窗口，保留 13-15 扩展位。
+- 已新增审计脚本 `tools/audit-r4-work-act5-core-expansion-pass.mjs`，校验通过：12 块、48 个选择前页、12 个选择窗、36 个方向、72 个反馈页、48 组微心态、144 个微选项。
+- 已更新并重跑 `tools/export-r4-work-act4-act5-full-preview.mjs` 与 `tools/export-r4-work-act5-preview.ps1`；全链试玩现在为 19 段、75 个选择前页、18 个选择窗、54 个方向、108 个反馈页、76 组微心态、228 个微选项；Act5 单独试玩为 12 / 48 / 12 / 36 / 72 / 48 / 144。
+- 已执行 `r4_work_player_prose_review_pass_01`：新增脚本 `tools/apply-r4-work-player-prose-review-pass.mjs`，将 `ACT4-WORK-L06-P2-S01` 从说明口吻改为 4XX 表格现场动作，并同步修掉 Act5 选择反馈里的重复模板句。
+- 已新增审读审计脚本 `tools/audit-r4-work-player-prose-review-pass.mjs`，校验通过：L06 入口页 5 段现场正文、玩家正文重复候选 0、旧说明句 / 旧模板句均未命中。
+- 已重跑 `tools/export-r4-work-act4-act5-bridge-preview.ps1`、`tools/export-r4-work-act4-act5-full-preview.mjs`、`tools/export-r4-work-act5-preview.ps1`；bridge 试玩现在为 2 段、8 个选择前页、2 个选择窗、6 个方向、12 个反馈页、8 组微心态、24 个微选项。
+- 已新增横向审计文档 `docs/剧情小说母版_v4.0/开发审计_IF_R4-WORK_母本小说横向关联对比.md`：回看母本 `5A` 宿舍修补线和 `1-7` 全局跑线，确认 `R4-WORK` Act5 当前只是第一版可玩细稿，下一步应补工作线软回流、母本级波峰和第六幕沉淀，不应直接进入 Act6。
+- 已执行 `r4_work_act5_mother_alignment_pass_01`：新增脚本 `tools/apply-r4-work-act5-mother-alignment-pass.mjs`，在不改变 `POOL-R4-WORK` 和 12 窗结构的前提下，补入班前门口回流、沈嘉禾材料回流、秦越 / 许棠活动与公开叙事回流、晚风 / 夏知微夜晚回流、工作线规则会、学习债复发和固定班低温风险。
+- 已新增审计脚本 `tools/audit-r4-work-act5-mother-alignment-pass.mjs`，校验通过：12 块、48 个选择前页、12 个选择窗、36 个方向、72 个反馈页、48 组微心态保持不变，11 个母本对齐标记均命中，玩家正文未出现母本 / 横向关联 / 回流层 / 第六幕等开发词。
+- 已重跑 `tools/export-r4-work-act4-act5-full-preview.mjs`、`tools/export-r4-work-act5-preview.ps1`、`tools/export-r4-work-act4-act5-bridge-preview.ps1`；全链试玩仍为 19 / 75 / 18 / 54 / 108 / 76 / 228，Act5 单独试玩仍为 12 / 48 / 12 / 36 / 72 / 48 / 144。
 
 ## 2026-05-28：R4-WORK Act4 -> Act5 联通试玩 / 接口校验
 
@@ -3800,3 +3818,13 @@
 - [x] 已按用户中断反馈三次修订 B01：暂缓 B02，不再只做“删催促句”；重写 S01-S04 的事件推进，让 4XX 日常、快递站排班、C407 空栏和门口消息自然形成抉择。
 - [x] 本轮仍不写回正式剧情 JSON。
 - [ ] 下一步建议：先确认 `ACT5-WORK-B01` 样板口径；若成立，再按同一结构复刻 `ACT5-WORK-B02` 至 `B05`。
+
+## 2026-05-29 IF R4-WORK 玩家侧说明腔清理
+
+- [x] 已新增并执行 `tools/apply-r4-work-player-exposition-cleanup-pass.mjs`，把 Act4/Act5 玩家可见文本中的“林亦舟选了……”“这不是新路线……”“最先回来的不是安慰……”“扣进下一天”等模板说明改为动作、纸面、门口、通知栏和人物反应。
+- [x] 已按试玩反馈重写 `ACT4-WORK-L06-P2-A02`：删除“从那天以后，晚归、缺席和补说明……”总结句，改为透明文件夹、复印件露角、唐骁压平、周屿挪水杯、陆沉不再追问的现场承接。
+- [x] 已改 `ACT5-WORK-B01` 抉择 guide：不再解释“决定从哪扇门带回工作线”，只呈现手机四个入口、输入框停顿和楼梯口风。
+- [x] 已重导 `playtest/r4-work-act4-act5-bridge-preview-data.js`、`playtest/r4-work-act4-act5-full-preview-data.js`、`playtest/r4-work-act5-preview-data.js`，并完成语法检查。
+- [x] 已新增并执行 `tools/apply-r4-work-act4-close-pov-pass.mjs`：先改第四幕 L01-L06 为第二人称近身试玩口吻，60 个玩家页从“看着/决定/选择意义”改为手里正在拿的票页、信封、资料包、文件袋、黑笔和透明文件夹；同步正式 JSON 与 Act4 单幕 Markdown。
+- [x] 已更新 `playtest/r4-work-act4-preview.js` fallback guide 和 `playtest/r4-work-act4-preview.test.js`，Act4 单幕解析保持 6/24/6/36/18/28 结构，4->5 bridge 与 full preview 已重导。
+- [x] 已按试玩反馈给第二人称降噪：显性“你”从 Act4 每千字约 26-35 次降到约 11-19 次，保留近身感但更多用省略主语、物件主语和动作开句。

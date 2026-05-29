@@ -111,11 +111,11 @@ const data = {
   exportFileName: "r4-work-act4-act5-full-run.json",
   end: {
     title: "R4-WORK 第四幕到第五幕试玩完成",
-    location: "下一跳：ACT6-WORK-B01",
+    location: "下一段：ACT6-WORK-B01",
     progress: "4->5 全链完成",
     paragraphs: [
-      "第四幕六个判定、幕间过渡和第五幕五个承接窗已经跑完。",
-      "这条试玩链用于确认 R4-WORK 从暑假去向、联系人签字、返校第一周、晚班入口、材料证明、固定班到外流关闭可以连续游玩。"
+      "第四幕从暑假去向、联系人签字和 B204 本人确认，走到第五幕返校第一周的晚班、材料、C407、活动名单和 4XX 饭点。",
+      "到这里，固定班已经不只是赚钱办法，而是下一周会不会还有人默认等他的生活半径。"
     ],
   },
   sections,
@@ -145,13 +145,13 @@ for (const section of data.sections) {
 }
 
 const expected = {
-  sections: 12,
-  prePages: 47,
-  choices: 11,
-  directions: 33,
-  feedbackPages: 71,
-  microGroups: 48,
-  microOptions: 144,
+  sections: 22,
+  prePages: 88,
+  choices: 21,
+  directions: 63,
+  feedbackPages: 126,
+  microGroups: 88,
+  microOptions: 264,
 };
 
 for (const [key, value] of Object.entries(expected)) {

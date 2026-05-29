@@ -133,13 +133,13 @@ foreach ($section in $data.sections) {
 }
 
 $expected = [ordered]@{
-  sections = 5
-  prePages = 20
-  choices = 5
-  directions = 15
-  feedbackPages = 35
-  microGroups = 20
-  microOptions = 60
+  sections = 15
+  prePages = 60
+  choices = 15
+  directions = 45
+  feedbackPages = 90
+  microGroups = 60
+  microOptions = 180
 }
 
 foreach ($key in $expected.Keys) {

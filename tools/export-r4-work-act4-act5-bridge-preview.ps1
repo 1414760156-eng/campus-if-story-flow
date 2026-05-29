@@ -169,7 +169,7 @@ $expected = [ordered]@{
   prePages = 8
   choices = 2
   directions = 6
-  feedbackPages = 13
+  feedbackPages = 12
   microGroups = 8
   microOptions = 24
 }

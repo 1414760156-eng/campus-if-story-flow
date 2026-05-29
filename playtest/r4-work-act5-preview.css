@@ -159,6 +159,10 @@ h3 {
   white-space: pre-wrap;
 }
 
+.reader-can-advance .body-copy {
+  cursor: pointer;
+}
+
 .choice-panel,
 .micro-panel {
   display: grid;
@@ -299,8 +303,7 @@ h3 {
 }
 
 .nav-row {
-  margin-top: 26px;
-  max-width: 960px;
+  display: none;
 }
 
 .metrics-list {

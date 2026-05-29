@@ -330,6 +330,15 @@
     els.pageTitle.scrollIntoView({ block: "start" });
   }
 
+  function canAdvanceByReaderTap() {
+    return !els.nextButton.hidden && !els.nextButton.disabled && state.mode !== "choice";
+  }
+
+  function syncReaderAdvanceState() {
+    if (!els.reader) return;
+    els.reader.classList.toggle("reader-can-advance", canAdvanceByReaderTap());
+  }
+
   function next() {
     if (els.nextButton.disabled || els.nextButton.hidden) return;
 
@@ -415,6 +424,7 @@
     if (state.mode === "choice") renderChoice();
     if (state.mode === "feedback") renderFeedback();
     if (state.mode === "end") renderEnd();
+    syncReaderAdvanceState();
   }
 
   function boot() {
@@ -424,6 +434,7 @@
       poolChip: document.getElementById("pool-chip"),
       stageChip: document.getElementById("stage-chip"),
       pageProgress: document.getElementById("page-progress"),
+      reader: document.querySelector(".reader"),
       pageTitle: document.getElementById("page-title"),
       pageLocation: document.getElementById("page-location"),
       pageBody: document.getElementById("page-body"),
@@ -445,6 +456,16 @@
 
     els.backButton.addEventListener("click", back);
     els.nextButton.addEventListener("click", next);
+    els.pageBody.addEventListener("click", () => {
+      if (canAdvanceByReaderTap()) next();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (!canAdvanceByReaderTap()) return;
+      if (event.target && ["BUTTON", "A", "INPUT", "TEXTAREA"].includes(event.target.tagName)) return;
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      next();
+    });
     els.resetButton.addEventListener("click", reset);
     els.exportButton.addEventListener("click", exportRun);
     render();
